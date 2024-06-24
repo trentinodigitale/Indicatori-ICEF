@@ -1,0 +1,81 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=950 HEIGHT=850 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.11 $">
+
+<param name="Taratura" value="UNITN2005/2006 ; 14.2.2006; per simulazione">
+
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trends" value="trend1;trend2;trend3;trend4">
+<param name="trend1" value="trendattuale;C1_pens=0:1000:32000;importo_borsa">
+<param name="trend2" value="trendattuale;C1_pens=20000:1000:32000;esonero">
+<param name="trend3" value="trendattuale;Crediti=20:2:90;importo_borsa">
+<param name="trend4" value="trendattuale;Crediti=20:2:90;esonero">
+
+<param name="trendStarts" value="7225;trendattuale;casounpoditutto;poverissimosomarofsede;oltrepoverissimosomarofsede;limitesomarofsede;limitemediofsede;limitebravofsede;oltrelimitesomarofsede;riccosomarofsede;oltrericcosomarofsede">
+ <param name="7225" value="parametri,corso2;Aggiuntivo=0.5;Aggiuntivo_alloggio=1;Aggiuntivo_invalidi=1.5;Al_minimo=0;Altri_universitari=0;Anni=3;Assegni=0;Bonus=14;Borse_percepite=4680;C1_aut=0;C1_dip=7669;C1_pens=14979;C2_agr=0;C3_imp=0;C4_part=0;C5_altri=4680;Canone=0;Chiede_alloggio=1;Chiede_borsa=1;Chiede_esonero=1;Comune_in_sede=0;Con_merito=1;Crediti=66;Deroghe=0;Durata=2;Esami=0;Fuori_sede=0;Imposte=3909;In_sede=0;Invalido=0;Lavoratori=0;Max=120;Mediche=163;Min=80;Min_deroga=80;Monogenitore=1;Mutuo=0;N_componenti=2;N_invalidi_66=0;N_invalidi_75=0;P_complementare=0;PI=62417;PM=2736;Prende_alloggio=1;Previdenza=0;RES=74835">
+
+<param name="trendattuale" value="current;Dettagli=1;Bonus=0;Esami=0">
+
+<param name="casounpoditutto" value="unpoditutto;Chiede_alloggio=1;Chiede_borsa=1;Chiede_esonero=1;Anni=2;Crediti=15;Bonus=5;Durata=3;Aggiuntivo=1;Aggiuntivo_alloggio=2;Max=30;Min=10;Min_deroga=6">
+
+ <param name="poverissimosomarofsede" value="poverissimo,somaro1,fsede;Anni=3">
+ <param name="oltrepoverissimosomarofsede" value="oltrepoverissimo,somaro1,fsede;Anni=3">
+ <param name="limitesomarofsede" value="limite,somaro1,fsede;Anni=3">
+ <param name="limitemediofsede" value="limite,medio1,fsede;Anni=3">
+ <param name="limitebravofsede" value="limite,bravo1,fsede;Anni=3">
+ <param name="oltrelimitesomarofsede" value="oltrelimite,somaro1,fsede;Anni=3">
+ <param name="riccosomarofsede" value="ricco,somaro1,fsede;Anni=3">
+ <param name="oltrericcosomarofsede" value="oltrericco,somaro1,fsede;Anni=3">
+
+<param name="variables" value="fattore">
+<param name="fattore" value="1.0; 0.4902">
+
+
+<param name="nets" value="u05.sub.net.html;../icef/m.icef.net.html">
+
+<param name="edges" value="MODELLO UNITN2005">
+
+<param name="connections" value="ICEF-Icef;Borse_percepite-DF;per_altri-VF">
+
+
+<param name="MODELLO UNITN2005" value="text;node.ico;82;218;0;Versione 14.2.2006;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloUnitn2005;xModelloUnitn2005;2596932885">
+
+
+
+
+
+<param name="xModelloUnitn2005" value="MODELLO UNITN2005;x;Versione 14.2.2006; ; ; ; ; ; ; ; ; ">
+
+
+<param name="xpltree" value="entrate;detrazioni;patrimoni;nucleo;ris1;ris2;curve1;curve2;curve3;curve4;footer;summary;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="entrate" value="<p><b>Dati per la determinazione dell'ICEF</b>;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C2_agr=-1!0;C3_imp=-1!0;C4_part=-1!0;C5_altri=-1!0">
+<param name="detrazioni" value="Detrazioni:;Canone=-1!0;Mutuo=-1!0;Imposte=-1;Mediche=-1!0;P_complementare=-1!0;Previdenza=-1!0;Borse_percepite=-1!0">
+<param name="patrimoni" value="Patrimonio:;RES=-1!0;Residuo=-1!0;PM=-1;PI=-1">
+<param name="nucleo" value="Nucleo familiare:;N_componenti=-1!0;N_invalidi_66=-1!0;N_invalidi_75=-1!0;per_altri=-1!0">
+<param name="ris1" value="<P><B>Il risultato del calcolo:</B>;RF=-1;patrimonio=-1!0;PF=-1;icef=-1;EQV_ICEF=-1">
+<param name="ris2" value="<P><B>il risultato si basa sulle seguenti valutazioni:</B>;condizione=1;VF=2/risultante dal;EQV=3!0;Monogenitore=3!0;Lavoratori=3!0;INV=3!0;vrf=2/poichè:;RL=3;DF=3!0;vpf=2/risultante dalla;CRES=3!0;CRESV=3!0;CP=3!0;CPM=3;CPI=3!0">
+<param name="curve1" value="(Dettagli==1)<P><B>Andamento della borsa di studio<B>;trend1">
+<param name="curve2" value="(Dettagli==1)<P><B>Andamento dell'esonero<B>;trend2">
+<param name="curve3" value="(Dettagli==1)<P><B>Dipendenza della borsa dal merito<B>;trend3">
+<param name="curve4" value="(Dettagli==1)<P><B>Dipendenza dell'esonero dal merito<B>;trend4">
+
+<param name="footer" value="<HR>;">
+<param name="summary" value="Riassunto dati: <small> ;</small>">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2000021817">
+<param name="CRC" value="3757600580">
+<param name="CRCdata" value="14-feb-2006 12.45.46">
+</APPLET>
+<BR>

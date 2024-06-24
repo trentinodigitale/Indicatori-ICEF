@@ -1,0 +1,272 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=500 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.3 $">
+
+<param name="Taratura" value="ICEF 2004 - 22.6.2004">
+<param name="applet" value="CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=600">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametri;povero;limite;ricco;proprie;unpoditutto">
+
+ <param name="parametri" value="zero;RIF=50000;FAR=50000;FPM=20000;FPI=30000;LSR=100000;LSM=40000;LSI=50000;AL1=0.2;AL2=0.6;LDC=3500">
+
+ <param name="unpoditutto" value="parametri;N_componenti=3;Monogenitore=1;Lavoratori=1;N_invalidi_66=1;Assegni=500;C1_aut=1000;C1_dip=2000;C1_pens=1000;C2_agr=1000;C3_imp=3000;C4_part=2000;C5_altri=1000;Canone=4000;Imposte=3000;Mediche=500;Mutuo=2000;Previdenza=1000;RES=75000;PI=60000;PM=50000">
+ <param name="povero" value="parametri;N_componenti=3;C1_pens=5000">
+ <param name="limite" value="parametri;N_componenti=3;C1_pens=24999">
+ <param name="ricco" value="parametri;N_componenti=3;C1_pens=29999">
+ 
+ <param name="proprie" value="current;RES=100000;PM=40000;PI=50000">
+
+ <param name="variables" value="iscala;fscala;tscala;rscala;pscala;C1;C2;C3;C4;C5;Cincr;nrest;ntot;ctot;c_Monogenitore;c_Lavoratori;c_inv_66;c_inv_75;condrif;c_PNS;c_IMP;c_DIP">
+ <param name="iscala" value="0.1">
+ <param name="fscala" value="0.01">
+ <param name="tscala" value="0.0001">
+ <param name="rscala" value="0.00001">
+ <param name="pscala" value="0.000005">
+
+<param name="C1" value="1.0">
+<param name="C2" value="1.57">
+<param name="C3" value="2.04">
+<param name="C4" value="2.46">
+<param name="C5"  value="2.85">
+<param name="Cincr" value="0.35">
+ <param name="nrest" value="15">
+ <param name="ntot" value="nrest + 5">
+ <param name="ctot" value="C5 + nrest * Cincr">
+
+<param name="c_Monogenitore" value="0.2">
+<param name="c_Lavoratori" value="0.2">
+<param name="c_inv_66" value="0.3">
+<param name="c_inv_75" value="0.5">
+
+
+ <param name="condrif" value="1.0">
+
+ <param name="c_PNS" value="1.0">
+ <param name="c_IMP" value="0.95">
+ <param name="c_DIP" value="0.9">
+
+
+
+
+<param name="edges" value="P.A.T.  ICEF;Xml;Dettagli;
+RF-VRF;PF-VPF;EQV-VF;RL-RF;RIF-VRF;INV-VF;N_invalidi_66-INV;N_invalidi_75-INV;VF-VRF;RIF-VPF;CPI-PF;CPM-PF;VF-VPF;RES-patrimonio;PI-patrimonio;LDC-ammesso;Mediche-DF;ammesso-DF;DF-RF;PM-patrimonio;Canone-locazione;
+locazione-ammesso;Mutuo-locazione;C1_pens-pens;C1_dip-dip;C1_aut-aut;C3_imp-aut;C4_part-aut;C2_agr-aut;Imposte-DF;Previdenza-DF;P_complementare-DF;Assegni-DF;RES-CRES;FAR-CRES;AL2-CRES;PI-CPI;FPI-CPI;AL1-CPI;LSI-CPI;AL2-CPI;
+PM-CPM;FPM-CPM;AL1-CPM;AL2-CPM;dip-rd;pens-rp;aut-ra;rd-RL;rp-RL;ra-RL;LSR-CRES;ICEF-EURO_ICEF;RIF-EURO_ICEF;N_componenti-n;n-EQV;AL1-CRES;VRF-ICEF;VPF-ICEF;LSM-CPM;C5_altri-RL;
+Monogenitore-VF;Lavoratori-VF;RES-CRESV;ALV-CRESV;CRES-PF;CRESV-PF;VF-EURO_ICEF">
+
+
+
+<param name="P.A.T.  ICEF" value="text;node.ico;338;12;0;P.A.T.  ICEF 2004 - (22.6.2004);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_ICEF;xModello_ICEF;3793952">
+<param name="Xml" value="1;node.ico;447;214;0;Xml è nullo;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xXml;yXml;965586807">
+<param name="Dettagli" value="1;node.ico;493;215;0;Dettagli è nullo;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xDettagli;yDettagli;3650220639">
+<param name="RF" value="0;node.ico;144;176;0;-;0.0;MinusNode;NoInput;IntermediateOutput;2;RL;DF;1;VRF;rscala;1.0;1.0;1.0;NoCurve;xRF;yRF;3797622650">
+<param name="VRF" value="0;0;197;192;0;-;0.0;DivideNode;NoInput;IntermediateOutput;3;RF;RIF;VF;1;ICEF;1.0;condrif;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xVRF;yVRF;727944247">
+<param name="PF" value="0;node.ico;369;172;0;-;0.0;PlusNode;NoInput;IntermediateOutput;4;CPI;CPM;CRES;CRESV;1;VPF;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xPF;yPF;2442025092">
+<param name="VPF" value="0;0;307;192;0;-;0.0;DivideNode;NoInput;IntermediateOutput;3;PF;RIF;VF;1;ICEF;1.0;condrif;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xVPF;yVPF;2438848366">
+<param name="EQV" value="0;node.ico;229;144;0;-;0.0;NumTransNode;NoInput;NoOutput;1;n;1;VF;fscala;1.0;LinearCurve;componentiCurve;xEQV;yEQV;770443938">
+<param name="VF" value="0;0;252;166;0;-;0.0;PlusNode;NoInput;IntermediateOutput;4;EQV;INV;Monogenitore;Lavoratori;3;VRF;VPF;EURO_ICEF;fscala;1.0;1.0;c_Monogenitore;c_Lavoratori;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xVF;yVF;2102590720">
+<param name="RL" value="0;0;143;81;0;-;0.0;PlusNode;NoInput;NoOutput;4;rd;rp;ra;C5_altri;1;RF;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xRL;yRL;259436573">
+<param name="RIF" value="1;node.ico;254;192;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;VRF;VPF;EURO_ICEF;rscala;NoCurve;xRIF;yRIF;2853123067">
+<param name="INV" value="0;node.ico;309;163;0;-;0.0;PlusNode;NoInput;NoOutput;2;N_invalidi_66;N_invalidi_75;1;VF;iscala;c_inv_66;c_inv_75;0.0;NoCurve;xINV;yINV;460788603">
+<param name="N_invalidi_66" value="1;node.ico;306;115;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;INV;fscala;NoCurve;xN_invalidi_66;yN_invalidi_66;1815891582">
+<param name="N_invalidi_75" value="1;node.ico;335;139;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;INV;fscala;NoCurve;xN_invalidi_75;yN_invalidi_75;3181003941">
+<param name="CPI" value="0;node.ico;479;138;0;-;0.0;FranchigiaNode;NoInput;NoOutput;5;PI;FPI;AL1;LSI;AL2;1;PF;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xCPI;yCPI;1317085500">
+<param name="CPM" value="0;node.ico;490;173;0;-;0.0;FranchigiaNode;NoInput;NoOutput;5;PM;FPM;AL1;LSM;AL2;1;PF;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xCPM;yCPM;603936208">
+<param name="RES" value="1;node.ico;409;11;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;patrimonio;CRES;CRESV;pscala;NoCurve;xRES;yRES;3620017939">
+<param name="patrimonio" value="text;node.ico;514;42;0;-;0.0;PlusNode;NoInput;IntermediateOutput;3;RES;PI;PM;0;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpatrimonio;ypatrimonio;912958125">
+<param name="PI" value="1;0;483;18;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;patrimonio;CPI;pscala;NoCurve;xPI;yPI;25599091">
+<param name="LDC" value="1;node.ico;42;36;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ammesso;rscala;NoCurve;xLDC;yLDC;4057540993">
+<param name="ammesso" value="0;node.ico;41;110;0;-;0.0;NumMinNode;NoInput;NoOutput;2;LDC;locazione;1;DF;rscala;1.0;1.0;1.0;NoCurve;xammesso;yammesso;88738231">
+<param name="Mediche" value="1;node.ico;32;138;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;DF;rscala;NoCurve;xMediche;yMediche;3307290541">
+<param name="DF" value="0;node.ico;103;160;0;-;0.0;PlusNode;NoInput;NoOutput;6;Mediche;ammesso;Imposte;Previdenza;P_complementare;Assegni;1;RF;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xDF;yDF;134918827">
+<param name="PM" value="1;0;560;12;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;patrimonio;CPM;rscala;NoCurve;xPM;yPM;4203081658">
+<param name="Canone" value="1;node.ico;24;61;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;locazione;rscala;NoCurve;xCanone;yCanone;114195400">
+<param name="locazione" value="0;node.ico;72;87;0;-;0.0;PlusNode;NoInput;NoOutput;2;Canone;Mutuo;1;ammesso;rscala;1.0;1.0;1.0;NoCurve;xlocazione;ylocazione;4270401435">
+<param name="Mutuo" value="1;node.ico;76;61;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;locazione;rscala;NoCurve;xMutuo;yMutuo;4132992545">
+<param name="C1_pens" value="1;node.ico;134;12;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pens;rscala;NoCurve;xC1_pens;yC1_pens;3311109748">
+<param name="pens" value="0;node.ico;134;37;0;-;0.0;PlusNode;NoInput;NoOutput;1;C1_pens;1;rp;rscala;1.0;NoCurve;xpens;ypens;4001263599">
+<param name="C1_dip" value="1;node.ico;36;12;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;dip;rscala;NoCurve;xC1_dip;yC1_dip;2088532211">
+<param name="dip" value="0;node.ico;85;12;0;-;0.0;PlusNode;NoInput;NoOutput;1;C1_dip;1;rd;rscala;1.0;NoCurve;xdip;ydip;1550242454">
+<param name="C1_aut" value="1;node.ico;218;11;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC1_aut;yC1_aut;2994641791">
+<param name="aut" value="0;node.ico;220;77;0;-;0.0;PlusNode;NoInput;NoOutput;4;C1_aut;C3_imp;C4_part;C2_agr;1;ra;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xaut;yaut;946233733">
+<param name="C3_imp" value="1;node.ico;191;52;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC3_imp;yC3_imp;3723512285">
+<param name="C4_part" value="1;node.ico;269;50;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC4_part;yC4_part;2834404877">
+<param name="C2_agr" value="1;node.ico;251;28;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC2_agr;yC2_agr;2110483418">
+<param name="Imposte" value="1;node.ico;107;108;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;DF;rscala;NoCurve;xImposte;yImposte;1720832673">
+<param name="Previdenza" value="1;node.ico;123;132;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;DF;rscala;NoCurve;xPrevidenza;yPrevidenza;2349110581">
+<param name="P_complementare" value="1;node.ico;56;188;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;DF;rscala;NoCurve;xP_complementare;yP_complementare;3742929546">
+<param name="Assegni" value="1;node.ico;30;163;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;DF;rscala;NoCurve;xAssegni;yAssegni;340452154">
+<param name="CRES" value="0;node.ico;409;57;0;-;0.0;FranchigiaNode;NoInput;NoOutput;5;RES;FAR;AL1;LSR;AL2;1;PF;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xCRES;yCRES;2671283915">
+<param name="FAR" value="1;node.ico;611;121;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;CRES;pscala;NoCurve;xFAR;yFAR;2040751695">
+<param name="AL2" value="1;node.ico;578;80;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;CRES;CPI;CPM;0.5;NoCurve;xAL2;yAL2;3253394477">
+<param name="FPI" value="1;node.ico;627;166;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;CPI;rscala;NoCurve;xFPI;yFPI;1550623700">
+<param name="AL1" value="1;node.ico;581;56;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;CRES;CPI;CPM;0.5;NoCurve;xAL1;yAL1;1835178605">
+<param name="LSI" value="1;node.ico;629;190;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;CPI;rscala;NoCurve;xLSI;yLSI;1004651651">
+<param name="FPM" value="1;node.ico;587;212;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;CPM;pscala;NoCurve;xFPM;yFPM;2356515779">
+<param name="rd" value="0;node.ico;114;59;0;-;0.0;TimesNode;NoInput;NoOutput;1;dip;1;RL;rscala;c_DIP;NoCurve;xrd;yrd;2864374955">
+<param name="rp" value="0;node.ico;140;58;0;-;0.0;TimesNode;NoInput;NoOutput;1;pens;1;RL;rscala;c_PNS;NoCurve;xrp;yrp;923647149">
+<param name="ra" value="0;node.ico;188;78;0;-;0.0;TimesNode;NoInput;NoOutput;1;aut;1;RL;rscala;c_IMP;NoCurve;xra;yra;600798420">
+<param name="LSR" value="1;node.ico;615;143;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;CRES;rscala;NoCurve;xLSR;yLSR;2314201102">
+<param name="ICEF" value="2;node.ico;255;222;0;-;0.0;ProbNode;NoInput;ResultOutput;2;VRF;VPF;1;EURO_ICEF;0.0;1.0;1.0;1.0;NoCurve;xICEF;yICEF;1716596724">
+<param name="EURO_ICEF" value="text;node.ico;319;221;0;-;0.0;TimesNode;NoInput;IntermediateOutput;3;ICEF;RIF;VF;0;rscala;1.0;1.0;1.0;1.0;0.0;0.0;0.0;NoCurve;xEURO_ICEF;yEURO_ICEF;426634458">
+<param name="N_componenti" value="1;0;195;119;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;n;fscala;NoCurve;xN_componenti;yN_componenti;2721095471">
+<param name="n" value="0;node.ico;171;144;0;-;0.0;NumMinNode;NoInput;NoOutput;1;N_componenti;1;EQV;fscala;1.0;NoCurve;xn;yn;2425939416">
+<param name="LSM" value="1;node.ico;588;235;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;CPM;pscala;NoCurve;xLSM;yLSM;2248724478">
+<param name="C5_altri" value="1;node.ico;178;28;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;RL;rscala;NoCurve;xC5_altri;yC5_altri;2399223517">
+<param name="Monogenitore" value="1;node.ico;242;99;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;VF;iscala;NoCurve;xMonogenitore;yMonogenitore;2791289300">
+<param name="Lavoratori" value="1;node.ico;299;82;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;VF;iscala;NoCurve;xLavoratori;yLavoratori;2086165567">
+<param name="CRESV" value="0;node.ico;433;102;0;-;0.0;TimesNode;NoInput;NoOutput;2;RES;ALV;1;PF;0.0;1.0;1.0;1.0;NoCurve;xCRESV;yCRESV;2592079244">
+<param name="ALV" value="1;node.ico;643;101;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;CRESV;0.0;NoCurve;xALV;yALV;1925094636">
+
+<param name="componentiCurve" value="LinearCurve;0.0;0.0;1.0;C1;2.0;C2;3.0;C3;4.0;C4;5.0;C5;ntot;ctot">
+
+
+<param name="xMutuo" value="Mutuo;Il mutuo residuo per labitazione di residenza (ammesso in detrazione fino a $LDC$);nessun mutuo per la casa;Il mutuo per la casa di residenza ;Il mutuo per la casa di residenza;è di; ; ; ;- ;$.2; ">
+
+<param name="xAL1" value="AL1;AL1;AL1;AL1;AL1; ; ; ; ; ;T; ">
+<param name="yAL1" value="Aliquota1;AL1;AL1;AL1;AL1; ; ; ; ; ;T; ">
+<param name="xC1_pens" value="C1_pens;Entrate da pensione;C1_pens (valutati con il fattore ^c_PNS^);C1_pens;C1_pens; ; ; ; ; ;$.2; ">
+
+<param name="xC1_dip" value="C1_dip;Redditi da lavoro dipendente (valutati con il fattore ^c_DIP^);C1_dip;C1_dip;C1_dip; ; ; ; ; ;$.2; ">
+
+<param name="xFPI" value="FPI;FPI;FPI;FPI;FPI; ; ; ; ; ;T; ">
+<param name="yFPI" value="Franchigia_immobili;FPI;FPI;FPI;FPI; ; ; ; ; ;T; ">
+<param name="xMediche" value="Mediche;Spese mediche;Mediche;Mediche;Mediche; ; ; ; ; ;T; ">
+
+<param name="xFPM" value="FPM;FPM;FPM;FPM;FPM; ; ; ; ; ;T; ">
+<param name="yFPM" value="Franchigia_mobiliare;FPM;FPM;FPM;FPM; ; ; ; ; ;T; ">
+<param name="xLSI" value="LSI;LSI;LSI;LSI;LSI; ; ; ; ; ;T; ">
+<param name="yLSI" value="Scaglione_immobili;LSI;LSI;LSI;LSI; ; ; ; ; ;T; ">
+<param name="xCanone" value="Canone;Canone d'affitto annuo (ammesso in detrazione fino a $LDC$) ;Canone;Canone;Canone; ; ; ; ;- ;$.2; ">
+
+<param name="xPM" value="PM;Ammontare degli investimenti finanziari;non esistono investimenti finanziari rilevanti;Ammontare degli investimenti finanziari;l'ammontare degli investimenti finanziari è considerato elevatissimo;è di; ; ; ; ;$.2; ">
+<param name="yPM" value="Mobiliare;Ammontare degli investimenti finanziari;non esistono investimenti finanziari rilevanti;l'ammontare degli investimenti finanziari è considerato nella media;l'ammontare degli investimenti finanziari è considerato elevatissimo;è di; ; ; ; ;$.2; ">
+<param name="xImposte" value="Imposte;Imposte pagate;Imposte;Imposte;Imposte; ; ; ; ;- ;$.2; ">
+
+<param name="xC2_agr" value="C2_agr;Proventi agricoli (valutati con il fattore ^c_IMP^);C2_agr;C2_agr;C2_agr; ; ; ; ; ;$.2; ">
+
+<param name="xPrevidenza" value="Previdenza;Detrazione per contributi previdenziali obbligatori;Previdenza;Previdenza;Previdenza; ; ; ; ;- ;$.2; ">
+
+
+
+<param name="xP_complementare" value="P_complementare;Pensione complementare;P_complementare;P_complementare;P_complementare; ; ; ; ;- ;$.2; ">
+
+<param name="xC1_aut" value="C1_aut;Redditi da lovoro autonomo (valutati con il fattore ^c_IMP^);C1_aut;C1_aut;C1_aut; ; ; ; ; ;$.2; ">
+
+<param name="xAL2" value="AL2;AL2;AL2;AL2;AL2; ; ; ; ; ;T; ">
+<param name="yAL2" value="Aliquota2;AL2;AL2;AL2;AL2; ; ; ; ; ;T; ">
+<param name="xFAR" value="FAR;FAR;FAR;FAR;FAR; ; ; ; ; ;T; ">
+<param name="yFAR" value="Franchigia_residenza;FAR;FAR;FAR;FAR; ; ; ; ; ;T; ">
+<param name="xC4_part" value="C4_part;Reddito da partecipazioni (valutati con il fattore ^c_IMP^);C4_part;C4_part;C4_part; ; ; ; ; ;$.2; ">
+
+<param name="xC3_imp" value="C3_imp;Redditi d'impresa (valutati con il fattore ^c_IMP^);C3_imp;C3_imp;C3_imp; ; ; ; ; ;$.2; ">
+
+<param name="xC5_altri" value="C5_altri;Altri redditi;C5_altri;C5_altri;C5_altri; ; ; ; ; ;$.2; ">
+
+<param name="xMonogenitore" value="Monogenitore;valore ^c_Monogenitore^ per il nucleo con uno solo genitore e presenza di figli minorenni;Monogenitore;Monogenitore;Monogenitore; ; ; ; ; ; ; ">
+
+<param name="xN_componenti" value="N_componenti;Numero dei componenti in famiglia;la famiglia non ha componenti;Il numero dei componenti in famiglia;Il numero dei componenti in famiglia;è; ; ; ; ;T; ">
+
+<param name="xLSM" value="LSM;LSM;LSM;LSM;LSM; ; ; ; ; ;T; ">
+<param name="yLSM" value="Scaglione_mobiliare;LSM;LSM;LSM;LSM; ; ; ; ; ;T; ">
+<param name="xLavoratori" value="Lavoratori;valore ^c_Lavoratori^ per il nucleo di due lavoratori in presenza di figli minori;Lavoratori;Lavoratori;Lavoratori; ; ; ; ; ; ; ">
+
+
+
+<param name="xModello_ICEF" value="P.A.T.  ICEF;P.A.T.  ICEF;P.A.T.  ICEF 2004 - (22.6.2004);--;--; ; ; ; ; ; ; ">
+<param name="xALV" value="ALV;ALV;ALV;ALV;ALV; ; ; ; ; ;T; ">
+<param name="yALV" value="Aliquota_ville;ALV;ALV;ALV;ALV; ; ; ; ; ;T; ">
+
+
+<param name="xRIF" value="RIF;il reddito di riferimento;RIF;RIF;RIF; ; ; ; ; ;$.2; ">
+<param name="yRIF" value="redd_rif;RIF;RIF;RIF;RIF; ; ; ; ; ;$.2; ">
+<param name="xN_invalidi_75" value="N_invalidi_75;Numero di invalidi al 75%;N_invalidi_75;N_invalidi_75;N_invalidi_75; ; ; ; ; ;T; ">
+
+<param name="xPI" value="PI;Valore ICI degli immobili;non esistono rilevanti beni immobiliari di proprietà;Valore ICI degli immobili;il valore dei beni immobiliari;è di; ; ; ; ;$.2; ">
+<param name="yPI" value="Immobili;Valore ICI degli immobili;non esistono rilevanti beni immobiliari di proprietà;il valore dei beni immobiliari;il valore dei beni immobiliari;è di; ; ; ; ;$.2; ">
+<param name="xRES" value="RES;Valore ICI dell'abitazione di residenza familiare;nessuna residenza;Valore ICI dell'abitazione di residenza familiare;RES; ; ; ; ; ;$.2; ">
+<param name="yRES" value="Residenza;RES;RES;RES;RES; ; ; ; ; ;$.2; ">
+<param name="xLSR" value="LSR;LSR;LSR;LSR;LSR; ; ; ; ; ;T; ">
+<param name="yLSR" value="Scaglione_residenza;LSR;LSR;LSR;LSR; ; ; ; ; ;T; ">
+<param name="xLDC" value="LDC;LDC;LDC;LDC;LDC; ; ; ; ; ;T; ">
+<param name="yLDC" value="Limite_canone;LDC;LDC;LDC;LDC; ; ; ; ; ;T; ">
+<param name="xN_invalidi_66" value="N_invalidi_66;Numero di invalidi al 66%;N_invalidi_66;N_invalidi_66;N_invalidi_66; ; ; ; ; ;T; ">
+
+
+
+<param name="xn" value="x;Il numero dei componenti validi;la famiglia non ha componenti;Il numero dei componenti validi;Il numero dei componenti validi;è; ; ; ; ;T; ">
+
+
+
+
+
+
+
+<param name="xEQV" value="EQV;valore;EQV;EQV;EQV; ; ; ; ; ;T.2; della scala di equivalenza derivante dal numero di §N_componenti§ componenti">
+<param name="yEQV" value="scala_equiv;EQV;EQV;EQV;EQV; ; ; ; ; ;T; ">
+
+
+<param name="xICEF" value="ICEF; <b>(ICEF)</B> - <b>I</b>ndicatore della <b>S</b>ituazione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Situazione Economica Familiare <b>(ICEF)</B> zero ;Indicatore della Situazione Economica Familiare <b>(ICEF)</B>;Indicatore della Situazione Economica Familiare <b>(ICEF)</B>; ; ; ; ;<b>;P.4;</b> ">
+
+<param name="xINV" value="INV;valore ;non esistono situazioni particolari in famiglia;Situazioni particolari;Situazioni particolari; ; ; ; ; ;T.1;  delle situazioni assegnato alle situazioni di invalidità">
+
+<param name="xCRESV" value="CRESV;risultato della conversione della residenza al %ALV% del valore ICI;Conversione della residenza villa zero;Conversione della residenza villa;Conversione della residenza villa;è di; ; ; ; ;$.2; ">
+<param name="yCRESV" value="Conversione_villa;Conversione della residenza villa (al %ALV% del valore ICI);Conversione della residenza villa zero;Conversione della residenza villa;Conversione della residenza villa;è di; ; ; ; ;$.2; ">
+<param name="xRF" value="RF;<B>reddito</B> familiare disponibile;la famiglia non dispone di alcuna fonte di <B>reddito</B>;il <B>reddito</B> familiare disponibile è considerato nella media;il <B>reddito</B> familiare disponibile non rende indispensabile l´intervento dell´ente pubblico;è di; ; ; ; ;$.2; ">
+<param name="yRF" value="netto;<B>reddito</B> familiare preso in considerazione;la famiglia non dispone di alcuna fonte di <B>reddito</B>;il <B>reddito</B> familiare disponibile è considerato nella media;il <B>reddito</B> familiare disponibile non rende indispensabile l´intervento dell´ente pubblico;è di; ; ; ; ;$.2; ">
+<param name="xammesso" value="ammesso;spese per l'abitazione di residenza ammesse in detrazione;ammesso;ammesso;ammesso; ; ; ; ;- ;$.2; ">
+
+
+
+<param name="xVPF" value="VPF;la valutazione del patrimonio rapportato alla dimensione della famiglia;il patrimonio rapportato alla dimensione della famiglia è nullo (P=0);il patrimonio rapportato alla dimensione della famiglia è considerato nella media;il patrimonio rapportato alla dimensione della famiglia è ritenuto elevatissimo;è;esigua;rilevante; ;(VPF=;P.4;) ">
+<param name="yVPF" value="stock;la valutazione del patrimonio reddito rapportato alla dimensione della famiglia;il patrimonio rapportato alla dimensione della famiglia è nullo (P=0);il patrimonio rapportato alla dimensione della famiglia è considerato nella media;il patrimonio rapportato alla dimensione della famiglia è ritenuto elevatissimo;è;esigua;rilevante; ;(VPF=;P.4;) ">
+<param name="xEURO_ICEF" value="EURO_ICEF;corrispondente valutario dell'ICEF;Il corrispondente dell'ICEF;Il corrispondente dell'ICEF;Il corrispondente dell'ICEF; ; ; ; ; ;T.2; ">
+
+<param name="xVRF" value="VRF;la valutazione degli elementi reddituali rapportati alla dimensione della famiglia;il reddito rapportato alla dimensione della famiglia è nullo;il reddito rapportato alla dimensione della famiglia è considerato nella media;il reddito rapportato alla dimensione della famiglia è ritenuto elevatissimo;è;ridotta;elevata; ;(VRF=;P.4;) ">
+<param name="yVRF" value="flusso;il reddito rapportato alla dimensione della famiglia;il reddito rapportato alla dimensione della famiglia è nullo;il reddito rapportato alla dimensione della famiglia è considerato nella media;il reddito rapportato alla dimensione della famiglia è ritenuto elevatissimo;è;ridotto;elevato; ;(VRF=;P.4;) ">
+<param name="xpatrimonio" value="patrimonio;il patrimonio complessivo familiare;il <B>patrimonio</B> familiare è nullo;il <B>patrimonio</B> familiare ;il <B>patrimonio</B> familiare elevatissimo;è di; ; ; ; ;$.2; ">
+
+
+
+<param name="xPF" value="PF;ammontare del <b>patrimonio</b> convertito in reddito equivalente;la valutazione del patrimonio risulta zero;La valutazione equivalente del patrimonio;La valutazione equivalente del patrimonio;è di; ; ; ; ;$.2; ">
+<param name="yPF" value="equivalente;valutazione equivalente del patrimonio;la valutazione del patrimonio risulta zero;La valutazione equivalente del patrimonio;La valutazione equivalente del patrimonio;è di; ; ; ; ;$.2; ">
+<param name="xRL" value="RL;la somma dei redditi lordi;il reddito da lavoro è nullo;il reddito da lavoro è considerato nella media;il reddito da lavoro è elevatissimo;ammonta a; ; ; ; ;$.2; ">
+<param name="yRL" value="lordo;reddito lordo;il reddito lordo è nullo;il reddito lordo è considerato nella media;il reddito lordo è elevatissimo;è di; ; ; ; ;$.2; ">
+<param name="xVF" value="VF;il peso della <B>famiglia</B>;il peso della <B>famiglia</B> è nullo;il peso della <B>famiglia</B> è considerato nella media;il peso della <B>famiglia</B> è considerato elevatissimo;è;ridotto;elevato; ;(f=;T.2;)">
+<param name="yVF" value="famiglia;il peso della <B>famiglia</B>;il peso della <B>famiglia</B> è nullo;il peso della <B>famiglia</B> è considerato nella media;il peso della <B>famiglia</B> è considerato elevatissimo;è;ridotto;elevato; ;(f=;T.2;)">
+<param name="xCPM" value="CPM;conversione del patrimonio mobiliare: max[ (§PM§-§FPM§)*%AL1% ,  §FPM§*%AL1%+(§PM§-§LSM§)*%AL2% ] ;Conversione mobiliare zero;Conversione mobiliare;Conversione mobiliare;= ; ; ; ; ;$.2; ">
+<param name="yCPM" value="Conversione_ mobiliare;Conversione mobiliare;Conversione mobiliare zero;Conversione mobiliare;Conversione mobiliare;è ; ; ; ; ;$.2; ">
+<param name="xCPI" value="CPI;conversione del patrimonio immobiliare: max[ (§PI§-§FPI§)*%AL1%  ,  §FPI§*%AL1%+(§PI§-§LSI§)*%AL2% ];Conversione degli immobili zero;Conversione degli immobili;Conversione degli immobili;= ; ; ; ; ;$.2; ">
+<param name="yCPI" value="Conversione_immobili;Conversione degli immobili;Conversione degli immobili zero;Conversione degli immobili;Conversione degli immobili;è ; ; ; ; ;$.2; ">
+<param name="xCRES" value="CRES;conversione del valore ICI dell'abitazione di residenza: max[ (§RES§-§FAR§)*%AL1%  ,  §FAR§*%AL1%+(§RES§-§LSR§)*%AL2% ];Conversione della residenza zero;Conversione della residenza ;Conversione della residenza;= ; ; ; ; ;$.2; ">
+<param name="yCRES" value="Conversione_residenza;Conversione della residenza;Conversione della residenza zero;Conversione della residenza ;Conversione della residenza;è di; ; ; ; ;$.2; ">
+<param name="xDF" value="DF;l'ammontare delle detrazioni ammesse;DF;DF;DF;è di ; ; ; ; ;$.2; ">
+<param name="yDF" value="detrazioni;DF;DF;DF;DF; ; ; ; ; ;$.2; ">
+
+
+
+<param name="xpltree" value="asXml;applicant;xpl1;xpl2;xpl3;footer;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="asXml" value="(Xml==1); ">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="xpl1" value="<p><b>Dati per la determinazione dell'ICEF</b>;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C3_imp=-1!0;C4_part=-1!0;C2_agr=-1!0;C5_altri=-1!0;Canone=-1!0;Mutuo=-1!0;Imposte=-1!0;Mediche=-1!0;P_complementare=-1!0;Previdenza=-1!0;RES=-1!0;Residuo=-1!0;PM=-1!0;PI=-1!0;Partecipazioni=-1!0;N_componenti=-1!0;N_invalidi_66=-1!0;N_invalidi_75=-1!0">
+<param name="xpl2" value="<P><B>Il risultato del calcolo:</B>;RF=-1;patrimonio=-1!0;PF=-1;ICEF=-1;EURO_ICEF=-1">
+<param name="xpl3" value="<P><B>il risultato si basa sulle seguenti valutazioni:</B>;condizione=1;VF=2/risultante dal;EQV=3!0;Monogenitore=3!0;Lavoratori=3!0;INV=3!0;VRF=2/poichè:;RL=3;DF=3!0;VPF=2/risultante dalla;CRES=3!0;CRESV=3!0;CPM=3!0;CPI=3!0">
+<param name="footer" value="<HR> ;">
+<param name="version" value=" Versione ICEF: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3890696015">
+<param name="CRC" value="2684250380">
+<param name="CRCdata" value="22-giu-2004 18.37.35">
+</APPLET>
+<BR>

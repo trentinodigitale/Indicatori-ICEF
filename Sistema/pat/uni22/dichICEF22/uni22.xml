@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<![CDATA[<html>
+					<head>
+						<title></title></head><body>
+						<CENTER>
+						<H2>Attestazione dell'indicatore ICEF per l'accesso ai benefici del diritto allo studio dell'Opera Universitaria di Trento <H2>
+						<H3>(Legge Provinciale 1 febbraio 1993, n.3 e successive delibere attuative) <H3>
+						</CENTER>
+					</head>
+					<BODY>Il presente documento di valutazione è valido per le domande di:<BR> 
+						<UL> 
+							<LI>borsa di studio a.a. 2021/2022 per studenti che hanno concluso il ciclo unico dei corsi di formazione per Operatore Socio Sanitario (OSS) tra settembre 2021 e giugno 2022, con almeno 1000 ore di formazione, residenti in provincia di Trento dalla data di inizio del corso
+						</UL>
+					</BODY> ]]>
+	</header>
+	<richiedente>
+		<![CDATA[<B><font size="4">Nucleo familiare:</font></B>]]>
+		<class>c_elab.pat.uni22.dichICEF22.Richiedente</class>
+		<![CDATA[<BR>]]>
+	</richiedente>	
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+    		</sql>
+	</ente>
+	<values>
+		<sql><![CDATA[SELECT CASE WHEN Domande.ID_servizio = 1222 THEN
+	'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+		<tr> 
+			<td width=''75%'' height=''23''><b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare</td> 
+			<td width=''13%'' height=''23''></td> 
+			<td width=''13%'' height=''23''>
+				<table border=''1'' width=''100%''> 
+					<tr> 
+						<td	width=''	100%'' align=''right''> <b>' + REPLACE(str(icef.numeric_value,12,10),'.',',') + '</b></td> 
+					</tr>
+				</table> 
+			</td> 
+		</tr>
+		<tr>
+			<td width=''75%'' height=''23''>ICEF limite per borsa di studio studenti corsi OSS - Bando OSS a.a. 2021/2022 </td> 
+			<td width=''13%'' height=''23''></td> 
+			<td width=''13%'' height=''23''>
+				<table border=''1'' width=''100%''> 
+					<tr> 
+						<td	width=''	100%'' align=''right''> <b>0,3382352</b></td> 
+					</tr>
+				</table> 
+			</td> 
+		</tr>
+	</table>'
+ELSE '<h3>Errore di configurazione</h3>'
+END as testo
+from Doc 
+inner join Domande on Domande.id_domanda = doc.id 
+inner join c_elaout icef on icef.id_domanda = doc.id 
+where id=${id_domanda}
+and icef.node='ICEF10']]></sql>
+	</values>
+	<newPage>	
+		<![CDATA[<br clear=all style='page-break-after:always'/>]]>
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>	
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomandaEpu</class>
+	</infoDoc>	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center></center></hr>]]>		
+	</footer>
+
+</Doc>

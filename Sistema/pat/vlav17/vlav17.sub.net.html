@@ -1,0 +1,103 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"
+	WIDTH=700 HEIGHT=620 MAYSCRIPT>
+	<param name="revision" value="$Revision: 30190 $">
+
+	<param name="Taratura"
+		value="a legge provinciale 6 ottobre 2011, n. 13 vittime di incidenti mortali sul lavoro ; 2.5.2017">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+	<param name="trendStarts" value="paramVLAV;casoIcef;casoVLAV">
+
+	<param name="paramVLAV"
+		value="current;Inf=0;Sup=0.359999999;Contributo_min=500;Contributo_max=25000;Perc_riduzione=0">
+	<param name="casoIcef" value="paramVLAV;Icef=0.18">
+	<param name="casoVLAV"
+		value="paramVLAV;PI_vittima=20000;PM_superstiti=10000;PM_vittima=25000;RN_superstiti=2000;Perc_riduzione=0.1;Icef=0.18">
+
+	<param name="variables" value="rscala;pscala;tscala">
+
+	<param name="tscala" value="0.0001">
+	<param name="rscala" value="0.00002">
+	<param name="pscala" value="0.000005">
+
+
+
+<param name="edges" value="P.A.T. VLAV;PI_vittima;PM_vittima;RN_superstiti;
+Icef-perc_contr;Inf-perc_contr;Sup-perc_contr;perc_contr-contr;contr-contrib;Icef-icefOK;Sup-icefOK;Perc_riduzione-contr;PM_superstiti-PM_s;contrib-contribu;Contributo_min-contribu;contribu-contributo_vlav;icefOK-contributo_vlav;Contributo_max-contrib;contributo_vlav-cont_perc;Contributo_max-cont_perc;Escluso_ufficio-ne;ne-contributo_vlav">
+
+
+
+<param name="P.A.T. VLAV" value="text;node.ico;137;310;0;P.A.T. VLAV 2017 - (2.5.2017);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_VLAV;yModello_VLAV;2500541845">
+<param name="PI_vittima" value="1;node.ico;359;267;0;PI_vittima = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPI_vittima;xPI_vittima;3773211623">
+<param name="PM_vittima" value="1;node.ico;639;266;0;PM_vittima = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPM_vittima;xPM_vittima;2957677249">
+<param name="RN_superstiti" value="1;node.ico;67;285;0;RN_superstiti = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xRN_superstiti;xRN_superstiti;3051091921">
+<param name="Icef" value="1;node.ico;231;285;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc_contr;icefOK;0.5;NoCurve;xIcef;xIcef;311466474">
+<param name="perc_contr" value="0;node.ico;231;330;0;perc_contr =  MAX( 0, MIN( 1, (Icef - Sup) / (Inf - Sup) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Sup;Inf;1;contr;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xperc_contr;xperc_contr;4080456352">
+<param name="Inf" value="1;node.ico;162;329;0;Inf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;perc_contr;0.5;NoCurve;xInf;xInf;428768901">
+<param name="Sup" value="1;node.ico;302;327;0;Sup = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc_contr;icefOK;0.5;NoCurve;xSup;xSup;3151552606">
+<param name="contr" value="0;node.ico;232;365;0;contr =  perc_contr - perc_contr * Perc_riduzione;0.0;ProbNode;NoInput;IntermediateOutput;2;perc_contr;Perc_riduzione;1;contrib;0.0;1.0;0.0;0.0;NoCurve;xcontr;xcontr;2727672221">
+<param name="contrib" value="0;node.ico;328;365;0;contrib =  contr * Contributo_max;0.0;TimesNode;NoInput;ResultOutput;2;contr;Contributo_max;1;contribu;tscala;1.0;1.0;1.0;NoCurve;xcontrib;xcontrib;3673545213">
+<param name="icefOK" value="0;node.ico;434;326;0;icefOK = Icef <= Sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;Sup;1;contributo_vlav;1.0;1.0;1.0;1.0;NoCurve;xicefOK;xicefOK;1886020855">
+<param name="Perc_riduzione" value="1;node.ico;99;365;0;Perc_riduzione = ;0.0;ProbNode;ValueInput;NoOutput;0;1;contr;0.5;NoCurve;xPerc_riduzione;xPerc_riduzione;3726725328">
+<param name="PM_superstiti" value="1;node.ico;559;295;0;PM_superstiti = ;0.0;PlusNode;ValueInput;NoOutput;0;1;PM_s;pscala;NoCurve;xPM_superstiti;xPM_superstiti;583405505">
+<param name="PM_s" value="0;node.ico;557;267;0;PM_s =  PM_superstiti);0.0;NumTransNode;NoInput;NoOutput;1;PM_superstiti;0;pscala;1.0;LinearCurve;negCurve;xPM_s;xPM_s;3703634671">
+<param name="contribu" value="0;node.ico;231;393;0;contribu =  MAX(  contrib,  Contributo_min );0.0;NumMaxNode;NoInput;NoOutput;2;contrib;Contributo_min;1;contributo_vlav;tscala;1.0;1.0;1.0;NoCurve;xcontribu;xcontribu;1269430330">
+<param name="Contributo_min" value="1;node.ico;100;390;0;Contributo_min = ;0.0;PlusNode;ValueInput;NoOutput;0;1;contribu;tscala;NoCurve;xContributo_min;xContributo_min;141225973">
+<param name="contributo_vlav" value="2;node.ico;357;394;0;contributo_vlav =  contribu * icefOK * ne;0.0;TimesNode;NoInput;NoOutput;3;contribu;icefOK;ne;1;cont_perc;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcontributo_vlav;xcontributo_vlav;1032568402">
+<param name="Contributo_max" value="1;node.ico;497;396;0;Contributo_max = ;0.0;PlusNode;ValueInput;NoOutput;0;2;contrib;cont_perc;tscala;NoCurve;xContributo_max;xContributo_max;2314743549">
+<param name="cont_perc" value="0;node.ico;454;366;0;cont_perc =  contributo_vlav / Contributo_max;0.0;DivideNode;NoInput;NoOutput;2;contributo_vlav;Contributo_max;0;1.0;1.0;1.0;1.0;NoCurve;xcont_perc;xcont_perc;1338344">
+<param name="Escluso_ufficio" value="1;node.ico;405;295;0;Escluso_ufficio = ;0.0;ProbNode;ValueInput;NoOutput;0;1;ne;0.5;NoCurve;xEscluso_ufficio;xEscluso_ufficio;3013335419">
+<param name="ne" value="0;node.ico;380;347;0;ne =   1  - Escluso_ufficio;0.0;ProbNode;NoInput;NoOutput;1;Escluso_ufficio;1;contributo_vlav;1.0;0.0;NoCurve;xne;xne;1352250647">
+
+<param name="negCurve" value="LinearCurve;0.0;0.0;1.0E7;-1.0E7">
+
+
+<param name="xContributo_max" value="Contributo_max;Contributo_max;non;Contributo_max;Contributo_max; ; ; ; ; ;$.2; ">
+<param name="xEscluso_ufficio" value="Escluso_ufficio;Escluso d'ufficio;non escluso;-;Escluso d'ufficio; ; ; ; ; ; ; ">
+<param name="xSup" value="Sup;Sup;non;-;ok; ; ; ; ; ; ; ">
+<param name="xContributo_min" value="Contributo_min;Contributo_min;non;Contributo_min;Contributo_min; ; ; ; ; ;$.2; ">
+<param name="xPM_superstiti" value="PM_superstiti;PM_superstiti;non PM_superstiti;PM_superstiti;PM_superstiti; ; ; ; ; <b>-;$.2;</b>">
+<param name="xPerc_riduzione" value="Perc_riduzione;Percentuale di riduzione;non;Percentuale di riduzione;riduzione totale; ; ; ; ; ;P.4; ">
+<param name="xInf" value="Inf;Inf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPM_vittima" value="PM_vittima;PM_vittima;non PM_vittima;PM_vittima;PM_vittima; ; ; ; ; <b>;$.2;</b>">
+<param name="xPI_vittima" value="PI_vittima;PI_vittima;non PI_vittima;PI_vittima;PI_vittima; ; ; ; ; <b>;$.2;</b>">
+<param name="xModello_VLAV" value="P.A.T. VLAV;P.A.T. VLAV;P.A.T. VLAV 2017 - (2.5.2017);--;--; ; ; ; ; ; ; ">
+
+<param name="xRN_superstiti" value="RN_superstiti;RN_superstiti;non RN_superstiti;RN_superstiti;RN_superstiti; ; ; ; ; <b>-;$.2;</b>">
+<param name="xIcef" value="Icef; <b>(Icef)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare considerato;Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b> zero ;Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b>;Indicatore della Condizione Economica Familiare <b>(Icef considerato >=1), <br /> si usa il massimo delle valutazioni di redditi e patrimonio</b>; ; ; ; ;<b>;T.10;</b>">
+<param name="xne" value="ne;ne;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPM_s" value="PM_s;PM_s;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcont_perc" value="cont_perc;cont_perc;non;-;ok; ; ; ; ; ;P.4; ">
+<param name="xcontrib" value="contrib;contrib;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xcontr" value="contr;contr;non;-;ok; ; ; ; ; ;P.4; ">
+<param name="xicefOK" value="icefOK;icefOK;Icef oltre il limite;-;Icef ok; ; ; ; ; ; ; ">
+<param name="xcontribu" value="contribu;contribu;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xperc_contr" value="perc_contr;perc_contr;non;-;ok; ; ; ; ; ;P.2; ">
+<param name="xcontributo_vlav" value="contributo_vlav;<b>CONTRIBUTO UNA TANTUM</b> (%cont_perc% di ^Contributo_max^);nessun contributo una tantum;<b>CONTRIBUTO UNA TANTUM</b> (%cont_perc% di ^Contributo_max^);<b>CONTRIBUTO UNA TANTUM</b> (%cont_perc% di ^Contributo_max^); ; ; ; ; <b>;$.0;</b>">
+
+
+
+<param name="xpltree" value="applicant0;titolo;dati;risultato;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="titolo" value="<center><h1> FONDO DI SOLIDARIETA'<br /> ISTITUITO DALLA LEGGE PROVINCIALE N. 13 DEL 2011 </h1></center> ;">
+<param name="dati" value="<b> Dati: </b>;Icef=-1;Perc_riduzione=-1!0">
+<param name="risultato" value="<b>Risultato:</b> ;contributo_vlav=-1;icefOK=-1!1;Escluso_ufficio=-1!0">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1703560459">
+<param name="CRC" value="3016831082">
+<param name="CRCdata" value="2-mag-2017 10.03.31">
+</APPLET>
+</CENTER>
+<BR>

@@ -1,0 +1,121 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="attSocUtili" value="PAT attività socialmente utili 2011; 21.7.2011">
+<param name="revision" value="$Revision: 1.1 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="casocomp;casonon;redditi0;redditi1;parasocutil">
+<param name="casocomp" value="parasocutil,redditi0;PensioneINPS=7000;Retribuzione=8000;cdip=8000;Icef=0.14">
+<param name="casonon" value="parasocutil,redditi1;PensioneINPS=7000;Retribuzione=8000;cdip=8500;Icef=0.14">
+<param name="redditi0" value="current;N_componenti=1;C1_dip=8000">
+<param name="redditi1" value="current;N_componenti=1;C1_dip=8500">
+
+<param name="parasocutil" value="parametri;Redd1sup=7069.28;Rif=50000">
+
+
+<param name="trends" value="">
+
+
+
+
+<param name="variables" value="uno;divisotre;ascala;rscala">
+
+<param name="uno" value="1">
+<param name="divisotre" value="0.49019608; uno / C3; ">
+
+<param name="ascala" value="0.001">
+
+<param name="rscala" value="0.000001">
+
+
+
+<param name="edges" value="PAT attività socialmente utili;EURO_ICEF0;
+Icef-giudizio;inf-giudizio;Redd1sup-icefsup;Rif-icefsup;giudizio-compatibile;icefsup-giudizio;cdip-senza;Retribuzione-senza;PensioneINPS-con;icef0-d_icef;Icef-d_icef;compatibile0-d_c;compatibile-d_c;cpens-con">
+
+
+
+<param name="PAT attività socialmente utili" value="text;node.ico;229;477;0;PAT attività socialmente utili (21.7.2011);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPATmodello;xPATmodello;722350437">
+<param name="EURO_ICEF0" value="0;node.ico;423;338;0;EURO_ICEF0 =  0.500 ;0.0;TimesNode;NoInput;NoOutput;0;0;rscala;NoCurve;xEURO_ICEF0;yEURO_ICEF0;1407225843">
+<param name="Icef" value="1;node.ico;260;322;0;Icef =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;d_icef;0.5;NoCurve;xIcef;yIcef;1454919243">
+<param name="giudizio" value="0;0;260;415;0;giudizio =  MAX( 0, MIN( 1, (Icef - inf) / (icefsup - inf) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;icefsup;1;compatibile;0.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xgiudizio;ygiudizio;919669451">
+<param name="inf" value="0;node.ico;193;414;0;inf = ;0.0;ProbNode;NoInput;NoOutput;0;1;giudizio;0.0;NoCurve;xinf;yinf;1715471445">
+<param name="Redd1sup" value="1;node.ico;223;359;0;Redd1sup = ;0.0;TimesNode;ValueInput;NoOutput;0;1;icefsup;rscala;NoCurve;xRedd1sup;yRedd1sup;1888967819">
+<param name="icefsup" value="0;node.ico;148;359;0;icefsup =  Redd1sup / Rif;0.0;DivideNode;NoInput;NoOutput;2;Redd1sup;Rif;1;giudizio;1.0;1.0;1.0;1.0;NoCurve;xicefsup;yicefsup;240877559">
+<param name="Rif" value="1;node.ico;179;322;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;1;icefsup;rscala;NoCurve;xRif;yRif;114903724">
+<param name="compatibile" value="2;node.ico;374;415;0;compatibile = giudizio < 1.0;0.0;NumLtNode;NoInput;ResultOutput;1;giudizio;1;d_c;1.0;1.0;NoCurve;xcompatibile;ycompatibile;3752937294">
+<param name="cdip" value="0;node.ico;19;366;0;cdip =  0.500 ;0.0;TimesNode;NoInput;NoOutput;0;1;senza;1.0E-6;NoCurve;xcdip;ycdip;3407092664">
+<param name="senza" value="0;node.ico;24;399;0;senza =  cdip - Retribuzione;0.0;MinusNode;NoInput;NoOutput;2;cdip;Retribuzione;0;rscala;1.0;1.0;1.0;NoCurve;xsenza;ysenza;2134895807">
+<param name="Retribuzione" value="1;node.ico;45;449;0;Retribuzione = ;0.0;PlusNode;ValueInput;NoOutput;0;1;senza;rscala;NoCurve;xRetribuzione;yRetribuzione;2833606350">
+<param name="PensioneINPS" value="1;node.ico;98;424;0;PensioneINPS = ;0.0;PlusNode;ValueInput;NoOutput;0;1;con;rscala;NoCurve;xPensioneINPS;yPensioneINPS;2146537658">
+<param name="con" value="0;node.ico;84;399;0;con =  PensioneINPS + cpens;0.0;PlusNode;NoInput;NoOutput;2;PensioneINPS;cpens;0;rscala;1.0;1.0;1.0;NoCurve;xcon;ycon;2402482558">
+<param name="icef0" value="0;node.ico;297;358;0;icef0 =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;1;d_icef;0.5;NoCurve;xicef0;yicef0;1867229478">
+<param name="d_icef" value="0;node.ico;356;356;0;d_icef = icef0 == 1.0 ? 1 : ( Icef == 1.0 ? 1 : 0 );0.0;EqNode;NoInput;NoOutput;2;icef0;Icef;0;0.0;1.0;1.0;1.0;NoCurve;xd_icef;yd_icef;628878489">
+<param name="compatibile0" value="0;node.ico;477;415;0;compatibile0 =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;1;d_c;0.5;NoCurve;xcompatibile0;ycompatibile0;3453470131">
+<param name="d_c" value="0;node.ico;412;444;0;d_c = compatibile0 == 1.0 ? 1 : ( compatibile == 1.0 ? 1 : 0 );0.0;EqNode;NoInput;NoOutput;2;compatibile0;compatibile;0;0.0;1.0;1.0;1.0;NoCurve;xd_c;yd_c;1303883118">
+<param name="cpens" value="0;node.ico;64;367;0;cpens =  0.500 ;0.0;TimesNode;NoInput;NoOutput;0;1;con;rscala;NoCurve;xcpens;ycpens;3063042460">
+
+
+
+<param name="xRetribuzione" value="Retribuzione;Retribuzione da attività socialmente utili nell'anno di riferimento;Retribuzione=0;Retribuzione da attività socialmente utili nell'anno di riferimento;Retribuzione da attività socialmente utili nell'anno di riferimento massimale; ; ; ; ; ;$.2; ">
+
+<param name="xcdip" value="cdip;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati (valutati al %c_DIP%);C1(DIP/DIV): Reddito da lavoro dipendente e assimilati identico a retribuzione;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati  massimali; ; ; ; ; ;$.2; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPensioneINPS" value="PensioneINPS;Pensione annuale maturata;senza Pensione annuale maturata;Pensione Pensione annuale maturata;Pensione Pensione annuale maturata; ; ; ; ; ;$.2; ">
+
+<param name="xcpens" value="cpens;C1(PNS): Entrate da pensione (valutati al %c_PNS%);C1(PNS): Entrate da pensione zero;C1(PNS): Entrate da pensione;C1(PNS): Entrate da pensione massimali; ; ; ; ; ;$.2; ">
+
+<param name="xcompatibile0" value="compatibile0;compatibile0;la condizione economica originale $EURO_ICEF0$ era superiore al limite massimo di $Redd1sup$;-;la condizione economica originale $EURO_ICEF0$ era inferiore al limite massimo di $Redd1sup$; ;-;+; ; ;T; ">
+
+<param name="xicef0" value="icef0;ICEF Indicatore della Condizione Economica Familiare standard;ICEF Indicatore della Condizione Economica Familiare standard zero;ICEF  Indicatore della Condizione Economica Familiare standard;ICEF Indicatore della Condizione Economica Familiare standard; ; ; ; ;<b>;T.8;</b>">
+
+<param name="xPATmodello" value="PAT attività socialmente utili;PAT attività socialmente utili;PAT attività socialmente utili (21.7.2011);--;--; ; ; ; ; ; ; ">
+<param name="xinf" value="inf;inf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xEURO_ICEF0" value="EURO_ICEF0;EURO_ICEF0;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef" value="Icef;<b>ICEF</b> Indicatore della Condizione Economica Familiare (accettabile fino ^icefsup^);<b>ICEF</b> Indicatore della Condizione Economica Familiare zero;<b>ICEF</b>  Indicatore della Condizione Economica Familiare;<b>ICEF</b> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.8;</b>">
+
+<param name="xRedd1sup" value="Redd1sup;Redd1sup;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xcompatibile" value="compatibile;compatibile;la condizione economica con $EURO_ICEF$ è superiore al limite massimo di $Redd1sup$;-;la condizione economica con $EURO_ICEF$ è inferiore al limite massimo di $Redd1sup$; ;-;+; ; ;T; ">
+
+<param name="xicefsup" value="icefsup;il limite icefsuperiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xd_c" value="d_c;d_c;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xd_icef" value="d_icef;d_icef;0;-;1; ;-;+; ; ;T.10; ">
+
+<param name="xcon" value="con;con;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xsenza" value="senza;senza;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+
+
+
+
+<param name="xpltree" value="ris;applicant;dati;pos;neg;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="ris" value="<center><h2>Prolungamento dell'Assegnazione nelle Attività Socialmente Utili</h2></center><hr />;">
+<param name="applicant" value="<p />Richiedente: ;">
+<param name="dati" value="<b>Dati</b>;Icef=-1;Retribuzione=-1;PensioneINPS=-1">
+<param name="pos" value="(compatibile==1) <b>La domanda è compatibile</b>;compatibile=3;(d_c!=0)compatibile0=3">
+<param name="neg" value="(compatibile==0) La domanda <b>NON</b> è compatibile;compatibile=3;(Retribuzione!=0)compatibile0=3">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3265650088">
+<param name="CRC" value="2929714373">
+<param name="CRCdata" value="21-lug-2011 18.32.25">
+</APPLET>
+</CENTER>
+<BR>

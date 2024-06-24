@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ISEE</title></head><body>
+		</head> ]]></main>
+	</header>
+	<outputRete>
+		<main><![CDATA[[select case when id_tp_ente > 0 then ${outputRete.main}	else '<BR>' end from Doc where id=${id_domanda}	]]></main>
+	</outputRete>
+	<footer>
+			<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

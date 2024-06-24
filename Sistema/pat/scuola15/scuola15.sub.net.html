@@ -1,0 +1,177 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class
+	CODEBASE='/clesius'
+	ARCHIVE="clesius.jar,jdom.jar,crimson.jar,xerces.jar,xalan.jar,jaxp.jar"
+	WIDTH=700 HEIGHT=650 MAYSCRIPT>
+	<param name="PATScuola" value="PAT scuola 2015 con ICEF15 - 4.6.2015">
+	<param name="revision" value="$Revision: 18704 $">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="true">
+
+	<param name="trendStarts"
+		value="casopubb;casopubb0;casopubb1;casopriv;casopriv100;limiti">
+	<param name="casopubb"
+		value="limiti;Assegno_imposto=1000;Prestazione=0;Requisiti=1;Voto=7;Spesa=3000;Icef=0.2">
+	<param name="casopubb0"
+		value="limiti;Assegno_imposto=1000;Prestazione=0;Requisiti=1;Voto=5.7;Spesa=5200;Icef=0.3">
+	<param name="casopubb1"
+		value="limiti;Assegno_imposto=1000;Prestazione=0;Voto=10.0;Spesa=4700;Icef=0.4">
+	<param name="casopriv"
+		value="limiti;Assegno_imposto=1000;Prestazione=1;Requisiti=1;Importo=3100;Icef=0.5">
+	<param name="casopriv100"
+		value="limiti;Assegno_imposto=1000;Prestazione=1;Requisiti=1;Importo=5100;Icef=0.6">
+
+	<param name="limiti"
+		value="current;Quota=0.45;Quota_riconosciuta=0.8;Redd3inf=23000;Redd3sup=36000.01;Rif=50000;Importo=2000;Assegno_min=50;Spesa_min=50;Spesa_max=5000">
+
+	<param name="trends" value=" ">
+
+
+
+
+	<param name="variables"
+		value="uno;ascala;fscala;rscala;divisotre;spesamax;ascala">
+
+	<param name="uno" value="1">
+	<param name="ascala" value="uno / spesamax">
+
+	<param name="fscala" value="0.01">
+	<param name="rscala" value="0.000001">
+	<param name="divisotre" value="uno / C3; 0.490196078">
+
+
+	<param name="spesamax" value="4500;editable">
+
+
+
+<param name="edges" value="PAT scuola;Importo;Precedente;
+giudizio-ass_priv;giudizio-econ;econ-punti_pubb;merito-punti_pubb;Voto-merito;condOK-OK;Requisiti-OK;Icef-giudizio;inf-giudizio;Spesa-spesaOK;ass_pubb-leMax;Spesa_max-leMax;punti_pubb-punti;punti-ass_pubb;ass_pubb-assOK;assOK-pubbOK;spesaOK-pubbOK;Prestazione-calcolato;effettivo-calcolato;calcolato-assegno;OK-assegno;
+pubbOK-effettivo;OK-punti;OK-ass_priv;Spesa-netta;Prestazione-va;OK-va;leMax-effettivo;netta-ass_pubb;ass_priv-calc;calc-calcolato;sup-giudizio;Icef-condOK;Redd3inf-inf;Redd3sup-sup;Rif-inf;Rif-sup;sup-condOK;Spesa_min-spesaOK;Assegno_min-assOK;Spesa_min-netta;
+Redd3sup-r3s;01-r3s;r3s-sup1;Rif-sup1;Assegno_imposto-arl;Quota-assegno;Quota_riconosciuta-assegno">
+
+
+
+<param name="PAT scuola" value="text;node.ico;44;368;0;PAT scuola (4.6.2015);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT scuola;yPAT scuola;1838319607">
+<param name="Importo" value="1;node.ico;260;364;0;Importo = ;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xImporto;xImporto;1987144298">
+<param name="Precedente" value="1;node.ico;50;347;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xPrecedente;xPrecedente;119170123">
+<param name="giudizio" value="0;0;118;300;0;giudizio =  MAX( 0, MIN( 1, (Icef - sup) / (inf - sup) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Icef;sup;inf;2;ass_priv;econ;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;xgiudizio;85974920">
+<param name="ass_priv" value="2;node.ico;260;322;0;ass_priv =  giudizio * OK;0.0;ProbNode;NoInput;IntermediateOutput;2;giudizio;OK;1;calc;0.0;0.0;0.0;1.0;StairsCurve;privCurve;xass_priv;xass_priv;1276909077">
+<param name="econ" value="0;node.ico;250;300;0;econ =  giudizio;0.0;ProbNode;NoInput;NoOutput;1;giudizio;1;punti_pubb;0.0;1.0;StairsCurve;puntiCurve;xecon;xecon;1746151216">
+<param name="punti_pubb" value="2;node.ico;332;300;0;punti_pubb =  econ + merito;0.0;PlusNode;NoInput;IntermediateOutput;2;econ;merito;1;punti;fscala;1.0;1.0;1.0;NoCurve;xpunti_pubb;xpunti_pubb;887460530">
+<param name="merito" value="0;node.ico;453;278;0;merito =  Voto);0.0;NumTransNode;NoInput;NoOutput;1;Voto;1;punti_pubb;0.02;1.0;LinearCurve;votoCurve;xmerito;xmerito;1249879137">
+<param name="Voto" value="1;node.ico;451;240;0;Voto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;merito;fscala;NoCurve;xVoto;xVoto;2850944776">
+<param name="condOK" value="0;node.ico;267;279;0;condOK = Icef <= sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;1;OK;1.0;1.0;1.0;1.0;NoCurve;xcondOK;xcondOK;552667021">
+<param name="OK" value="0;node.ico;522;289;0;OK =  condOK * Requisiti;0.0;TimesNode;NoInput;NoOutput;2;condOK;Requisiti;4;assegno;punti;ass_priv;va;1.0;1.0;1.0;1.0;NoCurve;xOK;xOK;4148599173">
+<param name="Requisiti" value="1;node.ico;521;259;0;Requisiti = ;0.0;PlusNode;ValueInput;NoOutput;0;1;OK;1.0;NoCurve;xRequisiti;xRequisiti;2953259044">
+<param name="Icef" value="1;node.ico;119;269;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;condOK;0.5;NoCurve;xIcef;xIcef;3221157827">
+<param name="inf" value="0;node.ico;69;282;0;inf =  Rif;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;1;giudizio;1.0;divisotre;1.0;1.0;NoCurve;xinf;xinf;1978526583">
+<param name="Spesa" value="1;node.ico;667;245;0;Spesa = ;0.0;PlusNode;ValueInput;NoOutput;0;2;spesaOK;netta;ascala;NoCurve;xSpesa;xSpesa;3702679175">
+<param name="spesaOK" value="0;node.ico;637;270;0;spesaOK = Spesa >= Spesa_min;0.0;NumGeNode;NoInput;NoOutput;2;Spesa;Spesa_min;1;pubbOK;1.0;1.0;0.0;0.0;NoCurve;xspesaOK;xspesaOK;2981051559">
+<param name="ass_pubb" value="0;node.ico;651;318;0;ass_pubb =  punti * netta;0.0;TimesNode;NoInput;IntermediateOutput;2;punti;netta;2;assOK;leMax;ascala;1.0;1.0;1.0;NoCurve;xass_pubb;xass_pubb;384327447">
+<param name="leMax" value="0;node.ico;651;346;0;leMax =  Min(  ass_pubb,  Spesa_max );0.0;NumMinNode;NoInput;NoOutput;2;ass_pubb;Spesa_max;1;effettivo;ascala;1.0;1.0;1.0;NoCurve;xleMax;xleMax;2547814403">
+<param name="Spesa_max" value="1;node.ico;650;380;0;Spesa_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;leMax;ascala;NoCurve;xSpesa_max;xSpesa_max;428785403">
+<param name="punti" value="0;node.ico;523;318;0;punti =  punti_pubb * OK;0.0;ProbNode;NoInput;NoOutput;2;punti_pubb;OK;1;ass_pubb;0.0;0.0;0.0;1.0;NoCurve;xpunti;xpunti;2406093970">
+<param name="assOK" value="0;node.ico;578;261;0;assOK = ass_pubb >= Assegno_min;0.0;NumGeNode;NoInput;NoOutput;2;ass_pubb;Assegno_min;1;pubbOK;1.0;1.0;1.0;1.0;NoCurve;xassOK;xassOK;4105910666">
+<param name="pubbOK" value="0;node.ico;578;305;0;pubbOK =  assOK * spesaOK;0.0;TimesNode;NoInput;NoOutput;2;assOK;spesaOK;1;effettivo;1.0;1.0;1.0;1.0;NoCurve;xpubbOK;xpubbOK;2013746381">
+<param name="Prestazione" value="1;node.ico;446;379;0;Prestazione = ;0.0;PlusNode;ValueInput;NoOutput;0;2;calcolato;va;1.0;NoCurve;xPrestazione;xPrestazione;4037418386">
+<param name="calcolato" value="0;node.ico;371;344;0;calcolato = SE( Prestazione=0.0 , 1.0 * effettivo , 1.0 * calc );0.0;NumIfNode;NoInput;NoOutput;3;Prestazione;effettivo;calc;1;assegno;ascala;0.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcalcolato;xcalcolato;1839784957">
+<param name="effettivo" value="0;node.ico;581;344;0;effettivo =  pubbOK * leMax;0.0;TimesNode;NoInput;NoOutput;2;pubbOK;leMax;1;calcolato;ascala;1.0;1.0;1.0;NoCurve;xeffettivo;xeffettivo;1877993597">
+<param name="assegno" value="2;node.ico;572;380;0;assegno =  calcolato * OK * Quota * Quota_riconosciuta;0.0;TimesNode;NoInput;ResultOutput;4;calcolato;OK;Quota;Quota_riconosciuta;0;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xassegno;xassegno;3803875694">
+<param name="netta" value="0;node.ico;664;296;0;netta =  Spesa - Spesa_min;0.0;MinusNode;NoInput;NoOutput;2;Spesa;Spesa_min;1;ass_pubb;ascala;1.0;1.0;1.0;NoCurve;xnetta;xnetta;1683981053">
+<param name="va" value="0;node.ico;446;318;0;va =  OK - Prestazione * OK;0.0;ProbNode;NoInput;NoOutput;2;Prestazione;OK;0;0.0;0.0;1.0;0.0;NoCurve;xva;xva;1320101910">
+<param name="calc" value="0;node.ico;312;344;0;calc =  ass_priv;0.0;PlusNode;NoInput;NoOutput;1;ass_priv;1;calcolato;ascala;1.0;NoCurve;xcalc;xcalc;3923893087">
+<param name="sup" value="0;node.ico;173;279;0;sup =  Rif;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;2;giudizio;condOK;1.0;divisotre;1.0;1.0;NoCurve;xsup;xsup;3643040860">
+<param name="Redd3inf" value="1;node.ico;71;320;0;Redd3inf = ;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;rscala;NoCurve;xRedd3inf;xRedd3inf;3694729573">
+<param name="Redd3sup" value="1;node.ico;172;320;0;Redd3sup = ;0.0;PlusNode;ValueInput;NoOutput;0;2;sup;r3s;rscala;NoCurve;xRedd3sup;xRedd3sup;4090844962">
+<param name="Rif" value="1;node.ico;95;255;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;3;inf;sup;sup1;rscala;NoCurve;xRif;xRif;2577765561">
+<param name="Spesa_min" value="1;node.ico;622;231;0;Spesa_min = ;0.0;PlusNode;ValueInput;NoOutput;0;2;spesaOK;netta;ascala;NoCurve;xSpesa_min;xSpesa_min;3494157058">
+<param name="Assegno_min" value="1;node.ico;536;236;0;Assegno_min = ;0.0;PlusNode;ValueInput;NoOutput;0;1;assOK;ascala;NoCurve;xAssegno_min;xAssegno_min;4170133613">
+<param name="r3s" value="0;node.ico;200;350;0;r3s =  Redd3sup - 01;0.0;MinusNode;NoInput;NoOutput;2;Redd3sup;01;1;sup1;rscala;1.0;1.0;1.0;NoCurve;xr3s;xr3s;3707206217">
+<param name="01" value="0;node.ico;138;349;0;01 = ;0.0;PlusNode;NoInput;NoOutput;0;1;r3s;0.0099;NoCurve;x01;x01;1280277725">
+<param name="sup1" value="0;node.ico;200;255;0;sup1 =  Rif;0.0;DivideNode;NoInput;NoOutput;2;r3s;Rif;0;1.0;divisotre;1.0;1.0;NoCurve;xsup1;xsup1;1631003240">
+<param name="Assegno_imposto" value="1;node.ico;362;266;0;Assegno_imposto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;rscala;NoCurve;xAssegno_imposto;xAssegno_imposto;665063443">
+<param name="arl" value="0;node.ico;272;260;0;arl =  Assegno_imposto;0.0;PlusNode;NoInput;NoOutput;1;Assegno_imposto;0;rscala;1.0;NoCurve;xarl;xarl;625556">
+<param name="Quota" value="1;node.ico;506;399;0;Quota = ;0.0;ProbNode;ValueInput;NoOutput;0;1;assegno;0.5;NoCurve;xQuota;xQuota;268241638">
+<param name="Quota_riconosciuta" value="1;node.ico;603;412;0;Quota_riconosciuta = ;0.0;ProbNode;ValueInput;NoOutput;0;1;assegno;0.5;NoCurve;xQuota_riconosciuta;xQuota_riconosciuta;3885902810">
+
+<param name="privCurve" value="StairsCurve;0.0;0.0;Assegno_min;1.0E-4;1.0;0.1;Importo;1.0">
+<param name="puntiCurve" value="StairsCurve;0.0;0.0;0.0;1.0E-4;1.0;0.1;50.0;1.0">
+<param name="votoCurve" value="LinearCurve;0.0;0.0;5.99;0.0;6.0;22.0;6.1;24.0;6.2;26.0;6.3;28.0;6.4;30.0;6.5;32.0;6.6;33.0;6.7;34.0;6.8;34.0;6.9;35.0;7.0;35.0;7.1;35.0;7.2;36.0;7.3;36.0;7.4;37.0;7.5;39.0;7.6;40.0;7.7;42.0;7.8;45.0;7.9;47.0;8.0;50.0;10.0;50.0">
+
+
+<param name="xSpesa" value="Spesa;La spesa scolastica sostenuta;ERRORE - nessuna spesa scolastica dichiarata!;La spesa scolastica sostenuta;Le spese scolastiche dichiarate;è ; ; ; ; ;$.2; ">
+<param name="xAssegno_min" value="Assegno_min;Assegno_min;0;-;1; ;-;+; ; ; ; ">
+<param name="x01" value="01;01;0;-;1; ;-;+; ; ; ; ">
+<param name="xRequisiti" value="Requisiti;x;mancanza del requisito di eta' dello studente ;--;idoneo; ; ; ; ; ;!; ">
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Situazione Economica Familiare (ammissibile fino a ^sup1^);<B>ICEF</B> Indicatore della Situazione Economica Familiare zero;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare; ; ; ; ;<b>;T.10;</b>">
+<param name="xSpesa_min" value="Spesa_min;Spesa_min;0;-;1; ;-;+; ; ; ; ">
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+<param name="xPrestazione" value="Prestazione;Prestazione;0;-;1; ;-;+; ; ; ; ">
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0;-;1; ;-;+; ; ; ; ">
+<param name="xSpesa_max" value="Spesa_max;Spesa_max;0;-;1; ;-;+; ; ; ; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xQuota_riconosciuta" value="Quota_riconosciuta;Quota_riconosciuta;non;-;ok; ; ; ; ; ; ; ">
+<param name="xQuota" value="Quota;Quota;non;-;ok; ; ; ; ; ;P.4; ">
+<param name="xPrecedente" value="Precedente;L'assegno dell'anno precedente;Nessun assegno precedente;L'assegno dell'anno precedente;L'ammontare dell'assegno dell'anno precedente;è di; ; ; ; <b>;$.0; </b>">
+<param name="xPAT scuola" value="PAT scuola;PAT scuola;PAT scuola (4.6.2015);--;--; ; ; ; ; ; ; ">
+
+<param name="xImporto" value="Importo;Il rimborso massimo per la retta scolastica;ERRORE - il rimborso massimo per la retta scolastica è 0!;Il rimborso massimo per la retta scolastica è intermedio;Il rimborso massimo per la retta scolastica;è di; ; ; ; ;$.2; ">
+<param name="xVoto" value="Voto;Il voto scolastico;La media dei voti è inferiore al minimo ammesso;Il voto scolastico;La media dei voti è 10,00;è di; ; ; ; ;T.2; ">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+<param name="xarl" value="arl;arl;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcalc" value="calc;calc;0;-;1; ;-;+; ; ; ; ">
+<param name="xecon" value="econ;Punteggio per ICEF;Punteggio zero per ICEF;Punteggio per ICEF intermedio;Punteggio massimo derivante dal ICEF ( 50 ); ; ; ; ; ( ;T; )">
+<param name="xmerito" value="merito;Punteggio per il merito scolastico;Punteggio per merito scolastico mancante;Punteggio per il merito scolastico intermedio;Punteggio massimo ( 50 ) derivante dal merito scolastico; ; ; ; ; ( ;T; )">
+<param name="xr3s" value="r3s;r3s;0;-;1; ; ; ; ; ; ; ">
+<param name="xva" value="va;va;0;-;1; ;-;+; ; ; ; ">
+<param name="xsup1" value="sup1;il limite superiore;--;--;--;è; ; ; ; ;T.9; ">
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.10; ">
+<param name="xnetta" value="netta;La spesa netta  (applicando la franchigia di $Spesa_min$);Spesa netta zero!;La spesa netta  (applicando la franchigia di $Spesa_min$);La spesa netta  (applicando la franchigia di $Spesa_min$);è di; ; ; ; ;$.2; ">
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.10; ">
+<param name="xspesaOK" value="spesaOK;x;L'importo delle spese scolastiche dichiarate è al di sotto del minimo ammissibile di $Spesa_min$;--;l'importo è OK; ; ; ; ; ;!; ">
+<param name="xass_pubb" value="ass_pubb;ass_pubb;0;-;1; ;-;+; ; ; ; ">
+<param name="xOK" value="OK;x;non idoneo;--;idoneo; ; ; ; ; ;!; ">
+<param name="xass_priv" value="ass_priv;La percentuale spettante dell'importo;Non spetta nessun assegno;La percentuale spettante è intermedia, cioè;Spetta il rimborso massimo della retta scolastica;è di circa; ; ; ; ;%; tra il minimo di $Assegno_min$ e il massimo di $Importo$">
+<param name="xpunti_pubb" value="punti_pubb;punti_pubb;0;-;1; ;-;+; ; ; ; ">
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento di $C_RIF_ICEF$ è maggiore di  $r3s$) ;--;idoneo; ; ; ; ; ;!; ">
+<param name="xpubbOK" value="pubbOK;x;L'assegno ai sensi della LP.30/78 non viene concesso;--;idoneo; ; ; ; ; ;!; ">
+<param name="xeffettivo" value="effettivo;effettivo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xassOK" value="assOK;x;L'eventuale assegno non è erogabile, poiché risulta inferiore a $Assegno_min$;--;idoneo; ; ; ; ; ;!; ">
+<param name="xleMax" value="leMax;leMax;0;-;1; ;-;+; ; ; ; ">
+<param name="xpunti" value="punti;La percentuale spettante;Non spetta nessun assegno;La percentuale spettante è ;Spetta il 100% della spesa ammessa;è ; ; ; ; ;P.2; della spesa ammessa">
+<param name="xgiudizio" value="giudizio;La percentuale spettante dell'importo;Non spetta nessun assegno;La percentuale spettante è intermedia, ;Spetta il l'intero importo;è il; ; ; ; ;%; tra il minimo di $Assegno_min$ e il massimo di $Importo$">
+<param name="xcalcolato" value="calcolato;L'assegno calcolato;Non spetta nessun assegno;L'assegno calcolato è intermedio:;L'assegno calcolato è massimo:;è di; ; ; ; ;$.2; ">
+<param name="xassegno" value="assegno;L'assegno determinato (applicando la quota disponibile di %Quota% e la quota riconosciuta %Quota_riconosciuta% );Non spetta nessun assegno;L'assegno determinato (applicando la quota disponibile di %Quota% e la quota riconosciuta %Quota_riconosciuta% );L'ammontare dell'assegno (applicando la quota disponibile di %Quota% e la quota riconosciuta %Quota_riconosciuta% );è di; ; ; ; <b>;$.0; </b>">
+
+
+
+<param name="xpltree" value="propagation1;pubb1;priv1;applicant;pubb2;priv2;cond;cond1;ass;noass;nota;footer;summary;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;Prestazione=Prestazione">
+<param name="pubb1" value="(Prestazione==0)<center><h2>Calcolo dell'assegno di studio 2015/2016. (scuole pubbliche)</h2></center><hr>;">
+<param name="priv1" value="(Prestazione==1)<center><h2>Calcolo dell'assegno di studio 2015/2016 (scuole paritarie)</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="pubb2" value="(Prestazione==0)<b>Dati per il calcolo dell'assegno (L.P. 7 agosto 2006 n.5 art.72)</b>;Icef=-1;Precedente=-1!0;Voto=-1;Spesa=-1;netta=-1!0">
+<param name="priv2" value="(Prestazione==1)<b>Dati per il calcolo dell'assegno (L.P. 7 agosto 2006 n.5 art.76)</b>;Icef=-1;Precedente=-1!0;Importo=-1">
+<param name="cond" value="(Icef!=1)<p><b>Valutazione</b>;vrf=2!0;vpf=2!0;(Prestazione==0)punti=2/ottenuta dal;(Prestazione==0)econ=3/e dal;(Prestazione==0)merito=3;(Prestazione==1)ass_priv=2!0">
+<param name="cond1" value="(Icef==1)<p> L'indicatore della condizione economica del nucleo familiare (^Icef^) è oltre i limiti di ^sup1^;vrf=2!0;vpf=2!0;(Prestazione==0)punti=2;(Prestazione==1)ass_priv=2">
+<param name="ass" value="(assegno!=0)La domanda è <b>idonea</b>;assegno=-1">
+<param name="noass" value="(assegno==0)La domanda <b>non è idonea</b>;Requisiti=3!1;condOK=3!1;(Prestazione==0)spesaOK=3!1;(va==1)assOK=3!1">
+<param name="nota" value="(assegno!=0)<br>Il risultato dell'assegno ottenuto è <b>puramente indicativo</b>, poichè dipende dalla precisione dei dati inseriti e dalla disponibilità dei fondi in rapporto al numero complessivo di domande che risulteranno idonee.<p>;">
+<param name="footer" value="<HR>;">
+<param name="summary" value="Riassunto dati: <small> ;</small>">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="368918619">
+<param name="CRC" value="1277034379">
+<param name="CRCdata" value="4-giu-2015 17.31.37">
+</APPLET>
+</CENTER>
+<BR>

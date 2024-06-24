@@ -1,0 +1,66 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=400 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.1 $">
+
+<param name="Taratura" value="2 tariffe con soglia; 29.10.2004">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="agevola">
+
+<param name="agevola" value="current;Soglia=0.2">
+
+
+
+<param name="variables" value="tscala">
+
+ <param name="tscala" value="0.0001">
+
+
+
+
+<param name="edges" value="P.A.T.  Soglia;
+Icef-fascia;Soglia-fascia;fascia-agevolazione">
+
+
+
+<param name="P.A.T.  Soglia" value="text;node.ico;45;339;0;P.A.T.  Soglia 2004 - (29.10.2004);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Soglia;xModello_Soglia;2270836791">
+<param name="Icef" value="1;node.ico;237;310;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;fascia;0.5;NoCurve;xIcef;yIcef;1306719034">
+<param name="fascia" value="2;node.ico;237;344;0;-;0.0;NumGtNode;NoInput;IntermediateOutput;2;Icef;Soglia;1;agevolazione;1.0;1.0;1.0;1.0;NoCurve;xfascia;yfascia;104753440">
+<param name="Soglia" value="1;node.ico;160;342;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;fascia;1.0;NoCurve;xSoglia;ySoglia;347874717">
+<param name="agevolazione" value="2;node.ico;239;377;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;fascia;0;1.0;0.0;NoCurve;xagevolazione;yagevolazione;4228286246">
+
+
+
+<param name="xSoglia" value="Soglia;La soglia Icef;Soglia=0 (sempre tariffa minima);La soglia Icef;La soglia Icef (per tariffa massima);è; ; ; ; ;P.4; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare; ; ; ; ;<b>;T.4;</b> ">
+
+<param name="xModello_Soglia" value="P.A.T.  Soglia;P.A.T.  Soglia;P.A.T.  Soglia 2004 - (29.10.2004);--;--; ; ; ; ; ; ; ">
+<param name="xagevolazione" value="agevolazione;Agevolazione;<b>nessuna agevolazione</b> ( Icef > ^Soglia^ );-;Situazione da <b>agevolazione</b> ( Icef <= ^Soglia^ );è; ; ; ; ;T; ">
+
+<param name="xfascia" value="fascia;La fascia tariffaria;Fascia 0 (tariffa minima);-;Fascia 1 (tariffa massima);è; ; ; ; ;T; ">
+
+
+
+
+<param name="xpltree" value="applicant;titolo;latariffa;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="applicant" value="<P> Richiedente: ;">
+<param name="titolo" value="<CENTER><H2>P.A.T. Agevolazione FSE</H2></CENTER>;">
+<param name="latariffa" value="<P><BR><P><B>Calcolo dell'agevolazione:</B>;Icef=-1;agevolazione=-1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3735020047">
+<param name="CRC" value="3344302188">
+<param name="CRCdata" value="29-ott-2004 12.14.29">
+</APPLET>
+<BR>

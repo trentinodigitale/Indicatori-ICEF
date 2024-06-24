@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>PROGETTONE: DOMANDA DI ASSUNZIONE STAGIONALE NELLE ATTIVITÀ<BR> PREVISTE DALLA LEGGE PROVINCIALE IN MATERIA DI RIPRISTINO E VALORIZZAZIONE AMBIENTALE (LP 32/1990) 
+		</H2>
+		<BR> Deliberazione G.P. 295/17 <BR>
+		
+		<BR><i>Ciascun richiedente verrà inserito in una delle 4 fasce previste, all'interno di ciascuna fascia tutti i punteggi sono equivalenti</i>
+		
+		</CENTER>
+        ]]></main> 
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class> -->
+			<![CDATA[<H2><CENTER>]]>
+			<sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '<BR>' end from Doc where id=${id_domanda}]]></sql>
+		<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+		</servizio>
+<!-- 		<richiedente> -->
+<!-- 			<![CDATA[<B>Nucleo familiare: </B>]]> -->
+<!-- 			<class>c_elab.pat.ts.Componenti</class> -->
+<!-- 			<![CDATA[<BR>]]> -->
+<!-- 		</richiedente> -->
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			<!--class>c_elab.pat.ts.Footer</class -->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<!--netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion -->
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+
+	</footer>
+</Doc>

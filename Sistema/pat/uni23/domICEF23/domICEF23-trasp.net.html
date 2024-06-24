@@ -1,0 +1,111 @@
+<APPLET CODE='it.clesius.engine.elab.Clesius.class' CODEBASE='/clesius'
+	WIDTH=950 HEIGHT=870 MAYSCRIPT>
+	<param name="revision" value="$Revision: 36010 $">
+
+
+	<param name="Uni" value="Trento Trasparenza 2019 - 28.5.2019">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="true">
+
+<param name="nets" value="../borse23.sub.net.html;../../icef21/m.icef21.net.html;../consumi23.sub.net.html">
+<param name="connections" value="perc_borsa-pb;allogg-alloggio;ICEF10-Icef;RIF-Rif;RL-RC;sostit-sostituisci;controlla-controllo;differenza-incongrua">
+
+<param name="tipo_borsa" value="0;node.ico;695;576;0;tipo_borsa =  in sede + 2.000*fuori sede + 1.000*pendolare;0.0;PlusNode;NoInput;ResultOutput;3;in sede;fuori sede;pendolare;0;0.333333333;1.0;2.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xtipo_borsa;xtipo_borsa;4098588397">
+<param name="xpendolare" value="pendolare;pendolare; ; ;in sede; ; ; ; ; ; ; ">
+<param name="borsa_pendolare" value="2;node.ico;774;624;0;borsa_pendolare =  b_p;0.0;PlusNode;NoInput;ResultOutput;1;b_p;1;importo_b;tscala;1.0;NoCurve;xborsa_in_sede;xborsa_in_sede;1227027498">
+
+	<param name="trendStarts"
+		value="paramUNI;borse;chiedetutto;casoUNI;casoforzato">
+	<param name="paramUNI"
+		value="current;S=0.6;K=8;Inf=2450;Sup=30000;Numero_mesi_forzatura=99">
+	<param name="borse"
+		value="current;Borsa_fuori=5000;Borsa_fuori_min=2500;Borsa_insede=2500;Borsa_insede_min=1225;Borsa_pend=2700;Borsa_pend_min=1350">
+
+	<param name="chiedetutto"
+		value="current;Chiede_alloggio=1;Chiede_borsa=1">
+	<param name="casoUNI"
+		value="paramUNI,borse,chiedetutto;Merito=1;Perc_borsa=1;Sede=2;Rif=50000;Icef=0.2">
+
+	<param name="casoforzato"
+		value="current;Numero_mesi_forzatura=6">
+
+	<param name="variables"
+		value="uno;divisotre;dodicesimo;settesesti;scaglione;bscala;tscala">
+
+	<param name="uno" value="1.0">
+	<param name="scaglione" value="1.0">
+
+	<param name="divisotre" value="0.49019608; uno / C3; ">
+	<param name="settesesti" value="1.1666666667;da 30000 a 35000">
+	<param name="dodicesimo" value="uno / 12; ">
+
+
+	<param name="tscala" value="0.0001;editable">
+	<param name="bscala" value="0.00001;editable">
+
+
+
+<param name="edges" value="UniTNicef_trasp;K;S;
+ident-borsa;b0-borsa;borsa-perc_borsa;b1-borsa;Icef-ident;Inf-b0;Sup-b1;ident-allogg;zero-allogg;b1-b2;Rif-b0;Rif-b1;b2-allogg;ident-control;Rif-control">
+
+
+
+<param name="UniTNicef_trasp" value="text;node.ico;283;326;0;Università di Trento - Opera Universitaria Trasparenza ICEF 2019/2020 -  (28.5.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xUniTNicef_trasp;yUniTNicef;4261454334">
+<param name="K" value="1;node.ico;511;420;0;K = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.1;NoCurve;xK;xK;2239799978">
+<param name="S" value="1;node.ico;610;418;0;S = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xS;xS;3631594886">
+<param name="ident" value="0;node.ico;556;341;0;ident =  Icef;0.0;ProbNode;NoInput;NoOutput;1;Icef;3;borsa;allogg;control;0.0;1.0;NoCurve;xident;xident;2553446926">
+<param name="borsa" value="0;node.ico;562;397;0;borsa =  MAX( 0, MIN( 1, (ident - b1) / (b0 - b1) )) ;0.0;CutoffNode;NoInput;NoOutput;3;ident;b1;b0;1;perc_borsa;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xborsa;xborsa;1599453641">
+<param name="b0" value="0;node.ico;542;376;0;b0 =  0.490*Inf / Rif;0.0;DivideNode;NoInput;NoOutput;2;Inf;Rif;1;borsa;1.0;divisotre;1.0;1.0;NoCurve;xb0;xb0;3732043203">
+<param name="perc_borsa" value="0;node.ico;560;423;0;perc_borsa =   F( borsa );0.0;TransformNode;NoInput;NoOutput;1;borsa;0;0.0;1.0;SigmoidCurve;sigmoidCurve;xperc_borsa;xperc_borsa;4230723988">
+<param name="b1" value="0;node.ico;585;375;0;b1 =  0.490*Sup / Rif;0.0;DivideNode;NoInput;NoOutput;2;Sup;Rif;2;borsa;b2;1.0;divisotre;1.0;1.0;NoCurve;xb1;xb1;3966934792">
+<param name="Icef" value="1;node.ico;213;341;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;1;ident;0.5;NoCurve;xIcef;xIcef;2487376429">
+<param name="Inf" value="1;node.ico;471;374;0;Inf = ;0.0;PlusNode;ValueInput;NoOutput;0;1;b0;bscala;NoCurve;xInf;xInf;294176616">
+<param name="Sup" value="1;node.ico;624;374;0;Sup = ;0.0;PlusNode;ValueInput;NoOutput;0;1;b1;bscala;NoCurve;xSup;xSup;3843114364">
+<param name="allogg" value="2;node.ico;705;438;0;allogg =  - MAX( 0, MIN( 1, (ident - zero) / (b2 - zero) )) ;0.0;CutoffNode;NoInput;ResultOutput;3;ident;zero;b2;0;1.0;0.0;1.0;1.0;1.0;1.0;0.0;0.0;NoCurve;xallogg;xallogg;2962785522">
+<param name="zero" value="0;node.ico;709;403;0;zero = ;0.0;ProbNode;NoInput;NoOutput;0;1;allogg;0.0;NoCurve;xzero;xzero;2242186715">
+<param name="b2" value="0;node.ico;627;397;0;b2 =  1.167 * b1;0.0;ProbNode;NoInput;NoOutput;1;b1;1;allogg;0.0;settesesti;NoCurve;xb2;xb2;3636188579">
+<param name="Rif" value="1;node.ico;524;354;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;3;b0;b1;control;bscala;NoCurve;xRif;xRif;1038452897">
+<param name="control" value="0;node.ico;625;342;0;control =  2.040*ident * Rif;0.0;TimesNode;NoInput;NoOutput;2;ident;Rif;0;bscala;2.04;1.0;1.0;NoCurve;xcontrol;xcontrol;2437915065">
+
+<param name="sigmoidCurve" value="SigmoidCurve;0.0;0.0;0.0;1.0;0.0;0.0;0.0;1.0;0.0;S;0.0;K">
+
+
+<param name="xIcef" value="Icef;Icef - Indicatore della Condizione Economica Familiare ( valore limite entro il quale si può richiedere una borsa: ^b1^ );Icef - Indicatore della Condizione Economica Familiare ;Icef - Indicatore della Condizione Economica Familiare ;Icef - Indicatore della Condizione Economica Familiare ; ; ; ; ; <b>;T.10;</b>">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xInf" value="Inf;Inf;0;-;1; ;-;+; ; ;T; ">
+<param name="xzero" value="zero;zero;non;-;ok; ; ; ; ; ; ; ">
+<param name="xSup" value="Sup;Sup;0;-;1; ;-;+; ; ;T; ">
+<param name="xS" value="x;x;non S;S;S; ; ; ; ; ;T.2; ">
+<param name="xK" value="x;x;non K;K;K; ; ; ; ; ;T.1; ">
+<param name="xUniTNicef_trasp" value="UniTNicef_trasp;UniTNicef_trasp;Università di Trento - Opera Universitaria Trasparenza ICEF 2019/2020 -  (28.5.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xident" value="ident;ident;0;-;1; ;-;+; ; ; ; ">
+<param name="xperc_borsa" value="perc_borsa;perc_borsa;0;-;1; ;-;+; ; ; ; ">
+<param name="xb2" value="b2;b2;0;-;1; ;-;+; ; ; ; ">
+<param name="xcontrol" value="control;control;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xb0" value="b0;b0;0;-;1; ;-;+; ; ;T.10; ">
+<param name="xb1" value="b1;b1;0;-;1; ;-;+; ; ;T.10; ">
+<param name="xborsa" value="borsa;borsa;0;-;1; ;-;+; ; ; ; ">
+<param name="xallogg" value="allogg;allogg;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation1;icefusato;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;OK=1">
+<param name="icefusato" value="<b>Dati:</b>;Icef=-1">
+<param name="version" value="Versione uni15: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1594650620">
+<param name="CRC" value="1308123631">
+<param name="CRCdata" value="28-mag-2019 15.53.53">
+</APPLET>
+<BR>

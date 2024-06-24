@@ -1,0 +1,139 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PATstudio" value="PAT intero di tariffa/beneficio 2011; 29.6.2011">
+<param name="revision" value="$Revision: 1.4 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="parametri;tariffa;beneficio">
+
+<param name="substud" value="parastud;Figli=1">
+
+<param name="parametri" value="zero;Icef_inf=0.23;Icef_sup=0.36;Icef_lim=0.45;Importo_0=0;Importo_min=50;Importo_max=150;Importo_scaglione=1;Rif=50000">
+<param name="tariffa" value="parametri;Tariffa=1;Figli=1;Icef=0.25">
+<param name="beneficio" value="parametri;Tariffa=0;Figli=1;Icef=0.25">
+
+<param name="trends" value="">
+
+
+<param name="variables" value="uno;ascala;rscala;C3;divisotre;ascala">
+
+<param name="uno" value="1">
+<param name="ascala" value="0.001">
+
+<param name="rscala" value="0.000001">
+<param name="C3" value="2.04">
+
+<param name="divisotre" value="uno / C3; 0.490196078">
+
+
+<param name="edges" value="Importo_min;Importo_scaglione;PAT Importo;
+Icef-giudizio;sup-giudizio;inf-giudizio;Icef-condOK;sup-condOK;giudizio-percentuale;percentuale-intero;Tariffa-percentuale;Figli-riduci;limOK_e_tariffa-riduzione;riduzione-importo;Icef-limOK;lim-limOK;riduci-riduzione;Icef_inf-inf;Icef_sup-sup;Icef_lim-lim;Icef-redd3;Rif-redd3;is0-min;intero-corr;
+corr-importo;min-corr;percentuale-is0;Tariffa-is0;Importo_0-min;Importo_max-min;limOK-limOK_e_tariffa;Tariffa-limOK_e_tariffa">
+
+
+
+<param name="Importo_min" value="1;node.ico;352;383;0;Importo_min = ;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xImporto_min;xImporto_min;3293753770">
+<param name="Importo_scaglione" value="1;node.ico;479;420;0;Importo_scaglione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.1;NoCurve;xImporto_scaglione;xImporto_scaglione;3104497379">
+<param name="PAT Importo" value="text;node.ico;110;415;0;PAT Modello Importo (versione 1.7.2011);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT Importo;xPAT Importo;3999621103">
+<param name="Icef" value="1;node.ico;93;312;0;Icef =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;4;giudizio;condOK;limOK;redd3;0.5;NoCurve;xIcef;xIcef;197432143">
+<param name="giudizio" value="0;0;93;360;0;giudizio =  MAX( 0, MIN( 1, (Icef - inf) / (sup - inf) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;sup;1;percentuale;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;ygiudizio;2305338899">
+<param name="sup" value="0;node.ico;157;333;0;sup =  Icef_sup;0.0;ProbNode;NoInput;NoOutput;1;Icef_sup;2;giudizio;condOK;0.0;1.0;NoCurve;xsup;ysup;2592399985">
+<param name="inf" value="0;node.ico;35;331;0;inf =  Icef_inf;0.0;ProbNode;NoInput;NoOutput;1;Icef_inf;1;giudizio;0.0;1.0;NoCurve;xinf;yinf;3857421785">
+<param name="condOK" value="0;node.ico;290;333;0;condOK = Icef <= sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;3000466011">
+<param name="percentuale" value="0;node.ico;222;360;0;percentuale =   1  - giudizio - Tariffa + 2.000 * giudizio * Tariffa;0.0;ProbNode;NoInput;NoOutput;2;giudizio;Tariffa;2;intero;is0;1.0;0.0;0.0;1.0;NoCurve;xpercentuale;ypercentuale;1664478255">
+<param name="intero" value="0;node.ico;374;360;0;intero =  percentuale;0.0;ProbNode;NoInput;NoOutput;1;percentuale;1;corr;0.0;1.0;StairsCurve;interoCurve;xintero;yintero;439027398">
+<param name="Tariffa" value="1;node.ico;222;399;0;Tariffa =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;3;percentuale;is0;limOK_e_tariffa;0.5;NoCurve;xTariffa;yTariffa;2374584095">
+<param name="Figli" value="1;node.ico;657;309;0;Figli = ;0.0;PlusNode;ValueInput;NoOutput;0;1;riduci;0.1;NoCurve;xFigli;yFigli;2318871888">
+<param name="riduci" value="0;node.ico;594;310;0;riduci =  F( Figli);0.0;NumTransNode;NoInput;NoOutput;1;Figli;1;riduzione;1.0;1.0;LinearCurve;figliCurve;xriduci;yriduci;2722967500">
+<param name="limOK_e_tariffa" value="0;node.ico;391;311;0;limOK_e_tariffa =  limOK * Tariffa;0.0;ProbNode;NoInput;NoOutput;2;limOK;Tariffa;1;riduzione;0.0;0.0;0.0;1.0;NoCurve;ylimOK_e_tariffa;ylimOK_e_tariffa;59020777">
+<param name="riduzione" value="0;node.ico;520;312;0;riduzione = SE( limOK_e_tariffa=1.0 , 1.0 * riduci , 1.0 );0.0;NumIfNode;NoInput;NoOutput;2;limOK_e_tariffa;riduci;1;importo;1.0;1.0;1.0;1.0;NoCurve;xriduzione;yriduzione;3027358879">
+<param name="importo" value="2;node.ico;519;360;0;importo =  riduzione * corr;0.0;TimesNode;NoInput;ResultOutput;2;riduzione;corr;0;ascala;1.0;1.0;1.0;NoCurve;ximporto;yimporto;313037697">
+<param name="limOK" value="0;node.ico;289;312;0;limOK = Icef <= lim;0.0;NumLeNode;NoInput;NoOutput;2;Icef;lim;1;limOK_e_tariffa;1.0;1.0;1.0;1.0;NoCurve;xlimOK;ylimOK;2396417954">
+<param name="lim" value="0;node.ico;292;288;0;lim =  Icef_lim;0.0;ProbNode;NoInput;NoOutput;1;Icef_lim;1;limOK;0.0;1.0;NoCurve;xlim;ylim;2733252006">
+<param name="Icef_inf" value="1;node.ico;35;285;0;Icef_inf =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;1;inf;0.5;NoCurve;xIcef_inf;yIcef_inf;3108898658">
+<param name="Icef_sup" value="1;node.ico;157;285;0;Icef_sup =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;1;sup;0.5;NoCurve;xIcef_sup;yIcef_sup;3447906750">
+<param name="Icef_lim" value="1;node.ico;227;285;0;Icef_lim =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;1;lim;0.5;NoCurve;xIcef_lim;yIcef_lim;2214084063">
+<param name="redd3" value="2;node.ico;93;285;0;redd3 =  2.040*Icef * Rif;0.0;TimesNode;NoInput;NoOutput;2;Icef;Rif;0;rscala;C3;1.0;1.0;NoCurve;xredd3;yredd3;2682041469">
+<param name="Rif" value="1;node.ico;91;255;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;1;redd3;rscala;NoCurve;xRif;yRif;3143988846">
+<param name="is0" value="0;node.ico;273;388;0;is0 =   1  - percentuale - Tariffa + percentuale * Tariffa;0.0;ProbNode;NoInput;NoOutput;2;percentuale;Tariffa;1;min;1.0;0.0;0.0;0.0;NoCurve;xis0;yis0;793247412">
+<param name="min" value="0;node.ico;426;399;0;min = SE( is0=1.0 , 1.0 * Importo_0 , 1.0 * Importo_max );0.0;NumIfNode;NoInput;NoOutput;3;is0;Importo_0;Importo_max;1;corr;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmin;ymin;150581754">
+<param name="corr" value="0;node.ico;426;359;0;corr =  Min(  intero,  min );0.0;NumMinNode;NoInput;NoOutput;2;intero;min;1;importo;0.0;1.0;1.0;1.0;NoCurve;xcorr;ycorr;1474394085">
+<param name="Importo_0" value="1;node.ico;291;411;0;Importo_0 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;min;ascala;NoCurve;xImporto_0;xImporto_0;3759892107">
+<param name="Importo_max" value="1;node.ico;526;384;0;Importo_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;min;ascala;NoCurve;xImporto_max;xImporto_max;198114260">
+
+<param name="figliCurve" value="LinearCurve;1.0;1.0;2.0;0.85;3.0;0.73;4.0;0.55;5.0;0.44;6.0;0.37">
+<param name="interoCurve" value="StairsCurve;0.0;0.0;Importo_min;0.0;Importo_scaglione;0.1;Importo_max;1.0">
+
+
+<param name="xIcef_lim" value="Icef_lim;Icef_lim;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xImporto_0" value="Importo_0;Importo_0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xFigli" value="Figli;Figli;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xTariffa" value="Tariffa;Tariffa;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xPAT Importo" value="PAT Importo;PAT Importo;PAT Modello Importo (versione 1.7.2011);-;ok; ; ; ; ; ; ; ">
+<param name="xImporto_scaglione" value="Importo_scaglione;Importo_scaglione;0;-;1; ;-;+; ; ; ; ">
+<param name="xImporto_min" value="Importo_min;Importo_min;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia da ^inf^ a ^sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.10;</b>">
+<param name="xIcef_sup" value="Icef_sup;Icef_sup;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xImporto_max" value="Importo_max;Importo_max;0;-;1; ;-;+; ; ; ; ">
+<param name="xlim" value="lim;lim;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xintero" value="intero;intero (%intero% tra §Importo_min§ e §Importo_max§);intero (%intero% tra §Importo_min§ e §Importo_max§);intero (%intero% tra §Importo_min§ e §Importo_max§);intero (%intero% tra §Importo_min§ e §Importo_max§); ; ; ; ;<b>;$.2;</b>">
+
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xriduci" value="riduci;riduci;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xis0" value="is0;is0;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xredd3" value="redd3;redd3;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xcorr" value="corr;corr;non;-;ok; ; ; ; ; ; ; ">
+
+
+<param name="xpercentuale" value="percentuale;La percentuale;La percentuale=0;La percentuale;La percentuale;è il; ; ; ; ;P.4; ">
+
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento $C_RIF_ICEF$ è maggiore di $Redd3sup$) ;--;idoneo; ; ; ; ; ;!; ">
+
+<param name="ximporto" value="importo;importo;importo;importo;importo; ; ; ; ; ;$.2; ">
+
+<param name="xlimOK" value="limOK;limOK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xriduzione" value="riduzione;riduzione;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+
+<param name="xmin" value="min;min;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="propagation0;valore;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;Redd3inf=Redd3inf">
+<param name="valore" value=" ;importo=-1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3582720114">
+<param name="CRC" value="3835574505">
+<param name="CRCdata" value="1-lug-2011 18.28.50">
+</APPLET>
+</CENTER>
+<BR>

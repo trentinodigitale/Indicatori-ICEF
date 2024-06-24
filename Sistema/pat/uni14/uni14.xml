@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head><body>
+			<CENTER>]]>
+			
+			<sql><![CDATA[
+SELECT CASE WHEN domande.id_servizio = 1100 or domande.id_servizio = 1095 THEN 
+	'<H2>Attestazione dell''indicatore ICEF per l''accesso ai benefici del diritto allo studio di Università degli Studi e Opera Universitaria di Trento Anno Accademico 2014/2015</H2>
+	<BR><BR>(Legge Provinciale 1 febbraio 1993, n.3 e successive delibere attuative) 
+	<BR><BR>Il presente documento di valutazione è valido per le domande di borsa di studio, esonero dalle tasse universitarie e posto alloggio (escluso Operatore Socio Sanitario), presentate entro le scadenze previste dal Bando a.a. 2014/2015.'
+WHEN domande.id_servizio = 1096 THEN 
+	'<H2>Attestazione dell''indicatore ICEF per l''accesso ai benefici delle borse di studio per residenti in Provincia di Trento iscritti ai corsi OSS a.a. 2013/2014</H2>
+	<BR><BR>(In attuazione dell''art. 43 della legge provinciale 9 settembre 1996, n. 8 e s.m. e in conformità al provvedimento della Giunta Provinciale n. 2614 di data 13 dicembre 2013)
+	<BR><BR>Il presente documento di valutazione è valido per le domande di borsa di studio presentate entro le scadenze previste dal Bando 2013/2014.'
+WHEN domande.id_servizio = 1097 THEN 
+	'<H2>Attestazione dell''indicatore ICEF per l''accesso ai benefici delle borse di studio per residenti in Provincia di Trento iscritti alla Facoltà di Medicina e Chirurgia a.a. 2014/2015</H2>
+	<BR><BR>(In attuazione dell''art. 43 della legge provinciale 9 settembre 1996, n. 8 e s.m. e in conformità al provvedimento della Giunta Provinciale n. 2621 di data 30 novembre 2012)
+	<BR><BR>Il presente documento di valutazione è valido per le domande di borsa di studio presentate entro le scadenze previste dal Bando a.a. 2014/2015.'
+ELSE 
+	'<h2>Errore di configurazione</h2>' 
+END 
+FROM domande 
+WHERE domande.id_domanda=${id_domanda}]]>
+    		</sql>
+			
+		<![CDATA[</CENTER><BR><BR>]]>
+	</header>
+	<richiedente>
+		<![CDATA[<B>Nucleo familiare: </B>]]>
+		<class>c_elab.pat.uni14.Richiedente</class>
+		<![CDATA[<BR>]]>
+	</richiedente>	
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+    		</sql>
+	</ente>
+	<values>
+		<sql><![CDATA[
+
+SELECT CASE WHEN UNI_Domanda.id_servizio = 1095 or UNI_Domanda.ID_servizio = 1100 THEN
+	'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+		<tr> 
+			<td width=''75%'' height=''23''><b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare</td> 
+			<td width=''13%'' height=''23''></td> <td width=''13%'' height=''23''>
+				<table border=''1'' width=''100%''> 
+					<tr> 
+						<td	width=''100%'' align=''right''> <b>' + REPLACE(str(icef.numeric_value,12,10),'.',',') + '</b></td> 
+					</tr>
+				</table> 
+			</td> 
+		</tr>
+		<tr> 
+			<td width=''75%'' height=''23''>ICEF limite per borsa di studio ed esonero dalle tasse universitarie (Bando a.a. 2013/2014 - Tabella 1)</td> 
+			<td	width=''13%'' height=''23''></td> 
+			<td width=''13%'' height=''23''> 
+				<table border=''1'' width=''100%''>
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str(CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04,9,9),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width=''75%'' height=''23''>ICEF limite per posto alloggio (Bando a.a. 2013/2014 - Tabella 4)</td> 
+			<td width=''13%'' height=''23''></td> 
+			<td width=''13%'' height=''23''> 
+				<table border=''1'' width=''100%''>
+					<tr>
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str((CAST(redd3sup.default_value as float) * 1.1666666667) / CAST(rif.default_value as float) / 2.04,9,9),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>' +
+
+	'<h4>ESITO DELLA VALUTAZIONE ECONOMICA PER CIASCUNA MISURA:</h4><br>
+	<ul>
+		<li>Il richiedente'+ CASE WHEN (icef.numeric_value <= (CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04)) THEN '' ELSE ' non' END +' ha i requisiti di c.e. per richiedere la borsa di studio e l''esonero dalle tasse
+		<li>Il richiedente'+ CASE WHEN (icef.numeric_value <= ((CAST(redd3sup.default_value as float) * 1.1666666667) / CAST(rif.default_value as float) / 2.04)) THEN '' ELSE ' non' END +' ha i requisiti di c.e. per richiedere il posto alloggio
+	</ul>
+	<table border=''0'' cellpadding=''0'' cellspacing=''0'' width=''100%''> 
+		<tr> 
+			<td width=''75%''>Il richiedente si trova nella seguente fascia di pagamento delle tasse universitarie</td>
+			<td width=''13%''></td> 
+			<td width=''13%''>
+				<table border=''1'' width=''100%''> 
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + str(fascia.numeric_value,2,0) + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>	
+	</table>'
+WHEN UNI_Domanda.ID_servizio = 1087 THEN
+	'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+		<tr>
+			<td width=''75%'' height=''23''><b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare</td> <td width=''13%'' height=''23''></td> 
+			<td width=''13%'' height=''23''>
+				<table border=''1'' width=''100%''> 
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str(icef.numeric_value,12,10),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr> 
+			<td width=''75%'' height=''23''>ICEF limite per borsa di studio sanità (Bando a.a. 2013/2014 - Tabella 1)</td> 
+			<td width=''13%'' height=''23''></td> <td width=''13%''	height=''23''> 
+				<table border=''1'' width=''100%''>
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str(CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04,9,9),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>' +
+	'<h4>ESITO DELLA VALUTAZIONE ECONOMICA PER CIASCUNA MISURA:</h4><br>
+	<ul>
+		<li>Il richiedente'+ CASE WHEN (icef.numeric_value <= (CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04)) THEN '' ELSE ' non' END +' ha i requisiti di c.e. per richiedere la borsa di studio per studenti iscritti a corsi di formazione per Operatore Socio Sanitario oppure alla facoltà di Medicina e Chirurgia
+	</ul>'
+WHEN UNI_Domanda.ID_servizio = 1096 THEN 
+	'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+		<tr>
+			<td width=''75%'' height=''23''><b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare</td> <td width=''13%'' height=''23''></td> 
+			<td width=''13%'' height=''23''>
+				<table border=''1'' width=''100%''> 
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str(icef.numeric_value,12,10),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr> 
+			<td width=''75%'' height=''23''>ICEF limite per borsa di studio OSS (Bando 2013/2014 - Tabella 1)</td> 
+			<td width=''13%'' height=''23''></td> <td width=''13%''	height=''23''> 
+				<table border=''1'' width=''100%''>
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str(CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04,9,9),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>' +
+	'<h4>ESITO DELLA VALUTAZIONE ECONOMICA PER CIASCUNA MISURA:</h4><br>
+	<ul>
+		<li>Il richiedente'+ CASE WHEN (icef.numeric_value <= (CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04)) THEN '' ELSE ' non' END +' ha i requisiti di c.e. per richiedere la borsa di studio per studenti iscritti a corsi di formazione per Operatore Socio Sanitario 
+	</ul>'
+WHEN UNI_Domanda.ID_servizio = 1097 THEN
+	'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+		<tr>
+			<td width=''75%'' height=''23''><b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare</td> <td width=''13%'' height=''23''></td> 
+			<td width=''13%'' height=''23''>
+				<table border=''1'' width=''100%''> 
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str(icef.numeric_value,12,10),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr> 
+			<td width=''75%'' height=''23''>ICEF limite per borsa di studio sanità (Bando a.a. 2014/2015 - Tabella 1)</td> 
+			<td width=''13%'' height=''23''></td> <td width=''13%''	height=''23''> 
+				<table border=''1'' width=''100%''>
+					<tr> 
+						<td width=''100%'' align=''right''> <b>' + REPLACE(str(CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04,9,9),'.',',') + '</b></td> 
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>' +
+	'<h4>ESITO DELLA VALUTAZIONE ECONOMICA PER CIASCUNA MISURA:</h4><br>
+	<ul>
+		<li>Il richiedente'+ CASE WHEN (icef.numeric_value <= (CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04)) THEN '' ELSE ' non' END +' ha i requisiti di c.e. per richiedere la borsa di studio per studenti iscritti alla facoltà di Medicina e Chirurgia
+	</ul>'
+ELSE '<h3>Errore di configurazione</h3>'
+
+END as testo
+from Doc 
+inner join Domande on Domande.id_domanda = doc.id 
+inner join c_elaout icef on icef.id_domanda = doc.id 
+inner join c_elaout fascia on fascia.id_domanda = doc.id
+inner join c_defaultin redd3sup on redd3sup.id_servizio = domande.id_servizio
+inner join c_defaultin rif on rif.id_servizio = domande.id_servizio
+inner join UNI_Domanda on UNI_Domanda.id_domanda = Domande.id_domanda 
+where id=${id_domanda}
+and icef.node='ICEF10' and fascia.node='fascia'
+and redd3sup.node = 'Redd3sup' and rif.node = 'Rif'
+		]]></sql>
+	</values>
+	<newPage>	
+		<![CDATA[<br clear=all style='page-break-after:always'/>]]>
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>	
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomandaEpu</class>
+	</infoDoc>	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+
+</Doc>

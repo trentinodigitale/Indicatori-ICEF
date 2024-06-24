@@ -1,0 +1,67 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=400 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.1 $">
+
+<param name="Taratura" value="2 tariffe con soglia; 25.5.2004">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+
+<param name="variables" value="tscala">
+
+ <param name="tscala" value="0.0001">
+
+
+
+
+<param name="edges" value="P.A.T.  Soglia;
+Icef-fascia;Soglia-fascia;fascia-tariffa;Tariffa0-tariffa;Tariffa1-tariffa">
+
+
+
+<param name="Icef" value="1;node.ico;237;310;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;fascia;0.5;NoCurve;xIcef;yIcef;3554994037">
+<param name="fascia" value="2;node.ico;237;344;0;-;0.0;NumGtNode;NoInput;IntermediateOutput;2;Icef;Soglia;1;tariffa;1.0;1.0;1.0;1.0;NoCurve;xfascia;yfascia;3706086391">
+<param name="Soglia" value="1;node.ico;160;342;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;fascia;1.0;NoCurve;xSoglia;ySoglia;4265795565">
+<param name="tariffa" value="2;node.ico;387;344;0;-;0.0;NumIfNode;NoInput;NoOutput;3;fascia;Tariffa1;Tariffa0;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xtariffa;ytariffa;3935153598">
+<param name="Tariffa0" value="1;node.ico;323;313;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tariffa;tscala;NoCurve;xTariffa0;yTariffa0;3167124558">
+<param name="Tariffa1" value="1;node.ico;325;372;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tariffa;tscala;NoCurve;xTariffa1;yTariffa1;1704170695">
+<param name="P.A.T.  Soglia" value="text;node.ico;45;339;0;explanation missing;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Soglia;xModello_Soglia;1200840726">
+
+
+
+<param name="xfascia" value="fascia;La fascia tariffaria;Fascia 0 (tariffa minima);-;Fascia 1 (tariffa massima);è; ; ; ; ;T; ">
+<param name="xSoglia" value="Soglia;La soglia tariffaria;Soglia=0 (per tariffa minima);La soglia tariffaria;La soglia tariffaria (per tariffa massima);è; ; ; ; ;P.4; ">
+
+<param name="xTariffa0" value="Tariffa0;La tariffa minima;La tariffa minima=0;La tariffa minima;La tariffa minima;è; ; ; ; ;$.2; ">
+<param name="xTariffa1" value="Tariffa1;La tariffa massima;La tariffa massima=0;La tariffa massima;La tariffa massima;è; ; ; ; ;$.2; ">
+<param name="xtariffa" value="tariffa;La tariffa calcolata;La tariffa calcolata  è zero;La tariffa calcolata;La tariffa calcolata;è; ; ; ; ;$.2; ">
+
+<param name="xModello_Soglia" value="P.A.T.  Soglia;P.A.T.  Soglia;P.A.T.  Soglia 2004 - (25.5.2004);--;--; ; ; ; ; ; ; ">
+
+
+
+<param name="xIcef" value="Icef;Il valore dell'Indicatore della Situazione Economica Familiare <b>(ICEF)</B>;Il valore dell'Indicatore della Situazione Economica Familiare <b>(ICEF)</B>;Il valore dell'Indicatore della Situazione Economica Familiare <b>(ICEF)</B>;Il valore dell'Indicatore della Situazione Economica Familiare <b>(ICEF)</B>; ; ; ; ;<b>;P.4;</b> ">
+
+
+
+
+<param name="xpltree" value="applicant;propagation0;graph;summary;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="applicant" value="<P> Richiedente: ;">
+<param name="propagation0" value=".;">
+<param name="graph" value="(Dettagli==1)Clesius - Graph;">
+<param name="summary" value="Riassunto dati: <small> ;</small>">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="CRC" value="2942366197">
+<param name="CRCdata" value="25-mag-2004 19.44.23">
+</APPLET>
+<BR>

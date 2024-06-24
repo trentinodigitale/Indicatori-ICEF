@@ -1,0 +1,183 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PATstudio" value="PAT studio 2010; 13.7.2010">
+<param name="revision" value="$Revision: 1.2 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="trendstart;substud;parastud">
+<param name="trendstart" value="current">
+<param name="substud" value="parastud;Figli=1">
+
+<param name="parastud" value="current;Redd3inf=23000;Redd3sup=36000;Redd3sup_mensa=44000;Redd3lim=54000;Tariffa_min=55;Tariffa_1_con=173;Tariffa_2_con=267;Tariffa_1_senza=104;Tariffa_2_senza=161;M_tariffa_min=2;M_tariffa_max=3.6;M_scaglione=0.1;Rif=50000">
+
+<param name="trends" value="">
+
+
+<param name="variables" value="uno;iseeinf;iseesup;ascala;rscala;C3;divisotre;tarmin;ascala">
+
+<param name="uno" value="1">
+<param name="iseeinf" value="16000">
+<param name="iseesup" value="25000">
+<param name="ascala" value="0.001">
+
+<param name="rscala" value="0.000001">
+<param name="C3" value="2.04">
+
+<param name="divisotre" value="uno / C3; 0.490196078">
+
+<param name="tarmin" value="50;editable">
+
+
+
+<param name="edges" value="PAT studio;Tariffa_1_senza;Tariffa_2_senza;M_tariffa_min;M_tariffa_max;M_scaglione;Tariffa_1_con;Tariffa_2_con;Tariffa_min;
+Icef-giudizio;sup-giudizio;inf-giudizio;Icef-condOK;Redd3inf-inf;Redd3sup-sup;Rif-inf;Rif-sup;sup-condOK;giudizio-percentuale;giudizio-t_fascia;Redd3lim-lim;Rif-lim;Icef-limOK;lim-limOK;Figli-riduci;riduci-riduzione;riduzione-tariffa_mensa;percentuale-tariffa_trasp_1_con_circ;percentuale-tariffa_trasp_2_con_circ;tm-tm_;
+tm_-tariffa_mensa;limOK-riduzione;m_f-m_fascia;limOK-m_fascia;percentuale-tariffa_trasp_1_senza_circ;percentuale-tariffa_trasp_2_senza_circ;Redd3sup_mensa-sup_mensa;Rif-sup_mensa;Icef-gui_mensa;inf-gui_mensa;sup_mensa-gui_mensa;gui_mensa-tm;gui_mensa-m_f">
+
+
+
+<param name="PAT studio" value="text;node.ico;37;270;0;PAT studio (13.7.2010);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT studio;xPAT studio;3912853794">
+<param name="Tariffa_1_senza" value="1;node.ico;629;384;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xTariffa_1_senza;yTariffa_1_senza;3386455187">
+<param name="Tariffa_2_senza" value="1;node.ico;631;431;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xTariffa_2_senza;yTariffa_2_senza;4019862773">
+<param name="M_tariffa_min" value="1;node.ico;523;464;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xM_tariffa_min;yM_tariffa_min;3225694197">
+<param name="M_tariffa_max" value="1;node.ico;627;462;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xM_tariffa_max;yM_tariffa_max;2989742686">
+<param name="M_scaglione" value="1;node.ico;570;485;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;0.1;NoCurve;xM_scaglione;yM_scaglione;2860833193">
+<param name="Tariffa_1_con" value="1;node.ico;622;361;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xTariffa_1_con;yTariffa_1_con;1044234499">
+<param name="Tariffa_2_con" value="1;node.ico;624;408;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xTariffa_2_con;yTariffa_2_con;1625889845">
+<param name="Tariffa_min" value="1;node.ico;543;396;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xTariffa_min;yTariffa_min;2823110728">
+<param name="Icef" value="1;node.ico;93;324;0;-;0.0;ProbNode;ValueInput;NoOutput;0;4;giudizio;condOK;limOK;gui_mensa;0.5;NoCurve;xIcef;yIcef;660054203">
+<param name="giudizio" value="0;0;93;360;0;-;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;sup;2;percentuale;t_fascia;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;ygiudizio;486393014">
+<param name="sup" value="0;node.ico;157;333;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;2;giudizio;condOK;1.0;divisotre;1.0;1.0;NoCurve;xsup;ysup;1601227509">
+<param name="inf" value="0;node.ico;35;331;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;2;giudizio;gui_mensa;1.0;divisotre;1.0;1.0;NoCurve;xinf;yinf;3985067105">
+<param name="condOK" value="0;node.ico;157;360;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;2471699365">
+<param name="Redd3inf" value="1;node.ico;34;298;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;rscala;NoCurve;xRedd3inf;yRedd3inf;1674202281">
+<param name="Redd3sup" value="1;node.ico;156;296;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;sup;rscala;NoCurve;xRedd3sup;yRedd3sup;3743904478">
+<param name="Rif" value="1;node.ico;93;294;0;-;0.0;PlusNode;ValueInput;NoOutput;0;4;inf;sup;lim;sup_mensa;rscala;NoCurve;xRif;yRif;2285218384">
+<param name="percentuale" value="0;node.ico;253;390;0;-;0.0;ProbNode;NoInput;NoOutput;1;giudizio;4;tariffa_trasp_1_con_circ;tariffa_trasp_2_con_circ;tariffa_trasp_1_senza_circ;tariffa_trasp_2_senza_circ;0.0;1.0;NoCurve;xpercentuale;ypercentuale;4201007141">
+<param name="t_fascia" value="2;node.ico;31;362;0;-;0.0;NumTransNode;NoInput;IntermediateOutput;1;giudizio;0;1.0;1.0;LinearCurve;t_fasciaCurve;xt_fascia;yt_fascia;4209107742">
+<param name="Redd3lim" value="1;node.ico;364;304;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;lim;rscala;NoCurve;xRedd3lim;yRedd3lim;3926742934">
+<param name="lim" value="0;node.ico;202;314;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3lim;Rif;1;limOK;1.0;divisotre;1.0;1.0;NoCurve;xlim;ylim;4187066226">
+<param name="limOK" value="0;node.ico;269;324;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;lim;2;riduzione;m_fascia;0.0;1.0;1.0;1.0;NoCurve;xlimOK;ylimOK;2104447162">
+<param name="Figli" value="1;node.ico;484;327;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;riduci;0.5;NoCurve;xFigli;yFigli;494044923">
+<param name="riduci" value="0;node.ico;433;328;0;-;0.0;NumTransNode;NoInput;NoOutput;1;Figli;1;riduzione;1.0;1.0;LinearCurve;figliCurve;xriduci;yriduci;2029999192">
+<param name="riduzione" value="0;node.ico;347;326;0;-;0.0;ProbNode;NoInput;NoOutput;2;riduci;limOK;1;tariffa_mensa;1.0;1.0;0.0;1.0;NoCurve;xriduzione;yriduzione;207870512">
+<param name="tariffa_mensa" value="0;node.ico;347;485;0;-;0.0;TimesNode;NoInput;ResultOutput;2;riduzione;tm_;0;ascala;1.0;1.0;1.0;NoCurve;xtariffa_mensa;ytariffa_mensa;3418599999">
+<param name="tariffa_trasp_1_con_circ" value="0;node.ico;326;351;0;-;0.0;ProbNode;NoInput;NoOutput;1;percentuale;0;0.0;1.0;StairsCurve;tariffa_trasp_1_con_circCurve;xtariffa_trasp_1_con_circ;ytariffa_trasp_1_con_circ;1897420826">
+<param name="tariffa_trasp_2_con_circ" value="0;node.ico;322;431;0;-;0.0;ProbNode;NoInput;NoOutput;1;percentuale;0;0.0;1.0;StairsCurve;tariffa_trasp_2_con_circCurve;xtariffa_trasp_2_con_circ;ytariffa_trasp_2_con_circ;1239213900">
+<param name="tm" value="0;node.ico;223;485;0;-;0.0;ProbNode;NoInput;NoOutput;1;gui_mensa;1;tm_;0.0;1.0;StairsCurve;tmCurve;xtm;ytm;3705091931">
+<param name="tm_" value="0;node.ico;276;485;0;-;0.0;PlusNode;NoInput;NoOutput;1;tm;1;tariffa_mensa;ascala;1.0;NoCurve;xtm_;ytm_;2137601192">
+<param name="m_f" value="0;node.ico;25;460;0;-;0.0;NumTransNode;NoInput;NoOutput;1;gui_mensa;1;m_fascia;1.0;1.0;LinearCurve;t_fasciaCurve;xm_f;ym_f;4133598913">
+<param name="m_fascia" value="0;node.ico;45;488;0;-;0.0;NumIfNode;NoInput;NoOutput;2;limOK;m_f;0;0.0;1.0;1.0;4.0;NoCurve;xm_fascia;xm_fascia;1238319939">
+<param name="tariffa_trasp_1_senza_circ" value="0;node.ico;420;378;0;-;0.0;ProbNode;NoInput;NoOutput;1;percentuale;0;0.0;1.0;StairsCurve;tariffa_trasp_1_senza_circCurve;xtariffa_trasp_1_senza_circ;ytariffa_trasp_1_senza_circ;1648028516">
+<param name="tariffa_trasp_2_senza_circ" value="0;node.ico;419;403;0;-;0.0;ProbNode;NoInput;NoOutput;1;percentuale;0;0.0;1.0;StairsCurve;tariffa_trasp_2_senza_circCurve;xtariffa_trasp_2_senza_circ;ytariffa_trasp_2_senza_circ;2487465178">
+<param name="Redd3sup_mensa" value="1;node.ico;258;294;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;sup_mensa;0.0;NoCurve;xRedd3sup_mensa;yRedd3sup_mensa;2427452966">
+<param name="sup_mensa" value="0;node.ico;181;433;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup_mensa;Rif;1;gui_mensa;1.0;divisotre;1.0;1.0;NoCurve;xsup_mensa;ysup_mensa;3951636490">
+<param name="gui_mensa" value="0;node.ico;120;460;0;-;0.0;CutoffNode;NoInput;NoOutput;3;Icef;inf;sup_mensa;2;tm;m_f;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgui_mensa;ygui_mensa;874269935">
+
+<param name="figliCurve" value="LinearCurve;1.0;1.0;2.0;0.85;3.0;0.73;4.0;0.55;5.0;0.44;6.0;0.37">
+<param name="t_fasciaCurve" value="LinearCurve;0.0;1.0;1.0E-7;2.0;0.9999999;2.0;1.0;3.0">
+<param name="tariffa_trasp_1_con_circCurve" value="StairsCurve;0.0;0.0;Tariffa_min;0.0;1.0;0.1;Tariffa_1_con;1.0">
+<param name="tariffa_trasp_1_senza_circCurve" value="StairsCurve;0.0;0.0;Tariffa_min;0.0;1.0;0.1;Tariffa_1_senza;1.0">
+<param name="tariffa_trasp_2_con_circCurve" value="StairsCurve;0.0;0.0;Tariffa_min;0.0;1.0;0.1;Tariffa_2_con;1.0">
+<param name="tariffa_trasp_2_senza_circCurve" value="StairsCurve;0.0;0.0;Tariffa_min;0.0;1.0;0.1;Tariffa_2_senza;1.0">
+<param name="tmCurve" value="StairsCurve;0.0;0.0;M_tariffa_min;0.0;M_scaglione;0.1;M_tariffa_max;1.0">
+
+
+<param name="xRedd3sup_mensa" value="Redd3sup_mensa;Redd3sup_mensa;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xFigli" value="Figli;Numero di figli in età prescolara o frequentanti;Numero di figli in età prescolara o frequentanti;Numero di figli in età prescolara o frequentanti;Numero di figli in età prescolara o frequentanti;= ; ; ; ; ;T; ">
+
+<param name="xTariffa_min" value="Tariffa_min;Tariffa_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia da ^inf^ a ^sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.10;</b>">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRedd3lim" value="Redd3lim;Redd3lim;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xTariffa_1_senza" value="Tariffa_1_senza;Tariffa_1_senza;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPAT studio" value="PAT studio;PAT studio;PAT studio (13.7.2010);--;--; ; ; ; ; ; ; ">
+<param name="xTariffa_2_senza" value="Tariffa_2_senza;Tariffa_2_senza;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xM_tariffa_min" value="M_tariffa_min;M_tariffa_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xTariffa_1_con" value="Tariffa_1_con;Tariffa_1_con;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xTariffa_2_con" value="Tariffa_2_con;Tariffa_2_con;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xM_tariffa_max" value="M_tariffa_max;M_tariffa_max;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xM_scaglione" value="M_scaglione;M_scaglione;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xtariffa_trasp_1_con_circ" value="tariffa_trasp_1_con_circ;Tariffa trasporto con libera circolazione (%tariffa_trasp_1_con_circ% tra §Tariffa_min§ e §Tariffa_1_con§);Tariffa trasporto con libera circolazione (%tariffa_trasp_1_con_circ% tra §Tariffa_min§ e §Tariffa_1_con§);Tariffa trasporto con libera circolazione (%tariffa_trasp_1_con_circ% tra §Tariffa_min§ e §Tariffa_1_con§);Tariffa trasporto con libera circolazione (%tariffa_trasp_1_con_circ% tra §Tariffa_min§ e §Tariffa_1_con§);è di ; ; ; ;<b>;$.0;</b>">
+
+<param name="xtariffa_trasp_2_con_circ" value="tariffa_trasp_2_con_circ;Tariffa trasporto con libera circolazione - per più di un figlio (%tariffa_trasp_2_con_circ% tra §Tariffa_min§ e §Tariffa_2_con§);Tariffa trasporto con libera circolazione - per più di un figlio (%tariffa_trasp_2_con_circ% tra §Tariffa_min§ e §Tariffa_2_con§);Tariffa trasporto con libera circolazione - per più di un figlio (%tariffa_trasp_2_con_circ% tra §Tariffa_min§ e §Tariffa_2_con§);Tariffa trasporto con libera circolazione - per più di un figlio (%tariffa_trasp_2_con_circ% tra §Tariffa_min§ e §Tariffa_2_con§);è di ; ; ; ;<b>;$.0;</b>">
+
+<param name="xtm" value="tm;tm;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xtariffa_trasp_1_senza_circ" value="tariffa_trasp_1_senza_circ;Tariffa trasporto senza libera circolazione  (%tariffa_trasp_1_senza_circ% tra §Tariffa_min§ e §Tariffa_1_senza§);Tariffa trasporto senza libera circolazione  (%tariffa_trasp_1_senza_circ% tra §Tariffa_min§ e §Tariffa_1_senza§);Tariffa trasporto senza libera circolazione  (%tariffa_trasp_1_senza_circ% tra §Tariffa_min§ e §Tariffa_1_senza§);Tariffa trasporto senza libera circolazione   (%tariffa_trasp_1_senza_circ% tra §Tariffa_min§ e §Tariffa_1_senza§);è di ; ; ; ;<b>;$.0;</b>">
+
+<param name="xtariffa_trasp_2_senza_circ" value="tariffa_trasp_2_senza_circ;Tariffa trasporto senza libera circolazione - per più di un figlio  (%tariffa_trasp_2_senza_circ% tra §Tariffa_min§ e §Tariffa_2_senza§);Tariffa trasporto senza libera circolazione - per più di un figlio  (%tariffa_trasp_2_senza_circ% tra §Tariffa_min§ e §Tariffa_2_senza§);Tariffa trasporto senza libera circolazione - per più di un figlio  (%tariffa_trasp_2_senza_circ% tra §Tariffa_min§ e §Tariffa_2_senza§);Tariffa trasporto senza libera circolazione - per più di un figlio  (%tariffa_trasp_2_senza_circ% tra §Tariffa_min§ e §Tariffa_2_senza§);è di ; ; ; ;<b>;$.0;</b>">
+
+<param name="xtm_" value="tm_;la tariffa mensa (differenzia fino a ^sup_mensa^) in base all'ICEF (%tm% tra $M_tariffa_min$ e $M_tariffa_max$);tariffa_mensa=0;la tariffa mensa  (differenzia fino a ^sup_mensa^) in base all'ICEF (%tm% tra $M_tariffa_min$ e $M_tariffa_max$);la tariffa mensa  (differenzia fino a ^sup_mensa^) in base all'ICEF (%tm% tra $M_tariffa_min$ e $M_tariffa_max$);è di ; ; ; ; Euro ;$.2; ">
+
+<param name="xm_f" value="m_f;m_f;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xriduci" value="riduci;riduci;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xt_fascia" value="t_fascia;fascia della tariffa trasporti;fascia della tariffa trasporti;fascia della tariffa trasporti;fascia della tariffa trasporti;= ; ; ; ; ;T; ">
+
+<param name="xpercentuale" value="percentuale;La percentuale;La percentuale=0;La percentuale;La percentuale;è il; ; ; ; ;P.4; ">
+
+<param name="xm_fascia" value="m_fascia;m_fascia di tariffa;fascia della tariffa mensa;fascia della tariffa mensa;fascia della tariffa mensa;= ; ; ; ; ;T; ">
+<param name="xsup_mensa" value="sup_mensa;sup_mensa;0;-;1; ;-;+; ; ;T.8; ">
+
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento $C_RIF_ICEF$ è maggiore di $Redd3sup$) ;--;idoneo; ; ; ; ; ;!; ">
+
+<param name="xtariffa_mensa" value="tariffa_mensa;Tariffa mensa;tariffa_mensa=0;Tariffa mensa;Tariffa mensa;è di ; ; ; ;<b>;$.2;</b>">
+
+<param name="xriduzione" value="riduzione;la quota per §Figli§ figli/o;-;la quota per §Figli§ figli/o;nessuna riduzione;è di; ; ; ; ;P.2; ">
+
+<param name="xlim" value="lim;lim;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xlimOK" value="limOK;x;ICEF è oltre il limite da esclusione (la condizione di riferimento $C_RIF_ICEF$ è maggiore di $Redd3lim$) ;--;idoneo; ; ; ; ; ;!; ">
+
+<param name="xgui_mensa" value="gui_mensa;gui_mensa;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+
+
+
+
+<param name="xpltree" value="propagation1;ris;applicant;dati;tari;perche;summary;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=".;Redd3inf=Redd3inf">
+<param name="ris" value="<center><h2>Calcolo delle tariffe</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati per il calcolo delle tariffe</b>;Icef=-1;Figli=-1">
+<param name="tari" value="<hr><b>Le tariffe</b>;tariffa_trasp_1_con_circ=-1;tariffa_trasp_1_senza_circ=-1;tariffa_trasp_2_con_circ=-1;tariffa_trasp_2_senza_circ=-1;tariffa_mensa=-1">
+<param name="perche" value="<hr> ;tm_=3;riduzione=3!1">
+<param name="summary" value="Riassunto dati: <small> ;</small>">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="57118719">
+<param name="CRC" value="1835154262">
+<param name="CRCdata" value="13-lug-2010 18.12.17">
+</APPLET>
+<BR>

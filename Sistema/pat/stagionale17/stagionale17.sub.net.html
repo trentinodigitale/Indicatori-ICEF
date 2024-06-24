@@ -1,0 +1,213 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class
+	CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=760 HEIGHT=780 MAYSCRIPT>
+	<param name="PAT Selezione stagionale" value="PAT stagionale 2017; 21.4.2017">
+	<param name="revision" value="$Revision: 30045 $">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="true">
+
+	<param name="variables" value="da0;da1;da2;da3;da4;da5;a0;a1;a2;a3;a4;a5">
+
+
+	<param name="da5" value="0.0">
+	<param name="da4" value="0.13000001">
+	<param name="da3" value="0.20000001">
+	<param name="da2" value="0.27000001">
+	<param name="da1" value="0.34000001">
+	<param name="da0" value="0.40000001">
+	
+	<param name="a5" value="0.13">
+	<param name="a4" value="0.2">
+	<param name="a3" value="0.27">
+	<param name="a2" value="0.34">
+	<param name="a1" value="0.4">
+	<param name="a0" value="9">
+
+
+
+	<param name="trendStarts" value="parametriStagionale;casotest">
+	<param name="parametriStagionale" value="current;E_max=5.1;Extra_max=15;P_max=6;Max=16">
+	<param name="casotest" value="parametriStagionale;P_INPS1=4;P_INPS2=5;P_INPS3=6;E_INPS1=4;E_INPS2=5;E_INPS3=6;P_SCAU1=4;P_SCAU2=5;P_SCAU3=6;E_SCAU1=4;E_SCAU2=5;E_SCAU3=6;Check=0;Icef=0.2">
+	<param name="trends" value="">
+
+
+
+
+<param name="edges" value="Selezione Stagionale;
+Icef-p_icef;idoneità-idoneo;Check-idoneità;P_max-p1;P_max-p3;p1-p_sum;p2-p_sum;p3-p_sum;p_sum-progettone;e_sum-extra;Max-progettone;p_icef-punti_icef;punteggio_scau-A_scau;punteggio_scau-B_scau;punteggio_scau-C_scau;punteggio_scau-D_scau;punteggio_inps-A_inps;punteggio_inps-B_inps;punteggio_inps-C_inps;punteggio_inps-D_inps;A_inps-fascia_A;
+A_scau-fascia_A;B_inps-fascia_B;B_scau-fascia_B;C_inps-fascia_C;C_scau-fascia_C;D_inps-fascia_D;D_scau-fascia_D;punti_icef-p_inps;punti_icef-p_scau;punti_scau-punteggio_scau;P_max-p2;punti_icef-eq0;eq0-fascia_A;eq0-fascia_B;eq0-fascia_C;eq0-fascia_D;idoneo-punti_icef;fascia_D-fascia;fascia_C-fascia;fascia_B-fascia;
+fascia_A-fascia;E_SCAU1-scau1;E_SCAU2-scau2;E_SCAU3-scau3;P_INPS1-p1;P_INPS2-p2;P_INPS3-p3;E_INPS1-e1;E_INPS2-e2;E_INPS3-e3;E_max-e1;E_max-e2;E_max-e3;e1-e_sum;e2-e_sum;e3-e_sum;Extra_max-extra;P_SCAU1-scau1;P_SCAU2-scau2;P_SCAU3-scau3;
+scau1-s1;scau2-s2;scau3-s3;P_max-s1;P_max-s2;P_max-s3;s1-s_sum;s2-s_sum;s3-s_sum;s_sum-scau;scau-p_scau;Max-scau;Max-inps;inps-p_inps;progettone-s_inps;extra-s_inps;s_inps-inps;idoneo-punti_scau;eq0-punteggio_scau;p_scau-punti_scau;
+p_inps-punti_inps;punti_inps-punteggio_inps;idoneo-punti_inps;eq0-punteggio_inps">
+
+
+
+<param name="Selezione Stagionale" value="text;node.ico;529;265;0;Selezione Stagionale (21.4.2017);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xStagionale;ystagionale;2421101395">
+<param name="Icef" value="1;node.ico;404;270;0;Icef = ;0.0;ProbNode;ValueInput;IntermediateOutput;0;1;p_icef;0.5;NoCurve;xIcef;xIcef;1625860317">
+<param name="p_icef" value="0;0;406;314;0;p_icef =  Icef);0.0;NumTransNode;NoInput;IntermediateOutput;1;Icef;1;punti_icef;1.0;1.0;LinearCurve;puntiCurve;xp_icef;xp_icef;990336680">
+<param name="idoneità" value="0;node.ico;314;348;0;idoneità = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xidoneità;xidoneità;3599336253">
+<param name="idoneo" value="2;node.ico;310;387;0;idoneo =   1  + idoneità;0.0;ProbNode;NoInput;IntermediateOutput;1;idoneità;3;punti_icef;punti_scau;punti_inps;0.0;1.0;NoCurve;xidoneo;xidoneo;3868386730">
+<param name="Check" value="1;node.ico;312;268;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;1;idoneità;1.0;NoCurve;xCheck;xCheck;3582997534">
+<param name="P_max" value="1;node.ico;362;281;0;P_max = ;0.0;PlusNode;ValueInput;NoOutput;0;6;p1;p3;p2;s1;s2;s3;1.0;NoCurve;xP_max;xP_max;1668734673">
+<param name="p1" value="0;node.ico;89;281;0;p1 =  Min(  P_max,  P_INPS1 );0.0;NumMinNode;NoInput;NoOutput;2;P_max;P_INPS1;1;p_sum;1.0;1.0;1.0;1.0;NoCurve;xp1;xp1;2268913084">
+<param name="p3" value="0;node.ico;90;426;0;p3 =  Min(  P_max,  P_INPS3 );0.0;NumMinNode;NoInput;NoOutput;2;P_max;P_INPS3;1;p_sum;1.0;1.0;1.0;1.0;NoCurve;xp3;xp3;1056487585">
+<param name="p_sum" value="0;node.ico;145;295;0;p_sum =  p1 + p2 + p3;0.0;PlusNode;NoInput;NoOutput;3;p1;p2;p3;1;progettone;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xp_sum;xp_sum;2599855695">
+<param name="p2" value="0;node.ico;89;357;0;p2 =  Min(  P_max,  P_INPS2 );0.0;NumMinNode;NoInput;NoOutput;2;P_max;P_INPS2;1;p_sum;1.0;1.0;1.0;1.0;NoCurve;xp2;xp2;143733060">
+<param name="progettone" value="0;node.ico;145;326;0;progettone =  Min(  p_sum,  Max );0.0;NumMinNode;NoInput;NoOutput;2;p_sum;Max;1;s_inps;1.0;1.0;1.0;1.0;NoCurve;xprogettone;xprogettone;1929818196">
+<param name="e_sum" value="0;node.ico;208;295;0;e_sum =  e1 + e2 + e3;0.0;PlusNode;NoInput;NoOutput;3;e1;e2;e3;1;extra;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xe_sum;xe_sum;521077607">
+<param name="extra" value="0;node.ico;266;292;0;extra =  Min(  e_sum,  Extra_max );0.0;NumMinNode;NoInput;NoOutput;2;e_sum;Extra_max;1;s_inps;1.0;1.0;1.0;1.0;NoCurve;xextra;xextra;1359966589">
+<param name="Max" value="1;node.ico;348;324;0;Max = ;0.0;PlusNode;ValueInput;NoOutput;0;3;progettone;scau;inps;1.0;NoCurve;xMax;xMax;1598760900">
+<param name="punti_icef" value="2;node.ico;407;355;0;punti_icef =  p_icef * idoneo;0.0;TimesNode;NoInput;NoOutput;2;p_icef;idoneo;3;p_inps;p_scau;eq0;1.0;1.0;1.0;1.0;NoCurve;xpunti_icef;xpunti_icef;1256622588">
+<param name="punteggio_scau" value="0;node.ico;517;413;0;punteggio_scau =  5.000  + punti_scau - punti_scau * eq0;0.0;ProbNode;NoInput;NoOutput;2;punti_scau;eq0;4;A_scau;B_scau;C_scau;D_scau;0.0;1.0;0.0;0.0;NoCurve;xpunteggio_scau;xpunteggio_scau;4087530602">
+<param name="A_scau" value="0;node.ico;481;440;0;A_scau =  punteggio_scau);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_scau;1;fascia_A;1.0;1.0;LinearCurve;ACurve;xA_scau;xA_scau;1246183208">
+<param name="B_scau" value="0;node.ico;541;455;0;B_scau =  punteggio_scau);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_scau;1;fascia_B;1.0;1.0;LinearCurve;BCurve;xB_scau;xB_scau;1656191528">
+<param name="C_scau" value="0;node.ico;592;477;0;C_scau =  punteggio_scau);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_scau;1;fascia_C;1.0;1.0;LinearCurve;CCurve;xC_scau;xC_scau;3177168147">
+<param name="D_scau" value="0;node.ico;649;499;0;D_scau =  punteggio_scau);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_scau;1;fascia_D;1.0;1.0;LinearCurve;DCurve;xD_scau;xD_scau;2812921329">
+<param name="punteggio_inps" value="0;node.ico;195;417;0;punteggio_inps =  5.000  + punti_inps - punti_inps * eq0;0.0;ProbNode;NoInput;NoOutput;2;punti_inps;eq0;4;A_inps;B_inps;C_inps;D_inps;0.0;1.0;0.0;0.0;NoCurve;xpunteggio_inps;xpunteggio_inps;1531713622">
+<param name="A_inps" value="0;node.ico;210;440;0;A_inps =  punteggio_inps);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_inps;1;fascia_A;1.0;1.0;LinearCurve;ACurve;xA_inps;xA_inps;287548418">
+<param name="B_inps" value="0;node.ico;177;459;0;B_inps =  punteggio_inps);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_inps;1;fascia_B;1.0;1.0;LinearCurve;BCurve;xB_inps;xB_inps;2898036758">
+<param name="C_inps" value="0;node.ico;128;480;0;C_inps =  punteggio_inps);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_inps;1;fascia_C;1.0;1.0;LinearCurve;CCurve;xC_inps;xC_inps;100363251">
+<param name="D_inps" value="0;node.ico;99;500;0;D_inps =  punteggio_inps);0.0;NumTransNode;NoInput;NoOutput;1;punteggio_inps;1;fascia_D;1.0;1.0;LinearCurve;DCurve;xD_inps;xD_inps;928501855">
+<param name="fascia_A" value="2;node.ico;318;441;0;fascia_A =  A_inps + A_scau - A_inps * A_scau - A_inps * eq0 - A_scau * eq0 + A_inps * A_scau * eq0;0.0;ProbNode;NoInput;NoOutput;3;A_inps;A_scau;eq0;1;fascia;0.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xfascia_A;xfascia_A;1099838038">
+<param name="fascia_B" value="2;node.ico;358;462;0;fascia_B =  B_inps + B_scau - B_inps * B_scau - B_inps * eq0 - B_scau * eq0 + B_inps * B_scau * eq0;0.0;ProbNode;NoInput;NoOutput;3;B_inps;B_scau;eq0;1;fascia;0.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xfascia_B;xfascia_B;2188544357">
+<param name="fascia_C" value="2;node.ico;406;481;0;fascia_C =  C_inps + C_scau - C_inps * C_scau - C_inps * eq0 - C_scau * eq0 + C_inps * C_scau * eq0;0.0;ProbNode;NoInput;NoOutput;3;C_inps;C_scau;eq0;1;fascia;0.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xfascia_C;xfascia_C;4293091821">
+<param name="fascia_D" value="2;node.ico;441;504;0;fascia_D =   1  + D_inps + D_scau - D_inps * D_scau + eq0 - D_inps * eq0 - D_scau * eq0 + D_inps * D_scau * eq0;0.0;ProbNode;NoInput;NoOutput;3;D_inps;D_scau;eq0;1;fascia;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xfascia_D;xfascia_D;1085543249">
+<param name="p_inps" value="0;node.ico;223;369;0;p_inps =  punti_icef + inps;0.0;PlusNode;NoInput;NoOutput;2;punti_icef;inps;1;punti_inps;1.0;1.0;1.0;1.0;NoCurve;xp_inps;xp_inps;3545348356">
+<param name="p_scau" value="0;node.ico;513;355;0;p_scau =  punti_icef + scau;0.0;PlusNode;NoInput;NoOutput;2;punti_icef;scau;1;punti_scau;1.0;1.0;1.0;1.0;NoCurve;xp_scau;xp_scau;1421084085">
+<param name="punti_scau" value="2;node.ico;514;388;0;punti_scau =  idoneo * p_scau;0.0;TimesNode;NoInput;IntermediateOutput;2;idoneo;p_scau;1;punteggio_scau;1.0;1.0;1.0;1.0;NoCurve;xpunti_scau;xpunti_scau;1602280125">
+<param name="eq0" value="0;node.ico;409;414;0;eq0 = punti_icef == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;punti_icef;6;fascia_A;fascia_B;fascia_C;fascia_D;punteggio_scau;punteggio_inps;1.0;0.0;NoCurve;xeq0;xeq0;817914375">
+<param name="fascia" value="2;node.ico;277;493;0;fascia =  10.000*fascia_D + 20.000*fascia_C + 25.000*fascia_B + 40.000*fascia_A;0.0;PlusNode;NoInput;ResultOutput;4;fascia_D;fascia_C;fascia_B;fascia_A;0;1.0;10.0;20.0;25.0;40.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xfascia;xfascia;3029191671">
+<param name="E_SCAU1" value="1;node.ico;710;315;0;E_SCAU1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;scau1;1.0;NoCurve;xE_SCAU1;xE_SCAU1;2262297956">
+<param name="scau1" value="0;node.ico;664;292;0;scau1 =  E_SCAU1 + P_SCAU1;0.0;PlusNode;NoInput;NoOutput;2;E_SCAU1;P_SCAU1;1;s1;1.0;1.0;1.0;1.0;NoCurve;xscau1;xscau1;3479737148">
+<param name="E_SCAU2" value="1;node.ico;713;389;0;E_SCAU2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;scau2;1.0;NoCurve;xE_SCAU2;xE_SCAU2;3026053120">
+<param name="scau2" value="0;node.ico;666;365;0;scau2 =  E_SCAU2 + P_SCAU2;0.0;PlusNode;NoInput;NoOutput;2;E_SCAU2;P_SCAU2;1;s2;1.0;1.0;1.0;1.0;NoCurve;xscau2;xscau2;2720956197">
+<param name="E_SCAU3" value="1;node.ico;711;464;0;E_SCAU3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;scau3;1.0;NoCurve;xE_SCAU3;xE_SCAU3;2430792278">
+<param name="scau3" value="0;node.ico;667;436;0;scau3 =  E_SCAU3 + P_SCAU3;0.0;PlusNode;NoInput;NoOutput;2;E_SCAU3;P_SCAU3;1;s3;1.0;1.0;1.0;1.0;NoCurve;xscau3;xscau3;1576514473">
+<param name="P_INPS1" value="1;node.ico;30;281;0;P_INPS1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;p1;1.0;NoCurve;xP_INPS1;xP_INPS1;2835434083">
+<param name="P_INPS2" value="1;node.ico;34;357;0;P_INPS2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;p2;1.0;NoCurve;xP_INPS2;xP_INPS2;1095371068">
+<param name="P_INPS3" value="1;node.ico;33;427;0;P_INPS3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;p3;1.0;NoCurve;xP_INPS3;xP_INPS3;4150266153">
+<param name="E_INPS1" value="1;node.ico;35;315;0;E_INPS1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;e1;1.0;NoCurve;xE_INPS1;xE_INPS1;423434238">
+<param name="e1" value="0;node.ico;91;310;0;e1 =  Min(  0.850*E_INPS1,  E_max );0.0;NumMinNode;NoInput;NoOutput;2;E_INPS1;E_max;1;e_sum;1.0;0.85;1.0;1.0;NoCurve;xe1;xe1;3392105380">
+<param name="E_INPS2" value="1;node.ico;33;389;0;E_INPS2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;e2;1.0;NoCurve;xE_INPS2;xE_INPS2;3636276644">
+<param name="e2" value="0;node.ico;115;389;0;e2 =  Min(  0.850*E_INPS2,  E_max );0.0;NumMinNode;NoInput;NoOutput;2;E_INPS2;E_max;1;e_sum;1.0;0.85;1.0;1.0;NoCurve;xe2;xe2;4103159709">
+<param name="E_INPS3" value="1;node.ico;32;461;0;E_INPS3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;e3;1.0;NoCurve;xE_INPS3;xE_INPS3;626136692">
+<param name="e3" value="0;node.ico;109;456;0;e3 =  Min(  0.850*E_INPS3,  E_max );0.0;NumMinNode;NoInput;NoOutput;2;E_INPS3;E_max;1;e_sum;1.0;0.85;1.0;1.0;NoCurve;xe3;xe3;2016949451">
+<param name="E_max" value="1;node.ico;47;259;0;E_max = ;0.0;PlusNode;ValueInput;NoOutput;0;3;e1;e2;e3;1.0;NoCurve;xE_max;xE_max;3675269044">
+<param name="Extra_max" value="1;node.ico;165;271;0;Extra_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;extra;1.0;NoCurve;xExtra_max;xExtra_max;3996608837">
+<param name="P_SCAU1" value="1;node.ico;714;268;0;P_SCAU1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;scau1;1.0;NoCurve;xP_SCAU1;xP_SCAU1;1557201962">
+<param name="P_SCAU2" value="1;node.ico;719;342;0;P_SCAU2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;scau2;1.0;NoCurve;xP_SCAU2;xP_SCAU2;2105181522">
+<param name="P_SCAU3" value="1;node.ico;717;413;0;P_SCAU3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;scau3;1.0;NoCurve;xP_SCAU3;xP_SCAU3;4125405244">
+<param name="s1" value="0;node.ico;612;281;0;s1 =  Min(  scau1,  P_max );0.0;NumMinNode;NoInput;NoOutput;2;scau1;P_max;1;s_sum;1.0;1.0;1.0;1.0;NoCurve;xs1;xs1;4115328334">
+<param name="s2" value="0;node.ico;611;362;0;s2 =  Min(  scau2,  P_max );0.0;NumMinNode;NoInput;NoOutput;2;scau2;P_max;1;s_sum;1.0;1.0;1.0;1.0;NoCurve;xs2;xs2;1165661902">
+<param name="s3" value="0;node.ico;612;435;0;s3 =  Min(  scau3,  P_max );0.0;NumMinNode;NoInput;NoOutput;2;scau3;P_max;1;s_sum;1.0;1.0;1.0;1.0;NoCurve;xs3;xs3;3622481898">
+<param name="s_sum" value="0;node.ico;515;294;0;s_sum =  s1 + s2 + s3;0.0;PlusNode;NoInput;NoOutput;3;s1;s2;s3;1;scau;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xs_sum;xs_sum;3914361752">
+<param name="scau" value="2;node.ico;513;326;0;scau =  Min(  s_sum,  Max );0.0;NumMinNode;NoInput;NoOutput;2;s_sum;Max;1;p_scau;1.0;1.0;1.0;0.0;NoCurve;xscau;xscau;1930028063">
+<param name="inps" value="2;node.ico;225;343;0;inps =  Min(  Max,  s_inps );0.0;NumMinNode;NoInput;IntermediateOutput;2;Max;s_inps;1;p_inps;1.0;1.0;1.0;1.0;NoCurve;xinps;xinps708447945;970259317">
+<param name="s_inps" value="0;node.ico;225;318;0;s_inps =  progettone + extra;0.0;PlusNode;NoInput;NoOutput;2;progettone;extra;1;inps;1.0;1.0;1.0;1.0;NoCurve;xs_inps;xs_inps;60266527">
+<param name="punti_inps" value="2;node.ico;214;391;0;punti_inps =  p_inps * idoneo;0.0;TimesNode;NoInput;NoOutput;2;p_inps;idoneo;1;punteggio_inps;1.0;1.0;1.0;1.0;NoCurve;xpunti_inps;xpunti_inps;3213647959">
+
+<param name="ACurve" value="LinearCurve;17.99;0.0;18.0;1.0;21.0;1.0">
+<param name="BCurve" value="LinearCurve;12.99;0.0;13.0;1.0;17.99;1.0;18.0;0.0">
+<param name="CCurve" value="LinearCurve;7.99;0.0;8.0;1.0;12.99;1.0;13.0;0.0">
+<param name="DCurve" value="LinearCurve;0.0;1.0;7.99;1.0;8.0;0.0">
+<param name="puntiCurve" value="LinearCurve;da5;5.0;a5;5.0;da4;4.0;a4;4.0;da3;3.0;a3;3.0;da2;2.0;a2;2.0;da1;1.0;a1;1.0;da0;0.0;a0;0.0">
+
+
+<param name="xE_INPS3" value="E_INPS3;E_INPS3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xMax" value="Max;Max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xE_INPS1" value="E_INPS1;E_INPS1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xE_INPS2" value="E_INPS2;E_INPS2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xP_SCAU3" value="P_SCAU3;P_SCAU3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xExtra_max" value="Extra_max;Extra_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xP_SCAU1" value="P_SCAU1;P_SCAU1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xP_SCAU2" value="P_SCAU2;P_SCAU2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xE_max" value="E_max;E_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xE_SCAU1" value="E_SCAU1;E_SCAU1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xE_SCAU3" value="E_SCAU3;E_SCAU3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xP_INPS2" value="P_INPS2;P_INPS2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xP_INPS1" value="P_INPS1;P_INPS1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xStagionale" value="Selezione Stagionale;Selezione Stagionale;Selezione Stagionale (21.4.2017);--;--; ; ; ; ; ; ; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare ;<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare ;<B>ICEF</B> Indicatore della Condizione Economica Familiare ; ; ; ; ; ;T.7; ">
+<param name="xE_SCAU2" value="E_SCAU2;E_SCAU2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xP_INPS3" value="P_INPS3;P_INPS3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xCheck" value="Check;NON-idoneità per mancanza dei requisiti (*);ok;NON idoneo;NON idoneo per mancanza dei requisiti (*);=; ; ; ; ;T; ">
+<param name="xP_max" value="P_max;P_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xB_inps" value="B_inps;B_inps; ;-;B per le attività di servizi (INPS); ; ; ; ; ;T.2; ">
+<param name="xC_inps" value="C_inps;C_inps; ;-;C per le attività di servizi (INPS); ; ; ; ; ;T.2; ">
+<param name="xeq0" value="eq0;eq0;non;-;ok; ; ; ; ; ;T; ">
+<param name="xD_inps" value="D_inps;D_inps; ;-;D per le attività di servizi (INPS); ; ; ; ; ;T.2; ">
+<param name="xp_icef" value="p_icef;punteggio per Icef;Icef oltre limite;punteggio per Icef;Punteggio per Icef; ; ; ; ; ;T.2; punti">
+<param name="xA_scau" value="A_scau;A_scau; ;-;, A per le attività di cantiere (SCAU); ; ; ; ; ;T.2; ">
+<param name="xidoneo" value="idoneo;idoneità;la domanda NON è idonea;idoneo;idoneo;=; ; ; ; ;T; ">
+<param name="xidoneità" value="idoneità;idoneità;0;-;1; ;-;+; ; ; ; ">
+<param name="xD_scau" value="D_scau;D_scau; ;-;, D per le attività di cantiere (SCAU); ; ; ; ; ;T.2; ">
+<param name="xA_inps" value="A_inps;A_inps; ;-;A per le attività di servizi (INPS); ; ; ; ; ;T.2; ">
+<param name="xB_scau" value="B_scau;B_scau; ;-;, B per le attività di cantiere (SCAU); ; ; ; ; ;T.2; ">
+<param name="xC_scau" value="C_scau;C_scau; ;-;, C per le attività di cantiere (SCAU); ; ; ; ; ;T.2; ">
+<param name="xinps" value="inps;inps;non;-;ok; ; ; ; ; ; ; ">
+<param name="xinps708447945" value="inps;inps;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs_inps" value="s_inps;s_inps;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpunti_inps" value="punti_inps;Punteggio per le attività di servizi (INPS) + punteggio ICEF (^inps^ + ^punti_icef^);zero punteggio per INPS;Punteggio per le attività di servizi (INPS) + punteggio ICEF (^inps^ + ^punti_icef^);Punteggio per le attività di servizi (INPS) + punteggio ICEF (^inps^ + ^punti_icef^); ; ; ; ; ;T.2; punti">
+<param name="xscau" value="scau;scau;non;-;ok; ; ; ; ; ; ; ">
+<param name="xe2" value="e2;e2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs1" value="s1;s1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xe3" value="e3;e3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs3" value="s3;s3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xe1" value="e1;e1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs2" value="s2;s2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpunteggio_inps" value="punteggio_inps;Punteggio per le attività di servizi (INPS) + punteggio ICEF (^inps^ + ^punti_icef^);zero punteggio per INPS;Punteggio per le attività di servizi (INPS) + punteggio ICEF (^inps^ + ^punti_icef^);Punteggio per le attività di servizi (INPS) + punteggio ICEF (^inps^ + ^punti_icef^); ; ; ; ; ;T.2; punti">
+<param name="xp2" value="p2;p2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xp3" value="p3;p3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpunteggio_scau" value="punteggio_scau;Punteggio per le attività di cantiere (SCAU) + punteggio ICEF (^scau^ + ^punti_icef^);zero punteggio per SCAU;Punteggio per le attività di cantiere (SCAU) + punteggio ICEF (^scau^ + ^punti_icef^);Punteggio per le attività di cantiere (SCAU) + punteggio ICEF (^scau^ + ^punti_icef^); ; ; ; ; ;T.2; punti">
+<param name="xprogettone" value="progettone;progettone;non;-;ok; ; ; ; ; ; ; ">
+<param name="xextra" value="extra;extra;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpunti_icef" value="punti_icef;punteggio per Icef;zero punteggio per Icef ;punteggio per Icef;Punteggio per Icef; ; ; ; ; ;T; punti">
+<param name="xscau1" value="scau1;scau1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xp1" value="p1;p1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xscau3" value="scau3;scau3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xscau2" value="scau2;scau2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpunti_scau" value="punti_scau;Punteggio per le attività di cantiere (SCAU) + punteggio ICEF (^scau^ + ^punti_icef^);zero punteggio per SCAU;Punteggio per le attività di cantiere (SCAU) + punteggio ICEF (^scau^ + ^punti_icef^);Punteggio per le attività di cantiere (SCAU) + punteggio ICEF (^scau^ + ^punti_icef^); ; ; ; ; ;T.2; punti">
+<param name="xp_inps" value="p_inps;p_inps;non;-;ok; ; ; ; ; ; ; ">
+<param name="xp_scau" value="p_scau;p_scau;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs_sum" value="s_sum;s_sum;non;-;ok; ; ; ; ; ; ; ">
+<param name="xp_sum" value="p_sum;p_sum;non;-;ok; ; ; ; ; ; ; ">
+<param name="xfascia_C" value="fascia_C;fascia_C; ;-;in <b>fascia C</b> ( |C_inps| |C_scau| ); ; ; ; ; ;T; ">
+<param name="xfascia_D" value="fascia_D;fascia_D; ;-;in <b>fascia D</b> ( |D_inps| |D_scau| ); ; ; ; ; ;T; ">
+<param name="xfascia_B" value="fascia_B;fascia_B; ;-;in <b>fascia B</b> ( |B_inps| |B_scau| ); ; ; ; ; ;T; ">
+<param name="xe_sum" value="e_sum;e_sum;non;-;ok; ; ; ; ; ; ; ">
+<param name="xfascia_A" value="fascia_A;fascia_A; ;-;in <b>fascia A</b> ( |A_inps| |A_scau| ); ; ; ; ; ;T; ">
+<param name="xfascia" value="fascia;fascia;nessuna fascia;-;fascia; ; ; ; ; ;T; ">
+
+
+
+<param name="xpltree" value="header;applicant;risultato0;risultato1;escluso;risultato2;risultato3;footer;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="header" value="<center><h3>Procedura sperimentale selezione stagionali con applicazione del coefficiente ICEF</h3></center>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="risultato0" value="Icef preso in considerazione:;Icef=-1">
+<param name="risultato1" value="(idoneo==0)Domanda non valida;idoneo=-1">
+<param name="escluso" value="(Check!=0) Codici di esclusione:<br />
+<b>§Check§</b> <br />
+ 11.___:<small> esclusione d'ufficio </small><br />
+ 1_.1__:<small> assenza del requisito di età anagrafica al momento della domanda  </small><br />
+ 1_._1_:<small> assenza del requisito di residenza e domicilio </small><br />
+ 1_.__1:<small> escluso per non essere nello stato di disoccupazione o non essere lavoratore autonomo </small><br />;">
+<param name="risultato2" value="(idoneo==1)Risultato punti: ;punti_icef=-1;punti_inps=-1;punti_scau=-1">
+<param name="risultato3" value="(idoneo==1)Risultato fasce: ;fascia_A=3!0;fascia_B=3!0;fascia_C=3!0;fascia_D=3!0">
+<param name="footer" value="<HR>;">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1793039323">
+<param name="CRC" value="4076719608">
+<param name="CRCdata" value="21-apr-2017 11.02.51">
+</APPLET>
+</CENTER>
+<BR>

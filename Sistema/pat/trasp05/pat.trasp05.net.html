@@ -1,0 +1,56 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.10 $">
+
+<param name="Taratura" value="agevolazione  con TRASPORTO; 9.9.2005">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametri;trendstart;trendattuale">
+
+<param name="parametri" value="zero;RIF=50000;FAR=9999999;FP=9999999;FPM=25000;FPI=0;LS=9999999;LSR=9999999;LSM=55000;LSI=30000;AL1=0.2;AL2=0.6;LDC=3615.2;Quota_scuola=0.4;Redd3inf=23000;Redd3sup=36000;Tariffa_min=53;Tariffa1_max=167;Tariffa2_max=258">
+<param name="trendstart" value="parametri;Dettagli=1;N_componenti=3;C1_pens=25000">
+<param name="trendattuale" value="current;Dettagli=1">
+
+<param name="trends" value="trend1;trend2;trend1_figli;trend2_figli">
+<param name="trend1" value="trendattuale;C1_pens=20000:1000:40000;tariffa1">
+<param name="trend2" value="trendattuale;C1_pens=20000:1000:40000;tariffa2">
+<param name="trend1_figli" value="trendattuale;C1_pens=20000:1000:40000;tariffa1_scuola">
+<param name="trend2_figli" value="trendattuale;C1_pens=20000:1000:40000;tariffa2_scuola">
+
+<param name="nets" value="../icef/m.icef.net.html;trasp05.sub.net.html">
+
+
+<param name="edges" value="P.A.T. MODELLO TRASPORTO">
+
+<param name="connections" value="ICEF-Icef;RIF-Rif">
+
+
+<param name="P.A.T. MODELLO TRASPORTO" value="text;node.ico;100;261;0;Versione 9.9.2005;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloTRASPORTO;xModelloTRASPORTO;3244954946">
+
+<param name="xModelloTRASPORTO" value="P.A.T. MODELLO TRASPORTO;x;Versione 9.9.2005; ; ; ; ; ; ; ; ; ">
+
+
+<param name="xpltree" value="asXml;footer;curve1;curve2;curve1_figli;curve2_figli;version;versionData;check">
+<param name="xpltree1" value="">
+
+<param name="xpltree2" value="">
+<param name="asXml" value="(Xml==1); ">
+<param name="footer" value="<HR><FORM><CENTER><INPUT style='width : 100' type='button' onclick='history.go(-2)' value='INDIETRO' /></CENTER></FORM>;">
+<param name="curve1" value="(Dettagli==1)<P><B>1 figlio con libera circolazione<B>;trend1">
+<param name="curve2" value="(Dettagli==1)<P><B>2 o più figli con libera circolazione<B>;trend2">
+<param name="curve1_figli" value="(Dettagli==1)<P><B>1 figlio senza libera circolazione<B>;trend1_figli">
+<param name="curve2_figli" value="(Dettagli==1)<P><B>2 o più figli senza libera circolazione<B>;trend2_figli">
+<param name="version" value=" Versione: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1224089415">
+<param name="CRC" value="2197793133">
+<param name="CRCdata" value="9-set-2005 8.45.49">
+</APPLET>
+<BR>

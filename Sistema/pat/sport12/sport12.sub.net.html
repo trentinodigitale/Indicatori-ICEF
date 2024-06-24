@@ -1,0 +1,117 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PATstudio" value="PAT sport 2012; 29.10.2012">
+<param name="revision" value="$Revision: 1.1 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="parasport;casosport">
+<param name="parasport" value="current;Check1=0;Check2=0;Check3=0;Icef_inf=0;Icef_sup=0.49;Peso_Icef=0.4;Peso_Merito=0.6">
+<param name="casosport" value="parasport;Assegno_imposto=1000;Indice_frequenza=0.64;Merito=100;Icef=0.245">
+
+
+
+<param name="trends" value="">
+
+
+<param name="variables" value="uno;ascala;mscala;rscala">
+
+<param name="uno" value="1">
+<param name="ascala" value="0.001">
+<param name="mscala" value="0.01">
+
+<param name="rscala" value="0.000001">
+
+
+
+<param name="edges" value="PAT sport;
+Icef-giudizio_icef;Icef_sup-giudizio_icef;Icef_inf-giudizio_icef;Icef-icef_ok;Icef_sup-icef_ok;checks-ok;icef_ok-ammessa;ok-ammessa;Check1-checks;Check2-checks;Check3-checks;punteggio_icef-prodotto_scalare;punteggio_merito-prodotto_scalare;prodotto_scalare-Peso_Icef;prodotto_scalare-Peso_Merito;Merito-punteggio_merito;Indice_frequenza-punteggio_merito;prodotto_scalare-punteggio;ammessa-punteggio;giudizio_icef-punteggio_icef;Assegno_imposto-arl
+">
+
+
+
+<param name="PAT sport" value="text;node.ico;320;383;0;PAT sport (29.10.2012);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT sport;xPAT sport;3320458712">
+<param name="Icef" value="1;node.ico;211;297;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio_icef;icef_ok;0.5;NoCurve;xIcef;xIcef;3968896114">
+<param name="giudizio_icef" value="0;node.ico;155;372;0;giudizio_icef =  MAX( 0, MIN( 1, (Icef - Icef_sup) / (Icef_inf - Icef_sup) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Icef_sup;Icef_inf;1;punteggio_icef;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio_icef;xgiudizio_icef;28646825">
+<param name="Icef_sup" value="1;node.ico;33;349;0;Icef_sup = ;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio_icef;icef_ok;0.5;NoCurve;xIcef_sup;xIcef_sup;3920013047">
+<param name="Icef_inf" value="1;node.ico;243;346;0;Icef_inf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;giudizio_icef;0.5;NoCurve;xIcef_inf;xIcef_inf;1497570424">
+<param name="icef_ok" value="2;node.ico;33;441;0;icef_ok = Icef < Icef_sup;0.0;NumLtNode;NoInput;IntermediateOutput;2;Icef;Icef_sup;1;ammessa;1.0;1.0;1.0;1.0;NoCurve;xicef_ok;xicef_ok;3082144119">
+<param name="checks" value="0;node.ico;92;329;0;checks =  Check1 + Check2 + Check3;0.0;PlusNode;NoInput;NoOutput;3;Check1;Check2;Check3;1;ok;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xchecks;xchecks;147251771">
+<param name="ok" value="0;node.ico;92;488;0;ok = checks == 0.0;0.0;NumEqNode;NoInput;IntermediateOutput;1;checks;1;ammessa;1.0;0.0;NoCurve;xok;xok;3168506721">
+<param name="ammessa" value="2;node.ico;153;488;0;ammessa =  icef_ok * ok;0.0;TimesNode;NoInput;IntermediateOutput;2;icef_ok;ok;1;punteggio;1.0;1.0;1.0;1.0;NoCurve;xammessa;xammessa;1905579665">
+<param name="Check1" value="1;node.ico;37;296;0;Check1 = ;0.0;ProbNode;ValueInput;NoOutput;0;1;checks;0.5;NoCurve;xCheck1;yCheck1;3864041925">
+<param name="Check2" value="1;node.ico;99;296;0;Check2 = ;0.0;ProbNode;ValueInput;NoOutput;0;1;checks;0.5;NoCurve;xCheck2;yCheck2;46866359">
+<param name="Check3" value="1;node.ico;160;296;0;Check3 = ;0.0;ProbNode;ValueInput;NoOutput;0;1;checks;0.5;NoCurve;xCheck3;yCheck3;3192463559">
+<param name="punteggio_icef" value="0;node.ico;157;401;0;punteggio_icef =  100.000*giudizio_icef;0.0;PlusNode;NoInput;IntermediateOutput;1;giudizio_icef;1;prodotto_scalare;mscala;100.0;NoCurve;xpunteggio_icef;ypunteggio_icef;4168222608">
+<param name="prodotto_scalare" value="0;node.ico;313;432;0;prodotto_scalare it.clesius.clesius.engine.nodes.Combine.ScalarProductNode;0.0;ScalarProductNode;NoInput;NoOutput;2;punteggio_icef;punteggio_merito;3;Peso_Icef;Peso_Merito;punteggio;1.0;1.0;1.0;1.0;NoCurve;xprodotto_scalare;yprodotto_scalare;2951805215">
+<param name="punteggio_merito" value="0;node.ico;465;402;0;punteggio_merito =  Merito * Indice_frequenza;0.0;TimesNode;NoInput;IntermediateOutput;2;Merito;Indice_frequenza;1;prodotto_scalare;mscala;1.0;1.0;1.0;NoCurve;xpunteggio_merito;ypunteggio_merito;4005499654">
+<param name="Peso_Icef" value="1;node.ico;144;432;0;Peso_Icef it.clesius.clesius.engine.nodes.Combine.ScalarProductNode;0.0;ScalarProductNode;ParameterInput;NoOutput;1;prodotto_scalare;0;0.0;1.0;NoCurve;xPeso_Icef;yPeso_Icef;1653944559">
+<param name="Peso_Merito" value="1;node.ico;462;430;0;Peso_Merito it.clesius.clesius.engine.nodes.Combine.ScalarProductNode;0.0;ScalarProductNode;ParameterInput;NoOutput;1;prodotto_scalare;0;0.0;1.0;NoCurve;xPeso_Merito;yPeso_Merito;1760251344">
+<param name="Merito" value="1;node.ico;404;300;0;Merito = ;0.0;PlusNode;ValueInput;NoOutput;0;1;punteggio_merito;mscala;NoCurve;xMerito;yMerito;3049289034">
+<param name="Indice_frequenza" value="1;node.ico;510;298;0;Indice_frequenza = ;0.0;PlusNode;ValueInput;NoOutput;0;1;punteggio_merito;0.0;NoCurve;xIndice_frequenza;yIndice_frequenza;2624322921">
+<param name="punteggio" value="0;node.ico;313;488;0;punteggio =  100.000*prodotto_scalare * ammessa;0.0;TimesNode;NoInput;ResultOutput;2;prodotto_scalare;ammessa;0;mscala;100.0;1.0;0.0;NoCurve;xpunteggio;ypunteggio;3140457686">
+<param name="Assegno_imposto" value="1;node.ico;303;310;0;Assegno_imposto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;rscala;NoCurve;xAssegno_imposto;yAssegno_imposto;1115974574">
+<param name="arl" value="0;node.ico;260;286;0;arl =  Assegno_imposto;0.0;PlusNode;NoInput;NoOutput;1;Assegno_imposto;0;rscala;1.0;NoCurve;xarl;yarl;4108507698">
+
+
+
+<param name="xCheck3" value="Check3;Check3;scolarità ok;-;mancanza del requisiti di tesseramento; ; ; ; ; ; ; ">
+
+<param name="xCheck2" value="Check2;Check2;scolarità ok;-;mancanza dei requisiti scolastici; ; ; ; ; ; ; ">
+
+<param name="xCheck1" value="Check1;Check1;residenza ok;-;mancanza del requisito di residenza; ; ; ; ; ; ; ">
+
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+
+<param name="xIndice_frequenza" value="Indice_frequenza;Indice_frequenza;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xMerito" value="Merito;Merito;Merito=0;Merito;Merito; ; ; ; ; ;T.2; ">
+
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;0;-;1; ;-;+; ; ;T.1; ">
+<param name="xIcef_sup" value="Icef_sup;Icef_sup;0;-;1; ;-;+; ; ;T.7; ">
+<param name="xIcef" value="Icef;Icef;Icef=0;Icef;Icef; ; ; ; ; ;T.9; ">
+<param name="xPAT sport" value="PAT sport;PAT sport;PAT sport (29.10.2012);--;--; ; ; ; ; ; ; ">
+<param name="xarl" value="arl;arl;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xPeso_Merito" value="Peso_Merito;Peso_Merito;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xPeso_Icef" value="Peso_Icef;Peso_Icef;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xok" value="ok;ok;Requisiti generali mancanti;-;Requisiti ok; ;-;+; ; ; ; ">
+<param name="xpunteggio_icef" value="punteggio_icef;Punteggio Icef;Punteggio Icef=0;Punteggio Icef;Punteggio Icef; ; ; ; ; ;T.2; ">
+
+<param name="xpunteggio" value="punteggio;Punteggio = ( %Peso_Icef%*^punteggio_icef^ + %Peso_Merito%*^punteggio_merito^ );Punteggio=0;Punteggio = ( %Peso_Icef%*^punteggio_icef^ + %Peso_Merito%*^punteggio_merito^ );Punteggio = ( %Peso_Icef%*^punteggio_icef^ + %Peso_Merito%*^punteggio_merito^ ); ; ; ; ;<b>;T.2;</b>">
+
+<param name="xicef_ok" value="icef_ok;icef_ok;Icef oltre il limite;-;Icef ok; ; ; ; ; ; ; ">
+<param name="xammessa" value="ammessa;x;NON ammesso;-;ammesso; ; ; ; ; ; ; ">
+<param name="xprodotto_scalare" value="prodotto_scalare;prodotto_scalare;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xpunteggio_merito" value="punteggio_merito;Punteggio Merito;Punteggio Merito=0;Punteggio Merito;Punteggio Merito; ; ; ; ; ;T.2; ">
+
+<param name="xchecks" value="checks;checks;0;-;1; ;-;+; ; ; ; ">
+<param name="xgiudizio_icef" value="giudizio_icef;giudizio_icef;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="tit;applicant;dati;ris;negativo;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="tit" value="<center><h2>Punteggio per merito Sportivo</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati per il calcolo del punteggio</b>;Icef=-1;Merito=-1">
+<param name="ris" value="(ammessa==1)<b>Punteggi</b>;punteggio_icef=-1;punteggio_merito=-1;punteggio=-1">
+<param name="negativo" value="(ammessa==0)<br /><b>Non ammessa</b>;icef_ok=3!1;ok=3!1;Check1=2!0;Check2=2!0;Check3=2!0">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3785890321">
+<param name="CRC" value="3910658050">
+<param name="CRCdata" value="29-ott-2012 18.33.45">
+</APPLET>
+</CENTER>
+<BR>

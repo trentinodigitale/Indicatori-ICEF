@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2><BR>Domanda Uni ICEF</H2>
+		</CENTER></head> ]]>
+	</header>
+
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>	
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomanda</class>
+	</infoDoc>	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+
+</Doc>

@@ -1,0 +1,116 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"
+	WIDTH=700 HEIGHT=600 MAYSCRIPT>
+	<param name="revision" value="$Revision: 35990 $">
+
+	<param name="Taratura"
+		value="28.5.2018; Fondo di solidarietà a tutela delle vittime di violenza 2018">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+	<param name="trendStarts" value="paramVITTIME;casoIcef;casoVITTIMA">
+
+	<param name="paramVITTIME" value="current;Sup=0.4;Perc=0.3;Spesa_min=3000;Anticipazione_max=5000">
+	<param name="casoIcef" value="paramVITTIME;Icef=0.18;Spese=3333.33">
+	<param name="casoVITTIMA"
+		value="paramVITTIME;Check=1123456000;Spese=5000;Icef=0.2">
+
+	<param name="variables" value="rscala;pscala;tscala">
+
+	<param name="tscala" value="0.0001">
+	<param name="rscala" value="0.00002">
+	<param name="pscala" value="0.000005">
+
+
+
+
+
+<param name="edges" value="P.A.T. VITTIME;
+Icef-perc_anti;Sup-perc_anti;Icef-idoneo;Sup-idoneo;idoneo-anticipazione;Check-ne;ne-anticipazione;Anticipazione_max-ant;spGeMin-anticipazione;inf-perc_anti;Spese-spGeMin;Spesa_min-spGeMin;ni_lt-check1;idoneo-ni;Check-check1;spGeMin-lt;lt-check1;Spese-potenziale;Perc-potenziale;potenziale-ant;ni-ni_lt;
+lt-ni_lt;ni-check1;ne-ni_lt;ant-anticipazione">
+
+
+
+<param name="P.A.T. VITTIME" value="text;node.ico;68;300;0;P.A.T. VITTIME 2019 - (28.5.2018);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_VITTIME;yModello_VITTIME;1444347702">
+<param name="Icef" value="1;node.ico;231;268;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc_anti;idoneo;0.5;NoCurve;xIcef;xIcef;3206093624">
+<param name="perc_anti" value="0;node.ico;234;306;0;perc_anti =  MAX( 0, MIN( 1, (Icef - Sup) / (inf - Sup) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Sup;inf;0;0.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xperc_anti;xperc_anti;1150222884">
+<param name="Sup" value="1;node.ico;301;306;0;Sup = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc_anti;idoneo;0.5;NoCurve;xSup;xSup;2091563684">
+<param name="idoneo" value="0;node.ico;351;304;0;idoneo = Icef <= Sup;0.0;NumLeNode;NoInput;IntermediateOutput;2;Icef;Sup;2;anticipazione;ni;1.0;1.0;1.0;1.0;NoCurve;xidoneo;xidoneo;2393854837">
+<param name="anticipazione" value="2;node.ico;365;387;0;anticipazione =  idoneo * ne * spGeMin * ant;0.0;TimesNode;NoInput;ResultOutput;4;idoneo;ne;spGeMin;ant;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xanticipazione;xanticipazione;4080408655">
+<param name="Check" value="1;node.ico;533;292;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ne;check1;0.5;NoCurve;xCheck;xCheck;2734806736">
+<param name="ne" value="0;node.ico;377;333;0;ne = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;2;anticipazione;ni_lt;1.0;0.0;NoCurve;xne;xne;2271067155">
+<param name="Anticipazione_max" value="1;node.ico;141;387;0;Anticipazione_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ant;1.0;NoCurve;xAnticipazione_max;xAnticipazione_max;3012142870">
+<param name="ant" value="0;node.ico;234;387;0;ant =  Min(  Anticipazione_max,  potenziale );0.0;NumMinNode;NoInput;NoOutput;2;Anticipazione_max;potenziale;1;anticipazione;tscala;1.0;1.0;1.0;NoCurve;xant;xant;101161909">
+<param name="spGeMin" value="0;node.ico;142;364;0;spGeMin = Spese >= Spesa_min;0.0;NumGeNode;NoInput;NoOutput;2;Spese;Spesa_min;2;lt;anticipazione;1.0;1.0;1.0;1.0;NoCurve;xspGeMin;xspGeMin;1178956634">
+<param name="inf" value="0;node.ico;170;307;0;inf = ;0.0;ProbNode;NoInput;NoOutput;0;1;perc_anti;0.0;NoCurve;xinf;xinf;3910926981">
+<param name="Spese" value="1;node.ico;142;331;0;Spese = ;0.0;PlusNode;ValueInput;NoOutput;0;2;spGeMin;potenziale;tscala;NoCurve;xSpese;xSpese;892120275">
+<param name="Spesa_min" value="1;node.ico;49;360;0;Spesa_min = ;0.0;PlusNode;ValueInput;NoOutput;0;1;spGeMin;0.0;NoCurve;xSpesa_min;xSpesa_min;4293052342">
+<param name="ni_lt" value="0;node.ico;427;333;0;ni_lt =  + ni * ne + lt * ne - ni * lt * ne;0.0;ProbNode;NoInput;NoOutput;3;ni;lt;ne;1;check1;0.0;0.0;0.0;0.0;0.0;1.0;1.0;1.0;NoCurve;xni_lt;xni_lt;338665934">
+<param name="check1" value="2;node.ico;533;377;0;check1 =  1000000000.000*ni_lt + Check + 80.000*ni + 9.000*lt;0.0;PlusNode;NoInput;NoOutput;4;ni_lt;Check;ni;lt;0;1.0;1.0E9;1.0;80.0;9.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xcheck1;xcheck1;4041601723">
+<param name="ni" value="0;node.ico;427;304;0;ni =  - idoneo;0.0;ProbNode;NoInput;NoOutput;1;idoneo;2;check1;ni_lt;1.0;0.0;NoCurve;xni;xni;1933599166">
+<param name="lt" value="0;node.ico;428;364;0;lt =  - spGeMin;0.0;ProbNode;NoInput;NoOutput;1;spGeMin;2;check1;ni_lt;1.0;0.0;NoCurve;xlt;xlt;3950437488">
+<param name="potenziale" value="0;node.ico;235;332;0;potenziale =  Spese * Perc;0.0;TimesNode;NoInput;NoOutput;2;Spese;Perc;1;ant;0.0;1.0;1.0;1.0;NoCurve;xpotenziale;xpotenziale;2486639994">
+<param name="Perc" value="1;node.ico;312;331;0;Perc = ;0.0;ProbNode;ValueInput;NoOutput;0;1;potenziale;0.5;NoCurve;xPerc;xPerc;1419092192">
+
+
+
+<param name="xAnticipazione_max" value="Anticipazione_max;Anticipazione massima;Anticipazione non ancora determinata;Anticipazione massima;Anticipazione massima; ; ; ; ; ;$.0; ">
+<param name="xCheck" value="Check;Idoneità d'ufficio;Domanda esclusa d'ufficio;Idoneità d'ufficio;Idoneità d'ufficio; ; ; ; ; ;T; ">
+<param name="xSpesa_min" value="Spesa_min;Spesa_min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xSpese" value="Spese;Spese dichiarate;non;Spese dichiarate;Spese dichiarate; ; ; ; ; ;$.2; ">
+<param name="xinf" value="inf;inf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPerc" value="Perc;Perc;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef" value="Icef; <b>(Icef)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare considerato;Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b> zero ;Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b>;Indicatore della Condizione Economica Familiare <b>(Icef considerato >=1), <br /> si usa il massimo delle valutazioni di redditi e patrimonio</b>; ; ; ; ;<b>;T.10;</b>">
+<param name="xModello_VITTIME" value="P.A.T. VITTIME;P.A.T. VITTIME;P.A.T. VITTIME 2019 - (28.5.2018);--;--; ; ; ; ; ; ; ">
+
+<param name="xSup" value="Sup;Sup;non;-;ok; ; ; ; ; ;T.4; ">
+<param name="xlt" value="lt;lt;non;-;ok; ; ; ; ; ; ; ">
+<param name="xne" value="ne;ne;non;-;ok; ; ; ; ; ; ; ">
+<param name="xni" value="ni;ni;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpotenziale" value="potenziale;potenziale;non;-;ok; ; ; ; ; ; ; ">
+<param name="xant" value="ant;ant;non;-;ok; ; ; ; ; ; ; ">
+<param name="xidoneo" value="idoneo;idoneo;icef (^Icef^) superiore al limite consentito (^Sup^);-;Icef OK, entro il limite del regolamento; ; ; ; ; ; ; ">
+<param name="xspGeMin" value="spGeMin;spGeMin;anticipazione inferiore all'importo minimo previsto;-;Spese OK, oltre la franchigia; ; ; ; ; ; ; ">
+<param name="xni_lt" value="ni_lt;ni_lt;non;-;ok; ; ; ; ; ; ; ">
+<param name="xperc_anti" value="perc_anti;perc_anti;non;-;ok; ; ; ; ; ;P.2; ">
+<param name="xcheck1" value="check1;check1;0;-;1; ; ; ; ; ;T; ">
+<param name="xanticipazione" value="anticipazione;<b>Anticipazione del risarcimento per il grado di giudizio</b> ;nessuna anticipazione ;<b>Anticipazione del risarcimento  per il grado di giudizio</b>;<b>Anticipazione del risarcimento  per il grado di giudizio</b>; ; ; ; ; <b>;$.0;</b>">
+
+
+
+<param name="xpltree" value="applicant0;titolo;dati;negativo;spiegacheck;risultato;separa;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="titolo" value="<center><h1>Fondo di solidarietà a tutela delle vittime di violenza 2018<br /> Leggi provinciali   9 marzo 2010, n. 6, articolo 7 e    30 dicembre 2015, n. 21, articolo 27, comma 3 nonché deliberazione di Giunta provinciale  n. 940 del 31/05/2016</h1></center> ;">
+<param name="dati" value="<b> Dati: </b>;Icef=-1;Spese=-1!0">
+<param name="negativo" value="(check1!=0)<b>Domanda non idonea:</b> ;">
+<param name="spiegacheck" value="(check1!=0) Codici di esclusione:<br>
+<b>§check1§</b> <br />
+ 1.1__.___.___:<small> residenza non in Provincia di Trento al momento della presentazione della domanda</small><br />
+ 1._2_.___.___:<small> residenza non in provincia di Trento nel momento in cui la persona ha subito l'offesa dal reato</small><br />
+ 1.__3.___.___:<small> fattispecie di reato non rientrante nell'ambito della violenza domestica</small><br />
+ 1.___.4__.___:<small> fattispecie di reato non contemplata dalla disciplina</small><br />
+ 1.___._5_.___:<small> presentazione della domanda oltre il termine di 5 anni dalla data di adozione del provvedimento dell'autorità giudiziaria</small><br />
+ 1.___.__6.___:<small> istanza di accesso al fondo presentata in riferimento al medesimo risarcimento del danno riconosciuto alla persona offesa</small><br />
+ 1.___.___.7__:-<br />
+ 1.___.___._8_:<small>  |idoneo|</small><br />
+ 1.___.___.__9:<small> |spGeMin|;">
+<param name="risultato" value="(Spese!=0)<b>Risultato:</b> ;Anticipazione_max=-1!1;(Anticipazione_max!=0)anticipazione=-1">
+<param name="separa" value="<HR />;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1703560459">
+<param name="CRC" value="3041182524">
+<param name="CRCdata" value="28-mag-2018 17.16.18">
+</APPLET>
+</CENTER>
+<BR>
+

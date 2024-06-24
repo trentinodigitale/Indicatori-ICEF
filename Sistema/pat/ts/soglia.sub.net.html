@@ -1,0 +1,92 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=400 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.2 $">
+
+<param name="Taratura" value="2 tariffe con soglia; 3.11.2004">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="tariffe;benefici;casotariffa;casobeneficio">
+
+<param name="tariffe" value="zero;Tmin=20.0;Soglia=0.2;Tmax=100.0">
+<param name="benefici" value="current;Soglia=0.2;Bmax=100.0">
+
+<param name="casotariffa" value="tariffe;Tmin=10.0">
+<param name="casobeneficio" value="benefici;Bmax=1000.0">
+
+
+<param name="variables" value="tscala">
+
+ <param name="tscala" value="0.0001">
+
+
+
+
+<param name="edges" value="P.A.T.  Soglia;
+Icef-fascia;Soglia-fascia;fascia-tariffa;Tmin-tariffa;Tmax-tariffa;fascia-agevolazione;fascia-beneficio;Bmin-beneficio;Bmax-beneficio;Tmax-t?;Bmax-b?">
+
+
+
+<param name="P.A.T.  Soglia" value="text;node.ico;45;339;0;P.A.T.  Soglia 2004 - (3.11.2004);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Soglia;xModello_Soglia;2656407445">
+<param name="Icef" value="1;node.ico;237;310;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;fascia;0.5;NoCurve;xIcef;yIcef;1306719034">
+<param name="fascia" value="0;node.ico;237;344;0;-;0.0;NumGtNode;NoInput;IntermediateOutput;2;Icef;Soglia;3;tariffa;agevolazione;beneficio;1.0;1.0;1.0;1.0;NoCurve;xfascia;yfascia;3176646137">
+<param name="Soglia" value="1;node.ico;160;342;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;fascia;1.0;NoCurve;xSoglia;ySoglia;347874717">
+<param name="tariffa" value="2;node.ico;391;325;0;-;0.0;NumIfNode;NoInput;NoOutput;3;fascia;Tmax;Tmin;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xtariffa;ytariffa;1952792743">
+<param name="Tmin" value="1;node.ico;335;300;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tariffa;tscala;NoCurve;xTmin;yTmin;2519474787">
+<param name="Tmax" value="1;node.ico;450;300;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;tariffa;t?;tscala;NoCurve;xTmax;yTmax;3164540498">
+<param name="agevolazione" value="2;node.ico;239;377;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;fascia;0;1.0;0.0;NoCurve;xagevolazione;yagevolazione;4228286246">
+<param name="beneficio" value="2;node.ico;392;353;0;-;0.0;NumIfNode;NoInput;NoOutput;3;fascia;Bmin;Bmax;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xbeneficio;ybeneficio;2580973482">
+<param name="Bmin" value="1;node.ico;329;375;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;beneficio;tscala;NoCurve;xBmin;yBmin;1349609818">
+<param name="Bmax" value="1;node.ico;451;377;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;beneficio;b?;tscala;NoCurve;xBmax;yBmax;880743104">
+<param name="t?" value="0;node.ico;502;304;0;-;0.0;NumGtNode;NoInput;NoOutput;1;Tmax;0;1.0;0.0;NoCurve;xt?;yt?;2282517804">
+<param name="b?" value="0;node.ico;503;381;0;-;0.0;NumGtNode;NoInput;NoOutput;1;Bmax;0;1.0;0.0;NoCurve;xb?;yb?;993798708">
+
+
+
+<param name="xTmax" value="Tmax;La tariffa massima;La tariffa massima=0;La tariffa massima;La tariffa massima;è; ; ; ; ;$.2; ">
+
+<param name="xTmin" value="Tmin;La tariffa minima;La tariffa minima=0;La tariffa minima;La tariffa minima;è; ; ; ; ;$.2; ">
+
+<param name="xBmax" value="Bmax;Il beneficio massimo;Il beneficio massimo=0;Il beneficio massimo;Il beneficio massimo;è; ; ; ; ;$.2; ">
+
+<param name="xBmin" value="Bmin;Il beneficio minimo;Il beneficio minimo=0;Il beneficio minimo;Il beneficio minimo;è; ; ; ; ;$.2; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare; ; ; ; ;<b>;T.4;</b> ">
+
+<param name="xSoglia" value="Soglia;La soglia Icef;Soglia=0 (sempre tariffa minima);La soglia Icef;La soglia Icef (per tariffa massima);è; ; ; ; ;P.4; ">
+
+<param name="xModello_Soglia" value="P.A.T.  Soglia;P.A.T.  Soglia;P.A.T.  Soglia 2004 - (3.11.2004);--;--; ; ; ; ; ; ; ">
+
+
+<param name="xagevolazione" value="agevolazione;Agevolazione;<b>nessuna agevolazione</b> ( Icef > ^Soglia^ );-;Situazione da <b>agevolazione</b> ( Icef <= ^Soglia^ );è; ; ; ; ;T; ">
+
+<param name="xfascia" value="fascia;La fascia tariffaria;Fascia 0 (tariffa minima);-;Fascia 1 (tariffa massima);è; ; ; ; ;T; ">
+
+<param name="xtariffa" value="tariffa;La tariffa calcolata;La tariffa calcolata  è zero;La tariffa calcolata;La tariffa calcolata;è; ; ; ;<b> ;$.2;</b> ">
+
+<param name="xbeneficio" value="beneficio;Il beneficio determinato;Nessun beneficio;Il beneficio determinato;Il beneficio determinato;è; ; ; ;<b> ;$.2;</b> ">
+
+
+
+
+<param name="xpltree" value="applicant;titolo1;titolo2;calcolo;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="applicant" value="<P> Richiedente: ;">
+<param name="titolo1" value="(t?==1)<CENTER><H2>P.A.T. TARIFFE</H2></CENTER>;">
+<param name="titolo2" value="(b?==1)<CENTER><H2>P.A.T. BENEFICIO</H2></CENTER>;">
+<param name="calcolo" value="<P><BR><P><B>Calcolo:</B>;Icef=-1;agevolazione=-1;(t?==1)tariffa=-1;(b?==1)beneficio=-1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1276286360">
+<param name="CRC" value="3625689624">
+<param name="CRCdata" value="3-nov-2004 13.07.40">
+</APPLET>
+<BR>

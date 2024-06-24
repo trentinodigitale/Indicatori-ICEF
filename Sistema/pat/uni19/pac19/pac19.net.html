@@ -1,0 +1,104 @@
+<APPLET CODE='it.clesius.engine.elab.Clesius.class' CODEBASE='/clesius' WIDTH=1000 HEIGHT=1000 MAYSCRIPT >
+	<param name="revision" value="$Revision: 3602 $">
+	<param name="Taratura" value="PAC2018/2019 29.1.2019">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="false">
+
+<param name="nets" value="pac19.sub.net.html">
+<param name="connections" value="ident-inalza;borsa-pb;borsa-pborsa;ispeOK-OK;borsa-eq1">
+
+
+	<param name="trends" value="trend1;trend2">
+	<param name="trend1"
+		value="caso600;ISEE=20000:500:30000;importo_borsa">
+	<param name="trend2"
+		value="caso2000;ISEE=20000:500:30000;importo_borsa">
+		
+<param name="xpltreecurve" value="iseeusato;curve1;curve2;version;versionData;check">
+
+<param name="curve1" value="<P><B>1o Andamento della borsa di studio<B>;trend1">
+<param name="curve2" value="<P><B>2o Andamento della borsa di studio<B>;trend2">
+
+	<param name="trendStarts"
+		value="casoUNI;paramUNI;caso600;caso2000">
+
+	<param name="casoUNI"
+		value="paramUNI,borse;Sede=2;Cumulo=800;Merito=1;ISEE=24841.47;ISP=28378;VSE=2.04">
+	<param name="caso600"
+		value="paramUNI,borse;Sede=1;Cumulo=600;Merito=1;ISEE=20000;ISP=5000;VSE=2.04">
+	<param name="caso2000"
+		value="paramUNI,borse;Sede=1;Cumulo=2000;Merito=1;ISEE=20000;ISP=5000;VSE=2.04">
+
+	<param name="paramUNI"
+		value="current;Chiede_borsa=1;Inf=22999.99;Sup=29000.01;Lim=32000.01;Perc_borsa=1;Numero_mesi_forzatura=99;SogliaISPE=50000;Cumulo_min=600;Cumulo_max=2000">
+
+
+	<param name="variables"
+		value="rscala">
+
+	<param name="rscala" value="0.00001;editable">
+
+
+
+<param name="edges" value="UniPAC;
+ident-borsa;Sup-borsa;Inf-borsa;ISPE-ispeOK;SogliaISPE-ispeOK;Precedente-prece;VSE-prece;ISEE-ISEE_OPERA;prece-ISEE_OPERA;ISP-ISPE;VSE-ISPE;ISEE_OPERA-ident;Sup-sup;Inf-inf">
+
+
+
+<param name="UniPAC" value="text;node.ico;268;316;0;PAC - Opera Universitaria 2018/2019 -  (29.1.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xUniPAC;yUniPAC;3784292009">
+<param name="ident" value="0;node.ico;557;328;0;-;0.0;PlusNode;NoInput;NoOutput;1;ISEE_OPERA;1;borsa;rscala;1.0;NoCurve;xident;xident;1238415869">
+<param name="borsa" value="0;node.ico;557;421;0;-;0.0;CutoffNode;NoInput;NoOutput;3;ident;Sup;Inf;0;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xborsa;xborsa;1843096853">
+<param name="Sup" value="1;node.ico;590;397;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;borsa;sup;rscala;NoCurve;xSup;xSup;3676972013">
+<param name="Inf" value="1;node.ico;535;398;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;borsa;inf;rscala;NoCurve;xInf;xInf;2490348959">
+<param name="ISPE" value="0;node.ico;302;379;0;-;0.0;DivideNode;NoInput;NoOutput;2;ISP;VSE;1;ispeOK;rscala;1.0;1.0;1.0;NoCurve;xISPE;xISPE;3611514681">
+<param name="ispeOK" value="2;node.ico;377;377;0;-;0.0;NumLeNode;NoInput;NoOutput;2;ISPE;SogliaISPE;0;1.0;1.0;1.0;1.0;NoCurve;xispeOK;xispeOK;2320762900">
+<param name="SogliaISPE" value="1;node.ico;300;413;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ispeOK;1.0;NoCurve;xSogliaISPE;xSogliaISPE;1431101739">
+<param name="Precedente" value="1;node.ico;54;355;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;prece;1.0;NoCurve;xPrecedente;xPrecedente;2783668084">
+<param name="prece" value="0;node.ico;132;355;0;-;0.0;DivideNode;NoInput;NoOutput;2;Precedente;VSE;1;ISEE_OPERA;1.0;1.0;1.0;1.0;NoCurve;xprece;xprece;4007918889">
+<param name="VSE" value="1;node.ico;204;354;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;prece;ISPE;1.0;NoCurve;xVSE;xVSE;288715789">
+<param name="ISEE" value="1;node.ico;101;327;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ISEE_OPERA;rscala;NoCurve;xISEE;xISEE;1781210768">
+<param name="ISEE_OPERA" value="2;node.ico;199;328;0;-;0.0;MinusNode;NoInput;IntermediateOutput;2;ISEE;prece;1;ident;1.0;1.0;1.0;1.0;NoCurve;xISEE_OPERA;xISEE_OPERA;2756605822">
+<param name="ISP" value="1;node.ico;105;380;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ISPE;rscala;NoCurve;xISP;xISP;4168912319">
+<param name="sup" value="0;node.ico;589;373;0;-;0.0;PlusNode;NoInput;NoOutput;1;Sup;0;1.0;1.0000001;NoCurve;xsup;xsup;1162731009">
+<param name="inf" value="0;node.ico;533;374;0;-;0.0;PlusNode;NoInput;NoOutput;1;Inf;0;1.0;1.0;NoCurve;xinf;xinf;1228142702">
+
+
+
+<param name="xPrecedente" value="Precedente;Assegno precedente;non precedente;Assegno precedente;Assegno precedente; ; ; ; ; -<i>;$.2;</i>">
+<param name="xSogliaISPE" value="SogliaISPE;SogliaISPE;non;-;( valore limite entro il quale si può richiedere una borsa: ^SogliaISPE^ ); ; ; ; ; ;$.2; ">
+<param name="xVSE" value="VSE;VSE - Valore della Scala di Equivalenza;VSE=0?;VSE - Valore della Scala di Equivalenza;VSE - Valore della Scala di Equivalenza; ; ; ; ; ;T.2; ">
+<param name="xISP" value="ISP;ISP - Indicatore della Situazione Patrimoniale ;ISP - Indicatore della Situazione Patrimoniale ;ISP - Indicatore della Situazione Patrimoniale ;ISP - Indicatore della Situazione Patrimoniale; ; ; ; ; <i>;$.2;</i>">
+<param name="xISEE" value="ISEE;ISEE - Indicatore della Situazione Economica Equivalente ;ISEE - Indicatore della Situazione Economica Equivalente ;ISEE - Indicatore della Situazione Economica Equivalente ;ISEE - Indicatore della Situazione Economica Equivalente ; ; ; ; ; <i>;$.2;</i>">
+<param name="xInf" value="Inf;Inf;0;-;1; ;-;+; ; ;T; ">
+<param name="xSup" value="Sup;Sup;0;-;( valore limite entro il quale si può richiedere una borsa: ^Sup^ ); ; ; ; ; ;T; ">
+<param name="xUniPAC" value="UniPAC;UniPAC;PAC - Opera Universitaria 2018/2019 -  (29.1.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xinf" value="inf;inf;0;-;( valore a partire il quale si può richiedere una borsa: ^Inf^ ); ; ; ; ; ; ; ">
+<param name="xident" value="ident;ident;0;-;1; ;-;+; ; ; ; ">
+<param name="xsup" value="sup;sup;0;-;( valore limite entro il quale si può richiedere una borsa: ^Sup^ ); ; ; ; ; ; ; ">
+<param name="xISEE_OPERA" value="ISEE_OPERA;ISEE_OPERA - Indicatore ricalcolato |sup|;ISEE - Indicatore ricalcolato |sup|;ISEE - Indicatore ricalcolato |sup|;ISEE - Indicatore ricalcolato |sup|; ; ; ; ; <b>;$.2;</b>">
+<param name="xISPE" value="ISPE;ISPE - Indicatore della Situazione Patrimoniale Equivalente  |SogliaISPE|;ISEE - Indicatore della Situazione Patrimoniale Equivalente  |SogliaISPE|;ISEE - Indicatore della Situazione Patrimoniale Equivalente |SogliaISPE|;ISEE - Indicatore della Situazione Patrimoniale Equivalente  |SogliaISPE|; ; ; ; ; <b>;$.2;</b>">
+<param name="xispeOK" value="ispeOK;ispeOK;ispe non OK;-;ispeOK; ; ; ; ; ; ; ">
+<param name="xprece" value="prece;prece;non;-;ok; ; ; ; ; ; ; ">
+<param name="xborsa" value="borsa;borsa;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="iseeusato;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="iseeusato" value="<b>Dati:</b>;ISEE=-1;(eq1==1)inf=-1;(borsa==0)sup=-1;Precedente=-1!0;VSE=-1;(Precedente!=0)ISEE_OPERA=-1;ISP=-1!0;ISPE=-1!0">
+<param name="version" value="Versione uni17: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2072409466">
+<param name="CRC" value="4031272774">
+<param name="CRCdata" value="29-gen-2019 18.42.15">
+</APPLET>
+<BR>

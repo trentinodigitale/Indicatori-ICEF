@@ -1,0 +1,190 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PATtrasporto" value="PAT trasporto 2006; 12.6.2006">
+<param name="revision" value="$Revision: 1.1 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="trendstart;caso;paratrasp">
+<param name="trendstart" value="current">
+<param name="caso" value="paratrasp;Icef=0.2;ISEE=20400">
+
+<param name="paratrasp" value="current;Redd3inf=23000;Redd3sup=36000;Rif=50000;Tariffa_min=53;Tariffa1_max=167;Tariffa2_max=258;Quota_scuola=0.4">
+
+<param name="trends" value="">
+
+
+
+
+<param name="variables" value="uno;iseeinf;iseesup;ascala;rscala;C3;divisotre;tarmin;ascala">
+
+<param name="uno" value="1">
+<param name="iseeinf" value="16000">
+<param name="iseesup" value="25000">
+<param name="ascala" value="0.001">
+
+<param name="rscala" value="0.000001">
+<param name="C3" value="2.04">
+
+<param name="divisotre" value="uno / C3; 0.490196078">
+
+<param name="tarmin" value="50;editable">
+
+
+
+
+<param name="edges" value="PAT trasporto;tariffa_ISEE;isee;
+Icef-giudizio;sup-giudizio;inf-giudizio;Icef-condOK;Redd3inf-inf;Redd3sup-sup;Rif-inf;Rif-sup;sup-condOK;Tariffa1_max-d1;Tariffa_min-d1;Tariffa2_max-d2;Tariffa_min-d2;Tariffa_min-tariffa1;a1-tariffa1;Tariffa_min-tariffa2;a2-tariffa2;Figli-gt1;giudizio-percentuale;percentuale-a1;percentuale-a2;
+gt1-tar;tariffa2-tar;tariffa1-tar;gt1-tar_sc;tariffa2_scuola-tar_sc;tariffa1_scuola-tar_sc;Solo_scuola-tariffa;tar_sc-tariffa;tar-tariffa;ISEE-giudizio_ISEE;Inf_ISEE-giudizio_ISEE;Sup_ISEE-giudizio_ISEE;giudizio-fascia;tariffa2-t2_s;tariffa1-t1_s;Quota_scuola-t1_s;Quota_scuola-t2_s;Tariffa_min-tariffa1_scuola;Tariffa_min-tariffa2_scuola;t1_s-tariffa1_scuola;
+t2_s-tariffa2_scuola;Tariffa1_max-t1max;Tariffa2_max-t2max;Quota_scuola-t1max;Quota_scuola-t2max">
+
+
+
+<param name="PAT trasporto" value="text;node.ico;225;448;0;PAT trasporto (12.6.2006);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT trasporto;xPAT trasporto;3023825440">
+<param name="tariffa_ISEE" value="2;node.ico;487;428;0;La tariffa_ISEE  0,50;0.0;TimesNode;NoInput;IntermediateOutput;0;0;ascala;NoCurve;xtariffa_ISEE;ytariffa_ISEE;867955593">
+<param name="isee" value="0;node.ico;245;399;0;-;0.0;TimesNode;NoInput;NoOutput;0;0;1.0;NoCurve;xisee;yisee;2221532431">
+<param name="Icef" value="1;node.ico;138;310;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;condOK;0.5;NoCurve;xIcef;yIcef;1975096107">
+<param name="giudizio" value="0;0;137;352;0;-;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;sup;2;percentuale;fascia;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;ygiudizio;2559249341">
+<param name="sup" value="0;node.ico;177;325;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;2;giudizio;condOK;1.0;divisotre;1.0;1.0;NoCurve;xsup;ysup;2900154492">
+<param name="inf" value="0;node.ico;95;326;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;1;giudizio;1.0;divisotre;1.0;1.0;NoCurve;xinf;yinf;2428223542">
+<param name="condOK" value="0;node.ico;249;324;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;3606031189">
+<param name="Redd3inf" value="1;node.ico;52;299;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;rscala;NoCurve;xRedd3inf;yRedd3inf;421366184">
+<param name="Redd3sup" value="1;node.ico;221;302;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;sup;rscala;NoCurve;xRedd3sup;yRedd3sup;1601231608">
+<param name="Rif" value="1;node.ico;139;281;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;inf;sup;rscala;NoCurve;xRif;yRif;1842471463">
+<param name="Tariffa1_max" value="1;node.ico;378;303;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;d1;t1max;ascala;NoCurve;xTariffa1_max;yTariffa1_max;4236292556">
+<param name="d1" value="0;node.ico;376;334;0;-;0.0;MinusNode;NoInput;NoOutput;2;Tariffa1_max;Tariffa_min;0;ascala;1.0;1.0;1.0;NoCurve;xd1;yd1;4283322575">
+<param name="Tariffa_min" value="1;node.ico;494;301;0;-;0.0;PlusNode;ValueInput;NoOutput;0;6;d1;d2;tariffa1;tariffa2;tariffa1_scuola;tariffa2_scuola;ascala;NoCurve;xTariffa_min;yTariffa_min;475433675">
+<param name="Tariffa2_max" value="1;node.ico;628;305;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;d2;t2max;ascala;NoCurve;xTariffa2_max;yTariffa2_max;948226617">
+<param name="d2" value="0;node.ico;627;330;0;-;0.0;MinusNode;NoInput;NoOutput;2;Tariffa2_max;Tariffa_min;0;ascala;1.0;1.0;1.0;NoCurve;xd2;yd2;1356996969">
+<param name="tariffa1" value="0;node.ico;377;388;0;-;0.0;PlusNode;NoInput;ResultOutput;2;Tariffa_min;a1;2;tar;t1_s;ascala;1.0;1.0;1.0;NoCurve;xtariffa1;ytariffa1;2297111149">
+<param name="a1" value="0;node.ico;376;363;0;-;0.0;ProbNode;NoInput;NoOutput;1;percentuale;1;tariffa1;0.0;1.0;StairsCurve;a1Curve;xa1;ya1;1672883623">
+<param name="tariffa2" value="0;node.ico;630;388;0;-;0.0;PlusNode;NoInput;ResultOutput;2;Tariffa_min;a2;2;tar;t2_s;ascala;1.0;1.0;1.0;NoCurve;xtariffa2;ytariffa2;3689034620">
+<param name="a2" value="0;node.ico;630;352;0;-;0.0;ProbNode;NoInput;NoOutput;1;percentuale;1;tariffa2;0.0;1.0;StairsCurve;a2Curve;xa2;ya2;1438400812">
+<param name="Figli" value="1;node.ico;494;339;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;gt1;0.5;NoCurve;xFigli;yFigli;3951385744">
+<param name="gt1" value="0;node.ico;491;371;0;-;0.0;NumGtNode;NoInput;NoOutput;1;Figli;2;tar;tar_sc;1.0;1.0;NoCurve;xgt1;ygt1;1899262267">
+<param name="percentuale" value="0;node.ico;244;363;0;-;0.0;ProbNode;NoInput;NoOutput;1;giudizio;2;a1;a2;0.0;1.0;NoCurve;xpercentuale;ypercentuale;273340393">
+<param name="tar" value="0;node.ico;437;388;0;-;0.0;NumIfNode;NoInput;NoOutput;3;gt1;tariffa2;tariffa1;1;tariffa;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xtar;ytar;498427979">
+<param name="tar_sc" value="0;node.ico;552;415;0;-;0.0;NumIfNode;NoInput;NoOutput;3;gt1;tariffa2_scuola;tariffa1_scuola;1;tariffa;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xtar_sc;ytar_sc;1950786961">
+<param name="tariffa2_scuola" value="0;node.ico;641;415;0;-;0.0;NumMaxNode;NoInput;ResultOutput;2;Tariffa_min;t2_s;1;tar_sc;ascala;1.0;1.0;1.0;NoCurve;xtariffa2_scuola;ytariffa2_scuola;209653554">
+<param name="tariffa1_scuola" value="0;node.ico;371;416;0;-;0.0;NumMaxNode;NoInput;ResultOutput;2;Tariffa_min;t1_s;1;tar_sc;ascala;1.0;1.0;1.0;NoCurve;xtariffa1_scuola;ytariffa1_scuola;3442071133">
+<param name="Solo_scuola" value="1;node.ico;552;371;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tariffa;1.0;NoCurve;xSolo_scuola;ySolo_scuola;4102074438">
+<param name="tariffa" value="2;node.ico;485;402;0;-;0.0;NumIfNode;NoInput;ResultOutput;3;Solo_scuola;tar_sc;tar;0;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xtariffa;ytariffa;1201451005">
+<param name="ISEE" value="1;node.ico;123;449;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;giudizio_ISEE;ascala;NoCurve;xISEE;yISEE;808673140">
+<param name="giudizio_ISEE" value="0;node.ico;130;384;0;-;0.0;NumCutoffNode;NoInput;IntermediateOutput;3;ISEE;Inf_ISEE;Sup_ISEE;0;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio_ISEE;ygiudizio_ISEE;921241636">
+<param name="Inf_ISEE" value="0;node.ico;79;421;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;giudizio_ISEE;iseeinf;NoCurve;xInf_ISEE;yInf_ISEE;4168072865">
+<param name="Sup_ISEE" value="0;node.ico;167;422;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;giudizio_ISEE;iseesup;NoCurve;xSup_ISEE;ySup_ISEE;3429094509">
+<param name="fascia" value="2;node.ico;51;352;0;-;0.0;NumTransNode;NoInput;IntermediateOutput;1;giudizio;0;1.0;1.0;LinearCurve;fasciaCurve;xfascia;yfascia;1714713369">
+<param name="t2_s" value="0;node.ico;545;444;0;-;0.0;Times2Node;NoInput;NoOutput;2;tariffa2;Quota_scuola;1;tariffa2_scuola;ascala;1.0;-99.0;1.0;NoCurve;xt2_s;yt2_s;1598524133">
+<param name="t1_s" value="0;node.ico;430;444;0;-;0.0;Times2Node;NoInput;NoOutput;2;tariffa1;Quota_scuola;1;tariffa1_scuola;ascala;1.0;-99.0;1.0;NoCurve;xt1_s;yt1_s;2139283053">
+<param name="Quota_scuola" value="1;node.ico;490;472;0;-;0.0;PlusNode;ValueInput;NoOutput;0;4;t2_s;t1_s;t1max;t2max;1.0;NoCurve;xQuota_scuola;yQuota_scuola;3188981933">
+<param name="t1max" value="0;node.ico;345;441;0;-;0.0;Times2Node;NoInput;NoOutput;2;Tariffa1_max;Quota_scuola;0;ascala;1.0;-99.0;1.0;NoCurve;xt1max;yt1max;4118612282">
+<param name="t2max" value="0;node.ico;665;437;0;-;0.0;Times2Node;NoInput;NoOutput;2;Tariffa2_max;Quota_scuola;0;ascala;1.0;-99.0;1.0;NoCurve;xt2max;yt2max;2698073008">
+
+<param name="a1Curve" value="StairsCurve;0.0;0.0;0.0;0.0010;1.0;0.1;d1;1.0">
+<param name="a2Curve" value="StairsCurve;0.0;0.0;0.0;0.0010;1.0;0.1;d2;1.0">
+<param name="fasciaCurve" value="LinearCurve;0.0;1.0;1.0E-7;2.0;0.9999999;2.0;1.0;3.0">
+
+
+<param name="xTariffa1_max" value="Tariffa1_max;Tariffa1_max;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xISEE" value="ISEE;<B>ISEE</B> Indicatore della Situazione Economica Equivalente (ammisibile tra ^Inf_ISEE^ e ^Sup_ISEE^);<B>ISEE</B> Indicatore della Situazione Economica Equivalente zero;<B>ISEE</B> Indicatore della Situazione Economica Equivalente;<B>ISEE</B> Indicatore della Situazione Economica Equivalente; ; ; ; ;<b>;$.2;</b>">
+
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xSolo_scuola" value="Solo_scuola;Solo_scuola;Solo_scuola=0;Solo_scuola;Scelto il biglietto per il trasporto solo scuola (quota = %Quota_scuola%);=; ; ; ; ;T; ">
+
+<param name="xFigli" value="Figli;Numero di figli;Figli=0;Numero di figli;Numero di figli;= ; ; ; ; ;T; ">
+
+<param name="xTariffa_min" value="Tariffa_min;Tariffa_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xTariffa2_max" value="Tariffa2_max;Tariffa2_max;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xisee" value="isee;isee;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia da ^inf^ a ^sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.8;</b>">
+
+<param name="xPAT trasporto" value="PAT trasporto;PAT trasporto;PAT trasporto (12.6.2006);--;--; ; ; ; ; ; ; ">
+<param name="xtariffa_ISEE" value="tariffa_ISEE;La tariffa_ISEE;tariffa_ISEE=0;La tariffa_ISEE;La tariffa_ISEE;è di ; ; ; ;<b> ;$.0;</b>">
+
+<param name="xSup_ISEE" value="Sup_ISEE;Sup_ISEE;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xInf_ISEE" value="Inf_ISEE;Inf_ISEE;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xQuota_scuola" value="Quota_scuola;Quota_scuola;Quota_scuola;Quota_scuola;Quota_scuola;=; ; ; ; ;P.2; ">
+
+<param name="xgt1" value="gt1;gt1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xfascia" value="fascia;Fascia di tariffa;Fascia di tariffa;Fascia di tariffa;Fascia di tariffa;= ; ; ; ; ;T; ">
+
+<param name="xpercentuale" value="percentuale;La percentuale;La percentuale=0;La percentuale;La percentuale;è il; ; ; ; ;P.4; ">
+
+<param name="xa2" value="a2;a2;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa1" value="a1;a1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xd1" value="d1;d1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento $C_RIF_ICEF$ è maggiore di $Redd3sup$) ;--;idoneo; ; ; ; ; ;!; ">
+
+<param name="xt1max" value="t1max;t1max;--;--;--;è; ; ; ; ;$.0; ">
+
+<param name="xt2max" value="t2max;t1max;--;--;--;è; ; ; ; ;$.0; ">
+
+<param name="xt2_s" value="t2_s;t2_s;--;--;--;è; ; ; ; ;$.0; ">
+
+<param name="xt1_s" value="t1_s;t1_s;--;--;--;è; ; ; ; ;$.0; ">
+
+<param name="xtariffa2_scuola" value="tariffa2_scuola;Tariffa senza libera circolazione - per più di un figlio (%Quota_scuola% riduzione, tra $Tariffa_min$ e $t2max$);tariffa2_scuola=0;La tariffa2_scuola;La tariffa2_scuola;è di ; ; ; ; ;$.0; ">
+
+<param name="xtariffa1" value="tariffa1;Tariffa con libera circolazione (%percentuale% tra $Tariffa_min$ e $Tariffa1_max$);tariffa1=0;La tariffa1 (tra $Tariffa_min$ e $Tariffa1_max$);La tariffa1;è di ; ; ; ; ;$.0; ">
+
+<param name="xtariffa2" value="tariffa2;Tariffa con libera circolazione - per più di un figlio (%percentuale% tra $Tariffa_min$ e $Tariffa2_max$);tariffa2=0;La tariffa2 (tra $Tariffa_min$ e $Tariffa2_max$);La tariffa2;è di ; ; ; ; ;$.0; ">
+
+<param name="xtariffa1_scuola" value="tariffa1_scuola;Tariffa senza libera circolazione (%Quota_scuola% riduzione, tra $Tariffa_min$ e $t1max$);tariffa1_scuola=0;La tariffa1_scuola;La tariffa1_scuola;è di ; ; ; ; ;$.0; ">
+
+<param name="xd2" value="d2;d2;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xgiudizio_ISEE" value="giudizio_ISEE;La percentuale ISEE;La percentuale ISEE=0;La percentuale ISEE;La percentuale ISEE;è il; ; ; ; ;P.8; ">
+
+<param name="xtariffa" value="tariffa;La tariffa;tariffa=0;La tariffa;La tariffa;è di ; ; ; ;<b> ;$.0;</b>">
+
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+
+<param name="xtar_sc" value="tar_sc;tar_sc;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xtar" value="tar;tar;0;-;1; ;-;+; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="propagation0;ris;applicant;dati;tari;notar;summary;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=".;Redd3inf=Redd3inf">
+<param name="ris" value="<center><h2>Calcolo delle tariffe trasporto</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati per il calcolo delle tariffe</b>;Icef=-1;fascia=-1;(Figli==1)Figli=-1;Solo_scuola=-1!0">
+<param name="tari" value="<b>Le tariffe</b>;tariffa1=-1;tariffa2=-1;tariffa1_scuola=-1;tariffa2_scuola=-1">
+<param name="notar" value="(giudizio==1)Risultano le tariffe massime perché;condOK=3!1">
+<param name="summary" value="Riassunto dati: <small> ;</small>">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="57118719">
+<param name="CRC" value="3766027176">
+<param name="CRCdata" value="12-giu-2006 16.16.49">
+</APPLET>
+<BR>

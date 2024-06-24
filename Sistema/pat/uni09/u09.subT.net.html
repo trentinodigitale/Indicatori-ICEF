@@ -1,0 +1,79 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=650 HEIGHT=600 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.3 $">
+
+
+<param name="Uni" value="Trento 2009 Tasse - 16.1.20010">
+<param name="applet" value="CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=950 HEIGHT=850">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+
+<param name="trendStarts" value="">
+
+ 
+<param name="variables" value="tscala;peraltri">
+
+ 
+
+<param name="tscala" value="0.01;editable">
+<param name="peraltri" value="0.3">
+
+
+
+<param name="edges" value="UniTN Tasse;Borse_percepite;
+Altri_universitari-per_altri;icef-fascia1;idon-fascia;fascia1-fascia;InvalidoT-gt66;gt66-idon">
+
+
+
+<param name="UniTN Tasse" value="text;node.ico;140;259;0;UniTN Tasse 2009/2010 -  (16.1.20010);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xUniTNTasse;xUniTNTasse;960271519">
+<param name="Borse_percepite" value="1;node.ico;50;281;0;Nessuna Borsa universitaria percepita;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xBorse_percepite;xBorse_percepite;484381793">
+<param name="Altri_universitari" value="1;node.ico;63;309;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;per_altri;0.1;NoCurve;xAltri_universitari;xAltri_universitari;1382901994">
+<param name="per_altri" value="0;node.ico;136;282;0;-;0.0;PlusNode;NoInput;NoOutput;1;Altri_universitari;0;1.0;peraltri;NoCurve;xper_altri;yper_altri;149130809">
+<param name="icef" value="1;node.ico;144;310;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;fascia1;1.0;NoCurve;xicef;yicef;1106234262">
+<param name="fascia1" value="0;node.ico;137;347;0;-;0.0;NumTransNode;NoInput;ResultOutput;1;icef;1;fascia;tscala;1.0;StepCurve;tasCurve;xfascia1;yfascia1;2773526169">
+<param name="idon" value="0;node.ico;190;378;0;-;0.0;ProbNode;NoInput;NoOutput;1;gt66;1;fascia;0.0;1.0;NoCurve;xidon;yidon;1717494248">
+<param name="fascia" value="2;node.ico;133;377;0;-;0.0;NumIfNode;NoInput;ResultOutput;2;idon;fascia1;0;tscala;0.0;1.0;0.0;NoCurve;xfascia;yfascia;1202238158">
+<param name="InvalidoT" value="1;node.ico;198;271;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;gt66;0.5;LinearCurve;invalCurve;xInvalidoT;yInvalidoT;3307177449">
+<param name="gt66" value="0;node.ico;195;298;0;-;0.0;NumGtNode;NoInput;NoOutput;1;InvalidoT;1;idon;1.0;66.0;NoCurve;ygt66;ygt66;1613168556">
+
+<param name="invalCurve" value="LinearCurve;0.0;0.0;100.0;1.0">
+<param name="tasCurve" value="StepCurve;0.0;1.0;0.1471;2.0;0.1961;3.0;0.2451;4.0;0.2941;5.0;0.3431;6.0;0.3922;7.0;0.4412;8.0;0.4901;9.0;0.5392;10.0;0.5882;11.0;0.6373;12.0;0.6863;13.0;1.0;13.0">
+
+
+<param name="xicef" value="icef;Icef - Indicatore della Condizione Economica Familiare;Icef - Indicatore della Condizione Economica Familiare;Icef - Indicatore della Condizione Economica Familiare;Icef - Indicatore della Condizione Economica Familiare; ; ; ; ; <b>;T.10;</b>">
+
+<param name="xInvalidoT" value="InvalidoT;Studente con invalidità ;studente;invalidità;Studente con invalidità; ; ; ; ; al ;T;%">
+
+<param name="xAltri_universitari" value="Altri_universitari;Altri universitari;Nessuna Altro universitario;Altri_universitari;Presenza di altri universitari; ; ; ; ; ;T; ">
+<param name="xUniTNTasse" value="UniTN Tasse;UniTN Tasse;UniTN Tasse 2009/2010 -  (16.1.20010);-;1; ;-;+; ; ; ; ">
+<param name="xBorse_percepite" value="Borse_percepite;Borse universitarie percepite;Nessuna Borsa universitaria percepita;Borse universitarie percepite;Borse universitarie percepite; ; ; ; ;- ;$.2; ">
+
+<param name="xidon" value="idon;idon;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xper_altri" value="per_altri;addizionale alla scala di equivalenza per la presenza di altri universitari;Nessuna altro universitario;altri universitari;addizionale alla scala di equvalenza per la presenza di altri universitari; ; ; ; ; ;T.1; ">
+
+<param name="xfascia1" value="fascia1;fascia1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xfascia" value="fascia;Fascia per il pagamento delle tasse universitarie;Fascia per il pagamento delle tasse universitarie;Fascia per il pagamento delle tasse universitarie;Fascia per il pagamento delle tasse universitarie; ; ; ; ; ;T; ">
+
+
+
+
+<param name="xpltree" value="tasse;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="tasse" value="<P><B>Tasse di iscrizione:</B>;icef=-1;Prendi_calcolato=-1!0;(Prendi_calcolato==0)InvalidoT=-1!0;(Prendi_calcolato==0)Borse_percepite=-1!0;(Prendi_calcolato==0)per_altri=-1!0;fascia=-1">
+<param name="version" value="Versione uni04: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="41402320">
+<param name="CRC" value="1548315245">
+<param name="CRCdata" value="16-feb-2010 19.33.14">
+</APPLET>
+<BR>

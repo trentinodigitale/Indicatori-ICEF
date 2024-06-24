@@ -1,0 +1,159 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PATstudio" value="PAT studio 2009; 16.9.2009">
+<param name="revision" value="$Revision: 1.2 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="parasport;casosport">
+<param name="parasport" value="current;C_ass=50;C_cat=40;Icef_inf=0.2;Icef_sup=0.4901962;P1=50;P2=40;P3=35;P4=30;P5=25;P6=20;P_ass=15;P_cat=10;P_max_icef=50;Peso_icef=0.4;Peso_merito=0.6">
+<param name="casosport" value="parasport;Conv_assoluta=1;Conv_categoria=1;Part_assoluta=1;Part_categoria=1;Posto=3;Icef=0.3">
+
+<param name="trends" value="">
+
+
+<param name="variables" value="uno;ascala;rscala">
+
+<param name="uno" value="1">
+<param name="ascala" value="0.001">
+<param name="rscala" value="0.000001">
+
+
+
+<param name="edges" value="PAT sport;
+Icef-giudizio;Icef_sup-giudizio;Icef_inf-giudizio;giudizio-punt_i;P_max_icef-punt_i;conv_ass-punti_merito;conv_cat-punti_merito;p_class-punti_merito;part_ass-punti_merito;part_cat-punti_merito;Conv_assoluta-conv_ass;C_ass-conv_ass;Conv_categoria-conv_cat;C_cat-conv_cat;Part_assoluta-part_ass;P_ass-part_ass;Part_categoria-part_cat;P_cat-part_cat;Peso_icef-p_icef;punti_merito-p_merito;Peso_merito-p_merito;
+Posto-p1;Posto-p2;Posto-p3;Posto-p4;Posto-p5;Posto-p6;P1-p1;P2-p2;P3-p3;P4-p4;P5-p5;P6-p6;p1-p_class;p2-p_class;p3-p_class;p4-p_class;p5-p_class;p6-p_class;Icef-icef_ok;Icef_sup-icef_ok;
+p_icef-punti;p_merito-punti;punti-punteggio;checks-ok;icef_ok-ammessa;ok-ammessa;ammessa-punteggio;punt_i-punti_icef;punti_icef-p_icef;ecc-punti_icef;Check1-checks;Check2-checks;Check3-checks">
+
+
+
+<param name="PAT sport" value="text;node.ico;32;320;0;PAT sport (16.9.2009);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT sport;xPAT sport;1176311413">
+<param name="Icef" value="1;node.ico;211;297;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;icef_ok;0.5;NoCurve;xIcef;xIcef;1504972691">
+<param name="giudizio" value="0;node.ico;138;374;0;-;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Icef_sup;Icef_inf;1;punt_i;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;xgiudizio;4218734699">
+<param name="Icef_sup" value="1;node.ico;33;349;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;icef_ok;0.5;NoCurve;xIcef_sup;xIcef_sup;968438109">
+<param name="Icef_inf" value="1;node.ico;243;346;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;giudizio;0.5;NoCurve;xIcef_inf;xIcef_inf;866400557">
+<param name="punt_i" value="2;node.ico;139;410;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;giudizio;P_max_icef;1;punti_icef;ascala;1.0;1.0;1.0;NoCurve;xpunt_i;xpunt_i;309036691">
+<param name="P_max_icef" value="1;node.ico;141;439;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;punt_i;ascala;NoCurve;xP_max_icef;xP_max_icef;802181373">
+<param name="conv_ass" value="0;node.ico;381;331;0;-;0.0;TimesNode;NoInput;NoOutput;2;Conv_assoluta;C_ass;1;punti_merito;1.0;1.0;1.0;1.0;NoCurve;xconv_ass;xconv_ass;1823360744">
+<param name="punti_merito" value="2;node.ico;455;408;0;-;0.0;NumMaxNode;NoInput;IntermediateOutput;5;conv_ass;conv_cat;p_class;part_ass;part_cat;1;p_merito;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xpunti_merito;xpunti_merito;2850748698">
+<param name="conv_cat" value="0;node.ico;382;385;0;-;0.0;TimesNode;NoInput;NoOutput;2;Conv_categoria;C_cat;1;punti_merito;1.0;1.0;1.0;1.0;NoCurve;xconv_cat;xconv_cat;2593391387">
+<param name="p_class" value="0;node.ico;454;435;0;-;0.0;NumMaxNode;NoInput;NoOutput;6;p1;p2;p3;p4;p5;p6;1;punti_merito;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xp_class;xp_class;439394616">
+<param name="part_ass" value="0;node.ico;537;329;0;-;0.0;TimesNode;NoInput;NoOutput;2;Part_assoluta;P_ass;1;punti_merito;1.0;1.0;1.0;1.0;NoCurve;xpart_ass;xpart_ass;408530084">
+<param name="part_cat" value="0;node.ico;536;380;0;-;0.0;TimesNode;NoInput;NoOutput;2;Part_categoria;P_cat;1;punti_merito;1.0;1.0;1.0;1.0;NoCurve;xpart_cat;xpart_cat;3673926098">
+<param name="Conv_assoluta" value="1;node.ico;358;307;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;conv_ass;0.5;NoCurve;xConv_assoluta;xConv_assoluta;3941673807">
+<param name="C_ass" value="1;node.ico;318;331;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;conv_ass;ascala;NoCurve;xC_ass;xC_ass;140028983">
+<param name="Conv_categoria" value="1;node.ico;358;359;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;conv_cat;0.5;NoCurve;xConv_categoria;xConv_categoria;1673552008">
+<param name="C_cat" value="1;node.ico;310;383;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;conv_cat;ascala;NoCurve;xC_cat;xC_cat;2010024600">
+<param name="Part_assoluta" value="1;node.ico;564;307;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;part_ass;0.5;NoCurve;xPart_assoluta;xPart_assoluta;4231419152">
+<param name="P_ass" value="1;node.ico;600;329;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;part_ass;ascala;NoCurve;xP_ass;xP_ass;1505260492">
+<param name="Part_categoria" value="1;node.ico;564;358;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;part_cat;0.5;NoCurve;xPart_categoria;xPart_categoria;1692224822">
+<param name="P_cat" value="1;node.ico;600;379;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;part_cat;ascala;NoCurve;xP_cat;xP_cat;2261675965">
+<param name="Peso_icef" value="1;node.ico;262;443;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;p_icef;0.5;NoCurve;xPeso_icef;xPeso_icef;3122612313">
+<param name="p_icef" value="0;node.ico;262;410;0;-;0.0;TimesNode;NoInput;NoOutput;2;Peso_icef;punti_icef;1;punti;ascala;1.0;1.0;1.0;NoCurve;xp_icef;xp_icef;2536611522">
+<param name="p_merito" value="0;node.ico;375;410;0;-;0.0;TimesNode;NoInput;NoOutput;2;punti_merito;Peso_merito;1;punti;ascala;1.0;1.0;1.0;NoCurve;xp_merito;xp_merito;3211642314">
+<param name="Peso_merito" value="1;node.ico;374;441;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;p_merito;0.5;NoCurve;xPeso_merito;xPeso_merito;1864526102">
+<param name="Posto" value="1;node.ico;456;306;0;-;0.0;PlusNode;ValueInput;NoOutput;0;6;p1;p2;p3;p4;p5;p6;0.1;NoCurve;xPosto;xPosto;2343340273">
+<param name="p1" value="0;node.ico;379;470;0;-;0.0;NumIfNode;NoInput;NoOutput;2;Posto;P1;1;p_class;0.0;1.0;1.0;0.0;NoCurve;xp1;xp1;3584643222">
+<param name="p2" value="0;node.ico;408;470;0;-;0.0;NumIfNode;NoInput;NoOutput;2;Posto;P2;1;p_class;0.0;2.0;1.0;0.0;NoCurve;xp2;xp2;4166119720">
+<param name="p3" value="0;node.ico;436;469;0;-;0.0;NumIfNode;NoInput;NoOutput;2;Posto;P3;1;p_class;0.0;3.0;1.0;0.0;NoCurve;xp3;xp3;3914547345">
+<param name="p4" value="0;node.ico;466;470;0;-;0.0;NumIfNode;NoInput;NoOutput;2;Posto;P4;1;p_class;0.0;4.0;1.0;0.0;NoCurve;xp4;xp4;469648343">
+<param name="p5" value="0;node.ico;493;469;0;-;0.0;NumIfNode;NoInput;NoOutput;2;Posto;P5;1;p_class;0.0;5.0;1.0;0.0;NoCurve;xp5;xp5;4136133185">
+<param name="p6" value="0;node.ico;520;470;0;-;0.0;NumIfNode;NoInput;NoOutput;2;Posto;P6;1;p_class;0.0;6.0;1.0;0.0;NoCurve;xp6;xp6;757651214">
+<param name="P1" value="1;node.ico;378;493;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;p1;ascala;NoCurve;xP1;xP1;184200283">
+<param name="P2" value="1;node.ico;407;493;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;p2;ascala;NoCurve;xP2;xP2;2861149354">
+<param name="P3" value="1;node.ico;436;494;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;p3;ascala;NoCurve;xP3;xP3;2661406805">
+<param name="P4" value="1;node.ico;465;494;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;p4;ascala;NoCurve;xP4;xP4;218237028">
+<param name="P5" value="1;node.ico;492;494;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;p5;ascala;NoCurve;xP5;xP5;1593793529">
+<param name="P6" value="1;node.ico;518;493;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;p6;ascala;NoCurve;xP6;xP6;3431473176">
+<param name="icef_ok" value="2;node.ico;33;441;0;-;0.0;NumLtNode;NoInput;IntermediateOutput;2;Icef;Icef_sup;1;ammessa;1.0;1.0;1.0;1.0;NoCurve;xicef_ok;xicef_ok;3406033209">
+<param name="punti" value="0;node.ico;309;410;0;-;0.0;PlusNode;NoInput;NoOutput;2;p_icef;p_merito;1;punteggio;ascala;1.0;1.0;1.0;NoCurve;xpunti;xpunti;898554093">
+<param name="punteggio" value="2;node.ico;309;468;0;-;0.0;TimesNode;NoInput;ResultOutput;2;punti;ammessa;0;ascala;1.0;1.0;1.0;NoCurve;xpunteggio;xpunteggio;404814053">
+<param name="checks" value="0;node.ico;92;329;0;-;0.0;PlusNode;NoInput;NoOutput;3;Check1;Check2;Check3;1;ok;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xchecks;xchecks;2349199142">
+<param name="ok" value="0;node.ico;92;468;0;-;0.0;NumEqNode;NoInput;NoOutput;1;checks;1;ammessa;1.0;0.0;NoCurve;xok;xok;3819861351">
+<param name="ammessa" value="2;node.ico;151;468;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;icef_ok;ok;1;punteggio;1.0;1.0;1.0;1.0;NoCurve;xammessa;xammessa;2607733775">
+<param name="punti_icef" value="0;node.ico;201;410;0;-;0.0;PlusNode;NoInput;NoOutput;2;punt_i;ecc;1;p_icef;ascala;1.0;1.0;1.0;NoCurve;xpunti_icef;ypunti_icef;3018639306">
+<param name="ecc" value="0;node.ico;197;386;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;punti_icef;0.4999;NoCurve;xecc;yecc;1050535218">
+<param name="Check1" value="1;node.ico;37;296;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;checks;0.5;NoCurve;xCheck1;yCheck1;3897407422">
+<param name="Check2" value="1;node.ico;99;296;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;checks;0.5;NoCurve;xCheck2;yCheck2;809175362">
+<param name="Check3" value="1;node.ico;160;296;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;checks;0.5;NoCurve;xCheck3;yCheck3;1814805448">
+
+
+
+<param name="xPeso_merito" value="Peso_merito;Peso_merito;0;-;1; ;-;+; ; ;T.1; ">
+<param name="xPeso_icef" value="Peso_icef;Peso_icef;0;-;1; ;-;+; ; ;T.1; ">
+<param name="xP1" value="P1;P1;0;-;1; ;-;+; ; ; ; ">
+<param name="xPosto" value="Posto;Classificazione nelle graduatorie italiane o nei campionati di categoria;0;Classificazione nelle graduatorie italiane o nei campionati di categoria;Classificazione nelle graduatorie italiane o nei campionati di categoria; ; ; ; ; ;T;° Posto<br />Punteggio: ^p_class^">
+<param name="xP_ass" value="P_ass;P_ass;0;-;1; ;-;+; ; ; ; ">
+<param name="xPart_assoluta" value="Part_assoluta;Partecipazione assoluta;0;-;Partecipazione a campionati nazionali o manifestazioni assoluta; ; ; ; ; ;T;<br />Punteggio ^part_ass^">
+<param name="xP_cat" value="P_cat;P_cat;0;-;1; ;-;+; ; ; ; ">
+<param name="xPart_categoria" value="Part_categoria;Partecipazione di categoria;0;-;Partecipazione a campionati nazionali o manifestazioni di categoria; ; ; ; ; ;T;<br />Punteggio ^part_cat^">
+<param name="xP2" value="P2;P2;0;-;1; ;-;+; ; ; ; ">
+<param name="xCheck1" value="Check1;Check1;residenza ok;-;mancanza del requisito di residenza; ; ; ; ; ; ; ">
+
+<param name="xecc" value="ecc;ecc;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCheck3" value="Check3;Check3;scolarità ok;-;mancanza del requisiti di tesseramento; ; ; ; ; ; ; ">
+
+<param name="xCheck2" value="Check2;Check2;scolarità ok;-;mancanza dei requisiti scolastici; ; ; ; ; ; ; ">
+
+<param name="xP4" value="P4;P4;0;-;1; ;-;+; ; ; ; ">
+<param name="xP3" value="P3;P3;0;-;1; ;-;+; ; ; ; ">
+<param name="xP6" value="P6;P6;0;-;1; ;-;+; ; ; ; ">
+<param name="xP5" value="P5;P5;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef_sup" value="Icef_sup;Icef_sup;0;-;1; ;-;+; ; ;T.7; ">
+<param name="xIcef" value="Icef;Icef;Icef=0;Icef;Icef; ; ; ; ; ;T.9; ">
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;0;-;1; ;-;+; ; ;T.1; ">
+<param name="xP_max_icef" value="P_max_icef;P_max_icef;0;-;1; ;-;+; ; ;T; ">
+<param name="xPAT sport" value="PAT sport;PAT sport;PAT sport (16.9.2009);--;--; ; ; ; ; ; ; ">
+<param name="xConv_categoria" value="Conv_categoria;Convocazione di categoria;0;-;Convocazione nella rappresentativa nazionale di categoria; ; ; ; ; ;T;<br />Punteggio ^conv_cat^">
+<param name="xC_cat" value="C_cat;C_cat;0;-;1; ;-;+; ; ; ; ">
+<param name="xC_ass" value="C_ass;C_ass;0;-;1; ;-;+; ; ; ; ">
+<param name="xConv_assoluta" value="Conv_assoluta;Convocazione assoluta;0;-;Convocazione nella rappresentativa nazionale assoluta; ; ; ; ; ;T;<br />Punteggio ^conv_ass^">
+<param name="xok" value="ok;ok;Requisiti generali mancanti;-;Requisiti ok; ;-;+; ; ; ; ">
+<param name="xconv_ass" value="conv_ass;Convocazione assoluta;0;-;Convocazione nella rappresentativa nazionale assoluta; ; ; ; ;Punteggio: ;T; ">
+<param name="xpunt_i" value="punt_i;punt_i;0;-;1; ;-;+; ; ; ; ">
+<param name="xicef_ok" value="icef_ok;icef_ok;Icef oltre il limite;-;Icef ok; ; ; ; ; ; ; ">
+<param name="xammessa" value="ammessa;ammessa;0;-;1; ;-;+; ; ; ; ">
+<param name="xpunti_icef" value="punti_icef;Punteggio per ICEF (Max( 0, Min( 1, (^Icef^ - ^Icef_sup^ ) / ( ^Icef_inf^ - ^Icef_sup^ ) )) * ^P_max_icef^;Punteggio per ICEF=0;Punteggio per ICEF (Max( 0, Min( 1, (^Icef^ - ^Icef_sup^ ) / ( ^Icef_inf^ - ^Icef_sup^ ) )) * ^P_max_icef^;Punteggio per ICEF (Max( 0, Min( 1, (^Icef^ - ^Icef_sup^ ) / ( ^Icef_inf^ - ^Icef_sup^ ) )) * ^P_max_icef^; ; ; ; ; ;T; ">
+
+<param name="xpunti" value="punti;punti;0;-;1; ;-;+; ; ; ; ">
+<param name="xpunteggio" value="punteggio;Punteggio totale ( %Peso_icef% * ^punti_icef^ + %Peso_merito% * ^punti_merito^ );Punteggio totale=0;Punteggio totale ( %Peso_icef% * ^punti_icef^ + %Peso_merito% * ^punti_merito^ );Punteggio totale ( %Peso_icef% * ^punti_icef^ + %Peso_merito% * ^punti_merito^ ); ; ; ; ;<b> ;T;</b>">
+<param name="xp_icef" value="p_icef;p_icef;0;-;1; ;-;+; ; ; ; ">
+<param name="xp2" value="p2;p2;0;-;1; ;-;+; ; ; ; ">
+<param name="xp1" value="p1;p1;0;-;1; ;-;+; ; ; ; ">
+<param name="xp_merito" value="p_merito;p_merito;0;-;1; ;-;+; ; ; ; ">
+<param name="xpart_ass" value="part_ass;Partecipazione assoluta;0;-;Partecipazione a campionati nazionali o manifestazioni assoluta; ; ; ; ;Punteggio: ;T; ">
+<param name="xp3" value="p3;p3;0;-;1; ;-;+; ; ; ; ">
+<param name="xconv_cat" value="conv_cat;Convocazione di categoria;0;-;Convocazione nella rappresentativa nazionale di categoria; ; ; ; ;Punteggio: ;T; ">
+<param name="xpart_cat" value="part_cat;Partecipazione di categoria;0;-;Partecipazione a campionati nazionali o manifestazioni di categoria; ; ; ; ;Punteggio: ;T; ">
+<param name="xp6" value="p6;p6;0;-;1; ;-;+; ; ; ; ">
+<param name="xp4" value="p4;p4;0;-;1; ;-;+; ; ; ; ">
+<param name="xp5" value="p5;p5;0;-;1; ;-;+; ; ; ; ">
+<param name="xgiudizio" value="giudizio;giudizio;0;-;1; ;-;+; ; ; ; ">
+<param name="xchecks" value="checks;checks;0;-;1; ;-;+; ; ; ; ">
+<param name="xpunti_merito" value="punti_merito;Punteggio per merito;Punteggio per merito=0;Punteggio per merito;Punteggio per merito; ; ; ; ; ;T; ">
+<param name="xp_class" value="p_class;p_class;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="tit;applicant;dati;ris;negativo;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="tit" value="<center><h2>Punteggio per merito Sportivo</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati per il calcolo del punteggio</b>;Icef=-1;conv_ass=-1!0;conv_cat=-1!0;Posto=-1!0;part_ass=-1!0;part_cat=-1!0">
+<param name="ris" value="(ammessa==1)<b>Punteggi</b>;punti_icef=-1;punti_merito=-1;punteggio=-1">
+<param name="negativo" value="(ammessa==0)<br /><b>Non ammessa</b>;icef_ok=3!1;ok=3!1;Check1=2!0;Check2=2!0;Check3=2!0">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1012514197">
+<param name="CRC" value="2158639240">
+<param name="CRCdata" value="16-set-2009 16.54.32">
+</APPLET>
+<BR>
