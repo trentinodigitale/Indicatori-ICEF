@@ -1,0 +1,207 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=800 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.7 $">
+<param name="Taratura" value="soestegno acquisto; 4.7.2012">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+
+<param name="trendStarts" value="parametriacquisti;casoacquisti;caso0">
+
+<param name="parametriacquisti" value="current;Check=0;Chiede_beneficio=1;Contr_max=300;Contr_mid=200;Contr_min=150;Forza_garanzia=0;ICEF_max=0.24;ICEF_mid=0.20;ICEF_min=0.17;IMU_max=350;Icef_garanzia=0.13;Nascita1=200;Nascita2=300;Tot_max=1000">
+<param name="casoacquisti" value="parametriacquisti;PF_du=10000;RF_du=10000;VF_du=2.04;Reddito_nuovo=2000;Reddito_perso=11000;Rendita_catastale=1000;Imposte_perse=3000;N_figli26=1;N_nati=1;Icef_gar=0.2;Rif=50000">
+<param name="caso0" value="povero,parametriacquisti;Reddito_perso=8000;Imposte_perse=1000;N_figli26=2;N_nati=2;Icef_gar=0.02;Rif=50000">
+
+<param name="variables" value="escala">
+
+ <param name="escala" value="0.000001">
+
+
+
+<param name="edges" value="PAT sostegno acquisto;
+Reddito_nuovo-plus;Icef_gar-icef_gar_ok;Icef_garanzia-icef_gar_ok;Reddito_perso-pers;Imposte_perse-pers;pers-minus;RF_du-RF_acq;plus-RF_acq;RF_acq-vrf_acq;VF_du-vrf_acq;Rif-vrf_acq;PF_du-vpf_acq;VF_du-vpf_acq;Rif-vpf_acq;vrf_acq-Icef_acq;vpf_acq-Icef_acq;minus-RF_acq;Check-checkOK;Icef_acq-ismin;ICEF_min-ismin;Icef_acq-lemid;
+Icef_acq-icef_ok;ICEF_max-icef_ok;ICEF_mid-lemid;lemid-ismid;ismin-ismid;ismid-ismax;icef_ok-ismax;Contr_min-cmin;ismid-cmid;Contr_mid-cmid;Contr_max-cmax;cmin-contr_figli;cmid-contr_figli;cmax-contr_figli;N_nati-cnat;Nascita1-cnat;Nascita2-cnat;Rendita_catastale-imup;imu_net-contr_imu;IMU_max-contr_imu;
+contr_figli-cont;contr_nascita-cont;contr_imu-cont;cont-contr;Tot_max-contr;Chiede_beneficio-contributo_acquisti;icef_gar_ok-gar_ok;Forza_garanzia-gar_ok;N_figli26-nf;nf-det_figli;imur-imu_net;RF_du-vrf_du;VF_du-vrf_du;Rif-vrf_du;vrf_du-Icef;vpf_acq-Icef;ismax-cmin;ismin-cmax;imup-imur;det_figli-imu_net;
+VF_du-cmax;VF_du-cmid;VF_du-cmin;contr_acq-contributo_acquisti;contr-risultante;Importo_pagato-risultante;risultante-contr_acq;gar_ok-contr_acq;checkOK-contr_acq;icef_ok-contr_acq;N_nati-cnat0;cnat0-contr_nascita;cnat-contr_nascita">
+
+
+
+<param name="PAT sostegno acquisto" value="text;node.ico;253;424;0;PAT sostegno acquisto - (4.7.2012);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_SOSTACQUREDDGAR;xModello_SOSTACQUREDDGAR;1470578182">
+<param name="Reddito_nuovo" value="1;node.ico;67;366;0;Reddito_nuovo = ;0.0;PlusNode;ValueInput;NoOutput;0;1;plus;escala;NoCurve;xReddito_nuovo;xReddito_nuovo;1675992660">
+<param name="plus" value="0;node.ico;106;398;0;plus =  Reddito_nuovo;0.0;PlusNode;NoInput;NoOutput;1;Reddito_nuovo;1;RF_acq;escala;1.0;NoCurve;xplus;xplus;2378731686">
+<param name="Icef_gar" value="1;node.ico;389;348;0;Icef_gar = ;0.0;ProbNode;ValueInput;NoOutput;0;1;icef_gar_ok;0.5;NoCurve;xIcef_gar;xIcef_gar;1618200324">
+<param name="icef_gar_ok" value="0;node.ico;389;421;0;icef_gar_ok = Icef_gar <= Icef_garanzia;0.0;NumLeNode;NoInput;NoOutput;2;Icef_gar;Icef_garanzia;1;gar_ok;1.0;1.0;1.0;1.0;NoCurve;xicef_gar_ok;xicef_gar_ok;4057897224">
+<param name="Icef_garanzia" value="1;node.ico;335;372;0;Icef_garanzia = ;0.0;ProbNode;ValueInput;NoOutput;0;1;icef_gar_ok;0.5;NoCurve;xIcef_garanzia;xIcef_garanzia;690011735">
+<param name="Reddito_perso" value="1;node.ico;296;347;0;Reddito_perso = ;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xReddito_perso;xReddito_perso;3321799926">
+<param name="pers" value="0;node.ico;251;372;0;pers =  Reddito_perso - Imposte_perse;0.0;MinusNode;NoInput;NoOutput;2;Reddito_perso;Imposte_perse;1;minus;escala;1.0;1.0;1.0;NoCurve;xpers;xpers;1731534434">
+<param name="Imposte_perse" value="1;node.ico;301;397;0;Imposte_perse = ;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xImposte_perse;xImposte_perse;3180203942">
+<param name="minus" value="0;node.ico;215;400;0;minus =  pers;0.0;PlusNode;NoInput;NoOutput;1;pers;1;RF_acq;escala;1.0;NoCurve;xminus;xminus;3824073697">
+<param name="RF_du" value="1;node.ico;34;448;0;RF_du = ;0.0;PlusNode;ValueInput;NoOutput;0;2;RF_acq;vrf_du;escala;NoCurve;xRF_du;xRF_du;2553348343">
+<param name="RF_acq" value="0;node.ico;66;423;0;RF_acq =  RF_du + plus - minus;0.0;PlusNode;NoInput;NoOutput;3;RF_du;plus;minus;1;vrf_acq;escala;1.0;1.0;-1.0;1.0;1.0;1.0;1.0;NoCurve;xRF_acq;xRF_acq;2645377309">
+<param name="vrf_acq" value="0;node.ico;109;483;0;vrf_acq =  RF_acq / VF_du / Rif;0.0;DivideNode;NoInput;NoOutput;3;RF_acq;VF_du;Rif;1;Icef_acq;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xvrf_acq;xvrf_acq;4257016568">
+<param name="VF_du" value="1;node.ico;158;448;0;VF_du = ;0.0;PlusNode;ValueInput;NoOutput;0;6;vrf_acq;vpf_acq;vrf_du;cmax;cmid;cmin;1.0;NoCurve;xVF_du;xVF_du;613833285">
+<param name="Rif" value="0;node.ico;174;365;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;3;vrf_acq;vpf_acq;vrf_du;1.0;NoCurve;xRif;xRif;3400376869">
+<param name="PF_du" value="1;node.ico;281;448;0;PF_du = ;0.0;PlusNode;ValueInput;NoOutput;0;1;vpf_acq;escala;NoCurve;xPF_du;xPF_du;3954059104">
+<param name="vpf_acq" value="0;node.ico;240;482;0;vpf_acq =  PF_du / VF_du / Rif;0.0;DivideNode;NoInput;NoOutput;3;PF_du;VF_du;Rif;2;Icef_acq;Icef;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xvpf_acq;xvpf_acq;2649257661">
+<param name="Icef_acq" value="2;node.ico;158;524;0;Icef_acq =  vrf_acq + vpf_acq - vrf_acq * vpf_acq;0.0;ProbNode;NoInput;IntermediateOutput;2;vrf_acq;vpf_acq;3;ismin;lemid;icef_ok;0.0;1.0;1.0;1.0;NoCurve;xIcef_acq;xIcef_acq;2115584856">
+<param name="Check" value="1;node.ico;657;329;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;1;checkOK;1.0;NoCurve;xCheck;xCheck;191768154">
+<param name="checkOK" value="0;node.ico;656;364;0;checkOK = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;contr_acq;1.0;0.0;NoCurve;xcheckOK;xcheckOK;871804718">
+<param name="ismin" value="0;node.ico;211;547;0;ismin = Icef_acq <= ICEF_min;0.0;NumLeNode;NoInput;NoOutput;2;Icef_acq;ICEF_min;2;ismid;cmax;1.0;1.0;1.0;1.0;NoCurve;xismin;yismin;2144264068">
+<param name="ICEF_min" value="1;node.ico;52;547;0;ICEF_min = ;0.0;ProbNode;ValueInput;NoOutput;0;1;ismin;0.5;NoCurve;xICEF_min;xICEF_min;3518597046">
+<param name="lemid" value="0;node.ico;121;570;0;lemid = Icef_acq <= ICEF_mid;0.0;NumLeNode;NoInput;NoOutput;2;Icef_acq;ICEF_mid;1;ismid;1.0;1.0;1.0;1.0;NoCurve;xlemid;xlemid;273708368">
+<param name="icef_ok" value="0;node.ico;145;600;0;icef_ok = Icef_acq <= ICEF_max;0.0;NumLeNode;NoInput;NoOutput;2;Icef_acq;ICEF_max;2;ismax;contr_acq;1.0;1.0;1.0;1.0;NoCurve;xicef_ok;xicef_ok;225893778">
+<param name="ICEF_max" value="1;node.ico;49;600;0;ICEF_max = ;0.0;ProbNode;ValueInput;NoOutput;0;1;icef_ok;0.5;NoCurve;xICEF_max;xICEF_max;3569338462">
+<param name="ICEF_mid" value="1;node.ico;50;570;0;ICEF_mid = ;0.0;ProbNode;ValueInput;NoOutput;0;1;lemid;0.5;NoCurve;xICEF_mid;xICEF_mid;2118387352">
+<param name="ismid" value="0;node.ico;210;572;0;ismid =  lemid - lemid * ismin;0.0;ProbNode;NoInput;NoOutput;2;lemid;ismin;2;ismax;cmid;0.0;1.0;0.0;0.0;NoCurve;xismid;xismid;1025137548">
+<param name="ismax" value="0;node.ico;211;600;0;ismax =   1  icef_ok - ismid * icef_ok;0.0;ProbNode;NoInput;NoOutput;2;ismid;icef_ok;1;cmin;0.0;0.0;1.0;0.0;NoCurve;xismax;xismax;2088860673">
+<param name="Contr_min" value="1;node.ico;377;548;0;Contr_min = ;0.0;PlusNode;ValueInput;NoOutput;0;1;cmin;escala;NoCurve;xContr_min;xContr_min;1042701392">
+<param name="cmin" value="0;node.ico;379;600;0;cmin =  Contr_min * ismax * VF_du;0.0;TimesNode;NoInput;NoOutput;3;Contr_min;ismax;VF_du;1;contr_figli;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcmin;ycmin;3604308120">
+<param name="cmid" value="0;node.ico;325;572;0;cmid =  ismid * Contr_mid * VF_du;0.0;TimesNode;NoInput;NoOutput;3;ismid;Contr_mid;VF_du;1;contr_figli;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcmid;ycmid;3392878117">
+<param name="Contr_mid" value="1;node.ico;325;526;0;Contr_mid = ;0.0;PlusNode;ValueInput;NoOutput;0;1;cmid;escala;NoCurve;xContr_mid;xContr_mid;1196779271">
+<param name="Contr_max" value="1;node.ico;276;502;0;Contr_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;cmax;escala;NoCurve;xContr_max;xContr_max;547499977">
+<param name="cmax" value="0;node.ico;276;547;0;cmax =  Contr_max * ismin * VF_du;0.0;TimesNode;NoInput;NoOutput;3;Contr_max;ismin;VF_du;1;contr_figli;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcmax;ycmax;3917224994">
+<param name="contr_figli" value="0;node.ico;437;574;0;contr_figli =  MAX(  cmin,  cmid,  cmax );0.0;NumMaxNode;NoInput;NoOutput;3;cmin;cmid;cmax;1;cont;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcontr_figli;xcontr_figli;3305256430">
+<param name="N_nati" value="1;node.ico;444;449;0;N_nati = ;0.0;PlusNode;ValueInput;NoOutput;0;2;cnat;cnat0;1.0;NoCurve;xN_nati;yN_nati;1536572286">
+<param name="cnat" value="0;node.ico;425;475;0;cnat = SE( N_nati=1.0 , 1.0 * Nascita1 , 1.0 * Nascita2 );0.0;NumIfNode;NoInput;NoOutput;3;N_nati;Nascita1;Nascita2;1;contr_nascita;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcnat;ycnat;952734625">
+<param name="Nascita1" value="1;node.ico;354;457;0;Nascita1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;cnat;escala;NoCurve;xNascita1;yNascita1;4107358047">
+<param name="Nascita2" value="1;node.ico;356;482;0;Nascita2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;cnat;escala;NoCurve;xNascita2;yNascita2;3066958941">
+<param name="Rendita_catastale" value="1;node.ico;487;369;0;Rendita_catastale = ;0.0;PlusNode;ValueInput;NoOutput;0;1;imup;escala;NoCurve;xRendita_catastale;yRendita_catastale;1689856330">
+<param name="imup" value="0;node.ico;442;397;0;imup =  0.538*Rendita_catastale;0.0;TimesNode;NoInput;NoOutput;1;Rendita_catastale;1;imur;escala;0.538;NoCurve;ximup;yimup;4070526253">
+<param name="imu_net" value="0;node.ico;558;397;0;imu_net =  imur - det_figli;0.0;MinusNode;NoInput;NoOutput;2;imur;det_figli;1;contr_imu;escala;1.0;1.0;1.0;NoCurve;ximu_net;yimu_net;2525104902">
+<param name="contr_imu" value="2;node.ico;602;425;0;contr_imu =  Min(  imu_net,  IMU_max );0.0;NumMinNode;NoInput;NoOutput;2;imu_net;IMU_max;1;cont;escala;1.0;1.0;1.0;NoCurve;xcontr_imu;xcontr_imu;3277373760">
+<param name="IMU_max" value="1;node.ico;632;398;0;IMU_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;contr_imu;escala;NoCurve;xIMU_max;yIMU_max;3673180690">
+<param name="cont" value="0;node.ico;601;451;0;cont =  contr_figli + contr_nascita + contr_imu;0.0;PlusNode;NoInput;NoOutput;3;contr_figli;contr_nascita;contr_imu;1;contr;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcont;ycont;390882969">
+<param name="contr_nascita" value="2;node.ico;442;506;0;contr_nascita =  cnat0 * cnat;0.0;TimesNode;NoInput;NoOutput;2;cnat0;cnat;1;cont;escala;1.0;1.0;1.0;NoCurve;xcontr_nascita;xcontr_nascita;2067649775">
+<param name="contr" value="0;node.ico;601;490;0;contr =  Min(  cont,  Tot_max );0.0;NumMinNode;NoInput;NoOutput;2;cont;Tot_max;1;risultante;escala;1.0;1.0;1.0;NoCurve;xcontr;ycontr;2523380188">
+<param name="Tot_max" value="1;node.ico;660;469;0;Tot_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;contr;escala;NoCurve;xTot_max;yTot_max;1628627017">
+<param name="Chiede_beneficio" value="1;node.ico;616;601;0;Chiede_beneficio = ;0.0;ProbNode;ValueInput;NoOutput;0;1;contributo_acquisti;0.5;NoCurve;xChiede_beneficio;xChiede_beneficio;1126512862">
+<param name="contributo_acquisti" value="2;node.ico;616;569;0;contributo_acquisti =  Chiede_beneficio * contr_acq;0.0;TimesNode;NoInput;ResultOutput;2;Chiede_beneficio;contr_acq;0;escala;1.0;1.0;1.0;NoCurve;xcontributo_acquisti;xcontributo_acquisti;1891484367">
+<param name="gar_ok" value="0;node.ico;509;448;0;gar_ok =  - icef_gar_ok icef_gar_ok * Forza_garanzia;0.0;ProbNode;NoInput;NoOutput;2;icef_gar_ok;Forza_garanzia;1;contr_acq;1.0;0.0;1.0;1.0;NoCurve;xgar_ok;ygar_ok;1119349290">
+<param name="Forza_garanzia" value="1;node.ico;499;421;0;Forza_garanzia = ;0.0;ProbNode;ValueInput;NoOutput;0;1;gar_ok;0.5;NoCurve;xForza_garanzia;xForza_garanzia;3399861088">
+<param name="N_figli26" value="1;node.ico;461;344;0;N_figli26 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;nf;1.0;NoCurve;xN_figli26;xN_figli26;2996931712">
+<param name="nf" value="0;node.ico;515;343;0;nf =  N_figli26);0.0;NumTransNode;NoInput;NoOutput;1;N_figli26;1;det_figli;1.0;1.0;LinearCurve;figliCurve;xnf;ynf;4267298503">
+<param name="det_figli" value="0;node.ico;566;344;0;det_figli =  50.000*nf;0.0;TimesNode;NoInput;NoOutput;1;nf;1;imu_net;escala;50.0;NoCurve;xdet_figli;ydet_figli;2725371469">
+<param name="imur" value="0;node.ico;494;397;0;imur =  imup);0.0;NumTransNode;NoInput;NoOutput;1;imup;1;imu_net;escala;1.0;LinearCurve;imuCurve;ximur;yimur;2632188473">
+<param name="vrf_du" value="0;node.ico;34;483;0;vrf_du =  RF_du / VF_du / Rif;0.0;DivideNode;NoInput;NoOutput;3;RF_du;VF_du;Rif;1;Icef;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xvrf_du;yvrf_du;3891845230">
+<param name="Icef" value="2;node.ico;65;507;0;Icef =  vrf_du + vpf_acq - vrf_du * vpf_acq;0.0;ProbNode;NoInput;IntermediateOutput;2;vrf_du;vpf_acq;0;0.0;1.0;1.0;1.0;NoCurve;xIcef;yIcef;2414320581">
+<param name="contr_acq" value="2;node.ico;627;538;0;contr_acq =  risultante * gar_ok * checkOK * icef_ok;0.0;TimesNode;NoInput;IntermediateOutput;4;risultante;gar_ok;checkOK;icef_ok;1;contributo_acquisti;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xcontr_acq;ycontr_acq;413423842">
+<param name="risultante" value="0;node.ico;532;538;0;risultante =  Min(  contr,  Importo_pagato );0.0;NumMinNode;NoInput;NoOutput;2;contr;Importo_pagato;1;contr_acq;1.0E-6;1.0;1.0;1.0;NoCurve;xrisultante;yrisultante;1029722901">
+<param name="Importo_pagato" value="1;node.ico;478;600;0;Importo_pagato = ;0.0;PlusNode;ValueInput;NoOutput;0;1;risultante;escala;NoCurve;xImporto_pagato;yImporto_pagato;1922728501">
+<param name="cnat0" value="0;node.ico;476;475;0;cnat0 = N_nati > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;N_nati;1;contr_nascita;1.0;0.0;NoCurve;xcnat0;ycnat0;525579315">
+
+<param name="figliCurve" value="LinearCurve;0.0;0.0;8.0;8.0">
+<param name="imuCurve" value="LinearCurve;0.0;0.0;200.0;0.0;1000.0;800.0;10000.0;9800.0">
+
+
+<param name="xContr_mid" value="Contr_mid;Contr_mid;non;-;ok; ; ; ; ; ; ; ">
+<param name="xContr_min" value="Contr_min;Contr_min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xN_nati" value="N_nati;N_nati;non N_nati;N_nati;N_nati; ; ; ; ; ;T; ">
+
+<param name="xContr_max" value="Contr_max;Contr_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xICEF_min" value="ICEF_min;ICEF_min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xCheck" value="Check;Check;non;-;ok; ; ; ; ; ; ; ">
+<param name="xICEF_mid" value="ICEF_mid;ICEF_mid;non;-;ok; ; ; ; ; ; ; ">
+<param name="xICEF_max" value="ICEF_max;ICEF_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xTot_max" value="Tot_max;Tot_max;non;-;ok; ; ; ; ; ;T; ">
+
+<param name="xN_figli26" value="N_figli26;N_figli26;non N_figli26;N_figli26;N_figli26; ; ; ; ; ;T; ">
+<param name="xForza_garanzia" value="Forza_garanzia;Forza_garanzia;nessuna rivalutazione della domanda;-;rivalutazione della domanda già presentata; ; ; ; ; ; ; ">
+<param name="xChiede_beneficio" value="Chiede_beneficio;Chiede_beneficio;l'intervento non è stato chiesto;-;intervento chiesto; ; ; ; ; ; ; ">
+<param name="xNascita2" value="Nascita2;Nascita2;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xNascita1" value="Nascita1;Nascita1;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xIMU_max" value="IMU_max;IMU_max;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xRendita_catastale" value="Rendita_catastale;Rendita_catastale;non Rendita_catastale;Rendita_catastale;Rendita_catastale; ; ; ; ; ;$.2; ">
+
+<param name="xImporto_pagato" value="Importo_pagato;Importo_pagato;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xVF_du" value="VF_du;VF_du: il peso della <b>famiglia</b>;il peso della <b>famiglia</b> è nullo;il peso della <b>famiglia</b>;il peso della <b>famiglia</b>;è; ; ; ;f=;T.2; ">
+<param name="xIcef_garanzia" value="Icef_garanzia;Icef_garanzia;0;-;1; ;-;+; ; ;T.2; ">
+<param name="xRF_du" value="RF_du;RF_du: <b>reddito</b> familiare preso in considerazione;RF_du: <b>reddito</b> familiare zero;RF_du: <b>reddito</b> familiare preso in considerazione;RF_du: <b>reddito</b> familiare preso in considerazione massimale;è di; ; ; ; ;$.2; ">
+<param name="xImposte_perse" value="Imposte_perse;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte sostituite=0;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato; ; ; ; ; +;$.2; ">
+<param name="xReddito_perso" value="Reddito_perso;Reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;Reddito sostituito=0;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato; ; ; ; ; -;$.2; ">
+<param name="xPF_du" value="PF_du;PF_du: ammontare del <b>patrimonio</b> convertito in reddito corrispondente;la valutazione del patrimonio risulta zero;PF_du: ammontare del <b>patrimonio</b> convertito in reddito corrispondente;PF_du: ammontare del <b>patrimonio</b> convertito in reddito corrispondente massimale;è di; ; ; ; ;$.2; ">
+<param name="xReddito_nuovo" value="Reddito_nuovo;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa; ; ; ; ; +;$.2; ">
+<param name="xModello_SOSTACQUREDDGAR" value="PAT sostegno acquisto;x;PAT sostegno acquisto - (4.7.2012);--;--; ; ; ; ; ; ; ">
+<param name="xRif" value="Rif;Rif;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xIcef_gar" value="Icef_gar;<b>(Icef_gar)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato per reddito di garanzia;<b>(Icef_gar)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato per reddito di garanzia; <b>(Icef_gar)</B> Indicatore della Condizione Economica Familiare attualizzato<br> per reddito di garanzia;<b>(Icef_gar)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato per reddito di garanzia oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="ximur" value="imur;imur;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="ximup" value="imup;imup;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xdet_figli" value="det_figli;det_figli;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xnf" value="nf;nf;non;-;ok; ; ; ; ; ;T; ">
+
+<param name="xplus" value="plus;Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^);plus=0;Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^);Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^); ; ; ; ; ;$.2; ">
+<param name="xminus" value="minus;Importi in detrazione per l'ICEF attualizzato;minus=0;Importi in detrazione per l'ICEF attualizzato;Importi in detrazione per l'ICEF attualizzato; ; ; ; ; -<i>;$.2;</i>">
+<param name="xcnat0" value="cnat0;cnat0;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xcheckOK" value="checkOK;checkOK;Escluso d'ufficio;-;checkOK; ; ; ; ; ;T; ">
+<param name="xcontr" value="contr;contr;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xicef_gar_ok" value="icef_gar_ok;icef_gar_ok;Icef_gar minore del limite |Forza_garanzia|;-;Icef_gar maggiore del limite; ; ; ; ; ; ; ">
+<param name="xismin" value="ismin;ismin;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xcontr_nascita" value="contr_nascita;Quota per la nascita di figli nell'ultimo anno;non contr_nascita;Quota per la nascita di figli nell'ultimo anno;Quota per la nascita di figli nell'ultimo anno; ; ; ; ; ;$.2; ">
+<param name="xgar_ok" value="gar_ok;gar_ok;<b>Escluso</b> per idoneità al reddito di garanzia;-;gar_ok; ; ; ; ; ;T; ">
+
+<param name="xrisultante" value="risultante;risultante;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xIcef_acq" value="Icef_acq;<b>(Icef_acq)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato per sostegno acquisti;<b>(Icef_acq)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato per sostegno acquisti; <b>(Icef_acq)</B> Indicatore della Condizione Economica Familiare attualizzato<br> per sostegno acquisti;<b>(Icef_acq)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato per sostegno acquisti oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xcontributo_acquisti" value="contributo_acquisti;<b>Contributo acquisti</b> ( Min[ ^Tot_max^ , ^contr_figli^ + ^contr_imu^ + ^contr_nascita^ ];nessun contributo_acquisti;<b>Contributo acquisti</b> ( Min[ ^Tot_max^ , ^contr_figli^ + ^contr_imu^ + ^contr_nascita^ ];<b>Contributo acquisti</b> ( Min[ ^Tot_max^ , ^contr_figli^ + ^contr_imu^ + ^contr_nascita^ ]; ; ; ; ; <b>;$.2;</b>">
+<param name="xpers" value="pers;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito perso=0;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione; ; ; ; ; -;$.2; ">
+<param name="xismid" value="ismid;ismid;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef" value="Icef;<b>(Icef)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare ;<b>(Icef_gar)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare; <b>(Icef_gar)</B> Indicatore della Condizione Economica Familiare;<b>(Icef_gar)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare oltre misura; ; ; ; ;<b>;T.9;</b>">
+
+<param name="xismax" value="ismax;ismax;non;-;ok; ; ; ; ; ; ; ">
+<param name="ximu_net" value="imu_net;imu_net;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xcontr_imu" value="contr_imu;Quota per impatto politiche fiscali;non contr_imu;Quota per impatto politiche fiscali;Quota per impatto politiche fiscali; ; ; ; ; ;$.2; ">
+<param name="xicef_ok" value="icef_ok;icef_ok;l'ICEF è oltre il limite;-;ICEF ok; ; ; ; ; ; ; ">
+<param name="xlemid" value="lemid;lemid;non;-;ok; ; ; ; ; ; ; ">
+<param name="xvrf_du" value="vrf_du;vrf_du;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xvpf_acq" value="vpf_acq;vpf_acq;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcmin" value="cmin;cmin;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xRF_acq" value="RF_acq;RF_acq;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xvrf_acq" value="vrf_acq;vrf_acq;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcmid" value="cmid;cmid;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xcnat" value="cnat;cnat;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xcont" value="cont;cont;non;-;ok; ; ; ; ; ;$.2; ">
+
+<param name="xcontr_figli" value="contr_figli;Quota per aumento prezzi;non contr_figli;Quota per aumento prezzi;Quota per aumento prezzi; ; ; ; ; ;$.2; ">
+<param name="xcmax" value="cmax;cmax;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xcontr_acq" value="contr_acq;contributo teorico ( Min[ ^Tot_max^ , ^contr_figli^ + ^contr_imu^ + ^contr_nascita^ ];nessun contributo teorico;contributo_acquisti ( Min[ ^Tot_max^ , ^contr_figli^ + ^contr_imu^ + ^contr_nascita^ ];contributo teorico ( Min[ ^Tot_max^ , ^contr_figli^ + ^contr_imu^ + ^contr_nascita^ ]; ; ; ; ; <b>;$.2;</b>">
+
+
+
+
+<param name="xpltree" value="dati;risultati;contributo;nocontributo;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="dati" value="<b>Dati:</b> ;RF_du=-1;PF_du=-1;VF_du=-1;Reddito_perso=-1!0;Imposte_perse=-1!0;Reddito_nuovo=-1!0;Rendita_catastale=-1!0;N_figli26=-1!0;N_nati=-1!0">
+<param name="risultati" value="<b>Dati:</b> ;Icef_gar=-1;Icef_acq=-1;Icef=-1">
+<param name="contributo" value="(contributo_acquisti!=0)<b>Contributo:</b> ;contr_figli=-1!0;contr_imu=-1!0;contr_nascita=-1!0;contributo_acquisti=-1">
+<param name="nocontributo" value="(contributo_acquisti==0)<b>nessun contributo concesso:</b> ;Chiede_beneficio=-1!1;checkOK=-1!1;icef_ok=-1!1;gar_ok=-1!1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="280958320">
+<param name="CRC" value="2712137778">
+<param name="CRCdata" value="4-lug-2012 13.12.01">
+</APPLET>
+</CENTER>
+<BR>

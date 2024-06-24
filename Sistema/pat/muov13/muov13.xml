@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>ATTESTAZIONE DELL'INDICATORE ICEF <BR> PER LA TARIFFA MUOVERSI 2013</H2>
+		</CENTER></head> ]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<![CDATA[<H3><CENTER>]]>
+            <sql><![CDATA[select case when id_tp_stato<3000 then 'Elaborazione provvisoria, domanda non trasmessa!' else '' end from Doc where id=${id_domanda}]]></sql>
+		<![CDATA[</H3></CENTER>]]>
+		</ente>
+		<servizio>
+			</servizio>
+		<richiedente><![CDATA[<H3>Richiedente</H3>]]>
+			<class>c_elab.pat.muov13.Richiedente</class><![CDATA[</H2>]]>
+		</richiedente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+			 <![CDATA[ ]]>
+            <sql><![CDATA[select '<big><br>La somma da versare al <br>
+<b>Servizio Tesoreria della Provincia Autonoma di Trento</b> <br>
+c/o Unicredit Banca <br>
+via Galilei, 1 <br>
+38122 Trento <br>
+sul conto corrente postale n. <b>295386</b> <br>
+o con bonifico bancario
+<table border=''1''>
+<tr align=''center''><td></td><td>CIN</td><td>ABI</td><td>CAB</td><td>N.Conto</td></tr>
+<tr align=''center''><td>IT12</td><td>S</td><td>02008</td><td>01820</td><td>000003774828</td></tr>
+</table>
+è di <b>' + str (c_elaout.numeric_value, 6 , 4) + '</b>. <p><i>Nel versamento deve essere indicata la causale <b>L4 Servizio di trasporto ed accompagnamento</b></i>.</big><p><HR>' FROM C_ElaOut WHERE node LIKE 'tariffa' AND id_domanda=${id_domanda}]]></sql>
+			<![CDATA[ ]]>
+		</integrazione>
+		<infoDoc>
+			<!--class>clesprojects.clesius.icef.InfoDomanda</class-->
+		</infoDoc>
+		<netVersion><![CDATA[<center>${footer.netVersion}</center>]]></netVersion>
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+		
+	</footer>
+</Doc>

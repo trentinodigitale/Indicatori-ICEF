@@ -1,0 +1,114 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=830 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.2 $">
+<param name="Taratura" value="APAPI - Lavoro discontinuo 2008; 23.6.2009">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriLD;casoLD">
+
+<param name="parametriLD" value="current;Check=0;Limite_CE=15000;Importo_max=1000">
+
+<param name="casoLD" value="parametriLD;E1=400;E2=700;Somma_gg=150;Condizione_equivalente=12000">
+
+<param name="variables" value="uno;giornaliero;ascala;cscala;escala">
+
+ <param name="uno" value="1.0">
+ <param name="giornaliero" value="uno / 365">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+
+
+<param name="edges" value="P.A.T. Regione LD08;
+Condizione_equivalente-condOK;Limite_CE-condOK;Check-idonea;condOK-idoneo;idonea-idoneo;Importo_max-oltre;E1-oltre;oltre-annuo;Somma_gg-annuo;E2-minimo;annuo-minimo;E1-somma;minimo-somma;somma-calcolato;Importo_max-calcolato;calcolato-contributo;idoneo-contributo">
+
+
+
+<param name="P.A.T. Regione LD08" value="text;node.ico;73;399;0;P.A.T. Regione LD08 2008/2009 - (23.6.2009);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_LD;xModello_LD;881786225">
+<param name="Condizione_equivalente" value="1;node.ico;314;430;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;condOK;escala;NoCurve;xCondizione_equivalente;yCondizione_equivalente;2891115094">
+<param name="condOK" value="2;node.ico;376;456;0;-;0.0;NumLeNode;NoInput;IntermediateOutput;2;Condizione_equivalente;Limite_CE;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;535628236">
+<param name="Limite_CE" value="1;node.ico;423;429;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;condOK;escala;NoCurve;xLimite_CE;yLimite_CE;2591538141">
+<param name="Check" value="1;node.ico;659;426;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;idonea;1.0;NoCurve;xCheck;yCheck;2597460334">
+<param name="idonea" value="0;node.ico;592;427;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xidonea;yidonea;2587736328">
+<param name="idoneo" value="2;node.ico;594;498;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;condOK;idonea;1;contributo;1.0;1.0;1.0;1.0;NoCurve;xidoneo;yidoneo;1931503732">
+<param name="Importo_max" value="1;node.ico;198;501;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;oltre;calcolato;escala;NoCurve;xImporto_max;yImporto_max;2087684010">
+<param name="oltre" value="0;node.ico;200;543;0;-;0.0;MinusNode;NoInput;NoOutput;2;Importo_max;E1;1;annuo;escala;1.0;1.0;1.0;NoCurve;xoltre;yoltre;242692936">
+<param name="E1" value="1;node.ico;131;569;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;oltre;somma;escala;NoCurve;xE1;yE1;1919887387">
+<param name="annuo" value="0;node.ico;296;543;0;-;0.0;TimesNode;NoInput;NoOutput;2;oltre;Somma_gg;1;minimo;escala;giornaliero;1.0;1.0;NoCurve;xannuo;yannuo;635694039">
+<param name="Somma_gg" value="1;node.ico;296;475;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;annuo;escala;NoCurve;xSomma_gg;ySomma_gg;3310412416">
+<param name="E2" value="1;node.ico;131;596;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minimo;escala;NoCurve;xE2;yE2;2850681012">
+<param name="minimo" value="0;node.ico;296;596;0;-;0.0;NumMinNode;NoInput;NoOutput;2;E2;annuo;1;somma;escala;1.0;1.0;1.0;NoCurve;xminimo;yminimo;2711324919">
+<param name="somma" value="0;node.ico;380;569;0;-;0.0;PlusNode;NoInput;NoOutput;2;E1;minimo;1;calcolato;escala;1.0;1.0;1.0;NoCurve;xsomma;ysomma;3316633527">
+<param name="calcolato" value="0;node.ico;492;569;0;-;0.0;NumMinNode;NoInput;NoOutput;2;somma;Importo_max;1;contributo;escala;1.0;1.0;1.0;NoCurve;xcalcolato;ycalcolato;2700695174">
+<param name="contributo" value="2;node.ico;594;569;0;-;0.0;TimesNode;NoInput;ResultOutput;2;calcolato;idoneo;0;0.0010;1.0;1.0;1.0;NoCurve;xcontributo;ycontributo;175849787">
+
+
+
+<param name="xSomma_gg" value="Somma_gg;Somma dei giorni di disocuppazione e lavoro atipico;Somma_gg=0;Somma dei giorni di disocuppazione e lavoro atipico;Somma dei giorni di disocuppazione e lavoro atipico; ; ; ; ; ;T; giorni">
+
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ; ; ; ; ;T; ">
+
+<param name="xE1" value="E1;E.1) Versamenti che il sottoscritto o il proprio datore di lavoro, in relazione ai periodi indicati ha effettuato complessivamente;E1 = 0;E.1) Versamenti che il sottoscritto o il proprio datore di lavoro, in relazione ai periodi indicati ha effettuato complessivamente;E.1) Versamenti che il sottoscritto o il proprio datore di lavoro, in relazione ai periodi indicati ha effettuato complessivamente; ; ; ; ; ;$.2; ">
+
+<param name="xImporto_max" value="Importo_max;Importo_max;0;-;1; ; ; ; ; ;$.2; ">
+
+<param name="xCondizione_equivalente" value="Condizione_equivalente;Valutazione della condizione familiare;Valutazione della condizione familiare;Valutazione della condizione familiare;Valutazione della condizione familiare; ; ; ; ; <b>;$.2;</b>">
+
+<param name="xModello_LD" value="P.A.T. Regione LD08;x;P.A.T. Regione LD08 2008/2009 - (23.6.2009);--;--; ; ; ; ; ; ; ">
+<param name="xE2" value="E2;E.2) Versamenti al Fondo Pensione complementare riferiti all'intero anno ;E2 = 0;E.2) Versamenti al Fondo Pensione complementare riferiti all'intero anno ;E.2) Versamenti al Fondo Pensione complementare riferiti all'intero anno ; ; ; ; ; ;$.2; ">
+
+<param name="xLimite_CE" value="Limite_CE;Limite della condizione familiare equivalente;Limite=0;Limite della condizione familiare equivalente;1; ; ; ; ; ;$.2; ">
+
+<param name="xidonea" value="idonea;--;domanda <b>non</b> idonea;-;domanda idonea; ; ;=; ; ; ; ">
+
+<param name="xminimo" value="minimo;minimo;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xcontributo" value="contributo;Contributo determinato ( MIN [ §E1§ + MIN[ §E2§, §Somma_gg§ *(§Importo_max§ - §E1§)/365], §Importo_max§] );Contributo determinato zero;Contributo determinato ( MIN [ §E1§ + MIN[§E2§, §Somma_gg§ *(§Importo_max§ - §E1§)/365], §Importo_max§] );Contributo determinato ( MIN [ §E1§ + MIN[§E2§, §Somma_gg§ *(§Importo_max§ - §E1§)/365], §Importo_max§] ); ; ; ; ;<b> ;$.2;</b>">
+
+<param name="xcalcolato" value="calcolato;Contributo determinato ( MIN [ §E1§ + MIN[§E2§, §Somma_gg§ *(§Importo_max§ - §E1§)/365], §Importo_max§] );Contributo determinato zero;Contributo determinato ( MIN [ §E1§ + MIN[§E2§, §Somma_gg§ *(§Importo_max§ - §E1§)/365], §Importo_max§] );Contributo determinato ( MIN [ §E1§ + MIN[§E2§, §Somma_gg§ *(§Importo_max§ - §E1§)/365], §Importo_max§] ); ; ; ; ;<b> ;$.2;</b>">
+
+<param name="xsomma" value="somma;somma;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xidoneo" value="idoneo;--;domanda <b>non</b> idonea;-;domanda idonea; ; ; ; ; ; ; ">
+
+<param name="xcondOK" value="condOK;condOK;Condizione Economica Familiare oltre il limite di ^Limite_CE^;-;ICEF ok; ;-;+; ; ; ; ">
+
+<param name="xannuo" value="annuo;annuo;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xoltre" value="oltre;oltre;0;-;1; ;-;+; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="titolo;applicant;datifam;risultato;idoneità;xplcheck;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="titolo" value="<CENTER><H2>ASSEGNO PER LAVORO DISCONTINUO</H2></CENTER>;">
+<param name="applicant" value="<P> Richiedente: ;">
+<param name="datifam" value="<b>Dati familiari:</b>;Condizione_equivalente=-1;E1=-1!0;E2=-1!0;Somma_gg=-1">
+<param name="risultato" value="<b>Risultato</b> ;contributo=-1;idonea=-1!1">
+<param name="idoneità" value="(idoneo==0);idoneo=1;condOK=2!1">
+<param name="xplcheck" value="(idoneo==0) <p>
+* <i>Spiegazione del codice di controllo:<br>
+(2) richiedente non residente<br>
+(8) condizione economica oltre i limiti<br>
+(9) domanda non applicabile<br>
+(11) versamento dopo la data di scadenza<br>
+(13) periodo non valido</i><br><br>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="267371360">
+<param name="CRC" value="3105508472">
+<param name="CRCdata" value="23-giu-2009 19.52.22">
+</APPLET>
+<BR>

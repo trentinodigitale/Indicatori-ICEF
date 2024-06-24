@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>Attestazione dell'indicatore ICEF per la concessione<BR>
+        	del reddito di garanzia<BR></H2>
+		(Art. 35, comma 2, Legge provinciale 13/2007)
+		</CENTER></head> ]]>
+	</header>
+	<richiedente>
+		<![CDATA[<B>Nucleo familiare: </B>]]>
+		<class>c_elab.pat.ITEA09.Richiedente</class>
+		<![CDATA[<BR>]]>
+	</richiedente>	
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+    		</sql>
+	</ente>
+
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomandaEpu</class>
+	</infoDoc>
+    <avviso>
+    </avviso>
+	<newPage>	
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>
+	
+	<integrazione>
+		<sql><![CDATA[select case when GR_dati.ID_tp_esclusione <> 4 AND GR_dati.ID_tp_esclusione <> 0 then
+			'<H3><HR>(*) Motivazione dell''esclusione d''ufficio: '+GR_tp_esclusione_domanda.tp_esclusione+'<HR></H3>' else
+			'<BR>' end from GR_dati INNER JOIN GR_tp_esclusione_domanda ON GR_dati.ID_tp_esclusione = GR_tp_esclusione_domanda.ID_tp_esclusione where GR_dati.ID_domanda=${id_domanda}]]>
+    	</sql>
+	</integrazione>
+	
+	<integrazione>
+		<sql><![CDATA[select dbo.GetSpiegazioneElaborazioneRedditoGaranzia(check1.numeric_value,GR_Dati.ID_tp_scelta_incongrua,GR_Dati.ID_tp_scelta_sociale_icef,consumi.numeric_value,icef.numeric_value,icef1.numeric_value,c_incongrua.numeric_value ) 
+from GR_Dati INNER JOIN 
+C_ElaOUT AS check1 ON GR_Dati.ID_domanda = check1.ID_domanda INNER JOIN 
+C_ElaOUT AS consumi ON GR_Dati.ID_domanda = consumi.ID_domanda INNER JOIN 
+C_ElaOUT AS icef ON GR_Dati.ID_domanda = icef.ID_domanda INNER JOIN 
+C_ElaOUT AS icef1 ON GR_Dati.ID_domanda = icef1.ID_domanda INNER JOIN 
+C_ElaOUT AS c_incongrua ON GR_Dati.ID_domanda = c_incongrua.ID_domanda
+where check1.node='check1' AND consumi.node='mens_con' AND icef.node='mens_icef' AND icef1.node='mens_icef1' AND c_incongrua.node='incongrua'
+AND GR_Dati.ID_domanda = ${id_domanda}]]>
+    	</sql>
+	</integrazione>
+	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+	
+	
+</Doc>

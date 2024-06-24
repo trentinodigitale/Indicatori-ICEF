@@ -1,0 +1,202 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class
+	CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=750 MAYSCRIPT>
+	<param name="PATtrasporto"
+		value="PAT barriere architettoniche 2016; 2.5.2016">
+	<param name="revision" value="$Revision: 22316 $">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="true">
+
+	<param name="trendStarts" value="trendstart;caso;paratrasp">
+	<param name="trendstart" value="current">
+	<param name="caso"
+		value="paratrasp;Spesa=8000;Coeff_gravita=1.0;Eta_ast=60;Quota_possesso=0.047121;Perc_condominiale=0.15;N_condomini=4;Icef=0.3">
+
+
+	<param name="paratrasp"
+		value="current;Detraz_0=8100;Detraz_18=5400;Detraz_65=2000;Icefinf=0.1;Icefsup=0.35;Mq_franchigia=500;Spesa_ammissibile=13000;Perc_max=75">
+
+	<param name="trends" value="trend0">
+	<param name="trend0" value="trendstart;Icef=0.0:0.02:1.0;percentuale">
+
+
+
+
+	<param name="variables" value="ascala;pscala;rscala;tscala">
+
+	<param name="ascala" value="0.0001">
+	<param name="pscala" value="0.000001">
+
+	<param name="rscala" value="0.00001">
+	<param name="tscala" value="0.001">
+
+
+
+<param name="edges" value="PAT barriere architettoniche;Detraz_0;Detraz_18;Detraz_65;Dettagli;Icefinf;Spesa;
+Icef-icefOK;Icefsup-icefOK;Icef-giudizio;fascia_eta-1_coeff_eta;Icef-1_ICEF;1_ICEF-teorico;1_coeff_eta-teorico;Coeff_gravita-teorico;teorico-punteggio;giudizio-perc;Check-checkOK;checkOK-contributo;checkOK-punteggio;C1_aut_ast-r_ast;C1_dip_ast-r_ast;C2_agr_ast-r_ast;C3_imp_ast-r_ast;C4_part_ast-r_ast;Precedente-r_ast;Eta_ast-det_ast;Assegno_imposto-arl;
+ICI_particelle-al_mq;Mq_particelle-al_mq;Mq_franchigia-mq_fr;al_mq-mq_fr;ICI_particelle-mq_franchigia;mq_fr-mq_franchigia;mq_franchigia-tot_non;tot_non-non_I;Eta_ast-fascia_eta;perc-percen;percen-percent;icefOK-percent;percent-percentual;percentual-percentuale;icefOK-punteggio;Spesa_ammissibile-contributo_condominiale;Perc_condominiale-contributo_condominiale;contributo_condominiale-contributo_pro_condomine;N_condomini-contributo_pro_condomine;Spesa_ammissibile-spesa_beneficiario;
+contributo_condominiale-spesa_beneficiario;contributo_netto-contributo_beneficiario;contributo_pro_condomine-contributo_beneficiario;contributo_beneficiario-contributo;checkOK-ok;icefOK-ok;Quota_possesso-cont_netto;spesa_beneficiario-cont_netto;cont_netto-contributo_netto;percentuale-contributo_netto;icefOK-contributo;N_condomini-oltre_0;oltre_0-contributo_condominiale;N_condomini-altri;1-altri;altri-altri_condomini;contributo-contributo_totale;altri_condomini-contributo_totale;contributo_pro_condomine-altri_condomini;icefOK-contributo_condominiale;
+Perc_max-percentuale">
+
+
+
+<param name="PAT barriere architettoniche" value="text;node.ico;593;252;0;PAT barriere architettoniche (11.3.2016);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT barriere architettoniche;yPAT barriere architettoniche;3037106567">
+<param name="Detraz_0" value="1;node.ico;507;237;0;Detraz_0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xDetraz_0;xDetraz_0;3831088719">
+<param name="Detraz_18" value="1;node.ico;576;235;0;Detraz_18 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xDetraz_18;xDetraz_18;765786748">
+<param name="Detraz_65" value="1;node.ico;650;235;0;Detraz_65 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xDetraz_65;xDetraz_65;335052065">
+<param name="Dettagli" value="0;node.ico;645;269;0;Dettagli = ;0.0;TimesNode;NoInput;NoOutput;0;0;1.0;NoCurve;xDettagli;xDettagli;1277678741">
+<param name="Icefinf" value="1;node.ico;200;334;0;Icefinf = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xIcefinf;xIcefinf;2287274471">
+<param name="Spesa" value="1;node.ico;184;259;0;Spesa = ;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xSpesa;xSpesa;810520130">
+<param name="Icef" value="1;node.ico;407;310;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;3;giudizio;1_ICEF;icefOK;0.5;NoCurve;xIcef;xIcef;2438691716">
+<param name="icefOK" value="0;node.ico;253;362;0;icefOK = Icef <= Icefsup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;Icefsup;5;percent;punteggio;ok;contributo;contributo_condominiale;1.0;1.0;1.0;0.0;NoCurve;xicefOK;xicefOK;3974489099">
+<param name="Icefsup" value="1;node.ico;254;335;0;Icefsup = ;0.0;ProbNode;ValueInput;NoOutput;0;1;icefOK;0.5;NoCurve;xIcefsup;xIcefsup;3038201343">
+<param name="giudizio" value="0;0;366;340;0;giudizio =   1  -  F( Icef );0.0;TransformNode;NoInput;IntermediateOutput;1;Icef;1;perc;1.0;0.0;LinearCurve;giuCurve;xgiudizio;xgiudizio;3661748425">
+<param name="fascia_eta" value="0;node.ico;607;393;0;fascia_eta =  Eta_ast);0.0;NumTransNode;NoInput;NoOutput;1;Eta_ast;1;1_coeff_eta;1.0;1.0;LinearCurve;etaCurve;xfascia_eta;xfascia_eta;2756365762">
+<param name="1_coeff_eta" value="0;node.ico;548;418;0;1_coeff_eta =   1  - fascia_eta;0.0;ProbNode;NoInput;NoOutput;1;fascia_eta;1;teorico;1.0;0.0;NoCurve;x1_coeff_eta;x1_coeff_eta;2644870842">
+<param name="1_ICEF" value="0;node.ico;441;411;0;1_ICEF =   1  - Icef;0.0;ProbNode;NoInput;NoOutput;1;Icef;1;teorico;1.0;0.0;NoCurve;x1_ICEF;x1_ICEF;998960119">
+<param name="teorico" value="0;node.ico;598;444;0;teorico =  0.300*1_ICEF + 0.300*1_coeff_eta + 0.400*Coeff_gravita;0.0;PlusNode;NoInput;NoOutput;3;1_ICEF;1_coeff_eta;Coeff_gravita;1;punteggio;1.0;0.3;0.3;0.4;0.0;0.0;0.0;0.0;NoCurve;xteorico;xteorico;3698454880">
+<param name="Coeff_gravita" value="1;node.ico;637;417;0;Coeff_gravita = ;0.0;PlusNode;ValueInput;NoOutput;0;1;teorico;1.0;NoCurve;xCoeff_gravita;xCoeff_gravita;1696884726">
+<param name="punteggio" value="2;node.ico;599;472;0;punteggio =  100.000*teorico * checkOK * icefOK;0.0;TimesNode;NoInput;ResultOutput;3;teorico;checkOK;icefOK;0;1.0;100.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xpunteggio;xpunteggio;1944517757">
+<param name="perc" value="0;node.ico;367;363;0;perc =   F( giudizio );0.0;TransformNode;NoInput;IntermediateOutput;1;giudizio;1;percen;0.0;1.0;SigmoidCurve;sigmoidCurve;xperc;xperc;2713455085">
+<param name="Check" value="1;node.ico;418;282;0;Check = ;0.0;PlusNode;ParameterInput;NoOutput;0;1;checkOK;1.0;NoCurve;xCheck;xCheck;2114820727">
+<param name="checkOK" value="2;node.ico;466;326;0;checkOK = Check == 0.0;0.0;NumEqNode;NoInput;IntermediateOutput;1;Check;3;contributo;punteggio;ok;1.0;0.0;NoCurve;xcheckOK;xcheckOK;1507086284">
+<param name="contributo" value="2;node.ico;478;467;0;contributo =  checkOK * contributo_beneficiario * icefOK;0.0;TimesNode;NoInput;ResultOutput;3;checkOK;contributo_beneficiario;icefOK;1;contributo_totale;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcontributo;xcontributo;2725066670">
+<param name="C1_aut_ast" value="1;node.ico;50;260;0;C1_aut_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC1_aut_ast;xC1_aut_ast;1289728932">
+<param name="r_ast" value="0;node.ico;118;264;0;r_ast =  C1_aut_ast + C1_dip_ast + C2_agr_ast + C3_imp_ast + C4_part_ast + Precedente;0.0;PlusNode;NoInput;NoOutput;6;C1_aut_ast;C1_dip_ast;C2_agr_ast;C3_imp_ast;C4_part_ast;Precedente;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xr_ast;xr_ast;643825043">
+<param name="C1_dip_ast" value="1;node.ico;49;284;0;C1_dip_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC1_dip_ast;xC1_dip_ast;197529624">
+<param name="C2_agr_ast" value="1;node.ico;54;309;0;C2_agr_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC2_agr_ast;xC2_agr_ast;382631733">
+<param name="C3_imp_ast" value="1;node.ico;54;334;0;C3_imp_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC3_imp_ast;xC3_imp_ast;1701122692">
+<param name="C4_part_ast" value="1;node.ico;54;361;0;C4_part_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC4_part_ast;xC4_part_ast;2783001058">
+<param name="Precedente" value="1;node.ico;51;385;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;rscala;NoCurve;xPrecedente;xPrecedente;1187429392">
+<param name="Eta_ast" value="1;node.ico;561;367;0;Eta_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;2;det_ast;fascia_eta;0.01;NoCurve;xEta_ast;xEta_ast;4144268859">
+<param name="det_ast" value="0;node.ico;522;392;0;det_ast =  Eta_ast);0.0;NumTransNode;NoInput;NoOutput;1;Eta_ast;0;rscala;1.0;StepCurve;detCurve;xdet_ast;xdet_ast;1731236374">
+<param name="Assegno_imposto" value="1;node.ico;290;313;0;Assegno_imposto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;pscala;NoCurve;xAssegno_imposto;xAssegno_imposto;962239871">
+<param name="arl" value="0;node.ico;187;313;0;arl =  Assegno_imposto;0.0;PlusNode;NoInput;NoOutput;1;Assegno_imposto;0;rscala;1.0;NoCurve;xarl;xarl;849931236">
+<param name="ICI_particelle" value="1;node.ico;541;274;0;ICI_particelle = ;0.0;PlusNode;ValueInput;NoOutput;0;2;al_mq;mq_franchigia;pscala;NoCurve;xICI_particelle;xICI_particelle;446051895">
+<param name="al_mq" value="0;node.ico;541;314;0;al_mq =  ICI_particelle / Mq_particelle;0.0;DivideNode;NoInput;NoOutput;2;ICI_particelle;Mq_particelle;1;mq_fr;tscala;1.0;1.0;1.0;NoCurve;xal_mq;xal_mq;4093118546">
+<param name="Mq_particelle" value="1;node.ico;541;347;0;Mq_particelle = ;0.0;PlusNode;ValueInput;NoOutput;0;1;al_mq;tscala;NoCurve;xMq_particelle;xMq_particelle;2807307597">
+<param name="Mq_franchigia" value="1;node.ico;637;347;0;Mq_franchigia = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mq_fr;tscala;NoCurve;xMq_franchigia;xMq_franchigia;3633239710">
+<param name="mq_fr" value="0;node.ico;635;314;0;mq_fr =  Mq_franchigia * al_mq;0.0;TimesNode;NoInput;NoOutput;2;Mq_franchigia;al_mq;1;mq_franchigia;tscala;1.0;1.0;1.0;NoCurve;xmq_fr;xmq_fr;231582676">
+<param name="mq_franchigia" value="0;node.ico;633;292;0;mq_franchigia =  Min(  ICI_particelle,  mq_fr );0.0;NumMinNode;NoInput;NoOutput;2;ICI_particelle;mq_fr;1;tot_non;tscala;1.0;1.0;1.0;NoCurve;xmq_franchigia;xmq_franchigia;94404731">
+<param name="tot_non" value="0;node.ico;473;293;0;tot_non =  mq_franchigia;0.0;PlusNode;NoInput;NoOutput;1;mq_franchigia;1;non_I;ascala;1.0;NoCurve;xtot_non;xtot_non;3740057241">
+<param name="non_I" value="0;node.ico;471;269;0;non_I =  tot_non);0.0;NumTransNode;NoInput;NoOutput;1;tot_non;0;rscala;1.0;LinearCurve;negCurve;xnon_I;xnon_I;2756053133">
+<param name="percen" value="0;node.ico;317;368;0;percen =  - perc;0.0;ProbNode;NoInput;NoOutput;1;perc;1;percent;1.0;0.0;NoCurve;xpercen;xpercen;2263976129">
+<param name="percent" value="0;node.ico;253;384;0;percent =  F( percen ) * icefOK;0.0;TransformNode;NoInput;NoOutput;2;percen;icefOK;1;percentual;0.0;0.0;0.0;1.0;LinearCurve;percCurve;xpercent;xpercent;1789585081">
+<param name="percentual" value="2;node.ico;389;384;0;percentual =  percent;0.0;ProbNode;NoInput;ResultOutput;1;percent;1;percentuale;0.0;1.0;NoCurve;xpercentual;xpercentual;1524490697">
+<param name="percentuale" value="2;node.ico;317;424;0;percentuale =  percentual * Perc_max;0.0;TimesNode;NoInput;IntermediateOutput;2;percentual;Perc_max;1;contributo_netto;1.0;1.0;1.0;1.0;NoCurve;xpercentuale;xpercentuale;3604133070">
+<param name="Spesa_ammissibile" value="1;node.ico;157;288;0;Spesa_ammissibile = ;0.0;PlusNode;ValueInput;NoOutput;0;2;contributo_condominiale;spesa_beneficiario;ascala;NoCurve;xSpesa_ammissibile;xSpesa_ammissibile;120357473">
+<param name="contributo_condominiale" value="2;node.ico;136;507;0;contributo_condominiale =  Spesa_ammissibile * Perc_condominiale * oltre_0 * icefOK;0.0;TimesNode;NoInput;IntermediateOutput;4;Spesa_ammissibile;Perc_condominiale;oltre_0;icefOK;2;contributo_pro_condomine;spesa_beneficiario;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xcontributo_condominiale;xcontributo_condominiale;3205227634">
+<param name="Perc_condominiale" value="1;node.ico;73;475;0;Perc_condominiale = ;0.0;ProbNode;ValueInput;NoOutput;0;1;contributo_condominiale;0.5;NoCurve;xPerc_condominiale;xPerc_condominiale;4039748989">
+<param name="contributo_pro_condomine" value="2;node.ico;307;506;0;contributo_pro_condomine =  contributo_condominiale / N_condomini;0.0;DivideNode;NoInput;IntermediateOutput;2;contributo_condominiale;N_condomini;2;contributo_beneficiario;altri_condomini;ascala;1.0;1.0;1.0;NoCurve;xcontributo_pro_condomine;xcontributo_pro_condomine;3385626529">
+<param name="N_condomini" value="1;node.ico;78;425;0;N_condomini = ;0.0;PlusNode;ValueInput;NoOutput;0;3;contributo_pro_condomine;oltre_0;altri;0.1;NoCurve;xN_condomini;xN_condomini;703185542">
+<param name="spesa_beneficiario" value="0;node.ico;190;406;0;spesa_beneficiario =  Spesa_ammissibile - contributo_condominiale;0.0;MinusNode;NoInput;NoOutput;2;Spesa_ammissibile;contributo_condominiale;1;cont_netto;ascala;1.0;1.0;1.0;NoCurve;xspesa_beneficiario;xspesa_beneficiario;3594391226">
+<param name="contributo_netto" value="0;node.ico;320;450;0;contributo_netto =  cont_netto * 0.010*percentuale;0.0;TimesNode;NoInput;NoOutput;2;cont_netto;percentuale;1;contributo_beneficiario;ascala;1.0;0.01;1.0;NoCurve;xcontributo_netto;xcontributo_netto;106517683">
+<param name="contributo_beneficiario" value="2;node.ico;482;506;0;contributo_beneficiario =  contributo_netto + contributo_pro_condomine;0.0;PlusNode;NoInput;ResultOutput;2;contributo_netto;contributo_pro_condomine;1;contributo;1.0E-4;1.0;1.0;1.0;NoCurve;xcontributo_beneficiario;xcontributo_beneficiario;1587554090">
+<param name="ok" value="0;node.ico;447;355;0;ok =   1  checkOK * icefOK;0.0;ProbNode;NoInput;NoOutput;2;checkOK;icefOK;0;0.0;0.0;0.0;1.0;NoCurve;xok;xok;4199071023">
+<param name="Quota_possesso" value="1;node.ico;67;448;0;Quota_possesso = ;0.0;ProbNode;ValueInput;NoOutput;0;1;cont_netto;0.5;NoCurve;xQuota_possesso;xQuota_possesso;1742955809">
+<param name="cont_netto" value="0;node.ico;199;450;0;cont_netto =  Quota_possesso * spesa_beneficiario;0.0;TimesNode;NoInput;NoOutput;2;Quota_possesso;spesa_beneficiario;1;contributo_netto;0.0;1.0;1.0;1.0;NoCurve;xcont_netto;xcont_netto;2013375885">
+<param name="oltre_0" value="0;node.ico;161;429;0;oltre_0 = N_condomini > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;N_condomini;1;contributo_condominiale;1.0;0.0;NoCurve;xoltre_0;xoltre_0;4105208349">
+<param name="altri" value="0;node.ico;196;473;0;altri =  N_condomini - 1;0.0;MinusNode;NoInput;NoOutput;2;N_condomini;1;1;altri_condomini;1.0;1.0;1.0;1.0;NoCurve;xaltri;xaltri;2997326449">
+<param name="1" value="0;node.ico;161;472;0;1 =   1 ;0.0;Prob2Node;NoInput;NoOutput;0;1;altri;1.0;NoCurve;x1;x1;2252644949">
+<param name="altri_condomini" value="0;node.ico;303;475;0;altri_condomini =  altri * contributo_pro_condomine;0.0;TimesNode;NoInput;NoOutput;2;altri;contributo_pro_condomine;1;contributo_totale;1.0;1.0;1.0;1.0;NoCurve;xaltri_condomini;xaltri_condomini;427779966">
+<param name="contributo_totale" value="2;node.ico;620;498;0;contributo_totale =  contributo + altri_condomini;0.0;PlusNode;NoInput;NoOutput;2;contributo;altri_condomini;0;1.0;1.0;1.0;1.0;NoCurve;xcontributo_totale;xcontributo_totale;1882515894">
+<param name="Perc_max" value="1;node.ico;311;399;0;Perc_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;percentuale;0.1;NoCurve;xPerc_max;xPerc_max;4004278028">
+
+<param name="detCurve" value="StepCurve;0.0;Detraz_0;18.0;Detraz_18;65.0;Detraz_65">
+<param name="etaCurve" value="LinearCurve;0.0;0.0;100.0;1.0">
+<param name="giuCurve" value="LinearCurve;Icefinf;1.0;Icefsup;0.0">
+<param name="negCurve" value="LinearCurve;0.0;0.0;1.0E7;-1.0E7">
+<param name="percCurve" value="LinearCurve;0.0;Icefinf;1.0;1.0">
+<param name="sigmoidCurve" value="SigmoidCurve;0.0;0.0;0.0;1.0;0.0;0.0;0.0;1.0;0.0;0.35;0.0;9.0">
+
+
+<param name="xPrecedente" value="Precedente;Contributo precedente;Precedente;Contributo precedente;Contributo precedente; ; ; ; ; -;$.2; ">
+<param name="xC4_part_ast" value="C4_part_ast;C4: Redditi da partecipazioni in società dell'assistito ;C4: Reddito da partecipazioni in società zero;C4: Redditi da partecipazioni in società dell'assistito ;C4: Redditi da partecipazioni in società dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+<param name="xEta_ast" value="Eta_ast;Età dell'assitito;età???;Età dell'assitito;Età dell'assitito; ; ; ; ; ;T; anni">
+<param name="xC3_imp_ast" value="C3_imp_ast;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo zero;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xC1_aut_ast" value="C1_aut_ast;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito ;C1(ANP/DIV): Redditi da lavoro autonomo occasionale zero;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito;C1(ANP/DIV): Redditi da lavoro autonomo occasionale dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xCheck" value="Check;Check;idoneo;Check;Domanda NON idonea; ; ; ; ;causa: ;T; ">
+<param name="xC2_agr_ast" value="C2_agr_ast;C2: Redditi da impresa agricola dell'assistito ;C2: Redditi da impresa agricola zero;C2: Redditi da impresa agricola dell'assistito;C2: Redditi da impresa agricola dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xC1_dip_ast" value="C1_dip_ast;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati zero;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xQuota_possesso" value="Quota_possesso;Quota di possesso del beneficiario;Quota_possesso=0 ??;Quota di possesso del beneficiario;Quota di possesso del beneficiario; ; ; ; ; ;P2.6; ">
+<param name="xN_condomini" value="N_condomini;Numero di condomini partecipanti alla spesa;Nessun comproprietario;Numero di condomini partecipanti alla spesa;Numero di condomini partecipanti alla spesa; ; ; ; ; ;T; ">
+<param name="xPerc_max" value="Perc_max;Perc_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="x1" value="x;x;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPerc_condominiale" value="Perc_condominiale;Percentuale condominiale;Percentuale condominiale=0 ??;Percentuale condominiale;Percentuale condominiale; ; ; ; ; ;P.2; ">
+<param name="xMq_particelle" value="Mq_particelle;Superficie complessiva del terreno oggetto dell'intervento;Mq_particelle=0;Superficie complessiva del terreno oggetto dell'intervento;Superficie complessiva del terreno oggetto dell'intervento; ; ; ; ; ;T;mq">
+<param name="xICI_particelle" value="ICI_particelle;Valore ICI complessivo del terreno oggetto dell'intervento;ICI_particelle=0;Valore ICI complessivo del terreno oggetto dell'intervento;Valore ICI complessivo del terreno oggetto dell'intervento; ; ; ; ; ;$.2; ">
+<param name="xSpesa_ammissibile" value="Spesa_ammissibile;Spesa_ammissibile;Spesa_ammissibile;Spesa_ammissibile;Spesa_ammissibile; ; ; ; ; ;$.2; ">
+<param name="xMq_franchigia" value="Mq_franchigia;Mq_franchigia;Mq_franchigia=0;Mq_franchigia;Mq_franchigia; ; ; ; ; ;T;mq">
+<param name="xIcefinf" value="Icefinf;Icefinf;Icefinf;Icefinf;Icefinf; ; ; ; ; ;T.1; ">
+<param name="xDettagli" value="Dettagli;Dettagli;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcefsup" value="Icefsup;Icefsup;Icefsup;Icefsup;Icefsup; ; ; ; ; ;T.2; ">
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia da ^Icefinf^ a ^Icefsup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.8;</b>">
+<param name="xSpesa" value="Spesa;Spesa dichiarata dal cittadino (spesa ammessa: ^Spesa_ammissibile^);spesa zero ??;Spesa dichiarata dal cittadino (spesa ammessa: ^Spesa_ammissibile^);Spesa dichiarata dal cittadino (spesa ammessa: ^Spesa_ammissibile^); ; ; ; ; ;$.2; ">
+<param name="xCoeff_gravita" value="Coeff_gravita;Coefficiente di gravita;coefficiente ??;Coefficiente di gravita;Coefficiente di gravita; ; ; ; ; ;T.2; ">
+<param name="xPAT barriere architettoniche" value="PAT barriere architettoniche;PAT;PAT barriere architettoniche (2.5.2016);--;--; ; ; ; ; ; ; ">
+
+<param name="xDetraz_0" value="Detraz_0;Detraz_0;Detraz_0;Detraz_0;Detraz_0; ; ; ; ; ;$.2; ">
+<param name="xDetraz_65" value="Detraz_65;Detraz_65;Detraz_65;Detraz_65;Detraz_65; ; ; ; ; ;$.2; ">
+<param name="xDetraz_18" value="Detraz_18;Detraz_18;Detraz_18;Detraz_18;Detraz_18; ; ; ; ; ;$.2; ">
+<param name="xoltre_0" value="oltre_0;oltre_0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xtot_non" value="tot_non;tot_non;0;tot_non;1; ; ; ; ; ;$.2; ">
+<param name="xpercentual" value="percentual;Percentuale calcolata;percentuale zero;Percentuale calcolata;Percentuale calcolata; ; ; ; ;<b> ;T0;%</b>">
+<param name="xpercen" value="percen;percen;percen;percen;percen; ; ; ; ; ; ; ">
+<param name="xnon_I" value="non_I;non_I;0;non_I;1; ; ; ; ; ;$.2; ">
+<param name="x1_coeff_eta" value="1_coeff_eta;1_coeff_eta;1_coeff_eta;1_coeff_eta;1_coeff_eta; ; ; ; ; ;T.2; ">
+<param name="xfascia_eta" value="fascia_eta;fascia_eta;fascia_eta;fascia_eta;fascia_eta; ; ; ; ; ; ; ">
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+<param name="xcheckOK" value="checkOK;checkOK;Esclusione d'ufficio;checkOK;checkOK; ; ; ; ; ; ; ">
+<param name="xperc" value="perc;perc calcolata;perc zero;perc calcolata;perc calcolata; ; ; ; ; ;P.4; ">
+<param name="x1_ICEF" value="1_ICEF;1_ICEF;1_ICEF;1_ICEF;1_ICEF; ; ; ; ; ;T.2; ">
+<param name="xarl" value="arl;arl;arl;arl;arl; ; ; ; ; ; ; ">
+<param name="xdet_ast" value="det_ast;detrazione per l'età  (^Eta_ast^ anni) dell'assistito;det_ast???;detrazione per l'età (^Eta_ast^ anni) dell'assistito;detrazione per l'età (^Eta_ast^ anni) dell'assistito; ; ; ; ; -;$.2; ">
+<param name="xcontributo_beneficiario" value="contributo_beneficiario;contributo beneficiario;contributo beneficiario;contributo beneficiario;contributo beneficiario; ; ; ; ; ;$.2; ">
+<param name="xspesa_beneficiario" value="spesa_beneficiario;spesa_beneficiario;spesa beneficiario;spesa beneficiario;spesa beneficiario; ; ; ; ; ;$.2; ">
+<param name="xcontributo_netto" value="contributo_netto;Contributo calcolato su base Icef = <br />^Quota_possesso^ * ^percent^ * (^Spesa_ammissibile^ - ^contributo_condominiale^);Contributo calcolato su base Icef zero;Contributo calcolato su base Icef = <br />^Quota_possesso^ * ^percent^ * (^Spesa_ammissibile^ - ^contributo_condominiale^);Contributo calcolato su base Icef = <br />^Quota_possesso^ * ^percent^ * (^Spesa_ammissibile^ - ^contributo_condominiale^); ; ; ; ; ;$.2; ">
+<param name="xcont_netto" value="cont_netto;cont_netto;cont_netto;cont_netto;cont_netto; ; ; ; ; ; ; ">
+<param name="xaltri" value="altri;altri;non;-;ok; ; ; ; ; ;T; ">
+<param name="xok" value="ok;ok;ok;ok;ok; ; ; ; ; ; ; ">
+<param name="xal_mq" value="al_mq;al_mq;al_mq=0;al_mq;al_mq; ; ; ; ; ;$.2; ">
+<param name="xaltri_condomini" value="altri_condomini;altri_condomini;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xmq_fr" value="mq_fr;mq_fr;0;mq_fr;1; ;-;+; ; ;T.10; ">
+<param name="xpercent" value="percent;percent;percent;percent;percent; ; ; ; ; ;T.2; ">
+<param name="xmq_franchigia" value="mq_franchigia;mq_franchigia;mq_franchigia=0;mq_franchigia;mq_franchigia; ; ; ; ; ;$.2; ">
+<param name="xpercentuale" value="percentuale;Percentuale calcolata a base di Icef (fino a ^Perc_max^%);percentuale a base di Icef zero;Percentuale calcolata a base di Icef (fino a ^Perc_max^%);Percentuale calcolata a base di Icef (fino a ^Perc_max^%); ; ; ; ;<b> ;T0;%</b>">
+<param name="xcontributo_pro_condomine" value="contributo_pro_condomine;Contributo pro condomine;contributo pro condomine zero;Contributo pro condomine;Contributo pro condomine; ; ; ; ;<b>;$.2;</b>">
+<param name="xcontributo_totale" value="contributo_totale;<i>Contributo totale per i condomini = ^altri^ * ^contributo_pro_condomine^ + ^contributo^</i>;Contributo totale zero;<i>Contributo totale per i condomini = ^altri^ * ^contributo_pro_condomine^ + ^contributo^</i>;<i>Contributo  totale per i condomini = ^altri^ * ^contributo_pro_condomine^ + ^contributo^ </i>; ; ; ; ;<i>;$.2;</i>">
+<param name="xicefOK" value="icefOK;icefOK;Icef oltre il limite di ^Icefsup^;icefOK;icefOK; ; ; ; ; ; ; ">
+<param name="xteorico" value="teorico;teorico;teorico;teorico;teorico; ; ; ; ; ; ; ">
+<param name="xpunteggio" value="punteggio;Punteggio per la graduatoria = 100*(0,3*^1_ICEF^ + 0,3*^1_coeff_eta^ + 0,4*^Coeff_gravita^);punteggio zero;Punteggio per la graduatoria = 100*(0,3*^1_ICEF^ + 0,3*^1_coeff_eta^ + 0,4*^Coeff_gravita^);Punteggio per la graduatoria = 100*(0,3*^1_ICEF^ + 0,3*^1_coeff_eta^ + 0,4*^Coeff_gravita^); ; ; ; ;<b>;T;</b>">
+<param name="xcontributo" value="contributo;Contributo calcolato = ^contributo_netto^ + ^contributo_pro_condomine^;nessun contributo concedibile;Contributo calcolato = ^contributo_netto^ + ^contributo_pro_condomine^;Contributo calcolato = ^contributo_netto^ + ^contributo_pro_condomine^; ; ; ; ;<b> ;$.2;</b>">
+<param name="xcontributo_condominiale" value="contributo_condominiale;contributo condominiale;nessun contributo condominiale;contributo condominiale;contributo condominiale; ; ; ; ; ;$.2; ">
+<param name="xr_ast" value="r_ast;redditi dell'assistito;r_ast;redditi dell'assistito;redditi dell'assistito; ; ; ; ; ;$.2; ">
+
+
+
+<param name="xpltree" value="ris;applicant;dati;condomiale;risultati;totale;not;curve0;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="ris" value="<center><h2>Contributi per la realizzazione di interventi di eliminazione o superamento delle barriere architettoniche negli edifici privati</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati</b>;Icef=-1;ICI_particelle=-1!0;Mq_particelle=-1!0;Coeff_gravita=-1;Eta_ast=-1;Spesa=-1;(non_uno==1)Quota_possesso=-1;Perc_condominiale=-1;N_condomini=-1">
+<param name="condomiale" value="(oltre_0==1)<b>Risultati condominiali</b>;contributo_condominiale=-1;contributo_pro_condomine=-1!0">
+<param name="risultati" value="<b>Risultati</b>;percentuale=-1;contributo_netto=-1;contributo=-1;punteggio=-1">
+<param name="totale" value="(altri_condomini!=0)<b>Totale</b>;contributo_totale=-1">
+<param name="not" value="(ok==0)Risultato negativo perché;checkOK=2!1;icefOK=2!1;unoOK=2!1">
+<param name="curve0" value="(Dettagli==1)<P><B>percentuali<B>;trend0">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1553995229">
+<param name="CRC" value="1825124262">
+<param name="CRCdata" value="11-mar-2016 11.04.48">
+</APPLET>
+</CENTER>
+<BR>

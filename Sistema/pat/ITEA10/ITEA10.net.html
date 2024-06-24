@@ -1,0 +1,79 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=600 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.2 $">
+
+<param name="Taratura" value="ITEA accesso; 29.7.2010">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriITEA;p_accesso;p_verifica;unpoditutto0;casoITEA;caso2190348">
+
+<param name="p_verifica" value="current;Accesso=0;AL1=0.05;AL1_v=0.05;AL2=0.2;AL2_v=0.2;AL3=0.6;AL3_v=0.6;Dettagli=1;FAR=0;LDC=4000;LS1=30000;LS1_v=30000;LS2=90000;LS2_v=90000;RES=0;RIF=50000;Xml=0">
+
+<param name="p_accesso" value="current;Accesso=1;AL1=0.4;AL1_v=0.05;AL2=0.6;AL2_v=0.2;AL3=0.6;AL3_v=0.6;Dettagli=1;FAR=0;LDC=4000;LS1=40000;LS1_v=30000;LS2=40000;LS2_v=90000;RES=0;RIF=50000;Xml=0">
+
+<param name="caso2190348" value="p_accesso;Assegni=0;Assegni0=0;C1_aut=0;C1_aut0=0;C1_dip=0;C1_dip0=0;C1_pens=0;C1_pens0=0;C2_agr=0;C2_agr0=0;C3_imp=0;C3_imp0=0;C4_part=0;C4_part0=0;C5_altri=700;C5_altri0=0;Canone=0;Canone0=0;Figli_fam_numerose=0;Figli_fam_numerose0=0;FPM=35000;FPM_v=40000;Imposte=0;Imposte0=0;Invalidi=0;Invalidi0=0;Invalido_75=0;Lavoratori=0;Lavoratori0=0;Mediche=0;Mediche0=0;Monogenitore=2500;Monogenitore0=2500;Mutuo=0;Mutuo0=0;N_componenti=2;N_componenti0=2;P_complementare=0;P_complementare0=0;pensionati_biennio=0;percettori_reddito_biennio=0;PI=0;PI0=0;PM=55108;PM0=37846;Previdenza=0;Previdenza0=0;reddito_complessivo_annuo=0">
+
+ <param name="parametriITEA" value="current;FAR=0;RES=0;LDC=4000;AL1_v=0.05;AL2_v=0.15;AL3_v=0.6;LS1_v=20000;LS2_v=40000;FPM_v=40000">
+ <param name="unpoditutto0" value="current;N_componenti0=3;Monogenitore0=2500;Lavoratori=2500;Invalidi0=2500;Figli_fam_numerose0=2500;Assegni0=500;C1_aut0=10000;C1_dip0=20000;C1_pens0=1000;C2_agr0=1000;C3_imp0=3000;C4_part0=2000;C5_altri0=1000;Canone0=4000;Imposte0=3000;Mediche0=500;Mutuo0=2000;Previdenza0=1000;PI0=20000;PM0=30000">
+ <param name="casoITEA" value="p_accesso,unpoditutto,unpoditutto0;Dettagli=1">
+
+<param name="nets" value="../icef10/m.icef10.net.html;ITEA10.sub.net.html">
+
+<param name="connections" value="ICEF-Icef;Dettagli-d">
+
+<param name="xCP" value="CP;Conversione del patrimonio oltre la franchigia per gli investimenti finanziari di §FPM§<br />CP = max[ 0 , <b>§P§</b>*%AL1% , §l1§*%AL1%+(<b>§P§</b>-§l1§)*%AL2% , §l1§*%AL1%+(§l2§-§l1§)*%AL2%+(<b>§P§</b>-§l2§)*%AL3% ];assenza di patrimonio rilevante da valutare;Conversione del patrimonio oltre la franchigia  per gli investimenti finanziari di §FPM§;Conversione del patrimonio oltre la franchigia di §FPM§ massimale; = ; ; ; ; ;$.2; ">
+
+<param name="xCanone" value="Canone;D(CNL): Canone di locazione annuo (non deducibile per verifica e canone) ;D(CNL): Canone di locazione annuo zero;D(CNL): Canone di locazione annuo;D(CNL): Canone di locazione annuo massimale; ; ; ; ;- ;$.2; ">
+<param name="xMutuo" value="Mutuo;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale (non deducibile per verifica e canone);D(IMR): nessun mutuo per l'abitazione principale;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale;Il mutuo per la casa di residenza;è di; ; ; ;- ;$.2; ">
+<param name="entrate" value="<p><b>Dati per la determinazione dell'ICEF per l'anno corrente</b>;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C2_agr=-1!0;C3_imp=-1!0;C4_part=-1!0;C5_altri=-1!0">
+<param name="patrimoni" value="(patrimonio!=0);p_r=-1!0;p_i=-1!0;p_m=-1!0">
+<param name="xp_i" value="p_i;Valore totale degli immobili;non esistono rilevanti beni immobiliari di proprietà;Valore totale degli immobili;Valore totale degli immobili massimale;è di; ; ; ; ;$.2; ">
+<param name="ris1" value="<P><B>Il risultato del calcolo:</B>;RF=-1;patrimonio=-1!0;PF=-1;ICEF=-1;C_RIF_ICEF=-1">
+
+<param name="ris2" value="<p /><b>il risultato si basa sulle seguenti valutazioni:</b>;VF=2/risultante dal;EQV=3!0;vrf=2;RL=3;DF=3!0;CP=3!0;vpf=2;vpf_v=2;(Accesso==1)cpv=3">
+
+<param name="footer" value=" ;">
+
+
+<param name="edges" value="P.A.T. MODELLO ITEA accesso/verifica;
+">
+
+
+
+<param name="P.A.T. MODELLO ITEA accesso/verifica" value="text;node.ico;114;249;0;Versione 29.7.2010;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello;xModello;1345612925">
+
+
+
+
+<param name="xModello" value="P.A.T. MODELLO ITEA accesso/verifica;x;Versione 29.7.2010; ; ; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation0;propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;propagation7;propagation8;asXml;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;N_componenti=N_componenti0;Assegni=Assegni0;C1_aut=C1_aut0;C1_dip=C1_dip0;C1_pens=C1_pens0;C2_agr=C2_agr0;C3_imp=C3_imp0;C4_part=C4_part0;C5_altri=C5_altri0;Canone=Canone0;Imposte=Imposte0;Lavoratori=Lavoratori0;Mediche=Mediche0;Monogenitore=Monogenitore0;Figli_fam_numerose=Figli_fam_numerose0;Invalidi=Invalidi0;Mutuo=Mutuo0;P_complementare=P_complementare0;Previdenza=Previdenza0;PI=PI0;PM=PM0;Spese_redditi=Spese_redditi0;Lavoro_fem=Lavoro_fem0;Imm_strumentali=Imm_strumentali0">
+<param name="propagation1" value="(Accesso==0) ;LDC=0;AL1=AL1_v;AL2=AL2_v;AL3=AL3_v;LS1=LS1_v;LS2=LS2_v;FPM=FPM_v">
+<param name="propagation2" value=" ;icef0=Icef;ICEF0=ICEF;CP0=CP;RL0=RL;DF0=DF;vpf0=vpf">
+<param name="propagation3" value=" ;Assegni;C1_aut;C1_dip;C1_pens;C2_agr;C3_imp;C4_part;C5_altri;Canone;Imposte;Lavoratori;Mediche;Monogenitore;Figli_fam_numerose;Invalidi;Mutuo;N_componenti;P_complementare;Previdenza;PI;PM;Spese_redditi;Lavoro_fem;Imm_strumentali">
+<param name="propagation4" value="(N_componenti0==0) ;icef0=Icef;ICEF0=ICEF">
+<param name="propagation5" value=" ;accesso=acc;verifica=max_icef;contributo=max_icef">
+<param name="propagation6" value="(Accesso==1) ;LDC=0;AL1=AL1_v;AL2=AL2_v;AL3=AL3_v;LS1=LS1_v;LS2=LS2_v;FPM=FPM_v">
+<param name="propagation7" value="(Accesso==1) ;VPF_v=vpf;CP_v=CP;P_v=P;verifica=Icef;contributo=Icef">
+<param name="propagation8" value="(Accesso==1) ;LDC;AL1;AL2;AL3;LS1;LS2;FPM">
+<param name="asXml" value="(Xml==1);">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="4051314465">
+<param name="CRC" value="3356109258">
+<param name="CRCdata" value="29-lug-2010 17.01.42">
+</APPLET>
+<BR>

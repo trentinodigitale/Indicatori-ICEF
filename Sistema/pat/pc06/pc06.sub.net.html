@@ -1,0 +1,144 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=830 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.5 $">
+<param name="Taratura" value="APAPI - Pensione Complementare; 25.5.2007">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriPC;caso1mesi;caso2mesi">
+
+<param name="parametriPC" value="current;Check=0;Limite_CE=15000">
+
+
+<param name="caso1mesi" value="parametriPC;Importo=2000;Importo_min=50;Importo_max=500;T_versato=30;T_autorizzato=25;T_assistenza=30;T_coperto=5;T_accettato=25;Condizione_equivalente=10000">
+<param name="caso2mesi" value="parametriPC;Importo=2000;Importo_min=50;Importo_max=500;T_versato=60;T_autorizzato=45;T_assistenza=60;T_coperto=5;T_accettato=50;Condizione_equivalente=10000">
+
+
+<param name="variables" value="ascala;cscala;escala">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+
+
+
+<param name="edges" value="P.A.T. Regione PC06;
+T_assistenza-t_potenziale;t_potenziale-t_accettabile;t_accettabile-q_periodo;q_periodo-q_importo;Importo-q_importo;T_coperto-t_potenziale;T_versato-t_accettabile;T_versato-q_periodo;Condizione_equivalente-condOK;Limite_CE-condOK;Check-idonea;condOK-idoneo;idonea-idoneo;T_versato-t_dif;T_autorizzato-t_dif;t_ok-idoneo;t_accettabile-t_ok;contributo_max-contributo;T_accettato-t_accettabile;Condizione_equivalente-quota;c_teorico-importo_ok;
+quota-c_teorico;Importo_min-importo_ok;importo_ok-idoneo;c_teorico-contributo_max;Importo_max-contributo_max;idoneo-contributo;q_importo-c_teorico">
+
+
+
+<param name="P.A.T. Regione PC06" value="text;node.ico;73;399;0;P.A.T. Regione PC06 2006/2007 - (25.5.2007);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_PC;xModello_PC;1938317857">
+<param name="T_assistenza" value="1;node.ico;49;477;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;t_potenziale;ascala;NoCurve;xT_assistenza;yT_assistenza;300081149">
+<param name="t_potenziale" value="0;node.ico;123;522;0;-;0.0;MinusNode;NoInput;NoOutput;2;T_assistenza;T_coperto;1;t_accettabile;ascala;1.0;1.0;1.0;NoCurve;xt_potenziale;yt_potenziale;1629543003">
+<param name="t_accettabile" value="0;node.ico;221;522;0;-;0.0;NumMinNode;NoInput;NoOutput;3;t_potenziale;T_versato;T_accettato;2;q_periodo;t_ok;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xt_accettabile;yt_accettabile;937899352">
+<param name="q_periodo" value="0;node.ico;159;547;0;-;0.0;DivideNode;NoInput;NoOutput;2;t_accettabile;T_versato;1;q_importo;1.0;1.0;1.0;1.0;NoCurve;xq_periodo;yq_periodo;2872992981">
+<param name="q_importo" value="0;node.ico;160;571;0;-;0.0;TimesNode;NoInput;NoOutput;2;q_periodo;Importo;1;c_teorico;escala;1.0;1.0;1.0;NoCurve;xq_importo;yq_importo;3274906571">
+<param name="Importo" value="1;node.ico;43;571;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;q_importo;ascala;NoCurve;xImporto;yImporto;3300472908">
+<param name="T_coperto" value="1;node.ico;121;493;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;t_potenziale;ascala;NoCurve;xT_coperto;yT_coperto;1297489219">
+<param name="T_versato" value="1;node.ico;221;447;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;t_accettabile;q_periodo;t_dif;ascala;NoCurve;xT_versato;yT_versato;1420709023">
+<param name="Condizione_equivalente" value="1;node.ico;314;430;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;condOK;quota;escala;NoCurve;xCondizione_equivalente;yCondizione_equivalente;586373649">
+<param name="condOK" value="2;node.ico;376;456;0;-;0.0;NumLeNode;NoInput;IntermediateOutput;2;Condizione_equivalente;Limite_CE;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;535628236">
+<param name="Limite_CE" value="1;node.ico;423;429;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;condOK;escala;NoCurve;xLimite_CE;yLimite_CE;2591538141">
+<param name="Check" value="1;node.ico;659;426;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;idonea;1.0;NoCurve;xCheck;yCheck;2597460334">
+<param name="idonea" value="0;node.ico;594;428;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xidonea;yidonea;3235190155">
+<param name="idoneo" value="2;node.ico;460;498;0;-;0.0;TimesNode;NoInput;IntermediateOutput;4;condOK;idonea;t_ok;importo_ok;1;contributo;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xidoneo;yidoneo;3477162838">
+<param name="t_dif" value="0;node.ico;77;447;0;-;0.0;MinusNode;NoInput;NoOutput;2;T_versato;T_autorizzato;0;0.0010;1.0;1.0;1.0;NoCurve;yt_dif;yt_dif;575645041">
+<param name="T_autorizzato" value="1;node.ico;150;428;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;t_dif;ascala;NoCurve;xT_autorizzato;yT_autorizzato;2030947399">
+<param name="t_ok" value="0;node.ico;261;498;0;-;0.0;NumGtNode;NoInput;NoOutput;1;t_accettabile;1;idoneo;1.0;0.0;NoCurve;xt_ok;yt_ok;231110291">
+<param name="contributo_max" value="0;node.ico;526;522;0;-;0.0;NumMinNode;NoInput;NoOutput;2;c_teorico;Importo_max;1;contributo;0.0010;1.0;1.0;1.0;NoCurve;xcontributo_max;ycontributo_max;1520518176">
+<param name="contributo" value="2;node.ico;460;571;0;-;0.0;TimesNode;NoInput;ResultOutput;2;contributo_max;idoneo;0;0.0010;1.0;1.0;0.0;NoCurve;xcontributo;ycontributo;879251619">
+<param name="T_accettato" value="1;node.ico;148;466;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;t_accettabile;ascala;NoCurve;xT_accettato;yT_accettato;2675070019">
+<param name="quota" value="0;node.ico;314;481;0;-;0.0;NumTransNode;NoInput;NoOutput;1;Condizione_equivalente;1;c_teorico;1.0;1.0;LinearCurve;quotaCurve;xquota;yquota;3233547806">
+<param name="c_teorico" value="0;node.ico;314;522;0;-;0.0;TimesNode;NoInput;NoOutput;2;quota;q_importo;2;importo_ok;contributo_max;ascala;1.0;1.0;1.0;NoCurve;xc_teorico;yc_teorico;1922086333">
+<param name="importo_ok" value="0;node.ico;310;548;0;-;0.0;NumGeNode;NoInput;NoOutput;2;c_teorico;Importo_min;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;ximporto_ok;yimporto_ok;4015746948">
+<param name="Importo_min" value="1;node.ico;312;572;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;importo_ok;ascala;NoCurve;xImporto_min;yImporto_min;2035382195">
+<param name="Importo_max" value="1;node.ico;635;522;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;contributo_max;ascala;NoCurve;xImporto_max;yImporto_max;44230370">
+
+<param name="quotaCurve" value="LinearCurve;10000.0;0.5;10000.01;0.4;12500.0;0.4;12500.01;0.3;15000.0;0.3;15000.01;0.0">
+
+
+<param name="xLimite_CE" value="Limite_CE;Limite della condizione familiare equivalente;Limite=0;Limite della condizione familiare equivalente;1; ; ; ; ; ;$.2; ">
+
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ;-;+; ; ;T; ">
+
+<param name="xT_versato" value="T_versato;Periodo coperto da versamenti volontari;Periodo versamento=0;Periodo coperto da versamenti volontari;Periodo coperto da versamenti volontari; ; ; ; ; ;T; giorni">
+
+<param name="xCondizione_equivalente" value="Condizione_equivalente;Valutazione della condizione familiare;Valutazione della condizione familiare;Valutazione della condizione familiare;Valutazione della condizione familiare; ; ; ; ; <b>;$.2;</b>">
+
+<param name="xImporto_min" value="Importo_min;Importo_min;Importo_min=0;Importo_min;Importo_min; ; ; ; ; ;$.2; ">
+
+<param name="xImporto_max" value="Importo_max;Contributo massimo;Contributo massimo=0;Contributo massimo;Contributo massimo; ; ; ; ; ;$.2; ">
+
+<param name="xT_autorizzato" value="T_autorizzato;Periodo autorizzato ai versamenti;nessun periodo autorizzato ai versamenti;Periodo autorizzato ai versamenti;Periodo autorizzato ai versamenti; ; ; ; ; ;T; giorni">
+
+<param name="xT_accettato" value="T_accettato;Durata accettata;Durata non accettata;Durata accettata;Durata accettata; ; ; ; ; ;T; giorni">
+
+<param name="xModello_PC" value="P.A.T. Regione PC06;x;P.A.T. Regione PC06 2006/2007 - (25.5.2007);--;--; ; ; ; ; ; ; ">
+<param name="xT_assistenza" value="T_assistenza;Periodo di assistenza di familiari o di cura di figli;Periodo di assistenza=0;Periodo di assistenza di familiari o di cura di figli;Periodo di assistenza di familiari o di cura di figli; ; ; ; ; ;T; giorni">
+
+<param name="xT_coperto" value="T_coperto;Periodo coperto da versamenti previdenziali obbligatori;nessun versamento previdenziale obbligatorio;Periodo coperto da versamenti previdenziali obbligatori;Periodo coperto da versamenti previdenziali obbligatori; ; ; ; ; ;T; giorni">
+
+<param name="xImporto" value="Importo;Importo del versamento volontario effettuato;Nessun versamento volontario;Importo del versamento volontario effettuato;Importo del versamento volontario effettuato; ; ; ; ; ;$.2; ">
+
+<param name="xt_ok" value="t_ok;x;tempi zero;-;tempi ok; ; ; ; ; ; ; ">
+
+<param name="xidonea" value="idonea;--;domanda <b>non</b> idonea;-;domanda idonea; ; ;=; ; ; ; ">
+
+<param name="xquota" value="quota;quota;0;-;1; ;-;+; ; ; ; ">
+
+<param name="ximporto_ok" value="importo_ok;importo del contributo;importo del contributo inferiore a $Importo_min$;-;importo del contributo ok; ; ; ; ; ; ; ">
+
+<param name="xcontributo" value="contributo;Contributo determinato ( Min[ $Importo_max$ | %quota% di $q_importo$] );Contributo zero;Contributo determinato ( Min[ $Importo_max$ | %quota% di $q_importo$] );Contributo determinato ( Min[ $Importo_max$ | %quota% di $q_importo$] ); ; ; ; ;<b> ;$.2;</b>">
+
+<param name="xt_potenziale" value="t_potenziale;durata potenziale;durata potenziale zero;durata potenziale;durata potenziale; ; ; ; ; ;T; giorni">
+
+<param name="xc_teorico" value="c_teorico;c_teorico;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xq_importo" value="q_importo;importo ammissibile (%q_periodo% del versamento);periodo del versamento non ammissibile;importo ammissibile (%q_periodo% del versamento);importo ammissibile (%q_periodo% del versamento); ; ; ; ; ;$.2; ">
+
+<param name="xcondOK" value="condOK;condOK;Condizione Economica Familiare oltre il limite di ^Limite_CE^;-;ICEF ok; ;-;+; ; ; ; ">
+
+<param name="xq_periodo" value="q_periodo;quota di periodo ammissibile ( = §t_accettabile§ / §T_versato§ );quota di periodo ammissibile=0;quota di periodo ammissibile ( = §t_accettabile§ / §T_versato§ );quota di periodo ammissibile ( = §t_accettabile§ / §T_versato§ ); ; ; ; ; ;P.2; ">
+
+<param name="xcontributo_max" value="contributo_max;contributo massimo;contributo massimo zero;contributo massimo;contributo massimo; ; ; ; ; ;$.2; ">
+
+
+<param name="xt_accettabile" value="t_accettabile;periodo ammissibile;periodo non ammissibile;periodo ammissibile;periodo ammissibile; ; ; ; ; ;T; giorni">
+
+<param name="xidoneo" value="idoneo;--;domanda <b>non</b> idonea;-;domanda idonea; ; ; ; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="titolo;applicant;datifam;tempi;risultato;idoneità;ilcheck;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="titolo" value="<CENTER><H2>CONTRIBUTO REGIONALE ALLE PERSONE CASALINGHE AI FINI DELLA COSTITUZIONE DELLA PENSIONE COMPLEMENTARE</H2></CENTER>;">
+<param name="applicant" value="<P> Richiedente: ;">
+<param name="datifam" value="<b>Dati familiari:</b>;Condizione_equivalente=-1;Importo=-1;(q_periodo!=1)q_importo=-1;Check=-1!0">
+<param name="tempi" value="<b>Tempi </b>;T_autorizzato=-1;T_versato=-1;T_assistenza=-1;T_coperto=-1!0;t_accettabile=-1;q_periodo=-1">
+<param name="risultato" value="(importo_ok==1)<b>Risultato </b>;contributo=-1">
+<param name="idoneità" value="(idoneo==0) <b>Domanda senza contributo</b>;idoneo=1;condOK=2!1;t_ok=2!1;(c_teorico!=0)importo_ok=1!1">
+<param name="ilcheck" value="(idoneo==0) <p>
+<i>Spiegazione del codice di controllo:<br>
+(2) richiedente non residente<br>
+(8) condizione economica oltre i limiti<br>
+(9) domanda non applicabile<br>
+(12) iscritto a forme previdenziali obbligatoria nel periodo dei versamenti<br>
+(13) periodo non valido</i><br><br>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1914647514">
+<param name="CRC" value="1647478667">
+<param name="CRCdata" value="25-mag-2007 11.21.57">
+</APPLET>
+<BR>

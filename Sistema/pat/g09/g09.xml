@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[
+			<html>
+				<head><title>Clesius ICEF</title></head>
+				<body>
+				<CENTER><H2>Attestazione dell'indicatore ICEF per il servizio</H2></CENTER>
+				]]>
+		</main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<![CDATA[<H2><CENTER>]]>
+				<sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '<BR>' end from Doc where id=${id_domanda}]]></sql>
+			<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+			<![CDATA[<H1><CENTER>]]>
+			<sql>select servizio from r_servizi where id_servizio=${id_servizio}</sql>
+			<![CDATA[</H1></CENTER>]]>
+		</servizio>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<center>${footer.netVersion}</center>]]></netVersion>
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+		
+	</footer>
+</Doc>

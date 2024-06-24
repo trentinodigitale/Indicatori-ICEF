@@ -1,0 +1,101 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PATtrasporto" value="Rovereto assunzioni 2007; 21.12.2006">
+<param name="revision" value="$Revision: 1.2 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="trendstart;caso;paraassunzioni">
+<param name="trendstart" value="current">
+<param name="caso" value="paraassunzioni;Icef=0.2;Punti_esperienza=5000">
+
+<param name="paraassunzioni" value="current;Redd3inf=0;Redd3sup=51000;Rif=50000;Max_x_ICEF=11000">
+
+<param name="trends" value="">
+
+
+
+
+<param name="variables" value="uno;divisotre;ascala;rscala">
+
+<param name="uno" value="1">
+<param name="divisotre" value="0.490196078; uno / C3; ">
+
+<param name="ascala" value="0.001">
+
+<param name="rscala" value="0.000001">
+
+
+
+<param name="edges" value="Rovereto assunzioni;
+Icef-giudizio;sup-giudizio;inf-giudizio;Icef-condOK;Redd3inf-inf;Redd3sup-sup;Rif-inf;Rif-sup;sup-condOK;giudizio-percentuale;percentuale-punteggio_ICEF;Max_x_ICEF-punteggio_ICEF;punteggio_ICEF-punteggio_totale;Punti_esperienza-punteggio_totale">
+
+
+
+<param name="Rovereto assunzioni" value="text;node.ico;231;389;0;Rovereto assunzioni (21.12.2006);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xRovereto assunzioni;xRovereto assunzioni;3029694652">
+<param name="Icef" value="1;node.ico;138;310;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;condOK;0.5;NoCurve;xIcef;yIcef;1975096107">
+<param name="giudizio" value="0;0;137;352;0;-;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;sup;1;percentuale;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;ygiudizio;2498305136">
+<param name="sup" value="0;node.ico;177;325;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;2;giudizio;condOK;1.0;divisotre;1.0;1.0;NoCurve;xsup;ysup;2900154492">
+<param name="inf" value="0;node.ico;95;326;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;1;giudizio;1.0;divisotre;1.0;1.0;NoCurve;xinf;yinf;2428223542">
+<param name="condOK" value="0;node.ico;249;324;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;3606031189">
+<param name="Redd3inf" value="1;node.ico;52;299;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;rscala;NoCurve;xRedd3inf;yRedd3inf;421366184">
+<param name="Redd3sup" value="1;node.ico;221;302;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;sup;rscala;NoCurve;xRedd3sup;yRedd3sup;1601231608">
+<param name="Rif" value="1;node.ico;139;281;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;inf;sup;rscala;NoCurve;xRif;yRif;1842471463">
+<param name="percentuale" value="0;node.ico;244;354;0;-;0.0;ProbNode;NoInput;NoOutput;1;giudizio;1;punteggio_ICEF;1.0;0.0;NoCurve;xpercentuale;ypercentuale;3800709081">
+<param name="punteggio_ICEF" value="2;node.ico;366;352;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;percentuale;Max_x_ICEF;1;punteggio_totale;rscala;1.0;1.0;1.0;NoCurve;xpunteggio_ICEF;ypunteggio_ICEF;570221576">
+<param name="Max_x_ICEF" value="1;node.ico;366;305;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;punteggio_ICEF;rscala;NoCurve;xMax_x_ICEF;yMax_x_ICEF;3134771417">
+<param name="punteggio_totale" value="2;node.ico;504;354;0;-;0.0;PlusNode;NoInput;ResultOutput;2;punteggio_ICEF;Punti_esperienza;0;rscala;1.0;1.0;1.0;NoCurve;xpunteggio_totale;ypunteggio_totale;1547974996">
+<param name="Punti_esperienza" value="1;node.ico;504;284;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;punteggio_totale;rscala;NoCurve;xPunti_esperienza;yPunti_esperienza;1552451992">
+
+
+
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPunti_esperienza" value="Punti_esperienza;Punti per esperienza;nessun punto per esperienza;Punti per esperienza;Punti per esperienza; ; ; ; ; ;T; ">
+
+<param name="xMax_x_ICEF" value="Max_x_ICEF;Max_x_ICEF;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia tra ^inf^ a ^sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.8;</b>">
+
+<param name="xRovereto assunzioni" value="Rovereto assunzioni;--;Rovereto assunzioni (21.12.2006);--;--; ; ; ; ; ; ; ">
+<param name="xpercentuale" value="percentuale;La percentuale;Percentuale da punteggio massimo;La percentuale;Percentuale da punteggio zero;è il; ; ; ; ;P.4; ">
+
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xpunteggio_totale" value="punteggio_totale;Punteggio TOTALE;Punteggio TOTALE zero;Punteggio TOTALE;Punteggio TOTALE; ; ; ; ;<b>;T;</b>">
+
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento $C_RIF_ICEF$ è maggiore di $Redd3sup$) ;--;idoneo; ; ; ; ; ;!; ">
+
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xpunteggio_ICEF" value="punteggio_ICEF;Punteggio ICEF (%percentuale% di §Max_x_ICEF§);Punteggio ICEF zero;Punteggio ICEF (%percentuale% di §Max_x_ICEF§);Punteggio ICEF (%percentuale% di §Max_x_ICEF§); ; ; ; ; ;T; ">
+
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+
+
+
+
+<param name="xpltree" value="ris;applicant;dati;notar;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="ris" value="<center><h2>Calcolo Punteggio Graduatoria Assunzione</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati</b>;Icef=-1;punteggio_ICEF=-1;Punti_esperienza=-1;punteggio_totale=-1">
+<param name="notar" value="(giudizio==1)<p>Nessun punteggio per condizione economica;condOK=3!1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="4269184199">
+<param name="CRC" value="3272837547">
+<param name="CRCdata" value="21-dic-2006 12.13.59">
+</APPLET>
+<BR>

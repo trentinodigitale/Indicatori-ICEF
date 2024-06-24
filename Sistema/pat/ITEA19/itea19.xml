@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head><body>
+			<CENTER>
+			<H2>Attestazione dell'indicatore ICEF per l'edilizia pubblica <BR>- Anno 2019 -</H2>
+			(Legge provinciale n.15 novembre 2005)
+			<BR><BR>
+			Calcolo dell'ICEF eseguito in base alla Deliberazione della Giunta Provinciale DGP n. 1019 del 23 giugno 2014
+			</CENTER><BR><BR>]]>
+	</header>
+	<richiedente>
+		<![CDATA[<B>Nucleo familiare: </B>]]>
+		<class>c_elab.pat.ITEA19.Richiedente</class>
+		<![CDATA[<BR>]]>
+	</richiedente>	
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+    		</sql>
+	</ente>
+	<values>
+		<sql><![CDATA[
+			select case when ${id_servizio}  = 13319 then  
+			'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+				<tr> 
+					<td width=''75%''height=''23''>ICEF medio degli ultimi due anni - per l''accesso </td> <td width=''13%'' height=''23''></td> 
+					<td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr> 
+								<td	width=''100%'' align=''right''> <b>' + case when accesso.numeric_value is null then '' else str(accesso.numeric_value, 7 , 5 ) end + '</b></td> 
+							</tr>
+						</table> 
+					</td>
+				</tr>
+
+				<tr> 
+					<td width=''75%'' height=''23''>ICEF per la verifica del mantenimento dei benefici </td> 
+					<td width=''13%'' height=''23''></td> <td width=''13%''	height=''23''> 
+						<table border=''1'' width=''100%''>
+							<tr> 
+								<td width=''100%'' align=''right''> <b>' + str(c_elaout1.numeric_value , 6 , 4) + '</b></td> 
+							</tr>
+						</table> 
+					</td> 
+				</tr>
+			
+				<tr> 
+					<td width=''75%'' height=''23''>ICEF per il	calcolo del canone sostenibile </td> 
+					<td width=''13%'' height=''23''></td> <td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr> 
+								<td	width=''100%'' align=''right''> <b>' + str(c_elaout2.numeric_value,6,4) + '</b></td> 
+							</tr>
+						</table> 
+					</td>
+				</tr>
+			
+				<tr> 
+					<td width=''75%'' height=''23''>Reddito complessivo 2018</td>
+					<td width=''13%'' height=''23''></td> 
+					<td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr> 
+								<td	width=''100%'' align=''right''> <b>' + str(c_elain_1.input_value,7,2) + '</b></td> 
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr> 
+					<td width=''75%'' height=''23''>Anni di attivita'' lavorativa nel biennio con reddito complessivo di almeno 4.000,00 Euro</td> 
+					<td width=''13%'' height=''23''></td> <td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr> 
+								<td width=''100%'' align=''right''> <b>' + str(c_elain_2.input_value,2,0) + '</b></td> 
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>'
+
+			when ${id_servizio}  = 13419 then  
+			'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+				<tr> 
+					<td width=''75%'' height=''23''>
+						ICEF medio degli ultimi due anni - per il canone moderato 
+					</td> 
+					<td width=''13%'' height=''23''></td> 
+					<td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr> 
+								<td width=''100%'' align=''right''> 
+									<b>' + case when accesso.numeric_value is null then '' else str(accesso.numeric_value, 7 , 5 ) end + '</b>
+								</td>
+							</tr>
+						</table> 
+					</td> 
+				</tr> 
+			</table>'
+
+			else 
+			'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''66''> 
+				<tr>
+					<td width=''75%'' height=''23''>ICEF per la verifica del mantenimento dei benefici </td> 
+					<td width=''13%'' height=''23''></td> <td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr>
+								<td	width=''100%'' align=''right''> <b>' + str(c_elaout1.numeric_value, 6 , 4) + '</b></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr> 
+					<td width=''75%'' height=''23''>ICEF per il	calcolo del canone sostenibile </td> 
+					<td width=''13%'' height=''23''></td> <td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr>
+								<td width=''100%'' align=''right''> <b>' + str(c_elaout2.numeric_value, 6 , 4) + '</b></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>' 
+			
+			end from Doc 
+			left outer join 
+			( select c_elaout.* from c_elaout where c_elaout.node='accesso' and c_elaout.id_domanda = ${id_domanda} ) accesso 
+			on accesso.id_domanda = doc.id
+			
+			inner join c_elaout c_elaout1 on c_elaout1.id_domanda = doc.id 
+			inner join c_elaout c_elaout2 on c_elaout2.id_domanda =	doc.id
+			inner join c_elain  c_elain_1 on c_elain_1.id_domanda = doc.id
+			inner join c_elain  c_elain_2 on c_elain_2.id_domanda = doc.id
+
+			where id=${id_domanda} 
+			and c_elaout1.node='verifica' and c_elaout2.node='contributo'
+			and c_elain_1.node = 'reddito_complessivo_annuo' and c_elain_2.node = 'percettori_reddito_biennio'
+		]]></sql>
+		<sql><![CDATA[
+			select case when ${id_servizio} = 13319 then  
+			'<table border=''0'' cellpadding=''0'' cellspacing=''5'' width=''100%'' height=''23''> 
+				<tr>
+					<td width=''75%'' height=''23''>Numero di componenti con dicitura ''Parente di 1&#0176; grado - figlio/a'' per l''anno corrente</td> 
+					<td width=''13%'' height=''23''></td> <td width=''13%'' height=''23''>
+						<table border=''1'' width=''100%''> 
+							<tr> 
+								<td width=''100%'' align=''right''> <b>' + str(COUNT(r_relazioni_parentela.parentela), 2 , 0 ) + '</b></td> 
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>'
+			
+			else ''
+			
+			end FROM Doc inner join familiari  on familiari.id_domanda = doc.id
+			inner join r_relazioni_parentela  on r_relazioni_parentela.id_relazione_parentela = familiari.id_relazione_parentela
+			where id=${id_domanda} and r_relazioni_parentela.parentela LIKE '%figlio/a%'
+		]]></sql>
+	</values>
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomandaEpu</class>
+	</infoDoc>
+    <avviso>
+        <![CDATA[<P><CENTER><B>- Pagina da consegnare all'ente gestore al momento della presentazione della domanda -</B></CENTER></P>]]>
+    </avviso>
+	<newPage>	
+		<![CDATA[<br clear=all style='page-break-after:always'/>]]>
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>
+	
+	<integrazione>
+		<!--class>c_elab.pat.ts.Footer</class-->
+	</integrazione>
+	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+
+</Doc>

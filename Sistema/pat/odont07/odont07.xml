@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>Attestazione dell'indicatore ICEF per l'accesso <BR>
+        	alle cure odontoiatriche - Anno 2007</H2>
+		(Deliberazione della Giunta provinciale n.1060 del 25 maggio 2007)
+		</CENTER></head> ]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<![CDATA[<H2><CENTER>]]>
+            <sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '<BR>' end from Doc where id=${id_domanda}]]></sql>
+		<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+		</servizio>
+        <esito>
+        </esito>
+		<richiedente><![CDATA[<B>Beneficiari potenziali: </B>]]>
+			<class>c_elab.pat.odont07.Richiedente</class><![CDATA[<BR>]]>
+			<![CDATA[<BR><B>Esito:</B><BR>L'indicatore ICEF e' ]]>
+            <sql><![CDATA[select numeric_value from C_ElaOUT where node='ICEF' AND id_domanda=${id_domanda}]]></sql>
+            <sql><![CDATA[select case when numeric_value=1 then ', pertanto il dichiarante e gli appartenenti al proprio nucleo familiare individuato dalle disposizioni vigenti hanno titolo all''assistenza odontoiatrica per l''anno 2007.' else ', pertanto il dichiarante e gli appartenenti al proprio nucleo familiare individuato dalle disposizioni vigenti NON hanno titolo all''assistenza odontoiatrica per l''anno 2007.' end from C_ElaOUT where node='idoneo' AND id_domanda=${id_domanda}]]></sql>
+			<![CDATA[<BR><BR>]]>
+		</richiedente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<!--netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion-->
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+		
+	</footer>
+</Doc>

@@ -1,0 +1,133 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=800 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.5 $">
+<param name="Taratura" value="Costi energetici; 23.10.2008">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriENER;casoENER">
+
+<param name="parametriENER" value="current;Check=0;ISEE_lim=7500;Icef_inf=0.15;Icef_inf1=0.2;Icef_sup=0.165;Icef_sup1=0.22;Rif=50000">
+<param name="casoENER" value="parametriENER;Fascia=1;Combustibile=1;ISEE=8000;N_familiari=4;Icef=0.3">
+
+<param name="variables" value="ascala;cscala;escala">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+
+
+<param name="edges" value="P.A.T. Costi energetici;Rif;
+Check-ok;ISEE-isee_ok;ISEE_lim-isee_ok;Icef-lelim;Icef-leinf;leinf-intero;isee_ok-intero;lelim-idoneo;isee_ok-idoneo;ok-idoneo;idoneo-contributo;N_familiari-uno;N_familiari-_4;uno-2_4;_4-2_4;_4-5_;Fascia-f2;f2-colonna;intero-colonna;2_4-nf;5_-nf;
+nf-riga;Combustibile-riga;riga-importo;colonna-importo;importo-contributo;parziale-colonna;uno-inf;uno-sup;Icef_inf1-inf;Icef_inf-inf;Icef_sup1-sup;Icef_sup-sup;inf-leinf;sup-lelim;leinf-parziale;lelim-parziale;ISEE-no_isee;Icef-no_icef">
+
+
+
+<param name="P.A.T. Costi energetici" value="text;node.ico;108;400;0;P.A.T. Costi energetici - (23.10.2008);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_ENER;xModello_ENER;2369214637">
+<param name="Rif" value="1;node.ico;161;425;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xRif;xRif;3587362082">
+<param name="Check" value="1;node.ico;538;426;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ok;1.0;NoCurve;xCheck;xCheck;1233710823">
+<param name="ok" value="0;node.ico;538;497;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xok;xok;2462881348">
+<param name="ISEE" value="1;node.ico;46;426;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;isee_ok;no_isee;escala;NoCurve;xISEE;xISEE;2375248157">
+<param name="isee_ok" value="2;node.ico;81;499;0;-;0.0;NumLeNode;NoInput;IntermediateOutput;2;ISEE;ISEE_lim;2;intero;idoneo;1.0;1.0;1.0;1.0;NoCurve;xisee_ok;xisee_ok;4095592125">
+<param name="ISEE_lim" value="1;node.ico;105;429;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;isee_ok;escala;NoCurve;xISEE_lim;xISEE_lim;2828371399">
+<param name="Icef" value="1;node.ico;324;428;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;lelim;leinf;no_icef;0.5;NoCurve;xIcef;xIcef;401463986">
+<param name="lelim" value="0;node.ico;456;474;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;2;idoneo;parziale;1.0;1.0;1.0;1.0;NoCurve;xlelim;xlelim;3312463385">
+<param name="leinf" value="0;node.ico;263;474;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;inf;2;intero;parziale;1.0;1.0;1.0;1.0;NoCurve;xleinf;xleinf;2349863789">
+<param name="intero" value="2;node.ico;262;499;0;-;0.0;ProbNode;NoInput;IntermediateOutput;2;leinf;isee_ok;1;colonna;0.0;1.0;1.0;1.0;NoCurve;xintero;xintero;576658695">
+<param name="idoneo" value="2;node.ico;456;533;0;-;0.0;ProbNode;NoInput;IntermediateOutput;3;lelim;isee_ok;ok;1;contributo;0.0;0.0;0.0;0.0;0.0;1.0;1.0;1.0;NoCurve;xidoneo;xidoneo;2830454559">
+<param name="contributo" value="2;node.ico;456;590;0;-;0.0;TimesNode;NoInput;ResultOutput;2;idoneo;importo;0;ascala;1.0;1.0;1.0;NoCurve;xcontributo;xcontributo;2954564168">
+<param name="N_familiari" value="1;node.ico;620;425;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;uno;_4;cscala;NoCurve;xN_familiari;xN_familiari;2408387334">
+<param name="uno" value="0;node.ico;635;453;0;-;0.0;NumEqNode;NoInput;NoOutput;1;N_familiari;3;2_4;inf;sup;1.0;1.0;NoCurve;xuno;xuno;1394933443">
+<param name="_4" value="0;node.ico;669;480;0;-;0.0;NumLeNode;NoInput;NoOutput;1;N_familiari;2;2_4;5_;1.0;4.0;NoCurve;x_4;x_4;193605003">
+<param name="2_4" value="0;node.ico;636;479;0;-;0.0;ProbNode;NoInput;NoOutput;2;uno;_4;1;nf;0.0;0.0;1.0;0.0;NoCurve;x2_4;x2_4;2319109482">
+<param name="5_" value="0;node.ico;635;505;0;-;0.0;ProbNode;NoInput;NoOutput;1;_4;1;nf;1.0;0.0;NoCurve;x5_;x5_;1014506380">
+<param name="Fascia" value="1;node.ico;165;545;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;f2;0.5;NoCurve;xFascia;xFascia;1738317231">
+<param name="f2" value="0;node.ico;292;545;0;-;0.0;NumTransNode;NoInput;NoOutput;1;Fascia;1;colonna;0.0;1.0;LinearCurve;fCurve;xf2;xf2;2226813149">
+<param name="colonna" value="0;node.ico;384;545;0;-;0.0;PlusNode;NoInput;NoOutput;3;f2;intero;parziale;1;importo;1.0;1.0;1.0;2.0;1.0;1.0;1.0;1.0;NoCurve;xcolonna;xcolonna;2243080669">
+<param name="nf" value="0;node.ico;566;477;0;-;0.0;PlusNode;NoInput;NoOutput;2;2_4;5_;1;riga;1.0;2.0;4.0;1.0;NoCurve;xnf;xnf;3293356061">
+<param name="riga" value="0;node.ico;566;545;0;-;0.0;PlusNode;NoInput;NoOutput;2;nf;Combustibile;1;importo;0.0;1.0;1.0;1.0;NoCurve;xriga;xriga;1076605083">
+<param name="Combustibile" value="1;node.ico;635;545;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;riga;0.5;NoCurve;xCombustibile;xCombustibile;1979647610">
+<param name="importo" value="0;node.ico;566;590;0;-;0.0;LookupNode;NoInput;NoOutput;2;riga;colonna;1;contributo;ascala;1.0;1.0;1.0;MultiStepCurve;fasciaCurve;ximporto;ximporto;2973670376">
+<param name="parziale" value="2;node.ico;384;499;0;-;0.0;ProbNode;NoInput;IntermediateOutput;2;leinf;lelim;1;colonna;0.0;0.0;1.0;0.0;NoCurve;xparziale;xparziale;712747003">
+<param name="inf" value="0;node.ico;213;453;0;-;0.0;NumIfNode;NoInput;NoOutput;3;uno;Icef_inf1;Icef_inf;1;leinf;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xinf;yinf;2356916658">
+<param name="sup" value="0;node.ico;458;438;0;-;0.0;NumIfNode;NoInput;NoOutput;3;uno;Icef_sup1;Icef_sup;1;lelim;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xsup;ysup;692139852">
+<param name="Icef_inf1" value="1;node.ico;214;403;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;inf;0.5;NoCurve;xIcef_inf1;yIcef_inf1;662044440">
+<param name="Icef_inf" value="1;node.ico;281;405;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;inf;0.5;NoCurve;xIcef_inf;xIcef_inf;3537269051">
+<param name="Icef_sup1" value="1;node.ico;459;407;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;sup;0.5;NoCurve;xIcef_sup1;yIcef_sup1;3262913810">
+<param name="Icef_sup" value="1;node.ico;382;407;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;sup;0.5;NoCurve;xIcef_sup;xIcef_sup;3819085676">
+<param name="no_isee" value="0;node.ico;27;467;0;-;0.0;NumGtNode;NoInput;NoOutput;1;ISEE;0;1.0;1111111.0;NoCurve;xno_isee;xno_isee;3847205876">
+<param name="no_icef" value="0;node.ico;334;469;0;-;0.0;NumGtNode;NoInput;NoOutput;1;Icef;0;1.0;1000000.0;NoCurve;xno_icef;xno_icef;1339935293">
+
+<param name="fCurve" value="LinearCurve;1.0;1.0;2.0;4.0">
+<param name="fasciaCurve" value="MultiStepCurve;0.0;1.0;2.0;3.0;4.0;5.0;6.0|
+;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;350.0;250.0;500.0;350.0;650.0;450.0;450.0|
+;175.0;125.0;250.0;175.0;325.0;225.0;225.0|
+;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;450.0;350.0;700.0;500.0;900.0;650.0;650.0|
+;225.0;175.0;350.0;250.0;450.0;325.0;325.0">
+
+
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef_sup1" value="Icef_sup1;Icef_sup1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef_sup" value="Icef_sup;Icef_sup;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef_inf1" value="Icef_inf1;Icef_inf1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCombustibile" value="Combustibile;Combustibile;Combustibile=0;Gasolio e altri combustibile liquidi;Gas metano, GPL e altri combustibili; ; ; ; ; ;T; ">
+<param name="xFascia" value="Fascia;Fascia climatica;Fascia=0;Fascia climatica E:;Fascia climatica F:; ; ; ; ; ;T; ">
+<param name="xN_familiari" value="N_familiari;Numero dei componenti in famiglia;la famiglia non ha componenti;Il numero dei componenti in famiglia;Il numero dei componenti in famiglia;è; ; ; ; ;T; ">
+<param name="xIcef" value="Icef; <b>(ICEF)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> zero ; <b>(ICEF)</B> Indicatore della Condizione Economica Familiare <br>;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xISEE" value="ISEE;Indicatore <b>ISEE</b>;ISEE=0;Indicatore <b>ISEE</b>;Indicatore ISEE ; ; ; ; ; ;$.2; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ; ; ; ; ;T; ">
+<param name="xModello_ENER" value="P.A.T. Costi energetici;x;P.A.T. Costi energetici - (23.10.2008);--;--; ; ; ; ; ; ; ">
+<param name="xISEE_lim" value="ISEE_lim;ISEE_lim;0;-;1; ;-;+; ; ; ; ">
+<param name="x5_" value="5_;5_;0;-;1; ;-;+; ; ; ; ">
+<param name="xf2" value="f2;f2;0;-;1; ;-;+; ; ; ; ">
+<param name="x_4" value="_4;_4;0;-;1; ;-;+; ; ; ; ">
+<param name="xno_icef" value="no_icef;no_icef;0;-;1; ;-;+; ; ; ; ">
+<param name="xno_isee" value="no_isee;no_isee;0;-;1; ;-;+; ; ; ; ">
+<param name="xok" value="ok;ok;mancano requisiti generali;-;ok; ;-;+; ; ; ; ">
+<param name="xuno" value="uno;uno;0;-;1; ;-;+; ; ; ; ">
+<param name="xparziale" value="parziale;parziale;intervento non parziale;-;Intervento parziale (^inf^ < ICEF <= ^sup^); ; ; ; ; ;T; ">
+<param name="ximporto" value="importo;importo;0;-;1; ;-;+; ; ; ; ">
+<param name="xriga" value="riga;riga;0;-;1; ;-;+; ; ; ; ">
+<param name="xintero" value="intero;intero;intervento non intero;-;Intervento intero |leinf|; ; ; ; ; ;T; ">
+<param name="xcontributo" value="contributo;Quantificazione dell'intervento;nessun intervento possibile;Quantificazione dell'intervento;Quantificazione dell'intervento; ; ; ; ;<b>;$.0;</b>">
+<param name="xleinf" value="leinf;leinf; ;-;(ICEF < ^inf^); ;-;+; ; ; ; ">
+<param name="xisee_ok" value="isee_ok;isee_ok;l'indicatore ISEE è oltre il limite di §ISEE_lim§;-;ISEE ok; ; ; ; ; ; ; ">
+<param name="xlelim" value="lelim;Icef lelim;l'indicatore Icef è oltre il limite di ^sup^;-;Icef ok; ; ; ; ; ; ; ">
+<param name="x2_4" value="2_4;2_4;0;-;1; ;-;+; ; ; ; ">
+<param name="xnf" value="nf;nf;0;-;1; ;-;+; ; ; ; ">
+<param name="xcolonna" value="colonna;colonna;0;-;1; ;-;+; ; ; ; ">
+<param name="xsup" value="sup;sup;0;-;1; ;-;+; ; ;T.4; ">
+
+<param name="xidoneo" value="idoneo;idoneo;Domanda <b>NON</b> idonea;-;Domanda <b>idonea</b>; ; ; ; ; ;T; ">
+<param name="xinf" value="inf;inf;0;-;1; ;-;+; ; ;T.4; ">
+
+
+
+
+<param name="xpltree" value="dati;risultato;negativo;hr;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="dati" value="<b>Dati:</b> ;(no_icef==0)Icef=-1;(no_icef==0)C_RIF_ICEF=-1;(no_isee==0)ISEE=-1;N_familiari=-1;Fascia=-1;Combustibile=-1">
+<param name="risultato" value="(idoneo==1)<b>Risultato:</b> ;intero=-1!0;parziale=-1!0;contributo=-1">
+<param name="negativo" value="(idoneo==0)<b>Domanda non idonea:</b> ;ok=3!1;(no_isee==0)isee_ok=3!1;(no_icef==0)lelim=3!1">
+<param name="hr" value="(no_icef==0)<hr>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1914647514">
+<param name="CRC" value="3630214596">
+<param name="CRCdata" value="23-ott-2008 17.29.39">
+</APPLET>
+<BR>

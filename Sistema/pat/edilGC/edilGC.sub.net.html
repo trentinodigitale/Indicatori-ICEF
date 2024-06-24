@@ -1,0 +1,159 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=600 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.2 $">
+
+<param name="Taratura" value="Edil per giovani coppie escluse 2008; 5.10.2011">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriGC;unpodituttoCG">
+
+<param name="parametriGC" value="current;Inf=0.1;Sup=0.39;Icef08=0.08">
+<param name="unpodituttoCG" value="parametriGC;PMGC=4000;PIGC=50000;N_componenti0=3;Monogenitore0=0;Lavoratori0=2500;Invalidi0=0;Figli_fam_numerose0=0;Assegni0=500;C1_aut0=5000;C1_dip0=10000;C1_pens0=1000;C2_agr0=500;C3_imp0=500;C4_part0=100;C5_altri0=100;Canone0=1000;Imposte0=1000;Mediche0=500;Mutuo0=500;Previdenza0=100">
+
+
+<param name="variables" value="mesi15;annointero;a_i;fino10maggio;f_m">
+
+<param name="mesi15" value="0.002020202;1/495">
+
+<param name="annointero" value="365">
+<param name="a_i" value="annointero*mesi15">
+<param name="fino10maggio" value="130">
+<param name="f_m" value="fino10maggio*mesi15">
+
+
+
+
+<param name="edges" value="P.A.T. Giovani Coppie;Assegni0;Canone0;Imposte0;Lavoratori0;Mediche0;Monogenitore0;Mutuo0;P_complementare0;Previdenza0;Figli_fam_numerose0;Invalidi0;Spese_redditi0;Lavoro_fem0;N_componenti0;C1_aut0;C1_dip0;C1_pens0;C2_agr0;C3_imp0;C4_part0;C5_altri0;PMGC;PIGC;icef10;Anno_reddito;
+RFGC09-RFGC;RFGC10-RFGC;Icef-infOK;Inf-infOK;Icef-supOK;Sup-supOK;infOK-icefOK;supOK-icefOK;Icef-ICEFGC;icefOK-idoneo;Icef08-idoneo08;idoneo08-idoneo">
+
+
+
+<param name="P.A.T. Giovani Coppie" value="text;node.ico;527;373;0;P.A.T. Giovani Coppie (recupero 2008) Versione 5.10.2011;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_GC;yModello_GC;916379081">
+<param name="Assegni0" value="1;node.ico;429;398;0;Assegni0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xAssegni0;xAssegni0;611728061">
+<param name="Canone0" value="1;node.ico;346;351;0;Canone0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xCanone0;xCanone0;2957389002">
+<param name="Imposte0" value="1;node.ico;394;255;0;Imposte0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xImposte0;xImposte0;2990658090">
+<param name="Lavoratori0" value="1;node.ico;389;371;0;Lavoratori0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xLavoratori0;yLavoratori0;3840259021">
+<param name="Mediche0" value="1;node.ico;418;305;0;Mediche0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xMediche0;xMediche0;4113428468">
+<param name="Monogenitore0" value="1;node.ico;515;303;0;Monogenitore0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xMonogenitore0;yMonogenitore0;2770037757">
+<param name="Mutuo0" value="1;node.ico;422;351;0;Mutuo0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xMutuo0;xMutuo0;2545358699">
+<param name="P_complementare0" value="1;node.ico;387;281;0;P_complementare0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xP_complementare0;xP_complementare0;996881397">
+<param name="Previdenza0" value="1;node.ico;347;397;0;Previdenza0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xPrevidenza0;xPrevidenza0;2310661938">
+<param name="Figli_fam_numerose0" value="1;node.ico;383;328;0;Figli_fam_numerose0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xFigli_fam_numerose0;yFigli_fam_numerose0;3301062979">
+<param name="Invalidi0" value="1;node.ico;512;351;0;Invalidi0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xInvalidi0;yInvalidi0;1264536952">
+<param name="Spese_redditi0" value="1;node.ico;519;398;0;Spese_redditi0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xSpese_redditi0;ySpese_redditi0;3560128378">
+<param name="Lavoro_fem0" value="1;node.ico;513;326;0;Lavoro_fem0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xLavoro_fem0;yLavoro_fem0;867965605">
+<param name="N_componenti0" value="1;node.ico;513;277;0;N_componenti0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xN_componenti0;xN_componenti0;594292193">
+<param name="C1_aut0" value="1;node.ico;656;268;0;C1_aut0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xC1_aut0;xC1_aut0;623025786">
+<param name="C1_dip0" value="1;node.ico;606;267;0;C1_dip0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xC1_dip0;xC1_dip0;2806307920">
+<param name="C1_pens0" value="1;node.ico;634;289;0;C1_pens0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xC1_pens0;xC1_pens0;4186297406">
+<param name="C2_agr0" value="1;node.ico;600;307;0;C2_agr0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xC2_agr0;xC2_agr0;3482383760">
+<param name="C3_imp0" value="1;node.ico;652;313;0;C3_imp0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xC3_imp0;xC3_imp0;1638301802">
+<param name="C4_part0" value="1;node.ico;636;336;0;C4_part0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xC4_part0;xC4_part0;61520469">
+<param name="C5_altri0" value="1;node.ico;633;365;0;C5_altri0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xC5_altri0;xC5_altri0;1910552303">
+<param name="PMGC" value="1;node.ico;184;359;0;PMGC = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPMGC;yPMGC;2013642966">
+<param name="PIGC" value="1;node.ico;233;358;0;PIGC = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPIGC;yPIGC;339775117">
+<param name="icef10" value="0;node.ico;181;268;0;icef10 = ;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xicef10;yicef10;1561827768">
+<param name="Anno_reddito" value="1;node.ico;636;399;0;Anno_reddito = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xAnno_reddito;yAnno_reddito;1611755287">
+<param name="RFGC09" value="0;node.ico;189;295;0;RFGC09 =  0.500 ;0.0;TimesNode;NoInput;NoOutput;0;1;RFGC;rscala;NoCurve;xRFGC09;yRFGC09;4088558334">
+<param name="RFGC" value="0;node.ico;234;323;0;RFGC =  0.737*RFGC09 + 0.263*RFGC10;0.0;PlusNode;NoInput;NoOutput;2;RFGC09;RFGC10;0;rscala;a_i;f_m;1.0;NoCurve;xRFGC;yRFGC;2378905389">
+<param name="RFGC10" value="0;node.ico;265;296;0;RFGC10 =  0.500 ;0.0;TimesNode;NoInput;NoOutput;0;1;RFGC;rscala;NoCurve;xRFGC10;yRFGC10;2268194835">
+<param name="Icef" value="1;node.ico;82;259;0;Icef = ;0.0;PlusNode;ValueInput;NoOutput;0;3;infOK;supOK;ICEFGC;1.0;NoCurve;xIcef;xIcef;3474102811">
+<param name="infOK" value="0;node.ico;45;298;0;infOK = Icef >= Inf;0.0;NumGeNode;NoInput;NoOutput;2;Icef;Inf;1;icefOK;1.0;1.0;1.0;1.0;NoCurve;xinfOK;yinfOK;4085371762">
+<param name="Inf" value="1;node.ico;40;269;0;Inf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;infOK;0.5;NoCurve;xInf;yInf;3436486667">
+<param name="supOK" value="0;node.ico;125;297;0;supOK = Icef <= Sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;Sup;1;icefOK;1.0;1.0;1.0;1.0;NoCurve;xsupOK;ysupOK;3049383178">
+<param name="Sup" value="1;node.ico;127;268;0;Sup = ;0.0;ProbNode;ValueInput;NoOutput;0;1;supOK;0.5;NoCurve;xSup;ySup;3886998145">
+<param name="icefOK" value="0;node.ico;85;325;0;icefOK =   1  infOK * supOK;0.0;ProbNode;NoInput;NoOutput;2;infOK;supOK;1;idoneo;0.0;0.0;0.0;1.0;NoCurve;xicefOK;yicefOK;3538610891">
+<param name="ICEFGC" value="0;node.ico;191;393;0;ICEFGC =  Icef;0.0;ProbNode;NoInput;ResultOutput;1;Icef;0;0.0;1.0;NoCurve;xICEFGC;yICEFGC;2403645103">
+<param name="idoneo" value="0;node.ico;127;392;0;idoneo =   1  icefOK * idoneo08;0.0;ProbNode;NoInput;IntermediateOutput;2;icefOK;idoneo08;0;0.0;0.0;0.0;1.0;NoCurve;xidoneo;yidoneo;939753320">
+<param name="Icef08" value="1;node.ico;40;357;0;Icef08 = ;0.0;ProbNode;ValueInput;NoOutput;0;1;idoneo08;0.5;NoCurve;xIcef08;yIcef08;111424140">
+<param name="idoneo08" value="0;node.ico;40;392;0;idoneo08 = Icef08 <= 0.1;0.0;NumLeNode;NoInput;NoOutput;1;Icef08;1;idoneo;1.0;0.1;NoCurve;xidoneo08;yidoneo08;636187908">
+
+
+
+<param name="xC5_altri0" value="C5_altri0;C5: Altre fonti di entrata in deroga al criterio fiscale;C5: Altre fonti di entrata in deroga al criterio fiscale zero;C5: Altre fonti di entrata in deroga al criterio fiscale;C5: Altre fonti di entrata in deroga al criterio fiscale massimali; ; ; ; ; ;$.2; ">
+<param name="xC4_part0" value="C4_part0;C4: Redditi da partecipazioni in società ;C4: Reddito da partecipazioni in società zero;C4: Redditi da partecipazioni in società ;C4: Redditi da partecipazioni in società massimali; ; ; ; ; ;$.2; ">
+<param name="xPIGC" value="PIGC;PIGC: Valore ICI degli immobili al netto dell'intervento;non esistono rilevanti beni immobiliari di proprietà;PIGC: Valore ICI degli immobili al netto dell'intervento;PIGC: Valore ICI degli immobili al netto dell'intervento; ; ; ; ; ;$.2; ">
+
+<param name="xPMGC" value="PMGC;PMGC: Ammontare degli investimenti finanziari al netto del prefinanziamento;non esistono investimenti finanziari rilevanti;PMGC: Ammontare degli investimenti finanziari al netto del prefinanziamento;PMGC: Ammontare degli investimenti finanziari al netto del prefinanziamento; ; ; ; ; ;$.2; ">
+
+<param name="xC1_pens0" value="C1_pens0;C1(PNS): Entrate da pensione ;C1(PNS): Entrate da pensione zero;C1(PNS): Entrate da pensione;C1(PNS): Entrate da pensione massimali; ; ; ; ; ;$.2; ">
+<param name="xC1_dip0" value="C1_dip0;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati ;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati  ;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati massimali ; ; ; ; ; ;$.2; ">
+<param name="xC3_imp0" value="C3_imp0;C3: Redditi da impresa individuale o lavoro autonomo ;C3: Redditi da impresa individuale o lavoro autonomo zero;C3: Redditi da impresa individuale o lavoro autonomo;C3: Redditi da impresa individuale o lavoro autonomo massimali; ; ; ; ; ;$.2; ">
+<param name="xC2_agr0" value="C2_agr0;C2: Redditi da impresa agricola ;C2: Redditi da impresa agricola zero;C2: Redditi da impresa agricola;C2: Redditi da impresa agricola massimali; ; ; ; ; ;$.2; ">
+<param name="xInf" value="Inf;Inf;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xIcef" value="Icef; <b>ICEF</b> - dell'anno corrente;<b>ICEF</b> dell'anno corrente zero ;<b>ICEF</b> - dell'anno corrente;<b>ICEF</b> dell'anno corrente oltre misura; ; ; ; ;<b>;T.4;</b>">
+<param name="xIcef08" value="Icef08; <b>(Icef08)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare del 2008;Indicatore della Condizione Economica Familiare <b>(Icef08)</b> zero ;Indicatore della Condizione Economica Familiare <b>(Icef08)</b>;Indicatore della Condizione Economica Familiare <b>(Icef08)</b> arrotondato oltre misura, <br /> si usa il massimo delle valutazioni di redditi e patrimonio; ; ; ; ;<b>;T.4;</b>">
+
+<param name="xSup" value="Sup;Sup;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xAnno_reddito" value="Anno_reddito;Anno_reddito;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xicef10" value="icef10;icef10;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xRFGC10" value="RFGC10;RFGC10 <b>reddito</b> familiare del 2010;RFGC10: <b>reddito</b> familiare  del 2010 zero;RFGC10: <b>reddito</b> familiare del 2010;RF: <b>reddito</b> familiare  del 2010; ; ; ; ; ;$.2; ">
+
+<param name="xRFGC09" value="RFGC09;RFGC09: <b>reddito</b> familiare del 2009;RFGC09: <b>reddito</b> familiare  del 2009 zero;RFGC09: <b>reddito</b> familiare del 2009;RFGC09: <b>reddito</b> familiare  del 2009; ; ; ; ; ;$.2; ">
+
+<param name="xMediche0" value="Mediche0;D(SPM): Deduzione per spese mediche, funebri e di istruzione;D(SPM): Deduzione per spese mediche, funebri e di istruzione;D(SPM): Deduzione per spese mediche, funebri e di istruzione;D(SPM): Deduzione per spese mediche, funebri e di istruzione; ; ; ; ;- ;$.2; ">
+<param name="xLavoratori0" value="Lavoratori0;Detrazione per il nucleo di genitori lavoratori in presenza di figli minorenni;Non Lavoratori;Detrazione per il nucleo di genitori lavoratori in presenza di figli minorenni;Lavoratori=max; ; ; ; ; -;$.2; ">
+
+<param name="xMutuo0" value="Mutuo0;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale (deducibile fino a  $LDC$ solo per l'accesso);D(IMR): nessun mutuo per l'abitazione principale;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale;Il mutuo per la casa di residenza;è di; ; ; ;- ;$.2; ">
+<param name="xMonogenitore0" value="Monogenitore0;Detrazione per il nucleo con uno solo genitore e presenza di figli minorenni;Non Monogenitore;Detrazione per il nucleo con uno solo genitore e presenza di figli minorenni;Monogenitore=max; ; ; ; ; -;$.2; ">
+
+<param name="xCanone0" value="Canone0;D(CNL): Canone di locazione annuo (deducibile fino a  $LDC$ solo per l'accesso) ;D(CNL): Canone di locazione annuo zero;D(CNL): Canone di locazione annuo;D(CNL): Canone di locazione annuo massimale; ; ; ; ;- ;$.2; ">
+<param name="xAssegni0" value="Assegni0;D(ASM): Assegni di mantenimento;D(ASM): Assegni di mantenimento zero;D(ASM): Assegni di mantenimento;D(ASM): Assegni di mantenimento massimali; ; ; ; ;- ;$.2; ">
+<param name="xImposte0" value="Imposte0;D(IMP): Imposte ;D(IMP): nessuna imposta dichiarata;D(IMP): Imposte ;D(IMP): Imposte massimali; ; ; ; ;- ;$.2; ">
+<param name="xModello_GC" value="P.A.T. Giovani Coppie;x;P.A.T. Giovani Coppie (recupero 2008) Versione 5.10.2011;-;1; ;-;+; ; ; ; ">
+
+<param name="xLavoro_fem0" value="Lavoro_fem0;Detrazione per lavoro femminile;nessuna detrazione per lavoro femminile;Detrazione per lavoro femminile;Detrazione per lavoro femminile; ; ; ; ; -;$.2; ">
+
+<param name="xSpese_redditi0" value="Spese_redditi0;Spese_redditi0;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xC1_aut0" value="C1_aut0;C1(ANP): Redditi da lavoro autonomo occasionale ;C1(ANP): Redditi da lavoro autonomo occasionale zero;C1(ANP): Redditi da lavoro autonomo occasionale;C1(ANP): Redditi da lavoro autonomo occasionale massimali; ; ; ; ; ;$.2; ">
+<param name="xN_componenti0" value="N_componenti0;N_componenti0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xInvalidi0" value="Invalidi0;Invalidi0;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xPrevidenza0" value="Previdenza0;Previdenza0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xP_complementare0" value="P_complementare0;D(CPC): Contributi pensione complementare;D(CPC): Contributi pensione complementare zero;D(CPC): Contributi pensione complementare;D(CPC): Contributi pensione complementare massimali; ; ; ; ;- ;$.2; ">
+<param name="xFigli_fam_numerose0" value="Figli_fam_numerose0;Detrazione per famiglia numerosa;Non Figli_fam_numerose;Detrazione per famiglia numerosa;Figli_fam_numerose=max; ; ; ; ; -;$.2; ">
+
+<param name="xidoneo08" value="idoneo08;idoneo08;l'ICEF08 rende la domanda <b>NON</b> idonea per una riapertura;-;l'ICEF08 rende la domanda idonea per riapertura; ; ; ; ; ; ; ">
+
+<param name="xICEFGC" value="ICEFGC; <b>(ICEFGC)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare ;Indicatore della Condizione Economica Familiare <b>(ICEFGC)</b> zero ;Indicatore della Condizione Economica Familiare <b>(ICEFGC)</b> ;Indicatore della Condizione Economica Familiare <b>(ICEFGC)</b> oltre misura, <br /> si usa il massimo delle valutazioni di redditi e patrimonio; ; ; ; ;<b>;T.4;</b>">
+
+<param name="xidoneo" value="idoneo;idoneo;la domanda per la riapertura <b>NON</b> è idonea;-;la domanda per la riapertura <b>è idonea</b>; ; ; ; ; ; ; ">
+
+<param name="xinfOK" value="infOK;infOK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xRFGC" value="RFGC;RFGC;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xicefOK" value="icefOK;icefOK;ICEF oltre i limiti;-;ICEF ok; ; ; ; ; ; ; ">
+
+<param name="xsupOK" value="supOK;supOK;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="titolo0;icefs;idon;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="titolo0" value="<CENTER><H2>P.A.T. Riapertura Termini Giovani Coppie e Nubendi</H2></CENTER>;">
+<param name="icefs" value="<b>Idoneità per la riapertura</b>;Icef08=-1;ICEFGC=-1">
+<param name="idon" value=" ;idoneo=1;idoneo08=3!1;icefOK=3!1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="585929142">
+<param name="CRC" value="3421164565">
+<param name="CRCdata" value="5-ott-2011 19.07.41">
+</APPLET>
+</CENTER>
+<BR>

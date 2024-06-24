@@ -1,0 +1,15 @@
+package c_elab.pat.ITEA22; 
+
+/** 
+ *@author s_largher
+ * immobili anno corrente 
+ * (NOTA BENE: comprende sia la residenza che gli altri immobili!!) 
+ */
+
+public class PI extends QImmobiliare { 
+
+	public double getValue() {
+
+		return getValoreImmobili();
+	}
+}

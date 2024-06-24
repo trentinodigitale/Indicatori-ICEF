@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[
+			<html>
+				<head><title>Clesius ICEF</title></head>
+				<body>
+				<CENTER><H2>
+				Attestazione dell'indicatore ICEF <br> ]]>
+				<sql><![CDATA[select case when id_servizio = 12218 
+				then 'per il PIANO STRAORDINARIO 2018 PER IL RECUPERO DEI CENTRI STORICI'
+				else '' end  
+				from Domande  where id_domanda=${id_domanda}]]></sql>
+				<![CDATA[</H2></CENTER>]]>
+		</main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<![CDATA[<H2><CENTER>]]>
+				<sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '<BR>' end from Doc where id=${id_domanda}]]></sql>
+			<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+			<![CDATA[<H1><CENTER>]]>
+			<![CDATA[</H1></CENTER>]]>
+		</servizio>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<center>${footer.netVersion}</center>]]></netVersion>
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+		
+	</footer>
+</Doc>

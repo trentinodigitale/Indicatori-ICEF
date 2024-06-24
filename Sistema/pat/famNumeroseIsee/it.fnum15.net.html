@@ -1,0 +1,172 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"	WIDTH="750" HEIGHT="550" MAYSCRIPT>
+	<param name="revision" value="$Revision: 33381 $">
+
+	<param name="Taratura" value="Assegno Famiglie Numerose dal 2015; 16.10.2017">
+	<param name="Font" value="Dialog">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+
+	<param name="nets" value="../../ISEE159/usa_isee.sub.net.html">
+
+<param name="trendStarts" value="parametriAssegno;casoAssegno">
+<param name="parametriAssegno" value="zero;Mensile_assegno=141.30;Min_annuo=10.18;Soglia=8555.99;Sospesa_in=1">
+<param name="casoAssegno" value="parametriAssegno;Chiede_assegno=1;Mesi=6;ISEE=3000;ISE=7980;Precedente=1800;VSE=2.66;N_minorenni=3">
+
+	<param name="trends" value="">
+
+	<param name="variables" value="x_13;x_12;ascala;bscala;cscala;big">
+
+	<param name="x_12" value="0.08333334">
+	<param name="x_13" value="0.0769231;0.0769230769">
+	<param name="ascala" value="0.000001">
+	<param name="bscala" value="0.0001">
+	<param name="cscala" value="">
+	
+	<param name="big" value="99999999">
+
+<param name="confronta" value="(ISEeqise_!=1);ISEeqise_=3">
+
+
+
+<param name="edges" value="ISEE calcolabile;AssegnoFnum;Iban_crc;
+ISEE_calcolabile-mostra_isee;isee-assOK;Soglia-soglia_ise;Mensile_assegno-base_annua;soglia_ise-diff;base_annua-diff;assOK-assegno_annuo;oltre2min-assegno_annuo;assegno_annuo-mensile;ass-diffgemin;Min_annuo-diffgemin;diffgemin-ass_a;ass_a-assegno_annuo;iseLEdiff-ass;ass-ass_a;base_annua-ass;diff_ise-ass;soglia_ise-ds;diff-ds;ise-iseLEdiff;N_minorenni-oltre2min;
+diff-iseLEdiff;Soglia-assOK;Chiede_assegno-assegno_annuo;Mesi-complessivo;Check-checkOK;checkOK-assegno_annuo;soglia_ise-diff_ise;VSE-soglia_ise;ise-diff_ise;Precedente-prec;ISEE-isee;prec-isee;ISE-ISEeqise_;ISEE-ise_;VSE-ise_;ise_-ISEeqise_;assegno_annuo-mens13;mens13-complessivo;assOK-assNo;assOK-ass0;
+ass0-checkcalc;assNo-checkcalc;diffgemin-ass0;oltre2min-lt3;lt3-checkcalc;checkcalc-checkout;checkOK-ch;checkcalc-ch;checkOK-c_base;Check-c_base;c_base-checkout;ise_-ise;checkout-non0;Sospesa_in-sospesa;non0-sospesa;Precedente-ise;VSE-prec;mens13-mens13_2">
+
+
+
+<param name="ISEE calcolabile" value="text;node.ico;63;22;0;calcolabilità ISEE 7.5.2015;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xISEE calcolabile;yISEE calcolabile;2078135597">
+<param name="ISEE_calcolabile" value="1;node.ico;66;44;0;ISEE_calcolabile = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mostra_isee;1.0;NoCurve;xISEE_calcolabile;xISEE_calcolabile;3183881439">
+<param name="mostra_isee" value="0;node.ico;180;45;0;mostra_isee =  ISEE_calcolabile);0.0;NumTransNode;NoInput;NoOutput;1;ISEE_calcolabile;0;1.0;1.0;LinearCurve;mostraCurve;xmostra_isee;xmostra_isee;3292600974">
+<param name="AssegnoFnum" value="text;node.ico;376;14;0;Assegno per Famiglie Numerose 16.10.2017;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloFnum;yModelloFnum;455886361">
+<param name="Iban_crc" value="1;node.ico;92;168;0;Iban_crc = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xIban_crc;xIban_crc;247285284">
+<param name="isee" value="0;node.ico;330;88;0;isee =  ISEE - prec;0.0;MinusNode;NoInput;NoOutput;2;ISEE;prec;1;assOK;0.0;1.0;1.0;1.0;NoCurve;xisee;xisee;2258119756">
+<param name="assOK" value="0;node.ico;384;87;0;assOK = isee < Soglia;0.0;NumLtNode;NoInput;NoOutput;2;isee;Soglia;3;assegno_annuo;assNo;ass0;1.0;1.0;1.0;1.0;NoCurve;xassOK;xassOK;1552591712">
+<param name="Soglia" value="1;node.ico;477;44;0;Soglia = ;0.0;PlusNode;ValueInput;NoOutput;0;2;assOK;soglia_ise;ascala;NoCurve;xSoglia;xSoglia;1790227570">
+<param name="soglia_ise" value="0;node.ico;478;91;0;soglia_ise =  Soglia * VSE;0.0;TimesNode;NoInput;NoOutput;2;Soglia;VSE;3;diff;diff_ise;ds;ascala;1.0;1.0;1.0;NoCurve;xsoglia_ise;xsoglia_ise;64476965">
+<param name="Mensile_assegno" value="1;node.ico;638;116;0;Mensile_assegno = ;0.0;PlusNode;ValueInput;NoOutput;0;1;base_annua;ascala;NoCurve;xMensile_assegno;xMensile_assegno;1486918349">
+<param name="base_annua" value="0;node.ico;637;155;0;base_annua =  13.000*Mensile_assegno;0.0;PlusNode;NoInput;NoOutput;1;Mensile_assegno;2;diff;ass;ascala;13.0;NoCurve;xbase_annua;xbase_annua;2794934133">
+<param name="diff" value="0;node.ico;561;154;0;diff =  soglia_ise - base_annua;0.0;MinusNode;NoInput;NoOutput;2;soglia_ise;base_annua;2;ds;iseLEdiff;ascala;1.0;1.0;1.0;NoCurve;xdiff;xdiff;231898349">
+<param name="assegno_annuo" value="2;node.ico;382;245;0;assegno_annuo =  assOK * oltre2min * ass_a * Chiede_assegno * checkOK;0.0;TimesNode;NoInput;IntermediateOutput;5;assOK;oltre2min;ass_a;Chiede_assegno;checkOK;2;mensile;mens13;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xassegno_annuo;xassegno_annuo;4279766645">
+<param name="oltre2min" value="0;node.ico;257;196;0;oltre2min = N_minorenni >= 3.0;0.0;NumGeNode;NoInput;NoOutput;1;N_minorenni;2;assegno_annuo;lt3;1.0;3.0;NoCurve;xoltre2min;xoltre2min;230333394">
+<param name="mensile" value="0;node.ico;468;273;0;mensile =  0.083*assegno_annuo;0.0;TimesNode;NoInput;ResultOutput;1;assegno_annuo;0;ascala;x_12;NoCurve;xmensile;xmensile;2144546645">
+<param name="ass" value="0;node.ico;482;199;0;ass = SE( iseLEdiff=1.0 , 1.0 * base_annua , 1.0 * diff_ise );0.0;NumIfNode;NoInput;NoOutput;3;iseLEdiff;base_annua;diff_ise;2;diffgemin;ass_a;1.0E-5;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xass;xass;2059941933">
+<param name="diffgemin" value="0;node.ico;628;201;0;diffgemin = ass >= Min_annuo;0.0;NumGeNode;NoInput;NoOutput;2;ass;Min_annuo;2;ass_a;ass0;1.0;1.0;1.0;1.0;NoCurve;xdiffgemin;xdiffgemin;2374247238">
+<param name="Min_annuo" value="1;node.ico;700;201;0;Min_annuo = ;0.0;PlusNode;ValueInput;NoOutput;0;1;diffgemin;ascala;NoCurve;xMin_annuo;xMin_annuo;2432168776">
+<param name="ass_a" value="0;node.ico;628;246;0;ass_a = SE( diffgemin=1.0 , 1.0 * ass , 0.0 );0.0;NumIfNode;NoInput;NoOutput;2;diffgemin;ass;1;assegno_annuo;ascala;1.0;1.0;0.0;NoCurve;xass_a;xass_a;3267659673">
+<param name="iseLEdiff" value="0;node.ico;241;155;0;iseLEdiff = ise <= diff;0.0;NumLeNode;NoInput;NoOutput;2;ise;diff;1;ass;1.0;1.0;1.0;1.0;NoCurve;xiseLEdiff;xiseLEdiff;2275201374">
+<param name="diff_ise" value="0;node.ico;478;136;0;diff_ise =  soglia_ise - ise;0.0;MinusNode;NoInput;NoOutput;2;soglia_ise;ise;1;ass;ascala;1.0;1.0;1.0;NoCurve;xdiff_ise;xdiff_ise;3344568112">
+<param name="ds" value="0;node.ico;558;89;0;ds =  soglia_ise - diff;0.0;MinusNode;NoInput;NoOutput;2;soglia_ise;diff;0;ascala;1.0;1.0;1.0;NoCurve;xds;xds;4204870319">
+<param name="ise" value="0;node.ico;333;154;0;ise =  ise_ - Precedente;0.0;MinusNode;NoInput;IntermediateOutput;2;ise_;Precedente;2;iseLEdiff;diff_ise;1.0E-6;1.0;1.0;1.0;NoCurve;xise;xise;1570199053">
+<param name="N_minorenni" value="1;node.ico;172;196;0;N_minorenni = ;0.0;PlusNode;ValueInput;IntermediateOutput;0;1;oltre2min;1.0;NoCurve;xN_minorenni;xN_minorenni;4154700404">
+<param name="Chiede_assegno" value="1;node.ico;193;269;0;Chiede_assegno = ;0.0;ProbNode;ValueInput;NoOutput;0;1;assegno_annuo;0.5;NoCurve;xChiede_assegno;xChiede_assegno;2846656790">
+<param name="Mesi" value="1;node.ico;300;302;0;Mesi = ;0.0;PlusNode;ValueInput;NoOutput;0;1;complessivo;x_12;NoCurve;xMesi;xMesi;3149393898">
+<param name="complessivo" value="2;node.ico;383;301;0;complessivo =  1.083*Mesi * mens13;0.0;TimesNode;NoInput;NoOutput;2;Mesi;mens13;0;ascala;1.08333334;1.0;1.0;NoCurve;xcomplessivo;xcomplessivo;3239604842">
+<param name="Check" value="1;node.ico;40;246;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;checkOK;c_base;1.0;NoCurve;xCheck;xCheck;3676491734">
+<param name="checkOK" value="0;node.ico;160;242;0;checkOK = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;3;assegno_annuo;ch;c_base;1.0;0.0;NoCurve;xcheckOK;xcheckOK;3389382853">
+<param name="VSE" value="1;node.ico;377;52;0;VSE = ;0.0;PlusNode;ValueInput;IntermediateOutput;0;3;soglia_ise;ise_;prec;1.0;NoCurve;xVSE;xVSE;1809806939">
+<param name="Precedente" value="1;node.ico;273;52;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;2;prec;ise;bscala;NoCurve;xPrecedente;xPrecedente;2829694142">
+<param name="prec" value="0;node.ico;272;88;0;prec =  Precedente / VSE;0.0;DivideNode;NoInput;NoOutput;2;Precedente;VSE;1;isee;bscala;1.0;1.0;1.0;NoCurve;xprec;xprec;1166560993">
+<param name="ISEE" value="1;node.ico;331;52;0;ISEE = ;0.0;PlusNode;ValueInput;IntermediateOutput;0;2;isee;ise_;ascala;NoCurve;xISEE;xISEE;1317155085">
+<param name="ISE" value="1;node.ico;180;78;0;ISE = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ISEeqise_;ascala;NoCurve;xISE;xISE;1131341569">
+<param name="ISEeqise_" value="0;node.ico;180;121;0;ISEeqise_ = ISE == ise_;0.0;NumEqNode;NoInput;NoOutput;2;ISE;ise_;0;1.0;1.0;1.0;1.0;NoCurve;xISEeqise_;xISEeqise_;1664109071">
+<param name="ise_" value="0;node.ico;255;119;0;ise_ =  ISEE * VSE;0.0;TimesNode;NoInput;NoOutput;2;ISEE;VSE;2;ISEeqise_;ise;ascala;1.0;1.0;1.0;NoCurve;xise_;xise_;1931258718">
+<param name="mens13" value="0;node.ico;471;306;0;mens13 =  0.077*assegno_annuo;0.0;PlusNode;NoInput;NoOutput;1;assegno_annuo;2;complessivo;mens13_2;0.001;x_13;NoCurve;xmens13;xmens13;2727124400">
+<param name="assNo" value="0;node.ico;95;193;0;assNo =   1  - assOK;0.0;ProbNode;NoInput;NoOutput;1;assOK;1;checkcalc;1.0;0.0;NoCurve;xassNo;xassNo;3139106557">
+<param name="ass0" value="0;node.ico;250;295;0;ass0 =  assOK - assOK * diffgemin;0.0;ProbNode;NoInput;NoOutput;2;assOK;diffgemin;1;checkcalc;0.0;1.0;0.0;0.0;NoCurve;xass0;xass0;203986402">
+<param name="checkcalc" value="0;node.ico;96;295;0;checkcalc =  100000.000*assNo + 900000.000*ass0 + 20000.000*lt3;0.0;PlusNode;NoInput;NoOutput;3;assNo;ass0;lt3;2;checkout;ch;1.0;100000.0;900000.0;20000.0;100000.0;900000.0;1.0;1.0;NoCurve;xcheckcalc;xcheckcalc;2994672878">
+<param name="lt3" value="0;node.ico;253;223;0;lt3 =   1  - oltre2min;0.0;ProbNode;NoInput;NoOutput;1;oltre2min;1;checkcalc;1.0;0.0;NoCurve;xlt3;xlt3;1012943397">
+<param name="checkout" value="2;node.ico;42;325;0;checkout =  checkcalc + c_base;0.0;PlusNode;NoInput;ResultOutput;2;checkcalc;c_base;1;non0;1.0;1.0;1.0;1.0;NoCurve;xcheckout;xcheckout;4275740383">
+<param name="ch" value="0;node.ico;116;263;0;ch =  120000.000  - checkOK checkOK * checkcalc;0.0;ProbNode;NoInput;NoOutput;2;checkOK;checkcalc;0;1.0;0.0;1.0;1.0;NoCurve;xch;xch;2902960572">
+<param name="c_base" value="0;node.ico;42;274;0;c_base = SE( checkOK=0.0 , 1.0 * Check , 1000000.0 );0.0;NumIfNode;NoInput;NoOutput;2;checkOK;Check;1;checkout;1.0;0.0;1.0;1000000.0;NoCurve;xc_base;xc_base;597249212">
+<param name="non0" value="0;node.ico;112;326;0;non0 = checkout > 1000000.0;0.0;NumGtNode;NoInput;NoOutput;1;checkout;1;sospesa;1.0;1000000.0;NoCurve;xnon0;xnon0;3023233165">
+<param name="Sospesa_in" value="1;node.ico;177;309;0;Sospesa_in = ;0.0;ProbNode;ValueInput;NoOutput;0;1;sospesa;0.5;NoCurve;xSospesa_in;xSospesa_in;1466089618">
+<param name="sospesa" value="2;node.ico;255;330;0;sospesa =  Sospesa_in - Sospesa_in * non0;0.0;ProbNode;NoInput;IntermediateOutput;2;Sospesa_in;non0;0;0.0;1.0;0.0;0.0;NoCurve;xsospesa;xsospesa;991104503">
+<param name="mens13_2" value="0;node.ico;566;306;0;mens13_2 =  mens13;0.0;PlusNode;NoInput;NoOutput;1;mens13;0;1.0;1.0;NoCurve;xmens13_2;xmens13_2;4169145122">
+
+<param name="mostraCurve" value="LinearCurve;0.0;0.0;1.0;1.0;2.0;0.0;3.0;0.5">
+
+
+<param name="xMesi" value="Mesi;Mesi;Mesi=0 ?;Mesi;Mesi; ; ; ; ; ;T; ">
+<param name="xCheck" value="Check;Check;non;-;ok; ; ; ; ; ; ; ">
+<param name="xChiede_assegno" value="Chiede_assegno;Chiede_assegno;assegno NON chiesto;Chiede_assegno;Chiede assegno; ; ; ; ; ;T; ">
+<param name="xMin_annuo" value="Min_annuo;Min_annuo;Min_annuo;Min_annuo;Min_annuo; ; ; ; ; ;$.2; ">
+<param name="xN_minorenni" value="N_minorenni;Numero di minorenni;minorenni=0 ?;Numero di minorenni;Numero di minorenni; ; ; ; ; ;T; ">
+<param name="xISE" value="ISE;ISE - INDICATORE della SITUAZIONE ECONOMICA;ISE - INDICATORE della SITUAZIONE ECONOMICA = 0;ISE - INDICATORE della SITUAZIONE ECONOMICA;ISE - INDICATORE della SITUAZIONE ECONOMICA=max; = ; ; ; ; ;$.2; ">
+<param name="xSospesa_in" value="Sospesa_in;Sospesa_in;non;-;ok; ; ; ; ; ; ; ">
+<param name="xISEE" value="ISEE;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE = 0;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE=max; = ; ; ; ; ;$.2; ">
+<param name="xVSE" value="VSE;VSE - Valore della Scala di Equivalenza;VSE=0 ?;VSE - Valore della Scala di Equivalenza;VSE - Valore della Scala di Equivalenza; ; ; ; ; ;T.2; ">
+<param name="xPrecedente" value="Precedente;Assegno precedente;non Assegno precedente;Assegno precedente;Assegno precedente; ; ; ; ; -;$.2; ">
+<param name="xMensile_assegno" value="Mensile_assegno;Massimo mensile dell'assegno;Mensile_assegno=0?;Massimo mensile dell'assegno;Massimo mensile dell'assegno; ; ; ; ; ;$.2; ">
+<param name="xISEE_calcolabile" value="ISEE_calcolabile;ISEE_calcolabile;ISEE non previsto;ISEE_calcolabile non determinato;ISEE usabile; ; ; ; ; ; ; ">
+<param name="xModelloFnum" value="AssegnoFnum;AssegnoFnum;Assegno per Famiglie Numerose 16.10.2017;-;ok; ; ; ; ; ; ; ">
+
+<param name="xSoglia" value="Soglia;Soglia;Soglia;Soglia;Soglia; ; ; ; ; ;$.2; ">
+<param name="xIban_crc" value="Iban_crc;Iban_crc;non;-;ok; ; ; ; ; ;T; ">
+<param name="xISEE calcolabile" value="ISEE calcolabile;x;calcolabilità ISEE 7.5.2015;-;ok; ; ; ; ; ; ; ">
+
+<param name="xnon0" value="non0;non0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmens13_2" value="mens13_2;assegno mensile (senza la quota della tredicesima);nessun assegno;assegno mensile (senza la quota della tredicesima);assegno mensile (senza la quota della tredicesima); ; ; ; ; <b>;$.2;</b>">
+<param name="xcheckOK" value="checkOK;checkOK;Domanda oltre termini;-;ok; ; ; ; ; ; ; ">
+<param name="xassNo" value="assNo;assNo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmens13" value="mens13;assegno mensile (senza la quota della tredicesima);nessun assegno;assegno mensile (senza la quota della tredicesima);assegno mensile (senza la quota della tredicesima); ; ; ; ; <b>; ;</b>">
+<param name="xmostra_isee" value="mostra_isee;mostra_isee;<b>Domanda con ISEE mancante</b>;<b>Domanda con ISEE non validato dall'INPS, i dati sono stati inseriti in autocertificazione</b>;domanda normale; ; ; ; ; ; ; ">
+<param name="xlt3" value="lt3;lt3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmensile" value="mensile;assegno mensile;nessun assegno;assegno mensile;assegno mensile; ; ; ; ; <b>;$.2;</b>">
+<param name="xoltre2min" value="oltre2min;oltre2min;meno di 3 figli minori;oltre2min;oltre2min; ; ; ; ; ;T; ">
+<param name="xbase_annua" value="base_annua;base_annua;base_annua;base_annua;base_annua; ; ; ; ; ;$.2; ">
+<param name="xass0" value="ass0;ass0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xISEeqise_" value="ISEeqise_;ISE!=ise_;<b>ISE fornito (^ISE^) diverso da ISE calcolato (^ise_^)</b>;ISE!=ise_;ISE!=ise_; ; ; ; ; ; ; ">
+<param name="xise_" value="ise_;ISE - INDICATORE della SITUAZIONE ECONOMICA;ISE - INDICATORE della SITUAZIONE ECONOMICA = 0;ISE - INDICATORE della SITUAZIONE ECONOMICA;ISE - INDICATORE della SITUAZIONE ECONOMICA=max; = ; ; ; ; ;$.1; ">
+<param name="xdiff" value="diff;diff;diff;diff;diff; ; ; ; ; ;$.2; ">
+<param name="xsospesa" value="sospesa;sospesa;non sospesa;-;<b>Domanda sospesa</b>; ; ; ; ; ;T; ">
+<param name="xc_base" value="c_base;c_base;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcheckout" value="checkout;checkout;non;-;ok; ; ; ; ; ; ; ">
+<param name="xch" value="ch;ch;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcomplessivo" value="complessivo;Assegno al Nucleo Famigliare (per i ^Mesi^ mesi richiesti);nessun Assegno al Nucleo Famigliare;Assegno al Nucleo Famigliare (per i ^Mesi^ mesi richiesti);Assegno al Nucleo Famigliare (per i ^Mesi^ mesi richiesti); ; ; ; ; <b>;T.2;</b>">
+<param name="xisee" value="isee;ISEE - precedente;ISEE - precedente = 0;ISEE - precedente;ISEE - precedente=max; = ; ; ; ; ;$.2; ">
+<param name="xds" value="ds;ds;ds;ds;ds; ; ; ; ; ; ; ">
+<param name="xsoglia_ise" value="soglia_ise;soglia_ise;soglia_ise;soglia_ise;soglia_ise; ; ; ; ; ;$.2; ">
+<param name="xise" value="ise;ISE - INDICATORE della SITUAZIONE ECONOMICA (- assegno precedente);ISE - INDICATORE della SITUAZIONE ECONOMICA = 0;ISE - INDICATORE della SITUAZIONE ECONOMICA (- assegno precedente);ISE - INDICATORE della SITUAZIONE ECONOMICA (- assegno precedente); = ; ; ; ; ;$.2; ">
+<param name="xassOK" value="assOK;assOK;condizione economica oltre il limite;assOK;assOK; ; ; ; ; ;T; ">
+<param name="xdiff_ise" value="diff_ise;diff_ise;diff_ise;diff_ise;diff_ise; ; ; ; ; ; ; ">
+<param name="xdiffgemin" value="diffgemin;diffgemin;diffgemin;diffgemin;diffgemin; ; ; ; ; ; ; ">
+<param name="xass_a" value="ass_a;ass_a;importo teorico annuo minore del minimo;ass_a;ass_a; ; ; ; ; ; ; ">
+<param name="xprec" value="prec;prec;non;-;ok; ; ; ; ; ; ; ">
+<param name="xiseLEdiff" value="iseLEdiff;iseLEdiff;iseLEdiff;iseLEdiff;iseLEdiff; ; ; ; ; ; ; ">
+<param name="xcheckcalc" value="checkcalc;checkcalc;non;-;ok; ; ; ; ; ; ; ">
+<param name="xass" value="ass;ass;ass;ass;ass; ; ; ; ; ; ; ">
+<param name="xassegno_annuo" value="assegno_annuo;assegno per l'intero anno;nessun assegno;assegno  per l'intero anno;assegno  per l'intero anno; ; ; ; ; ;$.2; ">
+
+
+
+<param name="xpltree" value="senza_isee;isee_mancante;dati;risassegno;noassegno;spiegacheck;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="senza_isee" value="(ISEE_calcolabile==0)<b>Domanda senza ISEE</b> ;">
+<param name="isee_mancante" value="(mostra_isee!=1) ;(ISEE_calcolabile!=0)mostra_isee=3">
+<param name="dati" value="<b>Dati per il calcolo di assegno</>;(mostra_isee!=0)ISEE=-1;(Precedente!=0)ISE=-1;(mostra_isee!=0)Precedente=-1!0;(mostra_isee!=0)ise=-1;(mostra_isee!=0)VSE=-1;N_minorenni=-1">
+<param name="risassegno" value="(complessivo!=0)<hr><b>Assegno al Nucleo Familiare</b>;(iseLEdiff==0)Mensile_assegno=-1;mens13_2=-1;complessivo=-1;sospesa=-1!0">
+<param name="noassegno" value="(complessivo==0)<b>Assegno non concesso</b><br>;Chiede_assegno=3!1;(mostra_isee!=0)assOK=3!1">
+<param name="spiegacheck" value="(ch==1) Codici di esclusione:<br>
+<b>§checkout§</b> <br />
+<b>_.1__.___</b>:<small> ISEE maggiore della soglia di ^Soglia^</small><br />
+<b>_.9__.___</b>:<small> importo calcolato sotto la soglia minima di ^Min_annuo^</small><br />
+<b>_._2_.___</b>:<small> mancanza requisito numero di figli minorenni maggiore o uguale a 3</small><br />
+<b>_.__3.___</b>:<small> mancanza requisito di residenza al momento della presentazione della domanda</small><br />
+<b>_.___.4__</b>:<small> presentazione domanda oltre i termini</small><br />
+<b>_.___._5_</b>:<small> titolo di soggiorno non valido</small><br />
+<b>_.___.__6</b>:<small> esclusione domanda d'ufficio</small><br />;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="299427041">
+<param name="CRC" value="2460420811">
+<param name="CRCdata" value="19-ott-2017 16.50.25">
+</APPLET>
+</CENTER>
+<BR>

@@ -1,0 +1,468 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"
+	WIDTH=800 HEIGHT=820 MAYSCRIPT>
+	<param name="revision" value="$Revision: 19094 $">
+
+	<param name="Taratura" value="ASSEGNO DI CURA; 1.7.2015">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+	<param name="trendStarts"
+		value="paramassCur;casoIcef;casoassCura;reddassCura;casoProfili;casoPrevisione">
+
+	<param name="paramassCur"
+		value="current;Inf=0.18;Sup=0.28;Scaglione=5.0;Min1=80;Max1=80;Min2=125;Max2=250;Min3=250;Max3=500;Min4=400;Max4=800;Franchigia_ast=25000">
+	<param name="casoIcef" value="current;Icef=0.2">
+	<param name="casoassCura"
+		value="paramassCur,reddassCura;UltimoProfilo=4;Anno=2013;Gg01=31;Gg02=31;Gg03=30;Gg04=31;Gg05=30;Gg06=31;Gg07=31;Gg08=28;Gg09=15;Gg10=10;Gg11=10;Gg12=10;Gg13=10;Gg14=10;Gg15=10;Gg16=10;Gg17=10;Gg18=10;Precedente=0;V_1_6=1222222;V_7_18=1222222222333;Icef=0.25">
+	<param name="reddassCura"
+		value="current;Assegno_imposto=2500;C1_aut_ast=500;C1_dip_ast=600;C2_agr_ast=700;C3_imp_ast=800;C4_part_ast=900;Detraz_0=8100;Detraz_18=5400;Detraz_65=2000;Eta_ast=60;IA_ast=4000;IA_vigente=5848.68;PI5_oner=20000;Precedente=3000;C5_altri=5500;FPM=52000;C1_aut=1000;C1_dip=7200;C2_agr=1400;C3_imp=1600;C4_part=1800;PM=75000;">
+
+	<param name="casoProfili"
+		value="current,paramassCur;Profili=1;Icef=0.22">
+	<param name="casoPrevisione" value="current,paramassCur;Icef=0.22">
+
+
+	<param name="variables"
+		value="uno;g28scala;g29scala;g30scala;g31scala;lscala;rscala;pscala;tscala;vscala">
+
+	<param name="uno" value="1">
+
+	<param name="g28scala" value="uno/28;0.03571428571429">
+	<param name="g29scala" value="uno/29;0.03448275862069">
+	<param name="g30scala" value="uno/30;0.03333333333333">
+	<param name="g31scala" value="uno/31;0.03225806451613">
+
+	<param name="lscala" value="0.0001">
+	<param name="tscala" value="0.00001">
+	<param name="rscala" value="0.00002">
+	<param name="pscala" value="0.000005">
+	<param name="vscala" value="0.000000001">
+
+
+<param name="edges" value="PAT ASSEGNO DI CURA;Min1;Max1;Min2;Max2;Min3;Max3;Min4;Scaglione;PI5_grat;PI5_grat2;Detraz_0;Detraz_18;Detraz_65;M_inizio;M_fine;Id_domanda_uscita;
+V_1_6-g01;V_1_6-g02;V_1_6-g03;V_1_6-g04;V_1_6-g05;V_1_6-g06;V_7_18-g13;V_7_18-g14;V_7_18-g15;V_7_18-g16;V_7_18-g17;V_7_18-g18;V_7_18-g07;V_7_18-g08;V_7_18-g09;V_7_18-g10;V_7_18-g11;V_7_18-g12;percentuale-livello1;percentuale-livello2;percentuale-livello3;
+percentuale-livello4;livello1-assegno_max;livello2-assegno_max;livello3-assegno_max;livello4-assegno_max;ac07-ac0;ac08-ac0;ac09-ac0;ac10-ac0;ac11-ac0;ac12-ac0;ac13-ac1;ac14-ac1;ac15-ac1;ac16-ac1;ac17-ac1;ac18-ac1;ac0-assegno;ac1-assegno;g01-a01;
+g02-a02;g03-a03;g04-a04;g05-a05;g06-a06;g07-a07;g08-a08;g09-a09;g10-a10;g11-a11;g12-a12;g13-a13;g14-a14;g15-a15;g16-a16;g17-a17;g18-a18;Gg01-ac01;Gg02-ac02;Gg03-ac03;
+Gg04-ac04;Gg05-ac05;Gg06-ac06;Gg07-ac07;Gg08-ac08;Gg09-ac09;Gg10-ac10;Gg11-ac11;Gg12-ac12;Gg13-ac13;Gg14-ac14;Gg15-ac15;Gg16-ac16;Gg17-ac17;Gg18-ac18;a01-ac01;a02-ac02;a03-ac03;a04-ac04;a05-ac05;
+a06-ac06;a07-ac07;a08-ac08;a09-ac09;a10-ac10;a11-ac11;a12-ac12;a13-ac13;a14-ac14;a15-ac15;a16-ac16;a17-ac17;a18-ac18;Anno-gfeb0;anno1-gfeb1;Anno-anno1;1-anno1;Gg01-giorni;Gg02-giorni;Gg03-giorni;
+Gg04-giorni;Gg05-giorni;Gg06-giorni;Gg07-giorni0;Gg08-giorni0;Gg09-giorni0;Gg10-giorni0;Gg11-giorni0;Gg12-giorni0;Gg13-giorni1;Gg14-giorni1;Gg15-giorni1;Gg16-giorni1;Gg17-giorni1;Gg18-giorni1;ac01-ac;ac02-ac;ac03-ac;ac04-ac;ac05-ac;
+ac06-ac;ac-assegno;gg-giornitot;giorni1-giornitot;Anno-feb0;anno1-feb1;IA_vigente-maxIA;IA_ast-maxIA;Eta_ast-det_ast;PI5_oner-mpi5;mpi5-pi5;sem-semestre;sem1-semestre1;semes-semestri;semestre1-semestri;Assegno_imposto-arl;maxIA-arl;Check-checkOK;Icef-perc;Sup-perc;
+Inf-perc;perc-percentuale;checkOK-percentuale;Check-check1;big-check1;assegno_max-qa;Max4-qa;icefNonOK-big;icefNonOK-check1;checkOK-big;Cessazione-m1_2;Cessazione-m3_4;V_1_6-v1_6;check1-v1_6;V_7_18-v7_18;check1-v7_18;semestre-semes;v1_6-semes;semestre0-semestri;giorni-gg;
+giorni0-giornitot;v1_6-gg;check1-idonea;c5_ori-c5_ast;IA_ast-c5_ast;livello1-assegno_min;livello2-assegno_min;livello3-assegno_min;livello4-assegno_min;Profili-prof_id;idonea-prof_id;Revoche-revoche1;Revoche-revOK;Icef_prec-precOK;Sup_prec-precOK;precOK-percentuale;Icef-icefOK;Sup-icefOK;icefOK-icefNonOK;precOK-icefNonOK;
+gfeb1-ac08;sem0-semestre0;feb1-semestre0;UltimoProfilo-ultimo_livello;C1_aut_ast-c_ast;C1_dip_ast-c_ast;C2_agr_ast-c_ast;C3_imp_ast-c_ast;C4_part_ast-c_ast;c_ast-m_ast;Franchigia_ast-m_ast;m_ast-r_ast;Precedente-r_ast">
+
+
+
+<param name="PAT ASSEGNO DI CURA" value="text;node.ico;81;308;0;P.A.T. PAT ASSEGNO DI CURA 2013-2015 - (1.7.2015);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_ASSCURA;yModello_ASSCURA;700240158">
+<param name="Min1" value="1;node.ico;40;517;0;Min1 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin1;xMin1;1842081227">
+<param name="Max1" value="1;node.ico;83;515;0;Max1 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax1;xMax1;3602209589">
+<param name="Min2" value="1;node.ico;23;539;0;Min2 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin2;xMin2;2642120831">
+<param name="Max2" value="1;node.ico;71;537;0;Max2 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax2;xMax2;1923430576">
+<param name="Min3" value="1;node.ico;45;562;0;Min3 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin3;xMin3;4074661452">
+<param name="Max3" value="1;node.ico;90;558;0;Max3 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax3;xMax3;1556297894">
+<param name="Min4" value="1;node.ico;20;581;0;Min4 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin4;xMin4;857082118">
+<param name="Scaglione" value="1;node.ico;152;581;0;Scaglione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xScaglione;xScaglione;4025399416">
+<param name="PI5_grat" value="1;node.ico;397;318;0;PI5_grat = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPI5_grat;xPI5_grat;3846496996">
+<param name="PI5_grat2" value="1;node.ico;397;318;0;PI5_grat2 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPI5_grat2;xPI5_grat2;3846496997">
+<param name="Detraz_0" value="1;node.ico;141;526;0;Detraz_0 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xDetraz_0;xDetraz_0;2762691786">
+<param name="Detraz_18" value="1;node.ico;146;542;0;Detraz_18 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xDetraz_18;xDetraz_18;2822326754">
+<param name="Detraz_65" value="1;node.ico;145;558;0;Detraz_65 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xDetraz_65;xDetraz_65;3069938885">
+<param name="M_inizio" value="1;node.ico;752;426;0;M_inizio = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xM_inizio;xM_inizio;3027175283">
+<param name="M_fine" value="1;node.ico;754;452;0;M_fine = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xM_fine;xM_fine;2810285953">
+<param name="Id_domanda_uscita" value="1;node.ico;75;283;0;Id_domanda_uscita = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xId_domanda_uscita;xId_domanda_uscita;4013333719">
+<param name="V_1_6" value="1;node.ico;298;540;0;V_1_6 = ;0.0;PlusNode;ValueInput;NoOutput;0;7;g01;g02;g03;g04;g05;g06;v1_6;1.0;NoCurve;xV_1_6;xV_1_6;1208448300">
+<param name="g01" value="0;node.ico;300;600;0;g01 =  - 2.000*V_1_6;0.0;CrossSumNode;TokenInput;NoOutput;1;V_1_6;1;a01;0.1;-2.0;NoCurve;xg01;xg01;2183339100">
+<param name="g02" value="0;node.ico;269;579;0;g02 =  - 3.000*V_1_6;0.0;CrossSumNode;TokenInput;NoOutput;1;V_1_6;1;a02;0.1;-3.0;NoCurve;xg02;xg02;2694411448">
+<param name="g03" value="0;node.ico;243;562;0;g03 =  - 4.000*V_1_6;0.0;CrossSumNode;TokenInput;NoOutput;1;V_1_6;1;a03;0.1;-4.0;NoCurve;xg03;xg03;2107202104">
+<param name="g04" value="0;node.ico;238;542;0;g04 =  - 5.000*V_1_6;0.0;CrossSumNode;TokenInput;NoOutput;1;V_1_6;1;a04;0.1;-5.0;NoCurve;xg04;xg04;3525662761">
+<param name="g05" value="0;node.ico;258;523;0;g05 =  - 6.000*V_1_6;0.0;CrossSumNode;TokenInput;NoOutput;1;V_1_6;1;a05;0.1;-6.0;NoCurve;xg05;xg05;1737175711">
+<param name="g06" value="0;node.ico;295;504;0;g06 =  - 7.000*V_1_6;0.0;CrossSumNode;TokenInput;NoOutput;1;V_1_6;1;a06;0.1;-7.0;NoCurve;xg06;xg06;1655992301">
+<param name="V_7_18" value="1;node.ico;458;548;0;V_7_18 = ;0.0;PlusNode;ValueInput;NoOutput;0;13;g13;g14;g15;g16;g17;g18;g07;g08;g09;g10;g11;g12;v7_18;1.0;NoCurve;xV_7_18;xV_7_18;914127732">
+<param name="g13" value="0;node.ico;438;497;0;g13 =  - 8.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a13;0.1;-8.0;NoCurve;xg13;xg13;344432585">
+<param name="g14" value="0;node.ico;408;516;0;g14 =  - 9.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a14;0.1;-9.0;NoCurve;xg14;xg14;1703553819">
+<param name="g15" value="0;node.ico;395;538;0;g15 =  - 10.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a15;0.1;-10.0;NoCurve;xg15;xg15;2998131610">
+<param name="g16" value="0;node.ico;402;559;0;g16 =  - 11.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a16;0.1;-11.0;NoCurve;xg16;xg16;3690886019">
+<param name="g17" value="0;node.ico;421;578;0;g17 =  - 12.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a17;0.1;-12.0;NoCurve;xg17;xg17;262980588">
+<param name="g18" value="0;node.ico;439;598;0;g18 =  - 13.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a18;0.1;-13.0;NoCurve;xg18;xg18;633838964">
+<param name="g07" value="0;node.ico;479;599;0;g07 =  - 2.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a07;0.1;-2.0;NoCurve;xg07;xg07;3655781836">
+<param name="g08" value="0;node.ico;495;576;0;g08 =  - 3.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a08;0.1;-3.0;NoCurve;xg08;xg08;4006205463">
+<param name="g09" value="0;node.ico;510;555;0;g09 =  - 4.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a09;0.1;-4.0;NoCurve;xg09;xg09;3235870206">
+<param name="g10" value="0;node.ico;518;535;0;g10 =  - 5.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a10;0.1;-5.0;NoCurve;xg10;xg10;2632749807">
+<param name="g11" value="0;node.ico;506;516;0;g11 =  - 6.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a11;0.1;-6.0;NoCurve;xg11;xg11;1036042439">
+<param name="g12" value="0;node.ico;479;497;0;g12 =  - 7.000*V_7_18;0.0;CrossSumNode;TokenInput;NoOutput;1;V_7_18;1;a12;0.1;-7.0;NoCurve;xg12;xg12;1686859536">
+<param name="percentuale" value="0;node.ico;222;424;0;percentuale =  perc * checkOK * precOK;0.0;TimesNode;NoInput;NoOutput;3;perc;checkOK;precOK;4;livello1;livello2;livello3;livello4;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpercentuale;xpercentuale;2956606458">
+<param name="livello1" value="2;node.ico;116;456;0;livello1 =  percentuale;0.0;ProbNode;NoInput;IntermediateOutput;1;percentuale;2;assegno_max;assegno_min;0.0;1.0;StairsCurve;liv1Curve;xlivello1;xlivello1;2905191584">
+<param name="livello2" value="2;node.ico;169;449;0;livello2 =  percentuale;0.0;ProbNode;NoInput;IntermediateOutput;1;percentuale;2;assegno_max;assegno_min;0.0;1.0;StairsCurve;liv2Curve;xlivello2;xlivello2;2041257487">
+<param name="livello3" value="2;node.ico;247;449;0;livello3 =  percentuale;0.0;ProbNode;NoInput;IntermediateOutput;1;percentuale;2;assegno_max;assegno_min;0.0;1.0;StairsCurve;liv3Curve;xlivello3;xlivello3;1530748873">
+<param name="livello4" value="2;node.ico;322;449;0;livello4 =  percentuale;0.0;ProbNode;NoInput;IntermediateOutput;1;percentuale;2;assegno_max;assegno_min;0.0;1.0;StairsCurve;liv4Curve;xlivello4;xlivello4;1931130260">
+<param name="assegno_max" value="2;node.ico;261;484;0;assegno_max =  MAX(  livello1,  livello2,  livello3,  livello4 );0.0;NumMaxNode;NoInput;NoOutput;4;livello1;livello2;livello3;livello4;1;qa;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xassegno_max;xassegno_max;245037388">
+<param name="ac07" value="2;node.ico;615;332;0;ac07 =  0.032*Gg07 * a07;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg07;a07;1;ac0;tscala;g31scala;1.0;1.0;NoCurve;xac07;xac07;2423920033">
+<param name="ac0" value="0;node.ico;560;400;0;ac0 =  ac07 + ac08 + ac09 + ac10 + ac11 + ac12;0.0;PlusNode;NoInput;NoOutput;6;ac07;ac08;ac09;ac10;ac11;ac12;1;assegno;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xac0;xac0;4240943024">
+<param name="ac08" value="2;node.ico;614;357;0;ac08 =  Gg08 * a08 * gfeb1;0.0;TimesNode;NoInput;IntermediateOutput;3;Gg08;a08;gfeb1;1;ac0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xac08;xac08;3187478087">
+<param name="ac09" value="2;node.ico;616;379;0;ac09 =  0.032*Gg09 * a09;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg09;a09;1;ac0;tscala;g31scala;1.0;1.0;NoCurve;xac09;xac09;122766505">
+<param name="ac10" value="2;node.ico;615;401;0;ac10 =  0.033*Gg10 * a10;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg10;a10;1;ac0;tscala;g30scala;1.0;1.0;NoCurve;xac10;xac10;75373788">
+<param name="ac11" value="2;node.ico;616;424;0;ac11 =  0.032*Gg11 * a11;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg11;a11;1;ac0;tscala;g31scala;1.0;1.0;NoCurve;xac11;xac11;3910146587">
+<param name="ac12" value="2;node.ico;616;446;0;ac12 =  0.033*Gg12 * a12;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg12;a12;1;ac0;tscala;g30scala;1.0;1.0;NoCurve;xac12;xac12;3322410740">
+<param name="ac13" value="2;node.ico;610;468;0;ac13 =  0.032*Gg13 * a13;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg13;a13;1;ac1;tscala;g31scala;1.0;1.0;NoCurve;xac13;xac13;3225205879">
+<param name="ac1" value="0;node.ico;553;471;0;ac1 =  ac13 + ac14 + ac15 + ac16 + ac17 + ac18;0.0;PlusNode;NoInput;NoOutput;6;ac13;ac14;ac15;ac16;ac17;ac18;1;assegno;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xac1;xac1;4092944276">
+<param name="ac14" value="2;node.ico;613;493;0;ac14 =  0.032*Gg14 * a14;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg14;a14;1;ac1;tscala;g31scala;1.0;1.0;NoCurve;xac14;xac14;620582464">
+<param name="ac15" value="2;node.ico;616;515;0;ac15 =  0.033*Gg15 * a15;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg15;a15;1;ac1;tscala;g30scala;1.0;1.0;NoCurve;xac15;xac15;2164470845">
+<param name="ac16" value="2;node.ico;615;539;0;ac16 =  0.032*Gg16 * a16;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg16;a16;1;ac1;tscala;g31scala;1.0;1.0;NoCurve;xac16;xac16;1931418593">
+<param name="ac17" value="2;node.ico;619;563;0;ac17 =  0.033*Gg17 * a17;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg17;a17;1;ac1;tscala;g30scala;1.0;1.0;NoCurve;xac17;xac17;215500676">
+<param name="ac18" value="2;node.ico;619;585;0;ac18 =  0.032*Gg18 * a18;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg18;a18;1;ac1;tscala;g31scala;1.0;1.0;NoCurve;xac18;xac18;2324942003">
+<param name="assegno" value="2;node.ico;553;437;0;assegno =  ac0 + ac1 + ac;0.0;PlusNode;NoInput;IntermediateOutput;3;ac0;ac1;ac;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xassegno;xassegno;3985164427">
+<param name="a01" value="0;node.ico;264;600;0;a01 =  g01);0.0;NumTransNode;NoInput;NoOutput;1;g01;1;ac01;1.0;1.0;LinearCurve;acCurve;xa01;xa01;3210681852">
+<param name="a02" value="0;node.ico;225;582;0;a02 =  g02);0.0;NumTransNode;NoInput;NoOutput;1;g02;1;ac02;tscala;1.0;LinearCurve;acCurve;xa02;xa02;2391124685">
+<param name="a03" value="0;node.ico;201;562;0;a03 =  g03);0.0;NumTransNode;NoInput;NoOutput;1;g03;1;ac03;tscala;1.0;LinearCurve;acCurve;xa03;xa03;1329249936">
+<param name="a04" value="0;node.ico;202;542;0;a04 =  g04);0.0;NumTransNode;NoInput;NoOutput;1;g04;1;ac04;tscala;1.0;LinearCurve;acCurve;xa04;xa04;4112933903">
+<param name="a05" value="0;node.ico;221;523;0;a05 =  g05);0.0;NumTransNode;NoInput;NoOutput;1;g05;1;ac05;tscala;1.0;LinearCurve;acCurve;xa05;xa05;1162667577">
+<param name="a06" value="0;node.ico;256;503;0;a06 =  g06);0.0;NumTransNode;NoInput;NoOutput;1;g06;1;ac06;tscala;1.0;LinearCurve;acCurve;xa06;xa06;2329267767">
+<param name="a07" value="0;node.ico;518;599;0;a07 =  g07);0.0;NumTransNode;NoInput;NoOutput;1;g07;1;ac07;tscala;1.0;LinearCurve;acCurve;xa07;xa07;3496012551">
+<param name="a08" value="0;node.ico;534;577;0;a08 =  g08);0.0;NumTransNode;NoInput;NoOutput;1;g08;1;ac08;tscala;1.0;LinearCurve;acCurve;xa08;xa08;1075304035">
+<param name="a09" value="0;node.ico;547;555;0;a09 =  g09);0.0;NumTransNode;NoInput;NoOutput;1;g09;1;ac09;tscala;1.0;LinearCurve;acCurve;xa09;xa09;1341071856">
+<param name="a10" value="0;node.ico;555;536;0;a10 =  g10);0.0;NumTransNode;NoInput;NoOutput;1;g10;1;ac10;tscala;1.0;LinearCurve;acCurve;xa10;xa10;2086842905">
+<param name="a11" value="0;node.ico;544;516;0;a11 =  g11);0.0;NumTransNode;NoInput;NoOutput;1;g11;1;ac11;tscala;1.0;LinearCurve;acCurve;xa11;xa11;3482939046">
+<param name="a12" value="0;node.ico;517;497;0;a12 =  g12);0.0;NumTransNode;NoInput;NoOutput;1;g12;1;ac12;tscala;1.0;LinearCurve;acCurve;xa12;xa12;2807658003">
+<param name="a13" value="0;node.ico;399;497;0;a13 =  g13);0.0;NumTransNode;NoInput;NoOutput;1;g13;1;ac13;tscala;1.0;LinearCurve;acCurve;xa13;xa13;2514589564">
+<param name="a14" value="0;node.ico;366;516;0;a14 =  g14);0.0;NumTransNode;NoInput;NoOutput;1;g14;1;ac14;tscala;1.0;LinearCurve;acCurve;xa14;xa14;4152249196">
+<param name="a15" value="0;node.ico;356;537;0;a15 =  g15);0.0;NumTransNode;NoInput;NoOutput;1;g15;1;ac15;tscala;1.0;LinearCurve;acCurve;xa15;xa15;3757601595">
+<param name="a16" value="0;node.ico;362;558;0;a16 =  g16);0.0;NumTransNode;NoInput;NoOutput;1;g16;1;ac16;tscala;1.0;LinearCurve;acCurve;xa16;xa16;2888572091">
+<param name="a17" value="0;node.ico;380;579;0;a17 =  g17);0.0;NumTransNode;NoInput;NoOutput;1;g17;1;ac17;tscala;1.0;LinearCurve;acCurve;xa17;xa17;678924140">
+<param name="a18" value="0;node.ico;399;598;0;a18 =  g18);0.0;NumTransNode;NoInput;NoOutput;1;g18;1;ac18;tscala;1.0;LinearCurve;acCurve;xa18;xa18;129543418">
+<param name="Gg01" value="1;node.ico;433;353;0;Gg01 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac01;giorni;1.0;NoCurve;xGg01;xGg01;3195964771">
+<param name="ac01" value="2;node.ico;484;352;0;ac01 =  0.032*Gg01 * a01;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg01;a01;1;ac;tscala;g31scala;1.0;1.0;NoCurve;xac01;xac01;1143889638">
+<param name="Gg02" value="1;node.ico;436;375;0;Gg02 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac02;giorni;1.0;NoCurve;xGg02;xGg02;1711153154">
+<param name="ac02" value="2;node.ico;488;379;0;ac02 =  0.032*Gg02 * a02;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg02;a02;1;ac;tscala;g31scala;1.0;1.0;NoCurve;xac02;xac02;4149114477">
+<param name="Gg03" value="1;node.ico;437;399;0;Gg03 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac03;giorni;1.0;NoCurve;xGg03;xGg03;2331397031">
+<param name="ac03" value="2;node.ico;484;401;0;ac03 =  0.033*Gg03 * a03;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg03;a03;1;ac;tscala;g30scala;1.0;1.0;NoCurve;xac03;xac03;2855823285">
+<param name="Gg04" value="1;node.ico;436;422;0;Gg04 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac04;giorni;1.0;NoCurve;xGg04;xGg04;2078199164">
+<param name="ac04" value="2;node.ico;485;424;0;ac04 =  0.032*Gg04 * a04;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg04;a04;1;ac;tscala;g31scala;1.0;1.0;NoCurve;xac04;xac04;4115529574">
+<param name="Gg05" value="1;node.ico;436;445;0;Gg05 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac05;giorni;1.0;NoCurve;xGg05;xGg05;3202468876">
+<param name="ac05" value="2;node.ico;485;446;0;ac05 =  0.033*Gg05 * a05;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg05;a05;1;ac;tscala;g30scala;1.0;1.0;NoCurve;xac05;xac05;3850730103">
+<param name="Gg06" value="1;node.ico;437;467;0;Gg06 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac06;giorni;1.0;NoCurve;xGg06;xGg06;15115016">
+<param name="ac06" value="2;node.ico;485;469;0;ac06 =  0.032*Gg06 * a06;0.0;TimesNode;NoInput;IntermediateOutput;2;Gg06;a06;1;ac;tscala;g31scala;1.0;1.0;NoCurve;xac06;xac06;3799473730">
+<param name="Gg07" value="1;node.ico;664;334;0;Gg07 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac07;giorni0;1.0;NoCurve;xGg07;xGg07;856351371">
+<param name="Gg08" value="1;node.ico;666;357;0;Gg08 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac08;giorni0;1.0;NoCurve;xGg08;xGg08;1151835100">
+<param name="Gg09" value="1;node.ico;664;378;0;Gg09 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac09;giorni0;1.0;NoCurve;xGg09;xGg09;519081776">
+<param name="Gg10" value="1;node.ico;667;403;0;Gg10 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac10;giorni0;1.0;NoCurve;xGg10;xGg10;3092580623">
+<param name="Gg11" value="1;node.ico;664;425;0;Gg11 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac11;giorni0;1.0;NoCurve;xGg11;xGg11;2503384608">
+<param name="Gg12" value="1;node.ico;664;447;0;Gg12 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac12;giorni0;1.0;NoCurve;xGg12;xGg12;904677254">
+<param name="Gg13" value="1;node.ico;663;469;0;Gg13 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac13;giorni1;1.0;NoCurve;xGg13;xGg13;3421184406">
+<param name="Gg14" value="1;node.ico;665;491;0;Gg14 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac14;giorni1;1.0;NoCurve;xGg14;xGg14;3906354562">
+<param name="Gg15" value="1;node.ico;667;515;0;Gg15 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac15;giorni1;1.0;NoCurve;xGg15;xGg15;1885026704">
+<param name="Gg16" value="1;node.ico;666;537;0;Gg16 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac16;giorni1;1.0;NoCurve;xGg16;xGg16;3923848282">
+<param name="Gg17" value="1;node.ico;666;559;0;Gg17 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac17;giorni1;1.0;NoCurve;xGg17;xGg17;3994720624">
+<param name="Gg18" value="1;node.ico;669;583;0;Gg18 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ac18;giorni1;1.0;NoCurve;xGg18;xGg18;3813188316">
+<param name="Anno" value="1;node.ico;588;291;0;Anno = ;0.0;PlusNode;ValueInput;NoOutput;0;3;gfeb0;anno1;feb0;lscala;NoCurve;xAnno;xAnno;3861661706">
+<param name="gfeb0" value="0;node.ico;568;339;0;gfeb0 =  Anno);0.0;NumTransNode;NoInput;NoOutput;1;Anno;0;1.0;1.0;LinearCurve;annoCurve;xgfeb0;xgfeb0;815197783">
+<param name="anno1" value="0;node.ico;652;289;0;anno1 =  Anno + 1;0.0;PlusNode;NoInput;NoOutput;2;Anno;1;2;gfeb1;feb1;lscala;1.0;1.0;1.0;NoCurve;xanno1;xanno1;2530643831">
+<param name="gfeb1" value="0;node.ico;723;333;0;gfeb1 =  anno1);0.0;NumTransNode;NoInput;NoOutput;1;anno1;1;ac08;1.0;1.0;LinearCurve;annoCurve;xgfeb1;xgfeb1;3084758191">
+<param name="1" value="0;node.ico;614;306;0;1 = ;0.0;TimesNode;NoInput;NoOutput;0;1;anno1;1.0;NoCurve;x1;x1;4275476214">
+<param name="giorni" value="0;node.ico;370;401;0;giorni =  Gg01 + Gg02 + Gg03 + Gg04 + Gg05 + Gg06;0.0;PlusNode;NoInput;NoOutput;6;Gg01;Gg02;Gg03;Gg04;Gg05;Gg06;1;gg;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xgiorni;xgiorni;658475332">
+<param name="giorni0" value="0;node.ico;721;379;0;giorni0 =  Gg07 + Gg08 + Gg09 + Gg10 + Gg11 + Gg12;0.0;PlusNode;NoInput;NoOutput;6;Gg07;Gg08;Gg09;Gg10;Gg11;Gg12;1;giornitot;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xgiorni0;xgiorni0;4292105868">
+<param name="giorni1" value="0;node.ico;719;521;0;giorni1 =  Gg13 + Gg14 + Gg15 + Gg16 + Gg17 + Gg18;0.0;PlusNode;NoInput;NoOutput;6;Gg13;Gg14;Gg15;Gg16;Gg17;Gg18;1;giornitot;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xgiorni1;xgiorni1;2925607521">
+<param name="ac" value="0;node.ico;538;377;0;ac =  ac01 + ac02 + ac03 + ac04 + ac05 + ac06;0.0;PlusNode;NoInput;NoOutput;6;ac01;ac02;ac03;ac04;ac05;ac06;1;assegno;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xac;xac;1874595055">
+<param name="gg" value="0;node.ico;320;402;0;gg =  giorni * v1_6;0.0;TimesNode;NoInput;NoOutput;2;giorni;v1_6;1;giornitot;0.0;1.0;1.0;1.0;NoCurve;xgg;xgg;4037786213">
+<param name="giornitot" value="0;node.ico;736;594;0;giornitot =  gg + giorni0 + giorni1;0.0;PlusNode;NoInput;NoOutput;3;gg;giorni0;giorni1;0;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiornitot;xgiornitot;4223296577">
+<param name="feb0" value="0;node.ico;572;316;0;feb0 =  Anno);0.0;NumTransNode;NoInput;NoOutput;1;Anno;0;1.0;1.0;LinearCurve;febCurve;xfeb0;xfeb0;4197286742">
+<param name="feb1" value="0;node.ico;711;305;0;feb1 =  anno1);0.0;NumTransNode;NoInput;NoOutput;1;anno1;1;semestre0;1.0;1.0;LinearCurve;febCurve;xfeb1;xfeb1;178794004">
+<param name="IA_vigente" value="1;node.ico;158;334;0;IA_vigente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;maxIA;pscala;NoCurve;xIA_vigente;xIA_vigente;1376301820">
+<param name="maxIA" value="0;node.ico;221;341;0;maxIA =  MAX(  IA_vigente,  IA_ast );0.0;NumMaxNode;NoInput;NoOutput;2;IA_vigente;IA_ast;1;arl;rscala;1.0;1.0;1.0;NoCurve;xmaxIA;xmaxIA;483512087">
+<param name="IA_ast" value="1;node.ico;176;360;0;IA_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;2;maxIA;c5_ast;pscala;NoCurve;xIA_ast;xIA_ast;1401037271">
+<param name="Eta_ast" value="1;node.ico;273;342;0;Eta_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det_ast;pscala;NoCurve;xEta_ast;xEta_ast;3874691906">
+<param name="det_ast" value="0;node.ico;345;342;0;det_ast =  Eta_ast);0.0;NumTransNode;NoInput;NoOutput;1;Eta_ast;0;rscala;1.0;StepCurve;detCurve;xdet_ast;xdet_ast;622277788">
+<param name="PI5_oner" value="1;node.ico;468;319;0;PI5_oner = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mpi5;pscala;NoCurve;xPI5_oner;xPI5_oner;2247358038">
+<param name="mpi5" value="0;node.ico;531;316;0;mpi5 =  MAX(  PI5_oner );0.0;NumMaxNode;NoInput;NoOutput;1;PI5_oner;1;pi5;pscala;1.0;NoCurve;xmpi5;xmpi5;1683076841">
+<param name="pi5" value="0;node.ico;473;297;0;pi5 =  mpi5;0.0;MinusNode;NoInput;NoOutput;1;mpi5;0;pscala;1.0;NoCurve;xpi5;xpi5;3759393433">
+<param name="sem" value="0;node.ico;430;289;0;sem = ;0.0;TimesNode;NoInput;NoOutput;0;1;semestre;0.0;NoCurve;xsem;xsem;927674079">
+<param name="semestre" value="0;node.ico;533;290;0;semestre =  sem;0.0;PlusNode;NoInput;NoOutput;1;sem;1;semes;1.0;1.0;NoCurve;xsemestre;xsemestre;3225335702">
+<param name="sem1" value="0;node.ico;751;285;0;sem1 = ;0.0;TimesNode;NoInput;NoOutput;0;1;semestre1;0.0;NoCurve;xsem1;xsem1;3422318785">
+<param name="semestre1" value="0;node.ico;734;262;0;semestre1 =  sem1;0.0;PlusNode;NoInput;NoOutput;1;sem1;1;semestri;0.0;1.0;NoCurve;xsemestre1;xsemestre1;2870153378">
+<param name="semes" value="0;node.ico;623;243;0;semes =  semestre * v1_6;0.0;TimesNode;NoInput;NoOutput;2;semestre;v1_6;1;semestri;0.0;1.0;1.0;1.0;NoCurve;xsemes;xsemes;2347746676">
+<param name="semestri" value="0;node.ico;701;240;0;semestri =  semes + semestre0 + semestre1;0.0;PlusNode;NoInput;NoOutput;3;semes;semestre0;semestre1;0;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xsemestri;xsemestri;1394598866">
+<param name="Assegno_imposto" value="1;node.ico;290;316;0;Assegno_imposto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;pscala;NoCurve;xAssegno_imposto;xAssegno_imposto;1002509957">
+<param name="arl" value="0;node.ico;187;313;0;arl =  Assegno_imposto + maxIA;0.0;PlusNode;NoInput;NoOutput;2;Assegno_imposto;maxIA;0;rscala;1.0;1.0;1.0;NoCurve;xarl;xarl;3445096264">
+<param name="Check" value="1;node.ico;458;266;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;checkOK;check1;1.0;NoCurve;xCheck;xCheck;3191744679">
+<param name="checkOK" value="0;node.ico;531;265;0;checkOK = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;2;percentuale;big;1.0;0.0;NoCurve;xcheckOK;xcheckOK;2082064879">
+<param name="Icef" value="1;node.ico;224;380;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc;icefOK;0.5;NoCurve;xIcef;xIcef;2202874557">
+<param name="perc" value="0;node.ico;226;404;0;perc =  MAX( 0, MIN( 1, (Icef - Sup) / (Inf - Sup) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Sup;Inf;1;percentuale;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xperc;xperc;2235879343">
+<param name="Sup" value="1;node.ico;285;406;0;Sup = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc;icefOK;0.5;NoCurve;xSup;xSup;4184306553">
+<param name="Inf" value="1;node.ico;185;405;0;Inf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;perc;0.5;NoCurve;xInf;xInf;853001414">
+<param name="check1" value="2;node.ico;388;268;0;check1 =  Check + big + 400000.000*icefNonOK;0.0;PlusNode;NoInput;IntermediateOutput;3;Check;big;icefNonOK;3;v1_6;v7_18;idonea;vscala;1.0;1.0;400000.0;1.0;1.0;1.0;1.0;NoCurve;xcheck1;xcheck1;1595565095">
+<param name="big" value="0;node.ico;361;296;0;big =  1000000000.000*icefNonOK * checkOK;0.0;TimesNode;NoInput;NoOutput;2;icefNonOK;checkOK;1;check1;vscala;1.0E9;1.0;0.0;NoCurve;xbig;xbig;4149660007">
+<param name="qa" value="0;node.ico;120;485;0;qa =  assegno_max / Max4;0.0;DivideNode;NoInput;NoOutput;2;assegno_max;Max4;0;1.0;1.0;1.0;1.0;NoCurve;xqa;xqa;2436842087">
+<param name="Max4" value="1;node.ico;66;581;0;Max4 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;qa;tscala;NoCurve;xMax4;xMax4;1804907293">
+<param name="icefNonOK" value="0;node.ico;344;380;0;icefNonOK =  - icefOK * precOK;0.0;ProbNode;NoInput;NoOutput;2;icefOK;precOK;2;check1;big;1.0;1.0;1.0;0.0;NoCurve;xicefNonOK;xicefNonOK;3365763547">
+<param name="Cessazione" value="1;node.ico;243;290;0;Cessazione = ;0.0;PlusNode;ValueInput;NoOutput;0;2;m1_2;m3_4;1.0;NoCurve;xCessazione;xCessazione;2320928810">
+<param name="m1_2" value="0;node.ico;169;292;0;m1_2 =  Cessazione);0.0;NumTransNode;NoInput;NoOutput;1;Cessazione;0;1.0;1.0;LinearCurve;m1_2Curve;xm1_2;xm1_2;3584425803">
+<param name="m3_4" value="0;node.ico;317;291;0;m3_4 =  Cessazione);0.0;NumTransNode;NoInput;NoOutput;1;Cessazione;0;1.0;1.0;LinearCurve;m3_4Curve;xm3_4;xm3_4;523405524">
+<param name="v1_6" value="0;node.ico;320;562;0;v1_6 =  V_1_6 - V_1_6 * check1;0.0;ProbNode;NoInput;NoOutput;2;V_1_6;check1;2;semes;gg;0.0;1.0;0.0;0.0;NoCurve;xv1_6;xv1_6;4139138834">
+<param name="v7_18" value="0;node.ico;356;603;0;v7_18 =  V_7_18 - V_7_18 * check1;0.0;ProbNode;NoInput;NoOutput;2;V_7_18;check1;0;0.0;1.0;0.0;0.0;NoCurve;xv7_18;xv7_18;1411901418">
+<param name="semestre0" value="0;node.ico;660;263;0;semestre0 =  sem0 + feb1;0.0;PlusNode;NoInput;NoOutput;2;sem0;feb1;1;semestri;0.0;1.0;1.0;1.0;NoCurve;xsemestre0;xsemestre0;1936629760">
+<param name="idonea" value="0;node.ico;330;269;0;idonea = check1 == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;check1;1;prof_id;1.0;0.0;NoCurve;xidonea;xidonea;1998994780">
+<param name="c5_ori" value="0;node.ico;295;361;0;c5_ori = ;0.0;PlusNode;NoInput;NoOutput;0;1;c5_ast;0.0;NoCurve;xc5_ori;xc5_ori;2388052398">
+<param name="c5_ast" value="0;node.ico;235;360;0;c5_ast =  c5_ori - IA_ast;0.0;MinusNode;NoInput;NoOutput;2;c5_ori;IA_ast;0;0.0;1.0;1.0;1.0;NoCurve;xc5_ast;xc5_ast;2648999117">
+<param name="assegno_min" value="0;node.ico;207;473;0;assegno_min =  Min(  livello1,  livello2,  livello3,  livello4 );0.0;NumMinNode;NoInput;NoOutput;4;livello1;livello2;livello3;livello4;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xassegno_min;xassegno_min;2344355341">
+<param name="Profili" value="1;node.ico;137;503;0;Profili = ;0.0;ProbNode;ValueInput;NoOutput;0;1;prof_id;0.5;NoCurve;xProfili;xProfili;2481384777">
+<param name="prof_id" value="0;node.ico;190;502;0;prof_id = ;0.0;ProbNode;NoInput;NoOutput;2;Profili;idonea;0;0.0;0.0;0.0;0.0;NoCurve;xprof_id;xprof_id;4211524554">
+<param name="Revoche" value="1;node.ico;485;243;0;Revoche = ;0.0;PlusNode;ValueInput;NoOutput;0;2;revoche1;revOK;1.0;NoCurve;xRevoche;xRevoche;1696004596">
+<param name="revoche1" value="2;node.ico;416;243;0;revoche1 =  Revoche;0.0;PlusNode;NoInput;IntermediateOutput;1;Revoche;0;vscala;1.0;NoCurve;xrevoche1;xrevoche1;579506021">
+<param name="revOK" value="0;node.ico;549;242;0;revOK = Revoche == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Revoche;0;1.0;0.0;NoCurve;xrevOK;xrevOK;2362689482">
+<param name="Icef_prec" value="1;node.ico;170;382;0;Icef_prec = ;0.0;ProbNode;ValueInput;NoOutput;0;1;precOK;0.5;NoCurve;xIcef_prec;xIcef_prec;299409180">
+<param name="precOK" value="0;node.ico;137;425;0;precOK = Icef_prec <= Sup_prec;0.0;NumLeNode;NoInput;NoOutput;2;Icef_prec;Sup_prec;2;percentuale;icefNonOK;1.0;1.0;1.0;1.0;NoCurve;xprecOK;xprecOK;198352339">
+<param name="Sup_prec" value="1;node.ico;126;401;0;Sup_prec = ;0.0;ProbNode;ValueInput;NoOutput;0;1;precOK;0.5;NoCurve;xSup_prec;xSup_prec;1985695046">
+<param name="icefOK" value="0;node.ico;274;380;0;icefOK = Icef <= Sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;Sup;1;icefNonOK;1.0;1.0;1.0;1.0;NoCurve;xicefOK;xicefOK;3538975514">
+<param name="sem0" value="0;node.ico;596;268;0;sem0 = ;0.0;TimesNode;NoInput;NoOutput;0;1;semestre0;0.0;NoCurve;xsem0;xsem0;1541647765">
+<param name="UltimoProfilo" value="1;node.ico;50;604;0;UltimoProfilo = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ultimo_livello;0.1;NoCurve;xUltimoProfilo;xUltimoProfilo;733324693">
+<param name="ultimo_livello" value="2;node.ico;157;605;0;ultimo_livello =  UltimoProfilo);0.0;NumTransNode;NoInput;IntermediateOutput;1;UltimoProfilo;0;tscala;1.0;LinearCurve;ultimoCurve;xultimo_livello;xultimo_livello;1850585845">
+<param name="C1_aut_ast" value="1;node.ico;37;385;0;C1_aut_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC1_aut_ast;xC1_aut_ast;2831234147">
+<param name="c_ast" value="0;node.ico;101;380;0;c_ast =  C1_aut_ast + C1_dip_ast + C2_agr_ast + C3_imp_ast + C4_part_ast;0.0;PlusNode;NoInput;NoOutput;5;C1_aut_ast;C1_dip_ast;C2_agr_ast;C3_imp_ast;C4_part_ast;1;m_ast;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xc_ast;yc_ast;3831419158">
+<param name="C1_dip_ast" value="1;node.ico;39;412;0;C1_dip_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC1_dip_ast;xC1_dip_ast;538795424">
+<param name="C2_agr_ast" value="1;node.ico;39;437;0;C2_agr_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC2_agr_ast;xC2_agr_ast;2139060959">
+<param name="C3_imp_ast" value="1;node.ico;37;461;0;C3_imp_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC3_imp_ast;xC3_imp_ast;1447153061">
+<param name="C4_part_ast" value="1;node.ico;40;489;0;C4_part_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC4_part_ast;xC4_part_ast;2497360901">
+<param name="m_ast" value="0;node.ico;130;357;0;m_ast =  Min(  c_ast,  Franchigia_ast );0.0;NumMinNode;NoInput;NoOutput;2;c_ast;Franchigia_ast;1;r_ast;rscala;1.0;1.0;1.0;NoCurve;xm_ast;xm_ast;1756809967">
+<param name="Franchigia_ast" value="1;node.ico;51;356;0;Franchigia_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;m_ast;rscala;NoCurve;xFranchigia_ast;xFranchigia_ast;1500663204">
+<param name="r_ast" value="0;node.ico;102;324;0;r_ast =  m_ast + Precedente;0.0;PlusNode;NoInput;NoOutput;2;m_ast;Precedente;0;rscala;1.0;1.0;1.0;NoCurve;xr_ast;xr_ast;1741393218">
+<param name="Precedente" value="1;node.ico;38;326;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;tscala;NoCurve;xPrecedente;xPrecedente;215136025">
+
+<param name="acCurve" value="LinearCurve;0.0;0.0;1.0;livello1;2.0;livello2;3.0;livello3;4.0;livello4">
+<param name="annoCurve" value="LinearCurve;2009.0;g28scala;2011.0;g28scala;2012.0;g29scala;2013.0;g28scala;2015.0;g28scala;2016.0;g29scala;2017.0;g28scala;2019.0;g28scala;2020.0;g29scala;2021.0;g28scala;2023.0;g28scala;2024.0;g29scala">
+<param name="detCurve" value="StepCurve;0.0;Detraz_0;18.0;Detraz_18;65.0;Detraz_65">
+<param name="febCurve" value="LinearCurve;2009.0;28.0;2011.0;28.0;2012.0;29.0;2013.0;28.0;2015.0;28.0;2016.0;29.0;2017.0;28.0;2019.0;28.0;2020.0;29.0;2021.0;28.0;2023.0;28.0;2024.0;29.0">
+<param name="liv1Curve" value="StairsCurve;0.0;0.0;Min1;0.001;Scaglione;0.1;Max1;1.0">
+<param name="liv2Curve" value="StairsCurve;0.0;0.0;Min2;0.001;Scaglione;0.1;Max2;1.0">
+<param name="liv3Curve" value="StairsCurve;0.0;0.0;Min3;0.001;Scaglione;0.1;Max3;1.0">
+<param name="liv4Curve" value="StairsCurve;0.0;0.0;Min4;0.001;Scaglione;0.1;Max4;1.0">
+<param name="m1_2Curve" value="LinearCurve;0.0;0.0;1.0;0.5;2.0;1.0;3.0;0.0">
+<param name="m3_4Curve" value="LinearCurve;2.0;0.0;3.0;0.5;4.0;1.0">
+<param name="ultimoCurve" value="LinearCurve;0.0;0.0;1.0;livello1;2.0;livello2;3.0;livello3;4.0;livello4;5.0;0.0">
+
+
+<param name="xGg16" value="Gg16;Gg16;Ottobre;Gg16;Ottobre; ; ; ; ; ;T; ">
+<param name="xGg17" value="Gg17;Gg17;Novembre;Gg17;Novembre; ; ; ; ; ;T; ">
+<param name="xGg15" value="Gg15;Gg15;Settembre;Gg15;Settembre; ; ; ; ; ;T; ">
+<param name="xGg13" value="Gg13;Gg13;Luglio;Gg13;Luglio; ; ; ; ; ;T; ">
+<param name="xGg14" value="Gg14;Gg14;Agosto;Gg14;Agosto; ; ; ; ; ;T; ">
+<param name="xGg18" value="Gg18;Gg18;Dicembre;Gg18;Dicembre; ; ; ; ; ;T; ">
+<param name="xIA_ast" value="IA_ast;Indennità di Accompagnamento dichiarata;non IA_ast;Indennità di Accompagnamento dichiarata;Indennità di Accompagnamento dichiarata; ; ; ; ; ;$.2; ">
+<param name="xEta_ast" value="Eta_ast;Età dell'assitito;età???;Età dell'assitito;Età dell'assitito; ; ; ; ; ;T; ">
+<param name="xIA_vigente" value="IA_vigente;IA_vigente;IA_vigente;IA_vigente;IA_vigente; ; ; ; ; ; ; ">
+<param name="xAnno" value="Anno;Anno;?anno?;Anno;Anno; ; ; ; ; ;T; ">
+<param name="x1" value="x;x;null;null;uno; ; ; ; ; ;T; ">
+<param name="xGg12" value="Gg12;Gg012;Giugno;Gg12;Giugno; ; ; ; ; ;T; ">
+<param name="xGg04" value="Gg04;Gg04;Ottobre;Gg04;Ottobre; ; ; ; ; ;T; ">
+<param name="xGg05" value="Gg05;Gg05;Novembre;Gg05;Novembre; ; ; ; ; ;T; ">
+<param name="xGg03" value="Gg03;Gg03;Settembre;Gg03;Settembre; ; ; ; ; ;T; ">
+<param name="xGg01" value="Gg01;Gg01;Luglio;Gg01;Luglio; ; ; ; ; ;T; ">
+<param name="xGg02" value="Gg02;Gg02;Agosto;Gg02;Agosto; ; ; ; ; ;T; ">
+<param name="xGg06" value="Gg06;Gg06;Dicembre;Gg06;Dicembre; ; ; ; ; ;T; ">
+<param name="xGg10" value="Gg10;Gg10;Aprile;Gg10;Aprile; ; ; ; ; ;T; ">
+<param name="xGg11" value="Gg11;Gg11;Maggio;Gg11;Maggio; ; ; ; ; ;T; ">
+<param name="xGg09" value="Gg09;Gg09;Marzo;Gg09;Marzo; ; ; ; ; ;T; ">
+<param name="xGg07" value="Gg07;Gg07;Gennaio;Gg07;Gennaio; ; ; ; ; ;T; ">
+<param name="xGg08" value="Gg08;Gg08;Febbraio;Gg08;Febbraio; ; ; ; ; ;T; ">
+<param name="xPI5_oner" value="PI5_oner;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso;non PI5_oner;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso; ; ; ; ; ;$.2; ">
+<param name="xUltimoProfilo" value="UltimoProfilo;UltimoProfilo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xC1_aut_ast" value="C1_aut_ast;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito ;C1(ANP/DIV): Redditi da lavoro autonomo occasionale zero;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito;C1(ANP/DIV): Redditi da lavoro autonomo occasionale dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xsem0" value="sem0;sem0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef_prec" value="Icef_prec; <b>(Icef precedente)</b>(determinante tra ^Inf^ e ^Sup_prec^);<b>(Icef precedente)</b> zero ;<b>(Icef precedente, valido fino a ^Sup_prec^)</b>;<b>(Icef precedente >=1), <br /> ; ; ; ; ;<b>;T.10;</b>">
+<param name="xSup_prec" value="Sup_prec;Sup_prec;Sup_prec;Sup_prec;Sup_prec; ; ; ; ; ; ; ">
+<param name="xC1_dip_ast" value="C1_dip_ast;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati zero;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xFranchigia_ast" value="Franchigia_ast;Franchigia_ast;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPrecedente" value="Precedente;Assegno precedente;Precedente;Assegno precedente;Assegno precedente; ; ; ; ; -;$.2; ">
+<param name="xC4_part_ast" value="C4_part_ast;C4: Redditi da partecipazioni in società dell'assistito ;C4: Reddito da partecipazioni in società zero;C4: Redditi da partecipazioni in società dell'assistito ;C4: Redditi da partecipazioni in società dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xC2_agr_ast" value="C2_agr_ast;C2: Redditi da impresa agricola dell'assistito ;C2: Redditi da impresa agricola zero;C2: Redditi da impresa agricola dell'assistito;C2: Redditi da impresa agricola dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xC3_imp_ast" value="C3_imp_ast;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo zero;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xRevoche" value="Revoche;Revoche;Revoche;Revoche;Revoche; ; ; ; ; ; ; ">
+<param name="xCheck" value="Check;Check;idoneo;Check;Domanda NON idonea; ; ; ; ;causa: ;T; ">
+<param name="xIcef" value="Icef; <b>(Icef)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare considerato (determinante tra ^Inf^ e ^Sup^);Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b> zero ;Indicatore della Condizione Economica Familiare <b>(Icef considerato, valido fino a ^Sup^)</b>;Indicatore della Condizione Economica Familiare <b>(Icef considerato >=1), <br /> si usa il massimo delle valutazioni di redditi e patrimonio</b>; ; ; ; ;<b>;T.10;</b>">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+<param name="xsem" value="sem;sem;sem;sem;sem; ; ; ; ; ; ; ">
+<param name="xsem1" value="sem1;sem1;sem1;sem1;sem1; ; ; ; ; ; ; ">
+<param name="xSup" value="Sup;Sup;Sup;Sup;Sup; ; ; ; ; ;T.3; ">
+<param name="xc5_ori" value="c5_ori;c5_ori;c5_ori;c5_ori;c5_ori; ; ; ; ; ; ; ">
+<param name="xProfili" value="Profili;Profili;Profili;Profili;Profili; ; ; ; ; ; ; ">
+<param name="xCessazione" value="Cessazione;Cessazione;non cessazione;Cessazione;cessazione; ; ; ; ; ; ; ">
+<param name="xInf" value="Inf;Inf;Inf;Inf;Inf; ; ; ; ; ;T.3; ">
+<param name="xMax4" value="Max4;Max4;Max4;Max4;Max4; ; ; ; ; ;T; ">
+<param name="xM_fine" value="M_fine;M_fine;M_fine;M_fine;M_fine; ; ; ; ; ; ; ">
+<param name="xId_domanda_uscita" value="Id_domanda_uscita;Id_domanda_uscita;non;-;ok; ; ; ; ; ; ; ">
+<param name="xMin4" value="Min4;Min4;Min4;Min4;Min4; ; ; ; ; ;T; ">
+<param name="xM_inizio" value="M_inizio;M_inizio;M_inizio;M_inizio;M_inizio; ; ; ; ; ; ; ">
+<param name="xPI5_grat" value="PI5_grat;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito;non PI5_grat;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito; ; ; ; ; ;$.2; ">
+<param name="xPI5_grat2" value="PI5_grat2;PI5_grat: Immobili ceduti negli ultimi 5 anni a titolo gratuito;non PI5_grat2;PI5_grat: Immobili ceduti negli ultimi 5 anni a titolo gratuito;PI5_grat: Immobili ceduti negli ultimi 5 anni a titolo gratuito; ; ; ; ; ;$.2; ">
+<param name="xDetraz_18" value="Detraz_18;Detraz_18;Detraz_18;Detraz_18;Detraz_18; ; ; ; ; ;$.2; ">
+<param name="xV_7_18" value="V_7_18;V_7_18;V_7_18;V_7_18;V_7_18; ; ; ; ; ;T13; ">
+<param name="xDetraz_0" value="Detraz_0;Detraz_0;Detraz_0;Detraz_0;Detraz_0; ; ; ; ; ;$.2; ">
+<param name="xDetraz_65" value="Detraz_65;Detraz_65;Detraz_65;Detraz_65;Detraz_65; ; ; ; ; ;$.2; ">
+<param name="xV_1_6" value="V_1_6;V_1_6;V_1_6;V_1_6;V_1_6; ; ; ; ; ;T7; ">
+<param name="xMax1" value="Max1;Max1;Max1;Max1;Max1; ; ; ; ; ;T; ">
+<param name="xMin1" value="Min1;Min1;Min1;Min1;Min1; ; ; ; ; ;T; ">
+<param name="xModello_ASSCURA" value="PAT ASSEGNO DI CURA;PAT ASSEGNO DI CURA;P.A.T. PAT ASSEGNO DI CURA 2013-2015 - (1.7.2015);--;--; ; ; ; ; ; ; ">
+
+<param name="xScaglione" value="Scaglione;Scaglione;Scaglione;Scaglione;Scaglione; ; ; ; ; ;$.2; ">
+<param name="xMax2" value="Max2;Max2;Max2;Max2;Max2; ; ; ; ; ;T; ">
+<param name="xMin3" value="Min3;Min3;Min3;Min3;Min3; ; ; ; ; ;T; ">
+<param name="xMax3" value="Max3;Max3;Max3;Max3;Max3; ; ; ; ; ;T; ">
+<param name="xMin2" value="Min2;Min2;Min2;Min2;Min2; ; ; ; ; ;T; ">
+<param name="xm3_4" value="m3_4;m3_4;non3_4;non più titolare di indennità di accompagnamento o di analoghe prestazioni;beneficiario di prestazioni e interventi incompatibili stabiliti dalla DGP 2207/12; ; ; ; ; ; ; ">
+<param name="xm1_2" value="m1_2;m1_2;non1_2;decesso;trasferimento fuori provincia; ; ; ; ; ; ; ">
+<param name="xg16" value="g16;g16;g16;g16;g16; ; ; ; ; ;T; ">
+<param name="xgfeb1" value="gfeb1;gfeb1;gfeb1;gfeb1;gfeb1; ; ; ; ; ; ; ">
+<param name="xg08" value="g08;g08;g08;g08;g08; ; ; ; ; ;T; ">
+<param name="xg07" value="g07;g07;g07;g07;g07; ; ; ; ; ;T; ">
+<param name="xg10" value="g10;g10;g10;g10;g10; ; ; ; ; ;T; ">
+<param name="xg09" value="g09;g09;g09;g09;g09; ; ; ; ; ;T; ">
+<param name="xgfeb0" value="gfeb0;gfeb0;gfeb0;gfeb0;gfeb0; ; ; ; ; ; ; ">
+<param name="xidonea" value="idonea;idonea;Domanda non idonea;idonea;Domanda idonea; ; ; ; ; ; ; ">
+<param name="xg18" value="g18;g18;g18;g18;g18; ; ; ; ; ;T; ">
+<param name="xg17" value="g17;g17;g17;g17;g17; ; ; ; ; ;T; ">
+<param name="xsemestre1" value="semestre1;semestre1;semestre1;semestre1;semestre1; ; ; ; ; ; ; ">
+<param name="xg04" value="g04;g04;g04;g04;g04; ; ; ; ; ;T; ">
+<param name="xsemestre" value="semestre;semestre;semestre;semestre;semestre; ; ; ; ; ; ; ">
+<param name="xg05" value="g05;g05;g05;g05;g05; ; ; ; ; ;T; ">
+<param name="xg02" value="g02;g02;g02;g02;g02; ; ; ; ; ;T; ">
+<param name="xg01" value="g01;g01;g01;g01;g01; ; ; ; ; ;T; ">
+<param name="xg03" value="g03;g03;g03;g03;g03; ; ; ; ; ;T; ">
+<param name="xcheckOK" value="checkOK;checkOK;checkOK;checkOK;checkOK; ; ; ; ; ; ; ">
+<param name="xg06" value="g06;g06;g06;g06;g06; ; ; ; ; ;T; ">
+<param name="xg15" value="g15;g15;g15;g15;g15; ; ; ; ; ;T; ">
+<param name="xg14" value="g14;g14;g14;g14;g14; ; ; ; ; ;T; ">
+<param name="xfeb0" value="feb0;feb0;feb0;feb0;feb0; ; ; ; ; ; ; ">
+<param name="xfeb1" value="feb1;feb1;feb1;feb1;feb1; ; ; ; ; ; ; ">
+<param name="xmpi5" value="mpi5;mpi5;non mpi5;mpi5;mpi5; ; ; ; ; ;$.2; ">
+<param name="xpi5" value="pi5;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione;non pi5;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione; ; ; ; ; ;$.2; ">
+<param name="xg13" value="g13;g13;g13;g13;g13; ; ; ; ; ;T; ">
+<param name="xdet_ast" value="det_ast;detrazione per l'età (^Eta_ast^ anni) dell'assistito;det_ast???;detrazione per l'età (^Eta_ast^ anni) dell'assistito;detrazione per l'età (^Eta_ast^ anni) dell'assistito; ; ; ; ; -;$.2; ">
+<param name="xa14" value="a14;a14;a14;a14;a14; ; ; ; ; ;T; ">
+<param name="xa13" value="a13;a13;a13;a13;a13; ; ; ; ; ;T; ">
+<param name="xa12" value="a12;a12;a12;a12;a12; ; ; ; ; ;T; ">
+<param name="xa15" value="a15;a15;a15;a15;a15; ; ; ; ; ;T; ">
+<param name="xa18" value="a18;a18;a18;a18;a18; ; ; ; ; ;T; ">
+<param name="xa17" value="a17;a17;a17;a17;a17; ; ; ; ; ;T; ">
+<param name="xa16" value="a16;a16;a16;a16;a16; ; ; ; ; ;T; ">
+<param name="xa11" value="a11;a11;a11;a11;a11; ; ; ; ; ;T; ">
+<param name="xa06" value="a06;a06;a06;a06;a06; ; ; ; ; ;T; ">
+<param name="xa05" value="a05;a05;a05;a05;a05; ; ; ; ; ;T; ">
+<param name="xa04" value="a04;a04;a04;a04;a04; ; ; ; ; ;T; ">
+<param name="xa07" value="a07;a07;a07;a07;a07; ; ; ; ; ;T; ">
+<param name="xa10" value="a10;a10;a10;a10;a10; ; ; ; ; ;T; ">
+<param name="xa09" value="a09;a09;a09;a09;a09; ; ; ; ; ;T; ">
+<param name="xa08" value="a08;a08;a08;a08;a08; ; ; ; ; ;T; ">
+<param name="xlivello3" value="livello3;Assegno di cura per livello 3;livello 3: nessun assegno;Assegno di cura per livello 3;Assegno di cura per livello 3; ; ; ; ; ;$.2; ">
+<param name="xlivello4" value="livello4;Assegno di cura per livello 4;livello 4: nessun assegno;Assegno di cura per livello 4;Assegno di cura per livello 4; ; ; ; ; ;$.2; ">
+<param name="xrevoche1" value="revoche1;revoche1;revoche1;revoche1;revoche1; ; ; ; ; ; ; ">
+<param name="xlivello2" value="livello2;Assegno di cura per livello 2;livello 2: nessun assegno;Assegno di cura per livello 2;Assegno di cura per livello 2; ; ; ; ; ;$.2; ">
+<param name="xg11" value="g11;g11;g11;g11;g11; ; ; ; ; ;T; ">
+<param name="xg12" value="g12;g12;g12;g12;g12; ; ; ; ; ;T; ">
+<param name="xlivello1" value="livello1;Assegno di cura per livello 1;livello 1: nessun assegno;Assegno di cura per livello 1;Assegno di cura per livello 1; ; ; ; ; ;$.2; ">
+<param name="xultimo_livello" value="ultimo_livello;ultimo_livello;non ultimo_livello;ultimo_livello;ultimo_livello; ; ; ; ; ;$.2; ">
+<param name="xa02" value="a02;a02;a02;a02;a02; ; ; ; ; ;T; ">
+<param name="xa01" value="a01;a01;a01;a01;a01; ; ; ; ; ;T; ">
+<param name="xrevOK" value="revOK;revOK;revOK;revOK;revOK; ; ; ; ; ; ; ">
+<param name="xa03" value="a03;a03;a03;a03;a03; ; ; ; ; ;T; ">
+<param name="xbig" value="big;big;non;-;ok; ; ; ; ; ; ; ">
+<param name="xm_ast" value="m_ast;Detrazioni per il reddito dell'assitito;non redditi dell'assitito;Detrazioni per il reddito dell'assitito;Detrazioni per il reddito dell'assitito; ; ; ; ; -;$.2; ">
+<param name="xr_ast" value="r_ast;redditi dell'assistito;r_ast;redditi dell'assistito;redditi dell'assistito; ; ; ; ; ;$.2; ">
+<param name="xqa" value="qa;qa;qa;qa;qa; ; ; ; ; ;P.4; ">
+<param name="xsemestre0" value="semestre0;semestre0;semestre0;semestre0;semestre0; ; ; ; ; ; ; ">
+<param name="xv7_18" value="v7_18;v7_18;v7_18;v7_18;v7_18; ; ; ; ; ; ; ">
+<param name="xc5_ast" value="c5_ast;c5_ast;c5_ast;c5_ast;c5_ast; ; ; ; ; ; ; ">
+<param name="xprof_id" value="prof_id;prof_id;non Profili;prof_id;ok Profili; ; ; ; ; ; ; ">
+<param name="xicefOK" value="icefOK;icefOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xicefNonOK" value="icefNonOK;icefNonOK;Icef ok;icefNonOK;Icef oltre il limite di ^Sup^; ; ; ; ; ; ; ">
+<param name="xv1_6" value="v1_6;v1_6;v1_6;v1_6;v1_6; ; ; ; ; ; ; ">
+<param name="xprecOK" value="precOK;precOK;precOK;precOK;precOK; ; ; ; ; ; ; ">
+<param name="xac09" value="ac09;ac09;ac09;ac09;ac09; ; ; ; ; ;$.2; ">
+<param name="xac02" value="ac02;ac02;ac02;ac02;ac02; ; ; ; ; ;$.2; ">
+<param name="xac10" value="ac10;ac10;ac10;ac10;ac10; ; ; ; ; ;$.2; ">
+<param name="xac01" value="ac01;ac01;ac01;ac01;ac01; ; ; ; ; ;$.2; ">
+<param name="xac07" value="ac07;ac07;ac07;ac07;ac07; ; ; ; ; ;$.2; ">
+<param name="xac05" value="ac05;ac05;ac05;ac05;ac05; ; ; ; ; ;$.2; ">
+<param name="xac03" value="ac03;ac03;ac03;ac03;ac03; ; ; ; ; ;$.2; ">
+<param name="xac04" value="ac04;ac04;ac04;ac04;ac04; ; ; ; ; ;$.2; ">
+<param name="xac13" value="ac13;ac13;ac13;ac13;ac13; ; ; ; ; ;$.2; ">
+<param name="xac14" value="ac14;ac14;ac14;ac14;ac14; ; ; ; ; ;$.2; ">
+<param name="xac11" value="ac11;ac11;ac11;ac11;ac11; ; ; ; ; ;$.2; ">
+<param name="xac12" value="ac12;ac12;ac12;ac12;ac12; ; ; ; ; ;$.2; ">
+<param name="xac17" value="ac17;ac17;ac17;ac17;ac17; ; ; ; ; ;$.2; ">
+<param name="xac18" value="ac18;ac18;ac18;ac18;ac18; ; ; ; ; ;$.2; ">
+<param name="xac15" value="ac15;ac15;ac15;ac15;ac15; ; ; ; ; ;$.2; ">
+<param name="xac16" value="ac16;ac16;ac16;ac16;ac16; ; ; ; ; ;$.2; ">
+<param name="xarl" value="arl;arl;arl;arl;arl; ; ; ; ; ; ; ">
+<param name="xanno1" value="anno1;anno1;anno1;anno1;anno1; ; ; ; ; ;T; ">
+<param name="xgg" value="gg;gg;gg;gg;gg; ; ; ; ; ; ; ">
+<param name="xsemes" value="semes;semes;semes;semes;semes; ; ; ; ; ; ; ">
+<param name="xmaxIA" value="maxIA;Indennità di Accompagnamento valutata = massimo(^IA_ast^ , ^IA_vigente^);nessun Id.Acc.;Indennità di Accompagnamento valutata = massimo(^IA_ast^ , ^IA_vigente^);Indennità di Accompagnamento valutata = massimo(^IA_ast^ , ^IA_vigente^); ; ; ; ; ;$.2; ">
+<param name="xac06" value="ac06;ac06;ac06;ac06;ac06; ; ; ; ; ;$.2; ">
+<param name="xsemestri" value="semestri;semestri;non;-;ok; ; ; ; ; ; ; ">
+<param name="xassegno" value="assegno;assegno;assegno;assegno;assegno; ; ; ; ; ;$.2; ">
+<param name="xgiornitot" value="giornitot;giornitot;giornitot;giornitot;giornitot; ; ; ; ; ; ; ">
+<param name="xac08" value="ac08;ac08;ac08;ac08;ac08; ; ; ; ; ;$.2; ">
+<param name="xperc" value="perc;perc;perc;perc;perc; ; ; ; ; ; ; ">
+<param name="xcheck1" value="check1;check1;ok;check1;Domanda non idonea; ; ; ; ; ;T; ">
+<param name="xpercentuale" value="percentuale;percentuale;percentuale;percentuale;percentuale; ; ; ; ; ; ; ">
+<param name="xassegno_max" value="assegno_max;Assegno di cura potenziale massimo;Domanda non idonea;Assegno di cura potenziale massimo;Assegno di cura potenziale massimo; ; ; ; ; ;$.2; ">
+<param name="xassegno_min" value="assegno_min;Assegno di cura potenziale minimo;Domanda non idonea;Assegno di cura potenziale minimo;Assegno di cura potenziale minimo; ; ; ; ; ;$.2; ">
+<param name="xc_ast" value="c_ast;c_ast;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xac1" value="ac1;ac1;ac1;ac1;ac1; ; ; ; ; ;$.2; ">
+<param name="xgiorni" value="giorni;giorni;giorni;giorni;giorni; ; ; ; ; ;T; ">
+<param name="xac0" value="ac0;ac0;ac0;ac0;ac0; ; ; ; ; ;$.2; ">
+<param name="xgiorni0" value="giorni0;giorni0;giorni0;giorni0;giorni0; ; ; ; ; ;T; ">
+<param name="xac" value="ac;ac;ac;ac;ac; ; ; ; ; ;$.2; ">
+<param name="xgiorni1" value="giorni1;giorni1;giorni1;giorni1;giorni1; ; ; ; ; ;T; ">
+
+
+
+<param name="xpltree" value="propagation1;applicant0;dati;spiegacheck;spiegarevoche;profili;previsione;cessato;inizio;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;sem=184;sem0=153;sem1=184;1=1;V_1_6=V_1_6;V_7_18=V_7_18;C5_altri=c5_ast">
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="dati" value="<b> Dati: </b>;(precOK==0)Icef_prec=-1!0;Icef=-1">
+<param name="spiegacheck" value="(check1!=0)<b>Esito negativo:</b> 
+Codici di esclusione:<br>
+§check1§ <br />
+<b>11__.___.___:</b><small> Decesso (prima della visita)</small><br />
+<b>1_2_.___.___:</b><small> incompatibilità con altri contributi senza rinuncia per optare ad AC</small><br />
+<b>1__3.___.___:</b><small> indennità di accompagnamento assente al momento della visita</small><br />
+<b>1___.4__.___:</b><small> mancanza pre-requisito ICEF</small><br />
+<b>1___._5_.___:</b><small> trasferimento fuori provincia (prima della visita)</small><br />
+<b>1___.__6.___:</b><small> Rinuncia formalizzata dell’utente</small><br />
+<b>1___.___.7__:</b><small> mancanza pre-requisito residenza</small><br /><br />
+<b>1___.___._8_:</b><small> esclusione d'Ufficio APAPI</small><br /><br />
+<b>1___.___.__9:</b><small> esclusione d'Ufficio APSS</small><br /><br /><br />;">
+<param name="spiegarevoche" value="(revoche1!=0)<b>Esito negativo per revoche:</b> 
+Codici di revoche:<br>
+§revoche1§ <br />
+<b>11__.___.___:</b><small> Decesso (dopo la visita)</small><br />
+<b>1_2_.___.___:</b><small> incompatibilità con altri contributi</small><br />
+<b>1__3.___.___:</b><small> revoca indennità di accompagnamento</small><br />
+<b>1___.4__.___:</b><small> mancata presentaz. Riaccertam. ICEF tra ottobre e dicembre</small><br />
+<b>1___._5_.___:</b><small> trasferimento fuori provincia (dopo la visita)</small><br />
+<b>1___.__6.___:</b><small> Rinuncia formalizzata dell’utente</small><br />
+<b>1___.___.7__:</b><small> mancanza requisito residenza</small><br /><br />
+<b>1___.___._8_:</b><small> esclusione d'Ufficio APAPI</small><br /><br />
+<b>1___.___.__9:</b><small> esclusione d'Ufficio APSS</small><br /><br /><br />;">
+<param name="profili" value="(prof_id==1)<p /><b>Assegni potenziali:;livello1=-1;livello2=-1;livello3=-1;livello4=-1">
+<param name="previsione" value="(V_7_18==0)<p /><b>Assegno potenziale (l'importo effettivo sarà stabilito dall'APSS in base alla gravità):</b>;assegno_min=-1!0;assegno_max=-1!0;idonea=-1!1">
+<param name="cessato" value="(Cessazione==1)<p /><b>Motivo di cessazione:</b>;m1_2=3!0;m3_4=3!0">
+<param name="inizio" value="inizio;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="4289641616">
+<param name="CRC" value="542184772">
+<param name="CRCdata" value="1-lug-2015 16.54.36">
+</APPLET>
+</CENTER>
+<BR>

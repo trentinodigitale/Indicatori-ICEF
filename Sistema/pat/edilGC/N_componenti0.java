@@ -1,0 +1,97 @@
+/** 
+ *Created on 03-giu-2004 
+ */
+
+package c_elab.pat.edilGC;
+
+import it.clesius.apps2core.ElainNode;
+import it.clesius.clesius.util.Sys;
+import it.clesius.db.sql.RunawayData;
+
+/** legge dalla domanda il n. componenti
+ * @author s_largher
+ */
+public class N_componenti0 extends ElainNode {
+	
+	private String tableFamiliari = "Edil_Familiari";
+
+	/** N_componenti constructor */
+	public N_componenti0() {
+	}
+
+	/** resetta le variabili statiche
+	 * @see it.clesius.apps2core.ElainNode#reset()
+	 */
+	protected void reset() {
+	}
+
+	/** inizializza la Table records con i valori letti dalla query sul DB
+	 * @see it.clesius.apps2core.ElainNode#init(it.clesius.db.sql.RunawayData)
+	 * @param dataTransfer it.clesius.db.sql.RunawayData
+	 */
+	public void init(RunawayData dataTransfer) {
+
+		super.init(dataTransfer);
+		StringBuffer sql = new StringBuffer();
+
+		if(!IDdomanda.startsWith("*"))
+		{
+			//modalità normale con domanda
+			//                        1
+			sql.append(
+				"SELECT "+tableFamiliari+".familiare, R_Relazioni_parentela.peso_componente ");
+			sql.append("FROM "+tableFamiliari+" INNER JOIN ");
+			sql.append("R_Relazioni_parentela ON "+tableFamiliari+".ID_relazione_parentela = R_Relazioni_parentela.ID_relazione_parentela ");
+			sql.append("WHERE "+tableFamiliari+".ID_domanda = ");
+			sql.append(IDdomanda);
+			
+		}
+		else
+		{
+			//modalità calcolo dichiarazione ICEF in tabelle STAT_C_...
+
+			String id_dichiarazione = IDdomanda.substring(1);
+
+			//   			  	 1
+			sql.append(
+				"SELECT     0 AS familiare, 100 AS peso_componente ");
+			sql.append(
+				"FROM         Dich_icef ");
+			sql.append(
+				"WHERE     (ID_dichiarazione = ");
+			sql.append(id_dichiarazione);
+			sql.append(
+				")");
+		}
+
+		doQuery(sql.toString());
+
+	}
+
+	/** ritorna il valore double da assegnare all'input node
+	 * @see it.clesius.apps2core.ElainNode#getValue()
+	 * @return double
+	 */
+	public double getValue() {
+
+		try {
+			
+			double tot=0;
+			double round = 1.0;
+			double aggiusta = 0.01;
+			
+			for (int i = 1; i <= records.getRows(); i++) {
+					// min ( max detrazione invalidi , max (quota base * coeff  , spese) )
+					double value = 1.0;
+					double pesoComponente = records.getDouble(i, 2);
+					value =	Sys.round( value - aggiusta, round) * pesoComponente / 100.0;
+					tot = tot + value;
+			}
+			
+			return tot;
+		} catch (NullPointerException n) {
+			System.out.println("Null pointer in " + getClass().getName() + ": "	+ n.toString());
+			return 0.0;
+		}
+	}
+}

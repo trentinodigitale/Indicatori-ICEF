@@ -1,0 +1,542 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=830 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.2 $">
+<param name="Taratura" value="Pacchetto famiglia - Assegno per figli; 8.6.2006">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="check7;check9;vettori1;vettori2;condizioni;caso06">
+
+<param name="check7" value="current;V_check=1777777777777">
+<param name="check9" value="current;V_check=1999999999999">
+<param name="vettori1" value="current;V_n_figli=2011122222233;V_1genitor=1000000001111;V_disabili=1000000000011;V_check=1001110000000">
+<param name="vettori2" value="current;V_n_figli=1333333333333;V_1genitor=1000000001111;V_disabili=1011110000000;V_check=1000000001230">
+
+<param name="condizioni" value="current;CE01=0;CE02=2000;CE03=3000;CE04=4000;CE05=5000;CE06=86000;CE07=17000;CE08=18000;CE09=19000;CE10=20000;CE11=21000;CE12=82000">
+<param name="caso06" value="vettori1,condizioni;V_check=1000000000000">
+
+<param name="variables" value="vscala;uno;x01;x02;x03;x04;x05;x06;x07;x08;x09;x10;x11;x12">
+
+ <param name="vscala" value="0.0000000000001">
+
+<param name="uno" value="1">
+
+<param name="x01" value="uno / 12">
+<param name="x02" value="x01 * 2">
+<param name="x03" value="x01 * 3">
+<param name="x04" value="x01 * 4">
+<param name="x05" value="x01 * 5">
+<param name="x06" value="x01 * 6">
+<param name="x07" value="x01 * 7">
+<param name="x08" value="x01 * 8">
+<param name="x09" value="x01 * 9">
+<param name="x10" value="x01 * 10">
+<param name="x11" value="x01 * 11">
+<param name="x12" value="uno">
+
+
+
+<param name="edges" value="P.A.T.  Assegno07;CE01;CE02;CE03;CE04;CE05;CE06;CE07;CE08;CE09;CE10;CE11;CE12;Dettagli;
+V_1genitor-1g01;V_1genitor-1g02;V_1genitor-1g03;V_1genitor-1g04;V_1genitor-1g05;V_1genitor-1g06;V_1genitor-1g07;V_1genitor-1g08;V_1genitor-1g09;V_1genitor-1g10;V_1genitor-1g11;V_1genitor-1g12;V_disabili-d01;V_disabili-d02;V_disabili-d03;V_disabili-d04;V_disabili-d05;V_disabili-d06;V_disabili-d07;V_disabili-d08;V_disabili-d09;
+V_disabili-d10;V_disabili-d11;V_disabili-d12;V_check-c01;V_check-c02;V_check-c03;V_check-c04;V_check-c05;V_check-c06;V_check-c07;V_check-c08;V_check-c09;V_check-c10;V_check-c11;V_check-c12;V_n_figli-n01;V_n_figli-n02;V_n_figli-n03;V_n_figli-n04;V_n_figli-n05;
+V_n_figli-n06;V_n_figli-n07;V_n_figli-n08;V_n_figli-n09;V_n_figli-n10;V_n_figli-n11;V_n_figli-n12;a01-a_totale;a02-a_totale;a03-a_totale;a04-a_totale;a05-a_totale;a06-a_totale;a07-a_totale;a08-a_totale;a09-a_totale;a10-a_totale;a11-a_totale;a12-a_totale;V_check-idon;
+idon-idoneo;Presentazione-p01;Presentazione-p02;Presentazione-p03;Presentazione-p04;Presentazione-p05;Presentazione-p06;Presentazione-p07;Presentazione-p08;Presentazione-p09;Presentazione-p10;Presentazione-p11;Presentazione-p12;gt0-p02;gt0-p03;gt0-p04;gt0-p05;gt0-p06;gt0-p07;gt0-p08;
+gt0-p09;gt0-p10;gt0-p11;gt0-p12;p01-p02;p02-p03;p03-p04;p04-p05;p05-p06;p06-p07;p07-p08;p08-p09;p09-p10;p10-p11;p11-p12;presOK-idoneo;c-c_idon;c_idon-idoneo;i-c_idon;a_totale-a_cumul;
+a_cumul-gt0;gt0-p01">
+
+
+
+<param name="P.A.T.  Assegno07" value="text;node.ico;60;317;0;P.A.T.  Assegno07 2007 - (20.6.2006);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Assegno07;xModello_Assegno07;3989884926">
+<param name="CE01" value="1;node.ico;60;35;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE01;yCE01;2917478538">
+<param name="CE02" value="1;node.ico;60;55;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE02;yCE02;3108022297">
+<param name="CE03" value="1;node.ico;60;75;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE03;yCE03;66265687">
+<param name="CE04" value="1;node.ico;60;95;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE04;yCE04;2416679231">
+<param name="CE05" value="1;node.ico;60;115;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE05;yCE05;1706441212">
+<param name="CE06" value="1;node.ico;60;135;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE06;yCE06;2937509453">
+<param name="CE07" value="1;node.ico;60;155;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE07;yCE07;3416271649">
+<param name="CE08" value="1;node.ico;60;175;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE08;yCE08;4196048595">
+<param name="CE09" value="1;node.ico;60;195;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE09;yCE09;4191652794">
+<param name="CE10" value="1;node.ico;60;215;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE10;yCE10;1878282068">
+<param name="CE11" value="1;node.ico;60;235;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE11;yCE11;3578250522">
+<param name="CE12" value="1;node.ico;60;255;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xCE12;yCE12;3252837769">
+<param name="Dettagli" value="1;node.ico;611;331;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xDettagli;yDettagli;4109155794">
+<param name="V_1genitor" value="1;node.ico;78;492;0;-;0.0;PlusNode;ValueInput;NoOutput;0;12;1g01;1g02;1g03;1g04;1g05;1g06;1g07;1g08;1g09;1g10;1g11;1g12;vscala;NoCurve;xV_1genitor;yV_1genitor;1493722689">
+<param name="1g01" value="0;node.ico;53;466;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-2.0;NoCurve;x1g01;y1g01;1701720461">
+<param name="1g02" value="0;node.ico;23;477;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-3.0;NoCurve;x1g02;y1g02;4155472445">
+<param name="1g03" value="0;node.ico;18;494;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-4.0;NoCurve;x1g03;y1g03;532321906">
+<param name="1g04" value="0;node.ico;27;510;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-5.0;NoCurve;x1g04;y1g04;2902998281">
+<param name="1g05" value="0;node.ico;39;527;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-6.0;NoCurve;x1g05;y1g05;4248122821">
+<param name="1g06" value="0;node.ico;57;542;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-7.0;NoCurve;x1g06;y1g06;1919253787">
+<param name="1g07" value="0;node.ico;97;542;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-8.0;NoCurve;x1g07;y1g07;2554369966">
+<param name="1g08" value="0;node.ico;116;531;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-9.0;NoCurve;x1g08;y1g08;3592719842">
+<param name="1g09" value="0;node.ico;131;514;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-10.0;NoCurve;x1g09;y1g09;530105258">
+<param name="1g10" value="0;node.ico;135;495;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-11.0;NoCurve;x1g10;y1g10;2784145113">
+<param name="1g11" value="0;node.ico;130;478;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-12.0;NoCurve;x1g11;y1g11;2578744930">
+<param name="1g12" value="0;node.ico;104;466;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_1genitor;0;1.0;-13.0;NoCurve;x1g12;y1g12;4151657888">
+<param name="V_disabili" value="1;node.ico;296;506;0;-;0.0;PlusNode;ValueInput;NoOutput;0;12;d01;d02;d03;d04;d05;d06;d07;d08;d09;d10;d11;d12;vscala;NoCurve;xV_disabili;yV_disabili;1600868073">
+<param name="d01" value="0;node.ico;276;484;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-2.0;NoCurve;xd01;yd01;1472352377">
+<param name="d02" value="0;node.ico;249;492;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-3.0;NoCurve;xd02;yd02;3600331739">
+<param name="d03" value="0;node.ico;240;509;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-4.0;NoCurve;xd03;yd03;2331369712">
+<param name="d04" value="0;node.ico;244;528;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-5.0;NoCurve;xd04;yd04;3588663211">
+<param name="d05" value="0;node.ico;255;545;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-6.0;NoCurve;xd05;yd05;3590699450">
+<param name="d06" value="0;node.ico;276;556;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-7.0;NoCurve;xd06;yd06;2841791234">
+<param name="d07" value="0;node.ico;308;556;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-8.0;NoCurve;xd07;yd07;2375925576">
+<param name="d08" value="0;node.ico;322;544;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-9.0;NoCurve;xd08;yd08;3300736369">
+<param name="d09" value="0;node.ico;330;532;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-10.0;NoCurve;xd09;yd09;457269862">
+<param name="d10" value="0;node.ico;343;513;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-11.0;NoCurve;xd10;yd10;1719581478">
+<param name="d11" value="0;node.ico;343;495;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-12.0;NoCurve;xd11;yd11;1130694317">
+<param name="d12" value="0;node.ico;315;484;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_disabili;0;1.0;-13.0;NoCurve;xd12;yd12;2612638852">
+<param name="V_check" value="1;node.ico;456;496;0;-;0.0;PlusNode;ValueInput;NoOutput;0;13;c01;c02;c03;c04;c05;c06;c07;c08;c09;c10;c11;c12;idon;vscala;NoCurve;xV_check;yV_check;920654947">
+<param name="c01" value="0;node.ico;423;488;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-2.0;NoCurve;xc01;yc01;1240943745">
+<param name="c02" value="0;node.ico;411;485;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-3.0;NoCurve;xc02;yc02;550190313">
+<param name="c03" value="0;node.ico;406;502;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-4.0;NoCurve;xc03;yc03;1579564187">
+<param name="c04" value="0;node.ico;417;520;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-5.0;NoCurve;xc04;yc04;2985071419">
+<param name="c05" value="0;node.ico;431;533;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-6.0;NoCurve;xc05;yc05;3632605865">
+<param name="c06" value="0;node.ico;447;543;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-7.0;NoCurve;xc06;yc06;3629920765">
+<param name="c07" value="0;node.ico;471;543;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-8.0;NoCurve;xc07;yc07;2139549803">
+<param name="c08" value="0;node.ico;482;531;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-9.0;NoCurve;xc08;yc08;2947615722">
+<param name="c09" value="0;node.ico;497;517;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-10.0;NoCurve;xc09;yc09;3419417337">
+<param name="c10" value="0;node.ico;507;500;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-11.0;NoCurve;xc10;yc10;4243995557">
+<param name="c11" value="0;node.ico;500;483;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-12.0;NoCurve;xc11;yc11;830257382">
+<param name="c12" value="0;node.ico;466;468;0;-;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-13.0;NoCurve;xc12;yc12;2854738423">
+<param name="V_n_figli" value="1;node.ico;594;483;0;-;0.0;PlusNode;ValueInput;NoOutput;0;12;n01;n02;n03;n04;n05;n06;n07;n08;n09;n10;n11;n12;vscala;NoCurve;xV_n_figli;yV_n_figli;2416175743">
+<param name="n01" value="0;node.ico;568;462;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-2.0;NoCurve;yn01;yn01;2705717272">
+<param name="n02" value="0;node.ico;540;473;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-3.0;NoCurve;yn02;yn02;3122622765">
+<param name="n03" value="0;node.ico;543;492;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-4.0;NoCurve;yn03;yn03;914656088">
+<param name="n04" value="0;node.ico;555;510;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-5.0;NoCurve;yn04;yn04;683473352">
+<param name="n05" value="0;node.ico;565;528;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-6.0;NoCurve;yn05;yn05;2184842262">
+<param name="n06" value="0;node.ico;583;540;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-7.0;NoCurve;yn06;yn06;1396021217">
+<param name="n07" value="0;node.ico;613;538;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-8.0;NoCurve;yn07;yn07;1121777719">
+<param name="n08" value="0;node.ico;628;527;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-9.0;NoCurve;yn08;yn08;3686570466">
+<param name="n09" value="0;node.ico;639;513;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-10.0;NoCurve;yn09;yn09;3398214978">
+<param name="n10" value="0;node.ico;646;496;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-11.0;NoCurve;yn10;yn10;3977746129">
+<param name="n11" value="0;node.ico;648;476;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-12.0;NoCurve;yn11;yn11;2854255544">
+<param name="n12" value="0;node.ico;616;461;0;-;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;0;0.1;-13.0;NoCurve;yn12;yn12;574869135">
+<param name="a01" value="2;node.ico;358;35;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa01;ya01;4024267571">
+<param name="a_totale" value="2;node.ico;308;139;0;-;0.0;PlusNode;NoInput;NoOutput;12;a01;a02;a03;a04;a05;a06;a07;a08;a09;a10;a11;a12;1;a_cumul;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xa_totale;ya_totale;4130506988">
+<param name="a02" value="2;node.ico;358;57;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa02;ya02;3676083919">
+<param name="a03" value="2;node.ico;359;78;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa03;ya03;3275416656">
+<param name="a04" value="2;node.ico;360;98;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa04;ya04;1143606326">
+<param name="a05" value="2;node.ico;358;121;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa05;ya05;1882320034">
+<param name="a06" value="2;node.ico;359;143;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa06;ya06;1490522443">
+<param name="a07" value="2;node.ico;358;163;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa07;ya07;2738064350">
+<param name="a08" value="2;node.ico;358;182;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa08;ya08;211712460">
+<param name="a09" value="2;node.ico;357;200;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa09;ya09;2778199164">
+<param name="a10" value="2;node.ico;356;222;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa10;ya10;2950243346">
+<param name="a11" value="2;node.ico;355;243;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa11;ya11;1399836537">
+<param name="a12" value="2;node.ico;355;265;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;a_totale;1.0;NoCurve;xa12;ya12;2187891796">
+<param name="idon" value="0;node.ico;389;552;0;-;0.0;LeNode;NoInput;NoOutput;1;V_check;1;idoneo;0.30000001192092896;0.1;NoCurve;xidon;yidon;290718279">
+<param name="idoneo" value="2;node.ico;533;552;0;-;0.0;ProbNode;NoInput;IntermediateOutput;3;idon;presOK;c_idon;0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;NoCurve;xidoneo;yidoneo;2921582344">
+<param name="Presentazione" value="1;node.ico;131;136;0;-;0.0;PlusNode;ValueInput;NoOutput;0;12;p01;p02;p03;p04;p05;p06;p07;p08;p09;p10;p11;p12;x01;NoCurve;xPresentazione;yPresentazione;4065753843">
+<param name="p01" value="0;node.ico;209;34;0;-;0.0;TransformNode;NoInput;NoOutput;2;Presentazione;gt0;1;p02;1.0;0.0;1.0;1.0;LinearCurve;p01Curve;xp01;yp01;3779470693">
+<param name="p02" value="0;node.ico;209;56;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p01;1;p03;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p02Curve;xp02;yp02;2595049380">
+<param name="p03" value="0;node.ico;209;78;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p02;1;p04;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p03Curve;xp03;yp03;3702242133">
+<param name="p04" value="0;node.ico;210;98;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p03;1;p05;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p04Curve;xp04;yp04;1651120160">
+<param name="p05" value="0;node.ico;212;118;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p04;1;p06;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p05Curve;xp05;yp05;402384083">
+<param name="p06" value="0;node.ico;210;137;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p05;1;p07;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p06Curve;xp06;yp06;442259152">
+<param name="p07" value="0;node.ico;210;160;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p06;1;p08;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p07Curve;xp07;yp07;1714752132">
+<param name="p08" value="0;node.ico;210;181;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p07;1;p09;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p08Curve;xp08;yp08;3898855756">
+<param name="p09" value="0;node.ico;212;203;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p08;1;p10;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p09Curve;xp09;yp09;1879447795">
+<param name="p10" value="0;node.ico;210;223;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p09;1;p11;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p10Curve;xp10;yp10;93614128">
+<param name="p11" value="0;node.ico;213;245;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p10;1;p12;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p11Curve;xp11;yp11;2869951292">
+<param name="p12" value="0;node.ico;214;267;0;-;0.0;TransformNode;NoInput;NoOutput;3;Presentazione;gt0;p11;0;0.0;0.0;0.0;0.0;1.0;0.0;1.0;1.0;LinearCurve;p12Curve;xp12;yp12;640290005">
+<param name="gt0" value="0;node.ico;262;140;0;-;0.0;NumGtNode;NoInput;NoOutput;1;a_cumul;12;p01;p02;p03;p04;p05;p06;p07;p08;p09;p10;p11;p12;1.0;0.0;NoCurve;xgt0;ygt0;3750585883">
+<param name="presOK" value="2;node.ico;476;426;0;-;0.0;TimesNode;NoInput;IntermediateOutput;0;1;idoneo;1.0;NoCurve;xpresOK;ypresOK;866483872">
+<param name="c" value="0;node.ico;428;576;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;c_idon;1.0;NoCurve;xc;yc;358326753">
+<param name="c_idon" value="0;node.ico;467;575;0;-;0.0;ProbNode;NoInput;NoOutput;2;c;i;1;idoneo;0.0;0.0;0.0;1.0;NoCurve;xc_idon;yc_idon;1479636468">
+<param name="i" value="0;node.ico;502;576;0;-;0.0;ProbNode;NoInput;NoOutput;0;1;c_idon;0.0;NoCurve;xi;yi;1109650407">
+<param name="a_cumul" value="0;node.ico;287;263;0;-;0.0;PlusNode;NoInput;NoOutput;1;a_totale;1;gt0;0.0;1.0;NoCurve;xa_cumul;ya_cumul;610764183">
+
+<param name="p01Curve" value="LinearCurve;0.0;0.0;x01;1.0;x02;0.0">
+<param name="p02Curve" value="LinearCurve;x01;0.0;x02;1.0;x03;0.0">
+<param name="p03Curve" value="LinearCurve;x02;0.0;x03;1.0;x04;0.0">
+<param name="p04Curve" value="LinearCurve;x03;0.0;x04;1.0;x05;0.0">
+<param name="p05Curve" value="LinearCurve;x04;0.0;x05;1.0;x06;0.0">
+<param name="p06Curve" value="LinearCurve;x05;0.0;x06;1.0;x07;0.0">
+<param name="p07Curve" value="LinearCurve;x06;0.0;x07;1.0;x08;0.0">
+<param name="p08Curve" value="LinearCurve;x07;0.0;x08;1.0;x09;0.0">
+<param name="p09Curve" value="LinearCurve;x08;0.0;x09;1.0;x10;0.0">
+<param name="p10Curve" value="LinearCurve;x09;0.0;x10;1.0;x11;0.0">
+<param name="p11Curve" value="LinearCurve;x10;0.0;x11;1.0;x12;0.0">
+<param name="p12Curve" value="LinearCurve;x11;0.0;x12;1.0">
+
+
+<param name="xa09" value="a09;a09;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa10" value="a10;a10;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xV_disabili" value="V_disabili;V_disabili;V_disabili0;V_disabili;V_disabili; ; ; ; ; ;T13; ">
+
+<param name="xa08" value="a08;a08;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPresentazione" value="Presentazione;Mese di presentazione della domanda;Presentazione della domanda non in questo anno;Mese di presentazione della domanda;Mese di presentazione della domanda; ; ; ; ; ;T; ">
+
+<param name="xpresOK" value="presOK;presOK;domanda <b>non idonea</b> nel mese successivo alla data (§Presentazione§) di presentazione ;-;domanda idonea nel mese successivo alla data di presentazione; ; ; ; ; ; ; ">
+
+<param name="xa11" value="a11;a11;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa12" value="a12;a12;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa07" value="a07;a07;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa01" value="a01;a01;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa02" value="a02;a02;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xV_n_figli" value="V_n_figli;V_n_figli;V_n_figli0;V_n_figli;V_n_figli; ; ; ; ; ;T13; ">
+
+<param name="xV_check" value="V_check;V_check;V_check0;V_check;V_check; ; ; ; ; ;T12; ">
+
+<param name="xa05" value="a05;a05;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa06" value="a06;a06;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa03" value="a03;a03;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xa04" value="a04;a04;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc" value="x;x;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE06" value="CE06;CE06;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE05" value="CE05;CE05;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE08" value="CE08;CE08;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE07" value="CE07;CE07;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE04" value="CE04;CE04;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE01" value="CE01;CE01;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xModello_Assegno07" value="P.A.T.  Assegno07;x;P.A.T.  Assegno07 2007 - (20.6.2006);--;--; ; ; ; ; ; ; ">
+<param name="xCE03" value="CE03;CE03;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE02" value="CE02;CE02;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE09" value="CE09;CE09;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xDettagli" value="Dettagli;Dettagli;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xV_1genitor" value="V_1genitor;V_1genitor;V_1genitor0;V_1genitor;V_1genitor; ; ; ; ; ;T13; ">
+
+<param name="xi" value="x;x;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE10" value="CE10;CE10;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE11" value="CE11;CE11;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCE12" value="CE12;CE12;0;-;1; ;-;+; ; ; ; ">
+
+
+
+
+
+<param name="xc12" value="c12;c12;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc11" value="c11;c11;0;-;1; ;-;+; ; ; ; ">
+
+
+
+
+
+<param name="xidon" value="idon;--;in alcuni mesi l'assegno è zero per mancanza di requisiti (vedi cod. controllo);-;domanda idonea per i mesi del 2007; ; ; ; ; ; ; ">
+
+<param name="xa_cumul" value="a_cumul;a_cumul;0;-;1; ;-;+; ; ; ; ">
+
+
+<param name="xgt0" value="gt0;gt0;0;-;1; ;-;+; ; ; ; ">
+
+
+
+
+<param name="x1g12" value="1g12;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="xd01" value="d01;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="x1g10" value="1g10;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g11" value="1g11;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="xd04" value="d04;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xd05" value="d05;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xd02" value="d02;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xd03" value="d03;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="x1g09" value="1g09;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g03" value="1g03;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g04" value="1g04;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g01" value="1g01;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g02" value="1g02;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g07" value="1g07;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g08" value="1g08;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g05" value="1g05;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="x1g06" value="1g06;  ;due;-;1 genitore; ; ; ; ; ; ; ">
+
+<param name="xd06" value="d06;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xc04" value="c04;c04;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc09" value="c09;c09;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc02" value="c02;c02;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc03" value="c03;c03;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc07" value="c07;c07;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc06" value="c06;c06;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc05" value="c05;c05;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc08" value="c08;c08;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc10" value="c10;c10;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xd09" value="d09;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xd08" value="d08;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xd07" value="d07;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xd12" value="d12;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xc01" value="c01;c01;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xd10" value="d10;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xd11" value="d11;  ;no;-;si; ; ; ; ; ; ; ">
+
+<param name="xp01" value="p01;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xc_idon" value="c_idon;c_idon;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xp10" value="p10;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp11" value="p11;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp12" value="p12;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp09" value="p09;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp03" value="p03;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp04" value="p04;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xidoneo" value="idoneo;--;domanda non idonea per certi mesi del 20056;-;domanda idonea per i mesi del 2007; ; ; ; ; ; ; ">
+
+<param name="xp02" value="p02;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp07" value="p07;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp08" value="p08;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp05" value="p05;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xp06" value="p06;  ;1; ; ; ; ; ; ; ; ; ">
+
+<param name="xa_totale" value="a_totale;Assegno 2007;L'assegno 2007 è zero;Assegno 2007;Assegno 2007; ; ; ; ;<b>;$.2;</b>">
+
+
+
+
+<param name="xpltree" value="propagation0;propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;propagation7;propagation8;propagation9;propagation10;propagation11;propagation12;propagation13;propagation14;propagation15;propagation16;propagation17;propagation18;propagation19;propagation20;propagation21;propagation22;propagation23;propagation24;propagation25;vettori;tabellamesi;nonidon;ilcheck;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;a01=0;a02=0;a03=0;a04=0;a05=0;a06=0;a07=0;a08=0;a09=0;a10=0;a11=0;a12=0">
+<param name="propagation1" value=" ;c=1;presOK=p01;a01=assegno;Un_genitor=1g01;Disabili=d01;N_figli=n01;Check=c01;Condizione_familiare=CE01">
+<param name="propagation2" value="(cOK==0) ;c01=8;c=0">
+<param name="propagation3" value="(p01==1) ;c=1;presOK=p02;a02=assegno;Un_genitor=1g02;Disabili=d02;N_figli=n02;Check=c02;Condizione_familiare=CE02">
+<param name="propagation4" value="(cOK==0) ;c02=8;c=0">
+<param name="propagation5" value="(p02==1) ;c=1;presOK=p03;a03=assegno;Un_genitor=1g03;Disabili=d03;N_figli=n03;Check=c03;Condizione_familiare=CE03">
+<param name="propagation6" value="(cOK==0) ;c03=8;c=0">
+<param name="propagation7" value="(p03==1) ;c=1;presOK=p04;a04=assegno;Un_genitor=1g04;Disabili=d04;N_figli=n04;Check=c04;Condizione_familiare=CE04">
+<param name="propagation8" value="(cOK==0) ;c04=8;c=0">
+<param name="propagation9" value="(p04==1) ;c=1;presOK=p05;a05=assegno;Un_genitor=1g05;Disabili=d05;N_figli=n05;Check=c05;Condizione_familiare=CE05">
+<param name="propagation10" value="(cOK==0) ;c05=8;c=0">
+<param name="propagation11" value="(p05==1) ;c=1;presOK=p06;a06=assegno;Un_genitor=1g06;Disabili=d06;N_figli=n06;Check=c06;Condizione_familiare=CE06">
+<param name="propagation12" value="(cOK==0) ;c06=8;c=0">
+<param name="propagation13" value="(p06==1) ;c=1;presOK=p07;a07=assegno;Un_genitor=1g07;Disabili=d07;N_figli=n07;Check=c07;Condizione_familiare=CE07">
+<param name="propagation14" value="(cOK==0) ;c07=8;c=0">
+<param name="propagation15" value="(p07==1) ;c=1;presOK=p08;a08=assegno;Un_genitor=1g08;Disabili=d08;N_figli=n08;Check=c08;Condizione_familiare=CE08">
+<param name="propagation16" value="(cOK==0) ;c08=8;c=0">
+<param name="propagation17" value="(p08==1) ;c=1;presOK=p09;a09=assegno;Un_genitor=1g09;Disabili=d09;N_figli=n09;Check=c09;Condizione_familiare=CE09">
+<param name="propagation18" value="(cOK==0) ;c09=8;c=0">
+<param name="propagation19" value="(p09==1) ;c=1;presOK=p10;a10=assegno;Un_genitor=1g10;Disabili=d10;N_figli=n10;Check=c10;Condizione_familiare=CE10">
+<param name="propagation20" value="(cOK==0) ;c10=8;c=0">
+<param name="propagation21" value="(p10==1) ;c=1;presOK=p11;a11=assegno;Un_genitor=1g11;Disabili=d11;N_figli=n11;Check=c11;Condizione_familiare=CE11">
+<param name="propagation22" value="(cOK==0) ;c11=8;c=0">
+<param name="propagation23" value="(p11==1) ;c=1;presOK=p12;a12=assegno;Un_genitor=1g12;Disabili=d12;N_figli=n12;Check=c12;Condizione_familiare=CE12">
+<param name="propagation24" value="(cOK==0) ;c12=8;c=0">
+<param name="propagation25" value="(presOK==0) ;tabella=0;colonna=0;riga=0">
+<param name="vettori" value="(Dettagli==1)Vettori di input: ;V_1genitor=-1;V_disabili=-1;V_n_figli=-1;V_check=-1;Presentazione=-1">
+<param name="tabellamesi" value="<p><center><b>RISULTATO SUDDIVISO PER I MESI DELL ANNO 2007:</b></center>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>mese</td>
+    <td align='center'>cond.econ.</td>
+    <td align='center'>genitori</td>
+    <td align='center'>disabili</td>
+    <td align='center'>n figli</td>
+    <td align='center'>controllo</td>
+    <td align='center'>assegno</td>
+  </tr>
+  <tr>
+     <td align='center'>Gennaio</td>
+    <td align='center'>§CE01§</td>
+    <td align='center'>|1g01|</td>
+    <td align='center'>|d01|</td>
+    <td align='center'>§n01§</td>
+    <td align='center'>|p01|§c01§ </td>
+    <td align='center'>$a01$</td>
+  </tr>
+  <tr>
+    <td align='center'>Febbraio</td>
+    <td align='center'>§CE02§</td>
+    <td align='center'>|1g02|</td>
+    <td align='center'>|d02|</td>
+    <td align='center'>§n02§</td>
+    <td align='center'>|p02|§c02§ </td>
+    <td align='center'>$a02$</td>
+  </tr>
+  <tr>
+    <td align='center'>Marzo</td>
+    <td align='center'>§CE03§</td>
+    <td align='center'>|1g03|</td>
+    <td align='center'>|d03|</td>
+    <td align='center'>§n03§</td>
+    <td align='center'>|p03|§c03§ </td>
+    <td align='center'>$a03$</td>
+  </tr>
+  <tr>
+    <td align='center'>Aprile</td>
+    <td align='center'>§CE04§</td>
+    <td align='center'>|1g04|</td>
+    <td align='center'>|d04|</td>
+    <td align='center'>§n04§</td>
+    <td align='center'>|p04|§c04§ </td>
+    <td align='center'>$a04$</td>
+  </tr>
+  <tr>
+    <td align='center'>Maggio</td>
+    <td align='center'>§CE05§</td>
+    <td align='center'>|1g05|</td>
+    <td align='center'>|d05|</td>
+    <td align='center'>§n05§</td>
+    <td align='center'>|p05|§c05§ </td>
+    <td align='center'>$a05$</td>
+  </tr>
+  <tr>
+    <td align='center'>Giugno</td>
+    <td align='center'>§CE06§</td>
+    <td align='center'>|1g06|</td>
+    <td align='center'>|d06|</td>
+    <td align='center'>§n06§</td>
+    <td align='center'>|p06|§c06§ </td>
+    <td align='center'>$a06$</td>
+ </tr>
+  <tr>
+    <td align='center'>Luglio</td>
+    <td align='center'>§CE07§</td>
+    <td align='center'>|1g07|</td>
+    <td align='center'>|d07|</td>
+    <td align='center'>§n07§</td>
+    <td align='center'>|p07|§c07§ </td>
+    <td align='center'>$a07$</td>
+  </tr>
+  <tr>
+    <td align='center'>Agosto</td>
+    <td align='center'>§CE08§</td>
+    <td align='center'>|1g08|</td>
+    <td align='center'>|d08|</td>
+    <td align='center'>§n08§</td>
+    <td align='center'>|p08|§c08§ </td>
+    <td align='center'>$a08$</td>
+ </tr>
+  <tr>
+    <td align='center'>Settembre</td>
+    <td align='center'>§CE09§</td>
+    <td align='center'>|1g09|</td>
+    <td align='center'>|d09|</td>
+    <td align='center'>§n09§</td>
+    <td align='center'>|p09|§c09§ </td>
+    <td align='center'>$a09$</td>
+  </tr>
+  <tr>
+    <td align='center'>Ottobre</td>
+    <td align='center'>§CE10§</td>
+    <td align='center'>|1g10|</td>
+    <td align='center'>|d10|</td>
+    <td align='center'>§n10§</td>
+    <td align='center'>|p10|§c10§ </td>
+    <td align='center'>$a10$</td>
+  </tr>
+  <tr>
+    <td align='center'>Novembre</td>
+    <td align='center'>§CE11§</td>
+    <td align='center'>|1g11|</td>
+    <td align='center'>|d11|</td>
+    <td align='center'>§n11§</td>
+    <td align='center'>|p11|§c11§ </td>
+    <td align='center'>$a11$</td>
+  </tr>
+  <tr>
+    <td align='center'>Dicembre</td>
+    <td align='center'>§CE12§</td>
+    <td align='center'>|1g12|</td>
+    <td align='center'>|d12|</td>
+    <td align='center'>§n12§</td>
+    <td align='center'>|p12|§c12§ </td>
+    <td align='center'>$a12$</td>
+  </tr>
+<tr>
+    <td align='center'>---</td>
+</tr>
+  <tr>
+    <td align='center'>totale</td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'><b>$a_totale$</b></td>
+  </tr>
+</table><p><br>;">
+<param name="nonidon" value="(idoneo==0) ;idon=3!1;presOK=3!1">
+<param name="ilcheck" value="(idoneo==0) <p>
+<i>Spiegazione dei codici di controllo:<br>
+(1) richiedente non presente nel nucleo<br>
+(2) richiedente non residente<br>
+(3) (1) e (2)<br>
+(4) richiedente senza requisiti lavorativi<br>
+(5) (1) e (4)<br>
+(6) (2) e (4)<br>
+(7) (1) e (2) e (4)<br>
+(8) condizione economica oltre i limiti<br>
+(9) domanda non applicabile<br>
+ >9 non-idonea nel mese successivo alla data di presentazione</i><br><br>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="498062575">
+<param name="CRC" value="368142432">
+<param name="CRCdata" value="20-giu-2006 19.33.54">
+</APPLET>
+<BR>

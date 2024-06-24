@@ -1,0 +1,124 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class
+	CODEBASE='/clesius'
+	ARCHIVE="clesius.jar,jdom.jar,crimson.jar,xerces.jar,xalan.jar,jaxp.jar"
+	WIDTH=700 HEIGHT=620 MAYSCRIPT>
+	<param name="taratura" value="PAT Formazione 28.5.2019; ">
+	<param name="revision" value="$Revision: 35901 $">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="false">
+
+	<param name="trendStarts" value="limiti;casoicef">
+	<param name="casoicef" value="limiti;Icef=0.18">
+
+	<param name="limiti"
+		value="zero;Assegno_imposto=2500;Requisiti=1;Redd3inf=14400;Redd3sup=28800;Redd3lim=36000;Buono_minn=900;Buono_min=1000;Buono_max=1500;Buono_maxx=1500;Rif=50000">
+
+
+	<param name="variables"
+		value="uno;ascala;rscala;divisotre;buono_max;ascala">
+
+	<param name="uno" value="1">
+	<param name="buono_max" value="1500">
+	<param name="ascala" value="uno / buono_max">
+
+	<param name="rscala" value="0.000001">
+	<param name="divisotre" value="0.490196078; uno / C3; ">
+
+
+
+
+
+<param name="edges" value="PAT buoni servizio;
+Assegno_imposto-arl;condOK-OK;Requisiti-OK;inf-giudizio;Icef-giudizio;Icef-condOK;Redd3inf-inf;Redd3sup-sup;Rif-inf;Rif-sup;OK-importo_buono;Redd3lim-lim;Rif-lim;lim-condOK;Buono_min-d;giudizio-d;tra-buono1;Icef-geinf;Icef-lesup;inf-geinf;sup-lesup;
+geinf-tra;lesup-tra;max_d-buono1;Buono_max-max_d;d-max_d;geinf-buono0;Buono_minn-buono0;lesup-buono2;Buono_min-buono2;Buono_maxx-buono0;Buono_minn-buono2;buono0-buono;buono1-buono;buono2-buono;buono-importo_buono">
+
+
+
+<param name="PAT buoni servizio" value="text;node.ico;556;261;0;PAT buoni servizio (28.5.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT buoni servizio;yPAT buoni servizio;3915488474">
+<param name="Assegno_imposto" value="1;node.ico;438;264;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;pscala;NoCurve;xAssegno_imposto;xAssegno_imposto;1090203339">
+<param name="arl" value="0;node.ico;363;264;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno_imposto;0;rscala;1.0;NoCurve;xarl;xarl;993704431">
+<param name="condOK" value="0;node.ico;321;282;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;lim;1;OK;1.0;1.0;1.0;1.0;NoCurve;xcondOK;xcondOK;3811366944">
+<param name="OK" value="0;node.ico;604;282;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;condOK;Requisiti;1;importo_buono;1.0;1.0;1.0;1.0;NoCurve;xOK;xOK;1220027665">
+<param name="Requisiti" value="1;node.ico;656;284;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;OK;1.0;NoCurve;xRequisiti;xRequisiti;629055418">
+<param name="inf" value="0;node.ico;20;324;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;2;giudizio;geinf;1.0;divisotre;1.0;1.0;NoCurve;xinf;xinf;578857534">
+<param name="giudizio" value="0;0;120;341;0;-;0.0;DivideNode;NoInput;NoOutput;2;inf;Icef;1;d;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;xgiudizio;4199115405">
+<param name="Icef" value="1;node.ico;120;309;0;-;0.0;ProbNode;ValueInput;NoOutput;0;4;giudizio;condOK;geinf;lesup;0.5;NoCurve;xIcef;xIcef;283202867">
+<param name="Redd3inf" value="1;node.ico;36;383;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;rscala;NoCurve;xRedd3inf;xRedd3inf;1124336080">
+<param name="Redd3sup" value="1;node.ico;163;383;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;sup;rscala;NoCurve;xRedd3sup;xRedd3sup;2250028766">
+<param name="sup" value="0;node.ico;225;326;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;1;lesup;1.0;divisotre;1.0;1.0;NoCurve;xsup;xsup;930460828">
+<param name="Rif" value="1;node.ico;122;282;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;inf;sup;lim;rscala;NoCurve;xRif;xRif;1967111617">
+<param name="importo_buono" value="2;node.ico;604;362;0;-;0.0;TimesNode;NoInput;ResultOutput;2;OK;buono;0;ascala;1.0;1.0;1.0;NoCurve;ximporto_buono;ximporto_buono;2158548325">
+<param name="Redd3lim" value="1;node.ico;253;384;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;lim;rscala;NoCurve;xRedd3lim;xRedd3lim;1064043016">
+<param name="lim" value="0;node.ico;253;282;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3lim;Rif;1;condOK;1.0;divisotre;1.0;1.0;NoCurve;xlim;xlim;1982902990">
+<param name="Buono_min" value="1;node.ico;416;387;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;d;buono2;rscala;NoCurve;xBuono_min;xBuono_min;3467381838">
+<param name="d" value="0;node.ico;416;341;0;-;0.0;Times2Node;NoInput;NoOutput;2;Buono_min;giudizio;1;max_d;ascala;1.0;-99.0;1.0;NoCurve;xd;xd;1140604937">
+<param name="tra" value="0;node.ico;121;364;0;-;0.0;ProbNode;NoInput;NoOutput;2;geinf;lesup;1;buono1;0.0;0.0;0.0;1.0;NoCurve;xtra;xtra;2434492630">
+<param name="buono1" value="0;node.ico;452;363;0;-;0.0;NumIfNode;NoInput;IntermediateOutput;2;tra;max_d;1;buono;ascala;1.0;1.0;1.0;NoCurve;xbuono1;xbuono1;908172793">
+<param name="geinf" value="0;node.ico;69;324;0;-;0.0;NumGeNode;NoInput;NoOutput;2;Icef;inf;2;tra;buono0;1.0;1.0;1.0;1.0;NoCurve;xgeinf;xgeinf;3366747075">
+<param name="lesup" value="0;node.ico;174;325;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;2;tra;buono2;1.0;1.0;1.0;1.0;NoCurve;xlesup;xlesup;858876338">
+<param name="max_d" value="0;node.ico;512;343;0;-;0.0;MinusNode;NoInput;NoOutput;2;Buono_max;d;1;buono1;ascala;1.0;1.0;1.0;NoCurve;xmax_d;xmax_d;1968845383">
+<param name="Buono_max" value="1;node.ico;510;385;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;max_d;rscala;NoCurve;xBuono_max;xBuono_max;3791637157">
+<param name="buono0" value="0;node.ico;352;304;0;-;0.0;NumIfNode;NoInput;NoOutput;3;geinf;Buono_minn;Buono_maxx;1;buono;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xbuono0;xbuono0;3483713409">
+<param name="Buono_minn" value="1;node.ico;328;386;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;buono2;buono0;rscala;NoCurve;xBuono_minn;xBuono_minn;723077154">
+<param name="buono2" value="0;node.ico;312;325;0;-;0.0;NumIfNode;NoInput;NoOutput;3;lesup;Buono_min;Buono_minn;1;buono;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xbuono2;xbuono2;3195330600">
+<param name="Buono_maxx" value="1;node.ico;603;387;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;buono0;rscala;NoCurve;xBuono_maxx;xBuono_maxx;3837538879">
+<param name="buono" value="0;node.ico;452;304;0;-;0.0;NumMaxNode;NoInput;NoOutput;3;buono0;buono1;buono2;1;importo_buono;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xbuono;xbuono;3657724835">
+
+
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xRedd3lim" value="Redd3lim;Redd3lim;0;-;1; ;-;+; ; ; ; ">
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0;-;1; ;-;+; ; ; ; ">
+<param name="xBuono_minn" value="Buono_minn;Buono_minn;0;-;1; ;-;+; ; ; ; ">
+<param name="xBuono_maxx" value="Buono_maxx;Buono_maxx;0;-;1; ;-;+; ; ; ; ">
+<param name="xBuono_min" value="Buono_min;Buono_min;0;-;1; ;-;+; ; ; ; ">
+<param name="xBuono_max" value="Buono_max;Buono_max;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Situazione Economica Familiare (graduato tra ^inf^ e ^sup^ e ammissibile fino a ^lim^);<B>ICEF</B> Indicatore della Situazione Economica Familiare zero;<B>ICEF</B> Indicatore della Situazione Economica Familiare  (graduato tra ^inf^ e ^sup^);<B>ICEF</B> Indicatore della Situazione Economica Familiare (graduato tra ^inf^ e ^sup^); ; ; ; ;<b>;T.8;</b>">
+<param name="xRequisiti" value="Requisiti;x;Il richiedente non risiede in Provincia di Trento;--;idoneo; ; ; ; ; ;!; ">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno presunto;non Assegno presunto;Assegno presunto;Assegno presunto; ; ; ; ; ;$.2; ">
+<param name="xPAT buoni servizio" value="PAT buoni servizio;PAT buoni servizio;PAT buoni servizio (28.5.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xarl" value="arl;arl;non;-;ok; ; ; ; ; ; ; ">
+<param name="xbuono1" value="buono1;buono1;0;-;1; ;-;+; ; ; ; ">
+<param name="xtra" value="tra;tra;0;-;1; ;-;+; ; ; ; ">
+<param name="xgeinf" value="geinf;geinf;0;-;1; ;-;+; ; ; ; ">
+<param name="xmax_d" value="max_d;max_d;non;-;ok; ; ; ; ; ; ; ">
+<param name="xlesup" value="lesup;lesup;0;-;1; ;-;+; ; ; ; ">
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+<param name="ximporto_buono" value="importo_buono;Importo del buono di servizio;non spetta nessuna buono;Importo del buono di servizio;buono di servizio intero;è di; ; ; ; ;$.0; ">
+<param name="xgiudizio" value="giudizio;La percentuale spettante dell'importo;Non spetta nessuna buono;La percentuale spettante è intermedia, ;Spetta il l'intera buono;è il; ; ; ; ;%; tra il minimo di $Buono_min$ e il massimo di $Buono_max$">
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento di $C_RIF_ICEF$ è maggiore di  $Redd3lim$) ;--;idoneo; ; ; ; ; ;!; ">
+<param name="xd" value="x;x;0;-;1; ;-;+; ; ; ; ">
+<param name="xOK" value="OK;x;non idoneo;--;idoneo; ; ; ; ; ;!; ">
+<param name="xlim" value="lim;il limite da esclusione;--;--;--;è; ; ; ; ;T.8; ">
+<param name="xbuono" value="buono;buono;0;-;1; ;-;+; ; ; ; ">
+<param name="xbuono0" value="buono0;buono0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xbuono2" value="buono2;buono2;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="ris;applicant;dati;buon;nobuon;nota;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="ris" value="<center><h2>Calcolo dei buoni di servizio</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<h2>Dati per il calcolo del buono</h2>;Icef=-1">
+<param name="buon" value="(OK!=0)La domanda è <b>idonea</b>;importo_buono=-1">
+<param name="nobuon" value="(OK==0)La domanda <b>non è idonea</b>;Requisiti=3!1;condOK=3!1">
+<param name="nota" value="(OK!=0)<br>Il risultato dell'assegno ottenuto è <b>puramente indicativo</b>, poichè dipende dalla precisione dei dati inseriti e dalla disponibilità dei fondi in rapporto al numero complessivo di domande che risulteranno idonee.<p>;">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2075187128">
+<param name="CRC" value="1307976944">
+<param name="CRCdata" value="28-mag-2019 17.05.00">
+</APPLET>
+<BR>

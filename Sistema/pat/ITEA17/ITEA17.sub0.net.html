@@ -1,0 +1,93 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=700 HEIGHT=750 MAYSCRIPT>
+	<param name="revision" value="$Revision: 30238 $">
+
+	<param name="Taratura" value="ITEA sopraggiunta Invalidità; 3.5.2017">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="false">
+	<param name="language" value="0">
+
+	<param name="trendStarts" value="paramsopraggiunta;inval7638712">
+
+<param name="inval7638712" value="paramsopraggiunta;Accesso=0;Sopraggiunta_deduzione=10800;Sopraggiunta_provvidenza=6900;_icef=0.24;_rf=18842;icef_inval=0.1024;rf_inval=8042">
+<param name="paramsopraggiunta" value="current;Calcolo_variazione_significativa=1;D_icef=0.03;D_rf=0.25;Sopraggiunta_invalidita=1">
+
+
+
+<param name="edges" value="P.A.T. Sopraggiunta Invalidità;variazione_significativa;icef*;icef**;
+Sopraggiunta_provvidenza-prov_inval;Sopraggiunta_deduzione-det_inval;Sopraggiunta_invalidita-prov_inval;Sopraggiunta_invalidita-det_inval;Calcolo_variazione_significativa-con_prov;con_prov-prov_inval;_rf-drf;drf-mod;mod-var_rf;D_rf-var_rf;_icef-dicef;dicef-var_icef;D_icef-var_icef;var_rf-var;var_icef-var;rf_inval-drf;icef_inval-dicef;_rf-mod">
+
+
+
+<param name="P.A.T. Sopraggiunta Invalidità" value="text;node.ico;93;528;0;Versione 3.5.2017;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloSI;yModelloSI;2079411908">
+<param name="variazione_significativa" value="2;node.ico;348;479;0;variazione_significativa = ;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xvariazione_significativa;xvariazione_significativa;2729619325">
+<param name="icef*" value="0;node.ico;482;473;0;icef* =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;0;0.5;NoCurve;xicef*;xicef*;3076191879">
+<param name="icef**" value="0;node.ico;543;473;0;icef** =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;0;0.5;NoCurve;xicef**;xicef**;4022822317">
+<param name="Sopraggiunta_provvidenza" value="1;node.ico;375;527;0;Sopraggiunta_provvidenza = ;0.0;PlusNode;ValueInput;NoOutput;0;1;prov_inval;rscala;NoCurve;xSopraggiunta_provvidenza;xSopraggiunta_provvidenza;3112730613">
+<param name="prov_inval" value="0;node.ico;348;501;0;prov_inval =  Sopraggiunta_provvidenza * Sopraggiunta_invalidita * con_prov;0.0;TimesNode;NoInput;NoOutput;3;Sopraggiunta_provvidenza;Sopraggiunta_invalidita;con_prov;0;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xprov_inval;xprov_inval;2993001859">
+<param name="Sopraggiunta_deduzione" value="1;node.ico;544;528;0;Sopraggiunta_deduzione = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det_inval;rscala;NoCurve;xSopraggiunta_deduzione;xSopraggiunta_deduzione;1999363231">
+<param name="det_inval" value="0;node.ico;573;498;0;det_inval =  Sopraggiunta_deduzione * Sopraggiunta_invalidita;0.0;TimesNode;NoInput;NoOutput;2;Sopraggiunta_deduzione;Sopraggiunta_invalidita;0;0.0;1.0;1.0;1.0;NoCurve;xdet_inval;xdet_inval;962953376">
+<param name="Sopraggiunta_invalidita" value="1;node.ico;461;499;0;Sopraggiunta_invalidita = ;0.0;ProbNode;ValueInput;NoOutput;0;2;prov_inval;det_inval;0.5;NoCurve;xSopraggiunta_invalidita;xSopraggiunta_invalidita;1095252796">
+<param name="Calcolo_variazione_significativa" value="1;node.ico;97;508;0;Calcolo_variazione_significativa = ;0.0;PlusNode;ValueInput;NoOutput;0;1;con_prov;0.5;NoCurve;xCalcolo_variazione_significativa;xCalcolo_variazione_significativa;944464145">
+<param name="con_prov" value="0;node.ico;239;503;0;con_prov = Calcolo_variazione_significativa > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;Calcolo_variazione_significativa;1;prov_inval;1.0;0.0;NoCurve;xcon_prov;xcon_prov;2005310691">
+<param name="_rf" value="0;node.ico;115;455;0;_rf = ;0.0;PlusNode;ValueInput;NoOutput;0;2;drf;mod;0.0;NoCurve;x_rf;x_rf;786851075">
+<param name="drf" value="0;node.ico;155;468;0;drf =  _rf - rf_inval;0.0;MinusNode;NoInput;NoOutput;2;_rf;rf_inval;1;mod;0.0;1.0;1.0;1.0;NoCurve;xdrf;xdrf;2743654221">
+<param name="mod" value="0;node.ico;195;455;0;mod =  drf / _rf;0.0;DivideNode;NoInput;NoOutput;2;drf;_rf;1;var_rf;1.0;1.0;1.0;1.0;NoCurve;xmod;xmod;2005064939">
+<param name="var_rf" value="0;node.ico;243;455;0;var_rf = mod >= D_rf;0.0;NumGeNode;NoInput;NoOutput;2;mod;D_rf;1;var;1.0;1.0;1.0;1.0;NoCurve;xvar_rf;xvar_rf;431457807">
+<param name="D_rf" value="1;node.ico;277;526;0;D_rf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;var_rf;0.5;NoCurve;xD_rf;xD_rf;350445023">
+<param name="_icef" value="0;node.ico;118;477;0;_icef = ;0.0;ProbNode;ValueInput;NoOutput;0;1;dicef;0.5;NoCurve;x_icef;x_icef;3978887988">
+<param name="dicef" value="0;node.ico;182;488;0;dicef it.clesius.clesius.engine.nodes.Math.SubtractNode;0.0;SubtractNode;NoInput;NoOutput;2;_icef;icef_inval;1;var_icef;0.0;1.0;1.0;1.0;NoCurve;xdicef;xdicef;3358093659">
+<param name="var_icef" value="0;node.ico;238;480;0;var_icef = dicef > D_icef;0.0;NumGtNode;NoInput;NoOutput;2;dicef;D_icef;1;var;1.0;1.0;1.0;1.0;NoCurve;xvar_icef;xvar_icef;966124168">
+<param name="D_icef" value="1;node.ico;200;528;0;D_icef = ;0.0;ProbNode;ValueInput;NoOutput;0;1;var_icef;0.5;NoCurve;xD_icef;xD_icef;1437825121">
+<param name="var" value="0;node.ico;291;457;0;var =  var_rf * var_icef;0.0;ProbNode;NoInput;NoOutput;2;var_rf;var_icef;0;0.0;0.0;0.0;1.0;NoCurve;xvar;xvar;215376736">
+<param name="rf_inval" value="0;node.ico;32;461;0;rf_inval = ;0.0;TimesNode;NoInput;NoOutput;0;1;drf;0.0;NoCurve;xrf_inval;xrf_inval;4091312903">
+<param name="icef_inval" value="0;node.ico;35;486;0;icef_inval =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;1;dicef;0.5;NoCurve;xicef_inval;xicef_inval;44514677">
+
+
+
+<param name="x_rf" value="_rf;_rf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xD_rf" value="D_rf;D_rf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xSopraggiunta_invalidita" value="Sopraggiunta_invalidita;x;non;-;Sopraggiunta_invalidita; ; ; ; ; ;T; ">
+<param name="xCalcolo_variazione_significativa" value="Calcolo_variazione_significativa;Calcolo variazione;variazione <b>non</b> considerata;Calcolo della variazione significativa;considerato solo icef**; ; ; ; ; ;T; ">
+<param name="xrf_inval" value="rf_inval;rf_inval;non;-;ok; ; ; ; ; ; ; ">
+<param name="xicef_inval" value="icef_inval;icef_inval;non;-;ok; ; ; ; ; ; ; ">
+<param name="x_icef" value="_icef;_icef;non;-;ok; ; ; ; ; ; ; ">
+<param name="xD_icef" value="D_icef;D_icef;non;-;ok; ; ; ; ; ; ; ">
+<param name="xicef**" value="icef**;ICEF**: ICEF attualizzato per la sopraggiunta invalidità ;ICEF**: ICEF attualizzato per la sopraggiunta invalidità =0;ICEF**: ICEF attualizzato per la sopraggiunta invalidità ;ICEF**: ICEF attualizzato per la sopraggiunta invalidità ; ; ; ; ; ;T.4; ">
+<param name="xSopraggiunta_provvidenza" value="Sopraggiunta_provvidenza;Sopraggiunta_provvidenza;Sopraggiunta_provvidenza=0;Sopraggiunta_provvidenza;Sopraggiunta_provvidenza; ; ; ; ; +;$.2; ">
+<param name="xicef*" value="icef*;ICEF*: ICEF per la verifica dei requisiti di sopraggiunta invalidità ;ICEF*: ICEF per la verifica dei requisiti di sopraggiunta invalidità =0;ICEF*: ICEF per la verifica dei requisiti di sopraggiunta invalidità ;ICEF*: ICEF per la verifica dei requisiti di sopraggiunta invalidità ; ; ; ; ; ;T.4; ">
+<param name="xModelloSI" value="P.A.T. Sopraggiunta Invalidità;x;Versione 3.5.2017; ; ; ; ; ; ; ; ; ">
+
+<param name="xvariazione_significativa" value="variazione_significativa;variazione;variazione non significativa;-;<b>variazione significativa</b>; ; ; ; ; ;T; ">
+<param name="xSopraggiunta_deduzione" value="Sopraggiunta_deduzione;Sopraggiunta_deduzione;Sopraggiunta_deduzione=0;Sopraggiunta_deduzione;Sopraggiunta_deduzione; ; ; ; ; -;$.2; ">
+<param name="xcon_prov" value="con_prov;con_prov;non;-;ok; ; ; ; ; ; ; ">
+<param name="xvar_icef" value="var_icef;var_icef;non;-;ok; ; ; ; ; ; ; ">
+<param name="xdet_inval" value="det_inval;det_inval;non;-;ok; ; ; ; ; ; ; ">
+<param name="xvar" value="var;var;non;-;ok; ; ; ; ; ; ; ">
+<param name="xvar_rf" value="var_rf;var_rf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmod" value="mod;mod;non;-;ok; ; ; ; ; ; ; ">
+<param name="xdrf" value="drf;drf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xdicef" value="dicef;dicef;non;-;ok; ; ; ; ; ; ; ">
+<param name="xprov_inval" value="prov_inval;prov_inval;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="titolo1;sopraggiunto;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="titolo1" value="(a_v==1)<CENTER><H2>P.A.T. ITEA - verifica</H2></CENTER>;">
+<param name="sopraggiunto" value="(Sopraggiunta_invalidita==1)<b>Sopraggiunta invalidita:</b>;Sopraggiunta_deduzione=-1;Sopraggiunta_provvidenza=-1;icef*=-1;icef**=-1;variazione_significativa=-1;(Calcolo_variazione_significativa==0)Calcolo_variazione_significativa=-1;(Calcolo_variazione_significativa==1)Calcolo_variazione_significativa=-1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="CRC" value="916579833">
+<param name="CRCdata" value="3-mag-2017 12.04.50">
+</APPLET>
+</CENTER>
+<BR>

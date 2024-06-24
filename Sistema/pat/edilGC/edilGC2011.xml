@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head>
+			]]>
+			<![CDATA[<CENTER><H2>Attestazione dell'indicatore ICEF per l'edilizia agevolata <BR>- Anno 2011 -<BR>
+			riapertura termini giovani coppie e nubendi</H2>
+			( Legge provinciale 19/2009, art. 59 e 27/2010, art. 44 )</CENTER><BR><BR>]]>
+	</header>
+	<richiedente>
+		<![CDATA[<B>Nucleo familiare al 31/12/2010: </B>]]>
+		<class>c_elab.pat.edilGC.Richiedente</class>
+		<![CDATA[<BR>]]>
+	</richiedente>	
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+      </sql>
+	</ente>
+
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomanda</class>
+	</infoDoc>
+    <avviso>
+        <![CDATA[<P><CENTER><B>- Pagina da consegnare all'ente gestore al momento della presentazione della domanda -</B></CENTER></P>]]>
+    </avviso>
+	<newPage>	
+		<![CDATA[<br clear=all style='page-break-after:always'/>]]>
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>
+	
+	<integrazione>
+		<!--class>c_elab.pat.ts.Footer</class-->
+	</integrazione>
+	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+
+</Doc>

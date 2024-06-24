@@ -1,0 +1,201 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=800 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.7 $">
+<param name="Taratura" value="Accesso cure odontoiatriche; 16.10.2008">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriCO;3tariffe">
+
+<param name="parametriCO" value="current;Check=0;Icef_inf=0.095;Icef_sup=0.2;Perc_max=0.7;Scaglione=0.5;C_min=5;Icef=0.18">
+<param name="3tariffe" value="current;Tariffa1=15;Tariffa2=151;Tariffa3=1400">
+
+<param name="variables" value="ascala;cscala;escala;divisotre">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+<param name="divisotre" value="0.490196078431373">
+
+
+
+<param name="edges" value="P.A.T. Cure Odontoiatriche;
+Check-ok;icefOK-idoneo;Icef-icefOK;Icef_sup-icefOK;ok-idoneo;Icef_sup-redd3lim;Rif-redd3lim;Icef-perc1;Icef_inf-perc1;idoneo-tariffa;tariffa_agevolata-tariffa;Tariffa1-cm1;Perc_max-cm1;Tariffa2-cm2;Perc_max-cm2;Tariffa3-cm3;Perc_max-cm3;Icef_sup-perc1;c_max-tar;Scaglione-tar;intera-tariffa;
+percentuale-tari;tar-tari;Scaglione-tariff;tari-tarif;tarif-tariff;Scaglione-tarif;cm1-c_max1;Scaglione-c_max1;cm2-c_max2;Scaglione-c_max2;cm3-c_max3;Scaglione-c_max3;Perc_max-perc;perc1-perc;idoneo-perc_comp;perc-perc_comp;Tariffa1-qu1;tariffa1-qu1;Tariffa2-qu2;tariffa2-qu2;
+Tariffa3-qu3;tariffa3-qu3;tariff-gt_min;C_min-gt_min;gt_min-tariffa_agevolata;tariff-tariffa_agevolata;ID-dopo;ID_lim-dopo;perc1-perc2;perc1-perc3;dopo-percentuale;perc3-percentuale;perc2-percentuale">
+
+
+
+<param name="P.A.T. Cure Odontoiatriche" value="text;node.ico;108;400;0;P.A.T. Cure Odontoiatriche - (16.10.2008);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_CO;xModello_CO;1223501955">
+<param name="Check" value="1;node.ico;659;426;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ok;1.0;NoCurve;xCheck;xCheck;4088310632">
+<param name="ok" value="0;node.ico;657;464;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xok;xok;1083702007">
+<param name="icefOK" value="0;node.ico;323;464;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;Icef_sup;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xicefOK;yicefOK;1501580071">
+<param name="idoneo" value="0;node.ico;452;464;0;-;0.0;ProbNode;NoInput;ResultOutput;2;icefOK;ok;2;tariffa;perc_comp;0.0;0.0;0.0;1.0;NoCurve;xidoneo;xidoneo;2685795273">
+<param name="Icef" value="1;node.ico;323;423;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;icefOK;perc1;0.5;NoCurve;xIcef;xIcef;1411235726">
+<param name="Icef_sup" value="1;node.ico;323;494;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;icefOK;redd3lim;perc1;0.5;NoCurve;xIcef_sup;yIcef_sup;3118546437">
+<param name="redd3lim" value="0;node.ico;242;464;0;-;0.0;TimesNode;NoInput;NoOutput;2;Icef_sup;Rif;0;0.0;1.0;2.04;1.0;NoCurve;xredd3lim;yredd3lim;3263307813">
+<param name="Rif" value="1;node.ico;243;424;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;redd3lim;escala;NoCurve;xRif;xRif;2144323973">
+<param name="perc1" value="0;node.ico;249;494;0;-;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Icef_inf;Icef_sup;3;perc;perc2;perc3;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xperc1;yperc1;3782004341">
+<param name="Icef_inf" value="1;node.ico;190;493;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;perc1;0.5;NoCurve;xIcef_inf;yIcef_inf;4208666732">
+<param name="tariffa" value="2;node.ico;598;503;0;-;0.0;NumIfNode;NoInput;ResultOutput;3;idoneo;tariffa_agevolata;intera;0;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xtariffa;ytariffa;115794551">
+<param name="tariffa_agevolata" value="0;node.ico;598;538;0;-;0.0;NumIfNode;NoInput;NoOutput;2;gt_min;tariff;1;tariffa;ascala;1.0;1.0;0.0;NoCurve;xtariffa_agevolata;xtariffa_agevolata;648764211">
+<param name="Tariffa1" value="1;node.ico;36;449;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;cm1;qu1;ascala;NoCurve;xTariffa1;yTariffa1;3802101338">
+<param name="cm1" value="0;node.ico;89;449;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tariffa1;Perc_max;1;c_max1;ascala;1.0;1.0;1.0;NoCurve;xcm1;ycm1;1928614708">
+<param name="Perc_max" value="1;node.ico;134;542;0;-;0.0;ProbNode;ValueInput;NoOutput;0;4;cm1;cm2;cm3;perc;0.5;NoCurve;xPerc_max;yPerc_max;326944771">
+<param name="Tariffa2" value="1;node.ico;35;507;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;cm2;qu2;ascala;NoCurve;xTariffa2;yTariffa2;2466493513">
+<param name="cm2" value="0;node.ico;87;508;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tariffa2;Perc_max;1;c_max2;ascala;1.0;1.0;1.0;NoCurve;xcm2;ycm2;1690232713">
+<param name="Tariffa3" value="1;node.ico;40;565;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;cm3;qu3;ascala;NoCurve;xTariffa3;yTariffa3;944461810">
+<param name="cm3" value="0;node.ico;94;567;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tariffa3;Perc_max;1;c_max3;ascala;1.0;1.0;1.0;NoCurve;xcm3;ycm3;3603685120">
+<param name="c_max" value="0;node.ico;399;503;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;tar;0.0;NoCurve;xc_max;yc_max;3204426695">
+<param name="tar" value="0;node.ico;452;503;0;-;0.0;DivideNode;NoInput;NoOutput;2;c_max;Scaglione;1;tari;0.0010;1.0;1.0;1.0;NoCurve;xtar;ytar;265462618">
+<param name="Scaglione" value="1;node.ico;403;532;0;-;0.0;PlusNode;ValueInput;NoOutput;0;6;tar;tariff;tarif;c_max1;c_max2;c_max3;cscala;NoCurve;xScaglione;yScaglione;2014744812">
+<param name="intera" value="0;node.ico;511;503;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;tariffa;0.0;NoCurve;xintera;yintera;3190686600">
+<param name="percentuale" value="2;node.ico;249;568;0;-;0.0;NumIfNode;NoInput;ResultOutput;3;dopo;perc3;perc2;1;tari;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpercentuale;ypercentuale;2594400968">
+<param name="tari" value="0;node.ico;410;568;0;-;0.0;TimesNode;NoInput;NoOutput;2;percentuale;tar;1;tarif;0.0;1.0;1.0;1.0;NoCurve;xtari;ytari;1575923056">
+<param name="tariff" value="0;node.ico;509;568;0;-;0.0;TimesNode;NoInput;NoOutput;2;Scaglione;tarif;2;gt_min;tariffa_agevolata;ascala;1.0;1.0;1.0;NoCurve;xtariff;ytariff;2282746803">
+<param name="tarif" value="0;node.ico;454;569;0;-;0.0;MinusNode;NoInput;NoOutput;2;tari;Scaglione;1;tariff;0.0;1.0;1.0;0.0;NoCurve;xtarif;ytarif;3193857521">
+<param name="c_max1" value="0;node.ico;38;471;0;-;0.0;PlusNode;NoInput;NoOutput;2;cm1;Scaglione;0;0.0;1.0;1.0;1.0;NoCurve;xc_max1;yc_max1;4161015711">
+<param name="c_max2" value="0;node.ico;35;531;0;-;0.0;PlusNode;NoInput;NoOutput;2;cm2;Scaglione;0;0.0;1.0;1.0;1.0;NoCurve;xc_max2;yc_max2;1566830790">
+<param name="c_max3" value="0;node.ico;37;588;0;-;0.0;PlusNode;NoInput;NoOutput;2;cm3;Scaglione;0;0.0;1.0;1.0;1.0;NoCurve;xc_max3;yc_max3;2748020287">
+<param name="perc" value="0;node.ico;197;519;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;Perc_max;perc1;1;perc_comp;1.0;1.0;1.0;1.0;NoCurve;xperc;yperc;590800659">
+<param name="perc_comp" value="0;node.ico;294;519;0;-;0.0;NumIfNode;NoInput;NoOutput;2;idoneo;perc;0;1.0;1.0;1.0;1.0;NoCurve;xperc_comp;yperc_comp;334498199">
+<param name="qu1" value="0;node.ico;86;425;0;-;0.0;MinusNode;NoInput;NoOutput;2;Tariffa1;tariffa1;0;0.0;1.0;1.0;1.0;NoCurve;xqu1;yqu1;2583877023">
+<param name="tariffa1" value="0;node.ico;142;450;0;-;0.0;TimesNode;NoInput;IntermediateOutput;0;1;qu1;ascala;NoCurve;xtariffa1;ytariffa1;4060057911">
+<param name="qu2" value="0;node.ico;86;487;0;-;0.0;MinusNode;NoInput;NoOutput;2;Tariffa2;tariffa2;0;0.0;1.0;1.0;1.0;NoCurve;xqu2;yqu2;2323464925">
+<param name="tariffa2" value="0;node.ico;145;508;0;-;0.0;TimesNode;NoInput;IntermediateOutput;0;1;qu2;ascala;NoCurve;xtariffa2;ytariffa2;46289310">
+<param name="qu3" value="0;node.ico;95;591;0;-;0.0;MinusNode;NoInput;NoOutput;2;Tariffa3;tariffa3;0;0.0;1.0;1.0;1.0;NoCurve;xqu3;yqu3;410438058">
+<param name="tariffa3" value="0;node.ico;145;568;0;-;0.0;TimesNode;NoInput;IntermediateOutput;0;1;qu3;ascala;NoCurve;xtariffa3;ytariffa3;3972548656">
+<param name="gt_min" value="0;node.ico;598;568;0;-;0.0;NumGtNode;NoInput;NoOutput;2;tariff;C_min;1;tariffa_agevolata;1.0;1.0;1.0;1.0;NoCurve;xgt_min;ygt_min;403093601">
+<param name="C_min" value="1;node.ico;598;595;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;gt_min;ascala;NoCurve;xC_min;yC_min;2870943069">
+<param name="ID" value="1;node.ico;203;596;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;dopo;1.0;NoCurve;yID;yID;2301434979">
+<param name="dopo" value="0;node.ico;248;595;0;-;0.0;NumGtNode;NoInput;NoOutput;2;ID;ID_lim;1;percentuale;1.0;1.0;1.0;1.0;NoCurve;ydopo;ydopo;2894185143">
+<param name="ID_lim" value="1;node.ico;303;596;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;dopo;1.0;NoCurve;yID_lim;yID_lim;554748039">
+<param name="perc2" value="0;node.ico;217;543;0;-;0.0;PlusNode;NoInput;NoOutput;1;perc1;1;percentuale;1.0;1.0;NoCurve;xperc2;yperc2;1889010446">
+<param name="perc3" value="0;node.ico;282;542;0;-;0.0;PlusNode;NoInput;NoOutput;1;perc1;1;percentuale;1.0;1.0;NoCurve;xperc3;yperc3;3412197874">
+
+
+
+<param name="xTariffa3" value="Tariffa3;Tariffa3;Tariffa30;Tariffa3;Tariffa3; ; ; ; ; ;T.2; ">
+
+<param name="xc_max" value="c_max;c_max;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xScaglione" value="Scaglione;Scaglione;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xTariffa1" value="Tariffa1;Tariffa1;Tariffa10;Tariffa1;Tariffa1; ; ; ; ; ;T.2; ">
+
+<param name="xPerc_max" value="Perc_max;Perc_max;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xTariffa2" value="Tariffa2;Tariffa2;Tariffa20;Tariffa2;Tariffa2; ; ; ; ; ;T.2; ">
+
+<param name="xintera" value="intera;intera;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xC_min" value="C_min;C_min;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xtariffa1" value="tariffa1;97.35    Rimozione di protesi dentale;97.35    Rimozione di protesi dentale;97.35    Rimozione di protesi dentale;97.35    Rimozione di protesi dentale; ; ; ; ;<tr><td align='right'>$Tariffa1$</td></tr>;T.2;<tr><td align='right'>$Tariffa1$</td></tr>">
+
+<param name="xtariffa2" value="tariffa2;23.71.2  Terapia canalare in dente pluriradicolato - con quattro radici;23.71.2  Terapia canalare in dente pluriradicolato - con quattro radici;23.71.2  Terapia canalare in dente pluriradicolato - con quattro radici;23.71.2  Terapia canalare in dente pluriradicolato - con quattro radici; ; ; ; ;<tr><td align='right'>$Tariffa2$</td></tr>;T.2;<tr><td align='right'>$Tariffa2$</td></tr>">
+
+<param name="xtariffa3" value="tariffa3;24.70.2 Trattamento ortodontico con apparecchi fissi - primo anno;24.70.2 Trattamento ortodontico con apparecchi fissi - primo anno;24.70.2 Trattamento ortodontico con apparecchi fissi - primo anno;24.70.2 Trattamento ortodontico con apparecchi fissi - primo anno; ; ; ; ;<tr><td align='right'>$Tariffa3$</td></tr>;T.2;<tr><td align='right'>$Tariffa3$</td></tr>">
+
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ; ; ; ; ;T; ">
+<param name="xIcef" value="Icef; <b>(ICEF)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare<br> ;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> zero ; <b>(ICEF)</B> Indicatore della Condizione Economica Familiare <br>;Indicatore della Condizione Economica Familiare <br>  ; ; ; ; ;<b>;T.4;</b>">
+<param name="xIcef_sup" value="Icef_sup;Icef limite;Icef limite;Icef limite;Icef limite; ; ; ; ; ;T.4; ">
+
+<param name="xModello_CO" value="P.A.T. Cure Odontoiatriche;x;P.A.T. Cure Odontoiatriche - (16.10.2008);--;--; ; ; ; ; ; ; ">
+<param name="xok" value="ok;ok;0;-;1;non ok;-;ok; ; ; ; ">
+<param name="xperc2" value="perc2;perc2;0;-;1; ;-;+; ; ;T.2; ">
+
+<param name="xperc3" value="perc3;perc3;0;-;1; ;-;+; ; ;T.3; ">
+
+<param name="xqu2" value="qu2;qu2;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xperc" value="perc;perc;0;-;1; ;-;+; ; ;P.2; ">
+
+<param name="xperc_comp" value="perc_comp;Percentuale indicativa di compartecipazione ( %Perc_max% * ^percentuale^ );Nessuna compartecipazione richiesta;Percentuale indicativa di compartecipazione ( %Perc_max% * ^percentuale^ );Percentuale indicativa di compartecipazione ( ICEF > ^Icef_sup^ ! ); ; ; ; ; ;P.2; ">
+
+<param name="xqu1" value="qu1;qu1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xgt_min" value="gt_min;gt_min;0;-;1; ;-;+; ; ; ; ">
+
+
+<param name="xicefOK" value="icefOK;icefOK;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xidoneo" value="idoneo;idoneo;<b>non è idonea</b> per le cure odontoiatriche;-;è <b>idonea</b> per le <u>cure odontoiatriche</u>; ;-;+; ; ; ; ">
+<param name="xqu3" value="qu3;qu3;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xcm3" value="cm3;cm3;0;-;1; ;-;+; ; ;T.4; ">
+
+<param name="xtar" value="tar;tar;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xredd3lim" value="redd3lim;redd3lim;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xtariffa_agevolata" value="tariffa_agevolata;tariffa_agevolata;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xcm1" value="cm1;cm1;0;-;1; ;-;+; ; ;T.4; ">
+
+<param name="xcm2" value="cm2;cm2;0;-;1; ;-;+; ; ;T.4; ">
+
+<param name="xtarif" value="tarif;tarif;0;-;1; ;-;+; ; ;T; ">
+
+<param name="xc_max2" value="c_max2;c_max2;0;-;1; ;-;+; ; ;T; ">
+
+<param name="xc_max1" value="c_max1;c_max1;0;-;1; ;-;+; ; ;T; ">
+
+<param name="xc_max3" value="c_max3;c_max3;0;-;1; ;-;+; ; ;T; ">
+
+<param name="xtari" value="tari;tari;0;-;1; ;-;+; ; ;T.1; ">
+
+<param name="xtariff" value="tariff;tariff;0;-;1; ;-;+; ; ;$.1; ">
+
+<param name="xtariffa" value="tariffa;tariffa;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xpercentuale" value="percentuale;Coefficiente P (Art. 4 DGP 1886 del 25/7/08);Coefficiente P (Art. 4 DGP 1886 del 25/7/08);Coefficiente P (Art. 4 DGP 1886 del 25/7/08);Coefficiente P (Art. 4 DGP 1886 del 25/7/08); ; ; ; ; ;T.3; ">
+
+<param name="xperc1" value="perc1;perc1;0;-;1; ;-;+; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="propagation0;propagation1;propagation2;dati;idoneità;tariffe;nota;nonidoneità;riga;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;tariffa1=tariffa;intera=Tariffa1;c_max=cm1">
+<param name="propagation1" value=" ;tariffa2=tariffa;intera=Tariffa2;c_max=cm2">
+<param name="propagation2" value=" ;tariffa3=tariffa;intera=Tariffa3;c_max=cm3">
+<param name="dati" value="<b>Dati:</b> ;Icef=-1">
+<param name="idoneità" value="(idoneo==1)<br />La domanda è idonea ;percentuale=-1;perc_comp=-1">
+<param name="tariffe" value="<br />Tariffe esemplificative tratte dal listino completo pubblicato all'art. 5.2 della deliberazione della Giunta provinciale n. 1886 del 25 luglio 2008: 
+<center>
+<table border='1'>
+<tr><td>Codice</td> <td width='350'>Prestazione</td> <td>Tariffa</td> <td>Quota<br />utente</td> <td>Quota<br />SSP</td> </tr>
+
+<tr><td>97.35</td> <td width='350'>Rimozione di protesi dentale</td> <td align='right'>$Tariffa1$</td> <td align='right'>$tariffa1$</td> <td align='right'>$qu1$</td> </tr>
+<tr><td>23.71.2</td> <td width='350'>Terapia canalare in dente pluriradicolato - con quattro radici</td> <td align='right'>$Tariffa2$</td> <td align='right'>$tariffa2$</td> <td align='right'>$qu2$</td> </tr>
+<tr><td>24.70.2</td> <td width='350'>Trattamento ortodontico con apparecchi fissi - primo anno</td> <td align='right'>$Tariffa3$</td> <td align='right'>$tariffa3$</td> <td align='right'>$qu3$</td> </tr>
+</table>
+</center>;">
+<param name="nota" value="(idoneo==1)<br />   
+<b>NOTA INFORMATIVA</b>:
+Le prestazioni sono erogate ai soggetti appartenenti al nucleo familiare se ed in quanto dovute (in base alle singole situazioni, eta', patologia, reddito - ai sensi della legge provinciale n. 22/2007).
+<br />
+L'elenco degli studi privati accreditati con il servizio sanitario provinciale per le prestazioni sopra esposte e' disponibile presso la sede del distretto sanitario.;">
+<param name="nonidoneità" value="(idoneo==0)<br />La domanda <b>NON</b> è idonea ;Check=3!0">
+<param name="riga" value="<hr>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="4132823070">
+<param name="CRC" value="1313372307">
+<param name="CRCdata" value="16-ott-2008 19.50.24">
+</APPLET>
+<BR>

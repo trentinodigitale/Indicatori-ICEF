@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H3> Contributo ai coltivatori diretti, mezzadri e coloni per i versamenti previdenziali effettuati ai fini dell'assicurazione dell'Invalidita' - Vecchiaia  - Superstiti<BR> Anno 2014</H3>
+		(art.14 Legge Regionale 25 luglio 1992, n.7)
+		</CENTER></body></html>]]>
+       </main>
+       <richiedente>
+		<![CDATA[<B>Richiedente: </B>]]>
+		<class>c_elab.pat.ts.Richiedente</class>
+		<![CDATA[<BR>]]>
+		</richiedente>	
+		<ente>
+			<![CDATA[<H2><CENTER>]]>
+            <sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '<BR>' end from Doc where id=${id_domanda}]]></sql>
+		<![CDATA[</H2></CENTER>]]>
+		</ente>
+			<servizio>
+			</servizio>
+			
+	</header>
+	
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	
+	
+	<footer>
+	<integrazione>
+		<sql><![CDATA[select case when ELAIN_valutatoAPAPI.input_value =1 THEN
+			'<H3>(*) Motivazione valutazione domanda APAPI: '+IVS_Aziende_Agricole.note_forzatura_contributo_apapi+'</H3>' else
+			'' end from IVS_Aziende_Agricole INNER JOIN  C_ElaIN AS ELAIN_valutatoAPAPI ON IVS_Aziende_Agricole.ID_domanda = ELAIN_valutatoAPAPI.ID_domanda where IVS_Aziende_Agricole.ID_domanda=${id_domanda} AND (ELAIN_valutatoAPAPI.node = N'Valutato_apapi')]]>
+    	</sql>
+		
+	</integrazione>
+		<infoDoc>
+			  <class>clesprojects.clesius.icef.InfoDomandaIVS</class>
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+		
+	</footer>
+</Doc>

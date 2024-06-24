@@ -1,0 +1,126 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class
+	CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+	<param name="attSocUtili" value="PAT prestiti d'onore 2015; 4.6.2015">
+	<param name="revision" value="$Revision: 18703 $">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="true">
+
+	<param name="trendStarts" value="caso;paraprest">
+	<param name="caso"
+		value="paraprest;Busta_paga=700;Canone_mese=400;Mutuo_mese=500;Redditi_tolti=1000;Spesa=5500;Icef=0.2">
+
+	<param name="paraprest"
+		value="current;ICEFinf=0.15;ICEFsup=0.25;Spesainf=1000;Spesasup=10000;Rif=50000;Vse=1">
+
+
+	<param name="trends" value="">
+
+
+
+
+	<param name="variables" value="uno;divisotre;ascala;rscala">
+
+	<param name="uno" value="1">
+	<param name="divisotre" value="0.49019608; uno / C3; ">
+
+	<param name="ascala" value="0.001">
+
+	<param name="rscala" value="0.000001">
+
+
+
+<param name="edges" value="PAT prestiti d'onore;Redditi_tolti;
+Icef-giudizio;ICEFsup-giudizio;ICEFinf-giudizio;Icef-supOK;ICEFsup-supOK;Icef-infOK;ICEFinf-infOK;infOK-ICEFok;supOK-ICEFok;Spesa-spesainfOK;Spesainf-spesainfOK;Spesa-spesasupOK;Spesasup-spesasupOK;Spesasup-prestito;Spesa-prest;ICEFok-prest;spesainfOK-prest;prest-prestito;ICEFinf-reddinf;ICEFsup-reddsup;Rif-reddinf;
+Rif-reddsup;Vse-reddinf;Vse-reddsup;Busta_paga-neodip;Canone_mese-cm;Mutuo_mese-mm;mm-dm;cm-dc;Gravidanza-n_comp">
+
+
+
+<param name="PAT prestiti d'onore" value="text;node.ico;229;477;0;PAT prestiti d'onore 2015 (4.6.2015);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT prestiti d'onore;yPAT prestiti d'onore;92838868">
+<param name="Redditi_tolti" value="1;node.ico;278;450;0;Redditi_tolti = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xRedditi_tolti;xRedditi_tolti;2665808204">
+<param name="Icef" value="1;node.ico;139;339;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;3;giudizio;supOK;infOK;0.5;NoCurve;xIcef;xIcef;2144406556">
+<param name="giudizio" value="0;0;139;403;0;giudizio =  MAX( 0, MIN( 1, (Icef - ICEFinf) / (ICEFsup - ICEFinf) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;ICEFinf;ICEFsup;0;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;xgiudizio;2190173996">
+<param name="ICEFsup" value="1;node.ico;182;364;0;ICEFsup = ;0.0;PlusNode;ValueInput;NoOutput;0;3;giudizio;supOK;reddsup;1.0;NoCurve;xICEFsup;xICEFsup;2535516742">
+<param name="ICEFinf" value="1;node.ico;105;363;0;ICEFinf = ;0.0;PlusNode;ValueInput;NoOutput;0;3;giudizio;infOK;reddinf;1.0;NoCurve;xICEFinf;xICEFinf;1964852011">
+<param name="supOK" value="0;node.ico;272;363;0;supOK = Icef <= ICEFsup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;ICEFsup;1;ICEFok;1.0;1.0;1.0;1.0;NoCurve;xsupOK;xsupOK;2494493794">
+<param name="infOK" value="0;node.ico;34;362;0;infOK = Icef >= ICEFinf;0.0;NumGeNode;NoInput;NoOutput;2;Icef;ICEFinf;1;ICEFok;1.0;1.0;1.0;1.0;NoCurve;xinfOK;xinfOK;1745767476">
+<param name="ICEFok" value="0;node.ico;270;397;0;ICEFok =   1  infOK * supOK;0.0;ProbNode;NoInput;NoOutput;2;infOK;supOK;1;prest;0.0;0.0;0.0;1.0;NoCurve;xICEFok;xICEFok;1092028553">
+<param name="Spesa" value="1;node.ico;394;336;0;Spesa = ;0.0;PlusNode;ValueInput;NoOutput;0;3;spesainfOK;spesasupOK;prest;rscala;NoCurve;xSpesa;xSpesa;3716045464">
+<param name="spesainfOK" value="0;node.ico;346;363;0;spesainfOK = Spesa >= Spesainf;0.0;NumGeNode;NoInput;NoOutput;2;Spesa;Spesainf;1;prest;1.0;1.0;1.0;1.0;NoCurve;xspesainfOK;xspesainfOK;1714757617">
+<param name="Spesainf" value="1;node.ico;329;335;0;Spesainf = ;0.0;PlusNode;ValueInput;NoOutput;0;1;spesainfOK;rscala;NoCurve;xSpesainf;xSpesainf;2971912279">
+<param name="spesasupOK" value="0;node.ico;476;364;0;spesasupOK = Spesa <= Spesasup;0.0;NumLeNode;NoInput;NoOutput;2;Spesa;Spesasup;0;1.0;1.0;1.0;1.0;NoCurve;xspesasupOK;xspesasupOK;1959239143">
+<param name="Spesasup" value="1;node.ico;561;337;0;Spesasup = ;0.0;PlusNode;ValueInput;NoOutput;0;2;spesasupOK;prestito;rscala;NoCurve;xSpesasup;xSpesasup;4201052085">
+<param name="prestito" value="2;node.ico;561;397;0;prestito =  Min(  Spesasup,  prest );0.0;NumMinNode;NoInput;ResultOutput;2;Spesasup;prest;0;rscala;1.0;1.0;1.0;NoCurve;xprestito;xprestito;2908262976">
+<param name="prest" value="0;node.ico;394;397;0;prest =  Spesa * ICEFok * spesainfOK;0.0;TimesNode;NoInput;NoOutput;3;Spesa;ICEFok;spesainfOK;1;prestito;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xprest;xprest;2653983895">
+<param name="reddinf" value="0;node.ico;76;403;0;reddinf =  ICEFinf * Rif * Vse;0.0;TimesNode;NoInput;NoOutput;3;ICEFinf;Rif;Vse;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xreddinf;xreddinf;2832549206">
+<param name="reddsup" value="0;node.ico;206;399;0;reddsup =  ICEFsup * Rif * Vse;0.0;TimesNode;NoInput;NoOutput;3;ICEFsup;Rif;Vse;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xreddsup;xreddsup;3143073078">
+<param name="Rif" value="1;node.ico;138;309;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;2;reddinf;reddsup;rscala;NoCurve;xRif;xRif;1976391511">
+<param name="Vse" value="1;node.ico;224;328;0;Vse = ;0.0;PlusNode;ValueInput;NoOutput;0;2;reddinf;reddsup;0.1;NoCurve;xVse;xVse;52405368">
+<param name="Busta_paga" value="1;node.ico;43;334;0;Busta_paga = ;0.0;PlusNode;ValueInput;NoOutput;0;1;neodip;rscala;NoCurve;xBusta_paga;xBusta_paga;2316700624">
+<param name="neodip" value="0;node.ico;67;302;0;neodip =  13.000*Busta_paga;0.0;PlusNode;NoInput;NoOutput;1;Busta_paga;0;rscala;13.0;NoCurve;xneodip;xneodip;1486546361">
+<param name="Canone_mese" value="1;node.ico;49;462;0;Canone_mese = ;0.0;PlusNode;ValueInput;NoOutput;0;1;cm;rscala;NoCurve;xCanone_mese;xCanone_mese;61307408">
+<param name="cm" value="0;node.ico;17;432;0;cm =  12.000*Canone_mese;0.0;PlusNode;NoInput;NoOutput;1;Canone_mese;1;dc;rscala;12.0;NoCurve;xcm;xcm;987941871">
+<param name="Mutuo_mese" value="1;node.ico;120;436;0;Mutuo_mese = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mm;rscala;NoCurve;xMutuo_mese;xMutuo_mese;2632960310">
+<param name="mm" value="0;node.ico;53;434;0;mm =  12.000*Mutuo_mese;0.0;PlusNode;NoInput;NoOutput;1;Mutuo_mese;1;dm;rscala;12.0;NoCurve;xmm;xmm;2407315333">
+<param name="dm" value="0;node.ico;105;282;0;dm =  mm;0.0;MinusNode;NoInput;NoOutput;1;mm;0;rscala;1.0;NoCurve;xdm;xdm;820470290">
+<param name="dc" value="0;node.ico;16;281;0;dc =  cm;0.0;MinusNode;NoInput;NoOutput;1;cm;0;rscala;1.0;NoCurve;xdc;xdc;1302893300">
+<param name="Gravidanza" value="1;node.ico;290;311;0;Gravidanza = ;0.0;PlusNode;ValueInput;NoOutput;0;1;n_comp;1.0;NoCurve;xGravidanza;xGravidanza;845356674">
+<param name="n_comp" value="0;node.ico;182;311;0;n_comp =  Gravidanza;0.0;PlusNode;NoInput;NoOutput;1;Gravidanza;0;0.01;1.0;NoCurve;xn_comp;xn_comp;3053084848">
+
+
+
+<param name="xMutuo_mese" value="Mutuo_mese;Mutuo dell'ultimo mese;0;Mutuo dell'ultimo mese;Mutuo dell'ultimo mese; ; ; ; ;<i>;$.2;</i>">
+<param name="xSpesasup" value="Spesasup;Spesasup;0;-;1; ;-;+; ; ;T; ">
+<param name="xSpesa" value="Spesa;Importo della spesa prevista (ammissibile tra §Spesainf§ e §Spesasup§);Spesa zero ?;Importo della spesa prevista (ammissibile tra §Spesainf§ e §Spesasup§);Importo della spesa prevista massilame; ; ; ; ; ;$.2; ">
+<param name="xSpesainf" value="Spesainf;Spesainf;0;-;1; ;-;+; ; ;T; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xVse" value="Vse;Vse;0;-;1; ;-;+; ; ; ; ">
+<param name="xCanone_mese" value="Canone_mese;Canone dell'ultimo mese;0;Canone dell'ultimo mese;Canone dell'ultimo mese; ; ; ; ;<i>;$.2;</i>">
+<param name="xBusta_paga" value="Busta_paga;Busta paga (mensile netto) del/la neo-impiegato/a (cioè $neodip$ aggiuntivi);0;Busta paga (mensile netto) del/la neo-impiegato/a (cioè $neodip$ aggiuntivi);Busta paga (mensile netto) del/la neo-impiegato/a (cioè $neodip$ aggiuntivi); ; ; ; ;<i>;$.2;</i>">
+<param name="xIcef" value="Icef;<b>ICEF</b> Indicatore della Condizione Economica Familiare (tra ^ICEFinf^ e ^ICEFsup^);<b>ICEF</b> Indicatore della Condizione Economica Familiare zero;<b>ICEF</b>  Indicatore della Condizione Economica Familiare;<b>ICEF</b> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.8;</b>">
+<param name="xICEFsup" value="ICEFsup;il limite ICEFsuperiore;--;--;--;è; ; ; ; ;T.2; ">
+<param name="xPAT prestiti d'onore" value="PAT prestiti d'onore;PAT prestiti d'onore;PAT prestiti d'onore 2015 (4.6.2015);--;--; ; ; ; ; ; ; ">
+
+<param name="xRedditi_tolti" value="Redditi_tolti;Redditi tolti per disoccupazione o grave impedimento fisico;0;Redditi tolti per disoccupazione o grave impedimento fisico;Redditi tolti per disoccupazione o grave impedimento fisico; ; ; ; ; ;$.2; ">
+<param name="xICEFinf" value="ICEFinf;il limite ICEFinferiore;--;--;--;è; ; ; ; ;T.2; ">
+<param name="xGravidanza" value="Gravidanza;Gravidanza?;nessun gravidanza;-;Componente aggiuntivo per stato di gravidanza; ;-;+; ; ;T; ">
+<param name="xmm" value="mm;mm;0;-;1; ;-;+; ; ; ; ">
+<param name="xdc" value="dc;dc;0;-;1; ;-;+; ; ; ; ">
+<param name="xdm" value="dm;dm;0;-;1; ;-;+; ; ; ; ">
+<param name="xcm" value="cm;cm;0;-;1; ;-;+; ; ; ; ">
+<param name="xn_comp" value="n_comp;n_comp;0;-;1; ;-;+; ; ; ; ">
+<param name="xneodip" value="neodip;neodip;0;-;1; ;-;+; ; ; ; ">
+<param name="xICEFok" value="ICEFok;ICEFok;l'ICEF non è entro i limiti;-;1; ;-;+; ; ; ; ">
+<param name="xspesainfOK" value="spesainfOK;spesainfOK;la spesa è minore di ^Spesainf^;-;1; ;-;+; ; ; ; ">
+<param name="xsupOK" value="supOK;x;l'ICEF è maggiore di ^ICEFsup^;--;idoneo; ; ; ; ; ; ; ">
+<param name="xinfOK" value="infOK;infOK;l'ICEF è minore di ^ICEFinf^;-;1; ;-;+; ; ; ; ">
+<param name="xspesasupOK" value="spesasupOK;spesasupOK;0;-;1; ;-;+; ; ; ; ">
+<param name="xprestito" value="prestito;Ammontare del <b>prestito ammissibile</b>;Nessun prestito ammissibile;Ammontare del <b>prestito ammissibile</b>;Ammontare del <b>prestito ammissibile</b>; ; ; ; ;<b> ;$.2;</b>">
+<param name="xreddsup" value="reddsup;reddsup;0;-;1; ;-;+; ; ; ; ">
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+<param name="xprest" value="prest;prest;0;-;1; ;-;+; ; ; ; ">
+<param name="xreddinf" value="reddinf;reddinf;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="ris;applicant;dati;noprestito;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="ris" value="<center><h2>Calcolo prestito d'onore</h2></center><hr />;">
+<param name="applicant" value="<p />Richiedente: ;">
+<param name="dati" value="<b>Dati</b>;Icef=-1;Redditi_tolti=-1!0;Gravidanza=-1!0;Spesa=-1;prestito=-1">
+<param name="noprestito" value="(prestito==0) esito negativo:;ICEFok=2!1;infOK=3!1;supOK=3!1;spesainfOK=2!1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3265650088">
+<param name="CRC" value="2923144854">
+<param name="CRCdata" value="4-giu-2015 17.20.33">
+</APPLET>
+</CENTER>
+<BR>

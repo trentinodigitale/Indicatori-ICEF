@@ -1,0 +1,128 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"
+	WIDTH='700' HEIGHT='600' MAYSCRIPT>
+	<param name="revision" value="$Revision: 36396 $">
+
+	<param name="Taratura" value="edilizia agevolata; 28.5.2019">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="false">
+	<param name="language" value="0">
+
+	<param name="trendStarts" value="casoEdil">
+
+	<param name="casoEdil"
+		value="current;PM_edil=10000;Icef_inf=0.1;Icef_sup=0.4;Prefinanziamento=10000;ICI_fabbricati=12000;ICI_particelle=100000;Mq_franchigia=500;Mq_particelle=600;FAR=1000000">
+
+	<param name="variables" value="tscala;pmscala">
+
+	<param name="tscala" value="0.00001">
+	<param name="pmscala" value="0.0000001">
+
+
+
+
+
+<param name="edges" value="P.A.T. Edilizia Agevolata;pat;Anno_reddito;PM_edil;Icef4;
+ICEF_precedente-13infOK;Icef_inf-13infOK;ICEF_attuale-14infOK;Icef_inf-14infOK;ICEF_precedente-13supOK;Icef_sup-13supOK;ICEF_attuale-14supOK;Icef_sup-14supOK;ICEF_precedente-13lt14;ICEF_attuale-13lt14;13infOK-13ok;13supOK-13ok;14infOK-14ok;14supOK-14ok;ICEF_precedente-min;ICEF_attuale-min;ICEF_precedente-max;ICEF_attuale-max;13ok-ismin;13ok-ismax;14ok-ismax;
+13lt14-ismax;14ok-ismin;13lt14-ismin;13ok-idoneo;14ok-idoneo;ismin-ICEF4;min-ICEF4;max-ICEF4;Prefinanziamento-pref;ICI_particelle-al_mq;Mq_particelle-al_mq;Mq_franchigia-mq_fr;al_mq-mq_fr;ICI_particelle-mq_franchigia;mq_fr-mq_franchigia;ICI_fabbricati-tot_non;mq_franchigia-tot_non;tot_non-non_I">
+
+
+
+<param name="P.A.T. Edilizia Agevolata" value="text;node.ico;506;368;0;P.A.T. Edilizia Agevolata 2019 - (28.5.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Agevolata;yModello_Agevolata;911374540">
+<param name="pat" value="0;node.ico;376;260;0;-  0,00 ;0.0;PlusNode;NoInput;NoOutput;0;0;tscala;NoCurve;xpat;xpat;675962127">
+<param name="Anno_reddito" value="1;node.ico;422;346;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xAnno_reddito;xAnno_reddito;1832151627">
+<param name="PM_edil" value="1;node.ico;44;393;0; depositi bancari PM=0,00;0.0;PlusNode;ValueInput;NoOutput;0;0;pmscala;NoCurve;xPM_edil;xPM_edil;2555021207">
+<param name="Icef4" value="1;node.ico;332;260;0;non;0.0;ProbNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xIcef4;xIcef4;74324391">
+<param name="ICEF_precedente" value="2;node.ico;92;289;0;-;0.0;TimesNode;NoInput;NoOutput;0;5;13infOK;13supOK;13lt14;min;max;1.0;NoCurve;xICEF_precedente;xICEF_precedente;4148842341">
+<param name="13infOK" value="0;node.ico;36;325;0;-;0.0;NumGeNode;NoInput;NoOutput;2;ICEF_precedente;Icef_inf;1;13ok;1.0;1.0;1.0;1.0;NoCurve;x13infOK;x13infOK;3557976742">
+<param name="Icef_inf" value="1;node.ico;125;325;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;13infOK;14infOK;0.5;NoCurve;xIcef_inf;xIcef_inf;3788706360">
+<param name="ICEF_attuale" value="2;node.ico;302;287;0;-;0.0;TimesNode;NoInput;NoOutput;0;5;14infOK;14supOK;13lt14;min;max;1.0;NoCurve;xICEF_attuale;xICEF_attuale;994087265">
+<param name="14infOK" value="0;node.ico;270;325;0;-;0.0;NumGeNode;NoInput;NoOutput;2;ICEF_attuale;Icef_inf;1;14ok;1.0;1.0;1.0;1.0;NoCurve;x14infOK;x14infOK;2925302481">
+<param name="13supOK" value="0;node.ico;92;345;0;-;0.0;NumLtNode;NoInput;NoOutput;2;ICEF_precedente;Icef_sup;1;13ok;1.0;1.0;1.0;1.0;NoCurve;x13supOK;x13supOK;2573231293">
+<param name="Icef_sup" value="1;node.ico;243;344;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;13supOK;14supOK;0.5;NoCurve;xIcef_sup;xIcef_sup;3359177048">
+<param name="14supOK" value="0;node.ico;332;345;0;-;0.0;NumLtNode;NoInput;NoOutput;2;ICEF_attuale;Icef_sup;1;14ok;1.0;1.0;1.0;1.0;NoCurve;x14supOK;x14supOK;3448611663">
+<param name="13lt14" value="0;node.ico;197;289;0;-;0.0;NumLtNode;NoInput;NoOutput;2;ICEF_precedente;ICEF_attuale;2;ismax;ismin;1.0;1.0;1.0;1.0;NoCurve;x13lt14;x13lt14;1004166923">
+<param name="13ok" value="0;node.ico;36;370;0;-;0.0;ProbNode;NoInput;NoOutput;2;13infOK;13supOK;3;ismin;ismax;idoneo;0.0;0.0;0.0;1.0;NoCurve;x13ok;x13ok;2837811933">
+<param name="14ok" value="0;node.ico;270;370;0;-;0.0;ProbNode;NoInput;NoOutput;2;14infOK;14supOK;3;ismax;ismin;idoneo;0.0;0.0;0.0;1.0;NoCurve;x14ok;x14ok;3328216647">
+<param name="min" value="0;node.ico;165;308;0;-;0.0;NumMinNode;NoInput;NoOutput;2;ICEF_precedente;ICEF_attuale;1;ICEF4;1.0;1.0;1.0;1.0;NoCurve;xmin;xmin;3718141923">
+<param name="max" value="0;node.ico;216;308;0;-;0.0;NumMaxNode;NoInput;NoOutput;2;ICEF_precedente;ICEF_attuale;1;ICEF4;1.0;1.0;1.0;1.0;NoCurve;xmax;xmax;3636917068">
+<param name="ismin" value="0;node.ico;133;370;0;-;0.0;ProbNode;NoInput;NoOutput;3;13ok;14ok;13lt14;1;ICEF4;1.0;0.0;1.0;1.0;1.0;1.0;0.0;1.0;NoCurve;xismin;xismin;3869316164">
+<param name="ismax" value="0;node.ico;155;393;0;-;0.0;ProbNode;NoInput;NoOutput;3;13ok;14ok;13lt14;0;0.0;1.0;0.0;0.0;0.0;0.0;1.0;0.0;NoCurve;xismax;xismax;1981012710">
+<param name="idoneo" value="2;node.ico;335;387;0;-;0.0;ProbNode;NoInput;ResultOutput;2;13ok;14ok;0;0.0;1.0;1.0;1.0;NoCurve;xidoneo;xidoneo;4035464905">
+<param name="ICEF4" value="2;node.ico;227;393;0;-;0.0;NumIfNode;NoInput;ResultOutput;3;ismin;min;max;0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xICEF4;xICEF4;3269906892">
+<param name="Prefinanziamento" value="1;node.ico;407;287;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pref;tscala;NoCurve;xPrefinanziamento;xPrefinanziamento;3590588112">
+<param name="pref" value="0;node.ico;415;259;0;-;0.0;NumTransNode;NoInput;NoOutput;1;Prefinanziamento;0;tscala;1.0;LinearCurve;negCurve;xpref;xpref;2218413314">
+<param name="ICI_particelle" value="1;node.ico;537;255;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;al_mq;mq_franchigia;tscala;NoCurve;xICI_particelle;xICI_particelle;1730347139">
+<param name="al_mq" value="0;node.ico;539;302;0;-;0.0;DivideNode;NoInput;NoOutput;2;ICI_particelle;Mq_particelle;1;mq_fr;tscala;1.0;1.0;1.0;NoCurve;xal_mq;xal_mq;1180993763">
+<param name="Mq_particelle" value="1;node.ico;538;343;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;al_mq;tscala;NoCurve;xMq_particelle;xMq_particelle;2083439891">
+<param name="Mq_franchigia" value="1;node.ico;637;343;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mq_fr;tscala;NoCurve;xMq_franchigia;xMq_franchigia;183379832">
+<param name="mq_fr" value="0;node.ico;635;303;0;-;0.0;TimesNode;NoInput;NoOutput;2;Mq_franchigia;al_mq;1;mq_franchigia;tscala;1.0;1.0;1.0;NoCurve;xmq_fr;xmq_fr;2366366191">
+<param name="mq_franchigia" value="0;node.ico;633;255;0;-;0.0;NumMinNode;NoInput;NoOutput;2;ICI_particelle;mq_fr;1;tot_non;tscala;1.0;1.0;1.0;NoCurve;xmq_franchigia;xmq_franchigia;4086786706">
+<param name="ICI_fabbricati" value="1;node.ico;470;320;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tot_non;tscala;NoCurve;xICI_fabbricati;xICI_fabbricati;2373582250">
+<param name="tot_non" value="0;node.ico;503;282;0;-;0.0;PlusNode;NoInput;NoOutput;2;ICI_fabbricati;mq_franchigia;1;non_I;0.0;1.0;1.0;1.0;NoCurve;xtot_non;xtot_non;2220328697">
+<param name="non_I" value="0;node.ico;470;256;0;-;0.0;NumTransNode;NoInput;NoOutput;1;tot_non;0;tscala;1.0;LinearCurve;negCurve;xnon_I;xnon_I;3082512911">
+
+<param name="negCurve" value="LinearCurve;0.0;0.0;1.0E7;-1.0E7">
+
+
+<param name="xICI_fabbricati" value="ICI_fabbricati;Valore ICI complessivo dei fabbricati oggetto dell'intervento;Valore ICI complessivo dei fabbricati oggetto dell'intervento=0;Valore ICI complessivo dei fabbricati oggetto dell'intervento;Valore ICI complessivo dei fabbricati oggetto dell'intervento; ; ; ; ; ;$.2; ">
+<param name="xPrefinanziamento" value="Prefinanziamento;Finanziamento bancario per la realizzazione dell'intervento;Finanziamento bancario per la realizzazione dell'intervento=0;Finanziamento bancario per la realizzazione dell'intervento;Finanziamento bancario per la realizzazione dell'intervento; ; ; ; ; ;$.2; ">
+<param name="xICEF_attuale" value="ICEF_attuale;ICEF |PM_edil|;ICEF |PM_edil|;ICEF |PM_edil|;ICEF |PM_edil|; ; ; ; ; ;T.4; ">
+<param name="xIcef_sup" value="Icef_sup;Icef_sup;non;-;ok; ; ; ; ; ;T.4; ">
+<param name="xMq_particelle" value="Mq_particelle;Superficie complessiva del terreno oggetto dell'intervento;Mq_particelle=0;Superficie complessiva del terreno oggetto dell'intervento;Superficie complessiva del terreno oggetto dell'intervento; ; ; ; ; ;T;mq">
+<param name="xMq_franchigia" value="Mq_franchigia;Mq_franchigia;Mq_franchigia=0;Mq_franchigia;Mq_franchigia; ; ; ; ; ;T;mq">
+<param name="xICI_particelle" value="ICI_particelle;Valore ICI complessivo del terreno oggetto dell'intervento;ICI_particelle=0;Valore ICI complessivo del terreno oggetto dell'intervento;Valore ICI complessivo del terreno oggetto dell'intervento; ; ; ; ; ;$.2; ">
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;non;-;ok; ; ; ; ; ;T.4; ">
+<param name="xAnno_reddito" value="Anno_reddito;Anno_reddito;0;-;1; ;-;+; ; ; ; ">
+<param name="xpat" value="pat;pat;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xModello_Agevolata" value="P.A.T. Edilizia Agevolata;P.A.T. Edilizia Agevolata;P.A.T. Edilizia Agevolata 2019 - (28.5.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xPM_edil" value="PM_edil; calcolato con depositi bancari ( PM=^PM_edil^ ); depositi bancari PM=^PM_edil^; calcolato con depositi bancari ( PM=^PM_edil^ ); calcolato senza depositi bancari; ; ; ; ; ;$.2; ">
+<param name="xICEF_precedente" value="ICEF_precedente;ICEF calcolato sulla base della dichiarazione 2010;ICEF calcolato sulla base della dichiarazione 2010;ICEF calcolato sulla base della dichiarazione 2010;ICEF calcolato sulla base della dichiarazione 2010; ; ; ; ; ;T.4; ">
+<param name="xIcef4" value="Icef4;Icef4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xnon_I" value="non_I;non_I;0;-;1; ; ; ; ; ;$.2; ">
+<param name="xpref" value="pref;Prefinanziamento;Prefinanziamento=0;Prefinanziamento;Prefinanziamento; ; ; ; ; ;$.2; ">
+<param name="xal_mq" value="al_mq;al_mq;al_mq=0;al_mq;al_mq; ; ; ; ; ;$.2; ">
+<param name="xtot_non" value="tot_non;tot_non;0;-;1; ; ; ; ; ;$.2; ">
+<param name="xmq_franchigia" value="mq_franchigia;mq_franchigia;mq_franchigia=0;mq_franchigia;mq_franchigia; ; ; ; ; ;$.2; ">
+<param name="xmq_fr" value="mq_fr;mq_fr;0;-;1; ;-;+; ; ;T.10; ">
+<param name="xidoneo" value="idoneo;idoneo;<b>NON Idoneo</b>;-;<b>Idoneo</b>; ; ; ; ; ;T; ">
+<param name="x14supOK" value="14supOK;14supOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="x13lt14" value="13lt14;13lt14;non;-;ok; ; ; ; ; ; ; ">
+<param name="x13ok" value="13ok;13ok;non;-;ok; ; ; ; ; ; ; ">
+<param name="x13infOK" value="13infOK;13infOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="x14infOK" value="14infOK;14infOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="x13supOK" value="13supOK;13supOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmax" value="max;max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmin" value="min;min;non;-;ok; ; ; ; ; ; ; ">
+<param name="x14ok" value="14ok;14ok;non;-;ok; ; ; ; ; ; ; ">
+<param name="xICEF4" value="ICEF4;<b>ICEF edil<b/> ;ICEF edil=0;<b>ICEF edil<b/> ;<b>ICEF edil<b/>; ; ; ; ; <b>;T.4;<b/>">
+<param name="xismax" value="ismax;ismax;non;-;ok; ; ; ; ; ; ; ">
+<param name="xismin" value="ismin;ismin;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation1;propagation2;propagation3;propagation4;applicant0;prefin;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;ICEF_precedente=Icef4">
+<param name="propagation2" value=" ;Prefinanziamento=0;PM=PM_edil">
+<param name="propagation3" value=" ;ICEF_attuale=Icef4">
+<param name="propagation4" value="(13lt14==1) ;PM;Prefinanziamento">
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="prefin" value=" ;ICI_fabbricati=-1!0;ICI_particelle=-1!0;Mq_particelle=-1!0;Prefinanziamento=-1!0;ICEF4=-1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3408643360">
+<param name="CRC" value="2146490785">
+<param name="CRCdata" value="28-mag-2019 17.59.59">
+</APPLET>
+<BR>
+
+

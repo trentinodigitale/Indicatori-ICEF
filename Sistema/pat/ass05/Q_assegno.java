@@ -1,0 +1,220 @@
+package c_elab.pat.ass05;
+
+/** 
+ *Created on 11-ott-2005
+ */
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import c_elab.clesius.ElabStaticContext;
+import c_elab.clesius.ElabStaticSession;
+
+import it.clesius.apps2core.ElainNode;
+import it.clesius.db.sql.RunawayData;
+import it.clesius.db.util.Table;
+
+/**
+ * legge tutti i dati per il calcolo dell'assegno
+ * 
+ * @author g_barbieri
+ */
+public abstract class Q_assegno extends ElainNode {
+
+	protected Table tb_richiedente_da_a;
+	protected Table tb_richiedente_lavoro;
+	protected Table tb_richiedente_residenza;
+	protected Table tb_coniuge_da_a;
+	protected Table tb_dati_dom;
+
+	/** Q_assegno constructor */
+	public Q_assegno() {
+		
+	}
+
+	/**
+	 * resetta le variabili statiche
+	 * 
+	 * @see it.clesius.apps2core.ElainNode#reset()
+	 */
+	protected void reset() {
+		ElabStaticContext.getInstance().resetSession( Q_assegno.class.getName(), IDdomanda, "records" );
+		tb_richiedente_da_a = null;
+		tb_richiedente_lavoro = null;
+		tb_richiedente_residenza = null;
+		tb_coniuge_da_a = null;
+		tb_dati_dom = null;
+	}
+
+	/**
+	 * inizializza la Table records con i valori letti dalla query sul DB
+	 * 
+	 * @see it.clesius.apps2core.ElainNode#init(it.clesius.db.sql.RunawayData)
+	 * @param dataTransfer  it.clesius.db.sql.RunawayData
+	 */
+	public void init(RunawayData dataTransfer) {
+
+		ElabStaticSession session =  ElabStaticContext.getInstance().getSession( Q_assegno.class.getName(), IDdomanda, "records" );
+		if (!session.isInitialized()) {
+
+			super.init(dataTransfer);
+
+			// legge i dati da.. a.. del richiedente
+			StringBuffer sb = new StringBuffer();
+			//                                 1 						2
+			sb.append("SELECT ANF_familiari.nucleo_dal, ANF_familiari.nucleo_al ");
+			sb.append(" FROM Familiari INNER JOIN ANF_familiari ON (Familiari.ID_dichiarazione = ANF_familiari.ID_dichiarazione) AND (Familiari.ID_domanda = ANF_familiari.ID_domanda) ");
+			sb.append(" WHERE (((Familiari.ID_relazione_parentela)=");
+			sb.append(Util.getCodiceRichiedente());
+			sb.append(") AND ((Familiari.ID_domanda)=");
+			sb.append(IDdomanda);
+			sb.append("))");
+			//System.out.println(sb.toString());
+			doQuery(sb.toString());
+			tb_richiedente_da_a = records;
+
+			// legge i dati della domanda
+			sb = null;
+			sb = new StringBuffer();
+			//                          1							2									 3
+			sb.append("SELECT Doc.data_presentazione, Doc.data_sottoscrizione, ANF_richiedente.esclusione_ufficio ");
+			sb.append("FROM ANF_richiedente ");
+			sb.append("INNER JOIN Doc ON ANF_richiedente.ID_domanda = Doc.ID ");
+			sb.append("WHERE (ANF_richiedente.ID_domanda=");
+			sb.append(IDdomanda);
+			sb.append(")");
+			//System.out.println(sb.toString());
+			doQuery(sb.toString());
+			tb_dati_dom = records;
+
+			// legge i dati di lavoro del richiedente
+			sb = null;
+			sb = new StringBuffer();
+			//                                  1                            2                        3
+			sb.append("SELECT ANF_richiedente.dic_lav_prec, ANF_richiedente.gen_lav, ANF_richiedente.feb_lav, ANF_richiedente.mar_lav, ANF_richiedente.apr_lav, ANF_richiedente.mag_lav, ANF_richiedente.giu_lav, ANF_richiedente.lug_lav, ANF_richiedente.ago_lav, ANF_richiedente.set_lav, ANF_richiedente.ott_lav, ANF_richiedente.nov_lav, ANF_richiedente.dic_lav, ANF_requisiti_05.giu_lav_05, ANF_requisiti_05.lug_lav_05, ANF_requisiti_05.ago_lav_05, ANF_requisiti_05.set_lav_05, ANF_requisiti_05.ott_lav_05, ANF_requisiti_05.nov_lav_05 ");
+			sb.append(" FROM Familiari INNER JOIN ((ANF_richiedente INNER JOIN ANF_requisiti_05 ON ANF_richiedente.ID_domanda = ANF_requisiti_05.ID_domanda) INNER JOIN ANF_familiari ON ANF_richiedente.ID_domanda = ANF_familiari.ID_domanda) ON (Familiari.ID_domanda = ANF_familiari.ID_domanda) AND (Familiari.ID_dichiarazione = ANF_familiari.ID_dichiarazione) ");
+			sb.append(" WHERE (((Familiari.ID_relazione_parentela)=");
+			sb.append(Util.getCodiceRichiedente());
+			sb.append(") AND ((Familiari.ID_domanda)=");
+			sb.append(IDdomanda);
+			sb.append("))");
+			//System.out.println(sb.toString());
+			doQuery(sb.toString());
+			tb_richiedente_lavoro = records;
+
+			// legge i dati di residenza del richiedente
+			sb = null;
+			sb = new StringBuffer();
+			//                                 1                             2                        3
+			sb.append("SELECT ANF_richiedente.dic_res_prec, ANF_richiedente.gen_res, ANF_richiedente.feb_res, ANF_richiedente.mar_res, ANF_richiedente.apr_res, ANF_richiedente.mag_res, ANF_richiedente.giu_res, ANF_richiedente.lug_res, ANF_richiedente.ago_res, ANF_richiedente.set_res, ANF_richiedente.ott_res, ANF_richiedente.nov_res, ANF_richiedente.dic_res, ANF_requisiti_05.giu_res_05, ANF_requisiti_05.lug_res_05, ANF_requisiti_05.ago_res_05, ANF_requisiti_05.set_res_05, ANF_requisiti_05.ott_res_05, ANF_requisiti_05.nov_res_05 ");
+			sb.append(" FROM Familiari INNER JOIN ((ANF_richiedente INNER JOIN ANF_requisiti_05 ON ANF_richiedente.ID_domanda = ANF_requisiti_05.ID_domanda) INNER JOIN ANF_familiari ON ANF_richiedente.ID_domanda = ANF_familiari.ID_domanda) ON (Familiari.ID_domanda = ANF_familiari.ID_domanda) AND (Familiari.ID_dichiarazione = ANF_familiari.ID_dichiarazione) ");
+			sb.append(" WHERE (((Familiari.ID_relazione_parentela)=");
+			sb.append(Util.getCodiceRichiedente());
+			sb.append(") AND ((Familiari.ID_domanda)=");
+			sb.append(IDdomanda);
+			sb.append("))");
+			//System.out.println(sb.toString());
+			doQuery(sb.toString());
+			tb_richiedente_residenza = records;
+
+			// legge i dati da.. a.. del coniuge o convivente
+			sb = null;
+			sb = new StringBuffer();
+			//                                 1                           2
+			sb.append("SELECT ANF_familiari.nucleo_dal, ANF_familiari.nucleo_al ");
+			sb.append(" FROM Familiari INNER JOIN ANF_familiari ON (Familiari.ID_dichiarazione = ANF_familiari.ID_dichiarazione) AND (Familiari.ID_domanda = ANF_familiari.ID_domanda) ");
+			sb.append(" WHERE (((Familiari.ID_relazione_parentela)=");
+			sb.append(Util.getCodiceConiuge());
+			sb.append(" Or (Familiari.ID_relazione_parentela)=");
+			sb.append(Util.getCodiceConvivente_gen());
+			sb.append(" Or (Familiari.ID_relazione_parentela)=");
+			sb.append(Util.getCodiceConvivente_no_gen());
+			sb.append(") AND ((Familiari.ID_domanda)=");
+			sb.append(IDdomanda);
+			sb.append("))");
+			//System.out.println(sb.toString());
+			doQuery(sb.toString());
+			tb_coniuge_da_a = records;
+
+			// legge i dati dei figli
+			sb = null;
+			sb = new StringBuffer();
+			//                               1                           2                        3                           4                             5                          6                             7                         8
+			sb.append("SELECT Soggetti.data_nascita, ANF_familiari.nucleo_dal, ANF_familiari.nucleo_al, ANF_familiari.nucleo_dal_inv, ANF_familiari.nucleo_al_inv, ANF_familiari.a_carico_2006, ANF_familiari.a_carico_2005, ANF_familiari.non_invalido ");
+			sb.append(" FROM ((Familiari INNER JOIN ANF_familiari ON (Familiari.ID_domanda = ANF_familiari.ID_domanda) AND (Familiari.ID_dichiarazione = ANF_familiari.ID_dichiarazione)) INNER JOIN Dich_icef ON Familiari.ID_dichiarazione = Dich_icef.ID_dichiarazione) INNER JOIN Soggetti ON Dich_icef.ID_soggetto = Soggetti.ID_soggetto ");
+			sb.append(" WHERE (((Familiari.ID_relazione_parentela)<>");
+			sb.append(Util.getCodiceRichiedente());
+			sb.append(" And (Familiari.ID_relazione_parentela)<>");
+			sb.append(Util.getCodiceConiuge());
+			sb.append(" And (Familiari.ID_relazione_parentela)<>");
+			sb.append(Util.getCodiceConvivente_gen());
+			sb.append(" And (Familiari.ID_relazione_parentela)<>");
+			sb.append(Util.getCodiceConvivente_no_gen());
+			sb.append(") AND ((Familiari.ID_domanda)=");
+			sb.append(IDdomanda);
+			sb.append("))");
+			//System.out.println(sb.toString());
+			doQuery(sb.toString());
+
+			session.setInitialized(true);
+			session.setRecords( records );
+			session.setAttribute("tb_richiedente_da_a", tb_richiedente_da_a);
+			session.setAttribute("tb_richiedente_lavoro", tb_richiedente_lavoro);
+			session.setAttribute("tb_richiedente_residenza", tb_richiedente_residenza);
+			session.setAttribute("tb_coniuge_da_a", tb_coniuge_da_a);
+			session.setAttribute("tb_dati_dom", tb_dati_dom);			
+			
+        } else {
+			records = session.getRecords();
+			tb_richiedente_da_a = (Table)session.getAttribute("tb_richiedente_da_a");
+			tb_richiedente_lavoro = (Table)session.getAttribute("tb_richiedente_lavoro");
+			tb_richiedente_residenza = (Table)session.getAttribute("tb_richiedente_residenza");
+			tb_coniuge_da_a = (Table)session.getAttribute("tb_coniuge_da_a");
+			tb_dati_dom = (Table)session.getAttribute("tb_dati_dom");			
+        }
+	}
+
+	protected boolean[] isACarico(int i, int anno) {
+		if (anno == 2006) {
+			return Util.get_a_carico(java.lang.Math.abs(new Integer((String) (records.getElement(i, 6))).intValue()), 0);
+		} else {
+			return Util.get_a_carico(java.lang.Math.abs(new Integer((String) (records.getElement(i, 7))).intValue()), 0);
+		}
+	}
+	
+	protected boolean[] isNelNucleo(int i, int meseinit, int anno) {
+		return Util.get_ha_requisiti_da_a((String) records.getElement(i, 2), (String) records.getElement(i, 3),meseinit, anno, false);
+	}
+	
+	protected boolean[] isMinore(int i, int meseinit, int anno) {
+		Calendar data_nascita = Util.stringdate2date((String) records.getElement(i, 1));
+		Calendar data_18_anni = data_nascita;
+		data_18_anni.add(Calendar.YEAR, 18);
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		return Util.get_ha_requisiti_da_a((String) records.getElement(i, 1), formatter.format(data_18_anni.getTime()), meseinit, anno, false);
+	}
+	
+	protected boolean[] isNato(int i, int meseinit, int anno) {
+		//Calendar data_nascita = Util.stringdate2date((String) records.getElement(i, 1));
+		//SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		return Util.get_ha_requisiti_da_a((String) records.getElement(i, 1), "2050-12-31", meseinit, anno, false);
+	}
+
+	protected boolean[] isDisabile(int i, int meseinit, int anno) {
+		if ( ((String) records.getElement(i, 8)).equals("0") ) {
+			return Util.get_ha_requisiti_da_a((String) records.getElement(i, 4), (String) records.getElement(i, 5), meseinit, anno, false);
+		} else {
+			return Util.get_ha_requisiti_da_a((String) records.getElement(i, 4), (String) records.getElement(i, 5),	meseinit, anno, true);
+		}
+	}
+	
+	/**
+	 * ritorna il valore double da assegnare all'input node
+	 * 
+	 * @see it.clesius.apps2core.ElainNode#getValue()
+	 * @return double
+	 */
+	public double getValue() {
+		return 0.0;
+	}
+}

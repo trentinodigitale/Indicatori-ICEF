@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>ATTESTAZIONE DELL'INDICATORE ICEF <BR> PER LA TARIFFA MUOVERSI 2017</H2>
+		</CENTER></head> ]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<![CDATA[<H3><CENTER>]]>
+            <sql><![CDATA[select case when id_tp_stato<3000 then 'Elaborazione provvisoria, domanda non trasmessa!' else '' end from Doc where id=${id_domanda}]]></sql>
+		<![CDATA[</H3></CENTER>]]>
+		</ente>
+		<servizio>
+		</servizio>
+		<richiedente>			
+		</richiedente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<!--netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion-->
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+		
+	</footer>	
+</Doc>

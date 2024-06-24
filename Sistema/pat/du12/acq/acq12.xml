@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head><body>
+			<CENTER>
+			<H2>Attestazione dell'indicatore ICEF e del contributo a Sostegno del Potere d'Acquisto dei Nuclei Familiari
+			</CENTER><BR><BR>]]>
+	</header>
+	<richiedente>
+		<![CDATA[<B>Nucleo familiare: </B>]]>
+		<class>c_elab.pat.uni12.Richiedente</class>
+		<![CDATA[<BR>]]>
+	</richiedente>	
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+    		</sql>
+	</ente>
+	<values>
+		<sql><![CDATA[
+			select 
+				'<table border=''0'' cellpadding=''0'' cellspacing=''5''
+				width=''100%'' height=''66''> 
+				
+				<tr> <td width=''75%''
+				height=''23''><b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato per sostegno acquisti</td> <td width=''13%''
+				height=''23''></td> <td width=''13%'' height=''23''>
+				<table border=''1'' width=''100%''> <tr> <td
+				width=''100%'' align=''right''> <b>' + REPLACE(str
+				(Icef_acq.numeric_value,12,10),'.',',') + '</b></td> </tr>
+				</table> </td> </tr> </table>' +
+				CASE WHEN Icef_acq.numeric_value > ICEF_max.default_value THEN 
+					'<ul>
+					<li>Domanda esclusa per indicatore ICEF al di sopra del limite massimo
+					</ul>'
+					ELSE ''
+				END
+				+
+				CASE WHEN CheckInput.input_value <> 0 THEN 
+					'<ul>
+					<li>Domanda esclusa per mancanza del requisito di residenza triennale del richiedente oppure per incompatibilità con una domanda del Reddito di Garanzia oppure perchè esclusa d''ufficio  
+					</ul>'	
+					ELSE ''		 	
+				END	
+				+
+				CASE WHEN contributo_acquisti.numeric_value > 0 THEN 
+					'<table border=''0'' cellpadding=''0'' cellspacing=''5''
+					width=''100%'' height=''66''> <tr> <td width=''75%''
+					height=''23''>Quota per aumento prezzi</td> <td width=''13%''
+					height=''23''></td> <td width=''13%'' height=''23''>
+					<table border=''1'' width=''100%''> <tr> <td
+					width=''100%'' align=''right''> <b>' + REPLACE(str
+					(contr_figli.numeric_value,10,2),'.',',') + '</b></td> </tr>
+					</table> </td> </tr>
+					<tr> <td width=''75%''
+					height=''23''>Quota per la nascita di figli nell''ultimo anno</td> <td width=''13%''
+					height=''23''></td> <td width=''13%'' height=''23''>
+					<table border=''1'' width=''100%''> <tr> <td
+					width=''100%'' align=''right''> <b>' + REPLACE(str
+					(contr_nascita.numeric_value,10,2),'.',',') + '</b></td> </tr>
+					</table> </td> </tr>
+					<tr> <td width=''75%''
+					height=''23''>Quota per impatto politiche fiscali</td> <td width=''13%''
+					height=''23''></td> <td width=''13%'' height=''23''>
+					<table border=''1'' width=''100%''> <tr> <td
+					width=''100%'' align=''right''> <b>' + REPLACE(str
+					(contr_imu.numeric_value,10,2),'.',',') + '</b></td> </tr>
+					</table> </td> </tr>
+					<tr> <td width=''75%''
+					height=''23''><b>Importo totale contributo acquisti (massimo 1000 euro)</b></td> <td width=''13%''
+					height=''23''></td> <td width=''13%'' height=''23''>
+					<table border=''1'' width=''100%''> <tr> <td
+					width=''100%'' align=''right''> <b>' + REPLACE(str
+					(contributo_acquisti.numeric_value,10,2),'.',',') + '</b></td> </tr>
+					</table> </td> </tr> </table>'
+				ELSE 
+					'<table border=''0'' cellpadding=''0'' cellspacing=''5''
+					width=''100%'' height=''66''> 
+					<tr> <td width=''75%''
+					height=''23''><b>Importo totale contributo acquisti (massimo 1000 euro)</b></td> <td width=''13%''
+					height=''23''></td> <td width=''13%'' height=''23''>
+					<table border=''1'' width=''100%''> <tr> <td
+					width=''100%'' align=''right''> <b>' + REPLACE(str
+					(contributo_acquisti.numeric_value,10,2),'.',',') + '</b></td> </tr>
+					</table> </td> </tr> </table>'
+			END as testo
+			FROM         C_ElaOUT AS ICEF INNER JOIN
+                      C_ElaOUT AS Icef_gar ON ICEF.ID_domanda = Icef_gar.ID_domanda INNER JOIN
+                      C_ElaOUT AS Icef_acq ON ICEF.ID_domanda = Icef_acq.ID_domanda INNER JOIN
+                      C_ElaOUT AS contr_nascita ON ICEF.ID_domanda = contr_nascita.ID_domanda INNER JOIN
+                      C_ElaOUT AS contributo_acquisti ON ICEF.ID_domanda = contributo_acquisti.ID_domanda INNER JOIN
+                      C_ElaOUT AS contr_imu ON ICEF.ID_domanda = contr_imu.ID_domanda INNER JOIN
+                      C_ElaOUT AS contr_figli ON ICEF.ID_domanda = contr_figli.ID_domanda INNER JOIN
+                      Domande ON ICEF.ID_domanda = Domande.ID_domanda INNER JOIN
+                      C_DefaultIn AS Icef_garanzia ON Domande.ID_servizio = Icef_garanzia.ID_servizio AND Domande.ID_periodo = Icef_garanzia.ID_periodo INNER JOIN
+                      C_DefaultIn AS ICEF_max ON Domande.ID_servizio = ICEF_max.ID_servizio AND Domande.ID_periodo = ICEF_max.ID_periodo INNER JOIN
+                      C_ElaIN AS CheckInput ON ICEF.ID_domanda = CheckInput.ID_domanda
+                      
+			WHERE     (Icef_gar.node = N'Icef_gar') AND (ICEF.node = N'ICEF10') AND (Icef_acq.node = N'Icef_acq') AND (contr_nascita.node = N'contr_nascita') AND 
+                      (contributo_acquisti.node = N'contributo_acquisti') AND (contr_imu.node = N'contr_imu') AND (contr_figli.node = N'contr_figli') AND 
+                      (Icef_garanzia.node = N'Icef_garanzia') AND (Domande.ID_domanda = ${id_domanda}) AND (ICEF_max.node = N'ICEF_max') AND (CheckInput.node = N'Check')
+		]]></sql>
+	</values>
+	<newPage>	
+		<![CDATA[<br clear=all style='page-break-after:always'/>]]>
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>
+	<netVersion><![CDATA[]]></netVersion>
+	<footer>
+		<![CDATA[]]>		
+	</footer>
+
+</Doc>

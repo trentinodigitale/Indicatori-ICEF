@@ -1,0 +1,381 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=900 HEIGHT=900 MAYSCRIPT>
+	<param name="revision" value="$Revision: 17918 $">
+
+	<param name="Taratura"
+		value="Pensione / Indennità di Accompagnamento; 13.4.2015">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="false">
+	<param name="language" value="0">
+
+	<param name="params"
+		value="<b>Parametri:</b> ;Pensione1=-1!0;Pensione2=-1!0;Indennita1=-1!0;Indennita2=-1!0;Indennita3=-1!0;Indennita4=-1!0;Integrativo1=-1!0;Integrativo2=-1!0;Maggiorazione1=-1!0;Maggiorazione2=-1!0;Maggiorazione3=-1!0">
+
+	<param name="variables" value="pscala;drscala">
+	<param name="pscala" value="0.0001">
+	<param name="drscala" value="0.0000001">
+
+	<param name="confronti"
+		value="<p><b>Confronti:</b>  ;Pensione=-1;MaggiorazionePensione=-1;PENSIONE=-1;Indennita=-1;AssegnoIntegrativo=-1;INDENNITA=-1;TOTALE=-1;totaleOK=-1;pensOK=-1;indintOK=-1">
+
+	<param name="trendStarts" value="parametri;dinieghi;revoche;caso1;calcoli1">
+<param name="dinieghi" value="Dinieghi_indennita=1111000;Dinieghi_integrativo=1111000;Dinieghi_maggiorazione=1111000;Dinieghi_pensione=1111000">
+<param name="revoche" value="Revoche_indennita=1111000;Revoche_integrativo=1111000;Revoche_maggiorazione=1111000;Revoche_pensione=1111000">
+
+	<param name="parametri"
+		value="zero;Reddito1=4596.02;Reddito2=15627.22;Indennita1=193.26;Indennita2=245.63;Indennita3=492.97;Indennita4=827.05;Integrativo1=64.07;Integrativo2=101.16;Maggiorazione1=10.33;Maggiorazione2=12.91;Maggiorazione3=20.66;Pensione1=267.57;Pensione2=289.36">
+	<param name="calcoli1"
+		value="current;Pensione=267.57;Indennita=0;MaggiorazionePensione=10.33;AssegnoIntegrativo=64.07">
+	<param name="caso1"
+		value="parametri,calcoli1;Reddito=10000;Eta=60;Grado=4;Ricovero=0">
+
+
+<param name="edges" value="PAT Pensione Indennità;checksum;Dinieghi_indennita;Dinieghi_integrativo;Dinieghi_pensione;Dinieghi_maggiorazione;Revoche_indennita;Revoche_integrativo;Revoche_pensione;Revoche_maggiorazione;
+Eta-minorenne;Eta-oltre75;minorenne-ge18;ge18-adulto;Eta-ge65;ge65-adulto;ge65-65_75;oltre75-65_75;Grado-03;Grado-04;Grado-05;Grado-06;Grado-07;Grado-09;Grado-10;Grado-11;05-0506;06-0506;ge65-lt65;_09-pens_cie_parz;10-pens_cie_tot_ric;
+Ricovero-pens_cie_tot_ric;10-pens_cie_tot_non;Ricovero-non_ric;non_ric-pens_cie_tot_non;minorenne-ind_min_nonauto;adulto-ind_ass_nonauto;ge65-ind_ass_ge65_nonauto;65_75-magg_2;0910-magg_2;oltre75-magg_3;0910-magg_3;09-0910;10-0910;Maggiorazione2-magg_2;Maggiorazione3-magg_3;lt65-magg_1;0910-magg_1;Maggiorazione1-magg_1;pens_cie_parz-pens_cie_p1;magg_1-pens_cie_p1;
+pens_cie_parz-pens_cie_p2;magg_2-pens_cie_p2;pens_cie_parz-pens_cie_p3;magg_3-pens_cie_p3;pens_cie_tot_non-pens_cie_n1;magg_1-pens_cie_n1;pens_cie_tot_non-pens_cie_n2;magg_2-pens_cie_n2;pens_cie_tot_non-pens_cie_n3;magg_3-pens_cie_n3;pens_cie_tot_ric-pens_cie_r1;magg_1-pens_cie_r1;pens_cie_tot_ric-pens_cie_r2;magg_2-pens_cie_r2;pens_cie_tot_ric-pens_cie_r3;magg_3-pens_cie_r3;ind4_int2-ind_cie_tot;ind1_int1-ind_cie_parz;ind3_int1-ind_min_nonauto;ind3_int1-ind_ass_nonauto;
+ind3_int1-ind_ass_ge65_nonauto;ind_min_nonauto-indint0;ind_ass_nonauto-indint0;ind_ass_ge65_nonauto-indint0;ind_s_muto-indint0;ind_cie_parz-indint0;ind_cie_tot-indint0;pens_min-pens_inv_civ;pens_parz-pens_inv_civ;pens_ass-pens_inv_civ;pens_ass_nonauto-pens_inv_civ;pens_s_muto-pens_sord_cie;pens_cie_p1-pens_cie_p;pens_cie_p2-pens_cie_p;pens_cie_p3-pens_cie_p;pens_cie_p-pens_sord_cie;pens_cie_n1-pens_cie_n;pens_cie_n2-pens_cie_n;pens_cie_n3-pens_cie_n;pens_cie_r1-pens_cie_r;
+pens_cie_r2-pens_cie_r;pens_cie_r3-pens_cie_r;pens_cie_n-pens_sord_cie;pens_cie_r-pens_sord_cie;pens_inv_civ-pens0;pens_sord_cie-pens0;Pensione2-pens_cie_tot_non;Pensione-PENSIONE;MaggiorazionePensione-PENSIONE;Indennita-INDENNITA;AssegnoIntegrativo-INDENNITA;redditi-lim1OK;Reddito1-lim1OK;redditi-lim2OK;Reddito2-lim2OK;lim2OK-pens_cie_parz;lim2OK-pens_cie_tot_non;Pensione1-pens_cie_tot_ric;PENSIONE-TOTALE;INDENNITA-TOTALE;
+TOTALE-totaleOK;non_ric-int1_noric;Integrativo1-int1_noric;lim2OK-pens_cie_tot_ric;10-int2;10-ind4;Indennita4-ind4;Integrativo2-int2;ind4-ind4_int2;int2-ind4_int2;09-ind1;ind1-ind1_int1;int1-ind1_int1;Integrativo1-int1;Indennita1-ind1;0506-ind3;ind3-ind3_int1;11-ind2;11-i1noric11;0506-i1noric56;
+ind2-ind_s_muto;i1noric11-ind_s_muto;Indennita2-ind2;int1_noric-i1noric11;int1_noric-i1noric56;i1noric56-ind3_int1;Indennita3-ind3;ind_min_nonauto-max_na;ind_ass_nonauto-max_na;ind_ass_ge65_nonauto-max_na;max_na-i1_na;max_na-i3_na;ind3-i1_na;i1noric56-i3_na;int1-integrativo;int2-integrativo;ind1-indennita;ind2-indennita;ind3-indennita;i1_na-integrativo;
+i3_na-indennita;indennita-ind_int;integrativo-ind_int;i1noric56-integrativo;i1noric11-integrativo;0709-min7;07-min7;min7-pens1min;min7-magg1min;Maggiorazione1-magg1min;pens1min-pens_min;magg1min-pens_min;Pensione1-pens1min;adulto-ad3lim1;03-ad3lim1;lim1OK-ad3lim1;ad3lim1-pens1ad3;Pensione1-pens1ad3;ad3lim1-magg1ad3;Maggiorazione1-magg1ad3;
+pens1ad3-pens_parz;magg1ad3-pens_parz;adulto-ad4lim2;04-ad4lim2;lim2OK-ad4lim2;ad4lim2-pens1ad4;Pensione1-pens1ad4;ad4lim2-magg1ad4;Maggiorazione1-magg1ad4;ad4lim2-int1noricad4;int1_noric-int1noricad4;pens1ad4-pens_ass;magg1ad4-pens_ass;int1noricad4-pens_ass;adulto-ad56lim2;0506-ad56lim2;lim2OK-ad56lim2;ad56lim2-pens1ad56;ad56lim2-magg1ad56;Pensione1-pens1ad56;
+Maggiorazione1-magg1ad56;pens1ad56-pens_ass_nonauto;magg1ad56-pens_ass_nonauto;adulto-ad11lim2;11-ad11lim2;lim2OK-ad11lim2;ad11lim2-pens1ad11;Pensione1-pens1ad11;ad11lim2-magg1ad11;Maggiorazione1-magg1ad11;pens1ad11-pens_s_muto;magg1ad11-pens_s_muto;pens1min-pensione_calcolata;pens1ad3-pensione_calcolata;pens1ad4-pensione_calcolata;pens1ad56-pensione_calcolata;pens1ad11-pensione_calcolata;magg_1-maggiorazione;magg1min-maggiorazione;magg1ad3-maggiorazione;
+magg1ad4-maggiorazione;magg1ad56-maggiorazione;magg1ad11-maggiorazione;magg_2-maggiorazione;magg_3-maggiorazione;maggiorazione-pensione_maggiorata;int1noricad4-intpens;pens0-pensOK;pensione_maggiorata-pensOK;indint0-indintOK;Ricovero-ric_rett;Retta_carico_pubblico-ric_rett;ric_rett-noind;noind-indennita_integrata;indennita_integrata-indintOK;ind_int-indennita_integrata;Redd50-redditi;Reddito-redditi;pens_cie_parz-pens_cie;pens_cie_tot_non-pens_cie;
+pens_cie_tot_ric-pens_cie;pensione_maggiorata-somma;indennita_integrata-somma;Azzera_importi-prendi;prendi-totale;somma-totale;intpens-integrativo;prendi-assegno_integrativo;prendi-indennita_accompagnamento;integrativo-assegno_integrativo;indennita-indennita_accompagnamento;prendi-pensione;prendi-maggiorazione_pensione;maggiorazione-maggiorazione_pensione;totale-totaleOK;ind4-indennita;assegno_integrativo-integrativoOK;AssegnoIntegrativo-integrativoOK;Indennita-indennitaOK;pensione-pensioneOK;
+Pensione-pensioneOK;MaggiorazionePensione-maggiorazioneOK;indennitaOK-ok;integrativoOK-ok;pensioneOK-ok;maggiorazioneOK-ok;Grado-0709;minorenne-min7;09-_09;0709-_09;_09-int1;Pensione1-pens_cie_parz;pensione_calcolata-p_c;p_c-pensione;p_c-pensione_maggiorata;pens_cie-p_c;_09-0910;lim2OK-magg_1;maggiorazione_pensione-maggiorazioneOK;indennita_accompagnamento-indennitaOK;
+lim2OK-magg_2;lim2OK-magg_3">
+
+
+
+<param name="PAT Pensione Indennità" value="text;node.ico;95;14;0;Versione 13.4.2015;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello;yModello;3602710798">
+<param name="checksum" value="2;node.ico;38;617;0;checksum = ;0.0;PlusNode;NoInput;NoOutput;0;0;0.0;NoCurve;xchecksum;xchecksum;3035016850">
+<param name="Dinieghi_indennita" value="1;node.ico;58;650;0;Dinieghi_indennita = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xDinieghi_indennita;xDinieghi_indennita;2081195284">
+<param name="Dinieghi_integrativo" value="1;node.ico;197;650;0;Dinieghi_integrativo = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xDinieghi_integrativo;xDinieghi_integrativo;917966726">
+<param name="Dinieghi_pensione" value="1;node.ico;333;651;0;Dinieghi_pensione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xDinieghi_pensione;xDinieghi_pensione;4219537312">
+<param name="Dinieghi_maggiorazione" value="1;node.ico;472;653;0;Dinieghi_maggiorazione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xDinieghi_maggiorazione;xDinieghi_maggiorazione;3982780358">
+<param name="Revoche_indennita" value="1;node.ico;63;675;0;Revoche_indennita = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xRevoche_indennita;xRevoche_indennita;137256563">
+<param name="Revoche_integrativo" value="1;node.ico;197;674;0;Revoche_integrativo = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xRevoche_integrativo;xRevoche_integrativo;1943720254">
+<param name="Revoche_pensione" value="1;node.ico;331;676;0;Revoche_pensione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xRevoche_pensione;xRevoche_pensione;2385391014">
+<param name="Revoche_maggiorazione" value="1;node.ico;473;677;0;Revoche_maggiorazione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;drscala;NoCurve;xRevoche_maggiorazione;xRevoche_maggiorazione;4258774700">
+<param name="Eta" value="1;node.ico;35;34;0;Eta = ;0.0;PlusNode;ValueInput;NoOutput;0;3;minorenne;oltre75;ge65;0.01;NoCurve;xEta;xEta;3196579351">
+<param name="minorenne" value="0;node.ico;120;33;0;minorenne = Eta < 18.0;0.0;NumLtNode;NoInput;NoOutput;1;Eta;3;ge18;ind_min_nonauto;min7;1.0;18.0;NoCurve;xminorenne;xminorenne;1967865580">
+<param name="oltre75" value="0;node.ico;75;123;0;oltre75 = Eta > 75.0;0.0;NumGtNode;NoInput;NoOutput;1;Eta;2;65_75;magg_3;1.0;75.0;NoCurve;xoltre75;xoltre75;926456751">
+<param name="ge18" value="0;node.ico;100;53;0;ge18 =  - minorenne;0.0;ProbNode;NoInput;NoOutput;1;minorenne;1;adulto;1.0;0.0;NoCurve;xge18;xge18;4119825171">
+<param name="adulto" value="0;node.ico;101;76;0;adulto =  ge18 - ge18 * ge65;0.0;ProbNode;NoInput;NoOutput;2;ge18;ge65;5;ind_ass_nonauto;ad3lim1;ad4lim2;ad56lim2;ad11lim2;0.0;1.0;0.0;0.0;NoCurve;xadulto;xadulto;2175956746">
+<param name="ge65" value="0;node.ico;37;84;0;ge65 = Eta >= 65.0;0.0;NumGeNode;NoInput;NoOutput;1;Eta;4;adulto;65_75;lt65;ind_ass_ge65_nonauto;1.0;65.0;NoCurve;xge65;xge65;3869391204">
+<param name="65_75" value="0;node.ico;94;99;0;65_75 =  ge65 - ge65 * oltre75;0.0;ProbNode;NoInput;NoOutput;2;ge65;oltre75;1;magg_2;0.0;1.0;0.0;0.0;NoCurve;x65_75;x65_75;678977347">
+<param name="Grado" value="1;node.ico;28;197;0;Grado = ;0.0;PlusNode;ValueInput;NoOutput;0;9;03;04;05;06;07;09;10;11;0709;0.01;NoCurve;xGrado;xGrado;1191800983">
+<param name="03" value="0;node.ico;60;175;0;03 = Grado == 3.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;1;ad3lim1;1.0;3.0;NoCurve;x03;x03;1497933587">
+<param name="04" value="0;node.ico;81;196;0;04 = Grado == 4.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;1;ad4lim2;1.0;4.0;NoCurve;x04;x04;55510861">
+<param name="05" value="0;node.ico;84;217;0;05 = Grado == 5.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;1;0506;1.0;5.0;NoCurve;x05;x05;1215390549">
+<param name="06" value="0;node.ico;85;239;0;06 = Grado == 6.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;1;0506;1.0;6.0;NoCurve;x06;x06;161546845">
+<param name="07" value="0;node.ico;85;266;0;07 = Grado == 7.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;1;min7;1.0;7.0;NoCurve;x07;x07;3148277984">
+<param name="09" value="0;node.ico;82;290;0;09 = Grado == 9.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;3;0910;ind1;_09;1.0;9.0;NoCurve;x09;x09;893683820">
+<param name="10" value="0;node.ico;76;313;0;10 = Grado == 10.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;5;0910;pens_cie_tot_non;pens_cie_tot_ric;ind4;int2;1.0;10.0;NoCurve;x10;x10;1197722641">
+<param name="11" value="0;node.ico;45;332;0;11 = Grado == 11.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;3;ind2;i1noric11;ad11lim2;1.0;11.0;NoCurve;x11;x11;1119605808">
+<param name="0506" value="0;node.ico;127;226;0;0506 =  05 + 06 - 05 * 06;0.0;ProbNode;NoInput;NoOutput;2;05;06;3;i1noric56;ind3;ad56lim2;0.0;1.0;1.0;1.0;NoCurve;x0506;x0506;1937477587">
+<param name="lt65" value="0;node.ico;38;153;0;lt65 =   1  - ge65;0.0;ProbNode;NoInput;NoOutput;1;ge65;1;magg_1;1.0;0.0;NoCurve;xlt65;xlt65;932924706">
+<param name="_09" value="0;node.ico;120;342;0;_09 =  09 + 0709 - 09 * 0709;0.0;ProbNode;NoInput;NoOutput;2;09;0709;3;int1;pens_cie_parz;0910;0.0;1.0;1.0;1.0;NoCurve;x_09;x_09;3649652028">
+<param name="pens_cie_parz" value="0;node.ico;495;171;0;pens_cie_parz =  _09 * Pensione1 * lim2OK;0.0;TimesNode;NoInput;NoOutput;3;_09;Pensione1;lim2OK;4;pens_cie_p1;pens_cie_p2;pens_cie_p3;pens_cie;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpens_cie_parz;xpens_cie_parz;3178711342">
+<param name="pens_cie_tot_ric" value="0;node.ico;290;387;0;pens_cie_tot_ric =  10 * Ricovero * Pensione1 * lim2OK;0.0;TimesNode;NoInput;NoOutput;4;10;Ricovero;Pensione1;lim2OK;4;pens_cie_r1;pens_cie_r2;pens_cie_r3;pens_cie;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xpens_cie_tot_ric;xpens_cie_tot_ric;2785687296">
+<param name="Ricovero" value="1;node.ico;43;392;0;Ricovero = ;0.0;ProbNode;ValueInput;NoOutput;0;3;pens_cie_tot_ric;non_ric;ric_rett;0.5;NoCurve;xRicovero;xRicovero;3952111436">
+<param name="pens_cie_tot_non" value="0;node.ico;231;335;0;pens_cie_tot_non =  10 * non_ric * Pensione2 * lim2OK;0.0;TimesNode;NoInput;NoOutput;4;10;non_ric;Pensione2;lim2OK;4;pens_cie_n1;pens_cie_n2;pens_cie_n3;pens_cie;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xpens_cie_tot_non;xpens_cie_tot_non;1139444455">
+<param name="non_ric" value="0;node.ico;70;367;0;non_ric =   1  - Ricovero;0.0;ProbNode;NoInput;NoOutput;1;Ricovero;2;pens_cie_tot_non;int1_noric;1.0;0.0;NoCurve;xnon_ric;xnon_ric;133933437">
+<param name="ind_min_nonauto" value="0;node.ico;395;482;0;ind_min_nonauto =  minorenne * ind3_int1;0.0;TimesNode;NoInput;NoOutput;2;minorenne;ind3_int1;2;indint0;max_na;pscala;1.0;1.0;1.0;NoCurve;xind_min_nonauto;xind_min_nonauto;788134512">
+<param name="ind_ass_nonauto" value="0;node.ico;430;505;0;ind_ass_nonauto =  adulto * ind3_int1;0.0;TimesNode;NoInput;NoOutput;2;adulto;ind3_int1;2;indint0;max_na;pscala;1.0;1.0;1.0;NoCurve;xind_ass_nonauto;xind_ass_nonauto;1471077159">
+<param name="ind_ass_ge65_nonauto" value="0;node.ico;534;528;0;ind_ass_ge65_nonauto =  ge65 * ind3_int1;0.0;TimesNode;NoInput;NoOutput;2;ge65;ind3_int1;2;indint0;max_na;pscala;1.0;1.0;1.0;NoCurve;xind_ass_ge65_nonauto;xind_ass_ge65_nonauto;205433017">
+<param name="magg_2" value="0;node.ico;656;301;0;magg_2 =  65_75 * 0910 * Maggiorazione2 * lim2OK;0.0;TimesNode;NoInput;NoOutput;4;65_75;0910;Maggiorazione2;lim2OK;4;pens_cie_p2;pens_cie_n2;pens_cie_r2;maggiorazione;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xmagg_2;xmagg_2;2063711183">
+<param name="0910" value="0;node.ico;124;302;0;0910 =  09 + 10 - 09 * 10 + _09 - 09 * _09 - 10 * _09 + 09 * 10 * _09;0.0;ProbNode;NoInput;NoOutput;3;09;10;_09;3;magg_2;magg_3;magg_1;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;x0910;x0910;3768792752">
+<param name="magg_3" value="0;node.ico;597;360;0;magg_3 =  oltre75 * 0910 * Maggiorazione3 * lim2OK;0.0;TimesNode;NoInput;NoOutput;4;oltre75;0910;Maggiorazione3;lim2OK;4;pens_cie_p3;pens_cie_n3;pens_cie_r3;maggiorazione;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xmagg_3;xmagg_3;1325120784">
+<param name="Maggiorazione2" value="1;node.ico;828;305;0;Maggiorazione2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;magg_2;pscala;NoCurve;xMaggiorazione2;xMaggiorazione2;910223494">
+<param name="Maggiorazione3" value="1;node.ico;831;360;0;Maggiorazione3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;magg_3;pscala;NoCurve;xMaggiorazione3;xMaggiorazione3;2816047014">
+<param name="magg_1" value="0;node.ico;339;166;0;magg_1 =  lt65 * 0910 * Maggiorazione1 * lim2OK;0.0;TimesNode;NoInput;NoOutput;4;lt65;0910;Maggiorazione1;lim2OK;4;pens_cie_p1;pens_cie_n1;pens_cie_r1;maggiorazione;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xmagg_1;xmagg_1;765879031">
+<param name="Maggiorazione1" value="1;node.ico;817;23;0;Maggiorazione1 = ;0.0;PlusNode;ValueInput;NoOutput;0;6;magg_1;magg1min;magg1ad3;magg1ad4;magg1ad56;magg1ad11;pscala;NoCurve;xMaggiorazione1;xMaggiorazione1;3132618906">
+<param name="pens_cie_p1" value="0;node.ico;597;206;0;pens_cie_p1 =  pens_cie_parz + magg_1;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_parz;magg_1;1;pens_cie_p;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_p1;xpens_cie_p1;791941290">
+<param name="pens_cie_p2" value="0;node.ico;581;231;0;pens_cie_p2 =  pens_cie_parz + magg_2;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_parz;magg_2;1;pens_cie_p;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_p2;xpens_cie_p2;2274133851">
+<param name="pens_cie_p3" value="0;node.ico;562;259;0;pens_cie_p3 =  pens_cie_parz + magg_3;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_parz;magg_3;1;pens_cie_p;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_p3;xpens_cie_p3;45839377">
+<param name="pens_cie_n1" value="0;node.ico;516;313;0;pens_cie_n1 =  pens_cie_tot_non + magg_1;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_tot_non;magg_1;1;pens_cie_n;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_n1;xpens_cie_n1;1081860531">
+<param name="pens_cie_n2" value="0;node.ico;497;336;0;pens_cie_n2 =  pens_cie_tot_non + magg_2;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_tot_non;magg_2;1;pens_cie_n;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_n2;xpens_cie_n2;2728688857">
+<param name="pens_cie_n3" value="0;node.ico;487;361;0;pens_cie_n3 =  pens_cie_tot_non + magg_3;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_tot_non;magg_3;1;pens_cie_n;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_n3;xpens_cie_n3;2583527840">
+<param name="pens_cie_r1" value="0;node.ico;437;392;0;pens_cie_r1 =  pens_cie_tot_ric + magg_1;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_tot_ric;magg_1;1;pens_cie_r;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_r1;xpens_cie_r1;3960758967">
+<param name="pens_cie_r2" value="0;node.ico;431;413;0;pens_cie_r2 =  pens_cie_tot_ric + magg_2;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_tot_ric;magg_2;1;pens_cie_r;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_r2;xpens_cie_r2;2734399621">
+<param name="pens_cie_r3" value="0;node.ico;412;436;0;pens_cie_r3 =  pens_cie_tot_ric + magg_3;0.0;PlusNode;NoInput;NoOutput;2;pens_cie_tot_ric;magg_3;1;pens_cie_r;pscala;1.0;1.0;1.0;NoCurve;xpens_cie_r3;xpens_cie_r3;2789464006">
+<param name="ind4_int2" value="0;node.ico;191;579;0;ind4_int2 =  ind4 + int2;0.0;PlusNode;NoInput;NoOutput;2;ind4;int2;1;ind_cie_tot;pscala;1.0;1.0;1.0;NoCurve;xind4_int2;xind4_int2;1225945758">
+<param name="ind_cie_tot" value="0;node.ico;579;564;0;ind_cie_tot =  ind4_int2;0.0;TimesNode;NoInput;NoOutput;1;ind4_int2;1;indint0;1.0E-4;1.0;NoCurve;xind_cie_tot;xind_cie_tot;3890392207">
+<param name="ind1_int1" value="0;node.ico;210;559;0;ind1_int1 =  ind1 + int1;0.0;PlusNode;NoInput;NoOutput;2;ind1;int1;1;ind_cie_parz;pscala;1.0;1.0;1.0;NoCurve;xind1_int1;xind1_int1;2751784930">
+<param name="ind_cie_parz" value="0;node.ico;479;552;0;ind_cie_parz =  ind1_int1;0.0;TimesNode;NoInput;NoOutput;1;ind1_int1;1;indint0;1.0E-4;1.0;NoCurve;xind_cie_parz;xind_cie_parz;1280970271">
+<param name="ind3_int1" value="0;node.ico;234;496;0;ind3_int1 =  ind3 + i1noric56;0.0;PlusNode;NoInput;NoOutput;2;ind3;i1noric56;3;ind_min_nonauto;ind_ass_nonauto;ind_ass_ge65_nonauto;pscala;1.0;1.0;1.0;NoCurve;xind3_int1;xind3_int1;2070742666">
+<param name="indint0" value="0;node.ico;787;543;0;indint0 =  ind_min_nonauto + ind_ass_nonauto + ind_ass_ge65_nonauto + ind_s_muto + ind_cie_parz + ind_cie_tot;0.0;PlusNode;NoInput;NoOutput;6;ind_min_nonauto;ind_ass_nonauto;ind_ass_ge65_nonauto;ind_s_muto;ind_cie_parz;ind_cie_tot;1;indintOK;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xindint0;xindint0;3418866143">
+<param name="ind_s_muto" value="0;node.ico;398;534;0;ind_s_muto =  ind2 + i1noric11;0.0;PlusNode;NoInput;NoOutput;2;ind2;i1noric11;1;indint0;1.0E-4;1.0;1.0;1.0;NoCurve;xind_s_muto;xind_s_muto;966860923">
+<param name="pens_min" value="0;node.ico;603;44;0;pens_min =  pens1min + magg1min;0.0;PlusNode;NoInput;NoOutput;2;pens1min;magg1min;1;pens_inv_civ;1.0E-4;1.0;1.0;1.0;NoCurve;xpens_min;xpens_min;2601298594">
+<param name="pens_inv_civ" value="0;node.ico;777;254;0;pens_inv_civ =  MAX(  pens_min,  pens_parz,  pens_ass,  pens_ass_nonauto );0.0;NumMaxNode;NoInput;NoOutput;4;pens_min;pens_parz;pens_ass;pens_ass_nonauto;1;pens0;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xpens_inv_civ;xpens_inv_civ;1299131099">
+<param name="pens_parz" value="0;node.ico;580;69;0;pens_parz =  pens1ad3 + magg1ad3;0.0;PlusNode;NoInput;NoOutput;2;pens1ad3;magg1ad3;1;pens_inv_civ;1.0E-4;1.0;1.0;1.0;NoCurve;xpens_parz;xpens_parz;2198303673">
+<param name="pens_ass" value="0;node.ico;588;99;0;pens_ass =  pens1ad4 + magg1ad4 + int1noricad4;0.0;PlusNode;NoInput;NoOutput;3;pens1ad4;magg1ad4;int1noricad4;1;pens_inv_civ;1.0E-4;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpens_ass;xpens_ass;4126475989">
+<param name="pens_ass_nonauto" value="0;node.ico;589;122;0;pens_ass_nonauto =  pens1ad56 + magg1ad56;0.0;PlusNode;NoInput;NoOutput;2;pens1ad56;magg1ad56;1;pens_inv_civ;pscala;1.0;1.0;1.0;NoCurve;xpens_ass_nonauto;xpens_ass_nonauto;4091878682">
+<param name="pens_s_muto" value="0;node.ico;594;147;0;pens_s_muto =  pens1ad11 + magg1ad11;0.0;PlusNode;NoInput;NoOutput;2;pens1ad11;magg1ad11;1;pens_sord_cie;1.0E-4;1.0;1.0;1.0;NoCurve;xpens_s_muto;xpens_s_muto;1953143957">
+<param name="pens_sord_cie" value="0;node.ico;769;278;0;pens_sord_cie =  MAX(  pens_s_muto,  pens_cie_p,  pens_cie_n,  pens_cie_r );0.0;NumMaxNode;NoInput;NoOutput;4;pens_s_muto;pens_cie_p;pens_cie_n;pens_cie_r;1;pens0;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xpens_sord_cie;xpens_sord_cie;276765421">
+<param name="pens_cie_p" value="0;node.ico;683;252;0;pens_cie_p =  MAX(  pens_cie_p1,  pens_cie_p2,  pens_cie_p3 );0.0;NumMaxNode;NoInput;NoOutput;3;pens_cie_p1;pens_cie_p2;pens_cie_p3;1;pens_sord_cie;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpens_cie_p;xpens_cie_p;3449493873">
+<param name="pens_cie_n" value="0;node.ico;675;333;0;pens_cie_n =  MAX(  pens_cie_n1,  pens_cie_n2,  pens_cie_n3 );0.0;NumMaxNode;NoInput;NoOutput;3;pens_cie_n1;pens_cie_n2;pens_cie_n3;1;pens_sord_cie;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpens_cie_n;xpens_cie_n;135120716">
+<param name="pens_cie_r" value="0;node.ico;706;397;0;pens_cie_r =  MAX(  pens_cie_r1,  pens_cie_r2,  pens_cie_r3 );0.0;NumMaxNode;NoInput;NoOutput;3;pens_cie_r1;pens_cie_r2;pens_cie_r3;1;pens_sord_cie;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpens_cie_r;xpens_cie_r;1002385450">
+<param name="pens0" value="0;node.ico;796;460;0;pens0 =  pens_inv_civ + pens_sord_cie;0.0;PlusNode;NoInput;NoOutput;2;pens_inv_civ;pens_sord_cie;1;pensOK;pscala;1.0;1.0;1.0;NoCurve;xpens0;xpens0;1913605131">
+<param name="Pensione2" value="1;node.ico;424;266;0;Pensione2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;pens_cie_tot_non;pscala;NoCurve;xPensione2;xPensione2;2492683041">
+<param name="Pensione" value="1;node.ico;682;486;0;Pensione = ;0.0;PlusNode;ValueInput;NoOutput;0;2;PENSIONE;pensioneOK;pscala;NoCurve;xPensione;xPensione;3326161701">
+<param name="PENSIONE" value="2;node.ico;767;485;0;PENSIONE =  Pensione + MaggiorazionePensione;0.0;PlusNode;NoInput;ResultOutput;2;Pensione;MaggiorazionePensione;1;TOTALE;pscala;1.0;1.0;1.0;NoCurve;xPENSIONE;xPENSIONE;3989733764">
+<param name="MaggiorazionePensione" value="1;node.ico;673;459;0;MaggiorazionePensione = ;0.0;PlusNode;ValueInput;NoOutput;0;2;PENSIONE;maggiorazioneOK;pscala;NoCurve;xMaggiorazionePensione;xMaggiorazionePensione;2580924735">
+<param name="Indennita" value="1;node.ico;677;568;0;Indennita = ;0.0;PlusNode;ValueInput;NoOutput;0;2;INDENNITA;indennitaOK;pscala;NoCurve;xIndennita;xIndennita;1802517270">
+<param name="INDENNITA" value="2;node.ico;769;570;0;INDENNITA =  Indennita + AssegnoIntegrativo;0.0;PlusNode;NoInput;ResultOutput;2;Indennita;AssegnoIntegrativo;1;TOTALE;pscala;1.0;1.0;1.0;NoCurve;xINDENNITA;xINDENNITA;2288857180">
+<param name="AssegnoIntegrativo" value="1;node.ico;679;592;0;AssegnoIntegrativo = ;0.0;PlusNode;ValueInput;NoOutput;0;2;INDENNITA;integrativoOK;pscala;NoCurve;xAssegnoIntegrativo;xAssegnoIntegrativo;1013964056">
+<param name="redditi" value="0;node.ico;314;44;0;redditi =  Redd50 + Reddito;0.0;PlusNode;NoInput;NoOutput;2;Redd50;Reddito;2;lim1OK;lim2OK;pscala;1.0;1.0;1.0;NoCurve;xredditi;xredditi;2789211282">
+<param name="lim1OK" value="0;node.ico;302;71;0;lim1OK = redditi <= Reddito1;0.0;NumLeNode;NoInput;NoOutput;2;redditi;Reddito1;1;ad3lim1;1.0;1.0;1.0;1.0;NoCurve;xlim1OK;xlim1OK;2906581478">
+<param name="Reddito1" value="1;node.ico;242;13;0;Reddito1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;lim1OK;pscala;NoCurve;xReddito1;xReddito1;387573637">
+<param name="lim2OK" value="0;node.ico;358;68;0;lim2OK = redditi <= Reddito2;0.0;NumLeNode;NoInput;NoOutput;2;redditi;Reddito2;9;pens_cie_parz;pens_cie_tot_non;pens_cie_tot_ric;ad4lim2;ad56lim2;ad11lim2;magg_1;magg_2;magg_3;1.0;1.0;1.0;1.0;NoCurve;xlim2OK;xlim2OK;2417497416">
+<param name="Reddito2" value="1;node.ico;431;13;0;Reddito2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;lim2OK;pscala;NoCurve;xReddito2;xReddito2;2296560231">
+<param name="Pensione1" value="1;node.ico;521;14;0;Pensione1 = ;0.0;PlusNode;ValueInput;NoOutput;0;7;pens_cie_parz;pens_cie_tot_ric;pens1min;pens1ad3;pens1ad4;pens1ad56;pens1ad11;pscala;NoCurve;xPensione1;xPensione1;3850759026">
+<param name="TOTALE" value="0;node.ico;709;513;0;TOTALE =  PENSIONE + INDENNITA;0.0;PlusNode;NoInput;ResultOutput;2;PENSIONE;INDENNITA;1;totaleOK;pscala;1.0;1.0;1.0;NoCurve;xTOTALE;xTOTALE;1380420904">
+<param name="totaleOK" value="0;node.ico;779;513;0;totaleOK = TOTALE == totale;0.0;NumEqNode;NoInput;ResultOutput;2;TOTALE;totale;0;1.0;1.0;1.0;1.0;NoCurve;xtotaleOK;xtotaleOK;1356575116">
+<param name="int1_noric" value="0;node.ico;127;505;0;int1_noric = SE( non_ric=1.0 , 1.0 * Integrativo1 , 0.0 );0.0;NumIfNode;NoInput;NoOutput;2;non_ric;Integrativo1;3;i1noric11;i1noric56;int1noricad4;1.0;1.0;1.0;0.0;NoCurve;xint1_noric;xint1int1_noric;159318946">
+<param name="Integrativo1" value="1;node.ico;43;513;0;Integrativo1 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;int1_noric;int1;pscala;NoCurve;xIntegrativo1;xIntegrativo1;3615563557">
+<param name="int2" value="0;node.ico;116;588;0;int2 =  10 * Integrativo2;0.0;TimesNode;NoInput;NoOutput;2;10;Integrativo2;2;ind4_int2;integrativo;pscala;1.0;1.0;1.0;NoCurve;xint2;xint2;1687503902">
+<param name="ind4" value="0;node.ico;105;567;0;ind4 =  10 * Indennita4;0.0;TimesNode;NoInput;NoOutput;2;10;Indennita4;2;ind4_int2;indennita;pscala;1.0;1.0;1.0;NoCurve;xind4;xind4;3682966473">
+<param name="Indennita4" value="1;node.ico;41;566;0;Indennita4 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ind4;pscala;NoCurve;xIndennita4;xIndennita4;2398116439">
+<param name="Integrativo2" value="1;node.ico;39;589;0;Integrativo2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;int2;pscala;NoCurve;xIntegrativo2;xIntegrativo2;4260912261">
+<param name="ind1" value="0;node.ico;154;558;0;ind1 =  09 * Indennita1;0.0;TimesNode;NoInput;NoOutput;2;09;Indennita1;2;ind1_int1;indennita;pscala;1.0;1.0;1.0;NoCurve;xind1;xind1;2611249651">
+<param name="int1" value="0;node.ico;185;520;0;int1 =  Integrativo1 * _09;0.0;TimesNode;NoInput;NoOutput;2;Integrativo1;_09;2;ind1_int1;integrativo;pscala;1.0;1.0;1.0;NoCurve;xint1;xint1;348013836">
+<param name="Indennita1" value="1;node.ico;41;540;0;Indennita1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ind1;pscala;NoCurve;xIndennita1;xIndennita1;2911530156">
+<param name="ind3" value="0;node.ico;71;462;0;ind3 =  0506 * Indennita3;0.0;TimesNode;NoInput;NoOutput;2;0506;Indennita3;3;ind3_int1;i1_na;indennita;pscala;1.0;1.0;1.0;NoCurve;xind3;xind3;3354896069">
+<param name="ind2" value="0;node.ico;306;445;0;ind2 =  11 * Indennita2;0.0;TimesNode;NoInput;NoOutput;2;11;Indennita2;2;ind_s_muto;indennita;pscala;1.0;1.0;1.0;NoCurve;xind2;xind2;3410268081">
+<param name="i1noric11" value="0;node.ico;273;471;0;i1noric11 =  11 * int1_noric;0.0;TimesNode;NoInput;NoOutput;2;11;int1_noric;2;ind_s_muto;integrativo;pscala;1.0;1.0;1.0;NoCurve;xi1noric11;xi1noric11;725080763">
+<param name="i1noric56" value="0;node.ico;193;450;0;i1noric56 =  0506 * int1_noric;0.0;TimesNode;NoInput;NoOutput;2;0506;int1_noric;3;ind3_int1;i3_na;integrativo;pscala;1.0;1.0;1.0;NoCurve;xi1noric56;xi1noric56;2713284477">
+<param name="Indennita2" value="1;node.ico;49;483;0;Indennita2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ind2;pscala;NoCurve;xIndennita2;xIndennita2;1996162006">
+<param name="Indennita3" value="1;node.ico;42;441;0;Indennita3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ind3;pscala;NoCurve;xIndennita3;xIndennita3;4183261365">
+<param name="max_na" value="0;node.ico;534;441;0;max_na =  MAX(  ind_min_nonauto,  ind_ass_nonauto,  ind_ass_ge65_nonauto );0.0;NumMaxNode;NoInput;NoOutput;3;ind_min_nonauto;ind_ass_nonauto;ind_ass_ge65_nonauto;2;i1_na;i3_na;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmax_na;xmax_na;3140600793">
+<param name="i1_na" value="0;node.ico;519;473;0;i1_na =  max_na - ind3;0.0;MinusNode;NoInput;NoOutput;2;max_na;ind3;1;integrativo;pscala;1.0;1.0;1.0;NoCurve;xi1_na;xi1_na;3759245437">
+<param name="i3_na" value="0;node.ico;569;462;0;i3_na =  max_na - i1noric56;0.0;MinusNode;NoInput;NoOutput;2;max_na;i1noric56;1;indennita;pscala;1.0;1.0;1.0;NoCurve;xi3_na;xi3_na;2437954812">
+<param name="integrativo" value="2;node.ico;269;590;0;integrativo =  MAX(  int1,  int2,  i1noric11,  i1_na,  intpens,  i1noric56 );0.0;NumMaxNode;NoInput;NoOutput;6;int1;int2;i1noric11;i1_na;intpens;i1noric56;2;ind_int;assegno_integrativo;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xintegrativo;xintegrativo;2652147794">
+<param name="indennita" value="2;node.ico;392;566;0;indennita =  MAX(  ind1,  ind2,  ind3,  i3_na,  ind4 );0.0;NumMaxNode;NoInput;IntermediateOutput;5;ind1;ind2;ind3;i3_na;ind4;2;ind_int;indennita_accompagnamento;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xindennita;xindennita;1386149992">
+<param name="ind_int" value="0;node.ico;334;593;0;ind_int =  indennita + integrativo;0.0;PlusNode;NoInput;NoOutput;2;indennita;integrativo;1;indennita_integrata;pscala;1.0;1.0;1.0;NoCurve;xind_int;xind_int;886446842">
+<param name="0709" value="0;node.ico;22;354;0;0709 = Grado == 79.0;0.0;NumEqNode;NoInput;NoOutput;1;Grado;2;min7;_09;1.0;79.0;NoCurve;x0709;x0709;3483442108">
+<param name="min7" value="0;node.ico;215;34;0;min7 =  + 0709 * minorenne + 07 * minorenne - 0709 * 07 * minorenne;0.0;ProbNode;NoInput;NoOutput;3;0709;07;minorenne;2;pens1min;magg1min;0.0;0.0;0.0;0.0;0.0;1.0;1.0;1.0;NoCurve;xmin7;xmin7;2377786586">
+<param name="pens1min" value="0;node.ico;447;37;0;pens1min =  min7 * Pensione1;0.0;TimesNode;NoInput;NoOutput;2;min7;Pensione1;2;pens_min;pensione_calcolata;pscala;1.0;1.0;1.0;NoCurve;xpens1min;xpens1min;610263611">
+<param name="magg1min" value="0;node.ico;705;28;0;magg1min =  min7 * Maggiorazione1;0.0;TimesNode;NoInput;NoOutput;2;min7;Maggiorazione1;2;pens_min;maggiorazione;pscala;1.0;1.0;1.0;NoCurve;xmagg1min;xmagg1min;1964646881">
+<param name="ad3lim1" value="0;node.ico;178;59;0;ad3lim1 =  + adulto * 03 * lim1OK;0.0;ProbNode;NoInput;NoOutput;3;adulto;03;lim1OK;2;pens1ad3;magg1ad3;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;NoCurve;xad3lim1;xad3lim1;3967575094">
+<param name="pens1ad3" value="0;node.ico;430;58;0;pens1ad3 =  ad3lim1 * Pensione1;0.0;TimesNode;NoInput;NoOutput;2;ad3lim1;Pensione1;2;pens_parz;pensione_calcolata;pscala;1.0;1.0;1.0;NoCurve;xpens1ad3;xpens1ad3;2680106468">
+<param name="magg1ad3" value="0;node.ico;756;52;0;magg1ad3 =  ad3lim1 * Maggiorazione1;0.0;TimesNode;NoInput;NoOutput;2;ad3lim1;Maggiorazione1;2;pens_parz;maggiorazione;pscala;1.0;1.0;1.0;NoCurve;xmagg1ad3;xmagg1ad3;1681611925">
+<param name="ad4lim2" value="0;node.ico;191;88;0;ad4lim2 =  + adulto * 04 * lim2OK;0.0;ProbNode;NoInput;NoOutput;3;adulto;04;lim2OK;3;pens1ad4;magg1ad4;int1noricad4;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;NoCurve;xad4lim2;xad4lim2;3876402773">
+<param name="pens1ad4" value="0;node.ico;429;79;0;pens1ad4 =  ad4lim2 * Pensione1;0.0;TimesNode;NoInput;NoOutput;2;ad4lim2;Pensione1;2;pens_ass;pensione_calcolata;pscala;1.0;1.0;1.0;NoCurve;xpens1ad4;xpens1ad4;1406861117">
+<param name="magg1ad4" value="0;node.ico;791;72;0;magg1ad4 =  ad4lim2 * Maggiorazione1;0.0;TimesNode;NoInput;NoOutput;2;ad4lim2;Maggiorazione1;2;pens_ass;maggiorazione;pscala;1.0;1.0;1.0;NoCurve;xmagg1ad4;xmagg1ad4;3303108429">
+<param name="int1noricad4" value="0;node.ico;180;258;0;int1noricad4 =  ad4lim2 * int1_noric;0.0;TimesNode;NoInput;NoOutput;2;ad4lim2;int1_noric;2;pens_ass;intpens;pscala;1.0;1.0;1.0;NoCurve;xint1noricad4;xint1noricad4;139887071">
+<param name="ad56lim2" value="0;node.ico;230;127;0;ad56lim2 =  + adulto * 0506 * lim2OK;0.0;ProbNode;NoInput;NoOutput;3;adulto;0506;lim2OK;2;pens1ad56;magg1ad56;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;NoCurve;xad56lim2;xad56lim2;3493561613">
+<param name="pens1ad56" value="0;node.ico;459;99;0;pens1ad56 =  ad56lim2 * Pensione1;0.0;TimesNode;NoInput;NoOutput;2;ad56lim2;Pensione1;2;pens_ass_nonauto;pensione_calcolata;pscala;1.0;1.0;1.0;NoCurve;xpens1ad56;xpens1ad56;358698698">
+<param name="magg1ad56" value="0;node.ico;833;92;0;magg1ad56 =  ad56lim2 * Maggiorazione1;0.0;TimesNode;NoInput;NoOutput;2;ad56lim2;Maggiorazione1;2;pens_ass_nonauto;maggiorazione;pscala;1.0;1.0;1.0;NoCurve;xmagg1ad56;xmagg1ad56;205851842">
+<param name="ad11lim2" value="0;node.ico;234;169;0;ad11lim2 =  + adulto * 11 * lim2OK;0.0;ProbNode;NoInput;NoOutput;3;adulto;11;lim2OK;2;pens1ad11;magg1ad11;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;NoCurve;xad11lim2;xad11lim2;1781308359">
+<param name="pens1ad11" value="0;node.ico;435;122;0;pens1ad11 =  ad11lim2 * Pensione1;0.0;TimesNode;NoInput;NoOutput;2;ad11lim2;Pensione1;2;pens_s_muto;pensione_calcolata;pscala;1.0;1.0;1.0;NoCurve;xpens1ad11;xpens1ad11;401993049">
+<param name="magg1ad11" value="0;node.ico;813;120;0;magg1ad11 =  ad11lim2 * Maggiorazione1;0.0;TimesNode;NoInput;NoOutput;2;ad11lim2;Maggiorazione1;2;pens_s_muto;maggiorazione;pscala;1.0;1.0;1.0;NoCurve;xmagg1ad11;xmagg1ad11;539676905">
+<param name="pensione_calcolata" value="2;node.ico;711;153;0;pensione_calcolata =  MAX(  pens1min,  pens1ad3,  pens1ad4,  pens1ad56,  pens1ad11 );0.0;NumMaxNode;NoInput;NoOutput;5;pens1min;pens1ad3;pens1ad4;pens1ad56;pens1ad11;1;p_c;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpensione_calcolata;xpensione_calcolata;2286595368">
+<param name="maggiorazione" value="2;node.ico;693;204;0;maggiorazione =  magg_1 + magg1min + magg1ad3 + magg1ad4 + magg1ad56 + magg1ad11 + magg_2 + magg_3;0.0;PlusNode;NoInput;NoOutput;8;magg_1;magg1min;magg1ad3;magg1ad4;magg1ad56;magg1ad11;magg_2;magg_3;2;pensione_maggiorata;maggiorazione_pensione;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmaggiorazione;xmaggiorazione;3359211570">
+<param name="pensione_maggiorata" value="0;node.ico;810;184;0;pensione_maggiorata =  maggiorazione + p_c;0.0;PlusNode;NoInput;NoOutput;2;maggiorazione;p_c;2;pensOK;somma;1.0E-4;1.0;1.0;1.0;NoCurve;xpensione_maggiorata;xpensione_maggiorata;1052152241">
+<param name="intpens" value="0;node.ico;477;210;0;intpens =  int1noricad4;0.0;PlusNode;NoInput;NoOutput;1;int1noricad4;1;integrativo;pscala;1.0;NoCurve;xintpens;xintpens;2581162585">
+<param name="pensOK" value="0;node.ico;846;410;0;pensOK = pens0 == pensione_maggiorata;0.0;NumEqNode;NoInput;IntermediateOutput;2;pens0;pensione_maggiorata;0;1.0;1.0;1.0;1.0;NoCurve;xpensOK;xpensOK;2243417841">
+<param name="indintOK" value="0;node.ico;578;592;0;indintOK = indint0 == indennita_integrata;0.0;NumEqNode;NoInput;IntermediateOutput;2;indint0;indennita_integrata;0;1.0;1.0;1.0;1.0;NoCurve;xindintOK;xindintOK;3516130780">
+<param name="ric_rett" value="0;node.ico;200;416;0;ric_rett =  Ricovero * Retta_carico_pubblico;0.0;ProbNode;NoInput;NoOutput;2;Ricovero;Retta_carico_pubblico;1;noind;0.0;0.0;0.0;1.0;NoCurve;xric_rett;xric_rett;4113800728">
+<param name="Retta_carico_pubblico" value="1;node.ico;79;417;0;Retta_carico_pubblico = ;0.0;ProbNode;ValueInput;NoOutput;0;1;ric_rett;0.5;NoCurve;xRetta_carico_pubblico;xRetta_carico_pubblico;1404250778">
+<param name="noind" value="0;node.ico;262;418;0;noind =   1  - ric_rett;0.0;ProbNode;NoInput;NoOutput;1;ric_rett;1;indennita_integrata;1.0;0.0;NoCurve;xnoind;xnoind;3779132223">
+<param name="indennita_integrata" value="0;node.ico;451;594;0;indennita_integrata =  noind * ind_int;0.0;TimesNode;NoInput;NoOutput;2;noind;ind_int;2;indintOK;somma;pscala;1.0;1.0;1.0;NoCurve;xindennita_integrata;xindennita_integrata;1254091038">
+<param name="Redd50" value="1;node.ico;306;13;0;Redd50 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;redditi;pscala;NoCurve;xRedd50;xRedd50;1236930892">
+<param name="Reddito" value="1;node.ico;363;13;0;Reddito = ;0.0;PlusNode;ValueInput;NoOutput;0;1;redditi;pscala;NoCurve;xReddito;xReddito;1204594755">
+<param name="pens_cie" value="0;node.ico;615;173;0;pens_cie =  MAX(  pens_cie_parz,  pens_cie_tot_non,  pens_cie_tot_ric );0.0;NumMaxNode;NoInput;NoOutput;3;pens_cie_parz;pens_cie_tot_non;pens_cie_tot_ric;1;p_c;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpens_cie;xpens_cie;3117058731">
+<param name="somma" value="2;node.ico;849;484;0;somma =  pensione_maggiorata + indennita_integrata;0.0;PlusNode;NoInput;ResultOutput;2;pensione_maggiorata;indennita_integrata;1;totale;pscala;1.0;1.0;1.0;NoCurve;xsomma;xsomma;1031053700">
+<param name="Azzera_importi" value="1;node.ico;833;591;0;Azzera_importi = ;0.0;ProbNode;ValueInput;NoOutput;0;1;prendi;0.5;NoCurve;xAzzera_importi;xAzzera_importi;1755029587">
+<param name="prendi" value="0;node.ico;761;608;0;prendi =   1  - Azzera_importi;0.0;ProbNode;NoInput;NoOutput;1;Azzera_importi;5;totale;assegno_integrativo;indennita_accompagnamento;pensione;maggiorazione_pensione;1.0;0.0;NoCurve;xprendi;xprendi;2785884304">
+<param name="totale" value="2;node.ico;850;511;0;totale =  prendi * somma;0.0;TimesNode;NoInput;ResultOutput;2;prendi;somma;1;totaleOK;pscala;1.0;1.0;1.0;NoCurve;xtotale;xtotale3100517616;1488644967">
+<param name="assegno_integrativo" value="2;node.ico;153;612;0;assegno_integrativo =  prendi * integrativo;0.0;TimesNode;NoInput;IntermediateOutput;2;prendi;integrativo;1;integrativoOK;pscala;1.0;1.0;1.0;NoCurve;xassegno_integrativo;xassegno_integrativo;3935238717">
+<param name="indennita_accompagnamento" value="2;node.ico;538;621;0;indennita_accompagnamento =  prendi * indennita;0.0;TimesNode;NoInput;IntermediateOutput;2;prendi;indennita;1;indennitaOK;pscala;1.0;1.0;1.0;NoCurve;xindennita_accompagnamento;xindennita_accompagnamento;950890545">
+<param name="pensione" value="2;node.ico;849;160;0;pensione =  prendi * p_c;0.0;TimesNode;NoInput;IntermediateOutput;2;prendi;p_c;1;pensioneOK;pscala;1.0;1.0;1.0;NoCurve;xpensione;xpensione;2194810264">
+<param name="maggiorazione_pensione" value="2;node.ico;805;227;0;maggiorazione_pensione =  prendi * maggiorazione;0.0;TimesNode;NoInput;IntermediateOutput;2;prendi;maggiorazione;1;maggiorazioneOK;pscala;1.0;1.0;1.0;NoCurve;xmaggiorazione_pensione;xmaggiorazione_pensione;3543341290">
+<param name="integrativoOK" value="2;node.ico;258;625;0;integrativoOK = assegno_integrativo == AssegnoIntegrativo;0.0;NumEqNode;NoInput;NoOutput;2;assegno_integrativo;AssegnoIntegrativo;1;ok;1.0;1.0;1.0;1.0;NoCurve;xintegrativoOK;xintegrativoOK;2168729077">
+<param name="indennitaOK" value="2;node.ico;367;627;0;indennitaOK = Indennita == indennita_accompagnamento;0.0;NumEqNode;NoInput;IntermediateOutput;2;Indennita;indennita_accompagnamento;1;ok;1.0;1.0;1.0;1.0;NoCurve;xindennitaOK;xindennitaOK;1909425702">
+<param name="pensioneOK" value="2;node.ico;732;420;0;pensioneOK = pensione == Pensione;0.0;NumEqNode;NoInput;NoOutput;2;pensione;Pensione;1;ok;1.0;1.0;1.0;1.0;NoCurve;xpensioneOK;xpensioneOK;1918978182">
+<param name="maggiorazioneOK" value="2;node.ico;631;420;0;maggiorazioneOK = MaggiorazionePensione == maggiorazione_pensione;0.0;NumEqNode;NoInput;NoOutput;2;MaggiorazionePensione;maggiorazione_pensione;1;ok;1.0;1.0;1.0;1.0;NoCurve;xmaggiorazioneOK;xmaggiorazioneOK;1297104801">
+<param name="ok" value="2;node.ico;602;494;0;ok =  indennitaOK * integrativoOK * pensioneOK * maggiorazioneOK;0.0;TimesNode;NoInput;IntermediateOutput;4;indennitaOK;integrativoOK;pensioneOK;maggiorazioneOK;0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xok;xok;4083953109">
+<param name="p_c" value="0;node.ico;794;159;0;p_c =  pensione_calcolata + pens_cie;0.0;PlusNode;NoInput;NoOutput;2;pensione_calcolata;pens_cie;2;pensione;pensione_maggiorata;pscala;1.0;1.0;1.0;NoCurve;xp_c;xp_c;2965285847">
+
+
+
+<param name="xIndennita" value="Indennita;Indennita;nessuna Indennita;Indennita;Indennita; ; ; ; ; ;$.2; ">
+<param name="xMaggiorazionePensione" value="MaggiorazionePensione;MaggiorazionePensione;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAssegnoIntegrativo" value="AssegnoIntegrativo;AssegnoIntegrativo;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xReddito2" value="Reddito2;Reddito2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xReddito1" value="Reddito1;Reddito1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xPensione" value="Pensione;Pensione;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xMaggiorazione2" value="Maggiorazione2;Maggiorazione2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xRicovero" value="Ricovero;Ricoverato;Non ricoverato in RSA;ricovero ?;Ricoverato presso RSA; ; ; ; ; ;T; ">
+<param name="xMaggiorazione3" value="Maggiorazione3;Maggiorazione3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xPensione2" value="Pensione2;Pensione2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xMaggiorazione1" value="Maggiorazione1;Maggiorazione1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xRetta_carico_pubblico" value="Retta_carico_pubblico;Retta_carico_pubblico;Retta NON a carico del pubblico;-;Retta a carico del pubblico; ; ; ; ; ;T; ">
+<param name="xIndennita3" value="Indennita3;Indennita3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xRedd50" value="Redd50;Totale redditi al 50%;nessun reddito al 50%;Totale redditi al 50%;Totale redditi al 50%; ; ; ; ; ;$.2; ">
+<param name="xAzzera_importi" value="Azzera_importi;Azzera_importi;non;-;ok; ; ; ; ; ; ; ">
+<param name="xReddito" value="Reddito;Reddito;nessun reddito;Reddito;Reddito; ; ; ; ; ;$.2; ">
+<param name="xIndennita2" value="Indennita2;Indennita2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xIntegrativo1" value="Integrativo1;Integrativo1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xPensione1" value="Pensione1;Pensione1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xIndennita4" value="Indennita4;Indennita4;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xIndennita1" value="Indennita1;Indennita1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xIntegrativo2" value="Integrativo2;Integrativo2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xDinieghi_maggiorazione" value="Dinieghi_maggiorazione;Dinieghi_maggiorazione;non;-;Dinieghi_maggiorazione; ; ; ; ; ;T; ">
+<param name="xDinieghi_indennita" value="Dinieghi_indennita;Dinieghi_indennita;non;-;Dinieghi_indennita; ; ; ; ; ;T; ">
+<param name="xRevoche_maggiorazione" value="Revoche_maggiorazione;Revoche_maggiorazione;non;-;Revoche_maggiorazione; ; ; ; ; ;T; ">
+<param name="xEta" value="Eta;Età;Età ;Età;Età; ; ; ; ; ;T; anni">
+<param name="xRevoche_indennita" value="Revoche_indennita;Revoche_indennita;non;-;Revoche_indennita; ; ; ; ; ;T; ">
+<param name="xDinieghi_integrativo" value="Dinieghi_integrativo;Dinieghi_integrativo;non;-;Dinieghi_integrativo; ; ; ; ; ;T; ">
+<param name="xRevoche_integrativo" value="Revoche_integrativo;Revoche_integrativo;non;-;Revoche_integrativo; ; ; ; ; ;T; ">
+<param name="xGrado" value="Grado;Codice invalidità;senza Codice invalidità ?;Codice invalidità;Codice invalidità; ; ; ; ; ;T; ">
+<param name="xDinieghi_pensione" value="Dinieghi_pensione;Dinieghi_pensione;non;-;Dinieghi_pensione; ; ; ; ; ;Dinieghi_pensione; ">
+<param name="xModello" value="PAT Pensione Indennità;x;Versione 13.4.2015; ; ; ; ; ; ; ; ; ">
+
+<param name="xchecksum" value="checksum;checksum;non;-;ok; ; ; ; ; ; ; ">
+<param name="xRevoche_pensione" value="Revoche_pensione;Revoche_pensione;non;-;Revoche_pensione; ; ; ; ; ;T; ">
+<param name="xnoind" value="noind;noind;non;-;ok; ; ; ; ; ; ; ">
+<param name="x03" value="03;03;non;-;ok; ; ; ; ; ; ; ">
+<param name="xge65" value="ge65;ge65;non;-;ok; ; ; ; ; ; ; ">
+<param name="xind_cie_parz" value="ind_cie_parz;ind_cie_parz;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="x0709" value="0709;0709;non;-;ok; ; ; ; ; ; ; ">
+<param name="xge18" value="ge18;ge18;non;-;ok; ; ; ; ; ; ; ">
+<param name="xintpens" value="intpens;Assegno integrativo alla pensione;nessun assegno integrativo;Assegno integrativo alla pensione;Assegno integrativo alla pensione; ; ; ; ; ;$.2; ">
+<param name="xind_cie_tot" value="ind_cie_tot;ind_cie_tot;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xlt65" value="lt65;lt65;non;-;ok; ; ; ; ; ; ; ">
+<param name="x06" value="06;06;non;-;ok; ; ; ; ; ; ; ">
+<param name="xnon_ric" value="non_ric;non_ric;non;-;ok; ; ; ; ; ; ; ">
+<param name="x11" value="11;11;non;-;ok; ; ; ; ; ; ; ">
+<param name="x07" value="07;07;non;-;ok; ; ; ; ; ; ; ">
+<param name="x09" value="09;09;non;-;ok; ; ; ; ; ; ; ">
+<param name="x10" value="10;10;non;-;ok; ; ; ; ; ; ; ">
+<param name="xminorenne" value="minorenne;minorenne;non;-;ok; ; ; ; ; ; ; ">
+<param name="x04" value="04;04;non;-;ok; ; ; ; ; ; ; ">
+<param name="xoltre75" value="oltre75;oltre75;non;-;ok; ; ; ; ; ; ; ">
+<param name="x05" value="05;05;non;-;ok; ; ; ; ; ; ; ">
+<param name="xprendi" value="prendi;prendi;non;-;ok; ; ; ; ; ; ; ">
+<param name="xi3_na" value="i3_na;i3_na;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmagg1min" value="magg1min;magg1min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens1min" value="pens1min;pens1min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xind_int" value="ind_int;ind_int;non;-;ok; ; ; ; ; ; ; ">
+<param name="xi1_na" value="i1_na;i1_na;non;-;ok; ; ; ; ; ; ; ">
+<param name="xint1" value="int1;int1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xi1noric56" value="i1noric56;i1noric56;non;-;ok; ; ; ; ; ; ; ">
+<param name="xind3" value="ind3;ind3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xind2" value="ind2;ind2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xind1" value="ind1;ind1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xi1noric11" value="i1noric11;i1noric11;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens1ad3" value="pens1ad3;pens1ad3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xassegno_integrativo" value="assegno_integrativo;Assegno integrativo;nessun assegno integrativo;Assegno integrativo;Assegno integrativo; ; ; ; ; ;$.2; ">
+<param name="xindennita_accompagnamento" value="indennita_accompagnamento;Indennità di accompagnamento;nessuna indennità di accompagnamento;Indennità di accompagnamento;Indennità di accompagnamento; ; ; ; ; ;$.2; ">
+<param name="xpensione" value="pensione;Pensione;nessuna Pensione;Pensione;Pensione; ; ; ; ; ;$.2; ">
+<param name="xindennita_integrata" value="indennita_integrata;Indennita integrata;nessuna indennita integrata;Indennita integrata;Indennita integrata; ; ; ; ; ;$.2; ">
+<param name="xsomma" value="somma;Totale;nessuna pensione o indennità;Totale;Totale; ; ; ; ;$.2; ; ">
+<param name="xtotale" value="totale;<b>Totale</b>;nessuna pensione o indennità;<b>Totale</b>;<b>Totale</b>; ; ; ; ;<b>;$.2;</b>">
+<param name="xtotale3100517616" value="totale;totale;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpensioneOK" value="pensioneOK;pensioneOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmaggiorazioneOK" value="maggiorazioneOK;maggiorazioneOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xp_c" value="p_c;p_c;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmaggiorazione_pensione" value="maggiorazione_pensione; Maggiorazione pensione;nessuna maggiorazione pensione; Maggiorazione pensione;Maggiorazione pensione; ; ; ; ; ;$.2; ">
+<param name="xintegrativoOK" value="integrativoOK;integrativoOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xindennitaOK" value="indennitaOK;indennitaOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xint1noricad4" value="int1noricad4;int1noricad4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens1ad56" value="pens1ad56;pens1ad56;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmagg1ad56" value="magg1ad56;magg1ad56;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmagg1ad3" value="magg1ad3;magg1ad3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens1ad4" value="pens1ad4;pens1ad4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmagg1ad4" value="magg1ad4;magg1ad4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpensOK" value="pensOK;pensOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xindintOK" value="indintOK;indintOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xric_rett" value="ric_rett;ric_rett;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens1ad11" value="pens1ad11;pens1ad11;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmagg1ad11" value="magg1ad11;magg1ad11;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpensione_maggiorata" value="pensione_maggiorata;Importo pensione;nessuna pensione;Importo pensione;Importo pensione; ; ; ; ; ;$.2; ">
+<param name="xind4_int2" value="ind4_int2;ind4_int2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xind1_int1" value="ind1_int1;ind1_int1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_r3" value="pens_cie_r3;pens_cie_r3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_r1" value="pens_cie_r1;pens_cie_r1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_r2" value="pens_cie_r2;pens_cie_r2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xind3_int1" value="ind3_int1;ind3_int1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_ass_nonauto" value="pens_ass_nonauto;pens_ass_nonauto;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_s_muto" value="pens_s_muto;pens_s_muto;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_parz" value="pens_parz;pens_parz;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xind_s_muto" value="ind_s_muto;ind_s_muto;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_min" value="pens_min;pens_min;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xind_ass_nonauto" value="ind_ass_nonauto;ind_ass_nonauto;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xind_ass_ge65_nonauto" value="ind_ass_ge65_nonauto;ind_ass_ge65_nonauto;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xind_min_nonauto" value="ind_min_nonauto;ind_min_nonauto;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="x0506" value="0506;0506;non;-;ok; ; ; ; ; ; ; ">
+<param name="x_09" value="_09;_09;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens_cie_p1" value="pens_cie_p1;pens_cie_p1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_n2" value="pens_cie_n2;pens_cie_n2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_n3" value="pens_cie_n3;pens_cie_n3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_n1" value="pens_cie_n1;pens_cie_n1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_p2" value="pens_cie_p2;pens_cie_p2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_p3" value="pens_cie_p3;pens_cie_p3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xadulto" value="adulto;adulto;non;-;ok; ; ; ; ; ; ; ">
+<param name="xINDENNITA" value="INDENNITA;INDENNITA;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xredditi" value="redditi;redditi;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens0" value="pens0;pens0;non;-;totaleOK; ; ; ; ; ;$.2; ">
+<param name="x65_75" value="65_75;65_75;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPENSIONE" value="PENSIONE;PENSIONE;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xlim1OK" value="lim1OK;lim1OK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xint1_noric" value="int1_noric;int1_noric;non;-;ok; ; ; ; ; ; ; ">
+<param name="xint1int1_noric" value="int1_noric;int1_noric;non;-;ok; ; ; ; ; ; ; ">
+<param name="xint2" value="int2;int2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xind4" value="ind4;ind4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xlim2OK" value="lim2OK;lim2OK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xTOTALE" value="TOTALE;TOTALE;nessuna Pensione o Indenita;TOTALE;TOTALE; ; ; ; ;<b>;$.2;</b>">
+<param name="xtotaleOK" value="totaleOK;totaleOK;non totaleOK;-;totaleOK; ; ; ; ; ;T; ">
+<param name="xad56lim2" value="ad56lim2;ad56lim2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens_cie" value="pens_cie;pens_cie;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens_cie_n" value="pens_cie_n;pens_cie_n;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xmin7" value="min7;min7;non;-;ok; ; ; ; ; ; ; ">
+<param name="x0910" value="0910;0910;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens_cie_p" value="pens_cie_p;pens_cie_p;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xad4lim2" value="ad4lim2;ad4lim2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpens_ass" value="pens_ass;pens_ass;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_r" value="pens_cie_r;pens_cie_r;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_parz" value="pens_cie_parz;pens_cie_parz;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xmax_na" value="max_na;max_na;non;-;ok; ; ; ; ; ; ; ">
+<param name="xad11lim2" value="ad11lim2;ad11lim2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xad3lim1" value="ad3lim1;ad3lim1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xok" value="ok;ok;non ok;-; OK; ; ; ; ; ;T; ">
+<param name="xpens_sord_cie" value="pens_sord_cie;pens_sord_cie;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_tot_ric" value="pens_cie_tot_ric;pens_cie_tot_ric;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_cie_tot_non" value="pens_cie_tot_non;pens_cie_tot_non;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xmagg_1" value="magg_1;magg_1;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpens_inv_civ" value="pens_inv_civ;pens_inv_civ;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xmagg_2" value="magg_2;magg_2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xmagg_3" value="magg_3;magg_3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpensione_calcolata" value="pensione_calcolata;Pensione calcolata;nessuna Pensione;Pensione calcolata;Pensione calcolata; ; ; ; ; ;$.2; ">
+<param name="xindennita" value="indennita;Indennità di accompagnamento;nessuna indennità di accompagnamento;Indennità di accompagnamento;Indennità di accompagnamento; ; ; ; ; ;$.2; ">
+<param name="xintegrativo" value="integrativo;integrativo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xindint0" value="indint0;Indennita integrata;non indennita integrata;Indennita integrata;Indennita integrata; ; ; ; ; ;$.2; ">
+<param name="xmaggiorazione" value="maggiorazione; Maggiorazione pensione;nessuna maggiorazione pensione; Maggiorazione pensione;Maggiorazione pensione; ; ; ; ; ;$.2; ">
+
+
+
+<param name="xpltree" value="dati;risultati;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="dati" value="<b>Dati:</b> ;Eta=-1;Reddito=-1;Redd50=-1">
+<param name="risultati" value="<b>Risultati:</b>;pensione=-1;maggiorazione_pensione=-1;indennita_accompagnamento=-1;assegno_integrativo=-1;totale=-1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2060681559">
+<param name="CRC" value="4100621570">
+<param name="CRCdata" value="13-apr-2015 12.05.04">
+</APPLET>
+</CENTER>
+<BR>

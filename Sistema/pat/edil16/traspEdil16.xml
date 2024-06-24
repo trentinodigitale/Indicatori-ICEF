@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>INDICATORE ICEF <BR>PER L'EDILIZIA AGEVOLATA</H2>
+		Regole ICEF anno redditi 2015
+		</CENTER></head> ]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<!--![CDATA[<H3><CENTER>id_domanda=${id_domanda}]]>
+		<![CDATA[</H3></CENTER>]]-->
+		</ente>
+		<servizio>
+		</servizio>
+		<!--richiedente><![CDATA[<H3>Richiedente</H3>]]-->
+		<!--/richiedente-->
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<!--class>clesprojects.clesius.icef.InfoDomanda</class-->
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

@@ -1,0 +1,206 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"
+	WIDTH=1250 HEIGHT=820 MAYSCRIPT>
+	<param name="revision" value="$Revision: 19875 $">
+
+	<param name="Taratura" value="ASSEGNO INTEGRATIVO; 29.9.2015">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+	<param name="trendStarts"
+		value="paramassInt;reddassInt;casoAI">
+
+	<param name="paramassInt"
+		value="current;F_Det=0.5;F_AI=1.5;Detraz_0=8100;Detraz_18=5400;Detraz_65=2000;Inf=0.18;Sup=0.36;Franchigia_ast=25000;AI_min=500;AI_scaglione=5;AI_max=1000">
+	<param name="reddassInt"
+		value="current;Assegno_imposto=200;C1_aut_ast=500;C1_dip_ast=600;C2_agr_ast=700;C3_imp_ast=800;C4_part_ast=900;Eta_ast=60;IA_ast=1000;IA_vigente=5848.68;PI5_grat=1000;PI5_oner=2000;FPM=5000;C1_aut=100;C1_dip=1200;C2_agr=400;C3_imp=600;C4_part=800;C5_altri=2000">
+	<param name="casoAI"
+		value="paramassInt,reddassInt;Icef=0.22">
+
+
+	<param name="variables"
+		value="lscala;rscala;pscala;tscala;vscala">
+
+
+	<param name="lscala" value="0.001">
+	<param name="tscala" value="0.00001">
+	<param name="rscala" value="0.00002">
+	<param name="pscala" value="0.000005">
+	<param name="vscala" value="0.000000001">
+
+
+
+<param name="edges" value="PAT ASSEGNO INTEGRATIVO;PI5_grat;AI_scaglione;importo_ai_10;importo_ai_04;importo_ai_05;ICEF_no_IA;ICEF_IA;min50;max50;perc_no_IA;maxIA_04;RL_04;det_ast_04;DF_04;RF_04;
+IA_vigente-maxIA;IA_ast-maxIA;Eta_ast-det_ast;PI5_oner-mpi5;mpi5-pi5;Assegno_imposto-arl;maxIA-arl;Check-checkOK;Icef-perc;Sup-perc;Inf-perc;Check-check1;big-check1;icefNonOK-big;icefNonOK-check1;checkOK-big;check1-idonea;c5_ori-c5_ast;IA_ast-c5_ast;Icef-icefOK;Sup-icefOK;
+icefOK-icefNonOK;C1_aut_ast-c_ast;C1_dip_ast-c_ast;C2_agr_ast-c_ast;C3_imp_ast-c_ast;C4_part_ast-c_ast;c_ast-m_ast;Franchigia_ast-m_ast;m_ast-r_ast;Precedente-r_ast;Detraz_0-det_0;Detraz_18-det_18;Detraz_65-det_65;AI_min-min;AI_max-max;F_AI-min;F_AI-max;F_Det-det_0;F_Det-det_18;F_Det-det_65;
+perc-assegno;assegno-assegno_integrativo;icefNonOK-nonOK;icefNoIANonOK-nonOK">
+
+
+
+<param name="PAT ASSEGNO INTEGRATIVO" value="text;node.ico;81;308;0;P.A.T. PAT ASSEGNO INTEGRATIVO 2015 - (29.9.2015);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_ASSINT;yModello_ASSINT;4209287747">
+<param name="PI5_grat" value="1;node.ico;397;318;0;PI5_grat = ;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPI5_grat;xPI5_grat;3846496996">
+<param name="AI_scaglione" value="1;node.ico;936;105;0;AI_scaglione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xAI_scaglione;xAI_scaglione;3394536737">
+<param name="importo_ai_10" value="2;node.ico;1104;36;0;importo_ai_10 = ;0.0;Times2Node;NoInput;IntermediateOutput;0;0;lscala;NoCurve;ximporto_ai_10;ximporto_ai_10;3272222515">
+<param name="importo_ai_04" value="2;node.ico;1011;68;0;importo_ai_04 = ;0.0;Times2Node;NoInput;IntermediateOutput;0;0;lscala;NoCurve;ximporto_ai_04;ximporto_ai_04;1291447988">
+<param name="importo_ai_05" value="2;node.ico;1107;102;0;importo_ai_05 = ;0.0;Times2Node;NoInput;IntermediateOutput;0;0;lscala;NoCurve;ximporto_ai_05;ximporto_ai_05;1725607116">
+<param name="ICEF_no_IA" value="0;node.ico;1184;69;0;ICEF_no_IA = ;0.0;Times2Node;NoInput;IntermediateOutput;0;0;1.0;NoCurve;xICEF_no_IA;xICEF_no_IA;2659736070">
+<param name="ICEF_IA" value="0;node.ico;1192;37;0;ICEF_IA = ;0.0;Times2Node;NoInput;IntermediateOutput;0;0;1.0;NoCurve;xICEF_IA;xICEF_IA;4278969453">
+<param name="min50" value="0;node.ico;1029;12;0;min50 = ;0.0;Times2Node;NoInput;NoOutput;0;0;0.5;NoCurve;xmin50;xmin50;1040985949">
+<param name="max50" value="0;node.ico;1026;38;0;max50 = ;0.0;Times2Node;NoInput;NoOutput;0;0;0.5;NoCurve;xmax50;xmax50;1165897485">
+<param name="perc_no_IA" value="0;node.ico;1100;69;0;perc_no_IA =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;0;0.5;NoCurve;xperc_no_IA;xperc_no_IA;3949436823">
+<param name="maxIA_04" value="0;node.ico;449;441;0;maxIA_04 = ;0.0;Times2Node;NoInput;NoOutput;0;0;tscala;NoCurve;xmaxIA_04;xmaxIA_04;283614365">
+<param name="RL_04" value="0;node.ico;440;465;0;RL_04 = ;0.0;Times2Node;NoInput;NoOutput;0;0;tscala;NoCurve;xRL_04;xRL_04;2974981032">
+<param name="det_ast_04" value="0;node.ico;453;489;0;det_ast_04 = ;0.0;Times2Node;NoInput;NoOutput;0;0;tscala;NoCurve;xdet_ast_04;xdet_ast_04;4229092806">
+<param name="DF_04" value="0;node.ico;439;513;0;DF_04 = ;0.0;Times2Node;NoInput;NoOutput;0;0;tscala;NoCurve;xDF_04;xDF_04;3589775437">
+<param name="RF_04" value="0;node.ico;440;537;0;RF_04 = ;0.0;Times2Node;NoInput;NoOutput;0;0;tscala;NoCurve;xRF_04;xRF_04;1978085899">
+<param name="IA_vigente" value="1;node.ico;158;334;0;IA_vigente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;maxIA;pscala;NoCurve;xIA_vigente;xIA_vigente;1376301820">
+<param name="maxIA" value="0;node.ico;221;341;0;maxIA =  MAX(  IA_vigente,  IA_ast );0.0;NumMaxNode;NoInput;NoOutput;2;IA_vigente;IA_ast;1;arl;rscala;1.0;1.0;1.0;NoCurve;xmaxIA;xmaxIA;483512087">
+<param name="IA_ast" value="1;node.ico;176;360;0;IA_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;2;maxIA;c5_ast;pscala;NoCurve;xIA_ast;xIA_ast;1401037271">
+<param name="Eta_ast" value="1;node.ico;273;342;0;Eta_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det_ast;pscala;NoCurve;xEta_ast;xEta_ast;3874691906">
+<param name="det_ast" value="0;node.ico;345;342;0;det_ast =  Eta_ast);0.0;NumTransNode;NoInput;NoOutput;1;Eta_ast;0;rscala;1.0;StepCurve;detCurve;xdet_ast;xdet_ast;622277788">
+<param name="PI5_oner" value="1;node.ico;468;319;0;PI5_oner = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mpi5;pscala;NoCurve;xPI5_oner;xPI5_oner;2247358038">
+<param name="mpi5" value="0;node.ico;531;316;0;mpi5 =  MAX(  PI5_oner );0.0;NumMaxNode;NoInput;NoOutput;1;PI5_oner;1;pi5;pscala;1.0;NoCurve;xmpi5;xmpi5;1683076841">
+<param name="pi5" value="0;node.ico;473;297;0;pi5 =  mpi5;0.0;MinusNode;NoInput;NoOutput;1;mpi5;0;pscala;1.0;NoCurve;xpi5;xpi5;3759393433">
+<param name="Assegno_imposto" value="1;node.ico;290;316;0;Assegno_imposto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;pscala;NoCurve;xAssegno_imposto;xAssegno_imposto;1002509957">
+<param name="arl" value="0;node.ico;187;313;0;arl =  Assegno_imposto + maxIA;0.0;PlusNode;NoInput;NoOutput;2;Assegno_imposto;maxIA;0;rscala;1.0;1.0;1.0;NoCurve;xarl;xarl;3445096264">
+<param name="Check" value="1;node.ico;458;266;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;checkOK;check1;1.0;NoCurve;xCheck;xCheck;3191744679">
+<param name="checkOK" value="0;node.ico;531;265;0;checkOK = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;big;1.0;0.0;NoCurve;xcheckOK;xcheckOK;2277313100">
+<param name="Icef" value="1;node.ico;224;380;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc;icefOK;0.5;NoCurve;xIcef;xIcef;2202874557">
+<param name="perc" value="0;node.ico;226;404;0;perc =  MAX( 0, MIN( 1, (Icef - Sup) / (Inf - Sup) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Sup;Inf;1;assegno;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xperc;xperc;2491166193">
+<param name="Sup" value="1;node.ico;285;406;0;Sup = ;0.0;ProbNode;ValueInput;NoOutput;0;2;perc;icefOK;0.5;NoCurve;xSup;xSup;4184306553">
+<param name="Inf" value="1;node.ico;185;405;0;Inf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;perc;0.5;NoCurve;xInf;xInf;853001414">
+<param name="check1" value="2;node.ico;388;268;0;check1 =  Check + big + 400000.000*icefNonOK;0.0;PlusNode;NoInput;IntermediateOutput;3;Check;big;icefNonOK;1;idonea;vscala;1.0;1.0;400000.0;1.0;1.0;1.0;1.0;NoCurve;xcheck1;xcheck1;1043970994">
+<param name="big" value="0;node.ico;361;296;0;big =  1000000000.000*icefNonOK * checkOK;0.0;TimesNode;NoInput;NoOutput;2;icefNonOK;checkOK;1;check1;vscala;1.0E9;1.0;0.0;NoCurve;xbig;xbig;4149660007">
+<param name="icefNonOK" value="0;node.ico;364;382;0;icefNonOK =  - icefOK;0.0;ProbNode;NoInput;NoOutput;1;icefOK;3;check1;big;nonOK;1.0;0.0;NoCurve;xicefNonOK;xicefNonOK;1583425570">
+<param name="idonea" value="0;node.ico;330;269;0;idonea = check1 == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;check1;0;1.0;0.0;NoCurve;xidonea;xidonea;2994582786">
+<param name="c5_ori" value="0;node.ico;295;361;0;c5_ori = ;0.0;PlusNode;NoInput;NoOutput;0;1;c5_ast;0.0;NoCurve;xc5_ori;xc5_ori;2388052398">
+<param name="c5_ast" value="0;node.ico;235;360;0;c5_ast =  c5_ori - IA_ast;0.0;MinusNode;NoInput;NoOutput;2;c5_ori;IA_ast;0;tscala;1.0;1.0;1.0;NoCurve;xc5_ast;xc5_ast;3719612880">
+<param name="icefOK" value="0;node.ico;274;380;0;icefOK = Icef <= Sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;Sup;1;icefNonOK;1.0;1.0;1.0;1.0;NoCurve;xicefOK;xicefOK;3538975514">
+<param name="C1_aut_ast" value="1;node.ico;37;385;0;C1_aut_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC1_aut_ast;xC1_aut_ast;2831234147">
+<param name="c_ast" value="0;node.ico;101;380;0;c_ast =  C1_aut_ast + C1_dip_ast + C2_agr_ast + C3_imp_ast + C4_part_ast;0.0;PlusNode;NoInput;NoOutput;5;C1_aut_ast;C1_dip_ast;C2_agr_ast;C3_imp_ast;C4_part_ast;1;m_ast;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xc_ast;xc_ast;1110039202">
+<param name="C1_dip_ast" value="1;node.ico;39;412;0;C1_dip_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC1_dip_ast;xC1_dip_ast;538795424">
+<param name="C2_agr_ast" value="1;node.ico;39;437;0;C2_agr_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC2_agr_ast;xC2_agr_ast;2139060959">
+<param name="C3_imp_ast" value="1;node.ico;37;461;0;C3_imp_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC3_imp_ast;xC3_imp_ast;1447153061">
+<param name="C4_part_ast" value="1;node.ico;40;489;0;C4_part_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;c_ast;pscala;NoCurve;xC4_part_ast;xC4_part_ast;2497360901">
+<param name="m_ast" value="0;node.ico;130;357;0;m_ast =  Min(  c_ast,  Franchigia_ast );0.0;NumMinNode;NoInput;NoOutput;2;c_ast;Franchigia_ast;1;r_ast;rscala;1.0;1.0;1.0;NoCurve;xm_ast;xm_ast;1756809967">
+<param name="Franchigia_ast" value="1;node.ico;51;356;0;Franchigia_ast = ;0.0;PlusNode;ValueInput;NoOutput;0;1;m_ast;rscala;NoCurve;xFranchigia_ast;xFranchigia_ast;1500663204">
+<param name="r_ast" value="0;node.ico;102;324;0;r_ast =  m_ast + Precedente;0.0;PlusNode;NoInput;NoOutput;2;m_ast;Precedente;0;rscala;1.0;1.0;1.0;NoCurve;xr_ast;xr_ast;1741393218">
+<param name="Precedente" value="1;node.ico;38;326;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;tscala;NoCurve;xPrecedente;xPrecedente;215136025">
+<param name="Detraz_0" value="1;node.ico;141;526;0;Detraz_0 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det_0;pscala;NoCurve;xDetraz_0;xDetraz_0;1192881712">
+<param name="det_0" value="0;node.ico;814;41;0;det_0 =  Detraz_0 * F_Det;0.0;Times2Node;NoInput;NoOutput;2;Detraz_0;F_Det;0;0.0;1.0;1.0;1.0;NoCurve;xdet_0;xdet_0;3141427981">
+<param name="Detraz_18" value="1;node.ico;146;542;0;Detraz_18 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det_18;pscala;NoCurve;xDetraz_18;xDetraz_18;3243825537">
+<param name="det_18" value="0;node.ico;815;69;0;det_18 =  Detraz_18 * F_Det;0.0;TimesNode;NoInput;NoOutput;2;Detraz_18;F_Det;0;0.0;1.0;1.0;1.0;NoCurve;xdet_18;xdet_18;22105031">
+<param name="Detraz_65" value="1;node.ico;145;558;0;Detraz_65 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det_65;pscala;NoCurve;xDetraz_65;xDetraz_65;3144389566">
+<param name="det_65" value="0;node.ico;814;97;0;det_65 =  Detraz_65 * F_Det;0.0;TimesNode;NoInput;NoOutput;2;Detraz_65;F_Det;0;0.0;1.0;1.0;1.0;NoCurve;xdet_65;xdet_65;3534643360">
+<param name="AI_min" value="1;node.ico;924;53;0;AI_min = ;0.0;PlusNode;ValueInput;NoOutput;0;1;min;lscala;NoCurve;xAI_min;xAI_min;892844461">
+<param name="min" value="0;node.ico;979;14;0;min =  AI_min * F_AI;0.0;TimesNode;NoInput;NoOutput;2;AI_min;F_AI;0;1.0E-4;1.0;1.0;1.0;NoCurve;xmin;xmin;817220773">
+<param name="AI_max" value="1;node.ico;924;79;0;AI_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;max;lscala;NoCurve;xAI_max;xAI_max;2258604147">
+<param name="max" value="0;node.ico;979;36;0;max =  AI_max * F_AI;0.0;TimesNode;NoInput;NoOutput;2;AI_max;F_AI;0;1.0E-4;1.0;1.0;1.0;NoCurve;xmax;xmax;3366970662">
+<param name="F_AI" value="1;node.ico;931;23;0;F_AI = ;0.0;PlusNode;ValueInput;NoOutput;0;2;min;max;0.5;NoCurve;xF_AI;xF_AI;3265958777">
+<param name="F_Det" value="1;node.ico;868;47;0;F_Det = ;0.0;PlusNode;ValueInput;NoOutput;0;3;det_0;det_18;det_65;0.5;NoCurve;xF_Det;xF_Det;371802691">
+<param name="assegno" value="2;node.ico;853;130;0;assegno =  perc;0.0;ProbNode;NoInput;IntermediateOutput;1;perc;1;assegno_integrativo;0.0;1.0;StairsCurve;assCurve;xassegno;xassegno;2581010959">
+<param name="assegno_integrativo" value="0;node.ico;971;130;0;assegno_integrativo =  assegno;0.0;PlusNode;NoInput;NoOutput;1;assegno;0;1.0;1.0;NoCurve;xassegno_integrativo;xassegno_integrativo;2624339547">
+<param name="nonOK" value="0;node.ico;398;407;0;nonOK =  icefNonOK + icefNoIANonOK - icefNonOK * icefNoIANonOK;0.0;ProbNode;NoInput;NoOutput;2;icefNonOK;icefNoIANonOK;0;0.0;1.0;1.0;1.0;NoCurve;xnonOK;xnonOK;4139893800">
+<param name="icefNoIANonOK" value="0;node.ico;458;382;0;icefNoIANonOK = ;0.0;Times2Node;NoInput;NoOutput;0;1;nonOK;1.0;NoCurve;xicefNoIANonOK;xicefNoIANonOK;549927678">
+
+<param name="assCurve" value="StairsCurve;0.0;0.0;min;0.001;AI_scaglione;0.1;max;1.0">
+<param name="detCurve" value="StepCurve;0.0;det_0;18.0;det_18;65.0;det_65">
+
+
+<param name="xc5_ori" value="c5_ori;c5_ori;c5_ori;c5_ori;c5_ori; ; ; ; ; ; ; ">
+<param name="xInf" value="Inf;Inf;Inf;Inf;Inf; ; ; ; ; ;T.3; ">
+<param name="xC1_aut_ast" value="C1_aut_ast;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito ;C1(ANP/DIV): Redditi da lavoro autonomo occasionale zero;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito;C1(ANP/DIV): Redditi da lavoro autonomo occasionale dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xC2_agr_ast" value="C2_agr_ast;C2: Redditi da impresa agricola dell'assistito ;C2: Redditi da impresa agricola zero;C2: Redditi da impresa agricola dell'assistito;C2: Redditi da impresa agricola dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xC1_dip_ast" value="C1_dip_ast;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati zero;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xCheck" value="Check;Check;idoneo;Check;Domanda NON idonea; ; ; ; ;causa: ;T; ">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+<param name="xIcef" value="Icef; <b>(Icef)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare considerato (determinante tra ^Inf^ e ^Sup^);Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b> zero ;Indicatore della Condizione Economica Familiare <b>(Icef considerato, valido fino a ^Sup^)</b>;Indicatore della Condizione Economica Familiare <b>(Icef considerato >=1), <br /> si usa il massimo delle valutazioni di redditi e patrimonio</b>; ; ; ; ;<b>;T.10;</b>">
+<param name="xSup" value="Sup;Sup;Sup;Sup;Sup; ; ; ; ; ;T.3; ">
+<param name="xicefNoIANonOK" value="icefNoIANonOK;icefNonOK;Icef ok;icefNonOK;Icef senza Ind.d'Acc. oltre il limite di ^Sup^; ; ; ; ; ; ; ">
+<param name="xC3_imp_ast" value="C3_imp_ast;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo zero;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xAI_min" value="AI_min;AI_min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xDetraz_65" value="Detraz_65;Detraz_65;Detraz_65;Detraz_65;Detraz_65; ; ; ; ; ;$.2; ">
+<param name="xAI_max" value="AI_max;AI_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xF_Det" value="F_Det;F_Det;non;-;ok; ; ; ; ; ; ; ">
+<param name="xF_AI" value="F_AI;F_AI;non;-;ok; ; ; ; ; ; ; ">
+<param name="xFranchigia_ast" value="Franchigia_ast;Franchigia_ast;non;-;ok; ; ; ; ; ; ; ">
+<param name="xC4_part_ast" value="C4_part_ast;C4: Redditi da partecipazioni in società dell'assistito ;C4: Reddito da partecipazioni in società zero;C4: Redditi da partecipazioni in società dell'assistito ;C4: Redditi da partecipazioni in società dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xPrecedente" value="Precedente;Assegno precedente;Precedente;Assegno precedente;Assegno precedente; ; ; ; ; -;$.2; ">
+<param name="xDetraz_18" value="Detraz_18;Detraz_18;Detraz_18;Detraz_18;Detraz_18; ; ; ; ; ;$.2; ">
+<param name="xDetraz_0" value="Detraz_0;Detraz_0;Detraz_0;Detraz_0;Detraz_0; ; ; ; ; ;$.2; ">
+<param name="xPI5_oner" value="PI5_oner;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso;non PI5_oner;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso; ; ; ; ; ;$.2; ">
+<param name="xmax50" value="max50;max50;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmin50" value="min50;min50;non;-;ok; ; ; ; ; ; ; ">
+<param name="xICEF_IA" value="ICEF_IA;Indicatore della Condizione Economica Familiare - codici 05 06 10 (Icef considerato) ;Indicatore della Condizione Economica Familiare - codici 05 06 10 (Icef considerato) ;Indicatore della Condizione Economica Familiare - codici 05 06 10 (Icef considerato) ;Indicatore della Condizione Economica Familiare - codici 05 06 10 (Icef considerato) >=1), <br /> si usa il massimo delle valutazioni di redditi e patrimonio</b>; ; ; ; ;<b>;T.10;</b>">
+<param name="xperc_no_IA" value="perc_no_IA;perc_no_IA;perc;perc;perc; ; ; ; ; ; ; ">
+<param name="xdet_ast_04" value="det_ast_04;detrazione per l'età - codici 04 09 11 (^Eta_ast^ anni) dell'assistito;detrazione per l'età - codici 04 09 11 (^Eta_ast^ anni) dell'assistito;detrazione per l'età - codici 04 09 11 (^Eta_ast^ anni) dell'assistito;detrazione per l'età - codici 04 09 11 (^Eta_ast^ anni) dell'assistito; ; ; ; ; -;$.2; ">
+<param name="xRL_04" value="RL_04;RL - codici 04 09 11 : la somma dei redditi lordi (^rd^+^rp^+^c5_ast^+^ra^+^Assegno_imposto^+^maxIA_04^);RL - codici 04 09 11 : la somma dei redditi lordi (^rd^+^rp^+^c5_ast^+^ra^+^Assegno_imposto^+^maxIA_04^);RL: la somma dei redditi lordi  (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^+^maxIA_04^);RL: la somma dei redditi lordi  (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^+^maxIA_04^); ammonta a; ; ; ; <i>;$.2;</i>">
+<param name="xmaxIA_04" value="maxIA_04;Indennità di Accompagnamento ;Indennità di Accompagnamento ;Indennità di Accompagnamento;Indennità di Accompagnamento; ; ; ; ; ;$.2; ">
+<param name="xAI_scaglione" value="AI_scaglione;AI_scaglione;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPI5_grat" value="PI5_grat;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito;non PI5_grat;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito; ; ; ; ; ;$.2; ">
+<param name="xModello_ASSINT" value="PAT ASSEGNO INTEGRATIVO;PAT ASSEGNO INTEGRATIVO;P.A.T. PAT ASSEGNO INTEGRATIVO 2015 - (29.9.2015);--;--; ; ; ; ; ; ; ">
+
+<param name="ximporto_ai_10" value="importo_ai_10;Importo di Assegno Integrativo - codice 10 (%perc% tra ^min50^ e ^max50^);Importo di Assegno Integrativo - codice 10 (%perc% tra ^min50^ e ^max50^);Importo di Assegno Integrativo - codice 10 (%perc% tra ^min50^ e ^max50^);Importo di Assegno Integrativo - codice 10 (%perc% tra ^min50^ e ^max50^); ; ; ; ; ;$.2; ">
+<param name="xICEF_no_IA" value="ICEF_no_IA;Indicatore della Condizione Economica Familiare - codici 04 09 11 (Icef, senza Ind.d'Acc.) ;Indicatore della Condizione Economica Familiare - codici 04 09 11 (Icef, senza Ind.d'Acc.) ;Indicatore della Condizione Economica Familiare - codici 04 09 11 (Icef, senza Ind.d'Acc.) ;Indicatore della Condizione Economica Familiare - codici 04 09 11 (Icef, senza Ind.d'Acc.  >=1), <br /> si usa il massimo delle valutazioni di redditi e patrimonio</b>; ; ; ; ;<b>;T.10;</b>">
+<param name="ximporto_ai_05" value="importo_ai_05;Importo di Assegno Integrativo - codici 05 06 (%perc% tra ^min^ e ^max^);Importo di Assegno Integrativo - codici 05 06 (%perc% tra ^min^ e ^max^);Importo di Assegno Integrativo - codici 05 06 (%perc% tra ^min^ e ^max^);Importo di Assegno Integrativo - codici 05 06 (%perc% tra ^min^ e ^max^); ; ; ; ; ;$.2; ">
+<param name="ximporto_ai_04" value="importo_ai_04;Importo di Assegno Integrativo - codici 04 09 11  (%perc_no_IA% tra ^min^ e ^max^, con Icef senza Ind.d'Acc.);Importo di Assegno Integrativo - codici 04 09 11  (%perc_no_IA% tra ^min^ e ^max^, con Icef senza Ind.d'Acc.);Importo di Assegno Integrativo - codici 04 09 11  (%perc_no_IA% tra ^min^ e ^max^, con Icef senza Ind.d'Acc.);Importo di Assegno Integrativo - codici 04 09 11  (%perc_no_IA% tra ^min^ e ^max^, con Icef senza Ind.d'Acc.); ; ; ; ; ;$.2; ">
+<param name="xDF_04" value="DF_04;DF l'ammontare totale delle detrazioni concesse - codici 04 09 11 ;DF l'ammontare totale delle detrazioni concesse - codici 04 09 11 ;DF l'ammontare totale delle detrazioni concesse - codici 04 09 11 ;DF l'ammontare totale delle detrazioni concesse - codici 04 09 11 ;è di ; ; ; ; <i>-;$.2;</i>">
+<param name="xIA_vigente" value="IA_vigente;IA_vigente;IA_vigente;IA_vigente;IA_vigente; ; ; ; ; ; ; ">
+<param name="xRF_04" value="RF_04;RF - codici 04 09 11 : <b>reddito</b> familiare preso in considerazione;RF - codici 04 09 11 : <b>reddito</b> familiare preso in considerazione;RF: <b>reddito</b> familiare preso in considerazione;RF: <b>reddito</b> familiare preso in considerazione;è di; ; ; ; ;$.2; ">
+<param name="xEta_ast" value="Eta_ast;Età dell'assitito;età???;Età dell'assitito;Età dell'assitito; ; ; ; ; ;T; ">
+<param name="xIA_ast" value="IA_ast;Indennità di Accompagnamento dichiarata;non IA_ast;Indennità di Accompagnamento dichiarata;Indennità di Accompagnamento dichiarata; ; ; ; ; ;$.2; ">
+<param name="xdet_ast" value="det_ast;detrazione per l'età (^Eta_ast^ anni) dell'assistito;det_ast???;detrazione per l'età (^Eta_ast^ anni) dell'assistito;detrazione per l'età (^Eta_ast^ anni) dell'assistito; ; ; ; ; -;$.2; ">
+<param name="xcheckOK" value="checkOK;checkOK;checkOK;checkOK;checkOK; ; ; ; ; ; ; ">
+<param name="xpi5" value="pi5;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione;non pi5;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione; ; ; ; ; ;$.2; ">
+<param name="xassegno" value="assegno;assegno;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmpi5" value="mpi5;mpi5;non mpi5;mpi5;mpi5; ; ; ; ; ;$.2; ">
+<param name="xidonea" value="idonea;idonea;Domanda non idonea;idonea;Domanda idonea; ; ; ; ; ; ; ">
+<param name="xassegno_integrativo" value="assegno_integrativo;assegno_integrativo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xicefNonOK" value="icefNonOK;icefNonOK;Icef ok;icefNonOK;Icef oltre il limite di ^Sup^; ; ; ; ; ; ; ">
+<param name="xmin" value="min;min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xarl" value="arl;arl;arl;arl;arl; ; ; ; ; ; ; ">
+<param name="xbig" value="big;big;non;-;ok; ; ; ; ; ; ; ">
+<param name="xnonOK" value="nonOK;nonOK;Icef ok;nonOK;Icef oltre il limite di ^Sup^; ; ; ; ; ; ; ">
+<param name="xmax" value="max;max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xdet_65" value="det_65;det_65;non;-;ok; ; ; ; ; ; ; ">
+<param name="xicefOK" value="icefOK;icefOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmaxIA" value="maxIA;Indennità di Accompagnamento valutata = massimo(^IA_ast^ , ^IA_vigente^);nessun Id.Acc.;Indennità di Accompagnamento valutata = massimo(^IA_ast^ , ^IA_vigente^);Indennità di Accompagnamento valutata = massimo(^IA_ast^ , ^IA_vigente^); ; ; ; ; ;$.2; ">
+<param name="xr_ast" value="r_ast;redditi dell'assistito;r_ast;redditi dell'assistito;redditi dell'assistito; ; ; ; ; ;$.2; ">
+<param name="xdet_0" value="det_0;det_0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc5_ast" value="c5_ast;C5 - codici 04 09 11 : Altre fonti di entrata;C5: Altre fonti di entrata;C5: Altre fonti di entrata;C5: Altre fonti di entrata; ; ; ; ; ;$.2; ">
+<param name="xdet_18" value="det_18;det_18;non;-;ok; ; ; ; ; ; ; ">
+<param name="xm_ast" value="m_ast;Detrazioni per il reddito dell'assitito;non redditi dell'assitito;Detrazioni per il reddito dell'assitito;Detrazioni per il reddito dell'assitito; ; ; ; ; -;$.2; ">
+<param name="xperc" value="perc;perc;perc;perc;perc; ; ; ; ; ; ; ">
+<param name="xcheck1" value="check1;check1;ok;check1;Domanda non idonea; ; ; ; ; ;T; ">
+<param name="xc_ast" value="c_ast;c_ast;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;applicant0;dati;risultati;spiega;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;C5_altri=c5_ast;Inf=Inf;F_AI=1;IA_vigente=0">
+<param name="propagation2" value=" ;det_ast_04=det_ast;maxIA_04=maxIA;RL_04=RL;RF_04=RF;DF_04=DF;importo_ai_04=assegno_integrativo;icefNoIANonOK=icefNonOK;perc_no_IA=perc;ICEF_no_IA=Icef">
+<param name="propagation3" value=" ;Eta_ast=Eta_ast;Inf=Inf;F_Det=1;F_AI;IA_vigente">
+<param name="propagation4" value=" ;ICEF_IA=Icef;importo_ai_10=assegno_integrativo;min50=min;max50=max;Eta_ast=Eta_ast;Inf=Inf;F_Det=1">
+<param name="propagation5" value=" ;Inf=Inf;F_AI=1">
+<param name="propagation6" value=" ;importo_ai_05=assegno_integrativo;Inf=Inf;F_AI=1">
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="dati" value="<b> Dati: </b>;ICEF_IA=-1;ICEF_no_IA=-1">
+<param name="risultati" value="<b> Risultati: </b>;importo_ai_04=-1;importo_ai_05=-1;importo_ai_10=-1">
+<param name="spiega" value="(nonOK==1)Idoneità:;icefNonOK=3!0;icefNoIANonOK=3!0">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1963707116">
+<param name="CRC" value="3707087125">
+<param name="CRCdata" value="29-set-2015 12.37.25">
+</APPLET>
+</CENTER>
+<BR>

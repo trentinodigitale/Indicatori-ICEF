@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>ICEF</title></head><body>
+		<CENTER>
+		<H2>Attestazione dell'indicatore ICEF<BR></H2>
+		(deliberazione della Giunta provinciale 2178 di data 10 dicembre 2021)
+		</CENTER>]]></main>
+		<ente>
+			<![CDATA[<H2><CENTER>]]>
+            <sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '<BR>' end from Doc where id=${id_domanda}]]></sql>
+			<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+			</servizio>
+		<richiedente>
+		</richiedente>	
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<!--netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion-->
+		<main></main>
+		
+	</footer>
+</Doc>

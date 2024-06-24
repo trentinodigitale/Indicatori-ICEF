@@ -1,0 +1,199 @@
+<CENTER>
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=830 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.2 $">
+<param name="Taratura" value="APAPI - Lavoro discontinuo 2011 INPS; 11.3.2011">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriLD;caso1mesi;caso2mesi;caso1sett;caso2sett;precedentisett;precedentimesi">
+
+<param name="parametriLD" value="current;Check=0;Limite_CE=15000">
+
+<param name="caso1mesi" value="parametriLD,precedentimesi;Importo=2000;Importo_max=1080;T_versato=3;T_trimestre=3;T_autorizzato=3;T_disoccupato=3;T_coperto=1;Condizione_equivalente=10000">
+<param name="caso2mesi" value="parametriLD,precedentimesi;Importo=2000;Importo_max=1780;T_versato=3;T_trimestre=3;T_autorizzato=3;T_disoccupato=3;T_coperto=1;Condizione_equivalente=10000">
+
+<param name="caso1sett" value="parametriLD,precedentisett;Importo=2000;Importo_max=1080;T_versato=11;T_trimestre=13;T_autorizzato=12;T_disoccupato=10;T_coperto=2;Condizione_equivalente=10000">
+<param name="caso2sett" value="parametriLD,precedentisett;Importo=2000;Importo_max=1780;T_versato=11;T_trimestre=13;T_autorizzato=12;T_disoccupato=10;T_coperto=2;Condizione_equivalente=10000">
+
+<param name="precedentisett" value="current;T_precedente=10;Precedente=1">
+<param name="precedentimesi" value="current;T_precedente=2;Precedente=0">
+
+<param name="variables" value="ascala;cscala;escala">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+
+<param name="edges" value="P.A.T. Regione LD10;
+T_disoccupato-t_potenziale;t_potenziale-t_acc;t_acc-q_periodo;q_periodo-q_importo;Importo-q_importo;T_coperto-t_potenziale;T_versato-t_acc;T_versato-q_periodo;t_offset-t_al;settimane-t_offset;t_offset-t_dal;T_precedente-t_dal;t_al-q_al;t_dal-q_dal;q_al-quota;q_dal-quota;quota-contributo_max;Condizione_equivalente-condOK;Limite_CE-condOK;contributo_max-contributo;q_importo-contributo;
+Check-idonea;condOK-idoneo;idonea-idoneo;idoneo-contributo_max;T_trimestre-t_dif;T_autorizzato-t_dif;T_trimestre-settimane;Importo_max-contributo_max;t_ok-idoneo;t_acc-t_ok;settimane-sett_ok;Precedente-sett_ok;sett_ok-idoneo;T_precedente-t_al;T_autorizzato-t_acc;t_acc-t_accettabile;t_max-t_accetta;t_accetta-t_accettabile;t_accettabile-t_al;settimane-t_max;
+T_precedente-t_accetta;T_precedente-primo;primo-sett_ok;Check-ilcheck;condOK-invc;invc-ilcheck;t_ok-invt;invt-ilcheck;t_accettabile-t_sum;T_precedente-t_sum;t_sum-t_consumato;idoneo-t_consumato;quota-qu">
+
+
+
+<param name="P.A.T. Regione LD10" value="text;node.ico;73;399;0;P.A.T. Regione LD10 = ;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_LD;xModello_LD;2221258383">
+<param name="T_disoccupato" value="1;node.ico;67;472;0;T_disoccupato = ;0.0;PlusNode;ValueInput;NoOutput;0;1;t_potenziale;ascala;NoCurve;xT_disoccupato;yT_disoccupato;262708365">
+<param name="t_potenziale" value="0;node.ico;76;520;0;t_potenziale =  T_disoccupato - T_coperto;0.0;MinusNode;NoInput;NoOutput;2;T_disoccupato;T_coperto;1;t_acc;ascala;1.0;1.0;1.0;NoCurve;xt_potenziale;yt_potenziale;3234626504">
+<param name="t_acc" value="0;node.ico;149;520;0;t_acc =  Min(  t_potenziale,  T_versato,  T_autorizzato );0.0;NumMinNode;NoInput;NoOutput;3;t_potenziale;T_versato;T_autorizzato;3;q_periodo;t_ok;t_accettabile;ascala;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xt_acc;yt_acc;1937869936">
+<param name="q_periodo" value="0;node.ico;159;547;0;q_periodo =  t_acc / T_versato;0.0;DivideNode;NoInput;NoOutput;2;t_acc;T_versato;1;q_importo;1.0;1.0;1.0;1.0;NoCurve;xq_periodo;yq_periodo;3273263293">
+<param name="q_importo" value="0;node.ico;161;578;0;q_importo =  q_periodo * Importo;0.0;TimesNode;NoInput;NoOutput;2;q_periodo;Importo;1;contributo;escala;1.0;1.0;1.0;NoCurve;xq_importo;yq_importo;2898826696">
+<param name="Importo" value="1;node.ico;41;579;0;Importo = ;0.0;PlusNode;ValueInput;NoOutput;0;1;q_importo;ascala;NoCurve;xImporto;yImporto;3479840764">
+<param name="T_coperto" value="1;node.ico;110;495;0;T_coperto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;t_potenziale;ascala;NoCurve;xT_coperto;yT_coperto;2747595796">
+<param name="T_versato" value="1;node.ico;221;447;0;T_versato = ;0.0;PlusNode;ValueInput;NoOutput;0;2;t_acc;q_periodo;ascala;NoCurve;xT_versato;yT_versato;412883416">
+<param name="t_offset" value="0;node.ico;310;533;0;t_offset =  settimane);0.0;NumTransNode;NoInput;NoOutput;1;settimane;2;t_al;t_dal;cscala;1.0;LinearCurve;offsetCurve;xt_offset;yt_offset;870720893">
+<param name="t_al" value="0;node.ico;373;519;0;t_al =  t_offset + T_precedente + t_accettabile;0.0;PlusNode;NoInput;NoOutput;3;t_offset;T_precedente;t_accettabile;1;q_al;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xt_al;yt_al;2481988921">
+<param name="settimane" value="0;node.ico;310;474;0;settimane = T_trimestre > 5.0;0.0;NumGtNode;NoInput;NoOutput;1;T_trimestre;3;t_offset;sett_ok;t_max;1.0;5.0;NoCurve;xsettimane;ysettimane;3533133424">
+<param name="t_dal" value="0;node.ico;372;549;0;t_dal =  t_offset + T_precedente;0.0;PlusNode;NoInput;NoOutput;2;t_offset;T_precedente;1;q_dal;ascala;1.0;1.0;1.0;NoCurve;xt_dal;yt_dal;1755002761">
+<param name="T_precedente" value="1;node.ico;309;564;0;T_precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;5;t_dal;t_al;t_accetta;primo;t_sum;ascala;NoCurve;xT_precedente;yT_precedente;3694758737">
+<param name="q_al" value="0;node.ico;425;521;0;q_al =  t_al);0.0;NumTransNode;NoInput;NoOutput;1;t_al;1;quota;ascala;1.0;LinearCurve;cumulCurve;xq_al;yq_al;757276627">
+<param name="q_dal" value="0;node.ico;425;550;0;q_dal =  t_dal);0.0;NumTransNode;NoInput;NoOutput;1;t_dal;1;quota;ascala;1.0;LinearCurve;cumulCurve;xq_dal;yq_dal;2233575885">
+<param name="quota" value="0;node.ico;514;538;0;quota =  q_al - q_dal;0.0;MinusNode;NoInput;IntermediateOutput;2;q_al;q_dal;2;contributo_max;qu;1.0;1.0;1.0;1.0;NoCurve;xquota;yquota;973557919">
+<param name="contributo_max" value="0;node.ico;593;537;0;contributo_max =  quota * idoneo * Importo_max;0.0;TimesNode;NoInput;NoOutput;3;quota;idoneo;Importo_max;1;contributo;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcontributo_max;ycontributo_max;1896186321">
+<param name="Condizione_equivalente" value="1;node.ico;314;430;0;Condizione_equivalente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;condOK;escala;NoCurve;xCondizione_equivalente;yCondizione_equivalente;254919167">
+<param name="condOK" value="2;node.ico;376;456;0;condOK = Condizione_equivalente <= Limite_CE;0.0;NumLeNode;NoInput;IntermediateOutput;2;Condizione_equivalente;Limite_CE;2;idoneo;invc;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;2766961674">
+<param name="Limite_CE" value="1;node.ico;423;429;0;Limite_CE = ;0.0;PlusNode;ValueInput;NoOutput;0;1;condOK;escala;NoCurve;xLimite_CE;yLimite_CE;816251162">
+<param name="contributo" value="2;node.ico;594;578;0;contributo =  Min(  contributo_max,  q_importo );0.0;NumMinNode;NoInput;ResultOutput;2;contributo_max;q_importo;0;ascala;1.0;1.0;1.0;NoCurve;xcontributo;ycontributo;1193970941">
+<param name="Check" value="1;node.ico;659;426;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;idonea;ilcheck;1.0;NoCurve;xCheck;yCheck;1589405127">
+<param name="idonea" value="0;node.ico;592;427;0;idonea = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xidonea;yidonea;2859259468">
+<param name="idoneo" value="2;node.ico;594;498;0;idoneo =  condOK * idonea * t_ok * sett_ok;0.0;TimesNode;NoInput;IntermediateOutput;4;condOK;idonea;t_ok;sett_ok;2;contributo_max;t_consumato;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xidoneo;yidoneo;4175322062">
+<param name="T_trimestre" value="1;node.ico;38;428;0;T_trimestre = ;0.0;PlusNode;ValueInput;NoOutput;0;2;t_dif;settimane;ascala;NoCurve;xT_trimestre;yT_trimestre;541327066">
+<param name="t_dif" value="0;node.ico;77;446;0;t_dif =  0.001  + 0.999 * T_trimestre + 0.999 * T_autorizzato - 0.999 * T_trimestre * T_autorizzato;0.0;ProbNode;NoInput;NoOutput;2;T_trimestre;T_autorizzato;0;ascala;1.0;1.0;1.0;NoCurve;yt_dif;yt_dif;1195657148">
+<param name="T_autorizzato" value="1;node.ico;149;428;0;T_autorizzato = ;0.0;PlusNode;ValueInput;NoOutput;0;2;t_dif;t_acc;ascala;NoCurve;xT_autorizzato;yT_autorizzato;4004241376">
+<param name="Importo_max" value="1;node.ico;536;466;0;Importo_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;contributo_max;ascala;NoCurve;xImporto_max;yImporto_max;1780689405">
+<param name="t_ok" value="0;node.ico;341;498;0;t_ok = t_acc > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;t_acc;2;idoneo;invt;1.0;0.0;NoCurve;xt_ok;yt_ok;4226021133">
+<param name="sett_ok" value="0;node.ico;429;474;0;sett_ok =   1  - settimane - Precedente + 2.000 * settimane * Precedente + settimane * primo + Precedente * primo - 2.000 * settimane * Precedente * primo;0.0;ProbNode;NoInput;NoOutput;3;settimane;Precedente;primo;1;idoneo;1.0;0.0;0.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xsett_ok;ysett_ok;228488438">
+<param name="Precedente" value="1;node.ico;505;435;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;sett_ok;1.0;NoCurve;xPrecedente;yPrecedente;3861305513">
+<param name="t_accettabile" value="0;node.ico;229;519;0;t_accettabile =  Min(  t_acc,  t_accetta );0.0;NumMinNode;NoInput;NoOutput;2;t_acc;t_accetta;2;t_al;t_sum;ascala;1.0;1.0;1.0;NoCurve;xt_accettabile;yt_accettabile;3838422420">
+<param name="t_max" value="0;node.ico;232;472;0;t_max =  F( settimane);0.0;NumTransNode;NoInput;NoOutput;1;settimane;1;t_accetta;ascala;1.0;LinearCurve;maxCurve;xt_max;yt_max;3065195522">
+<param name="t_accetta" value="0;node.ico;237;496;0;t_accetta =  t_max - T_precedente;0.0;MinusNode;NoInput;NoOutput;2;t_max;T_precedente;1;t_accettabile;ascala;1.0;1.0;1.0;NoCurve;xt_accetta;yt_accetta;614590250">
+<param name="primo" value="0;node.ico;470;564;0;primo = T_precedente == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;T_precedente;1;sett_ok;1.0;0.0;NoCurve;xprimo;yprimo;3227379320">
+<param name="ilcheck" value="0;node.ico;658;456;0;ilcheck =  MAX(  Check,  8.000*invc,  13.000*invt );0.0;NumMaxNode;NoInput;IntermediateOutput;3;Check;invc;invt;0;0.0010;1.0;8.0;13.0;1.0;1.0;1.0;1.0;NoCurve;xilcheck;yilcheck;745319469">
+<param name="invc" value="0;node.ico;615;457;0;invc =   1  - condOK;0.0;ProbNode;NoInput;NoOutput;1;condOK;1;ilcheck;1.0;0.0;NoCurve;xinvc;yinvc;570666659">
+<param name="invt" value="0;node.ico;656;478;0;invt =   1  - t_ok;0.0;ProbNode;NoInput;NoOutput;1;t_ok;1;ilcheck;1.0;0.0;NoCurve;xinvt;yinvt;3825230495">
+<param name="t_sum" value="0;node.ico;229;591;0;t_sum =  t_accettabile + T_precedente;0.0;PlusNode;NoInput;NoOutput;2;t_accettabile;T_precedente;1;t_consumato;ascala;1.0;1.0;1.0;NoCurve;xt_sum;yt_sum;585305338">
+<param name="t_consumato" value="2;node.ico;350;591;0;t_consumato =  t_sum * idoneo;0.0;TimesNode;NoInput;IntermediateOutput;2;t_sum;idoneo;0;ascala;1.0;1.0;1.0;NoCurve;xt_consumato;yt_consumato;1648441697">
+<param name="qu" value="0;node.ico;525;556;0;qu =  100.000*quota;0.0;PlusNode;NoInput;NoOutput;1;quota;0;0.0010;100.0;NoCurve;xqu;yqu;529523371">
+
+<param name="cumulCurve" value="LinearCurve;0.0;0.0;1.0;0.207;2.0;0.414;3.0;0.585;4.0;0.756;5.0;0.878;6.0;1.0;9.0;1.0;10.0;0.0;11.0;0.046;12.0;0.092;13.0;0.138;14.0;0.184;15.0;0.23;16.0;0.276;17.0;0.322;18.0;0.368;19.0;0.414;20.0;0.452;21.0;0.49;22.0;0.528;23.0;0.566;24.0;0.604;25.0;0.642;26.0;0.68;27.0;0.718;28.0;0.756;29.0;0.7865;30.0;0.817;31.0;0.8475;32.0;0.878;33.0;0.9085;34.0;0.939;35.0;0.9695;36.0;1.0;52.0;1.0">
+<param name="maxCurve" value="LinearCurve;0.0;6.0;1.0;26.0">
+<param name="offsetCurve" value="LinearCurve;0.0;0.0;1.0;10.0;2.0;0.0">
+
+
+<param name="xLimite_CE" value="Limite_CE;Limite della condizione familiare equivalente;Limite=0;Limite della condizione familiare equivalente;1; ; ; ; ; ;$.2; ">
+
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ; ; ; ; ;T; ">
+
+<param name="xT_precedente" value="T_precedente;Periodo di contributi precedenti;nessun contributo precedente;Periodo di contributi precedenti;Periodo di contributi precedenti; ; ; ; ; ;T; |settimane|">
+
+<param name="xCondizione_equivalente" value="Condizione_equivalente;Valutazione della condizione familiare;Valutazione della condizione familiare;Valutazione della condizione familiare;Valutazione della condizione familiare; ; ; ; ; <b>;$.2;</b>">
+
+<param name="xImporto_max" value="Importo_max;Importo massimale;Importo massimale=0;Importo massimale;Importo massimale; ; ; ; ; ;$.2; ">
+
+<param name="xPrecedente" value="Precedente;unità precedente;unità precedente=mesi;-;unità precedente=settimane; ; ; ; ; ; ; ">
+
+<param name="xT_trimestre" value="T_trimestre;Durata del periodo;Durata del periodo=0;Durata del periodo;Durata del periodo; ; ; ; ; ;T; |settimane|">
+
+<param name="xT_autorizzato" value="T_autorizzato;Periodo autorizzato ai versamenti;nessun periodo autorizzato ai versamenti;Periodo autorizzato ai versamenti;Periodo autorizzato ai versamenti; ; ; ; ; ;T; |settimane|">
+
+<param name="xT_versato" value="T_versato;Periodo coperto da versamenti volontari;nessun versamento;Periodo coperto da versamenti volontari;Periodo coperto da versamenti volontari; ; ; ; ; ;T; |settimane|">
+
+<param name="xModello_LD" value="P.A.T. Regione LD10;x;P.A.T. Regione LD10 2010/11 - (11.3.2011);--;--; ; ; ; ; ; ; ">
+<param name="xT_coperto" value="T_coperto;Periodo coperto da versamenti previdenziali obbligatori;nessun versamento previdenziale obbligatorio;Periodo coperto da versamenti previdenziali obbligatori;Periodo coperto da versamenti previdenziali obbligatori; ; ; ; ; ;T; |settimane|">
+
+<param name="xImporto" value="Importo;Importo del versamento volontario effettuato;Nessun versamento volontario;Importo del versamento volontario effettuato;Importo del versamento volontario effettuato; ; ; ; ; ;$.2; ">
+
+<param name="xT_disoccupato" value="T_disoccupato;Periodo di disoccupazione;nessuna disoccupazione;Periodo di disoccupazione;Periodo di disoccupazione; ; ; ; ; ;T; |settimane|">
+
+<param name="xinvc" value="invc;invc;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xinvt" value="invt;invt;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xidonea" value="idonea;--;domanda <b>non</b> idonea;-;domanda idonea; ; ;=; ; ; ; ">
+
+<param name="xt_ok" value="t_ok;x;tempi zero;-;tempi ok; ; ; ; ; ; ; ">
+
+<param name="xt_max" value="t_max;t_max;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xsettimane" value="settimane;settimane;mesi;-;sett.; ; ; ; ; ; ; ">
+
+<param name="xprimo" value="primo;primo;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xt_offset" value="t_offset;t_offset;0;-;1; ;-;+; ; ;T; ">
+
+<param name="xqu" value="qu;quota ;la quota spettante è zero;quota spettante;quota spettante ; ; ; ; ; ;T.2; ">
+
+<param name="xq_dal" value="q_dal;q_dal;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xq_al" value="q_al;q_al;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xt_potenziale" value="t_potenziale;periodo potenziale ( §T_disoccupato§ - §T_coperto§ );periodo potenziale zero ( §T_disoccupato§ <= §T_coperto§ );periodo potenziale ( §T_disoccupato§ - §T_coperto§ );periodo potenziale ( §T_disoccupato§ - §T_coperto§ ); ; ; ; ; ;T; |settimane|">
+
+<param name="xt_accetta" value="t_accetta;t_accetta;0;-;1; ;-;+; ; ;T; ">
+
+<param name="xt_accettabile" value="t_accettabile;periodo ammissibile ( Min[ §t_potenziale§ , §T_autorizzato§ , §T_versato§ , §t_max§-§T_precedente§ ] );periodo non ammissibile ( Min[ §t_potenziale§ , §T_autorizzato§ , §T_versato§ , §t_max§-§T_precedente§ ]=0 );periodo ammissibile ( Min[ §t_potenziale§ , §T_autorizzato§ , §T_versato§ , §t_max§-§T_precedente§ ] );periodo ammissibile ( Min[ §t_potenziale§ , §T_autorizzato§ , §T_versato§ , §t_max§-§T_precedente§ ] ); ; ; ; ; ;T; |settimane|">
+
+<param name="xt_consumato" value="t_consumato;t_consumato;0;t_consumato;t_consumato; ; ; ; ; ;T; ">
+
+<param name="xcondOK" value="condOK;condOK;Condizione Economica Familiare oltre il limite di ^Limite_CE^;-;ICEF ok; ;-;+; ; ; ; ">
+
+<param name="xt_dal" value="t_dal;t_dal;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xquota" value="quota;quota spettante dell'importo massimo di §Importo_max§ ;la quota spettante è zero;quota spettante dell'importo massimo di §Importo_max§ ;quota spettante dell'importo massimo di §Importo_max§ ; ; ; ; ; ;P.4; ">
+
+<param name="xq_importo" value="q_importo;importo ammissibile (%q_periodo% del versamento);periodo del versamento non ammissibile;importo ammissibile (%q_periodo% del versamento);importo ammissibile (%q_periodo% del versamento); ; ; ; ; ;$.2; ">
+
+<param name="xt_sum" value="t_sum;t_sum;0;-;1; ; ; ; ; ;T; ">
+
+
+<param name="xcontributo" value="contributo;Contributo determinato ( Min[ $q_importo$ | ^qu^% * ^Importo_max^ ] );Contributo determinato zero;Contributo determinato ( Min[ $q_importo$ | ^qu^% * ^Importo_max^ ] );Contributo determinato ( Min[ $q_importo$ | ^qu^% * ^Importo_max^ ] ); ; ; ; ;<b> ;$.2;</b>">
+
+<param name="xq_periodo" value="q_periodo;quota di periodo ammissibile ( = §t_acc§ / §T_versato§ );quota di periodo=0;quota di periodo ammissibile ( = §t_acc§ / §T_versato§ );quota di periodo ammissibile ( = §t_acc§ / §T_versato§ ); ; ; ; ; ;P.2; ">
+
+<param name="xilcheck" value="ilcheck;Codice di controllo *;Domanda formalmente in regola;-;Codice di controllo *; ; ; ; ;<i>(;T;)</i>">
+
+<param name="xt_al" value="t_al;t_al;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xcontributo_max" value="contributo_max;contributo massimo;contributo massimo=0;contributo massimo;contributo massimo; ; ; ; ; ;$.2; ">
+
+<param name="xsett_ok" value="sett_ok;sett_ok;unità di misura del periodo inconsistente;-;unità di misura ok; ; ; ; ; ; ; ">
+
+<param name="xt_acc" value="t_acc;periodo ammissibile;periodo non ammissibile;periodo ammissibile;periodo ammissibile; ; ; ; ; ;T; |settimane|">
+
+<param name="xidoneo" value="idoneo;--;domanda <b>non</b> idonea;-;domanda idonea; ; ; ; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="titolo;applicant;datifam;tempi;risultato;idoneità;xplcheck;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="titolo" value="<CENTER><H2>ASSEGNO PER LAVORO DISCONTINUO</H2></CENTER>;">
+<param name="applicant" value="<P> Richiedente: ;">
+<param name="datifam" value="<b>Dati familiari:</b>;Condizione_equivalente=-1;Importo=-1;q_periodo=-1!1;(q_periodo!=1)q_importo=-1!1">
+<param name="tempi" value="<b>Tempi</b> ;T_trimestre=-1;T_disoccupato=-1!0;T_coperto=-1!0;T_autorizzato=-1;T_versato=-1;T_precedente=-1!0;t_potenziale=-1;t_accettabile=-1">
+<param name="risultato" value="<b>Risultato</b> ;quota=-1;contributo=-1;ilcheck=-1!0">
+<param name="idoneità" value="(idoneo==0);idoneo=1;condOK=2!1;t_ok=2!1;sett_ok=2!1;(sett_ok==0)Precedente=3">
+<param name="xplcheck" value="(idoneo==0) <p>
+* <i>Spiegazione del codice di controllo:<br>
+(2) richiedente non residente<br>
+(8) condizione economica oltre i limiti<br>
+(9) domanda non applicabile<br>
+(11) versamento dopo la data di scadenza<br>
+(13) periodo non valido</i><br><br>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1914647514">
+<param name="CRC" value="1375924659">
+<param name="CRCdata" value="11-mar-2011 15.58.04">
+</APPLET>
+</CENTER>
+<BR>

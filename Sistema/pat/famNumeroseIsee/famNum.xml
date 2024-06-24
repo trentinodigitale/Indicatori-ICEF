@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+			<title>Clesius ICEF</title></head><body>
+			<CENTER>
+				<H2>ASSEGNO NUCLEO FAMILIARE L. 448/98<BR></H2>
+			</CENTER>
+        ]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class> -->
+			<![CDATA[<H2><CENTER>]]>
+			<sql><![CDATA[select (sospensioni.stato_dom + dichiarazione_connessa + sospensioni.isee_non_conforme + sospensioni.perm_sogg)
+							from (
+							select 
+							case when id_tp_stato < 3000 then '<HR>ATTENZIONE: domanda non trasmessa - Elaborazione provvisoria!<HR>'
+							else '<HR>Domanda TRASMESSA<BR><HR>'
+							end as stato_dom,
+							case when domande.id_dichiarazione = 0 then '<HR>ATTENZIONE: Motivo Sospensione: la concessione e il pagamento del beneficio sono subordinate alla presentazione di un''attestazione ISEE validata dall''INPS!<HR>'
+							else ''
+							end as dichiarazione_connessa,
+							
+							case when domande.isee_non_conforme <> 0 then '<HR>Elaborazione provvisoria - Motivo Sospensione: la concessione e il pagamento del beneficio sono subordinate alla presentazione di un''attestazione ISEE conforme!<HR>' 
+							else '' 
+							end as isee_non_conforme,
+							case when domande_permessi_soggiorno.id_tp_permesso = 41 then '<HR>Elaborazione provvisoria - Motivo Sospensione: la concessione e il pagamento del beneficio sono subordinate alla presentazione di titolo di soggiorno valido per la richiesta del beneficio!<HR>' 
+							else '' 
+							end as perm_sogg
+							from Doc 
+							inner join domande on domande.ID_domanda = doc.id
+							left outer join domande_permessi_soggiorno on domande.ID_domanda = domande_permessi_soggiorno.id_domanda
+							where id =  ${id_domanda}) as sospensioni]]></sql>
+			<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+		</servizio>
+<!-- 		<richiedente> -->
+<!-- 			<![CDATA[<B>Nucleo familiare: </B>]]> -->
+<!-- 			<class>c_elab.pat.ts.Componenti</class> -->
+<!-- 			<![CDATA[<BR>]]> -->
+<!-- 		</richiedente> -->
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			<!--class>c_elab.pat.ts.Footer</class -->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<!--netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion -->
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+
+	</footer>
+</Doc>

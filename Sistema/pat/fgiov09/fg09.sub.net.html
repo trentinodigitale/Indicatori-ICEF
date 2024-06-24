@@ -1,0 +1,265 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=800 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.4 $">
+<param name="Taratura" value="Fondo per la valorizzazione e la professionalizzazione dei giovani; 27.8.2009">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriFG">
+
+<param name="parametriFG" value="current;Check=0;Redd3_1=35000;Redd3_2=50000;Redd3_3=60000;Redd3_4=70000;Icef_i=0.25;Rif=50000;Icef=0.4">
+
+
+<param name="variables" value="ascala;cscala;escala;divisotre">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+<param name="divisotre" value="0.490196078431373">
+
+
+
+<param name="edges" value="P.A.T. Fondo Valorizzazione Giovani;1Cc;1Cb;
+Redd3_1-icef_1;Rif-icef_1;Redd3_2-icef_2;Rif-icef_2;Icef-zero;icef_1-zero;Icef-agevolato;icef_2-agevolato;zero-idoneo_1;agevolato-idoneo_2;Check-ok;ok-idoneo_1;ok-idoneo_2;idoneo_1-prestito_1;idoneo_2-prestito_2;Redd3_3-icef_3;Rif-icef_3;Icef-particolare;particolare-idoneo_3;icef_3-particolare;ok-idoneo_3;
+idoneo_3-prestito_3;Icef-percentuale;icef_3-percentuale;Icef_i-percentuale;idoneo_1-borsa_1;idoneo_2-borsa_2;idoneo_3-borsa_3;idoneo_1-b_p_1;idoneo_2-b_p_2;idoneo_3-b_p_3;idoneo_1-1_2_0;idoneo_2-1_2_0;idoneo_1-1_2_1;idoneo_2-1_2_1;Redd3_4-icef_4;Rif-icef_4;Icef-dottorandi;icef_4-dottorandi;dottorandi-idoneo_4;zero-b_p_4;
+ok-idoneo_4;1_2_1-1_2_3_1;idoneo_3-1_2_3_1;1_2_0-1_2_3_0;idoneo_3-1_2_3_0;agevolato-parz_4;particolare-parz_4;dottorandi-parz_4;parz_4-b_p_4;idoneo_4-b_p_4;b_p_4-borsa_4;Icef-parz_3;icef_3-parz_3;icef_1-parz_3">
+
+
+
+<param name="P.A.T. Fondo Valorizzazione Giovani" value="text;node.ico;112;306;0;P.A.T. Fondo Valorizzazione Giovani - (27.8.2009);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_FG;xModello_FG;3300673471">
+<param name="1Cc" value="0;node.ico;619;555;0;Per lo stage lavorativo estivo:;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;x1Cc;y1Cc;141493638">
+<param name="1Cb" value="0;node.ico;619;527;0;Per la frequenza di percorsi di istruzione e formazione all'estero:;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;x1Cb;y1Cb;1473910365">
+<param name="Redd3_1" value="1;node.ico;75;355;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;icef_1;escala;NoCurve;xRedd3_1;xRedd3_1;1443343566">
+<param name="icef_1" value="0;node.ico;145;356;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3_1;Rif;2;zero;parz_3;1.0;divisotre;1.0;1.0;NoCurve;xicef_1;xicef_1;1900226145">
+<param name="Rif" value="1;node.ico;248;323;0;-;0.0;PlusNode;ValueInput;NoOutput;0;4;icef_1;icef_2;icef_3;icef_4;escala;NoCurve;xRif;xRif;2739693424">
+<param name="Redd3_2" value="1;node.ico;71;407;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;icef_2;escala;NoCurve;xRedd3_2;xRedd3_2;1652213711">
+<param name="icef_2" value="0;node.ico;146;407;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3_2;Rif;1;agevolato;1.0;divisotre;1.0;1.0;NoCurve;xicef_2;xicef_2;386210399">
+<param name="Icef" value="1;node.ico;293;321;0;-;0.0;ProbNode;ValueInput;NoOutput;0;6;zero;agevolato;particolare;percentuale;dottorandi;parz_3;0.5;NoCurve;xIcef;xIcef;4022381761">
+<param name="zero" value="0;node.ico;244;356;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;icef_1;2;idoneo_1;b_p_4;1.0;1.0;1.0;1.0;NoCurve;xzero;xzero;3681066024">
+<param name="agevolato" value="0;node.ico;244;409;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;icef_2;2;idoneo_2;parz_4;1.0;1.0;1.0;1.0;NoCurve;xagevolato;xagevolato;1791658489">
+<param name="idoneo_1" value="2;node.ico;447;356;0;-;0.0;ProbNode;NoInput;ResultOutput;2;zero;ok;5;prestito_1;borsa_1;b_p_1;1_2_0;1_2_1;0.0;0.0;0.0;1.0;NoCurve;xidoneo_1;xidoneo_1;619961131">
+<param name="idoneo_2" value="2;node.ico;448;407;0;-;0.0;ProbNode;NoInput;ResultOutput;2;agevolato;ok;5;prestito_2;borsa_2;b_p_2;1_2_0;1_2_1;0.0;0.0;0.0;1.0;NoCurve;xidoneo_2;xidoneo_2;1576825887">
+<param name="Check" value="1;node.ico;659;319;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ok;1.0;NoCurve;xCheck;xCheck;1697176688">
+<param name="ok" value="0;node.ico;659;429;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;4;idoneo_1;idoneo_2;idoneo_3;idoneo_4;1.0;0.0;NoCurve;xok;xok;2253308936">
+<param name="prestito_1" value="0;node.ico;517;326;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_1;0;0.0;1.0;NoCurve;xprestito_1;yprestito_1;2422660914">
+<param name="prestito_2" value="0;node.ico;524;377;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_2;0;0.0;1.0;NoCurve;xprestito_2;yprestito_2;1519120192">
+<param name="Redd3_3" value="1;node.ico;75;454;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;icef_3;escala;NoCurve;xRedd3_3;yRedd3_3;1536264550">
+<param name="icef_3" value="0;node.ico;148;455;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3_3;Rif;3;particolare;percentuale;parz_3;1.0;divisotre;1.0;1.0;NoCurve;xicef_3;yicef_3;3490514223">
+<param name="particolare" value="0;node.ico;232;456;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;icef_3;2;idoneo_3;parz_4;1.0;1.0;1.0;1.0;NoCurve;xparticolare;yparticolare;1295319764">
+<param name="idoneo_3" value="2;node.ico;449;456;0;-;0.0;ProbNode;NoInput;IntermediateOutput;2;particolare;ok;5;prestito_3;borsa_3;b_p_3;1_2_3_1;1_2_3_0;0.0;0.0;0.0;1.0;NoCurve;xidoneo_3;yidoneo_3;1516142371">
+<param name="prestito_3" value="0;node.ico;514;432;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_3;0;0.0;1.0;NoCurve;xprestito_3;yprestito_3;1638316265">
+<param name="percentuale" value="2;node.ico;293;549;0;-;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;icef_3;Icef_i;0;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpercentuale;ypercentuale;3400215922">
+<param name="Icef_i" value="1;node.ico;290;581;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;percentuale;0.5;NoCurve;xIcef_i;yIcef_i;3772451344">
+<param name="borsa_1" value="0;node.ico;386;326;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_1;0;0.0;1.0;NoCurve;xborsa_1;yborsa_1;2415695940">
+<param name="borsa_2" value="0;node.ico;383;376;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_2;0;0.0;1.0;NoCurve;xborsa_2;yborsa_2;3996995380">
+<param name="borsa_3" value="0;node.ico;387;432;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_3;0;0.0;1.0;NoCurve;xborsa_3;yborsa_3;4181878342">
+<param name="b_p_1" value="0;node.ico;445;326;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_1;0;0.0;1.0;NoCurve;xb_p_1;yb_p_1;2054640370">
+<param name="b_p_2" value="0;node.ico;447;381;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_2;0;0.0;1.0;NoCurve;xb_p_2;yb_p_2;4165129510">
+<param name="b_p_3" value="0;node.ico;447;432;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo_3;0;0.0;1.0;NoCurve;xb_p_3;yb_p_3;298524270">
+<param name="1_2_0" value="0;node.ico;324;376;0;-;0.0;ProbNode;NoInput;NoOutput;2;idoneo_1;idoneo_2;1;1_2_3_0;1.0;0.0;0.0;0.0;NoCurve;x1_2_0;y1_2_0;3550191331">
+<param name="1_2_1" value="0;node.ico;603;377;0;-;0.0;ProbNode;NoInput;NoOutput;2;idoneo_1;idoneo_2;1;1_2_3_1;0.0;0.0;0.0;1.0;NoCurve;x1_2_1;y1_2_1;2087826633">
+<param name="Redd3_4" value="1;node.ico;74;510;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;icef_4;escala;NoCurve;xRedd3_4;yRedd3_4;845042153">
+<param name="icef_4" value="0;node.ico;141;512;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3_4;Rif;1;dottorandi;1.0;divisotre;1.0;1.0;NoCurve;xicef_4;xicef_4;2178192614">
+<param name="dottorandi" value="0;node.ico;228;514;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;icef_4;2;idoneo_4;parz_4;1.0;1.0;1.0;1.0;NoCurve;xdottorandi;xdottorandi;2169508416">
+<param name="idoneo_4" value="2;node.ico;447;514;0;-;0.0;ProbNode;NoInput;NoOutput;2;dottorandi;ok;1;b_p_4;0.0;0.0;0.0;1.0;NoCurve;xidoneo_4;xidoneo_4;4742522">
+<param name="b_p_4" value="0;node.ico;448;484;0;-;0.0;ProbNode;NoInput;NoOutput;3;zero;parz_4;idoneo_4;1;borsa_4;0.0;0.0;0.0;0.0;0.0;1.0;1.0;1.0;NoCurve;xb_p_4;yb_p_4;1876727889">
+<param name="1_2_3_1" value="0;node.ico;603;465;0;-;0.0;ProbNode;NoInput;NoOutput;2;1_2_1;idoneo_3;0;0.0;0.0;0.0;1.0;NoCurve;y1_2_3_1;y1_2_3_1;3013512576">
+<param name="1_2_3_0" value="0;node.ico;324;469;0;-;0.0;ProbNode;NoInput;NoOutput;2;1_2_0;idoneo_3;0;0.0;1.0;0.0;0.0;NoCurve;y1_2_3_0;y1_2_3_0;1838050551">
+<param name="parz_4" value="0;node.ico;339;526;0;-;0.0;ProbNode;NoInput;NoOutput;3;agevolato;particolare;dottorandi;1;b_p_4;0.0;0.7;0.5;0.7;0.25;0.7;0.5;0.7;NoCurve;yparz_4;yparz_4;1352687988">
+<param name="borsa_4" value="0;node.ico;388;484;0;-;0.0;ProbNode;NoInput;NoOutput;1;b_p_4;0;0.0;1.0;NoCurve;xborsa_4;yborsa_4;206499800">
+<param name="parz_3" value="0;node.ico;324;425;0;-;0.0;CutoffNode;NoInput;NoOutput;3;Icef;icef_3;icef_1;0;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xparz_3;yparz_3;3884736640">
+
+
+
+<param name="xIcef_i" value="Icef_i;Icef_i;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef" value="Icef; <b>(ICEF)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> zero ; <b>(ICEF)</B> Indicatore della Condizione Economica Familiare <br>;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xRedd3_2" value="Redd3_2;Redd3_2;0;-;1; ;-;+; ; ; ; ">
+<param name="xRedd3_3" value="Redd3_3;Redd3_3;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRedd3_4" value="Redd3_4;Redd3_4;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ; ; ; ; ;T; ">
+<param name="xRedd3_1" value="Redd3_1;Redd3_1;0;-;1; ;-;+; ; ; ; ">
+<param name="x1Cb" value="1Cb;1Cb;Per la frequenza di percorsi di istruzione e formazione all'estero:;-;1; ;-;+; ; ; ; ">
+
+<param name="x1Cc" value="1Cc;1Cc;Per lo stage lavorativo estivo:;-;1; ;-;+; ; ; ; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xModello_FG" value="P.A.T. Fondo Valorizzazione Giovani;x;P.A.T. Fondo Valorizzazione Giovani - (27.8.2009);--;--; ; ; ; ; ; ; ">
+<param name="xprestito_3" value="prestito_3;prestito_3;
+il richiedente è idoneo al prestito a <b>tasso intero</b>.<br />;-;
+il richiedente è idoneo al prestito d'onore a <b>tasso zero</b>.<br />
+; ;-;+; ; ; ; ">
+
+<param name="xb_p_3" value="b_p_3;b_p_3;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;-;
+Il richiedente è <b>idoneo</b> alla borsa di studio; ;-;+; ; ; ; ">
+
+<param name="xb_p_2" value="b_p_2;b_p_2;
+Il richiedente <b>non è idoneo</b> alla borsa di studio ma ha diritto al prestito d'onore a tasso intero;-;
+Il richiedente è <b>idoneo</b> alla borsa di studio e al prestito d'onore a tasso zero; ;-;+; ; ; ; ">
+
+<param name="xb_p_1" value="b_p_1;b_p_1;
+Il richiedente <b>non è idoneo</b> alla borsa di studio ma ha diritto al prestito d'onore a tasso intero;-;
+Il richiedente è <b>idoneo</b> alla borsa di studio e al prestito d'onore a tasso zero; ;-;+; ; ; ; ">
+
+<param name="xborsa_3" value="borsa_3;borsa_3;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;-;
+Il richiedente è <b>idoneo</b> alla borsa di studio; ;-;+; ; ; ; ">
+
+<param name="xborsa_1" value="borsa_1;borsa_1;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;-;
+Il richiedente è <b>idoneo</b> alla borsa di studio; ;-;+; ; ; ; ">
+
+<param name="xborsa_2" value="borsa_2;borsa_2;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;-;
+Il richiedente è <b>idoneo</b> alla borsa di studio; ;-;+; ; ; ; ">
+
+<param name="xprestito_1" value="prestito_1;prestito_1;
+il richiedente <b>non è idoneo</b> al prestito1 d'onore a tasso intero.<br />;-;
+il richiedente <b>è idoneo</b> al prestito1 d'onore a tasso zero.<br />
+; ;-;+; ; ; ; ">
+
+<param name="xok" value="ok;ok;0;-;1;non ok;-;ok; ; ; ; ">
+<param name="xprestito_2" value="prestito_2;prestito_2;
+il richiedente <b>non è idoneo</b>, ma ha diritto al prestito d'onore a tasso intero.<br />;-;
+il richiedente <b>è idoneo</b> al prestito d'onore a tasso zero.<br />
+; ;-;+; ; ; ; ">
+
+<param name="xborsa_4" value="borsa_4;Il richiedente è <b>idoneo</b> alla borsa di studio parziale ;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;Il richiedente è <b>idoneo</b> alla borsa di studio parziale ;
+Il richiedente è <b>idoneo</b> alla borsa di studio intera ; ; ; ; ; di ;P.2; ">
+
+<param name="xidoneo_4" value="idoneo_4;idoneo_4;
+La condizione economica familiare <b>supera la Tabella 4</b>.;-;
+La condizione economica familiare <b>rientra nella Tabella 4</b>.
+; ;-;+; ; ; ; ">
+
+
+<param name="x1_2_0" value="1_2_0;1_2_0;0;-;1; ;-;+; ; ; ; ">
+
+<param name="x1_2_1" value="1_2_1;1_2_1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xdottorandi" value="dottorandi;dottorandi;0;-;1; ;-;+; ; ; ; ">
+<param name="xicef_4" value="icef_4;ICEF limite per borsa (collocato in Tabella 4) <br> - corrispondente ad una C.E. di riferimento di $Redd3_4$ -;icef_4=0;ICEF limite  (collocato in Tabella 4) <br> - corrispondente ad una C.E. di riferimento di $Redd3_4$ -;icef_4=1; ; ; ; ; ;T.9; ">
+<param name="xagevolato" value="agevolato;agevolato;0;-;1; ;-;+; ; ; ; ">
+<param name="xidoneo_1" value="idoneo_1;idoneo_1;
+La condizione economica familiare <b>supera la Tabella 1</b>.;-;
+La condizione economica familiare <b>rientra nella Tabella 1</b>.
+; ; ; ; ; ; ; ">
+<param name="xzero" value="zero;zero;0;-;1; ;-;+; ; ; ; ">
+<param name="xicef_1" value="icef_1;ICEF limite per borsa e/o prestito d'onore (collocato in Tabella 1) <br> - corrispondente ad una C.E. di riferimento di $Redd3_1$ -;icef_1=0;ICEF limite per borsa e/o prestito d'onore (collocato in Tabella 1) <br> - corrispondente ad una C.E. di riferimento di $Redd3_1$ -;icef_1=1; ; ; ; ; ;T.9; ">
+<param name="xicef_2" value="icef_2;ICEF limite per borsa e/o prestito d'onore (collocato in Tabella 2) <br> - corrispondente ad una C.E. di riferimento di $Redd3_2$ -;icef_2=0;ICEF limite per borsa e/o prestito d'onore (collocato in Tabella 2) <br> - corrispondente ad una C.E. di riferimento di $Redd3_2$ -;icef_2=1; ; ; ; ; ;T.9; ">
+<param name="xparticolare" value="particolare;particolare;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xidoneo_3" value="idoneo_3;idoneo_3;
+La condizione economica familiare <b>supera la Tabella 3</b>.;-;
+La condizione economica familiare <b>rientra nella Tabella 3</b>.
+; ;-;+; ; ; ; ">
+
+<param name="xidoneo_2" value="idoneo_2;idoneo_2;
+La condizione economica familiare <b>supera la Tabella 2</b>.;-;
+La condizione economica familiare <b>rientra nella Tabella 2</b>.
+; ;-;+; ; ; ; ">
+<param name="xicef_3" value="icef_3;ICEF limite per borsa e/o prestito d'onore (collocato in Tabella 3) <br> - corrispondente ad una C.E. di riferimento di $Redd3_3$ -;icef_3=0;ICEF limite  (collocato in Tabella 3) <br> - corrispondente ad una C.E. di riferimento di $Redd3_3$ -;icef_3=1; ; ; ; ; ;T.9; ">
+
+<param name="xpercentuale" value="percentuale;Il richiedente è <b>idoneo</b> alla borsa di studio parziale ;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;Il richiedente è <b>idoneo</b> alla borsa di studio parziale (percentuale 5%) ;
+Il richiedente è <b>idoneo</b> alla borsa di studio intera ; ; ; ; ; (percentuale  ;P.2;)">
+
+<param name="xparz_3" value="parz_3;Il richiedente è <b>idoneo</b> alla borsa di studio parziale ;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;Il richiedente è <b>idoneo</b> alla borsa di studio parziale (percentuale 5%) ;
+Il richiedente è <b>idoneo</b> alla borsa di studio intera ; ; ; ; ; (percentuale  ;P.2;)">
+
+<param name="xb_p_4" value="b_p_4;Il richiedente è <b>idoneo</b> alla borsa di studio parziale ;
+Il richiedente <b>non è idoneo</b> alla borsa di studio;Il richiedente è <b>idoneo</b> alla borsa di studio parziale ;
+Il richiedente è <b>idoneo</b> alla borsa di studio intera ;Il richiedente è <b>idoneo</b> alla borsa di studio parziale ; ; ; ; di ;P.2%; ">
+
+
+
+
+
+<param name="xpltree" value="risultato;idoneità;idoneità1;fin1;idoneità2;fin2;idoneità3;idoneità4;fin4;idoneità5;fin5;idoneità6;fin6;idoneità7;fin7;idoneità8;fin8;riga;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="risultato" value="<b>Dati:</b> ;Icef=-1;icef_1=-1;icef_2=-1;icef_3=-1;icef_4=-1;C_RIF_ICEF=-1">
+<param name="idoneità" value="<br />;idoneo_1=3!0;(idoneo_1==0)idoneo_2=3!0;(1_2_0==1)idoneo_3=3;(1_2_3_0==1)idoneo_4=3">
+<param name="idoneità1" value="<br />ESITO DELLA VALUTAZIONE ECONOMICA PER CIASCUNA MISURA:
+<table border=1 width='100%'>
+<tr><td><b>2A</b></td><td>Inserimento di giovani laureandi, laureati, dottorandi e dottori di ricerca, nel mercato del lavoro trentino e non, attraverso l'attivazione di progetti di ricerca </td></tr>
+<tr><td><b>4A</b></td><td>Iniziative formative post diploma e/o post laurea cofinanziate dal Fondo sociale europeo </td></tr>
+<tr><td><b>4C</b></td><td>Percorsi di alta specializzazione professionale.</td></tr>
+<tr><td><b>4D</b></td><td>Sostegno alla formazione dei giovani artisti.</td></tr>
+<tr border=0 ><td border=0 > </td><td border=0 >
+
+;b_p_2=3">
+<param name="fin1" value="</td></tr> </table>;">
+<param name="idoneità2" value="<br />
+<table border=1 width='100%'>
+<tr><td><b>2B</b></td><td>Sostegno ai percorsi per le libere professioni </td></tr>
+<tr><td><b>3A</b></td><td>Alta formazione </td></tr>
+<tr><td><b>3B</b></td><td>Alta formazione all'estero </td></tr>
+<tr><td><b>4B</b></td><td>Alta formazione professionale </td></tr>
+<tr border=0 ><td border=0 > </td><td border=0 >
+
+;prestito_2=3">
+<param name="fin2" value="</td></tr> </table>;">
+<param name="idoneità3" value="<br />
+<table border=1 width='100%'>
+<tr><td><b>1E</b></td><td>Mobilità internazionale dei giovani diplomati trentini.</td></tr>
+<tr border=0 ><td border=0 > </td><td border=0 >
+<br />
+<ul type='disc'> <li> L'indicatore ICEF è pari a ^Icef^ e sarà applicato nella formazione della graduatoria di accesso alla misura richiesta.
+</li> </ul>
+<br />
+</td></tr> </table>
+;">
+<param name="idoneità4" value="<br />
+<table border=1 width='100%'>
+<tr><td><b>5A</b></td><td>Orientare e sostenere i giovani con particolare interesse ed impegno verso percorsi di eccellenza. Formazione scolastica secondaria superiore
+<tr border=0 ><td border=0 > </td><td border=0 >
+
+;borsa_1=3">
+<param name="fin4" value="</td></tr> </table>;">
+<param name="idoneità5" value="<br />
+<table border=1 width='100%'>
+<tr><td><b>5B</b></td><td>Orientare e sostenere i giovani con particolare interesse ed impegno verso percorsi di eccellenza. Formazione universitaria
+<tr border=0 ><td border=0 > </td><td border=0 >
+;parz_3=3">
+<param name="fin5" value="</td></tr> </table>;">
+<param name="idoneità6" value="<br />
+<table border=1 width='100%'>
+<tr><td><b>1B</b></td><td>Corsi full immersion di lingue straniere </td></tr>
+<tr border=0 ><td border=0 > </td><td border=0 >
+;borsa_3=3">
+<param name="fin6" value="</td></tr> </table>;">
+<param name="idoneità7" value="<br />
+<table border=1 width='100%'>
+<tr><td>1C</td><td>Frequenza di percorsi di istruzione e formazione all'estero e di stage lavorativi fuori provincia </td></tr>
+<tr border=0 ><td border=0 > </td><td border=0 >
+
+;1Cb=2;percentuale=3;prestito_3=3;1Cc=2;borsa_2=3">
+<param name="fin7" value="</td></tr> </table>;">
+<param name="idoneità8" value="<br />
+<table border=1 width='100%'>
+<tr><td>1D1</td><td>Residenzialità dottorandi </td></tr>
+<tr border=0 ><td border=0 > </td><td border=0 >
+
+;(idoneo_4==0)b_p_4=3;borsa_4=3!0">
+<param name="fin8" value="</td></tr> </table>;">
+<param name="riga" value="<hr>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="4132823070">
+<param name="CRC" value="1734761596">
+<param name="CRCdata" value="27-ago-2009 11.39.43">
+</APPLET>
+<BR>

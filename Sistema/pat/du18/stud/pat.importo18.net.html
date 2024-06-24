@@ -1,0 +1,152 @@
+<APPLET CODE='it.clesius.clesius.engine.elab.Clesius.class'
+	CODEBASE='/clesius' ARCHIVE='clesius.jar' WIDTH='700' HEIGHT='700' MAYSCRIPT>
+	<param name="PATstudio"
+		value="PAT intero di tariffa/beneficio 2017; 24.5.2018">
+	<param name="revision" value="$Revision: 35917 $">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="true">
+
+	<param name="trendStarts" value="parametri;tariffa;beneficio">
+
+	<param name="parametri"
+		value="zero;Per1=1;Per2=0.85;Per3=0.73;Per4=0.55;Per5=0.44;Per6=0.37;Icef_inf=0.23;Icef_sup=0.36;Icef_lim=0.45;Importo_0=0;Importo_min=50;Importo_max=150;Importo_scaglione=1;Rif=50000">
+	<param name="tariffa"
+		value="parametri;Tariffa=1;Figli=1;RF=15000;PF=20000;VF=2.04">
+	<param name="beneficio"
+		value="parametri;Tariffa=0;Figli=1;RF=15000;PF=20000;VF=2.04">
+
+	<param name="trends" value="">
+
+
+	<param name="variables" value="uno;ascala;rscala">
+
+	<param name="uno" value="1">
+	<param name="ascala" value="0.001">
+
+	<param name="rscala" value="0.000001">
+
+
+
+
+
+<param name="edges" value="Importo_min;Importo_scaglione;PAT Importo;Per1;Per2;Per3;Per4;Per5;Per6;
+Icef-giudizio;sup-giudizio;inf-giudizio;Icef-condOK;sup-condOK;giudizio-percentuale;percentuale-intero;Tariffa-percentuale;Figli-riduci;limOK_e_tariffa-riduzione;riduzione-importo;Icef-limOK;lim-limOK;riduci-riduzione;Icef_inf-inf;Icef_sup-sup;Icef_lim-lim;is0-min;intero-corr;min-corr;percentuale-is0;
+Tariffa-is0;Importo_0-min;Importo_max-min;limOK-limOK_e_tariffa;Tariffa-limOK_e_tariffa;RF-vr;Rif-vr;VF-vr;PF-vp;Rif-vp;VF-vp;vr-Icef;vp-Icef;Icef-CE;Rif-CE;VF-CE;Forza_max-f_m;min0-f_m;corr-f_m;f_m-importo;
+Tariffa-min0;Importo_0-min0;Importo_max-min0">
+
+
+
+<param name="Importo_min" value="1;node.ico;352;383;0;Importo_min = ;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xImporto_min;xImporto_min;3293753770">
+<param name="Importo_scaglione" value="1;node.ico;572;416;0;Importo_scaglione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.1;NoCurve;xImporto_scaglione;xImporto_scaglione;546187102">
+<param name="PAT Importo" value="text;node.ico;110;415;0;PAT Modello Importo (versione 24.5.2018);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT Importo;yPAT Importo;997598759">
+<param name="Per1" value="1;node.ico;617;245;0;Per1 = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xPer1;xPer1;2985318808">
+<param name="Per2" value="1;node.ico;589;254;0;Per2 = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xPer2;xPer2;799035196">
+<param name="Per3" value="1;node.ico;564;261;0;Per3 = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xPer3;xPer3;4139567280">
+<param name="Per4" value="1;node.ico;536;271;0;Per4 = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xPer4;xPer4;2549614959">
+<param name="Per5" value="1;node.ico;510;278;0;Per5 = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xPer5;xPer5;3859665473">
+<param name="Per6" value="1;node.ico;483;285;0;Per6 = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xPer6;xPer6;4113381673">
+<param name="Icef" value="2;node.ico;93;312;0;Icef =  vr + vp - vr * vp;0.0;ProbMaxNode;NoInput;NoOutput;2;vr;vp;4;giudizio;condOK;limOK;CE;0.0;1.0;1.0;1.0;NoCurve;xIcef;xIcef;1474291059">
+<param name="giudizio" value="0;0;93;360;0;giudizio =  MAX( 0, MIN( 1, (Icef - inf) / (sup - inf) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;sup;1;percentuale;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;xgiudizio;1722467629">
+<param name="sup" value="0;node.ico;157;333;0;sup =  Icef_sup;0.0;ProbNode;NoInput;NoOutput;1;Icef_sup;2;giudizio;condOK;0.0;1.0;NoCurve;xsup;xsup;2816789441">
+<param name="inf" value="0;node.ico;35;331;0;inf =  Icef_inf;0.0;ProbNode;NoInput;NoOutput;1;Icef_inf;1;giudizio;0.0;1.0;NoCurve;xinf;xinf;3633036393">
+<param name="condOK" value="0;node.ico;290;333;0;condOK = Icef <= sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;xcondOK;2122152645">
+<param name="percentuale" value="0;node.ico;222;360;0;percentuale =   1  - giudizio - Tariffa + 2.000 * giudizio * Tariffa;0.0;ProbNode;NoInput;NoOutput;2;giudizio;Tariffa;2;intero;is0;1.0;0.0;0.0;1.0;NoCurve;xpercentuale;xpercentuale;3198367146">
+<param name="intero" value="0;node.ico;374;360;0;intero =  percentuale;0.0;ProbNode;NoInput;NoOutput;1;percentuale;1;corr;0.0;1.0;StairsCurve;interoCurve;xintero;xintero;3598779992">
+<param name="Tariffa" value="1;node.ico;222;399;0;Tariffa = ;0.0;ProbNode;ValueInput;NoOutput;0;4;percentuale;is0;limOK_e_tariffa;min0;0.5;NoCurve;xTariffa;xTariffa;3323775506">
+<param name="Figli" value="1;node.ico;657;309;0;Figli = ;0.0;PlusNode;ValueInput;NoOutput;0;1;riduci;0.1;NoCurve;xFigli;xFigli;742401764">
+<param name="riduci" value="0;node.ico;594;310;0;riduci =  Figli);0.0;NumTransNode;NoInput;NoOutput;1;Figli;1;riduzione;1.0;1.0;LinearCurve;figliCurve;xriduci;xriduci;3664251300">
+<param name="limOK_e_tariffa" value="0;node.ico;391;311;0;limOK_e_tariffa =  limOK * Tariffa;0.0;ProbNode;NoInput;NoOutput;2;limOK;Tariffa;1;riduzione;0.0;0.0;0.0;1.0;NoCurve;xlimOK_e_tariffa;xlimOK_e_tariffa;2694844316">
+<param name="riduzione" value="0;node.ico;520;312;0;riduzione = SE( limOK_e_tariffa=1.0 , 1.0 * riduci , 1.0 );0.0;NumIfNode;NoInput;NoOutput;2;limOK_e_tariffa;riduci;1;importo;1.0;1.0;1.0;1.0;NoCurve;xriduzione;xriduzione;1979648863">
+<param name="importo" value="2;node.ico;519;360;0;importo =  riduzione * f_m;0.0;TimesNode;NoInput;ResultOutput;2;riduzione;f_m;0;ascala;1.0;1.0;1.0;NoCurve;ximporto;ximporto;3598007874">
+<param name="limOK" value="0;node.ico;289;312;0;limOK = Icef <= lim;0.0;NumLeNode;NoInput;NoOutput;2;Icef;lim;1;limOK_e_tariffa;1.0;1.0;1.0;1.0;NoCurve;xlimOK;xlimOK;681665558">
+<param name="lim" value="0;node.ico;292;288;0;lim =  Icef_lim;0.0;ProbNode;NoInput;NoOutput;1;Icef_lim;1;limOK;0.0;1.0;NoCurve;xlim;xlim;2676634646">
+<param name="Icef_inf" value="1;node.ico;35;285;0;Icef_inf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;inf;0.5;NoCurve;xIcef_inf;xIcef_inf;242960082">
+<param name="Icef_sup" value="1;node.ico;157;285;0;Icef_sup = ;0.0;ProbNode;ValueInput;NoOutput;0;1;sup;0.5;NoCurve;xIcef_sup;xIcef_sup;1208389961">
+<param name="Icef_lim" value="1;node.ico;227;285;0;Icef_lim = ;0.0;ProbNode;ValueInput;NoOutput;0;1;lim;0.5;NoCurve;xIcef_lim;xIcef_lim;775705301">
+<param name="is0" value="0;node.ico;273;388;0;is0 =  - percentuale - Tariffa + percentuale * Tariffa;0.0;ProbNode;NoInput;NoOutput;2;percentuale;Tariffa;1;min;1.0;0.0;0.0;0.0;NoCurve;xis0;xis0;571746077">
+<param name="min" value="0;node.ico;426;399;0;min = SE( is0=1.0 , 1.0 * Importo_0 , 1.0 * Importo_max );0.0;NumIfNode;NoInput;NoOutput;3;is0;Importo_0;Importo_max;1;corr;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmin;xmin;899258442">
+<param name="corr" value="0;node.ico;426;359;0;corr =  Min(  intero,  min );0.0;NumMinNode;NoInput;NoOutput;2;intero;min;1;f_m;ascala;1.0;1.0;1.0;NoCurve;xcorr;xcorr;1695551769">
+<param name="Importo_0" value="1;node.ico;289;422;0;Importo_0 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;min;min0;ascala;NoCurve;xImporto_0;xImporto_0;2385827987">
+<param name="Importo_max" value="1;node.ico;526;384;0;Importo_max = ;0.0;PlusNode;ValueInput;NoOutput;0;2;min;min0;ascala;NoCurve;xImporto_max;xImporto_max;707976065">
+<param name="RF" value="1;node.ico;40;228;0;RF = ;0.0;PlusNode;ValueInput;NoOutput;0;1;vr;rscala;NoCurve;xRF;xRF;3803995097">
+<param name="vr" value="0;node.ico;41;259;0;vr =  RF / Rif / VF;0.0;DivideNode;NoInput;NoOutput;3;RF;Rif;VF;1;Icef;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xvr;xvr;2529060494">
+<param name="Rif" value="1;node.ico;71;229;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;3;vr;vp;CE;rscala;NoCurve;xRif;xRif;1208043172">
+<param name="VF" value="1;node.ico;107;229;0;VF = ;0.0;PlusNode;ValueInput;NoOutput;0;3;vr;vp;CE;1.0;NoCurve;xVF;xVF;2604737548">
+<param name="PF" value="1;node.ico;143;228;0;PF = ;0.0;PlusNode;ValueInput;NoOutput;0;1;vp;rscala;NoCurve;xPF;xPF;4135785863">
+<param name="vp" value="0;node.ico;145;257;0;vp =  PF / Rif / VF;0.0;DivideNode;NoInput;NoOutput;3;PF;Rif;VF;1;Icef;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xvp;xvp;39667956">
+<param name="CE" value="2;node.ico;93;277;0;CE =  Icef * Rif * VF;0.0;TimesNode;NoInput;NoOutput;3;Icef;Rif;VF;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xCE;xCE;1694188598">
+<param name="Forza_max" value="1;node.ico;469;248;0;Forza_max = ;0.0;ProbNode;ValueInput;NoOutput;0;1;f_m;0.5;NoCurve;xForza_max;xForza_max;3712105643">
+<param name="f_m" value="0;node.ico;469;359;0;f_m = SE( Forza_max=1.0 , 1.0 * min0 , 1.0 * corr );0.0;NumIfNode;NoInput;NoOutput;3;Forza_max;min0;corr;1;importo;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xf_m;xf_m;3993907386">
+<param name="min0" value="0;node.ico;459;422;0;min0 = SE( Tariffa=0.0 , 1.0 * Importo_0 , 1.0 * Importo_max );0.0;NumIfNode;NoInput;NoOutput;3;Tariffa;Importo_0;Importo_max;1;f_m;1.0;0.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;ymin0;ymin0;4019900167">
+
+<param name="figliCurve" value="LinearCurve;1.0;Per1;2.0;Per2;3.0;Per3;4.0;Per4;5.0;Per5;6.0;Per6">
+<param name="interoCurve" value="StairsCurve;0.0;0.0;Importo_min;0.0;Importo_scaglione;0.1;Importo_max;1.0">
+
+
+<param name="xFigli" value="Figli;Figli;non;-;ok; ; ; ; ; ; ; ">
+<param name="xRF" value="RF;RF;non;-;ok; ; ; ; ; ; ; ">
+<param name="xTariffa" value="Tariffa;Tariffa;non;-;ok; ; ; ; ; ; ; ">
+<param name="xVF" value="VF;VF;non;-;ok; ; ; ; ; ; ; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef_sup" value="Icef_sup;Icef_sup;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef_lim" value="Icef_lim;Icef_lim;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xImporto_max" value="Importo_max;Importo_max;0;-;1; ;-;+; ; ; ; ">
+<param name="xImporto_0" value="Importo_0;Importo_0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPF" value="PF;PF;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPer4" value="Per4;Per4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPer5" value="Per5;Per5;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPer3" value="Per3;Per3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPer1" value="Per1;Per1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPer2" value="Per2;Per2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xForza_max" value="Forza_max;Forza_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xImporto_scaglione" value="Importo_scaglione;Importo_scaglione;0;-;1; ;-;+; ; ; ; ">
+<param name="xImporto_min" value="Importo_min;Importo_min;0;-;1; ;-;+; ; ; ; ">
+<param name="xPAT Importo" value="PAT Importo;PAT Importo;PAT Modello Importo (versione 24.5.2018);-;ok; ; ; ; ; ; ; ">
+
+<param name="xPer6" value="Per6;Per6;non;-;ok; ; ; ; ; ; ; ">
+<param name="xlim" value="lim;lim;non;-;ok; ; ; ; ; ; ; ">
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+<param name="xintero" value="intero;intero (%intero% tra §Importo_min§ e §Importo_max§);intero (%intero% tra §Importo_min§ e §Importo_max§);intero (%intero% tra §Importo_min§ e §Importo_max§);intero (%intero% tra §Importo_min§ e §Importo_max§); ; ; ; ;<b>;$.2;</b>">
+<param name="xriduci" value="riduci;riduci;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcorr" value="corr;corr;non;-;ok; ; ; ; ; ; ; ">
+<param name="xis0" value="is0;is0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpercentuale" value="percentuale;La percentuale;La percentuale=0;La percentuale;La percentuale;è il; ; ; ; ;P.4; ">
+<param name="xlimOK_e_tariffa" value="limOK_e_tariffa;limOK_e_tariffa;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia da ^inf^ a ^sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.12;</b>">
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento $C_RIF_ICEF$ è maggiore di $Redd3sup$) ;--;idoneo; ; ; ; ; ;!; ">
+<param name="ximporto" value="importo;importo;importo;importo;importo; ; ; ; ; ;$.2; ">
+<param name="xlimOK" value="limOK;limOK;non;-;ok; ; ; ; ; ; ; ">
+<param name="xriduzione" value="riduzione;riduzione;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmin" value="min;min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xf_m" value="f_m;f_m;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xCE" value="CE;CE;non;-;ok; ; ; ; ; ; ; ">
+<param name="xvr" value="vr;vr;non;-;ok; ; ; ; ; ; ; ">
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+<param name="xvp" value="vp;vp;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation0;valore;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;Figli=Figli;Redd3inf=Redd3inf">
+<param name="valore" value=" ;importo=-1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1012514197">
+<param name="CRC" value="2021674293">
+<param name="CRCdata" value="24-mag-2018 9.43.57">
+</APPLET>
+</CENTER>
+<BR>
+

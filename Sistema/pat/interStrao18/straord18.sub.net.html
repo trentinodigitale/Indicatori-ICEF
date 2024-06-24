@@ -1,0 +1,170 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=700 HEIGHT=820 MAYSCRIPT>
+	<param name="revision" value="$Revision: 35927 $">
+	<param name="Taratura" value="intervento straordinario; 24.5.2018">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+	<param name="previsione1"
+		value="(prev==1)<br />Ipotesi di integrazione in base ai redditi ed ai consumi:<br /><small>(per ulteriori spiegazioni si rimanda alla parte finale di questa elaborazione)</small>;mens_0=-1;(incongrua==1)mens_con=-1;mens_icef=-1;(ch467==1)mens_icef1=-1">
+	<param name="previsione2"
+		value="(pr467==1)<br />Ipotesi di integrazione in base ai redditi ed ai consumi:<br /><small>(per ulteriori spiegazioni si rimanda alla parte finale di questa elaborazione)</small>;mens_0=-1;(incongrua==1)mens_con=-1;mens_icef=-1;(ch467==1)mens_icef1=-1">
+
+
+	<param name="trendStarts"
+		value="parametristraord;effettivi;casostraord;caso0;codice;check3;check4;check6;check7;check467">
+
+	<param name="parametristraord"
+		value="current;Check=0;Icef_straordinario=0.13;Importo_min=25;Mensile_max=950;Mensile_pagato=999999;Perc_mensile=1;Scelta_utente=0;Decisione_ufficio=0;Rif=50000">
+	<param name="casostraord"
+		value="povero,parametristraord,effettivi;Abitazione=2000;Altre_entrate=100;Anno=2012;Imposte_perse=50;Mese=7;Mesi_revoca=1;Mesi=4;N_beneficiari=2;Precedente=100;Reddito_nuovo=4000;Reddito_perso=3000;N_familiari=2;Icefa=0.11">
+	<param name="codice" value="current;Check=1123406789;Icefa=0.15">
+
+	<param name="effettivi"
+		value="current;N_beneficiari_effettivi=1;Perc_mensile_effettiva=0.5">
+
+	<param name="caso0"
+		value="parametriICEF,parametristraord,effettivi;Abitazione=4680;Anno=2017;Assegni=0;Auto=0;C1_aut=0;C1_dip=0;C1_pens=0;C2_agr=0;C3_imp=0;C4_part=0;C5_altri=7848;Canone=4680;Check=0;Decisione_ufficio=1;Imm_strumentali=0;Imposte=0;Imposte_perse=0;Invalidi=0;Mediche=0;Mensile_pagato=999999;Mese=5;Mesi=4;Mesi_revoca=0;Mq=0;Mutuo=0;N_componenti=1;N_beneficiari=1;P_complementare=0;PI=0;PM=0;Precedente=7848;Previdenza=0;Reddito_nuovo=0;Reddito_perso=0;RES=0;Scelta_utente=2;Spese_redditi=0">
+
+
+
+	<param name="check3" value="current;Check=1003000000">
+	<param name="check4" value="current;Check=1000400000">
+	<param name="check6" value="current;Check=1000006000">
+	<param name="check7" value="current;Check=1000000700">
+	<param name="check467" value="current;Check=1000406700">
+
+	<param name="variables" value="ascala;cscala;escala;dodicesimo">
+
+	<param name="ascala" value="0.001">
+	<param name="cscala" value="0.1">
+	<param name="escala" value="0.000001">
+
+	<param name="dodicesimo" value="0.083333333">
+
+
+
+
+<param name="edges" value="P.A.T. intervento straordinario;controlla;n_b;uno;Mese;Anno;
+ok-idoneo;Reddito_nuovo-plus;Altre_entrate-plus;Icefa-icef_ok;Icef_straordinario-icef_ok;icef_ok-idoneo;Check-check1;icef_ok-nonok;nonok-check1;big-check1;nonok-big;incongrua-inc;incong-inc;Reddito_perso-pers;Imposte_perse-pers;pers-minus;Precedente-minus;ok-ob;ob-big;Decisione_ufficio-lascia;lascia-sostit;
+inc-sostit;Check-ok;Abitazione-minimo;abitaz-minimo;N_familiari-abitaz;minimo-minus">
+
+
+
+<param name="P.A.T. intervento straordinario" value="text;node.ico;98;507;0;P.A.T. intervento straordinario - (24.5.2018);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_straord;yModello_straord;4195510364">
+<param name="controlla" value="0;node.ico;560;213;0;controlla =   1 ;0.0;ProbNode;NoInput;NoOutput;0;0;1.0;NoCurve;xcontrolla;xcontrolla;2969712811">
+<param name="n_b" value="0;node.ico;115;416;0;n_b = ;0.0;TimesNode;NoInput;NoOutput;0;0;0.1;NoCurve;xn_b;xn_b;1120914887">
+<param name="uno" value="0;node.ico;481;283;0;uno =   1 ;0.0;ProbNode;NoInput;NoOutput;0;0;1.0;NoCurve;xuno;xuno;3004781843">
+<param name="Mese" value="1;node.ico;541;247;0;Mese = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xMese;xMese;3030424190">
+<param name="Anno" value="1;node.ico;532;455;0;Anno = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0E-4;NoCurve;xAnno;xAnno;852679848">
+<param name="ok" value="0;node.ico;278;325;0;ok = Check <= 1.0E9;0.0;NumLeNode;NoInput;NoOutput;1;Check;2;idoneo;ob;1.0;1.0E9;NoCurve;xok;xok;1890853558">
+<param name="idoneo" value="2;node.ico;304;378;0;idoneo =  ok * icef_ok;0.0;ProbNode;NoInput;IntermediateOutput;2;ok;icef_ok;0;0.0;0.0;0.0;1.0;NoCurve;xidoneo;xidoneo;85929056">
+<param name="Reddito_nuovo" value="1;node.ico;57;374;0;Reddito_nuovo = ;0.0;PlusNode;ValueInput;NoOutput;0;1;plus;escala;NoCurve;xReddito_nuovo;xReddito_nuovo;4042527053">
+<param name="plus" value="0;node.ico;32;325;0;plus =  Reddito_nuovo + Altre_entrate;0.0;PlusNode;NoInput;NoOutput;2;Reddito_nuovo;Altre_entrate;0;escala;1.0;1.0;1.0;NoCurve;xplus;xplus;956692082">
+<param name="Altre_entrate" value="1;node.ico;46;400;0;Altre_entrate = ;0.0;PlusNode;ValueInput;NoOutput;0;1;plus;escala;NoCurve;xAltre_entrate;xAltre_entrate;2362930643">
+<param name="Icefa" value="1;node.ico;257;407;0;Icefa = ;0.0;TimesNode;NoInput;NoOutput;0;1;icef_ok;1.0;NoCurve;xIcefa;xIcefa;3426625883">
+<param name="icef_ok" value="0;node.ico;404;426;0;icef_ok = Icefa < Icef_straordinario;0.0;NumLtNode;NoInput;NoOutput;2;Icefa;Icef_straordinario;2;idoneo;nonok;1.0;1.0;1.0;1.0;NoCurve;xicef_ok;xicef_ok;34875237">
+<param name="Icef_straordinario" value="1;node.ico;51;428;0;Icef_straordinario = ;0.0;ProbNode;ValueInput;NoOutput;0;1;icef_ok;0.5;NoCurve;xIcef_straordinario;xIcef_straordinario;1193262433">
+<param name="Check" value="1;node.ico;368;252;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;check1;ok;1.0;NoCurve;xCheck;xCheck;773299320">
+<param name="check1" value="0;node.ico;349;344;0;check1 =  Check + 50000.000*nonok + 1000000000.000*big;0.0;PlusNode;NoInput;NoOutput;3;Check;nonok;big;0;1.0;1.0;50000.0;1.0E9;9.0;1.0;1.0;1.0;NoCurve;xcheck1;xcheck1;2295629363">
+<param name="nonok" value="0;node.ico;374;364;0;nonok =   1  - icef_ok;0.0;ProbNode;NoInput;NoOutput;1;icef_ok;2;check1;big;1.0;0.0;NoCurve;xnonok;xnonok;863673056">
+<param name="big" value="0;node.ico;380;316;0;big =   1  - ob - nonok + 2.000 * ob * nonok;0.0;ProbNode;NoInput;NoOutput;2;ob;nonok;1;check1;1.0;0.0;0.0;1.0;NoCurve;xbig;xbig;4165709781">
+<param name="incongrua" value="0;node.ico;428;263;0;incongrua = ;0.0;NumLtNode;NoInput;NoOutput;0;1;inc;1.0;NoCurve;xincongrua;xincongrua;743354169">
+<param name="inc" value="0;node.ico;438;285;0;inc =  incongrua * incong;0.0;ProbNode;NoInput;NoOutput;2;incongrua;incong;1;sostit;0.0;0.0;0.0;1.0;NoCurve;xinc;xinc;714895382">
+<param name="incong" value="0;node.ico;494;264;0;incong = ;0.0;Times2Node;NoInput;NoOutput;0;1;inc;1.0;NoCurve;xincong;xincong;4268650207">
+<param name="Reddito_perso" value="1;node.ico;208;383;0;Reddito_perso = ;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xReddito_perso;xReddito_perso;2691481282">
+<param name="pers" value="0;node.ico;197;355;0;pers =  Reddito_perso - Imposte_perse;0.0;MinusNode;NoInput;NoOutput;2;Reddito_perso;Imposte_perse;1;minus;escala;1.0;1.0;1.0;NoCurve;xpers;xpers;2651351909">
+<param name="Imposte_perse" value="1;node.ico;91;351;0;Imposte_perse = ;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xImposte_perse;xImposte_perse;4044773721">
+<param name="minus" value="0;node.ico;137;330;0;minus =  pers + Precedente + minimo;0.0;PlusNode;NoInput;NoOutput;3;pers;Precedente;minimo;0;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xminus;xminus;1993923923">
+<param name="Precedente" value="1;node.ico;133;395;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;minus;escala;NoCurve;xPrecedente;xPrecedente;2314900998">
+<param name="ob" value="0;node.ico;322;324;0;ob =   1  + ok;0.0;ProbNode;NoInput;NoOutput;1;ok;1;big;0.0;1.0;NoCurve;xob;xob;1990118571">
+<param name="Decisione_ufficio" value="1;node.ico;96;309;0;Decisione_ufficio = ;0.0;PlusNode;ValueInput;NoOutput;0;1;lascia;1.0;NoCurve;xDecisione_ufficio;xDecisione_ufficio;4255673422">
+<param name="lascia" value="0;node.ico;186;313;0;lascia = Decisione_ufficio == 1.0;0.0;NumEqNode;NoInput;NoOutput;1;Decisione_ufficio;1;sostit;1.0;1.0;NoCurve;xlascia;xlascia;3796357468">
+<param name="sostit" value="0;node.ico;249;285;0;sostit =  inc - lascia * inc;0.0;ProbNode;NoInput;NoOutput;2;lascia;inc;0;0.0;0.0;1.0;0.0;NoCurve;xsostit;xsostit;1901122516">
+<param name="Abitazione" value="1;node.ico;149;454;0;Abitazione = ;0.0;PlusNode;ValueInput;NoOutput;0;1;minimo;1.0;NoCurve;xAbitazione;xAbitazione;3841875757">
+<param name="minimo" value="0;node.ico;256;454;0;minimo =  Min(  Abitazione,  abitaz );0.0;NumMinNode;NoInput;NoOutput;2;Abitazione;abitaz;1;minus;1.0;1.0;1.0;1.0;NoCurve;xminimo;xminimo;475231812">
+<param name="abitaz" value="0;node.ico;346;452;0;abitaz =  N_familiari);0.0;NumTransNode;NoInput;NoOutput;1;N_familiari;1;minimo;ascala;1.0;LinearCurve;abitazCurve;xabitaz;xabitaz;721226118">
+<param name="N_familiari" value="1;node.ico;441;453;0;N_familiari = ;0.0;PlusNode;ValueInput;NoOutput;0;1;abitaz;1.0;NoCurve;xN_familiari;xN_familiari;1811095778">
+
+<param name="abitazCurve" value="LinearCurve;0.0;0.0;1.0;2460.0;2.0;2580.0;3.0;2940.0;4.0;3120.0;5.0;3540.0;6.0;3960.0;7.0;4680.0;8.0;4860.0">
+
+
+<param name="xCheck" value="Check;Check;Domanda formalmente in regola;Check;Codice di controllo iniziale: §Check§; ; ; ; ; ;T; ">
+<param name="xDecisione_ufficio" value="Decisione_ufficio;Decisione_ufficio; ;-;il servizio sociale ritiene che ; ; ; ; ; ; ; ">
+<param name="xIcef_straordinario" value="Icef_straordinario;Icef_straordinario;0;-;1; ;-;+; ; ;T.2; ">
+<param name="xAltre_entrate" value="Altre_entrate;Altre entrate;Altre entrate=0;Altre entrate;Altre entrate; ; ; ; ; +;$.2; ">
+<param name="xIcefa" value="Icefa;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit|;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit|; <b>(ICEFa)</B> Indicatore della Condizione Economica Familiare attualizzato<br> |sostit|;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit| oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xincong" value="incong;incong;0;-;1; ;-;+; ; ; ; ">
+<param name="xReddito_perso" value="Reddito_perso;Reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;Reddito sostituito=0;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato; ; ; ; ; -;$.2; ">
+<param name="xImposte_perse" value="Imposte_perse;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte sostituite=0;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato; ; ; ; ; +;$.2; ">
+<param name="xPrecedente" value="Precedente;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF; ; ; ; ; -;$.2; ">
+<param name="xincongrua" value="incongrua;incongrua;0;-;1; ;-;+; ; ; ; ">
+<param name="xuno" value="uno;uno;non;-;ok; ; ; ; ; ; ; ">
+<param name="xMese" value="Mese;Mese d'inizio del Reddito di Garanzia;0;Mese d'inizio del Reddito di Garanzia;Mese d'inizio del Reddito di Garanzia; ; ; ; ; ;T; ">
+<param name="xn_b" value="n_b;n_b;non;-;ok; ; ; ; ; ; ; ">
+<param name="xModello_straord" value="P.A.T. intervento straordinario;x;P.A.T. intervento straordinario - (24.5.2018);--;--; ; ; ; ; ; ; ">
+
+<param name="xcontrolla" value="controlla;controlla;0;-;1; ;-;+; ; ; ; ">
+<param name="xAnno" value="Anno;Anno del Reddito di Garanzia;0;Anno del Reddito di Garanzia;Anno del Reddito di Garanzia; ; ; ; ; ;T; ">
+<param name="xReddito_nuovo" value="Reddito_nuovo;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa; ; ; ; ; +;$.2; ">
+<param name="xN_familiari" value="N_familiari;N_familiari;non;-;ok; ; ; ; ; ; ; ">
+<param name="xAbitazione" value="Abitazione;Affitto/Mutuo (^minimo^ utilizzato);Affitto/Mutuo zero;Affitto/Mutuo (^minimo^ utilizzato);Affitto/Mutuo (^minimo^ utilizzato); ; ; ; ; -;$.2; ">
+<param name="xlascia" value="lascia;lascia;non;-;ok; ; ; ; ; ; ; ">
+<param name="xob" value="ob;ob;0;-;1; ;-;+; ; ; ; ">
+<param name="xabitaz" value="abitaz;abitaz;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xok" value="ok;ok;mancanza di requisiti generali;-;ok; ;-;+; ; ; ; ">
+<param name="xnonok" value="nonok;nonok;0;-;1; ;-;+; ; ; ; ">
+<param name="xsostit" value="sostit;sostit;basato sui redditi dichiarati;-;basato sui consumi; ;-;+; ; ; ; ">
+<param name="xicef_ok" value="icef_ok;icef_ok;ICEFa maggiore del limite;-;icef_ok; ; ; ; ; ; ; ">
+<param name="xminimo" value="minimo;Affitto/Mutuo ammesso in detrazione (^Abitazione^ dichiarato);Affitto/Mutuo zero;Affitto/Mutuo ammesso in detrazione (^Abitazione^ dichiarato);Affitto/Mutuo ammesso in detrazione (^Abitazione^ dichiarato); ; ; ; ; -;$.2; ">
+<param name="xplus" value="plus;Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^ + ^Altre_entrate^);plus=0;Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^ + ^Altre_entrate^);Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^ + ^Altre_entrate^); ; ; ; ; ;$.2; ">
+<param name="xbig" value="big;big;0;-;1; ;-;+; ; ; ; ">
+<param name="xinc" value="inc;inc;0;-;1; ;-;+; ; ; ; ">
+<param name="xidoneo" value="idoneo;idoneo;Domanda <b>NON</b> idonea;-;Domanda <b>idonea</b>; ; ; ; ; ;T; ">
+<param name="xpers" value="pers;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito perso=0;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione; ; ; ; ; -;$.2; ">
+<param name="xminus" value="minus;Importi in detrazione per l'ICEF attualizzato;minus=0;Importi in detrazione per l'ICEF attualizzato;Importi in detrazione per l'ICEF attualizzato; ; ; ; ; -<i>;$.2;</i>">
+<param name="xcheck1" value="check1;check1;0;-;1; ; ; ; ; ;T; ">
+
+
+
+<param name="xpltree" value="propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;propagation7;dati;risultato;negativo;spiegacheck;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;incong=1">
+<param name="propagation2" value=" ;Decisione_ufficio=1">
+<param name="propagation3" value=" ;Reddito_perso=0;Imposte_perse=0;Reddito_nuovo=0">
+<param name="propagation4" value=" ;icef0=Icefa;redd_icef0=redd_icef">
+<param name="propagation5" value=" ;Reddito_perso;Imposte_perse;Reddito_nuovo">
+<param name="propagation6" value=" ;icef_a=Icefa;icefa_ok=icef_ok">
+<param name="propagation7" value=" ;Decisione_ufficio">
+<param name="dati" value="<b>Dati:</b> ;Icefa=-1;(incongrua==1)icef_a=-1;Altre_entrate=-1!0;Reddito_perso=-1!0;Imposte_perse=-1!0;Reddito_nuovo=-1!0;Precedente=-1!0">
+<param name="risultato" value="(idoneo==1)<b>Idoneità: </b>;idoneo=-1">
+<param name="negativo" value="(idoneo==0)<b>Domanda non idonea</b> ;">
+<param name="spiegacheck" value="(check1!=0) Codici di esclusione:<br>
+<b>§check1§</b> <br />
+ 1.1__.___.___:<small> nessun componente avente diritto al reddito di garanzia</small><br />
+ 1._2_.___.___:<small> esclusa d'ufficio  (*)</small><br />
+ 1.__3.___.___:-<br />
+ 1.___.4__.___:-<br />
+ 1.___._5_.___:<small>  ICEF superiore al limite di ammissione pari a ^Icef_straordinario^ </small><br />
+ 1.___.__6.___:-<br />
+ 1.___.___.7__:-<br />
+ 1.___.___._8_:-<br />
+ 1.___.___.__9:-;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3209834471">
+<param name="CRC" value="1827790746">
+<param name="CRCdata" value="24-mag-2018 10.28.06">
+</APPLET>
+</CENTER>
+<BR>
+

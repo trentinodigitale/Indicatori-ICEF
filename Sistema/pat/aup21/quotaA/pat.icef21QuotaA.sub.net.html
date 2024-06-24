@@ -1,0 +1,201 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=700 HEIGHT=820 MAYSCRIPT>
+	<param name="revision" value="$Revision: 36304 $">
+	<param name="Taratura" value="P.A.T. Quota A; 29.5.2019">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+
+	<param name="trendStarts"
+		value="parametriquota_A;casoquota_A;caso0">
+
+	<param name="parametriquota_A"
+		value="current;Check=1000000000;Icef_garanzia_inf=0.08;Icef_garanzia=0.13;Icef_garanzia_sup=0.16;Importo_min=20;Mensile_max=950;Mensile_pagato=999999;Perc_mensile=1;Rif=50000">
+	<param name="casoquota_A"
+		value="parametriquota_A;N_beneficiari=2;Precedente=100;RDC=70;PDC=60;Reddito_nuovo=4000;Reddito_perso=3000;N_familiari=2;Icefa=0.11">
+
+
+
+  
+  
+
+	<param name="variables" value="ascala;cscala;escala;dodicesimo">
+
+	<param name="ascala" value="0.001">
+	<param name="cscala" value="0.1">
+	<param name="escala" value="0.000001">
+
+	<param name="dodicesimo" value="0.083333333">
+
+
+
+
+<param name="edges" value="PAT Quota A;controlla;icef_a;mens_con;mens_icef;n_b;t_e;Icef_garanzia_inf;Icef_garanzia;Franchigia_nuovi_redd;
+Reddito_perso-pers;Imposte_perse-pers;pers-minus;Rif-LRE;Rif-redd_icef;LRE-LR;vfi-LR;vfi-redd_icef;LR-diff_redd;redd_icef-diff_redd;diff_redd-teorico;idoneo-quotaA;N_beneficiari-vfi;eroga-gt_min;Importo_min-gt_min;N_familiari-dn;N_familiari-abitaz;N_beneficiari-dn;Reddito_nuovo-plus;eroga-erogabile;Icefa-icef_ok;
+Icef_garanzia_sup-icef_ok;icef_ok-idoneo;teorico-eroga;idoneo-eroga;calcolato-mensile;mensile-quotaA;Mensile_pagato-mensile;calcolato-dcalc;mensile-dcalc;incongrua-inc;incong-inc;Precedente-minus;RDC-minus;PDC-minus;Perc_mensile-eroga;gt_min-erogabile;idoneo-id_e;idoneo-id;gt_min-check8;idoneo-check8;erogabile-mensile_teorico;mensile_teorico-calcolato;
+inc-sostit;Icefa-icef_soglia;icef_soglia-LRE;Tutti_lavorano-riduci;riduci-eroga;Forza_congruo-incong;Assegno_imposto-plus;REI-calcolato;Icefa-redd_icef;idoneo-non_idoneo;Check-checkOK;checkOK-quotaA;Check-checkout;non_idoneo-checkout;check8-checkout;Mensile_max-mens_max;mens_max-mensile_teorico;riduci-mens_max">
+
+
+
+<param name="PAT Quota A" value="text;node.ico;98;507;0;PAT Quota A 2019 - (29.5.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_QUOTA_A;yModello_QUOTA_A;3260205336">
+<param name="controlla" value="0;node.ico;560;213;0;1;0.0;ProbNode;NoInput;NoOutput;0;0;1.0;NoCurve;xcontrolla;xcontrolla;3383284108">
+<param name="icef_a" value="0;node.ico;294;423;0; (icef_a) basato sui consumi  0,500000000 ;0.0;ProbNode;NoInput;NoOutput;0;0;0.5;NoCurve;xicef_a;xicef_a;1450502926">
+<param name="mens_con" value="0;node.ico;309;490;0;- teorico mensile (con l'ICEF calcolato in base ai consumi)  0,50;0.0;TimesNode;NoInput;IntermediateOutput;0;0;ascala;NoCurve;xmens_con;xmens_con;2255264220">
+<param name="mens_icef" value="0;node.ico;385;490;0;- teorico mensile (con l'ICEF calcolato in base ai redditi)  0,50;0.0;TimesNode;NoInput;IntermediateOutput;0;0;ascala;NoCurve;xmens_icef;xmens_icef;3875694970">
+<param name="n_b" value="0;node.ico;92;438;0;-;0.0;TimesNode;NoInput;NoOutput;0;0;0.1;NoCurve;xn_b;xn_b;3669291986">
+<param name="t_e" value="0;node.ico;295;528;0;-;0.0;TimesNode;NoInput;NoOutput;0;0;ascala;NoCurve;xt_e;xt_e;3397418787">
+<param name="Icef_garanzia_inf" value="1;node.ico;263;345;0;non;0.0;ProbNode;ValueInput;NoOutput;0;1;icef_ok;0.5;NoCurve;xIcef_garanzia_inf;xIcef_garanzia_inf;621874405">
+<param name="Icef_garanzia" value="1;node.ico;266;372;0;0;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xIcef_garanzia;yIcef_garanzia;3951051708">
+<param name="Franchigia_nuovi_redd" value="1;node.ico;94;300;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xFranchigia_nuovi_redd;xFranchigia_nuovi_redd;2449591185">
+<param name="Reddito_perso" value="1;node.ico;159;374;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xReddito_perso;xReddito_perso;4122705582">
+<param name="pers" value="0;node.ico;173;352;0;-;0.0;MinusNode;NoInput;NoOutput;2;Reddito_perso;Imposte_perse;1;minus;escala;1.0;1.0;1.0;NoCurve;xpers;xpers;3524482592">
+<param name="Imposte_perse" value="1;node.ico;91;351;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xImposte_perse;xImposte_perse;1379902383">
+<param name="minus" value="0;node.ico;137;330;0;-;0.0;PlusNode;NoInput;NoOutput;4;pers;Precedente;RDC;PDC;0;escala;1.0;1.0;1.0;1.0;NoCurve;xminus;xminus;1061190334">
+<param name="Rif" value="1;node.ico;134;442;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;LRE;redd_icef;escala;NoCurve;xRif;xRif;3373165946">
+<param name="LRE" value="0;node.ico;90;466;0;-;0.0;TimesNode;NoInput;NoOutput;2;Rif;icef_soglia;1;LR;escala;1.0;1.0;1.0;NoCurve;xLRE;xLRE;3843049543">
+<param name="redd_icef" value="0;node.ico;208;467;0;-;0.0;TimesNode;NoInput;NoOutput;3;Rif;vfi;Icefa;1;diff_redd;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xredd_icef;xredd_icef;3346322162">
+<param name="LR" value="0;node.ico;149;466;0;-;0.0;TimesNode;NoInput;NoOutput;2;LRE;vfi;1;diff_redd;escala;1.0;1.0;1.0;NoCurve;xLR;xLR;2896082015">
+<param name="vfi" value="0;node.ico;189;440;0;-;0.0;NumTransNode;NoInput;NoOutput;1;N_beneficiari;2;LR;redd_icef;cscala;1.0;LinearCurve;componentiCurve;xvfi;xvfi;2286607351">
+<param name="diff_redd" value="0;node.ico;163;493;0;-;0.0;MinusNode;NoInput;NoOutput;2;LR;redd_icef;1;teorico;escala;1.0;1.0;1.0;NoCurve;xdiff_redd;xdiff_redd;3632445928">
+<param name="teorico" value="0;node.ico;234;493;0;-;0.0;PlusNode;NoInput;NoOutput;1;diff_redd;1;eroga;escala;dodicesimo;NoCurve;xteorico;xteorico;1873053746">
+<param name="idoneo" value="2;node.ico;456;487;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;icef_ok;6;quotaA;eroga;id_e;id;check8;non_idoneo;0.0;1.0;NoCurve;xidoneo;xidoneo;1971286540">
+<param name="quotaA" value="2;node.ico;491;546;0;-;0.0;TimesNode;NoInput;ResultOutput;3;idoneo;mensile;checkOK;0;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xquotaA;xquotaA;1718942947">
+<param name="N_beneficiari" value="1;node.ico;189;412;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;vfi;dn;cscala;NoCurve;xN_beneficiari;xN_beneficiari;1866792782">
+<param name="eroga" value="0;node.ico;236;524;0;-;0.0;TimesNode;NoInput;NoOutput;4;teorico;idoneo;Perc_mensile;riduci;2;erogabile;gt_min;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xeroga;xeroga;2138188504">
+<param name="gt_min" value="0;node.ico;146;525;0;-;0.0;NumGtNode;NoInput;NoOutput;2;eroga;Importo_min;2;erogabile;check8;1.0;1.0;1.0;1.0;NoCurve;xgt_min;xgt_min;3298141357">
+<param name="Importo_min" value="1;node.ico;50;544;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;gt_min;escala;NoCurve;xImporto_min;xImporto_min;1078913524">
+<param name="N_familiari" value="1;node.ico;448;402;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;dn;abitaz;cscala;NoCurve;xN_familiari;xN_familiari;300388879">
+<param name="dn" value="0;node.ico;275;447;0;-;0.0;MinusNode;NoInput;NoOutput;2;N_familiari;N_beneficiari;0;cscala;1.0;1.0;1.0;NoCurve;xdn;xdn;1043340812">
+<param name="abitaz" value="0;node.ico;446;350;0;-;0.0;NumTransNode;NoInput;NoOutput;1;N_familiari;0;ascala;1.0;LinearCurve;abitazCurve;xabitaz;xabitaz;3978842819">
+<param name="Reddito_nuovo" value="1;node.ico;57;374;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;plus;escala;NoCurve;xReddito_nuovo;xReddito_nuovo;3714925432">
+<param name="plus" value="0;node.ico;32;325;0;-;0.0;PlusNode;NoInput;NoOutput;2;Reddito_nuovo;Assegno_imposto;0;escala;1.0;1.0;1.0;NoCurve;xplus;xplus;2597940742">
+<param name="erogabile" value="0;node.ico;229;547;0;-;0.0;NumIfNode;NoInput;NoOutput;2;gt_min;eroga;1;mensile_teorico;1.0E-6;1.0;1.0;0.0;NoCurve;xerogabile;xerogabile;2412009140">
+<param name="Icefa" value="1;node.ico;339;345;0;-;0.0;TimesNode;ValueInput;NoOutput;0;3;icef_ok;icef_soglia;redd_icef;1.0;NoCurve;xIcefa;xIcefa;2330598540">
+<param name="icef_ok" value="0;node.ico;401;427;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icefa;Icef_garanzia_sup;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xicef_ok;xicef_ok;222121183">
+<param name="Icef_garanzia_sup" value="1;node.ico;401;372;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;icef_ok;0.5;NoCurve;xIcef_garanzia_sup;xIcef_garanzia_sup;1832953961">
+<param name="calcolato" value="0;node.ico;324;549;0;-;0.0;MinusNode;NoInput;IntermediateOutput;2;mensile_teorico;REI;2;mensile;dcalc;0.001;1.0;1.0;1.0;NoCurve;xcalcolato;xcalcolato;881120240">
+<param name="mensile" value="0;node.ico;403;548;0;-;0.0;NumMinNode;NoInput;IntermediateOutput;2;calcolato;Mensile_pagato;2;quotaA;dcalc;escala;1.0;1.0;1.0;NoCurve;xmensile;xmensile;1575119323">
+<param name="Mensile_pagato" value="1;node.ico;519;511;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mensile;escala;NoCurve;xMensile_pagato;xMensile_pagato;98113056">
+<param name="dcalc" value="0;node.ico;323;571;0;-;0.0;MinusNode;NoInput;NoOutput;2;calcolato;mensile;0;100.0;1.0;1.0;1.0;NoCurve;xdcalc;xdcalc;2608185536">
+<param name="incongrua" value="0;node.ico;428;263;0;-;0.0;NumLtNode;NoInput;NoOutput;0;1;inc;1.0;NoCurve;xincongrua;xincongrua;310126109">
+<param name="inc" value="0;node.ico;438;285;0;-;0.0;ProbNode;NoInput;NoOutput;2;incongrua;incong;1;sostit;0.0;0.0;0.0;1.0;NoCurve;xinc;xinc;1668180877">
+<param name="incong" value="0;node.ico;494;264;0;-;0.0;ProbNode;NoInput;NoOutput;1;Forza_congruo;1;inc;1.0;0.0;NoCurve;xincong;xincong;4183072149">
+<param name="Precedente" value="1;node.ico;133;395;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minus;escala;NoCurve;xPrecedente;xPrecedente;2680472483">
+<param name="RDC" value="1;node.ico;133;395;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minus;escala;NoCurve;xRDC;xRDC;2680472483">
+<param name="PDC" value="1;node.ico;133;395;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minus;escala;NoCurve;xPDC;xPDC;2680472483">
+<param name="Perc_mensile" value="1;node.ico;59;568;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;eroga;0.5;NoCurve;xPerc_mensile;xPerc_mensile;3521330879">
+<param name="id_e" value="0;node.ico;429;508;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo;0;0.0;1.0;NoCurve;xid_e;xid_e;69762875">
+<param name="id" value="0;node.ico;389;508;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo;0;0.0;0.0;NoCurve;xid;xid;4113379070">
+<param name="check8" value="0;node.ico;66;523;0;-;0.0;ProbNode;NoInput;NoOutput;2;gt_min;idoneo;1;checkout;0.0;0.0;1.0;0.0;NoCurve;xcheck8;xcheck8;1122064780">
+<param name="mensile_teorico" value="2;node.ico;241;571;0;-;0.0;NumMinNode;NoInput;IntermediateOutput;2;erogabile;mens_max;1;calcolato;escala;1.0;1.0;1.0;NoCurve;xmensile_teorico;xmensile_teorico;3947587888">
+<param name="sostit" value="0;node.ico;249;285;0;-;0.0;ProbNode;NoInput;NoOutput;1;inc;0;0.0;1.0;NoCurve;xsostit;xsostit;26179657">
+<param name="icef_soglia" value="0;node.ico;339;400;0;-;0.0;NumTransNode;NoInput;NoOutput;1;Icefa;1;LRE;0.0;1.0;LinearCurve;icefCurve;xicef_soglia;xicef_soglia;2377146697">
+<param name="Tutti_lavorano" value="1;node.ico;376;451;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;riduci;0.5;NoCurve;xTutti_lavorano;xTutti_lavorano;917654475">
+<param name="riduci" value="0;node.ico;290;468;0;-;0.0;ProbNode;NoInput;NoOutput;1;Tutti_lavorano;2;eroga;mens_max;0.5;1.0;NoCurve;xriduci;xriduci;3352965919">
+<param name="Forza_congruo" value="1;node.ico;593;262;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;incong;0.5;NoCurve;xForza_congruo;xForza_congruo;3128886891">
+<param name="Assegno_imposto" value="1;node.ico;65;417;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;plus;1.0;NoCurve;xAssegno_imposto;xAssegno_imposto;2585385675">
+<param name="REI" value="1;node.ico;325;524;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;calcolato;1.0;NoCurve;xREI;xREI;3673543661">
+<param name="non_idoneo" value="0;node.ico;556;485;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo;1;checkout;1.0;0.0;NoCurve;xnon_idoneo;xnon_idoneo;833548923">
+<param name="Check" value="1;node.ico;384;594;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;checkOK;checkout;1.0;NoCurve;xCheck;xCheck;1582253207">
+<param name="checkOK" value="0;node.ico;489;574;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Check;1;quotaA;1.0;1.0E9;NoCurve;xcheckOK;xcheckOK;3821478993">
+<param name="checkout" value="2;node.ico;558;594;0;-;0.0;PlusNode;NoInput;IntermediateOutput;3;Check;non_idoneo;check8;0;1.0E-9;1.0;1.0E8;1.0E7;1.0;1.0;1.0;1.0;NoCurve;xcheckout;xcheckout;271304449">
+<param name="Mensile_max" value="1;node.ico;143;597;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mens_max;escala;NoCurve;xMensile_max;xMensile_max;345696100">
+<param name="mens_max" value="0;node.ico;256;600;0;-;0.0;TimesNode;NoInput;NoOutput;2;Mensile_max;riduci;1;mensile_teorico;1.0;1.0;1.0;1.0;NoCurve;xmens_max;xmens_max;3114511736">
+
+<param name="abitazCurve" value="LinearCurve;0.0;0.0;1.0;2460.0;2.0;2580.0;3.0;2940.0;4.0;3120.0;5.0;3540.0;6.0;3960.0;7.0;4680.0;8.0;4860.0">
+<param name="componentiCurve" value="LinearCurve;0.0;0.0;1.0;C1;2.0;C2;3.0;C3;4.0;C4;5.0;C5;ntot;ctot">
+<param name="icefCurve" value="LinearCurve;0.0;Icef_garanzia;Icef_garanzia_inf;Icef_garanzia;Icef_garanzia_sup;Icef_garanzia_sup">
+
+
+<param name="xIcef_garanzia_sup" value="Icef_garanzia_sup;Icef_garanzia_sup;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcefa" value="Icefa;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit|;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit|; <b>(ICEFa)</B> Indicatore della Condizione Economica Familiare attualizzato<br> |sostit|;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit| oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xincongrua" value="incongrua;incongrua;0;-;redditi incongrui, si calcola eventualmente con i consumi ; ;-;+; ; ; ; ">
+<param name="xMensile_pagato" value="Mensile_pagato;Mensile_pagato;0;-;1; ;-;+; ; ; ; ">
+<param name="xImporto_min" value="Importo_min;Importo_min;0;-;1; ;-;+; ; ; ; ">
+<param name="xN_beneficiari" value="N_beneficiari;Numero componenti considerati per il calcolo della quotaA;la famiglia non ha componenti valutabili;Numero componenti considerati per il calcolo della quotaA;Numero componenti considerati per il calcolo della quotaA; ; ; ; ; ;T; ">
+<param name="xReddito_nuovo" value="Reddito_nuovo;Reddito netto attualizzato su base annuale relativo alle ultime due mensilita' dichiarate;Reddito netto attualizzato su base annuale relativo alle ultime due mensilita' dichiarate;Reddito netto attualizzato su base annuale relativo alle ultime due mensilita' dichiarate lavorativa;Reddito netto attualizzato su base annuale relativo alle ultime due mensilita' dichiarate; ; ; ; ; +;$.2; ">
+<param name="xN_familiari" value="N_familiari;Numero componenti del nucleo anagrafico;componenti=0;Numero componenti del nucleo anagrafico;Numero componenti del nucleo anagrafico; ; ; ; ; ;T; ">
+<param name="xREI" value="REI;REI;non;-;ok; ; ; ; ; ; ; ">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno_imposto;non;-;ok; ; ; ; ; ; ; ">
+<param name="xMensile_max" value="Mensile_max;Mensile_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xCheck" value="Check;Check;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPerc_mensile" value="Perc_mensile;Percentuale applicata all'importo mensile erogato;Perc_mensile=0;Percentuale applicata all'importo mensile erogato;intero importo; ; ; ; ; ;P.2; ">
+<param name="xPrecedente" value="Precedente;Quota A dichiarata nel quadro C5 della dichiarazione ICEF;quota A dichiarata nel quadro C5 della dichiarazione ICEF;Quota A dichiarata nel quadro C5 della dichiarazione ICEF;Quota A dichiarata nel quadro C5 della dichiarazione ICEF; ; ; ; ; -;$.2; ">
+<param name="xRDC" value="RDC;Importo RdC dichiarato nel quadro C5 della dichiarazione ICEF;RdC dichiarato nel quadro C5 della dichiarazione ICEF;RdC dichiarato nel quadro C5 della dichiarazione ICEF;RdC dichiarato nel quadro C5 della dichiarazione ICEF; ; ; ; ; -;$.2; ">
+<param name="xPDC" value="PDC;Importo PdC dichiarato nel quadro C5 della dichiarazione ICEF;PdC dichiarato nel quadro C5 della dichiarazione ICEF;PdC dichiarato nel quadro C5 della dichiarazione ICEF;PdC dichiarato nel quadro C5 della dichiarazione ICEF; ; ; ; ; -;$.2; ">
+
+<param name="xForza_congruo" value="Forza_congruo;Forza_congruo;non forza congruo;-;si usa il reddito dichiarato; ; ; ; ; ; ; ">
+<param name="xTutti_lavorano" value="Tutti_lavorano;lavorano?;dimezzato;-;itero; ; ; ; ; ; ; ">
+<param name="xIcef_garanzia" value="Icef_garanzia;Icef_garanzia;0;-;1; ;-;+; ; ;T.2; ">
+
+<param name="xIcef_garanzia_inf" value="Icef_garanzia_inf;Icef_garanzia_inf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xt_e" value="t_e;t_e;non;-;ok; ; ; ; ; ; ; ">
+<param name="xImposte_perse" value="Imposte_perse;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte sostituite=0;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato; ; ; ; ; +;$.2; ">
+<param name="xReddito_perso" value="Reddito_perso;Reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;Reddito sostituito=0;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato; ; ; ; ; -;$.2; ">
+<param name="xFranchigia_nuovi_redd" value="Franchigia_nuovi_redd;Franchigia_nuovi_redd;0;-;Franchigia sui nuovi redditi; ;-;+; ; -;$.2; ">
+<param name="xicef_a" value="icef_a;(icef_a) <b>a</b>ttualizzato basato sui consumi;(icef_a) <b>a</b>ttualizzato basato sui consumi; (icef_a) basato sui consumi;(icef_a) <b>a</b>ttualizzato  basato sui consumi; ; ; ; ; ;T.9; ">
+<param name="xcontrolla" value="controlla;controlla;0;-;1; ;-;+; ; ; ; ">
+<param name="xModello_QUOTA_A" value="PAT Quota A;x;PAT Quota A 2019 - (29.5.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xn_b" value="n_b;n_b;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmens_icef" value="mens_icef;- teorico mensile (con l'ICEF calcolato in base ai redditi);- con l'ICEF calcolato in base ai redditi non spetta nessuna quotaA;- teorico mensile (con l'ICEF calcolato in base ai redditi);- teorico mensile (con l'ICEF calcolato in base ai redditi); ; ; ; ; <i>;$.2;</i>">
+<param name="xmens_con" value="mens_con;- teorico mensile (con l'ICEF calcolato in base ai consumi);- con l'ICEF calcolato in base ai consumi non spetta nessuna quotaA;- teorico mensile (con l'ICEF calcolato in base ai consumi);- teorico mensile (con l'ICEF calcolato in base ai consumi); ; ; ; ; <i>;$.2;</i>">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xicef_soglia" value="icef_soglia;icef_soglia;non;-;ok; ; ; ; ; ; ; ">
+<param name="xidoneo" value="idoneo;idoneo;Domanda <b>NON</b> idonea;-;Domanda <b>idonea</b>; ; ; ; ; ;T; ">
+<param name="xriduci" value="riduci;riduci?;non possibile;riduzione del teorico e del massimo a metà a causa del comportamento lavorativo mancante;nessuna riduzione; ; ; ; ; ; ; ">
+<param name="xid" value="id;id;non;-;ok; ; ; ; ; ; ; ">
+<param name="xid_e" value="id_e;id_e;non;-;ok; ; ; ; ; ; ; ">
+<param name="xsostit" value="sostit;sostit;basato sui redditi dichiarati;-;basato sui consumi; ;-;+; ; ; ; ">
+<param name="xincong" value="incong;incong;|Forza_congruo|;-;redditi incongrui, si calcola con i consumi ; ;-;+; ; ; ; ">
+<param name="xnon_idoneo" value="non_idoneo;non_idoneo;idoneo;-;Icefa oltre il limite; ; ; ; ; ; ; ">
+<param name="xabitaz" value="abitaz;abitaz;non;-;ok; ; ; ; ; ; ; ">
+<param name="xvfi" value="vfi;vfi;0;-;1; ;-;+; ; ; ; ">
+<param name="xteorico" value="teorico;teorico;teorico=0;teorico;teorico; ; ; ; ; ;$.0; ">
+<param name="xcheckOK" value="checkOK;checkOK;escluso d'ufficio;-;ok; ; ; ; ; ; ; ">
+<param name="xLR" value="LR;Limite di reddito rapportato al numero dei componenti per l'accesso alla Quota A;LR=0;Limite di reddito rapportato al numero dei componenti per l'accesso alla Quota A;Limite di reddito rapportato al numero dei componenti per l'accesso alla Quota A; ; ; ; ; ;$.2; ">
+<param name="xdiff_redd" value="diff_redd;diff_redd;0;-;1; ;-;+; ; ; ; ">
+<param name="xmensile_teorico" value="mensile_teorico;mensile_teorico;non mensile_teorico;mensile_teorico;mensile_teorico; ; ; ; ; ;$.2; ">
+<param name="xcheck8" value="check8;check8;non;-;importo calcolato inferiore al minimo; ; ; ; ; ; ; ">
+<param name="xpers" value="pers;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito perso=0;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione; ; ; ; ; -;$.2; ">
+<param name="xicef_ok" value="icef_ok;icef_ok;ICEFa maggiore del limite;-;icef_ok; ; ; ; ; ; ; ">
+<param name="xcalcolato" value="calcolato;il mensile al netto del REI (^REI^);il mensile minore del REI (^REI^);il mensile al netto del REI (^REI^);il mensile al netto del REI (^REI^); ;-;+; ; ;$.2; ">
+<param name="xerogabile" value="erogabile;erogabile;0;-;1; ;-;+; ; ;$.0; ">
+<param name="xdn" value="dn;dn;0;-;1; ;-;+; ; ; ; ">
+<param name="xminus" value="minus;Importi in detrazione per l'ICEF attualizzato;minus=0;Importi in detrazione per l'ICEF attualizzato;Importi in detrazione per l'ICEF attualizzato; ; ; ; ; -<i>;$.2;</i>">
+<param name="xplus" value="plus;Importi aggiuntivo per l'ICEF attualizzato (+ ^Reddito_nuovo^ );plus=0;Importi aggiuntivo per l'ICEF attualizzato (+ ^Reddito_nuovo^ );Importi aggiuntivo per l'ICEF attualizzato (+ ^Reddito_nuovo^ ); ; ; ; ; ;$.2; ">
+<param name="xmens_max" value="mens_max;mens_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xinc" value="inc;inc;0;-;redditi incongrui, si calcola con i consumi; ;-;+; ; ; ; ">
+<param name="xLRE" value="LRE;Limite di reddito di garanzia equivalente annuale;LRE=0;Limite di reddito di garanzia equivalente annuale;Limite di reddito di garanzia equivalente annuale; ; ; ; ; ;$.2; ">
+<param name="xmensile" value="mensile;quotaA mensile = MIN( <b>$Mensile_pagato$</b>, $calcolato$);non spetta nessuna quotaA;quotaA mensile = MIN( <b>$Mensile_pagato$</b>, $calcolato$ );quotaA mensile = MIN( <b>$Mensile_pagato$</b>, $calcolato$ ); ; ; ; ; ;$.2; ">
+<param name="xgt_min" value="gt_min;gt_min;l'importo teorico |Tutti_lavorano| è inferiore all'importo minimo di ^Importo_min^;-;importo teorico ok; ;-;+; ; ; ; ">
+<param name="xdcalc" value="dcalc;calcolato;nessuna differenza;-;<b>ATTENZIONE! Le modifiche avvenute dopo il terzo mese di contribuzione che comporterebbero un aumento del beneficio non sono prese in considerazione. <br />L'ultimo importo mensile calcolato ? di $Mensile_pagato$ </b>; ; ; ; ; ; ; ">
+<param name="xredd_icef" value="redd_icef;Reddito corrispondente all'ICEFa;reddito=0;Reddito corrispondente all'ICEFa;Reddito corrispondente all'ICEFa; ; ; ; ; ;$.2; ">
+<param name="xcheckout" value="checkout;checkout;escluso d'ufficio;-;ok; ; ; ; ; ; ; ">
+<param name="xquotaA" value="quotaA;la quota A mensile;non spetta nessuna quota A;la quota A mensile;la quota A mensile; ; ; ; ;<b>;$.2;</b>">
+<param name="xeroga" value="eroga;eroga;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation1;propagation2;dati;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;icef_a=Icefa;mens_con=teorico;Forza_congruo=0;RIF=RIF">
+<param name="propagation2" value=" ;mens_icef=teorico;n_b=N_beneficiari;Forza_congruo">
+<param name="dati" value="<b>Dati:</b> ;(inc==0)Icefa=-1;(inc==1)icef_a=-1;Reddito_perso=-1!0;Imposte_perse=-1!0;Reddito_nuovo=-1!0;Precedente=-1!0;N_familiari=-1;LR=-1;Perc_mensile=-1!1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3209834471">
+<param name="CRC" value="72385450">
+<param name="CRCdata" value="29-mag-2019 10.22.30">
+</APPLET>
+<BR>
+

@@ -1,0 +1,353 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class
+	CODEBASE='/clesius' Archive=clesius.jar WIDTH=700 HEIGHT=600 MAYSCRIPT>
+	<param name="revision"
+		value="$Revision: 34394 $21.5.2018, preso da icef16 il 18.1.18; dopo da icef17,cambiato per aup17/quotaA (per Reddito_perso..)   ">
+
+	<param name="Taratura" value="ICEF 2018 - 21.5.2018">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="false">
+	<param name="language" value="0">
+
+
+	<param name="trendStarts"
+		value="parametriICEF;nuovo_input;poverissimo;oltrepoverissimo;povero;limite;oltrelimite;ricco;oltrericco;ricchissimo;proprie;unpoditutto">
+
+
+	<param name="parametriICEF"
+		value="zero;RIF=50000;FAR=50000;FPM=20000;LS1=10000;LS2=20000;AL1=0.1;AL2=0.2;AL3=0.6;LDC=3615.2;C_auto=2000;C_mq=18;C_base1=3192;C_base2=5004;C_base3=6000;C_base4=6528;C_base5=7668;C_baseN=1128;FIS=200000">
+	<param name="nuovo_input"
+		value="current;Spese_redditi=2000;Lavoro_fem=1000;Imm_strumentali=210000;Mq=100;Auto=1">
+	<param name="unpoditutto"
+		value="parametriICEF;N_componenti=3;Monogenitore=2500;Lavoratori=2500;Invalidi=2500;Figli_fam_numerose=2500;Assegni=500;C1_aut=10000;C1_dip=20000;C1_pens=1000;C2_agr=1000;C3_imp=3000;C4_part=2000;C5_altri=1000;Canone=4000;Imposte=3000;Mediche=500;Mutuo=2000;Previdenza=1000;RES=75000;PI=10000;PM=50000">
+	<param name="poverissimo"
+		value="parametriICEF;N_componenti=3;C1_pens=912.89">
+	<param name="oltrepoverissimo"
+		value="parametriICEF;N_componenti=3;C1_pens=912.9">
+	<param name="povero"
+		value="parametriICEF;N_componenti=3;C1_pens=5600;Imposte=200;Mediche=300;Previdenza=100">
+	<param name="limite" value="parametriICEF;N_componenti=3;C1_pens=25000">
+	<param name="oltrelimite"
+		value="parametriICEF;N_componenti=3;C1_pens=25000.01">
+	<param name="ricco" value="parametriICEF;N_componenti=3;C1_pens=30000">
+	<param name="oltrericco"
+		value="parametriICEF;N_componenti=3;C1_pens=30000.01">
+	<param name="ricchissimo"
+		value="parametriICEF;N_componenti=3;C1_pens=40000">
+
+	<param name="proprie" value="current;RES=100000;PM=40000;PI=50000">
+
+	<param name="variables"
+		value="deltaicef;iscala;fscala;tscala;rscala;pscala;C1;C2;C3;C4;C5;Cincr;nrest;ntot;ctot;condrif">
+	<param name="deltaicef" value="4.99E-5; 31/1/2007">
+	<param name="iscala" value="0.1">
+	<param name="fscala" value="0.01">
+	<param name="tscala" value="0.0001">
+	<param name="rscala" value="0.00002">
+	<param name="pscala" value="0.000005">
+
+	<param name="C1" value="1.0">
+	<param name="C2" value="1.57">
+	<param name="C3" value="2.04">
+	<param name="C4" value="2.46">
+	<param name="C5" value="2.85">
+	<param name="Cincr" value="0.35">
+	<param name="nrest" value="15">
+	<param name="ntot" value="nrest + 5">
+	<param name="ctot" value="C5 + nrest * Cincr">
+
+
+
+	<param name="condrif" value="1.0">
+
+
+<param name="edges" value="P.A.T.  ICEF;Xml;Dettagli;C_base4;C_base3;C_base2;C_base1;controllo;
+C_base5-C_base20;RF-VRF;PF-VPF;EQV-VF;RIF-VRF;VF-VRF;RIF-VPF;VF-VPF;p_r-patrimonio;LDC-ammesso;Mediche-det;locazione-ammesso;C1_pens-pens;C1_dip-dip;C1_aut-aut;C3_imp-aut;C4_part-aut;C2_agr-aut;Imposte-det;Previdenza-det;det-DF;
+P_complementare-det;Assegni-det;dip-rd;pens-rp;aut-ra;rd-rl;rp-rl;ra-rl;_icef_-EURO_ICEF;RIF-EURO_ICEF;N_componenti-n;n-EQV;C5_altri-rl;VRF-vrf;VPF-vpf;_icef_-EQV_ICEF;VF-EQV_ICEF;RIF-EQV_ICEF;FAR-fr;FPM-fm;
+P-CP;fp-CP;CP-PF;ammesso-loc;AL1-CP;_icef_-C_RIF_ICEF;RIF-C_RIF_ICEF;PI-p_i;PM-p_m;p_i-patrimonio;p_m-patrimonio;RES-p_r;_icef_-ICEF10;ICEF10-ICEF;ICEF-icefP;ICEF-icefM;p-icefP;m-icefM;icefM-eqv0;icefP-eqv1;
+RIF-eqv0;RIF-eqv1;VF-eqv0;VF-eqv1;Canone-can;can-locazione;Mutuo-mut;mut-locazione;Figli_fam_numerose-detrazione;FPI-fi;l1-CP;FP-fp;AL3-CP;p_r-pr;fr-pr;pr-P;p_i-pi;fi-pi;pi-P;p_m-pm;
+fm-pm;pm-P;LS1-l1;l2-CP;LS2-l2;AL2-CP;rn-RN;detrazione-DF;Spese_redditi-detra;detra-DF;p_s-ps;FIS-ps;ps-P;Imm_strumentali-p_s;Mq-mq;C_mq-mq;Auto-auto;C_auto-auto;N_componenti-base;base-CON;
+locazione-CON;auto-CON;RC-differenza;CON-differenza;C_baseN-C_base20;p_s-patrimonio;VRF-0icef0;VPF-0icef0;RN-rf;detrazione-rf;sostituisci-RF;CON-RF;rf-RF;Invalidi-detra;detra-RN;mq-CON;0icef0-_icef_;Lavoro_fem-lav_f;gt1-lav_f;lav_f-detrazione;
+n-gt1;RL-rn;det-rn;loc-detra;Monogenitore-mon_lav;Lavoratori-mon_lav;mon_lav-detrazione;rl-rl_;rl_-RL">
+
+
+
+<param name="P.A.T.  ICEF" value="text;node.ico;312;12;0;P.A.T.  ICEF 2017 - (18.1.18);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_ICEF;yModello_ICEF;558737527">
+<param name="Xml" value="1;node.ico;630;83;0;Xml = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xXml;xXml;726597186">
+<param name="Dettagli" value="1;node.ico;650;15;0;Dettagli = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xDettagli;xDettagli;1525918259">
+<param name="C_base4" value="1;node.ico;655;102;0;C_base4 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xC_base4;xC_base4;1460161383">
+<param name="C_base3" value="1;node.ico;623;109;0;C_base3 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xC_base3;xC_base3;2928406647">
+<param name="C_base2" value="1;node.ico;592;115;0;C_base2 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xC_base2;xC_base2;383670102">
+<param name="C_base1" value="1;node.ico;575;101;0;C_base1 = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xC_base1;xC_base1;2055762392">
+<param name="controllo" value="0;node.ico;653;212;0;controllo =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;0;0.5;NoCurve;xcontrollo;xcontrollo;1159128438">
+<param name="C_base5" value="1;node.ico;654;120;0;C_base5 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;C_base20;tscala;NoCurve;xC_base5;xC_base5;2186103902">
+<param name="C_base20" value="0;node.ico;650;142;0;C_base20 =  C_base5 + 15.000*C_baseN;0.0;PlusNode;NoInput;NoOutput;2;C_base5;C_baseN;0;tscala;1.0;15.0;1.0;NoCurve;xC_base20;xC_base20;855256337">
+<param name="RF" value="0;node.ico;186;169;0;RF = SE( sostituisci=1.0 , 1.0 * CON , 1.0 * rf );0.0;NumIfNode;NoInput;IntermediateOutput;3;sostituisci;CON;rf;1;VRF;2.0E-5;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xRF;xRF;2829057121">
+<param name="VRF" value="0;0;209;192;0;VRF =  RF / RIF / VF;0.0;DivideNode;NoInput;IntermediateOutput;3;RF;RIF;VF;2;vrf;0icef0;1.0;condrif;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xVRF;xVRF;3615692979">
+<param name="PF" value="0;node.ico;374;160;0;PF =  CP;0.0;PlusNode;NoInput;IntermediateOutput;1;CP;1;VPF;rscala;1.0;NoCurve;xPF;xPF;557805859">
+<param name="VPF" value="0;0;297;192;0;VPF =  PF / RIF / VF;0.0;DivideNode;NoInput;IntermediateOutput;3;PF;RIF;VF;2;vpf;0icef0;1.0;condrif;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xVPF;xVPF;3324982143">
+<param name="EQV" value="0;node.ico;297;159;0;EQV =  n);0.0;NumTransNode;NoInput;NoOutput;1;n;1;VF;iscala;1.0;LinearCurve;componentiCurve;xEQV;xEQV;2067562173">
+<param name="VF" value="0;0;255;161;0;VF =  EQV;0.0;PlusNode;NoInput;IntermediateOutput;1;EQV;5;VRF;VPF;EQV_ICEF;eqv0;eqv1;fscala;1.0;NoCurve;xVF;xVF;3455675361">
+<param name="RIF" value="1;node.ico;254;192;0;RIF = ;0.0;PlusNode;ValueInput;NoOutput;0;7;VRF;VPF;EURO_ICEF;EQV_ICEF;C_RIF_ICEF;eqv0;eqv1;rscala;NoCurve;xRIF;xRIF;1845215072">
+<param name="p_r" value="0;node.ico;417;12;0;p_r =  RES;0.0;PlusNode;NoInput;NoOutput;1;RES;2;patrimonio;pr;pscala;1.0;NoCurve;xp_r;xp_r;1025872158">
+<param name="patrimonio" value="text;node.ico;519;34;0;-;0.0;PlusNode;NoInput;IntermediateOutput;4;p_r;p_i;p_m;p_s;0;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xpatrimonio;xpatrimonio;2186308408">
+<param name="LDC" value="1;node.ico;24;79;0;LDC = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ammesso;rscala;NoCurve;xLDC;xLDC;859290875">
+<param name="ammesso" value="0;node.ico;40;102;0;ammesso =  Min(  LDC,  locazione );0.0;NumMinNode;NoInput;NoOutput;2;LDC;locazione;1;loc;rscala;1.0;1.0;1.0;NoCurve;xammesso;xammesso;537393228">
+<param name="Mediche" value="1;node.ico;32;144;0;Mediche = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det;rscala;NoCurve;xMediche;xMediche;629449373">
+<param name="det" value="0;node.ico;95;123;0;det =  Mediche + Imposte + Previdenza + P_complementare + Assegni;0.0;PlusNode;NoInput;NoOutput;5;Mediche;Imposte;Previdenza;P_complementare;Assegni;2;DF;rn;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xdet;xdet;3558426517">
+<param name="locazione" value="0;node.ico;79;79;0;locazione =  can + mut;0.0;PlusNode;NoInput;NoOutput;2;can;mut;2;ammesso;CON;rscala;1.0;1.0;-1.0;NoCurve;xlocazione;xlocazione;4061411907">
+<param name="C1_pens" value="1;node.ico;134;12;0;C1_pens = ;0.0;PlusNode;ValueInput;NoOutput;0;1;pens;rscala;NoCurve;xC1_pens;xC1_pens;699980890">
+<param name="pens" value="0;node.ico;134;37;0;pens =  C1_pens;0.0;PlusNode;NoInput;NoOutput;1;C1_pens;1;rp;rscala;1.0;NoCurve;xpens;xpens;664539742">
+<param name="C1_dip" value="1;node.ico;36;12;0;C1_dip = ;0.0;PlusNode;ValueInput;NoOutput;0;1;dip;rscala;NoCurve;xC1_dip;xC1_dip;3375610582">
+<param name="dip" value="0;node.ico;85;12;0;dip =  C1_dip;0.0;PlusNode;NoInput;NoOutput;1;C1_dip;1;rd;rscala;1.0;NoCurve;xdip;xdip;1021236746">
+<param name="C1_aut" value="1;node.ico;209;11;0;C1_aut = ;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC1_aut;xC1_aut;1393425050">
+<param name="aut" value="0;node.ico;220;77;0;aut =  C1_aut + C3_imp + C4_part + C2_agr;0.0;PlusNode;NoInput;NoOutput;4;C1_aut;C3_imp;C4_part;C2_agr;1;ra;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xaut;xaut;3038548411">
+<param name="C3_imp" value="1;node.ico;191;52;0;C3_imp = ;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC3_imp;xC3_imp;1638870821">
+<param name="C4_part" value="1;node.ico;255;50;0;C4_part = ;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC4_part;xC4_part;705249907">
+<param name="C2_agr" value="1;node.ico;240;30;0;C2_agr = ;0.0;PlusNode;ValueInput;NoOutput;0;1;aut;rscala;NoCurve;xC2_agr;xC2_agr;1832194517">
+<param name="Imposte" value="1;node.ico;31;122;0;Imposte = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det;rscala;NoCurve;xImposte;xImposte;3366291938">
+<param name="Previdenza" value="1;node.ico;90;151;0;Previdenza = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det;rscala;NoCurve;xPrevidenza;xPrevidenza;3452419121">
+<param name="DF" value="0;node.ico;136;173;0;DF =  det + detrazione + detra;0.0;PlusNode;NoInput;NoOutput;3;det;detrazione;detra;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xDF;xDF;70931576">
+<param name="P_complementare" value="1;node.ico;56;188;0;P_complementare = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det;rscala;NoCurve;xP_complementare;xP_complementare;887709061">
+<param name="Assegni" value="1;node.ico;33;165;0;Assegni = ;0.0;PlusNode;ValueInput;NoOutput;0;1;det;rscala;NoCurve;xAssegni;xAssegni;2136840613">
+<param name="rd" value="0;node.ico;114;59;0;rd =  dip;0.0;TimesNode;NoInput;NoOutput;1;dip;1;rl;rscala;1.0;NoCurve;xrd;xrd;1034531160">
+<param name="rp" value="0;node.ico;140;58;0;rp =  pens;0.0;TimesNode;NoInput;NoOutput;1;pens;1;rl;rscala;1.0;NoCurve;xrp;xrp;3095568968">
+<param name="ra" value="0;node.ico;188;78;0;ra =  aut;0.0;TimesNode;NoInput;NoOutput;1;aut;1;rl;rscala;1.0;NoCurve;xra;xra;3818878665">
+<param name="rl" value="0;0;154;78;0;rl =  rd + rp + ra + C5_altri;0.0;PlusNode;NoInput;NoOutput;4;rd;rp;ra;C5_altri;1;rl_;rscala;1.0;1.0;1.0;1.0;1.0;1.0;-1.0;-1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xrl;xrl;3769117429">
+<param name="_icef_" value="0;node.ico;258;233;0;_icef_ =  0icef0;0.0;ProbNode;NoInput;IntermediateOutput;1;0icef0;4;EURO_ICEF;EQV_ICEF;C_RIF_ICEF;ICEF10;0.0;1.0;NoCurve;x_icef_;x_icef_;288283798">
+<param name="EURO_ICEF" value="text;node.ico;320;214;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;_icef_;RIF;0;rscala;1.0;1.0;1.0;NoCurve;xEURO_ICEF;xEURO_ICEF;1604221412">
+<param name="N_componenti" value="1;0;336;139;0;N_componenti = ;0.0;PlusNode;ValueInput;NoOutput;0;2;n;base;iscala;NoCurve;xN_componenti;xN_componenti;849094087">
+<param name="n" value="0;node.ico;328;162;0;n =  MAX(  N_componenti );0.0;NumMaxNode;NoInput;NoOutput;1;N_componenti;2;EQV;gt1;1.0;1.0;NoCurve;xn;xn;556581068">
+<param name="C5_altri" value="1;node.ico;178;28;0;C5_altri = ;0.0;PlusNode;ValueInput;NoOutput;0;1;rl;rscala;NoCurve;xC5_altri;xC5_altri;3763601167">
+<param name="vrf" value="0;node.ico;169;192;0;vrf =  VRF;0.0;ProbNode;NoInput;NoOutput;1;VRF;0;0.0;1.0;NoCurve;xvrf;xvrf;2315739561">
+<param name="vpf" value="0;node.ico;343;192;0;vpf =  VPF;0.0;ProbNode;NoInput;NoOutput;1;VPF;0;0.0;1.0;NoCurve;xvpf;xvpf;2658181006">
+<param name="EQV_ICEF" value="text;node.ico;394;214;0;-;0.0;TimesNode;NoInput;IntermediateOutput;3;_icef_;RIF;VF;0;rscala;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xEQV_ICEF;xEQV_ICEF;3193621474">
+<param name="FAR" value="1;node.ico;319;29;0;FAR = ;0.0;PlusNode;ValueInput;NoOutput;0;1;fr;pscala;NoCurve;xFAR;xFAR;3207360392">
+<param name="fr" value="0;node.ico;353;29;0;fr =  FAR;0.0;PlusNode;NoInput;NoOutput;1;FAR;1;pr;pscala;1.0;NoCurve;xfr;xfr;646417226">
+<param name="FPM" value="1;node.ico;613;39;0;FPM = ;0.0;PlusNode;ValueInput;NoOutput;0;1;fm;pscala;NoCurve;xFPM;xFPM;350190281">
+<param name="fm" value="0;node.ico;569;39;0;fm =  FPM;0.0;PlusNode;NoInput;NoOutput;1;FPM;1;pm;pscala;1.0;NoCurve;xfm;xfm;1292312135">
+<param name="P" value="0;node.ico;417;81;0;P =  pr + pi + pm + ps;0.0;PlusNode;NoInput;NoOutput;4;pr;pi;pm;ps;1;CP;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xP;xP;3907683789">
+<param name="CP" value="0;node.ico;411;149;0;CP =  max[ 0,(1.0*P-fp)*AL1,0*AL1+ (1.0*P-l1)*AL2,0*AL1+ 0*AL2+ (1.0*P-l2)*AL3 ];0.0;FranchigiaNode;NoInput;NoOutput;7;P;fp;AL1;l1;AL2;l2;AL3;1;PF;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xCP;xCP;3792423648">
+<param name="fp" value="0;node.ico;453;86;0;fp =  FP;0.0;PlusNode;NoInput;NoOutput;1;FP;1;CP;pscala;1.0;NoCurve;xfp;xfp;3492596729">
+<param name="loc" value="0;node.ico;95;102;0;loc =  ammesso;0.0;PlusNode;NoInput;NoOutput;1;ammesso;1;detra;pscala;1.0;NoCurve;xloc;xloc;1803792546">
+<param name="AL1" value="1;node.ico;461;122;0;AL1 = ;0.0;ProbNode;ValueInput;NoOutput;0;1;CP;0.5;NoCurve;xAL1;xAL1;2391738597">
+<param name="C_RIF_ICEF" value="text;node.ico;470;222;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;_icef_;RIF;0;rscala;C3;1.0;1.0;NoCurve;xC_RIF_ICEF;xC_RIF_ICEF;2936320084">
+<param name="PI" value="1;0;460;12;0;PI = ;0.0;PlusNode;ValueInput;NoOutput;0;1;p_i;pscala;NoCurve;xPI;xPI;2525910496">
+<param name="p_i" value="0;node.ico;495;12;0;p_i =  PI;0.0;PlusNode;NoInput;NoOutput;1;PI;2;patrimonio;pi;pscala;1.0;NoCurve;xp_i;xp_i;1609886033">
+<param name="PM" value="1;0;585;13;0;PM = ;0.0;PlusNode;ValueInput;NoOutput;0;1;p_m;rscala;NoCurve;xPM;xPM;2704071001">
+<param name="p_m" value="0;node.ico;535;13;0;p_m =  PM;0.0;PlusNode;NoInput;NoOutput;1;PM;2;patrimonio;pm;rscala;1.0;NoCurve;xp_m;xp_m;4291393184">
+<param name="RES" value="1;node.ico;376;12;0;RES = ;0.0;PlusNode;ValueInput;NoOutput;0;1;p_r;pscala;NoCurve;xRES;xRES;3974460996">
+<param name="ICEF10" value="2;node.ico;204;214;0;ICEF10 =  _icef_;0.0;PlusNode;NoInput;IntermediateOutput;1;_icef_;1;ICEF;1.0;1.0;NoCurve;xICEF10;xICEF10;4004066232">
+<param name="ICEF" value="2;node.ico;156;214;0;ICEF =  ICEF10;0.0;PlusNode;NoInput;ResultOutput;1;ICEF10;2;icefP;icefM;1.0;1.0;NoCurve;xICEF;xICEF;2138271879">
+<param name="icefP" value="0;node.ico;71;234;0;icefP =  ICEF + p;0.0;PlusNode;NoInput;NoOutput;2;ICEF;p;1;eqv1;1.0;1.0;1.0;1.0;NoCurve;xicefP;xicefP;4026633">
+<param name="icefM" value="0;node.ico;72;213;0;icefM =  ICEF - m;0.0;MinusNode;NoInput;NoOutput;2;ICEF;m;1;eqv0;1.0;1.0;1.0;1.0;NoCurve;xicefM;xicefM;4037458613">
+<param name="p" value="0;node.ico;123;231;0;p = ;0.0;PlusNode;NoInput;NoOutput;0;1;icefP;deltaicef;NoCurve;xp;xp;1916333798">
+<param name="m" value="0;node.ico;123;205;0;m = ;0.0;PlusNode;NoInput;NoOutput;0;1;icefM;deltaicef;NoCurve;xm;xm;2834647731">
+<param name="eqv0" value="text;node.ico;26;213;0;-;0.0;TimesNode;NoInput;NoOutput;3;icefM;RIF;VF;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xeqv0;xeqv0;3512007413">
+<param name="eqv1" value="text;node.ico;26;233;0;-;0.0;TimesNode;NoInput;NoOutput;3;icefP;RIF;VF;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xeqv1;xeqv1;1664627856">
+<param name="Canone" value="1;node.ico;27;34;0;Canone = ;0.0;PlusNode;ValueInput;NoOutput;0;1;can;rscala;NoCurve;xCanone;xCanone;1320808167">
+<param name="can" value="0;node.ico;26;58;0;can =  Canone;0.0;PlusNode;NoInput;NoOutput;1;Canone;1;locazione;rscala;1.0;NoCurve;xcan;xcan;1803512093">
+<param name="Mutuo" value="1;node.ico;83;35;0;Mutuo = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mut;rscala;NoCurve;xMutuo;xMutuo;1034897784">
+<param name="mut" value="0;node.ico;80;57;0;mut =  Mutuo;0.0;PlusNode;NoInput;NoOutput;1;Mutuo;1;locazione;rscala;1.0;NoCurve;xmut;xmut;1425752936">
+<param name="Figli_fam_numerose" value="1;node.ico;373;115;0;Figli_fam_numerose = ;0.0;PlusNode;ValueInput;NoOutput;0;1;detrazione;rscala;NoCurve;xFigli_fam_numerose;xFigli_fam_numerose;3901364018">
+<param name="detrazione" value="0;node.ico;245;141;0;detrazione =  Figli_fam_numerose + lav_f + mon_lav;0.0;PlusNode;NoInput;NoOutput;3;Figli_fam_numerose;lav_f;mon_lav;2;DF;rf;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xdetrazione;xdetrazione;1450592978">
+<param name="FPI" value="0;node.ico;437;34;0;FPI = ;0.0;Times2Node;NoInput;NoOutput;0;1;fi;pscala;NoCurve;xFPI;xFPI;1796617383">
+<param name="fi" value="0;node.ico;467;34;0;fi =  FPI;0.0;PlusNode;NoInput;NoOutput;1;FPI;1;pi;5.0E-6;1.0;NoCurve;xfi;xfi;2516218595">
+<param name="l1" value="0;node.ico;475;101;0;l1 =  LS1;0.0;PlusNode;NoInput;NoOutput;1;LS1;1;CP;pscala;1.0;NoCurve;xl1;xl1;2928849748">
+<param name="FP" value="0;node.ico;501;86;0;FP = ;0.0;Times2Node;NoInput;NoOutput;0;1;fp;pscala;NoCurve;xFP;xFP;4281343902">
+<param name="AL3" value="1;node.ico;535;123;0;AL3 = ;0.0;ProbNode;ValueInput;NoOutput;0;1;CP;0.5;NoCurve;xAL3;xAL3;1517530169">
+<param name="pr" value="0;node.ico;417;57;0;pr =  p_r - fr;0.0;MinusNode;NoInput;NoOutput;2;p_r;fr;1;P;pscala;1.0;1.0;1.0;NoCurve;xpr;xpr;2083514045">
+<param name="pi" value="0;node.ico;484;57;0;pi =  p_i - fi;0.0;MinusNode;NoInput;NoOutput;2;p_i;fi;1;P;pscala;1.0;1.0;1.0;NoCurve;xpi;xpi;878803767">
+<param name="pm" value="0;node.ico;514;59;0;pm =  p_m - fm;0.0;MinusNode;NoInput;NoOutput;2;p_m;fm;1;P;pscala;1.0;1.0;1.0;NoCurve;xpm;xpm;3472701640">
+<param name="LS1" value="1;node.ico;525;103;0;LS1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;l1;pscala;NoCurve;xLS1;xLS1;675154162">
+<param name="l2" value="0;node.ico;445;159;0;l2 =  LS2;0.0;PlusNode;NoInput;NoOutput;1;LS2;1;CP;pscala;1.0;NoCurve;xl2;xl2;3540721159">
+<param name="LS2" value="1;node.ico;502;163;0;LS2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;l2;pscala;NoCurve;xLS2;xLS2;205562560">
+<param name="AL2" value="1;node.ico;498;123;0;AL2 = ;0.0;ProbNode;ValueInput;NoOutput;0;1;CP;0.5;NoCurve;xAL2;xAL2;1244876679">
+<param name="rn" value="0;node.ico;137;121;0;rn =  RL - det;0.0;MinusNode;NoInput;NoOutput;2;RL;det;1;RN;rscala;1.0;1.0;1.0;NoCurve;xrn;xrn;1485848373">
+<param name="RN" value="0;node.ico;140;145;0;RN =  rn - detra;0.0;MinusNode;NoInput;NoOutput;2;rn;detra;1;rf;rscala;1.0;1.0;1.0;NoCurve;xRN;xRN;1462463091">
+<param name="Spese_redditi" value="1;node.ico;199;98;0;Spese_redditi = ;0.0;PlusNode;ValueInput;NoOutput;0;1;detra;rscala;NoCurve;xSpese_redditi;xSpese_redditi;972222802">
+<param name="detra" value="0;node.ico;180;123;0;detra =  Spese_redditi + Invalidi + loc;0.0;PlusNode;NoInput;NoOutput;3;Spese_redditi;Invalidi;loc;2;DF;RN;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xdetra;xdetra;2530910317">
+<param name="p_s" value="0;node.ico;550;61;0;p_s =  Imm_strumentali;0.0;PlusNode;NoInput;NoOutput;1;Imm_strumentali;2;ps;patrimonio;pscala;1.0;NoCurve;xp_s;xp_s;1774839742">
+<param name="ps" value="0;node.ico;548;81;0;ps =  p_s - FIS;0.0;MinusNode;NoInput;NoOutput;2;p_s;FIS;1;P;pscala;1.0;1.0;1.0;NoCurve;xps;xps;3419679394">
+<param name="FIS" value="1;node.ico;597;82;0;FIS = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ps;pscala;NoCurve;xFIS;xFIS;2513884539">
+<param name="Imm_strumentali" value="1;node.ico;628;62;0;Imm_strumentali = ;0.0;PlusNode;ValueInput;NoOutput;0;1;p_s;pscala;NoCurve;xImm_strumentali;xImm_strumentali;973676317">
+<param name="Mq" value="1;node.ico;524;183;0;Mq = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mq;tscala;NoCurve;xMq;xMq;430140692">
+<param name="mq" value="0;node.ico;562;190;0;mq =  Mq * C_mq;0.0;TimesNode;NoInput;NoOutput;2;Mq;C_mq;1;CON;rscala;1.0;1.0;1.0;NoCurve;xmq;xmq;3992045357">
+<param name="C_mq" value="1;node.ico;500;200;0;C_mq = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mq;iscala;NoCurve;xC_mq;xC_mq;262438815">
+<param name="Auto" value="1;node.ico;629;163;0;Auto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;auto;iscala;NoCurve;xAuto;xAuto;4244786966">
+<param name="auto" value="0;node.ico;602;190;0;auto =  Auto * C_auto;0.0;TimesNode;NoInput;NoOutput;2;Auto;C_auto;1;CON;rscala;1.0;1.0;1.0;NoCurve;xauto;xauto;3326033677">
+<param name="C_auto" value="1;node.ico;653;185;0;C_auto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;auto;rscala;NoCurve;xC_auto;xC_auto;1815901486">
+<param name="base" value="0;node.ico;522;142;0;base =  N_componenti);0.0;NumTransNode;NoInput;NoOutput;1;N_componenti;1;CON;iscala;1.0;LinearCurve;CONCurve;xbase;xbase;846139180">
+<param name="CON" value="0;node.ico;578;165;0;CON =  base + locazione + auto + mq;0.0;PlusNode;NoInput;IntermediateOutput;4;base;locazione;auto;mq;2;differenza;RF;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xCON;xCON;2040010221">
+<param name="RC" value="0;node.ico;374;180;0;RC = ;0.0;TimesNode;NoInput;NoOutput;0;1;differenza;rscala;NoCurve;xRC;xRC;3218374312">
+<param name="differenza" value="2;node.ico;437;189;0;differenza =  RC - CON;0.0;MinusNode;NoInput;IntermediateOutput;2;RC;CON;0;rscala;1.0;1.0;1.0;NoCurve;xdifferenza;xdifferenza;416668560">
+<param name="C_baseN" value="1;node.ico;579;134;0;C_baseN = ;0.0;PlusNode;ValueInput;NoOutput;0;1;C_base20;tscala;NoCurve;xC_baseN;xC_baseN;1868773294">
+<param name="0icef0" value="0;node.ico;257;213;0;0icef0 =  VRF + VPF - VRF * VPF;0.0;ProbMaxNode;NoInput;IntermediateOutput;2;VRF;VPF;1;_icef_;0.0;1.0;1.0;1.0;NoCurve;x0icef0;x0icef0;2290503935">
+<param name="rf" value="0;node.ico;174;144;0;rf =  RN - detrazione;0.0;MinusNode;NoInput;NoOutput;2;RN;detrazione;1;RF;rscala;1.0;1.0;1.0;NoCurve;xrf;xrf;2969049098">
+<param name="sostituisci" value="0;node.ico;186;235;0;sostituisci =  0.500 ;0.0;ProbNode;NoInput;NoOutput;0;1;RF;0.5;NoCurve;xsostituisci;xsostituisci;4066190211">
+<param name="Invalidi" value="1;node.ico;233;119;0;Invalidi = ;0.0;PlusNode;ValueInput;NoOutput;0;1;detra;rscala;NoCurve;xInvalidi;xInvalidi;770172483">
+<param name="Lavoro_fem" value="1;node.ico;365;51;0;Lavoro_fem = ;0.0;PlusNode;ValueInput;NoOutput;0;1;lav_f;rscala;NoCurve;xLavoro_fem;xLavoro_fem;2160561336">
+<param name="lav_f" value="0;node.ico;303;51;0;lav_f =  Lavoro_fem * gt1;0.0;TimesNode;NoInput;NoOutput;2;Lavoro_fem;gt1;1;detrazione;rscala;1.0;1.0;1.0;NoCurve;xlav_f;xlav_f;391540240">
+<param name="gt1" value="0;node.ico;256;74;0;gt1 = n > 1.0;0.0;NumGtNode;NoInput;NoOutput;1;n;1;lav_f;1.0;1.0;NoCurve;xgt1;xgt1;4152504457">
+<param name="RL" value="0;node.ico;136;101;0;RL =  rl_;0.0;PlusNode;NoInput;NoOutput;1;rl_;1;rn;rscala;1.0;NoCurve;xRL;xRL;3530410213">
+<param name="Monogenitore" value="1;node.ico;316;73;0;Monogenitore = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mon_lav;rscala;NoCurve;xMonogenitore;xMonogenitore;3396644177">
+<param name="mon_lav" value="0;node.ico;306;97;0;mon_lav =  MAX(  Monogenitore,  Lavoratori );0.0;NumMaxNode;NoInput;NoOutput;2;Monogenitore;Lavoratori;1;detrazione;tscala;1.0;1.0;1.0;NoCurve;xmon_lav;xmon_lav;906619096">
+<param name="Lavoratori" value="1;node.ico;372;89;0;Lavoratori = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mon_lav;rscala;NoCurve;xLavoratori;xLavoratori;1025024135">
+<param name="rl_" value="0;node.ico;127;79;0;rl_ =  rl;0.0;MinusNode;NoInput;NoOutput;1;rl;1;RL;escala;1.0;NoCurve;yrl_;yrl_;3269933959">
+
+<param name="CONCurve" value="LinearCurve;0.0;0.0;1.0;C_base1;2.0;C_base2;3.0;C_base3;4.0;C_base4;5.0;C_base5;ntot;C_base20">
+<param name="componentiCurve" value="LinearCurve;0.0;0.0;1.0;C1;2.0;C2;3.0;C3;4.0;C4;5.0;C5;ntot;ctot">
+
+
+<param name="xm" value="x;x;0;-;1; ;-;+; ; ; ; ">
+<param name="xCanone" value="Canone;D(CNL): Canone di locazione annuo ;D(CNL): Canone di locazione annuo zero;D(CNL): Canone di locazione annuo;D(CNL): Canone di locazione annuo massimale; ; ; ; ;- ;$.2; ">
+<param name="xRES" value="RES;RES: Valore ICI dell'abitazione di residenza familiare;nessuna residenza;Valore ICI dell'abitazione di residenza familiare;RES; ; ; ; ; ;$.2; ">
+<param name="xp" value="x;x;0;-;1; ;-;+; ; ; ; ">
+<param name="xFPI" value="FPI;FPI;0;-;1; ;-;+; ; ; ; ">
+<param name="xFP" value="FP;FP;0;-;1; ;-;+; ; ; ; ">
+<param name="xMutuo" value="Mutuo;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale (deducibile fino a  $LDC$);D(IMR): nessun mutuo per l'abitazione principale;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale;Il mutuo per la casa di residenza massimale;è di; ; ; ;- ;$.2; ">
+<param name="xFigli_fam_numerose" value="Figli_fam_numerose;Detrazione per famiglia numerosa;Non Figli_fam_numerose;Detrazione per famiglia numerosa;Figli_fam_numerose=max; ; ; ; ; -;$.2; ">
+<param name="xPM" value="PM;PM: Ammontare degli investimenti finanziari;non esistono investimenti finanziari rilevanti;PM: Ammontare degli investimenti finanziari;PM: Ammontare degli investimenti finanziari;è di; ; ; ; ;$.2; ">
+<param name="xN_componenti" value="N_componenti;Numero dei componenti in famiglia;la famiglia non ha componenti;Il numero dei componenti in famiglia;Il numero dei componenti in famiglia;è; ; ; ; ;T; ">
+<param name="xC5_altri" value="C5_altri;C5: Altre fonti di entrata in deroga al criterio fiscale;C5: Altre fonti di entrata in deroga al criterio fiscale zero;C5: Altre fonti di entrata in deroga al criterio fiscale;C5: Altre fonti di entrata in deroga al criterio fiscale massimali; ; ; ; ; ;$.2; ">
+<param name="xP_complementare" value="P_complementare;D(CPC): Contributi pensione complementare;D(CPC): Contributi pensione complementare zero;D(CPC): Contributi pensione complementare;D(CPC): Contributi pensione complementare massimali; ; ; ; ;- ;$.2; ">
+<param name="xAssegni" value="Assegni;D(ASM): Assegni di mantenimento;D(ASM): Assegni di mantenimento zero;D(ASM): Assegni di mantenimento;D(ASM): Assegni di mantenimento massimali; ; ; ; ;- ;$.2; ">
+<param name="xAL1" value="AL1;AL1;AL1;AL1;AL1; ; ; ; ; ;T.1; ">
+<param name="xPI" value="PI;PI: Valore ICI degli immobili oltre l'abitazione di residenza;non esistono rilevanti beni immobiliari di proprietà;PI: Valore ICI degli immobili oltre l'abitazione di residenza;PI: Valore ICI degli immobili oltre l'abitazione di residenza massimale;è di; ; ; ; ;$.2; ">
+<param name="xFAR" value="FAR;FAR;FAR;FAR;FAR; ; ; ; ; ;$.2; ">
+<param name="xFPM" value="FPM;FPM;FPM;FPM;FPM; ; ; ; ; ;$.2; ">
+<param name="xAL3" value="AL3;AL3;AL3;AL3;AL3; ; ; ; ; ;T.1; ">
+<param name="xC_baseN" value="C_baseN;C_baseN;non;-;ok; ; ; ; ; ; ; ">
+<param name="xsostituisci" value="sostituisci;sostituisci; Non sostituisce il reddito familiare dichiarato.;-; Sostituisce il reddito familiare dichiarato.; ; ; ; ; ; ; ">
+<param name="xC_auto" value="C_auto;C_auto;non;-;ok; ; ; ; ; ; ; ">
+<param name="xRC" value="RC;Reddito ai fini del controllo;reddito=0 ?;Reddito ai fini del controllo;Reddito ai fini del controllo; ; ; ; ; ;$.2; ">
+<param name="xMonogenitore" value="Monogenitore;Detrazione per il nucleo con uno solo genitore e presenza di figli minorenni;Non Monogenitore;Detrazione per il nucleo con uno solo genitore e presenza di figli minorenni;Monogenitore=max; ; ; ; ; -;$.2; ">
+<param name="xLavoratori" value="Lavoratori;Detrazione per il nucleo di genitori lavoratori in presenza di figli minorenni;Non Lavoratori;Detrazione per il nucleo di genitori lavoratori in presenza di figli minorenni;Lavoratori=max; ; ; ; ; -;$.2; ">
+<param name="xInvalidi" value="Invalidi;Detrazione per la presenza di invalidi;Non Invalidi;Detrazione per la presenza di invalidi;Invalidi=max; ; ; ; ; -;$.2; ">
+<param name="xLavoro_fem" value="Lavoro_fem;Detrazione per lavoro femminile;nessuna detrazione per lavoro femminile;Detrazione per lavoro femminile;Detrazione per lavoro femminile; ; ; ; ; -;$.2; ">
+<param name="xAuto" value="Auto;Numero di automobili;Nessun automobile;Numero di automobili;Numero di automobili; ; ; ; ; ;T; ">
+<param name="xAL2" value="AL2;AL2;AL2;AL2;AL2; ; ; ; ; ;T.1; ">
+<param name="xSpese_redditi" value="Spese_redditi;Spese per la produzione dei redditi;Spese=0;Spese per la produzione dei redditi;Spese per la produzione dei redditi; ; ; ; ; -;$.2; ">
+<param name="xLS1" value="LS1;LS1;0;-;1; ;-;+; ; ; ; ">
+<param name="xLS2" value="LS2;LS2;0;-;1; ;-;+; ; ; ; ">
+<param name="xMq" value="Mq;Superficie in mq dell'abitazione;la superficie dell'abitazione è zero;Superficie in mq dell'abitazione;Superficie in mq dell'abitazione; ; ; ; ; ;T; mq">
+<param name="xC_mq" value="C_mq;C_mq;non;-;ok; ; ; ; ; ; ; ">
+<param name="xFIS" value="FIS;FIS;0;-;1; ;-;+; ; ; ; ">
+<param name="xImm_strumentali" value="Imm_strumentali;Immobili strumentali;nessun immobile strumentale;Immobili strumentali;Immobili strumentali; ; ; ; ; ;$.2; ">
+<param name="xLDC" value="LDC;(deducibile fino a ;/non deducibile);(deducibile fino a ;(totalmente deducibile); ; ; ; ; ;$.2;)">
+<param name="xC_base3" value="C_base3;C_base3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xMediche" value="Mediche;D(SPM): Deduzione per spese mediche, funebri e di istruzione;D(SPM): Deduzione per spese mediche, funebri e di istruzione;D(SPM): Deduzione per spese mediche, funebri e di istruzione;D(SPM): Deduzione per spese mediche, funebri e di istruzione; ; ; ; ;- ;$.2; ">
+<param name="xcontrollo" value="controllo;controllo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xC3_imp" value="C3_imp;C3: Redditi da impresa individuale o lavoro autonomo ;C3: Redditi da impresa individuale o lavoro autonomo zero;C3: Redditi da impresa individuale o lavoro autonomo;C3: Redditi da impresa individuale o lavoro autonomo massimali; ; ; ; ; ;$.2; ">
+<param name="xXml" value="Xml;Xml;0;-;1; ;-;+; ; ; ; ">
+<param name="xC1_aut" value="C1_aut;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi ;C1(ANP/DIV): Redditi da lavoro autonomo occasionale zero;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi;C1(ANP/DIV): Redditi da lavoro autonomo occasionale massimali; ; ; ; ; ;$.2; ">
+<param name="xC1_dip" value="C1_dip;C1(DIP): Redditi da lavoro dipendente e assimilati ;C1(DIP): Redditi da lavoro dipendente e assimilati zero;C1(DIP): Redditi da lavoro dipendente e assimilati ;C1(DIP): Redditi da lavoro dipendente e assimilati massimali; ; ; ; ; ;$.2; ">
+<param name="xC1_pens" value="C1_pens;C1(PNS): Entrate da pensione ;C1(PNS): Entrate da pensione zero;C1(PNS): Entrate da pensione;C1(PNS): Entrate da pensione massimali; ; ; ; ; ;$.2; ">
+<param name="xC_base5" value="C_base5;C_base5;non;-;ok; ; ; ; ; ; ; ">
+<param name="xC_base4" value="C_base4;C_base4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xDettagli" value="Dettagli;Dettagli;0;-;1; ;-;+; ; ; ; ">
+<param name="xC_base1" value="C_base1;C_base1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xModello_ICEF" value="P.A.T.  ICEF;P.A.T.  ICEF;P.A.T.  ICEF 2018- (21.5.2018);--;--; ; ; ; ; ; ; ">
+
+<param name="xC_base2" value="C_base2;C_base2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xRIF" value="RIF;RIF: il reddito di riferimento;RIF;RIF;RIF; ; ; ; ; ;$.2; ">
+<param name="xPrevidenza" value="Previdenza;D(CPA): Contributi previdenziali ed assistenziali;D(CPA): Contributi previdenziali ed assistenziali zero;D(CPA): Contributi previdenziali ed assistenziali;D(CPA): Contributi previdenziali ed assistenziali massimali; ; ; ; ;- ;$.2; ">
+<param name="xImposte" value="Imposte;D(IMP): Imposte ;D(IMP): nessuna imposta dichiarata;D(IMP): Imposte ;D(IMP): Imposte massimali; ; ; ; ;- ;$.2; ">
+<param name="xC2_agr" value="C2_agr;C2: Redditi da impresa agricola ;C2: Redditi da impresa agricola zero;C2: Redditi da impresa agricola;C2: Redditi da impresa agricola massimali; ; ; ; ; ;$.2; ">
+<param name="xC4_part" value="C4_part;C4: Redditi da partecipazioni in società ;C4: Reddito da partecipazioni in società zero;C4: Redditi da partecipazioni in società ;C4: Redditi da partecipazioni in società massimali; ; ; ; ; ;$.2; ">
+<param name="xPF" value="PF;PF: ammontare del <b>patrimonio</b> convertito in reddito corrispondente;la valutazione del patrimonio risulta zero;PF: ammontare del <b>patrimonio</b> convertito in reddito corrispondente;PF: ammontare del <b>patrimonio</b> convertito in reddito corrispondente massimale;è di; ; ; ; ;$.2; ">
+<param name="xVF" value="VF;VF: il peso della <b>famiglia</b>;il peso della <b>famiglia</b> è nullo;il peso della <b>famiglia</b>;il peso della <b>famiglia</b>;è; ; ; ;f=;T.2; ">
+<param name="xl1" value="l1;l1;0;-;1; ;-;+; ; ; ; ">
+<param name="xICEF" value="ICEF; <b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare arrotondato;Indicatore della Condizione Economica Familiare <b>(ICEF)</b> zero ;Indicatore della Condizione Economica Familiare <b>(ICEF)</b> arrotondato;Indicatore della Condizione Economica Familiare <b>(ICEF)</b> arrotondato oltre misura, <br /> si usa il massimo delle valutazioni di redditi e patrimonio; ; ; ; ;<b>;T.4;</b>">
+<param name="xEQV" value="EQV;valore;EQV;EQV;EQV; ; ; ; ; ;T.2; della scala di equivalenza derivante da ^n^ componente/i">
+<param name="xl2" value="l2;l2;0;-;1; ;-;+; ; ; ; ">
+<param name="xp_r" value="p_r;RES: Valore ICI dell'abitazione di residenza familiare;nessuna residenza;Valore ICI dell'abitazione di residenza familiare;RES; ; ; ; ; ;$.2; ">
+<param name="xmut" value="mut;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale utilizzato ;D(IMR): nessun mutuo per l'abitazione principale;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale ;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale ; ; ; ; ;<i>- ;$.2;</i>">
+<param name="xcan" value="can;D(CNL): Canone di locazione utilizzato ;D(CNL): Canone di locazione utilizzato zero;D(CNL): Canone di locazione utilizzato;D(CNL): Canone di locazione utilizzato ; ; ; ; ;<i>- ;$.2;</i>">
+<param name="xp_s" value="p_s;p_s;0;-;1; ;-;+; ; ; ; ">
+<param name="xfi" value="fi;fi;0;-;1; ;-;+; ; ; ; ">
+<param name="xvpf" value="vpf;VPF: la valutazione del patrimonio familiare;VPF: la valutazione del patrimonio familiare risulta zero (VPF=0);VPF: il patrimonio familiare;il patrimonio familiare è massimale (>=1);è; ; ; ; ;P.4; ">
+<param name="xvrf" value="vrf;VRF: la valutazione del reddito familiare;VRF: la valutazione del reddito familiare risulta zero (VRF=0);VRF: la valutazione del reddito familiare;VRF: la valutazione del reddito familiare è massimale (>=1);è; ; ; ; ;P.4; ">
+<param name="xn" value="x;x;ERRORE ; ; ; ; ; ; ;  ;T; componente/i">
+<param name="xRL" value="RL;RL: la somma dei redditi lordi;RL: la somma dei redditi lordi è zero;RL: la somma dei redditi lordi ;RL: la somma dei redditi lordi è massimale; (^rd^+^rp^+^C5_altri^+^ra^) ammonta a; ; ; ; <i>;$.2;</i>">
+<param name="xfm" value="fm;fm;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xfr" value="fr;fr;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xrp" value="rp;rp;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xrd" value="rd;rd;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xbase" value="base;Spese per §n§ componente/i;componenti=0 ERRORE;Spese per  §n§ componente/i;Spese per  §n§ componente/i; ; ; ; ; ;$.2; ">
+<param name="x_icef_" value="_icef_; <b>(_icef_)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Condizione Economica Familiare <b>(_icef_)</b> zero ;Indicatore della Condizione Economica Familiare <b>(_icef_)</b>;Indicatore della Condizione Economica Familiare <b>(_icef_ >=1), <br /> si usa il massimo delle valutazioni di redditi e patrimonio</b>; ; ; ; ;<b>;P.10;</b>">
+<param name="xra" value="ra;ra;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xpens" value="pens;pens;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xdip" value="dip;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati ;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati zero;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati ;C1(DIP/DIV): Redditi da lavoro dipendente e assimilati massimali; ; ; ; ; ;$.2; ">
+<param name="xp_m" value="p_m;PM: Ammontare degli investimenti finanziari;non esistono investimenti finanziari rilevanti;PM: Ammontare degli investimenti finanziari;PM: Ammontare degli investimenti finanziari;è di; ; ; ; ;$.2; ">
+<param name="xp_i" value="p_i;PI: Valore ICI degli immobili oltre l'abitazione di residenza;non esistono rilevanti beni immobiliari di proprietà;PI: Valore ICI degli immobili oltre l'abitazione di residenza;PI: Valore ICI degli immobili oltre l'abitazione di residenza massimale;è di; ; ; ; ;$.2; ">
+<param name="xICEF10" value="ICEF10; <b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Condizione Economica Familiare <b>(ICEF)</b> zero ;Indicatore della Condizione Economica Familiare <b>(ICEF)</b>;Indicatore della Condizione Economica Familiare <b>(ICEF)</b> oltre misura, <br /> si usa il massimo delle valutazioni di redditi e patrimonio; ; ; ; ;<b>;T.10;</b>">
+<param name="xgt1" value="gt1;gt1;0;-;1; ;-;+; ; ; ; ">
+<param name="xfp" value="fp;fp;0;-;1; ;-;+; ; ; ; ">
+<param name="xloc" value="loc;Spese per abitazione ammesse  |LDC|;nessuna spesa per abitazione;Spese per abitazione ammesse  |LDC|;Spese per abitazione ammesse |LDC|; ; ; ; ;- ;$.2; ">
+<param name="x0icef0" value="0icef0; Indicatore della Condizione Economica Familiare contestato;Indicatore della Condizione Economica Familiare  contestato zero ;Indicatore della Condizione Economica Familiare  contestato;Indicatore della Condizione Economica Familiare  contestato massimale; ; ; ; ;<i>;T.10;</i>">
+<param name="xC_base20" value="C_base20;C_base20;non;-;ok; ; ; ; ; ; ; ">
+<param name="xauto" value="auto;Spese presunte per auto;nessun auto;Spese presunte per auto;Spese presunte per auto; ; ; ; ; ;$.2; ">
+<param name="xdifferenza" value="differenza;ok;-- il reddito presunto è maggiore del redditi di controllo, quindi <b>domanda incongrua! </b> |sostituisci|;ok;ok; ; ; ; ; ; ; ">
+<param name="xmq" value="mq;Spese presunte per la gestione dell'abitazione;mq dell'abitazione=0;Spese presunte per la gestione dell'abitazione;Spese presunte per la gestione dell'abitazione; ; ; ; ; ;$.2; ">
+<param name="xps" value="ps;ps;0;-;1; ; ; ; ; ;$.2; ">
+<param name="xRN" value="RN;Reddito netto ;reddito=0 ?;Reddito netto ;Reddito netto ; ; ; ; ; ;$.2; ">
+<param name="xicefP" value="icefP;icefP;0;-;1; ;-;+; ; ; ; ">
+<param name="xicefM" value="icefM;icefM;0;-;1; ;-;+; ; ; ; ">
+<param name="xlocazione" value="locazione;Spese per abitazione (canone/mutuo);nessuna spesa per abitazione;Spese per abitazione (canone/mutuo);Spese per abitazione (canone/mutuo); ; ; ; ; ;$.2; ">
+<param name="xEURO_ICEF" value="EURO_ICEF;ICEF valutario;l'ICEF valutario risulta zero;ICEF valutario;ICEF valutario; ; ; ; ; ;T.2; ">
+<param name="xmon_lav" value="mon_lav;Detrazione per il nucleo con uno solo genitore e presenza di figli minorenni;Non Monogenitore;Detrazione per il nucleo con uno solo genitore e presenza di figli minorenni;Monogenitore=max; ; ; ; ; -;$.2; ">
+<param name="xC_RIF_ICEF" value="C_RIF_ICEF;Condizione economica di riferimento (ICEF * §RIF§ * ^C3^);Condizione economica di riferimento zero;Condizione economica di riferimento;Condizione economica di riferimento; ; ; ; ; ;T.2; ">
+<param name="xlav_f" value="lav_f;Detrazione per lavoro femminile;nessuna detrazione per lavoro femminile;Detrazione per lavoro femminile;Detrazione per lavoro femminile; ; ; ; ; -;$.2; ">
+<param name="xpi" value="pi;pi;0;-;1; ;-;+; ; ; ; ">
+<param name="xpm" value="pm;pm;0;-;1; ;-;+; ; ; ; ">
+<param name="xrn" value="rn;Reddito al netto delle detrazioni obbligatorie;reddito=0 ?;Reddito al netto delle detrazioni obbligatorie;Reddito al netto delle detrazioni obbligatorie; ; ; ; ; ;$.2; ">
+<param name="xammesso" value="ammesso;spese per l'abitazione di residenza ammesse in detrazione;ammesso;ammesso;ammesso; ; ; ; ;- ;$.2; ">
+<param name="xrf" value="rf;rf: <b>reddito</b> familiare dichiarato;rf: <b>reddito</b> familiare dichiarato zero;rf: <b>reddito</b> familiare dichiarato;rf: <b>reddito</b> familiare  dichiarato massimale;è di; ; ; ; ;$.2; ">
+<param name="xpr" value="pr;pr;0;-;1; ;-;+; ; ; ; ">
+<param name="xDF" value="DF;DF l'ammontare totale delle detrazioni concesse;det=0;DF l'ammontare totale delle detrazioni concesse;DF=max;è di ; ; ; ; <i>-;$.2;</i>">
+<param name="xdetrazione" value="detrazione;detrazione;non;-;ok; ; ; ; ; ; ; ">
+<param name="xeqv1" value="eqv1;Equivalente superiore dell'ICEF;l'equivalente superiore dell'ICEF risulta zero;Equivalente superiore dell'ICEF;Equivalente superiore dell'ICEF (>=1); ; ; ; ; ;T.2; ">
+<param name="xEQV_ICEF" value="EQV_ICEF;Equivalente valutario dell'ICEF;l'equivalente dell'ICEF risulta zero;Equivalente valutario dell'ICEF;Equivalente valutario dell'ICEF (>=1, si usa il massimo tra reddito e patrimonio); (^eqv0^,^eqv1^] ; ; ; ; ;T.2; ">
+<param name="xeqv0" value="eqv0;Equivalente inferiore dell'ICEF;l'equivalente inferiore dell'ICEF risulta zero;Equivalente inferiore dell'ICEF;Equivalente inferiore dell'ICEF (>=1); ; ; ; ; ;T.2; ">
+<param name="xVRF" value="VRF;VRF: la valutazione degli elementi reddituali rapportati alla dimensione della famiglia;VRF: la valutazione degli elementi reddituali rapportati alla dimensione della famiglia è zero (VRF=0);VRF: la valutazione degli elementi reddituali rapportati alla dimensione della famiglia;VRF: la valutazione degli elementi reddituali rapportati alla dimensione della famiglia massimale (VRF>=1);è; ; ; ; ;P.10; ">
+<param name="xRF" value="RF;RF: <b>reddito</b> familiare preso in considerazione;RF: <b>reddito</b> familiare zero;RF: <b>reddito</b> familiare preso in considerazione;RF: <b>reddito</b> familiare preso in considerazione massimale;è di; ; ; ; ;$.2; ">
+<param name="xdetra" value="detra;detra;0;-;1; ;-;+; ; ; ; ">
+<param name="xVPF" value="VPF;VPF: la valutazione del patrimonio rapportato alla dimensione della famiglia;VPF: la valutazione del patrimonio rapportato alla dimensione della famiglia è nullo (VPF=0);VPF: la valutazione del patrimonio rapportato alla dimensione della famiglia;VPF: la valutazione del patrimonio rapportato alla dimensione della famiglia è massimale (>=1) ;è; ; ; ; ;P.10; ">
+<param name="xaut" value="aut;aut;0;-;1; ;-;+; ; ;$.2; ">
+<param name="xCON" value="CON;CON: Reddito presunto in base ai consumi <br/>CON = ^auto^ + ^mq^ + ^locazione^ + ^base^;CON=0 ERRORE;CON: Reddito presunto in base ai consumi <br/>CON =  ^auto^ + ^mq^ + ^locazione^ + ^base^;CON: Reddito presunto in base ai consumi <br/>CON =  ^auto^ + ^mq^ + ^locazione^ + ^base^; ; ; ; ; <i>;$.2;</i>">
+<param name="xP" value="x;P: Ammontare del patrimonio oltre le franchigie;non esiste del patrimonio complessivo rilevante;Ammontare del patrimonio oltre le franchigie;l'ammontare del patrimonio complessivo è considerato elevatissimo; ; ; ; ; <i> ;$.2;</i>">
+<param name="xpatrimonio" value="patrimonio;Il totale del patrimonio familiare;il <b>patrimonio</b> familiare è nullo;Il totale del patrimonio;Il totale del patrimonio; ; ; ; ; <i>;$.2;</i>">
+<param name="xrl" value="rl;RL: la somma dei redditi lordi;RL: la somma dei redditi lordi è zero;RL: la somma dei redditi lordi ;RL: la somma dei redditi lordi è massimale; (^rd^+^rp^+^C5_altri^+^ra^) ammonta a; ; ; ; <i>;$.2;</i>">
+<param name="xdet" value="det;det: l'ammontare delle detrazioni ammesse;det=0;det: l'ammontare delle detrazioni ammesse;det=max;è di ; ; ; ; ;$.2; ">
+<param name="xCP" value="CP;Conversione del patrimonio oltre le franchigie<br /> CP = max[ 0 , <b>^P^</b>*%AL1% , ^l1^*%AL1%+(<b>^P^</b>-^l1^)*%AL2% , ^l1^*%AL1%+(^l2^-^l1^)*%AL2%+(<b>^P^</b>-^l2^)*%AL3% ];assenza di patrimonio immobiliare rilevante da valutare;Conversione del patrimonio oltre le franchigie;Conversione del patrimonio oltre le franchigie; = ; ; ; ; ;$.2; ">
+
+
+
+<param name="xpltree" value="propagation0;asXml;entrate;detrazioni;patrimoni;consumi;controlli;ris1;ris2;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;FPI=0;FP=0">
+<param name="asXml" value="(Xml==1);">
+<param name="entrate" value="<p /><b>Dati per la determinazione dell'ICEF</b>;N_componenti=-1;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C2_agr=-1!0;C3_imp=-1!0;C4_part=-1!0;C5_altri=-1!0;RL=-1!0">
+<param name="detrazioni" value="(DF!=0)<b>Detrazioni</b>;can=-1!0;mut=-1!0;Imposte=-1!0;Mediche=-1!0;Assegni=-1!0;P_complementare=-1!0;Previdenza=-1!0;Spese_redditi=-1!0;lav_f=-1!0;(Lavoratori==0)Monogenitore=-1!0;Lavoratori=-1!0;Figli_fam_numerose=-1!0;Invalidi=-1!0;DF=-1!0">
+<param name="patrimoni" value="(patrimonio!=0)<b>Patrimonio</b>;p_r=-1!0;p_i=-1!0;p_m=-1!0;Imm_strumentali=-1!0;patrimonio=-1!0;P=-1!0">
+<param name="consumi" value="<b>Dati per il controllo</b>;Mq=-1;Auto=-1">
+<param name="controlli" value="(controllo==1) ;auto=-1!0;mq=-1!0;locazione=-1;base=-1;CON=-1;RC=-1;(differenza==0)differenza=-1">
+<param name="ris1" value="<p /><b>Il risultato del calcolo:</b>;(sostituisci==1)rf=-1;RF=-1;PF=-1;ICEF10=-1;C_RIF_ICEF=-1">
+<param name="ris2" value="<p /><b>il risultato si basa sulle seguenti valutazioni:</b>;VF=2/risultante dal;EQV=3!0;vrf=2/ ;(sostituisci==0)RL=3;(sostituisci==0)DF=3!0;(sostituisci==1)RF=3;vpf=2;CP=3!0">
+<param name="version" value="Versione ICEF15: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="4051314465">
+<param name="CRC" value="1550171399">
+<param name="CRCdata" value="18-gen-2018 17.34.00">
+</APPLET>
+</CENTER>
+<BR>

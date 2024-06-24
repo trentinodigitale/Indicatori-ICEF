@@ -1,0 +1,649 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=800 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.19 $">
+<param name="Taratura" value="reddito garanzia; 25.10.2010">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="previsione1" value="(prev==1)<br />Ipotesi di integrazione in base ai redditi ed ai consumi:<br /><small>(per ulteriori spiegazioni si rimanda alla parte finale di questa elaborazione)</small>;mens_0=-1;(incongrua==1)mens_con=-1;mens_icef=-1;(ch467==1)mens_icef1=-1">
+<param name="previsione2" value="(pr467==1)<br />Ipotesi di integrazione in base ai redditi ed ai consumi:<br /><small>(per ulteriori spiegazioni si rimanda alla parte finale di questa elaborazione)</small>;mens_0=-1;(incongrua==1)mens_con=-1;mens_icef=-1;(ch467==1)mens_icef1=-1">
+
+
+<param name="trendStarts" value="parametrireddgar;casoreddgar;caso0;codice;check3;check4;check6;check7;check467">
+
+<param name="parametrireddgar" value="current;Check=0;Icef_garanzia=0.13;Importo_min=25;Mensile_pagato=999999;Scelta_utente=0;Decisione_ufficio=0;Rif=50000">
+<param name="casoreddgar" value="povero,parametrireddgar,nuovo_input;Abitazione=2000;Altre_entrate=100;Anno=2010;Borse_anticrisi=200;Imposte_perse=50;Mese=7;Mesi_revoca=1;Mesi=4;N_usufruiti=0;N_residenti=2;Precedente=100;Reddito_nuovo=4000;Reddito_perso=3000;N_familiari=2;Icefa=0.11">
+<param name="codice" value="current;Check=1123406789;Icefa=0.15">
+<param name="caso0" value="parametriICEF,parametrireddgar;Abitazione=4680;Anno=2010;Assegni=0;Auto=0;Borse_anticrisi=0;C1_aut=0;C1_dip=0;C1_pens=0;C2_agr=0;C3_imp=0;C4_part=0;C5_altri=7848;Canone=4680;Check=0;Decisione_ufficio=1;Imm_strumentali=0;Imposte=0;Imposte_perse=0;Invalidi=0;Mediche=0;Mensile_pagato=999999;Mese=5;Mesi=4;Mesi_revoca=0;Mq=0;Mutuo=0;N_componenti=1;N_residenti=1;N_usufruiti=2;P_complementare=0;PI=0;PM=0;Precedente=7848;Previdenza=0;Reddito_nuovo=0;Reddito_perso=0;RES=0;Scelta_utente=2;Spese_redditi=0">
+
+<param name="check3" value="current;Check=1003000000">
+<param name="check4" value="current;Check=1000400000">
+<param name="check6" value="current;Check=1000006000">
+<param name="check7" value="current;Check=1000000700">
+<param name="check467" value="current;Check=1000406700">
+
+<param name="variables" value="ascala;cscala;escala;dodicesimo">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+ <param name="dodicesimo" value="0.083333333">
+
+
+
+<param name="edges" value="P.A.T. reddito garanzia;redd_icef0;icef0;N_usufruiti;controlla;mens_con;mens_icef;mens_icef1;mens_0;
+ok-idoneo;Icef_garanzia-LRE;Rif-LRE;Icefa-redd_icef;Rif-redd_icef;LRE-LR;vfi-LR;vfi-redd_icef;LR-diff_redd;redd_icef-diff_redd;diff_redd-teorico;idoneo-integrazione;N_residenti-vfi;teorico-lt_min;Importo_min-lt_min;integrazione-dpiu;integrazione0-dpiu;integrazione0-dmeno;integrazione-dmeno;N_familiari-dn;N_residenti-dn;
+Reddito_nuovo-plus;Altre_entrate-plus;Importo_min-min;lt_min-min;min-erogabile;abitaz-minimo;erogabile-calcolato;Icefa-icef_ok;Icef_garanzia-icef_ok;icef_ok-idoneo;Abitazione-minimo;Anno-anno1;Mesi-mesi;Mesi_revoca-mesi;mesi-fine;fine-fin;Mese-mese;mese-fine;uno-mese;p01-m01;
+u01-m01;p02-m02;u02-m02;p03-m03;u03-m03;p04-m04;u04-m04;p05-m05;u05-m05;p06-m06;u06-m06;p07-m07;u07-m07;p08-m08;u08-m08;p09-m09;u09-m09;p10-m10;u10-m10;p11-m11;
+u11-m11;p12-m12;u12-m12;p13-m13;u13-m13;p14-m14;u14-m14;p15-m15;u15-m15;p16-m16;u16-m16;p17-m17;u17-m17;p18-m18;u18-m18;p19-m19;u19-m19;p20-m20;u20-m20;p21-m21;
+u21-m21;p22-m22;u22-m22;p23-m23;u23-m23;Mese-p01;fine-u01;Mese-p02;fine-u02;Mese-p03;fine-u03;Mese-p04;fine-u04;Mese-p05;fine-u05;Mese-p06;fine-u06;Mese-p07;fine-u07;Mese-p08;
+fine-u08;Mese-p09;fine-u09;Mese-p10;fine-u10;Mese-p11;fine-u11;Mese-p12;fine-u12;mese-p13;fin-u13;mese-p14;fin-u14;mese-p15;fin-u15;mese-p16;fin-u16;mese-p17;fin-u17;mese-p18;
+fin-u18;mese-p19;fin-u19;mese-p20;fin-u20;mese-p21;fin-u21;mese-p22;fin-u22;mese-p23;fin-u23;mesi-integrazione;m13-anno1;Check-check1;icef_ok-nonok;nonok-check1;Borse_anticrisi-minus;idoneo-nomese;nomese-mese;nomese-mesi;
+big-check1;check8-big;nonok-big;teorico-eroga;eroga-erogabile;idoneo-eroga;idoneo-min;calcolato-mensile;mensile-integrazione;Mensile_pagato-mensile;calcolato-dcalc;mensile-dcalc;acc-sost;non_sost-sost;minimo-minus;check8-check1;Scelta_utente-acc;Scelta_utente-non_acc;non_acc-non_sost;Decisione_ufficio-non_sost;
+incongrua-non_sost;escluso-sost;check8-idoneo;non_acc-check8;Scelta_utente-n_s;incongrua-inc;acc-ac;non_acc-nac;inc-n_s;inc-ac;inc-nac;sost-sostit;n_s-sostit;n_s-check8;Decisione_ufficio-check8;incong-inc;incongrua-puo_scegliere;icefa_ok-puo_scegliere;Reddito_perso-pers;Imposte_perse-pers;
+pers-minus;Precedente-minus;N_familiari-abitaz;puo_scegliere-prev;acc-prev;Check-dif7;ch1000-dif7;dif7-2e;2e-ch7;2e-ch3;ch3-ch467;ch7-ch467;check0-ok;check0-escluso;ch467-nac467;nac-nac467;Decisione_ufficio-prev;ok-ob;ch467-ob;ob-big;
+escluso-escl;ch467-escl;escl-puo_scegliere;prev-pr467;ch467-pr467">
+
+
+
+<param name="P.A.T. reddito garanzia" value="text;node.ico;81;571;0;P.A.T. reddito garanzia - (25.10.2010);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_REDDGAR;xModello_REDDGAR;830728389">
+<param name="redd_icef0" value="0;node.ico;279;467;0;-;0.0;TimesNode;NoInput;NoOutput;0;0;escala;NoCurve;xredd_icef0;yredd_icef0;2059218528">
+<param name="icef0" value="0;node.ico;335;409;0;-;0.0;ProbNode;NoInput;NoOutput;0;0;0.5;NoCurve;xicef0;yicef0;1117865045">
+<param name="N_usufruiti" value="1;node.ico;440;307;0;Numero di interventi=0;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xN_usufruiti;xN_usufruiti;4252527036">
+<param name="controlla" value="0;node.ico;560;213;0;1;0.0;ProbNode;NoInput;NoOutput;0;0;1.0;NoCurve;xcontrolla;ycontrolla;136711756">
+<param name="mens_con" value="0;node.ico;309;490;0;- teorico mensile (con l'ICEF calcolato in base ai consumi)  0,50;0.0;TimesNode;NoInput;IntermediateOutput;0;0;ascala;NoCurve;xmens_con;ymens_con;1773073122">
+<param name="mens_icef" value="0;node.ico;385;490;0;- teorico mensile (con l'ICEF calcolato in base ai redditi)  0,50;0.0;TimesNode;NoInput;IntermediateOutput;0;0;ascala;NoCurve;xmens_icef;ymens_icef;646756026">
+<param name="mens_icef1" value="0;node.ico;389;516;0;- teorico mensile per una sola persona (con l'ICEF calcolato in base ai redditi)  0,50;0.0;TimesNode;NoInput;IntermediateOutput;0;0;ascala;NoCurve;xmens_icef1;ymens_icef1;3301307217">
+<param name="mens_0" value="0;node.ico;357;469;0;- - non spetta un'integrazione;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xmens_0;ymens_0;2533829779">
+<param name="ok" value="0;node.ico;283;340;0;-;0.0;NumLeNode;NoInput;NoOutput;1;check0;2;idoneo;ob;1.0;1.0E9;NoCurve;xok;xok;2288421509">
+<param name="idoneo" value="2;node.ico;456;487;0;-;0.0;ProbNode;NoInput;IntermediateOutput;3;ok;icef_ok;check8;4;integrazione;nomese;eroga;min;0.0;0.0;0.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xidoneo;xidoneo;3457460">
+<param name="Icef_garanzia" value="1;node.ico;51;428;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;LRE;icef_ok;0.5;NoCurve;xIcef_garanzia;xIcef_garanzia;752532008">
+<param name="LRE" value="0;node.ico;90;466;0;-;0.0;TimesNode;NoInput;NoOutput;2;Icef_garanzia;Rif;1;LR;escala;1.0;1.0;1.0;NoCurve;xLRE;xLRE;2216195901">
+<param name="Rif" value="1;node.ico;134;442;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;LRE;redd_icef;escala;NoCurve;xRif;xRif;3373165946">
+<param name="Icefa" value="1;node.ico;257;407;0;-;0.0;TimesNode;NoInput;NoOutput;0;2;redd_icef;icef_ok;1.0;NoCurve;xIcefa;xIcefa;538541142">
+<param name="redd_icef" value="0;node.ico;208;467;0;-;0.0;TimesNode;NoInput;NoOutput;3;Icefa;Rif;vfi;1;diff_redd;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xredd_icef;xredd_icef;3982855481">
+<param name="LR" value="0;node.ico;149;466;0;-;0.0;TimesNode;NoInput;NoOutput;2;LRE;vfi;1;diff_redd;escala;1.0;1.0;1.0;NoCurve;xLR;xLR;2896082015">
+<param name="vfi" value="0;node.ico;189;440;0;-;0.0;NumTransNode;NoInput;NoOutput;1;N_residenti;2;LR;redd_icef;cscala;cscala;LinearCurve;componentiCurve;xvfi;xvfi;1866415051">
+<param name="diff_redd" value="0;node.ico;171;493;0;-;0.0;MinusNode;NoInput;NoOutput;2;LR;redd_icef;1;teorico;escala;1.0;1.0;1.0;NoCurve;xdiff_redd;xdiff_redd;1597309826">
+<param name="teorico" value="0;node.ico;242;493;0;-;0.0;PlusNode;NoInput;NoOutput;1;diff_redd;2;lt_min;eroga;escala;dodicesimo;NoCurve;xteorico;xteorico;1524809155">
+<param name="integrazione" value="2;node.ico;483;548;0;-;0.0;TimesNode;NoInput;NoOutput;3;idoneo;mesi;mensile;2;dpiu;dmeno;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xintegrazione;xintegrazione;4095381511">
+<param name="N_residenti" value="1;node.ico;189;412;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;vfi;dn;cscala;NoCurve;xN_residenti;xN_residenti;1214271548">
+<param name="lt_min" value="0;node.ico;146;525;0;-;0.0;NumLtNode;NoInput;NoOutput;2;teorico;Importo_min;1;min;1.0;1.0;1.0;1.0;NoCurve;xlt_min;ylt_min;2041992335">
+<param name="Importo_min" value="1;node.ico;66;547;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;lt_min;min;escala;NoCurve;xImporto_min;yImporto_min;1839447453">
+<param name="dpiu" value="0;node.ico;554;572;0;-;0.0;MinusNode;NoInput;NoOutput;2;integrazione;integrazione0;0;ascala;1.0;1.0;1.0;NoCurve;xdpiu;ydpiu;1214441717">
+<param name="integrazione0" value="0;node.ico;481;572;0;-;0.0;TimesNode;NoInput;NoOutput;0;2;dpiu;dmeno;ascala;NoCurve;xintegrazione0;yintegrazione0;2037117069">
+<param name="dmeno" value="0;node.ico;403;572;0;-;0.0;MinusNode;NoInput;NoOutput;2;integrazione0;integrazione;0;ascala;1.0;1.0;1.0;NoCurve;xdmeno;ydmeno;216175805">
+<param name="N_familiari" value="1;node.ico;424;405;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;dn;abitaz;cscala;NoCurve;xN_familiari;yN_familiari;3921905317">
+<param name="dn" value="0;node.ico;272;440;0;-;0.0;MinusNode;NoInput;NoOutput;2;N_familiari;N_residenti;0;cscala;1.0;1.0;1.0;NoCurve;xdn;ydn;4002209973">
+<param name="Reddito_nuovo" value="1;node.ico;57;374;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;plus;escala;NoCurve;xReddito_nuovo;yReddito_nuovo;1687591056">
+<param name="plus" value="0;node.ico;32;325;0;-;0.0;PlusNode;NoInput;NoOutput;2;Reddito_nuovo;Altre_entrate;0;escala;1.0;1.0;1.0;NoCurve;xplus;yplus;2733304876">
+<param name="Altre_entrate" value="1;node.ico;46;400;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;plus;escala;NoCurve;xAltre_entrate;yAltre_entrate;3884164203">
+<param name="min" value="0;node.ico;153;549;0;-;0.0;TimesNode;NoInput;NoOutput;3;Importo_min;lt_min;idoneo;1;erogabile;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmin;ymin;1090995037">
+<param name="erogabile" value="0;node.ico;240;549;0;-;0.0;NumMaxNode;NoInput;NoOutput;2;min;eroga;1;calcolato;1.0E-6;1.0;1.0;1.0;NoCurve;xerogabile;yerogabile;2963882189">
+<param name="abitaz" value="0;node.ico;319;365;0;-;0.0;NumTransNode;NoInput;NoOutput;1;N_familiari;1;minimo;ascala;1.0;LinearCurve;abitazCurve;xabitaz;yabitaz;1771023772">
+<param name="minimo" value="0;node.ico;255;365;0;-;0.0;NumMinNode;NoInput;NoOutput;2;abitaz;Abitazione;1;minus;ascala;1.0;1.0;1.0;NoCurve;xminimo;yminimo;350506122">
+<param name="calcolato" value="0;node.ico;324;549;0;-;0.0;PlusNode;NoInput;NoOutput;1;erogabile;2;mensile;dcalc;ascala;1.0;NoCurve;xcalcolato;ycalcolato;1697794231">
+<param name="icef_ok" value="0;node.ico;404;426;0;-;0.0;NumLtNode;NoInput;NoOutput;2;Icefa;Icef_garanzia;2;idoneo;nonok;1.0;1.0;1.0;1.0;NoCurve;xicef_ok;yicef_ok;2431362837">
+<param name="Abitazione" value="1;node.ico;218;389;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minimo;escala;NoCurve;xAbitazione;yAbitazione;4257744084">
+<param name="Anno" value="1;node.ico;532;455;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;anno1;1.0E-4;NoCurve;yAnno;yAnno;3284976311">
+<param name="anno1" value="0;node.ico;532;490;0;-;0.0;PlusNode;NoInput;NoOutput;2;Anno;m13;0;1.0E-4;1.0;1.0;1.0;NoCurve;yanno1;yanno1;2987011398">
+<param name="Mesi" value="1;node.ico;422;331;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mesi;0.0;NoCurve;xMesi;xMesi;1199296761">
+<param name="mesi" value="0;node.ico;483;331;0;-;0.0;MinusNode;NoInput;NoOutput;3;Mesi;Mesi_revoca;nomese;2;fine;integrazione;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;ymesi;ymesi;4244117846">
+<param name="Mesi_revoca" value="1;node.ico;446;353;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mesi;0.0;NoCurve;xMesi_revoca;xMesi_revoca;2128056269">
+<param name="fine" value="0;node.ico;507;305;0;-;0.0;PlusNode;NoInput;NoOutput;2;mesi;mese;13;fin;u01;u02;u03;u04;u05;u06;u07;u08;u09;u10;u11;u12;1.0;1.0;1.0;1.0;NoCurve;xfine;yfine;3874567684">
+<param name="fin" value="0;node.ico;519;332;0;-;0.0;PlusNode;NoInput;NoOutput;1;fine;11;u13;u14;u15;u16;u17;u18;u19;u20;u21;u22;u23;1.0;1.0;NoCurve;xfin;yfin;2260472931">
+<param name="Mese" value="1;node.ico;541;247;0;-;0.0;PlusNode;ValueInput;NoOutput;0;13;mese;p01;p02;p03;p04;p05;p06;p07;p08;p09;p10;p11;p12;1.0;NoCurve;xMese;xMese;2940362614">
+<param name="mese" value="0;node.ico;527;282;0;-;0.0;MinusNode;NoInput;NoOutput;3;Mese;uno;nomese;12;fine;p13;p14;p15;p16;p17;p18;p19;p20;p21;p22;p23;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmese;xmese;3684931447">
+<param name="uno" value="0;node.ico;481;283;0;-;0.0;ProbNode;NoInput;NoOutput;0;1;mese;1.0;NoCurve;yuno;yuno;1809673351">
+<param name="p01" value="0;node.ico;598;235;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m01;1.0;1.0;NoCurve;xp01;xm01;3921246966">
+<param name="m01" value="0;node.ico;635;235;0;-;0.0;ProbNode;NoInput;NoOutput;2;p01;u01;0;0.0;0.0;0.0;1.0;NoCurve;xm01;xm01;1563001174">
+<param name="u01" value="0;node.ico;672;236;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m01;1.0;1.0;NoCurve;xu01;xm01;218637689">
+<param name="p02" value="0;node.ico;598;259;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m02;1.0;2.0;NoCurve;xp02;xm02;3699376925">
+<param name="m02" value="0;node.ico;635;259;0;-;0.0;ProbNode;NoInput;NoOutput;2;p02;u02;0;0.0;0.0;0.0;1.0;NoCurve;xm02;xm02;1239426531">
+<param name="u02" value="0;node.ico;672;259;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m02;1.0;2.0;NoCurve;xu02;xm02;1904707985">
+<param name="p03" value="0;node.ico;598;281;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m03;1.0;3.0;NoCurve;xp03;xm03;356381734">
+<param name="m03" value="0;node.ico;635;281;0;-;0.0;ProbNode;NoInput;NoOutput;2;p03;u03;0;0.0;0.0;0.0;1.0;NoCurve;xm03;xm03;200889217">
+<param name="u03" value="0;node.ico;672;281;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m03;1.0;3.0;NoCurve;xu03;xm03;3090841258">
+<param name="p04" value="0;node.ico;598;302;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m04;1.0;4.0;NoCurve;xp04;xm04;4090607055">
+<param name="m04" value="0;node.ico;635;302;0;-;0.0;ProbNode;NoInput;NoOutput;2;p04;u04;0;0.0;0.0;0.0;1.0;NoCurve;xm04;xm04;2938615389">
+<param name="u04" value="0;node.ico;672;302;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m04;1.0;4.0;NoCurve;xu04;xm04;1591099203">
+<param name="p05" value="0;node.ico;598;324;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m05;1.0;5.0;NoCurve;xp05;xm05;2447508628">
+<param name="m05" value="0;node.ico;635;324;0;-;0.0;ProbNode;NoInput;NoOutput;2;p05;u05;0;0.0;0.0;0.0;1.0;NoCurve;xm05;xm05;3939635461">
+<param name="u05" value="0;node.ico;672;324;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m05;1.0;5.0;NoCurve;xu05;xm05;1021677080">
+<param name="p06" value="0;node.ico;598;345;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m06;1.0;6.0;NoCurve;xp06;xm06;3610484236">
+<param name="m06" value="0;node.ico;635;345;0;-;0.0;ProbNode;NoInput;NoOutput;2;p06;u06;0;0.0;0.0;0.0;1.0;NoCurve;xm06;xm06;1504036878">
+<param name="u06" value="0;node.ico;672;345;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m06;1.0;6.0;NoCurve;xu06;xm06;2050233472">
+<param name="p07" value="0;node.ico;598;366;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m07;1.0;7.0;NoCurve;xp07;xm07;1876643922">
+<param name="m07" value="0;node.ico;635;366;0;-;0.0;ProbNode;NoInput;NoOutput;2;p07;u07;0;0.0;0.0;0.0;1.0;NoCurve;xm07;xm07;1179912069">
+<param name="u07" value="0;node.ico;672;366;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m07;1.0;7.0;NoCurve;xu07;xm07;3269253854">
+<param name="p08" value="0;node.ico;598;386;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m08;1.0;8.0;NoCurve;xp08;xm08;2600996997">
+<param name="m08" value="0;node.ico;635;386;0;-;0.0;ProbNode;NoInput;NoOutput;2;p08;u08;0;0.0;0.0;0.0;1.0;NoCurve;xm08;xm08;1754699602">
+<param name="u08" value="0;node.ico;672;386;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m08;1.0;8.0;NoCurve;xu08;xm08;906992137">
+<param name="p09" value="0;node.ico;598;407;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m09;1.0;9.0;NoCurve;xp09;xm09;2559479102">
+<param name="m09" value="0;node.ico;635;407;0;-;0.0;ProbNode;NoInput;NoOutput;2;p09;u09;0;0.0;0.0;0.0;1.0;NoCurve;xm09;xm09;1555035698">
+<param name="u09" value="0;node.ico;672;407;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m09;1.0;9.0;NoCurve;xu09;xm09;898172850">
+<param name="p10" value="0;node.ico;598;429;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m10;1.0;10.0;NoCurve;xp10;xm10;4277093467">
+<param name="m10" value="0;node.ico;635;429;0;-;0.0;ProbNode;NoInput;NoOutput;2;p10;u10;0;0.0;0.0;0.0;1.0;NoCurve;xm10;xm10;1709103538">
+<param name="u10" value="0;node.ico;672;429;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m10;1.0;10.0;NoCurve;xu10;xm10;3069313745">
+<param name="p11" value="0;node.ico;598;451;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m11;1.0;11.0;NoCurve;xp11;xm11;295259367">
+<param name="m11" value="0;node.ico;635;451;0;-;0.0;ProbNode;NoInput;NoOutput;2;p11;u11;0;0.0;0.0;0.0;1.0;NoCurve;xm11;xm11;415670748">
+<param name="u11" value="0;node.ico;672;451;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m11;1.0;11.0;NoCurve;xu11;xm11;1501825645">
+<param name="p12" value="0;node.ico;598;472;0;-;0.0;NumLeNode;NoInput;NoOutput;1;Mese;1;m12;1.0;12.0;NoCurve;xp12;xm12;777719537">
+<param name="m12" value="0;node.ico;635;472;0;-;0.0;ProbNode;NoInput;NoOutput;2;p12;u12;0;0.0;0.0;0.0;1.0;NoCurve;xm12;xm12;4227657700">
+<param name="u12" value="0;node.ico;672;472;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fine;1;m12;1.0;12.0;NoCurve;xu12;xm12;1715882107">
+<param name="p13" value="0;node.ico;598;493;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m13;1.0;12.0;NoCurve;xp13;xm13;1666090128">
+<param name="m13" value="0;node.ico;635;493;0;-;0.0;ProbNode;NoInput;NoOutput;2;p13;u13;1;anno1;0.0;0.0;0.0;1.0;NoCurve;xm13;xm13;3907283721">
+<param name="u13" value="0;node.ico;672;493;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m13;1.0;13.0;NoCurve;xu13;xm13;3495031355">
+<param name="p14" value="0;node.ico;598;513;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m14;1.0;13.0;NoCurve;xp14;xm14;3351486169">
+<param name="m14" value="0;node.ico;635;513;0;-;0.0;ProbNode;NoInput;NoOutput;2;p14;u14;0;0.0;0.0;0.0;1.0;NoCurve;xm14;xm14;2746470654">
+<param name="u14" value="0;node.ico;672;513;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m14;1.0;14.0;NoCurve;xu14;xm14;2305072191">
+<param name="p15" value="0;node.ico;598;534;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m15;1.0;14.0;NoCurve;xp15;xm15;1985609414">
+<param name="m15" value="0;node.ico;635;534;0;-;0.0;ProbNode;NoInput;NoOutput;2;p15;u15;0;0.0;0.0;0.0;1.0;NoCurve;xm15;xm15;791123683">
+<param name="u15" value="0;node.ico;672;534;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m15;1.0;15.0;NoCurve;xu15;xm15;128432227">
+<param name="p16" value="0;node.ico;598;555;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m16;1.0;15.0;NoCurve;xp16;xm16;2131401011">
+<param name="m16" value="0;node.ico;635;555;0;-;0.0;ProbNode;NoInput;NoOutput;2;p16;u16;0;0.0;0.0;0.0;1.0;NoCurve;xm16;xm16;2622509032">
+<param name="u16" value="0;node.ico;672;555;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m16;1.0;16.0;NoCurve;xu16;xm16;3869265584">
+<param name="p17" value="0;node.ico;598;576;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m17;1.0;16.0;NoCurve;xp17;xm17;594418374">
+<param name="m17" value="0;node.ico;635;576;0;-;0.0;ProbNode;NoInput;NoOutput;2;p17;u17;0;0.0;0.0;0.0;1.0;NoCurve;xm17;xm17;2208399459">
+<param name="u17" value="0;node.ico;672;576;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m17;1.0;17.0;NoCurve;xu17;xm17;1023059159">
+<param name="p18" value="0;node.ico;598;597;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m18;1.0;17.0;NoCurve;xp18;xm18;944133908">
+<param name="m18" value="0;node.ico;635;597;0;-;0.0;ProbNode;NoInput;NoOutput;2;p18;u18;0;0.0;0.0;0.0;1.0;NoCurve;xm18;xm17;3818581310">
+<param name="u18" value="0;node.ico;672;597;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m18;1.0;18.0;NoCurve;xu18;xm18;326599322">
+<param name="p19" value="0;node.ico;598;600;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m19;1.0;18.0;NoCurve;xp19;xm19;2983992570">
+<param name="m19" value="0;node.ico;635;600;0;-;0.0;ProbNode;NoInput;NoOutput;2;p19;u19;0;0.0;0.0;0.0;1.0;NoCurve;xm19;xm19;1072467023">
+<param name="u19" value="0;node.ico;672;600;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m19;1.0;19.0;NoCurve;xu19;xm19;1622120978">
+<param name="p20" value="0;node.ico;598;600;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m20;1.0;19.0;NoCurve;xp20;xm20;3877439108">
+<param name="m20" value="0;node.ico;635;600;0;-;0.0;ProbNode;NoInput;NoOutput;2;p20;u20;0;0.0;0.0;0.0;1.0;NoCurve;xm20;xm20;2140896180">
+<param name="u20" value="0;node.ico;672;600;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m20;1.0;20.0;NoCurve;xu20;xm20;4190674769">
+<param name="p21" value="0;node.ico;598;600;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m21;1.0;20.0;NoCurve;xp21;xm21;3824721576">
+<param name="m21" value="0;node.ico;635;600;0;-;0.0;ProbNode;NoInput;NoOutput;2;p21;u21;0;0.0;0.0;0.0;1.0;NoCurve;xm21;xm21;3964024909">
+<param name="u21" value="0;node.ico;672;600;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m21;1.0;21.0;NoCurve;xu21;xm21;847976512">
+<param name="p22" value="0;node.ico;598;600;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m22;1.0;20.0;NoCurve;xp22;xm22;1547025562">
+<param name="m22" value="0;node.ico;635;600;0;-;0.0;ProbNode;NoInput;NoOutput;2;p22;u22;0;0.0;0.0;0.0;1.0;NoCurve;xm22;xm22;2203122183">
+<param name="u22" value="0;node.ico;672;600;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m22;1.0;22.0;NoCurve;xu22;xm22;3024000818">
+<param name="p23" value="0;node.ico;598;600;0;-;0.0;NumLeNode;NoInput;NoOutput;1;mese;1;m23;1.0;22.0;NoCurve;xp23;xm23;2920191691">
+<param name="m23" value="0;node.ico;635;600;0;-;0.0;ProbNode;NoInput;NoOutput;2;p23;u23;0;0.0;0.0;0.0;1.0;NoCurve;xm23;xm23;277723646">
+<param name="u23" value="0;node.ico;672;600;0;-;0.0;NumGeNode;NoInput;NoOutput;1;fin;1;m23;1.0;23.0;NoCurve;xu23;xm23;2138902563">
+<param name="Check" value="1;node.ico;368;252;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;check1;dif7;1.0;NoCurve;xCheck;xCheck;2141455113">
+<param name="check1" value="0;node.ico;349;344;0;-;0.0;PlusNode;NoInput;NoOutput;4;Check;nonok;big;check8;0;1.0;1.0;50000.0;1.0E9;80.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xcheck1;ycheck1;1450708336">
+<param name="nonok" value="0;node.ico;374;364;0;-;0.0;ProbNode;NoInput;NoOutput;1;icef_ok;2;check1;big;1.0;0.0;NoCurve;xnonok;ynonok;1267037037">
+<param name="Borse_anticrisi" value="1;node.ico;218;331;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minus;escala;NoCurve;xBorse_anticrisi;yBorse_anticrisi;1886116436">
+<param name="minus" value="0;node.ico;137;330;0;-;0.0;PlusNode;NoInput;NoOutput;4;Borse_anticrisi;minimo;pers;Precedente;0;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xminus;yminus;785521701">
+<param name="nomese" value="0;node.ico;517;422;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo;2;mese;mesi;50.0;0.0;NoCurve;xnomese;ynomese;879301926">
+<param name="big" value="0;node.ico;380;316;0;-;0.0;ProbNode;NoInput;NoOutput;3;check8;nonok;ob;1;check1;0.0;0.0;0.0;0.0;0.0;1.0;1.0;1.0;NoCurve;xbig;ybig;2241105856">
+<param name="check8" value="0;node.ico;236;309;0;-;0.0;ProbNode;NoInput;NoOutput;3;Decisione_ufficio;non_acc;n_s;3;check1;big;idoneo;0.0;0.0;1.0;0.0;1.0;1.0;1.0;1.0;NoCurve;xcheck8;ycheck8;3109297747">
+<param name="eroga" value="0;node.ico;241;519;0;-;0.0;TimesNode;NoInput;NoOutput;2;teorico;idoneo;1;erogabile;escala;1.0;1.0;1.0;NoCurve;xeroga;yeroga;2600864468">
+<param name="mensile" value="0;node.ico;403;548;0;-;0.0;NumMinNode;NoInput;NoOutput;2;calcolato;Mensile_pagato;2;integrazione;dcalc;escala;1.0;1.0;1.0;NoCurve;xmensile;ymensile;1835535987">
+<param name="Mensile_pagato" value="1;node.ico;523;515;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mensile;escala;NoCurve;xMensile_pagato;yMensile_pagato;3272229253">
+<param name="dcalc" value="0;node.ico;347;571;0;-;0.0;MinusNode;NoInput;NoOutput;2;calcolato;mensile;0;100.0;1.0;1.0;1.0;NoCurve;xdcalc;ydcalc;904601142">
+<param name="acc" value="0;node.ico;147;268;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Scelta_utente;3;sost;ac;prev;1.0;1.0;NoCurve;xacc;yacc;10525801">
+<param name="sost" value="0;node.ico;228;269;0;-;0.0;ProbNode;NoInput;NoOutput;3;acc;non_sost;escluso;1;sostit;0.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xsost;ysost;167920324">
+<param name="non_sost" value="0;node.ico;230;290;0;-;0.0;ProbNode;NoInput;NoOutput;3;non_acc;Decisione_ufficio;incongrua;1;sost;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;NoCurve;xnon_sost;ynon_sost;1820889125">
+<param name="Scelta_utente" value="1;node.ico;51;288;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;acc;non_acc;n_s;1.0;NoCurve;xScelta_utente;xScelta_utente;3226658804">
+<param name="non_acc" value="0;node.ico;152;292;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Scelta_utente;3;non_sost;nac;check8;1.0;2.0;NoCurve;xnon_acc;ynon_acc;2471305370">
+<param name="Decisione_ufficio" value="1;node.ico;96;309;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;non_sost;check8;prev;0.5;NoCurve;xDecisione_ufficio;yDecisione_ufficio;1910411820">
+<param name="incongrua" value="0;node.ico;428;263;0;-;0.0;NumLtNode;NoInput;NoOutput;0;3;non_sost;inc;puo_scegliere;1.0;NoCurve;xincongrua;yincongrua;1506940380">
+<param name="escluso" value="0;node.ico;372;291;0;-;0.0;NumGtNode;NoInput;NoOutput;1;check0;2;sost;escl;1.0;1.0;NoCurve;xescluso;yescluso;2125250506">
+<param name="n_s" value="0;node.ico;332;268;0;-;0.0;ProbNode;NoInput;NoOutput;2;Scelta_utente;inc;2;sostit;check8;0.0;0.0;1.0;0.0;NoCurve;xn_s;yn_s;677623434">
+<param name="inc" value="0;node.ico;438;285;0;-;0.0;ProbNode;NoInput;NoOutput;2;incongrua;incong;3;n_s;ac;nac;0.0;0.0;0.0;1.0;NoCurve;xinc;yinc;3872567565">
+<param name="ac" value="0;node.ico;191;254;0;-;0.0;ProbNode;NoInput;NoOutput;2;acc;inc;0;0.0;0.0;0.0;1.0;NoCurve;xac;yac;2078050360">
+<param name="nac" value="0;node.ico;284;280;0;-;0.0;ProbNode;NoInput;NoOutput;2;non_acc;inc;1;nac467;0.0;0.0;0.0;1.0;NoCurve;xnac;ynac;3398378422">
+<param name="sostit" value="0;node.ico;283;258;0;-;0.0;ProbNode;NoInput;NoOutput;2;sost;n_s;0;0.0;1.0;1.0;1.0;NoCurve;xsostit;ysostit;1617826207">
+<param name="incong" value="0;node.ico;494;264;0;-;0.0;Times2Node;NoInput;NoOutput;0;1;inc;1.0;NoCurve;xincong;yincong;3947480741">
+<param name="puo_scegliere" value="0;node.ico;357;450;0;-;0.0;ProbNode;NoInput;NoOutput;3;incongrua;icefa_ok;escl;1;prev;0.0;0.0;0.0;1.0;0.0;0.0;0.0;0.0;NoCurve;ypuo_scegliere;ypuo_scegliere;4054221275">
+<param name="icefa_ok" value="0;node.ico;457;450;0;-;0.0;Times2Node;NoInput;NoOutput;0;1;puo_scegliere;1.0;NoCurve;xicefa_ok;yicefa_ok;1862507119">
+<param name="Reddito_perso" value="1;node.ico;159;374;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xReddito_perso;yReddito_perso;1279305030">
+<param name="pers" value="0;node.ico;173;352;0;-;0.0;MinusNode;NoInput;NoOutput;2;Reddito_perso;Imposte_perse;1;minus;escala;1.0;1.0;1.0;NoCurve;xpers;ypers;424641925">
+<param name="Imposte_perse" value="1;node.ico;91;351;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pers;escala;NoCurve;xImposte_perse;yImposte_perse;3955521607">
+<param name="Precedente" value="1;node.ico;133;395;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minus;escala;NoCurve;xPrecedente;yPrecedente;73502668">
+<param name="prev" value="0;node.ico;95;268;0;-;0.0;ProbNode;NoInput;NoOutput;3;puo_scegliere;acc;Decisione_ufficio;1;pr467;0.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xprev;yprev;2397844801">
+<param name="dif7" value="0;node.ico;413;385;0;-;0.0;MinusNode;NoInput;NoOutput;2;Check;ch1000;1;2e;0.0;1.0;1.0;1.0;NoCurve;xdif7;ydif7;37984161">
+<param name="ch1000" value="0;node.ico;297;385;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;dif7;1.0E9;NoCurve;xch1000;ych1000;732328202">
+<param name="2e" value="0;node.ico;450;385;0;-;0.0;PlusNode;NoInput;NoOutput;1;dif7;2;ch7;ch3;1.0;0.01;NoCurve;x2e;y2e;1381593763">
+<param name="ch7" value="0;node.ico;493;402;0;-;0.0;NumGeNode;NoInput;NoOutput;1;2e;1;ch467;1.0;7.0;NoCurve;xch7;ych7;3141109881">
+<param name="ch3" value="0;node.ico;494;378;0;-;0.0;NumLtNode;NoInput;NoOutput;1;2e;1;ch467;1.0;30000.0;NoCurve;xch3;ych3;1576268788">
+<param name="ch467" value="0;node.ico;543;390;0;-;0.0;ProbNode;NoInput;NoOutput;2;ch3;ch7;4;nac467;ob;escl;pr467;0.0;0.0;0.0;1.0;NoCurve;xch467;ych467;1682847895">
+<param name="check0" value="0;node.ico;308;299;0;-;0.0;TimesNode;NoInput;NoOutput;0;2;ok;escluso;1.0;NoCurve;xcheck0;ycheck0;1745877998">
+<param name="nac467" value="0;node.ico;518;355;0;-;0.0;ProbNode;NoInput;NoOutput;2;ch467;nac;0;0.0;0.0;0.0;1.0;NoCurve;xnac467;ynac467;2046241332">
+<param name="ob" value="0;node.ico;322;324;0;-;0.0;ProbNode;NoInput;NoOutput;2;ok;ch467;1;big;0.0;1.0;0.0;0.0;NoCurve;xob;yob;3347676174">
+<param name="escl" value="0;node.ico;456;424;0;-;0.0;ProbNode;NoInput;NoOutput;2;escluso;ch467;1;puo_scegliere;0.0;1.0;0.0;0.0;NoCurve;xescl;yescl;2383862138">
+<param name="pr467" value="0;node.ico;311;527;0;-;0.0;ProbNode;NoInput;NoOutput;2;prev;ch467;0;0.0;0.0;1.0;0.0;NoCurve;xpr467;ypr467;3500838034">
+
+<param name="abitazCurve" value="LinearCurve;0.0;0.0;1.0;2460.0;2.0;2580.0;3.0;2940.0;4.0;3120.0;5.0;3540.0;6.0;3960.0;7.0;4680.0;8.0;4860.0">
+<param name="componentiCurve" value="LinearCurve;0.0;0.0;1.0;C1;2.0;C2;3.0;C3;4.0;C4;5.0;C5;ntot;ctot">
+
+
+<param name="xImposte_perse" value="Imposte_perse;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte sostituite=0;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato;Imposte dichiarate ai fini ICEF sostituite dal reddito netto attualizzato; ; ; ; ; +;$.2; ">
+
+<param name="xPrecedente" value="Precedente;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF;Reddito di Garanzia introdotto nel quadro C5 della dichiarazione ICEF; ; ; ; ; -;$.2; ">
+
+<param name="xReddito_perso" value="Reddito_perso;Reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;Reddito sostituito=0;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato;reddito dichiarato ai fini ICEF sostituito dal reddito netto attualizzato; ; ; ; ; -;$.2; ">
+
+
+<param name="xAbitazione" value="Abitazione;Affitto/Mutuo (^minimo^ utilizzato);Affitto/Mutuo zero;Affitto/Mutuo (^minimo^ utilizzato);Affitto/Mutuo (^minimo^ utilizzato); ; ; ; ; -;$.2; ">
+
+<param name="xAltre_entrate" value="Altre_entrate;Altre entrate;Altre entrate=0;Altre entrate;Altre entrate; ; ; ; ; +;$.2; ">
+
+<param name="xintegrazione0" value="integrazione0;integrazione0;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xImporto_min" value="Importo_min;Importo_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xN_familiari" value="N_familiari;Numero componenti del nucleo anagrafico;componenti=0;Numero componenti del nucleo anagrafico;Numero componenti del nucleo anagrafico; ; ; ; ; ;T; ">
+
+<param name="xReddito_nuovo" value="Reddito_nuovo;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa;Reddito netto attualizzato su base annuale dovuto all'inizio dell'attivita' lavorativa; ; ; ; ; +;$.2; ">
+
+<param name="xch1000" value="ch1000;ch1000;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xicefa_ok" value="icefa_ok;icefa_ok;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xScelta_utente" value="Scelta_utente;Scelta_utente;0;-;1; ;-;+; ; ; ; ">
+<param name="xDecisione_ufficio" value="Decisione_ufficio;Decisione_ufficio;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xMensile_pagato" value="Mensile_pagato;Mensile_pagato;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xBorse_anticrisi" value="Borse_anticrisi;Borse di studio per interventi di formazione inseriti in piani anticrisi economica;Borse di studio per interventi di formazione inseriti in piani anticrisi economica;Borse di studio per interventi di formazione inseriti in piani anticrisi economica;Borse di studio per interventi di formazione inseriti in piani anticrisi economica; ; ; ; ; -;$.2; ">
+
+<param name="xCheck" value="Check;Check;Domanda formalmente in regola;Check;Codice di controllo iniziale: §Check§; ; ; ; ; ;T; ">
+<param name="xincongrua" value="incongrua;incongrua;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xincong" value="incong;incong;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xMesi" value="Mesi;Mesi; ; ; ; ; ; ; ; ;T; mesi inizialmente concessi">
+<param name="xMesi_revoca" value="Mesi_revoca;x;Mesi_revoca=0; ; ; ; ; ; ;di cui ;T; mesi sono revocati d'ufficio">
+
+<param name="xMese" value="Mese;Mese;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef_garanzia" value="Icef_garanzia;Icef_garanzia;0;-;1; ;-;+; ; ;T.2; ">
+<param name="xmens_0" value="mens_0;-non integrazione;- - non spetta un'integrazione;- nessuna integrazione;- non spetta un'integrazione, se la domanda non è sanabile. Rimane peraltro <b>bloccata per 6 mesi</b>; ; ; ; ; <i>;$.2;</i>">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xredd_icef0" value="redd_icef0;redd_icef0;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcefa" value="Icefa;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit|;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit|; <b>(ICEFa)</B> Indicatore della Condizione Economica Familiare attualizzato<br> |sostit|;<b>(ICEFa)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare <b>a</b>ttualizzato |sostit| oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xmens_icef1" value="mens_icef1;- teorico mensile per una sola persona (con l'ICEF calcolato in base ai redditi);- con l'ICEF calcolato in base ai redditi non spetta nessuna integrazione per una persona;- teorico mensile per una sola persona (con l'ICEF calcolato in base ai redditi);- teorico mensile per una sola persona (con l'ICEF calcolato in base ai redditi); ; ; ; ; <i>;$.2;</i>">
+
+<param name="xmens_con" value="mens_con;- teorico mensile (con l'ICEF calcolato in base ai consumi);- con l'ICEF calcolato in base ai consumi non spetta nessuna integrazione;- teorico mensile (con l'ICEF calcolato in base ai consumi);- teorico mensile (con l'ICEF calcolato in base ai consumi); ; ; ; ; <i>;$.2;</i>">
+
+<param name="xcontrolla" value="controlla;controlla;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xN_usufruiti" value="N_usufruiti;Numero di interventi a partire dal mese di prima concessione;Numero di interventi=0;Numero di interventi a partire dal mese di prima concessione;Numero di interventi a partire dal mese di prima concessione; ; ; ; ; ;T; ">
+<param name="xicef0" value="icef0;icef0;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xmens_icef" value="mens_icef;- teorico mensile (con l'ICEF calcolato in base ai redditi);- con l'ICEF calcolato in base ai redditi non spetta nessuna integrazione;- teorico mensile (con l'ICEF calcolato in base ai redditi);- teorico mensile (con l'ICEF calcolato in base ai redditi); ; ; ; ; <i>;$.2;</i>">
+
+<param name="xModello_REDDGAR" value="P.A.T. reddito garanzia;x;P.A.T. reddito garanzia - (25.10.2010);--;--; ; ; ; ; ; ; ">
+<param name="xcheck0" value="check0;check0;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xN_residenti" value="N_residenti;Numero componenti considerati per il calcolo dell'integrazione;la famiglia non ha componenti valutabili;Numero componenti considerati per il calcolo dell'integrazione;Numero componenti considerati per il calcolo dell'integrazione; ; ; ; ; ;T; ">
+<param name="xu08" value="u08;u08;0;-;1; ;-;+; ; ; ; ">
+<param name="xm08" value="m08;m08;0;-;Agosto; ; ; ; ; ; ; ">
+<param name="xp09" value="p09;p09;0;-;1; ;-;+; ; ; ; ">
+<param name="xm09" value="m09;m09;0;-;Settembre; ; ; ; ; ; ; ">
+<param name="xp10" value="p10;p10;0;-;1; ;-;+; ; ; ; ">
+<param name="xm10" value="m10;m10;0;-;Ottobre; ; ; ; ; ; ; ">
+<param name="xp18" value="p18;p18;0;-;1; ;-;+; ; ; ; ">
+<param name="xm18" value="m18;m18;0;-;Giugnio; ; ; ; ; ; ; ">
+<param name="xacc" value="acc;acc;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xu09" value="u09;u09;0;-;1; ;-;+; ; ; ; ">
+<param name="xu16" value="u16;u16;0;-;1; ;-;+; ; ; ; ">
+<param name="xm16" value="m16;m16;0;-;Aprile; ; ; ; ; ; ; ">
+<param name="xu06" value="u06;u06;0;-;1; ;-;+; ; ; ; ">
+<param name="xm06" value="m06;m06;0;-;Giugno; ; ; ; ; ; ; ">
+<param name="xp17" value="p17;p17;0;-;1; ;-;+; ; ; ; ">
+<param name="xm17" value="m17;m17;0;-;Maggio; ; ; ; ; ; ; ">
+<param name="xp07" value="p07;p07;0;-;1; ;-;+; ; ; ; ">
+<param name="xm07" value="m07;m07;0;-;Luglio; ; ; ; ; ; ; ">
+<param name="xp08" value="p08;p08;0;-;1; ;-;+; ; ; ; ">
+<param name="xu07" value="u07;u07;0;-;1; ;-;+; ; ; ; ">
+<param name="xnon_acc" value="non_acc;non_acc;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xu10" value="u10;u10;0;-;1; ;-;+; ; ; ; ">
+<param name="xp15" value="p15;p15;0;-;1; ;-;+; ; ; ; ">
+<param name="xm15" value="m15;m15;0;-;Marzo; ; ; ; ; ; ; ">
+<param name="xp13" value="p13;p13;0;-;1; ;-;+; ; ; ; ">
+<param name="xm13" value="m13;m13;0;-;Gennaio; ; ; ; ; ; ; ">
+<param name="xu12" value="u12;u12;0;-;1; ;-;+; ; ; ; ">
+<param name="xm12" value="m12;m12;0;-;Dicembre; ; ; ; ; ; ; ">
+<param name="xu14" value="u14;u14;0;-;1; ;-;+; ; ; ; ">
+<param name="xm14" value="m014;m14;0;-;Febbraio; ; ; ; ; ; ; ">
+<param name="xp14" value="p14;p14;0;-;1; ;-;+; ; ; ; ">
+<param name="xu13" value="u13;u13;0;-;1; ;-;+; ; ; ; ">
+<param name="xnomese" value="nomese;nomese;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xp16" value="p16;p16;0;-;1; ;-;+; ; ; ; ">
+<param name="xnonok" value="nonok;nonok;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xp11" value="p11;p11;0;-;1; ;-;+; ; ; ; ">
+<param name="xm11" value="m11;m11;0;-;Novembre; ; ; ; ; ; ; ">
+<param name="xu15" value="u15;u15;0;-;1; ;-;+; ; ; ; ">
+<param name="xu17" value="u17;u17;0;-;1; ;-;+; ; ; ; ">
+<param name="xp12" value="p12;p12;0;-;1; ;-;+; ; ; ; ">
+<param name="xu11" value="u11;u11;0;-;1; ;-;+; ; ; ; ">
+<param name="xp20" value="p20;p20;0;-;1; ;-;+; ; ; ; ">
+<param name="xm20" value="m20;m20;0;-;Agosto; ; ; ; ; ; ; ">
+<param name="xcalcolato" value="calcolato;calcolato;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xu22" value="u22;u22;0;-;1; ;-;+; ; ; ; ">
+<param name="xm22" value="m22;m22;0;-;Ottobre; ; ; ; ; ; ; ">
+<param name="xabitaz" value="abitaz;abitaz;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xok" value="ok;ok;mancanza di requisiti generali;-;ok; ;-;+; ; ; ; ">
+<param name="xu19" value="u19;u19;0;-;1; ;-;+; ; ; ; ">
+<param name="xm19" value="m19;m19;0;-;Luglio; ; ; ; ; ; ; ">
+<param name="xu21" value="u21;u21;0;-;1; ;-;+; ; ; ; ">
+<param name="xm21" value="m21;m21;0;-;Settembre; ; ; ; ; ; ; ">
+<param name="xp22" value="p22;p22;0;-;1; ;-;+; ; ; ; ">
+<param name="x2e" value="2e;2e;0;-;1; ;-;+; ; ;T.0; ">
+
+<param name="xu20" value="u20;u20;0;-;1; ;-;+; ; ; ; ">
+<param name="xch3" value="ch3;ch3;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xch7" value="ch7;ch7;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xvfi" value="vfi;vfi;0;-;1; ;-;+; ; ; ; ">
+<param name="xp21" value="p21;p21;0;-;1; ;-;+; ; ; ; ">
+<param name="xteorico" value="teorico;teorico;teorico=0;teorico;teorico; ; ; ; ; ;$.0; ">
+<param name="xp23" value="p23;p23;0;-;1; ;-;+; ; ; ; ">
+<param name="xm23" value="m23;m23;0;-;Novembre; ; ; ; ; ; ; ">
+<param name="xfin" value="fin;fin;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xp04" value="p04;p04;0;-;1; ;-;+; ; ; ; ">
+<param name="xm04" value="m04;m04;0;-;Aprile; ; ; ; ; ; ; ">
+<param name="xescluso" value="escluso;escluso;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xu23" value="u23;u23;0;-;1; ;-;+; ; ; ; ">
+<param name="xu03" value="u03;u03;0;-;1; ;-;+; ; ; ; ">
+<param name="xm03" value="m03;m03;0;-;Marzo; ; ; ; ; ; ; ">
+<param name="xu05" value="u05;u05;0;-;1; ;-;+; ; ; ; ">
+<param name="xm05" value="m05;m05;0;-;Maggio; ; ; ; ; ; ; ">
+<param name="xp06" value="p06;p06;0;-;1; ;-;+; ; ; ; ">
+<param name="xu04" value="u04;u04;0;-;1; ;-;+; ; ; ; ">
+<param name="xp05" value="p05;p05;0;-;1; ;-;+; ; ; ; ">
+<param name="xu01" value="u01;u01;0;-;1; ;-;+; ; ; ; ">
+<param name="xm01" value="m01;m01;0;-;Gennaio; ; ; ; ; ; ; ">
+<param name="xp19" value="p19;p19;0;-;1; ;-;+; ; ; ; ">
+<param name="xp01" value="p01;p01;0;-;1; ;-;+; ; ; ; ">
+<param name="xp02" value="p02;p02;0;-;1; ;-;+; ; ; ; ">
+<param name="xm02" value="m02;m02;0;-;Febbraio; ; ; ; ; ; ; ">
+<param name="xp03" value="p03;p03;0;-;1; ;-;+; ; ; ; ">
+<param name="xu02" value="u02;u02;0;-;1; ;-;+; ; ; ; ">
+<param name="xu18" value="u18;u18;0;-;1; ;-;+; ; ; ; ">
+<param name="xch467" value="ch467;ch467;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xdif7" value="dif7;dif7;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xpers" value="pers;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito perso=0;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione;Reddito netto perso (^Reddito_perso^ - ^Imposte_perse^) in detrazione; ; ; ; ; -;$.2; ">
+
+<param name="xnac467" value="nac467;nac467;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xpr467" value="pr467;pr467;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xescl" value="escl;escl;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xob" value="ob;ob;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xsostit" value="sostit;sostit;basato sui redditi dichiarati;-;basato sui consumi; ;-;+; ; ; ; ">
+
+<param name="xdcalc" value="dcalc;calcolato;nessuna differenza;-;<b>ATTENZIONE! Le modifiche avvenute dopo il terzo mese di contribuzione che comporterebbero un aumento del beneficio non sono prese in considerazione. <br />L'ultimo importo mensile calcolato ? di $Mensile_pagato$ </b>; ; ; ; ; ; ; ">
+
+<param name="xmensile" value="mensile;Integrazione mensile al reddito di garanzia = MIN( <b>$Mensile_pagato$</b>, $erogabile$);non spetta nessuna integrazione;Integrazione mensile al reddito di garanzia = MIN( <b>$Mensile_pagato$</b>, ( $erogabile$ );Integrazione mensile al reddito di garanzia = MIN( <b>$Mensile_pagato$</b>, ( $erogabile$ ); ; ; ; ; ;$.2; ">
+
+<param name="xeroga" value="eroga;eroga;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xn_s" value="n_s;n_s;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xnac" value="nac;nac;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xac" value="ac;ac;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xinc" value="inc;inc;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xfine" value="fine;fine;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xicef_ok" value="icef_ok;icef_ok;ICEFa maggiore del limite;-;icef_ok; ; ; ; ; ; ; ">
+
+
+<param name="xlt_min" value="lt_min;lt_min;<b>integrazione mensile<br>al reddito di garanzia</b>;-;contributo; ;-;+; ; ; ; ">
+
+<param name="xdpiu" value="dpiu;dpiu;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xdiff_redd" value="diff_redd;diff_redd;0;-;1; ;-;+; ; ; ; ">
+<param name="xLRE" value="LRE;Limite di reddito di garanzia equivalente annuale;LRE=0;Limite di reddito di garanzia equivalente annuale;Limite di reddito di garanzia equivalente annuale; ; ; ; ; ;$.2; ">
+<param name="xLR" value="LR;Limite di reddito di garanzia rapportato al numero dei componenti considerati per il calcolo dell'integrazione;LR=0;Limite di reddito di garanzia rapportato al numero dei componenti considerati per il calcolo dell'integrazione;Limite di reddito di garanzia rapportato al numero dei componenti considerati per il calcolo dell'integrazione; ; ; ; ; ;$.2; ">
+<param name="xerogabile" value="erogabile;erogabile;0;-;1; ;-;+; ; ;$.0; ">
+
+<param name="xminimo" value="minimo;Affitto/Mutuo ammesso in detrazione (^Abitazione^ dichiarato);Affitto/Mutuo zero;Affitto/Mutuo ammesso in detrazione (^Abitazione^ dichiarato);Affitto/Mutuo ammesso in detrazione (^Abitazione^ dichiarato); ; ; ; ; -;$.2; ">
+
+<param name="xplus" value="plus;Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^ + ^Altre_entrate^);plus=0;Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^ + ^Altre_entrate^);Importi aggiuntivo per l'ICEF attualizzato (^Reddito_nuovo^ + ^Altre_entrate^); ; ; ; ; ;$.2; ">
+
+<param name="xdmeno" value="dmeno;dmeno;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xdn" value="dn;dn;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xsost" value="sost;sost;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xintegrazione" value="integrazione;Integrazione al reddito di garanzia = §mesi§ * $erogabile$;non spetta nessuna integrazione;Integrazione al reddito di garanzia = §mesi§ * $erogabile$;Integrazione al reddito di garanzia = §mesi§ * $erogabile$; ; ; ; ; ;$.2; ">
+
+<param name="xnon_sost" value="non_sost;non_sost;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xidoneo" value="idoneo;idoneo;Domanda <b>NON</b> idonea;-;Domanda <b>idonea</b>; ; ; ; ; ;T; ">
+
+<param name="xredd_icef" value="redd_icef;Reddito corrispondente all'ICEFa;reddito=0;Reddito corrispondente all'ICEFa;Reddito corrispondente all'ICEFa; ; ; ; ; ;$.2; ">
+<param name="xmese" value="mese;mese;0;-;1; ;-;+; ; ; ; ">
+<param name="xprev" value="prev;prev;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xmin" value="min;min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xcheck8" value="check8;check8;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xbig" value="big;big;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xminus" value="minus;Importi in detrazione per l'ICEF attualizzato;minus=0;Importi in detrazione per l'ICEF attualizzato;Importi in detrazione per l'ICEF attualizzato; ; ; ; ; -<i>;$.2;</i>">
+
+<param name="xcheck1" value="check1;check1;0;-;1; ; ; ; ; ;T; ">
+
+
+
+
+<param name="xpltree" value="propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;propagation7;propagation8;propagation9;propagation10;propagation11;propagation12;propagation13;propagation14;propagation15;propagation16;dati;risultato;prece;titolo0;titolo1;tini;t01;t02;t03;t04;t05;t06;t07;t08;t09;t10;t11;t12;t13;t14;t15;t16;t17;t18;t19;t20;t21;t22;t23;tot;tfin;revoc;negativo;spiegacheck;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;check0=Check">
+<param name="propagation2" value="(ch467==1) ;check0=0">
+<param name="propagation3" value=" ;Scelta_utente=1;incong=1">
+<param name="propagation4" value=" ;Scelta_utente;mens_con=teorico">
+<param name="propagation5" value=" ;Scelta_utente=2;Decisione_ufficio=1">
+<param name="propagation6" value=" ;Reddito_perso=0;Imposte_perse=0;Reddito_nuovo=0">
+<param name="propagation7" value=" ;icef0=Icefa;redd_icef0=redd_icef;integrazione0=integrazione">
+<param name="propagation8" value=" ;Reddito_perso;Imposte_perse;Reddito_nuovo">
+<param name="propagation9" value=" ;mens_icef=teorico;icefa_ok=icef_ok">
+<param name="propagation10" value=" ;N_residenti=1">
+<param name="propagation11" value=" ;mens_icef1=teorico">
+<param name="propagation12" value=" ;N_residenti">
+<param name="propagation13" value="(incongrua==0) ;check0=Check">
+<param name="propagation14" value="(puo_scegliere==1) ;Scelta_utente;Decisione_ufficio">
+<param name="propagation15" value="(puo_scegliere==0) ;Scelta_utente=0;Decisione_ufficio=0;incong=0">
+<param name="propagation16" value=" ;check0=Check">
+<param name="dati" value="<b>Dati:</b> ;Icefa=-1;Altre_entrate=-1!0;Reddito_perso=-1!0;Imposte_perse=-1!0;Reddito_nuovo=-1!0;Precedente=-1!0;Borse_anticrisi=-1!0;N_familiari=-1;(dn!=0)N_residenti=-1;LR=-1;N_usufruiti=-1!0">
+<param name="risultato" value="(idoneo==1)<b>Risultato:</b> ;(dcalc==0)integrazione=-1;(dcalc!=0)mensile=-1">
+<param name="prece" value="(dcalc!=0);dcalc=3">
+<param name="titolo0" value="(m13==0)<p><center><b>Risultato suddiviso per i <b>§mesi§</b> mesi concessi del §Anno§:</b></center>;">
+<param name="titolo1" value="(m13==1)<p><center><b>Risultato suddiviso per i <b>§mesi§</b> mesi concessi del periodo §Anno§/§anno1§:</b></center>;">
+<param name="tini" value="<table border='1' align='center'>
+  <tr>
+       <td align='center'></td>
+       <td align='center'></td>
+       <td align='center'></td>
+  </tr>;">
+<param name="t01" value="(m01==1)
+       <tr>
+       <td align='center'>|m01| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t02" value="(m02==1)
+       <tr>
+       <td align='center'>|m02| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t03" value="(m03==1)
+       <tr>
+       <td align='center'>|m03| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t04" value="(m04==1)
+       <tr>
+       <td align='center'>|m04| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t05" value="(m05==1)
+       <tr>
+       <td align='center'>|m05| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t06" value="(m06==1)
+       <tr>
+       <td align='center'>|m06| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t07" value="(m07==1)
+       <tr>
+       <td align='center'>|m07| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t08" value="(m08==1)
+       <tr>
+       <td align='center'>|m08| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t09" value="(m09==1)
+       <tr>
+       <td align='center'>|m09| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t10" value="(m10==1)
+       <tr>
+       <td align='center'>|m10| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t11" value="(m11==1)
+       <tr>
+       <td align='center'>|m11| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t12" value="(m12==1)
+       <tr>
+       <td align='center'>|m12| §Anno§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t13" value="(m13==1)
+       <tr>
+       <td align='center'>|m13| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t14" value="(m14==1)
+       <tr>
+       <td align='center'>|m14| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t15" value="(m15==1)
+       <tr>
+       <td align='center'>|m15| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t16" value="(m16==1)
+       <tr>
+       <td align='center'>|m16| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t17" value="(m17==1)
+       <tr>
+       <td align='center'>|m17| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t18" value="(m18==1)
+       <tr>
+       <td align='center'>|m18| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t19" value="(m19==1)
+       <tr>
+       <td align='center'>|m19| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t20" value="(m20==1)
+       <tr>
+       <td align='center'>|m20| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t21" value="(m21==1)
+       <tr>
+       <td align='center'>|m21| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t22" value="(m22==1)
+       <tr>
+       <td align='center'>|m22| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="t23" value="(m23==1)
+       <tr>
+       <td align='center'>|m23| §anno1§</td>
+       <td align='center'>$erogabile$</td>
+       <td align='center'>$mensile$</td>
+       </tr>;">
+<param name="tot" value="<tr>
+       <td align='center'></td>
+       <td align='center'></td>
+       <td align='center'><b>$integrazione$</b></td>
+       </tr>;">
+<param name="tfin" value="</table><p><br>;">
+<param name="revoc" value="(Mesi_revoca!=0) ;Mesi=3;Mesi_revoca=3">
+<param name="negativo" value="(integrazione==0)<b>Domanda non idonea:</b> ;">
+<param name="spiegacheck" value="(check1!=0) Codici di esclusione:<br>
+<b>§check1§</b> <br />
+ 1.1__.___.___:<small> nessun componente avente diritto al reddito di garanzia</small><br />
+ 1._2_.___.___:<small> esclusa d'ufficio  (*)</small><br />
+ 1.__3.___.___:<small> presenza di soggetti tenuti a lavorare ma privi di occupazione e non disponibili al lavoro</small><br />
+ 1.___.4__.___:<small> necessita' di un preventivo vaglio dei servizi sociali per mancanza di requisiti lavorativi</small><br />
+ 1.___._5_.___:<small>  ICEF superiore al limite di ammissione pari a ^Icef_garanzia^ </small><br />
+ 1.___.__6.___:<small> nucleo che ha già usufruito di 4 interventi entro 24 mesi dal mese di prima concessione</small><br />
+ 1.___.___.7__:<small> necessita' di un preventivo vaglio dei servizi sociali per nucleo senza fissa dimora </small><br />
+ 1.___.___._8_:<small> domanda INCONGRUA e il nucleo familiare NON ha accettato l'importo calcolato sui consumi </small><br />
+ 1.___.___.__9: ;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3209834471">
+<param name="CRC" value="211021914">
+<param name="CRCdata" value="25-ott-2010 13.13.22">
+</APPLET>
+<BR>

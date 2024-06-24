@@ -1,0 +1,67 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=700 HEIGHT=500 MAYSCRIPT>
+	<param name="revision" value="$Revision: 35890 $;   28.5.2019">
+	<param name="Taratura" value="APAPI Allevatori">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+	<param name="trendStarts" value="caso">
+	<param name="caso" value="zero;Check=0;Versato=695;Contributo_lim=500">
+
+
+	<param name="variables" value="cscala">
+
+	<param name="cscala" value="0.0001">
+
+
+
+
+<param name="edges" value="ALLEVATORI;
+Versato-idon;Contributo_lim-idon;Check-checkOK;checkOK-idoneo;idon-idoneo;idoneo-contributo;Contributo_lim-contributo">
+
+
+
+<param name="ALLEVATORI" value="text;node.ico;322;41;0;ALLEVATORI (28.5.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello;yModello;4136959536">
+<param name="Versato" value="1;node.ico;298;223;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;idon;cscala;NoCurve;xVersato;xVersato;3240387500">
+<param name="idon" value="0;node.ico;502;223;0;-;0.0;NumGeNode;NoInput;ResultOutput;2;Versato;Contributo_lim;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xidon;xidon;303942323">
+<param name="Contributo_lim" value="1;node.ico;619;80;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;idon;contributo;cscala;NoCurve;xContributo_lim;xContributo_lim;2425720819">
+<param name="Check" value="1;node.ico;420;78;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;checkOK;1.0;NoCurve;xCheck;xCheck;1915674693">
+<param name="checkOK" value="0;node.ico;422;165;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xcheckOK;xcheckOK;1445521002">
+<param name="idoneo" value="2;node.ico;502;167;0;-;0.0;ProbNode;NoInput;NoOutput;2;checkOK;idon;1;contributo;0.0;0.0;0.0;1.0;NoCurve;xidoneo;xidoneo;78765384">
+<param name="contributo" value="2;node.ico;502;80;0;-;0.0;TimesNode;NoInput;NoOutput;2;idoneo;Contributo_lim;0;1.0;1.0;1.0;1.0;NoCurve;xcontributo;xcontributo;3164065270">
+
+
+
+<param name="xContributo_lim" value="Contributo_lim;Contributo_lim;Contributo_lim;Contributo_lim;Contributo_lim; ; ; ; ; ;$.2; ">
+<param name="xCheck" value="Check;Check;ok;Check;escluso per mancanza di requisiti; ; ; ; ; ; ; ">
+<param name="xModello" value="ALLEVATORI;ALLEVATORI;ALLEVATORI (28.5.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xVersato" value="Versato;Versato;nessun Versato;Versato;Versato; ; ; ; ; ;$.2; ">
+<param name="xcheckOK" value="checkOK;checkOK;checkOK;checkOK;checkOK; ; ; ; ; ; ; ">
+<param name="xcontributo" value="contributo;contr;nessun contributo;contributo;contributo; ; ; ; ;<b> ;$.2;</b>">
+<param name="xidoneo" value="idoneo;x;domanda non idoneoea;idoneo;domanda idoneoea; ; ; ; ; ;T; ">
+<param name="xidon" value="idon;x;il versato è minore del ^Contributo_lim^ !;idon;idoneo; ; ; ; ; ;T; ">
+
+
+
+<param name="xpltree" value="dati;risultato0;risultato1;risultato2">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="dati" value="<b>Dati:</b> ;Versato=-1">
+<param name="risultato0" value="(checkOK==0)Domanda <b>ESCLUSA</b> d'ufficio per mancanza dei requisiti necessari ;">
+<param name="risultato1" value="(idoneo==0)Domanda <b>NON</b> IDONEA;contributo=-1">
+<param name="risultato2" value="(idoneo==1)Domanda <b>IDONEA</b> ;contributo=-1">
+
+<param name="varCRC" value="1473008499">
+<param name="CRC" value="639974509">
+<param name="CRCdata" value="28-mag-2019 17.58.02">
+</APPLET>
+<BR>
+
+

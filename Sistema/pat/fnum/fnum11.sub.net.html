@@ -1,0 +1,165 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=830 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.5 $">
+<param name="Taratura" value="P.A.T. Familie numerose; 1.9.2011">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+
+<param name="trends" value="">
+
+
+<param name="trendStarts" value="parametriFnum;casoFnum">
+
+<param name="parametriFnum" value="current;Importo_pagato=1000;Check=0;Inf=0.03;Sup=0.3529;Bmax3=200;Bmax4=350;Bmax5=420;PercBmin=0.5">
+
+<param name="casoFnum" value="parametriFnum;Check=0;N_figli=4;Icef=0.2">
+
+<param name="variables" value="uno;giornaliero;ascala;cscala;escala">
+
+ <param name="uno" value="1.0">
+ <param name="giornaliero" value="uno / 365">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+
+
+<param name="edges" value="P.A.T. Famiglie numerose;
+Check-idonea;idonea-idoneo;condOK-idoneo;idoneo-contributo;Importo_pagato-risultante;calcolato-risultante;risultante-contributo;N_figli-figliOK;figliOK-idoneo;Icef-condOK;Sup-condOK;Icef-grezzo;Sup-grezzo;Inf-grezzo;grezzo-sigmoide;N_figli-eq3;N_figli-eq4;N_figli-ge5;Bmax3-max3;eq3-max3;Bmax4-max4;
+eq4-max4;Bmax5-max5;ge5-max5;PercBmin-min3;max3-min3;max4-min4;PercBmin-min4;max5-min5;PercBmin-min5;min3-min;min4-min;min5-min;max3-max;max4-max;max5-max;max-dif;min-dif;dif-incr;min-calcolato;incr-calcolato;
+Importo_pagato-differenz;contributo-differenz;differenz-le0;condOK-co;figliOK-figl;Check-esito;co-esito;figl-esito;le0-esito;calcolato-diff;risultante-diff;sigmoide-sigm;sigm-incr">
+
+
+
+<param name="P.A.T. Famiglie numerose" value="text;node.ico;555;314;0;P.A.T. Famiglie numerose - LP 1/2011 art.6 comma 5 (1.9.2011);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Fnum;xModello_Fnum;1579489613">
+<param name="Check" value="1;node.ico;607;384;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;idonea;esito;1.0;NoCurve;xCheck;xCheck;2285709617">
+<param name="idonea" value="0;node.ico;607;428;0;idonea = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xidonea;xidonea;1888989340">
+<param name="idoneo" value="2;node.ico;607;496;0;idoneo =  idonea * condOK * figliOK;0.0;TimesNode;NoInput;ResultOutput;3;idonea;condOK;figliOK;1;contributo;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xidoneo;xidoneo;1284271950">
+<param name="condOK" value="2;node.ico;444;461;0;condOK = Icef <= Sup;0.0;NumLeNode;NoInput;IntermediateOutput;2;Icef;Sup;2;idoneo;co;1.0;1.0;1.0;1.0;NoCurve;xcondOK;xcondOK;1227548919">
+<param name="contributo" value="2;node.ico;607;560;0;contributo =  idoneo * risultante;0.0;TimesNode;NoInput;ResultOutput;2;idoneo;risultante;1;differenz;ascala;1.0;1.0;1.0;NoCurve;xcontributo;xcontributo;1300761686">
+<param name="Importo_pagato" value="1;node.ico;434;592;0;Importo_pagato = ;0.0;PlusNode;ValueInput;NoOutput;0;2;risultante;differenz;ascala;NoCurve;xImporto_pagato;xImporto_pagato;645999203">
+<param name="risultante" value="0;node.ico;497;562;0;risultante =  Min(  Importo_pagato,  calcolato );0.0;NumMinNode;NoInput;NoOutput;2;Importo_pagato;calcolato;2;contributo;diff;ascala;1.0;1.0;1.0;NoCurve;xrisultante;xrisultante;197350923">
+<param name="calcolato" value="0;node.ico;407;562;0;calcolato =  min + incr;0.0;PlusNode;NoInput;NoOutput;2;min;incr;2;risultante;diff;0.0010;1.0;1.0;1.0;NoCurve;xcalcolato;xcalcolato;3903453782">
+<param name="N_figli" value="1;node.ico;524;348;0;N_figli = ;0.0;PlusNode;ValueInput;NoOutput;0;4;figliOK;eq3;eq4;ge5;cscala;NoCurve;xN_figli;xN_figli;2441099986">
+<param name="figliOK" value="0;node.ico;524;426;0;figliOK = N_figli >= 3.0;0.0;NumGeNode;NoInput;NoOutput;1;N_figli;2;idoneo;figl;1.0;3.0;NoCurve;xfigliOK;xfigliOK;470126435">
+<param name="Icef" value="1;node.ico;259;316;0;Icef =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;2;condOK;grezzo;0.5;NoCurve;xIcef;xIcef;3990938499">
+<param name="Sup" value="1;node.ico;441;345;0;Sup =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;2;condOK;grezzo;0.5;NoCurve;xSup;xSup;526896210">
+<param name="grezzo" value="0;node.ico;259;372;0;grezzo =  MAX( 0, MIN( 1, (Icef - Sup) / (Inf - Sup) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Icef;Sup;Inf;1;sigmoide;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgrezzo;ygrezzo;866351970">
+<param name="Inf" value="1;node.ico;194;347;0;Inf =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;1;grezzo;0.5;NoCurve;xInf;xInf;2761818853">
+<param name="sigmoide" value="0;node.ico;259;562;0;sigmoide =   F( grezzo );0.0;TransformNode;NoInput;NoOutput;1;grezzo;1;sigm;0.0;1.0;SigmoidCurve;sigmoidCurve;xsigmoide;ysigmoide;3365033431">
+<param name="eq3" value="0;node.ico;290;407;0;eq3 = N_figli == 3.0;0.0;NumEqNode;NoInput;NoOutput;1;N_figli;1;max3;1.0;3.0;NoCurve;xeq3;yeq3;1041031314">
+<param name="eq4" value="0;node.ico;315;460;0;eq4 = N_figli == 4.0;0.0;NumEqNode;NoInput;NoOutput;1;N_figli;1;max4;1.0;4.0;NoCurve;xeq4;yeq4;4156004086">
+<param name="ge5" value="0;node.ico;346;490;0;ge5 = N_figli >= 5.0;0.0;NumGeNode;NoInput;NoOutput;1;N_figli;1;max5;1.0;5.0;NoCurve;xge5;yge5;2265263829">
+<param name="Bmax3" value="1;node.ico;31;382;0;Bmax3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;max3;ascala;NoCurve;xBmax3;xBmax3;3856946495">
+<param name="max3" value="0;node.ico;195;407;0;max3 =  Bmax3 * eq3;0.0;TimesNode;NoInput;NoOutput;2;Bmax3;eq3;2;min3;max;ascala;1.0;1.0;1.0;NoCurve;xmax3;ymax3;901234769">
+<param name="Bmax4" value="1;node.ico;48;435;0;Bmax4 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;max4;ascala;NoCurve;xBmax4;xBmax4;4143799782">
+<param name="max4" value="0;node.ico;224;460;0;max4 =  Bmax4 * eq4;0.0;TimesNode;NoInput;NoOutput;2;Bmax4;eq4;2;min4;max;ascala;1.0;1.0;1.0;NoCurve;xmax4;ymax4;3601471609">
+<param name="Bmax5" value="1;node.ico;52;499;0;Bmax5 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;max5;ascala;NoCurve;xBmax5;xBmax5;634077814">
+<param name="max5" value="0;node.ico;230;526;0;max5 =  Bmax5 * ge5;0.0;TimesNode;NoInput;NoOutput;2;Bmax5;ge5;2;min5;max;ascala;1.0;1.0;1.0;NoCurve;xmax5;ymax5;4154549354">
+<param name="PercBmin" value="1;node.ico;54;559;0;PercBmin =  0.500 ;0.0;ProbNode;ValueInput;NoOutput;0;3;min3;min4;min5;0.5;NoCurve;xPercBmin;xPercBmin;1466778674">
+<param name="min3" value="0;node.ico;99;407;0;min3 =  PercBmin * max3;0.0;TimesNode;NoInput;NoOutput;2;PercBmin;max3;1;min;ascala;1.0;1.0;1.0;NoCurve;xmin3;ymin3;2985120941">
+<param name="min4" value="0;node.ico;129;462;0;min4 =  max4 * PercBmin;0.0;TimesNode;NoInput;NoOutput;2;max4;PercBmin;1;min;ascala;1.0;1.0;1.0;NoCurve;xmin4;ymin4;2247741105">
+<param name="min5" value="0;node.ico;147;526;0;min5 =  max5 * PercBmin;0.0;TimesNode;NoInput;NoOutput;2;max5;PercBmin;1;min;ascala;1.0;1.0;1.0;NoCurve;xmin5;ymin5;3755500699">
+<param name="min" value="0;node.ico;124;603;0;min =  MAX(  min3,  min4,  min5 );0.0;NumMaxNode;NoInput;NoOutput;3;min3;min4;min5;2;dif;calcolato;0.0010;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmin;ymin;2502963510">
+<param name="max" value="0;node.ico;189;581;0;max =  MAX(  max3,  max4,  max5 );0.0;NumMaxNode;NoInput;NoOutput;3;max3;max4;max5;1;dif;0.0010;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmax;ymax;584954465">
+<param name="dif" value="0;node.ico;321;603;0;dif =  max - min;0.0;MinusNode;NoInput;NoOutput;2;max;min;1;incr;0.0;1.0;1.0;1.0;NoCurve;xdif;ydif;1136301277">
+<param name="incr" value="0;node.ico;323;561;0;incr =  dif * sigm;0.0;TimesNode;NoInput;NoOutput;2;dif;sigm;1;calcolato;ascala;1.0;1.0;1.0;NoCurve;xincr;yincr;3818044527">
+<param name="differenz" value="0;node.ico;541;594;0;differenz =  Importo_pagato - contributo;0.0;MinusNode;NoInput;NoOutput;2;Importo_pagato;contributo;1;le0;0.0;1.0;1.0;1.0;NoCurve;xdifferenz;ydifferenz;281371207">
+<param name="le0" value="0;node.ico;585;526;0;le0 = differenz <= 0.0;0.0;NumLeNode;NoInput;NoOutput;1;differenz;1;esito;1.0;0.0;NoCurve;xle0;yle0;1533829974">
+<param name="co" value="0;node.ico;445;491;0;co =   1  - condOK;0.0;ProbNode;NoInput;NoOutput;1;condOK;1;esito;1.0;0.0;NoCurve;xco;yco;1386655695">
+<param name="figl" value="0;node.ico;525;455;0;figl =   1  - figliOK;0.0;ProbNode;NoInput;NoOutput;1;figliOK;1;esito;1.0;0.0;NoCurve;xfigl;yfigl;3261938970">
+<param name="esito" value="2;node.ico;525;526;0;esito =  1000.000*Check + 200.000*co + 30.000*figl + 4.000*le0;0.0;PlusNode;NoInput;NoOutput;4;Check;co;figl;le0;0;1.0;1000.0;200.0;30.0;4.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xesito;yesito;1137992080">
+<param name="diff" value="0;node.ico;445;524;0;diff =  calcolato - risultante;0.0;MinusNode;NoInput;NoOutput;2;calcolato;risultante;0;0.0;1.0;1.0;1.0;NoCurve;xdiff;ydiff;3137579406">
+<param name="sigm" value="0;node.ico;294;537;0;sigm =  sigmoide;0.0;ProbNode;NoInput;NoOutput;1;sigmoide;1;incr;0.0;1.0;NoCurve;xsigm;ysigm;3889139485">
+
+<param name="sigmoidCurve" value="SigmoidCurve;0.0;0.0;0.0;1.0;0.0;0.0;0.0;1.0;0.0;0.6;0.0;12.0">
+
+
+<param name="xSup" value="Sup;Sup;non;-;ok; ; ; ; ; ;T.4; ">
+<param name="xInf" value="Inf;Inf;non;-;ok; ; ; ; ; ;T.4; ">
+<param name="xN_figli" value="N_figli;Numero di figli presi in considerazione;Numero di figli=0;Numero di figli presi in considerazione;Numero di figli presi in considerazione; ; ; ; ; ;T; ">
+<param name="xIcef" value="Icef;Icef (valido entro ^Sup^);Icef=0;Icef (valido entro ^Sup^);Icef (valido entro ^Sup^); ; ; ; ; ;T.4; ">
+<param name="xBmax5" value="Bmax5;Bmax5;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPercBmin" value="PercBmin;PercBmin;non;-;ok; ; ; ; ; ; ; ">
+<param name="xBmax3" value="Bmax3;Bmax3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xBmax4" value="Bmax4;Bmax4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xImporto_pagato" value="Importo_pagato;Importo già pagato;Importo precedente era zero;Importo già pagato;Importo già pagato; ; ; ; ; ;$.2; ">
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;richiedente non residente da almeno 3 anni continuativi in Provincia di Trento; ; ; ; ; ; ; ">
+<param name="xModello_Fnum" value="P.A.T. Famiglie numerose;x;P.A.T. Famiglie numerose - LP 1/2011 art.6 comma 5 (1.9.2011);--;--; ; ; ; ; ; ; ">
+<param name="xge5" value="ge5;ge5;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xeq4" value="eq4;eq4;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xco" value="co;co;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xidonea" value="idonea;--;domanda <b>non</b> idonea;-;domanda idonea; ; ;=; ; ; ; ">
+<param name="xle0" value="le0;le0;ok;-;variazioni della domanda avvenute dopo 30 giorni dalla data di presentazione della stessa; ; ; ; ; ; ; ">
+
+<param name="xeq3" value="eq3;eq3;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xsigm" value="sigm;sigm;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xfigliOK" value="figliOK;figliOK;numero di figli non accettabile;-;ok; ; ; ; ; ; ; ">
+<param name="xsigmoide" value="sigmoide;sigmoide;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xfigl" value="figl;figl;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xdif" value="dif;dif;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xmin5" value="min5;min5;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xmin4" value="min4;min4;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xdiff" value="diff;diff;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xdifferenz" value="differenz;differenz;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xincr" value="incr;incr;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xmax4" value="max4;max4;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xrisultante" value="risultante;Contributo aggiornato ;nessun Contributo aggiornato ($Importo_pagato$ era maggiore);Contributo aggiornato ;Contributo aggiornato ; ; ; ; ; ;$.2; ">
+<param name="xmax3" value="max3;max3;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xcontributo" value="contributo;Contributo ;Contributo zero;Contributo ;Contributo ; ; ; ; ;<b> ;$.2;</b>">
+<param name="xcondOK" value="condOK;condOK;condizione economica familiare oltre il limite di ^Sup^;-;ICEF ok; ;-;+; ; ; ; ">
+<param name="xcalcolato" value="calcolato;Contributo determinato ( §min§ + %sigmoide% * §dif§ );Contributo determinato zero;Contributo determinato ( §min§ + %sigmoide% * §dif§ );Contributo determinato ( §min§ + %sigmoide% * §dif§ ); ; ; ; ;<b> ;$.2;</b>">
+<param name="xmin3" value="min3;min3;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xmax5" value="max5;max5;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xgrezzo" value="grezzo;grezzo;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xmin" value="min;min;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xmax" value="max;max;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xidoneo" value="idoneo;--;domanda <b>non</b> idonea;-;domanda idonea; ; ; ; ; ; ; ">
+<param name="xesito" value="esito;esito;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="datifam;risultato;idoneità;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="datifam" value="<b>Dati:</b>;Icef=-1;N_figli=-1;Importo_pagato=-1!1">
+<param name="risultato" value="<b>Risultato</b> ;contributo=-1">
+<param name="idoneità" value="(contributo==0);idoneo=1;Check=3!0;condOK=3!1;figliOK=3!1;le0=1!0">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="267371360">
+<param name="CRC" value="3462252362">
+<param name="CRCdata" value="1-set-2011 16.44.22">
+</APPLET>
+</CENTER>
+<BR>

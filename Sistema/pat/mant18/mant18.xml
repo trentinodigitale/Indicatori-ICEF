@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>Assegno di Mantenimento </H2>
+		</CENTER></head> ]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<![CDATA[<H2><CENTER>]]>
+            <sql><![CDATA[select case when AM_Richiedente.ID_tp_variazione_situazione_dom>1 then '<HR>ATTENZIONE!<br>La domanda è stata revocata secondo la delibera n. 1678 del 2009!<HR>' else '' end from AM_Richiedente where id_domanda=${id_domanda}]]></sql>
+			<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+        <![CDATA[<H3>]]>
+            <sql><![CDATA[select ' Data presentazione: ' + CONVERT(VARCHAR(11), Doc.data_presentazione, 103) as data FROM Doc where ID=${id_domanda}]]></sql>
+		<![CDATA[</H3>]]>
+		<![CDATA[<H3>]]>
+            <sql><![CDATA[select 'inizio beneficio: ' + CONVERT(varchar, MONTH(DATEADD(month, 1, Doc.data_presentazione))) + ' / ' + CONVERT(varchar, YEAR(DATEADD(month, 1, Doc.data_presentazione))) 
+             FROM Doc where ID=${id_domanda}]]></sql>
+		<![CDATA[</H3>]]>
+		
+		</servizio>
+        <esito>
+
+		
+        </esito>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<!--netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion-->
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

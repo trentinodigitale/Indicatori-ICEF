@@ -1,0 +1,82 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=800 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.4 $">
+<param name="Taratura" value="Fondo per la valorizzazione e la proffessionalizzazione dei giovani; 12.3.2008">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriFG">
+
+<param name="parametriFG" value="current;Check=0;Redd3_z=35000;Redd3_a=50000;Rif=50000;Icef=0.4">
+
+
+<param name="variables" value="ascala;cscala;escala;divisotre">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+<param name="divisotre" value="0.490196078431373">
+
+
+
+<param name="edges" value="P.A.T. Fondo Valorizzazione Giovani;
+Redd3_z-icef_z;Rif-icef_z;Redd3_a-icef_a;Rif-icef_a;Icef-zero;icef_z-zero;Icef-agevolato;icef_a-agevolato;zero-idoneo_z;agevolato-idoneo_a;idoneo_z-idoneo;idoneo_a-idoneo;Check-ok;ok-idoneo_z;ok-idoneo_a;idoneo_a-az;idoneo_z-az">
+
+
+
+<param name="P.A.T. Fondo Valorizzazione Giovani" value="text;node.ico;108;400;0;P.A.T. Fondo Valorizzazione Giovani - (12.3.2008);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_FG;xModello_FG;2799534276">
+<param name="Redd3_z" value="1;node.ico;72;463;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;icef_a;escala;NoCurve;xRedd3_z;xRedd3_z;621888145">
+<param name="icef_z" value="0;node.ico;136;463;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3_z;Rif;1;zero;1.0;divisotre;1.0;1.0;NoCurve;xicef_z;xicef_z;3122893380">
+<param name="Rif" value="1;node.ico;243;424;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;icef_z;icef_a;escala;NoCurve;xRif;xRif;3892426390">
+<param name="Redd3_a" value="1;node.ico;72;514;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;icef_a;escala;NoCurve;xRedd3_a;xRedd3_a;1148542163">
+<param name="icef_a" value="0;node.ico;134;512;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3_a;Rif;1;agevolato;1.0;divisotre;1.0;1.0;NoCurve;xicef_a;xicef_a;1518921649">
+<param name="Icef" value="1;node.ico;323;423;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;zero;agevolato;0.5;NoCurve;xIcef;xIcef;2508123308">
+<param name="zero" value="0;node.ico;241;463;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;icef_z;1;idoneo_z;1.0;1.0;1.0;1.0;NoCurve;xzero;xzero;3105911145">
+<param name="agevolato" value="0;node.ico;242;512;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;icef_a;1;idoneo_a;1.0;1.0;1.0;1.0;NoCurve;xagevolato;xagevolato;2267562682">
+<param name="idoneo_z" value="2;node.ico;404;463;0;-;0.0;ProbNode;NoInput;ResultOutput;2;zero;ok;2;idoneo;az;0.0;0.0;0.0;1.0;NoCurve;xidoneo_z;xidoneo_z;2369519599">
+<param name="idoneo_a" value="2;node.ico;405;512;0;-;0.0;ProbNode;NoInput;ResultOutput;2;agevolato;ok;2;idoneo;az;0.0;0.0;0.0;1.0;NoCurve;xidoneo_a;xidoneo_a;272781554">
+<param name="idoneo" value="0;node.ico;603;512;0;-;0.0;ProbNode;NoInput;IntermediateOutput;2;idoneo_a;idoneo_z;0;0.0;0.5;1.0;1.0;NoCurve;xidoneo;xidoneo;2153347360">
+<param name="Check" value="1;node.ico;659;426;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ok;1.0;NoCurve;xCheck;xCheck;4088310632">
+<param name="ok" value="0;node.ico;600;463;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;2;idoneo_z;idoneo_a;1.0;0.0;NoCurve;xok;xok;947768608">
+<param name="az" value="0;node.ico;404;486;0;-;0.0;ProbNode;NoInput;NoOutput;2;idoneo_a;idoneo_z;0;0.0;1.0;0.0;0.0;NoCurve;xaz;xaz;3445107420">
+
+
+
+<param name="xRedd3_a" value="Redd3_a;Redd3_a;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef" value="Icef; <b>(ICEF)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> zero ; <b>(ICEF)</B> Indicatore della Condizione Economica Familiare <br>;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ; ; ; ; ;T; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xRedd3_z" value="Redd3_z;Redd3_z;0;-;1; ;-;+; ; ; ; ">
+<param name="xModello_FG" value="P.A.T. Fondo Valorizzazione Giovani;x;P.A.T. Fondo Valorizzazione Giovani - (12.3.2008);--;--; ; ; ; ; ; ; ">
+<param name="xok" value="ok;ok;0;-;1;non ok;-;ok; ; ; ; ">
+<param name="xidoneo_a" value="idoneo_a;idoneo_a;è idonea al prestito con tasso pieno/convenzionale;-;è <b>idonea</b> al prestito: (collocato in Tabella 2); ;-;+; ; ; ; ">
+<param name="xidoneo" value="idoneo;idoneo;<b>non è idonea</b> per una borsa di studio;è <b>idonea</b> per la <u>borsa di studio ridotta</u>;è <b>idonea</b> per la <u>borsa di studio intera</u>; ;-;+; ; ; ; ">
+<param name="xaz" value="az;az;0;-;1; ;-;+; ; ; ; ">
+<param name="xicef_a" value="icef_a;ICEF limite per borsa ridotta e idoneità al prestito (collocato in Tabella 2) <br> - corrispondente ad una C.E. di riferimento di $Redd3_a$ -;icef_a=0;ICEF limite per borsa ridotta e idoneità al prestito (collocato in Tabella 2) <br> - corrispondente ad una C.E. di riferimento di $Redd3_a$ - ;icef_a=1; ; ; ; ; ;T.9; ">
+<param name="xicef_z" value="icef_z;ICEF limite per borsa intera e idoneità al prestito (collocato in Tabella 1) <br> - corrispondente ad una C.E. di riferimento di $Redd3_z$ -;icef_z=0;ICEF limite per borsa intera e idoneità al prestito (collocato in Tabella 1)  <br> - corrispondente ad una C.E. di riferimento di $Redd3_z$ - ;icef_z=1; ; ; ; ; ;T.9; ">
+<param name="xzero" value="zero;zero;0;-;1; ;-;+; ; ; ; ">
+<param name="xidoneo_z" value="idoneo_z;idoneo_z;è idonea al prestito con tasso pieno/convenzionale;-;è <b>idonea</b> al prestito: (collocato in Tabella 1); ;-;+; ; ; ; ">
+<param name="xagevolato" value="agevolato;agevolato;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="risultato;idoneità;riga;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="risultato" value="<b>Dati:</b> ;Icef=-1;icef_z=-1;icef_a=-1;C_RIF_ICEF=-1">
+<param name="idoneità" value="<br> La domanda ;idoneo=1;(idoneo_z==0)idoneo_a=1!0;(az==0)idoneo_z=1">
+<param name="riga" value="<hr>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="4132823070">
+<param name="CRC" value="2378203289">
+<param name="CRCdata" value="12-mar-2008 11.36.37">
+</APPLET>
+<BR>

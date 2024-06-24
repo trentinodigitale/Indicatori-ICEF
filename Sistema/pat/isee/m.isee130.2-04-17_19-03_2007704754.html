@@ -1,0 +1,175 @@
+<BR>
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=400 MAYSCRIPT>
+<param name="Taratura" value="ISEE130 standard;17.4.2002 Euro con $ al posto di €">
+<param name="Font" value="Dialog">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="mode" value="Author">
+<param name="debug" value="true">
+
+ <param name="trendStarts" value="caso1;caso2">
+ <param name="caso1" value="zero;Html=1;Entrate=10000;Affitto=5000;Mobiliare=60000;Residenza=200000;Mutuo=50000;Componenti=2.46;Monogenitore=0.2;X=0.0513;Coefficiente=0.2;Franchigia_mob=15000;Imm_oltre=20000;Franchigia_res=50000">
+ <param name="caso2" value="zero;Html=1;Entrate=15000;Affitto=0;Mobiliare=20000;Residenza=100000;Mutuo=0;Componenti=2.46;Invalido=0.5;X=0.0513;Coefficiente=0.2;Franchigia_mob=15000;Imm_oltre=125000;Franchigia_res=500000">
+ 
+ <param name="trends" value="">
+
+
+
+ <param name="variables" value="affittomax;rscala;pscala;mscala;cscala;fscala;tscala">
+ <param name="affittomax" value="5164.57">
+ <param name="rscala" value="0.00001">
+ <param name="pscala" value="0.000001">
+ <param name="mscala" value="0.0001">
+ <param name="cscala" value="0.00005">
+ <param name="fscala" value="0.1">
+ <param name="tscala" value="1">
+
+
+
+<param name="edges" value="Modello ISEE130;Grafici;Html;F12;F16;F20;F13;F18;F10;G4;G5;G6;G7;E1;E3;F14;
+Entrate-redd;rendita-redd;Residenza-resi;Mutuo-resi;Mobiliare-mob_netto;Franchigia_mob-mob_netto;Residenza-resi_netta;Coefficiente-corrispondente;redd-ISR;ISR-ISE;ISP_-ISE;Componenti-VSE;Monogenitore-VSE;Invalido-VSE;Lavoratori-VSE;ISE-indicatore;VSE-indicatore;X-rendita;VSE-famiglia;Mobiliare-rendita;Franchigia_res-resi_netta;
+resi-residenza_netta;resi_netta-residenza_netta;indicatore-ISEE;mob_netto-ISP;residenza_netta-ISP;ISP-corrispondente;corrispondente-patrimonio;corrispondente-ISP_;Affitto-affitto;10M-affitto;Imm_oltre-oltre_netto;Mutui-oltre_netto;oltre_netto-ISP;Residenza-immobiliare;Imm_oltre-immobiliare;Franchigia_res-maxm;Mutuo-maxm;Residenza-deres;maxm-deres;Mobiliare-demob;
+Franchigia_mob-demob;Mutui-deimm;deres-deimm;affitto-ISR;ISR-reddito">
+
+
+
+<param name="Modello ISEE130" value="text;node.ico;61;19;0;Versione 17.4.2002;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello;xModello;3103815005">
+<param name="Grafici" value="1;node.ico;500;314;0;Grafici è nullo;0.0;ProbNode;ValueInput;NoOutput;0;0;0.0010;NoCurve;xGrafici;xGrafici;1015460513">
+<param name="Html" value="1;node.ico;573;312;0;Html è nullo;0.0;ProbNode;ValueInput;NoOutput;0;0;0.999999;NoCurve;xHtml;xHtml;810319615">
+<param name="F12" value="text;node.ico;237;17;0;F12 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xF12;xF12;1270940422">
+<param name="F16" value="text;node.ico;322;17;0;F16 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xF16;xF16;3546245987">
+<param name="F20" value="text;node.ico;390;13;0;F20 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xF20;xF20;1599866450">
+<param name="F13" value="text;node.ico;500;10;0;F13 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xF13;xF13;3090430996">
+<param name="F18" value="text;node.ico;611;136;0;F18 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xF18;xF18;2074376704">
+<param name="F10" value="text;node.ico;332;150;0;F10 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xF10;xF10;24892428">
+<param name="G4" value="text;node.ico;175;136;0;G4 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xG4;xG4;2002070589">
+<param name="G5" value="text;node.ico;154;163;0;G5 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xG5;xG5;410527037">
+<param name="G6" value="text;node.ico;172;203;0;G6 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xG6;xG6;237338876">
+<param name="G7" value="text;node.ico;209;224;0;G7 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xG7;xG7;2977937775">
+<param name="E1" value="text;node.ico;41;45;0;E1 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xE1;xE1;4031327928">
+<param name="E3" value="text;node.ico;208;51;0;E3 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xE3;xE3;1629877662">
+<param name="F14" value="text;node.ico;388;33;0;F14 è nullo;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xF14;xF14;3326864612">
+<param name="Entrate" value="1;node.ico;40;60;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;redd;rscala;NoCurve;xEntrate;xEntrate;1745845745">
+<param name="redd" value="0;node.ico;42;128;0;-;0.0;PlusNode;NoInput;NoOutput;2;Entrate;rendita;1;ISR;rscala;1.0;1.0;1.0;NoCurve;xredd;xredd;906036255">
+<param name="rendita" value="0;node.ico;117;63;0;-;0.0;TimesNode;NoInput;NoOutput;2;X;Mobiliare;1;redd;rscala;1.0;1.0;1.0;NoCurve;xrendita;xrendita;660514885">
+<param name="Residenza" value="1;node.ico;530;23;0;-;0.0;PlusNode;ValueInput;NoOutput;0;4;resi;resi_netta;immobiliare;deres;pscala;NoCurve;xResidenza;xResidenza;907137342">
+<param name="resi" value="0;node.ico;427;95;0;-;0.0;MinusNode;NoInput;NoOutput;2;Residenza;Mutuo;1;residenza_netta;pscala;1.0;1.0;1.0;NoCurve;xresi;xresi;2447555931">
+<param name="Mutuo" value="1;node.ico;390;47;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;resi;maxm;pscala;NoCurve;xMutuo;xMutuo;1673405577">
+<param name="Mobiliare" value="1;node.ico;242;34;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;mob_netto;rendita;demob;pscala;NoCurve;xMobiliare;xMobiliare;1961203777">
+<param name="mob_netto" value="0;node.ico;346;95;0;-;0.0;MinusNode;NoInput;NoOutput;2;Mobiliare;Franchigia_mob;1;ISP;pscala;1.0;1.0;1.0;NoCurve;xmob_netto;xmob_netto;3797638370">
+<param name="Franchigia_mob" value="1;node.ico;323;31;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;mob_netto;demob;pscala;NoCurve;xFranchigia_mob;xFranchigia_mob;1902163911">
+<param name="resi_netta" value="0;node.ico;514;96;0;-;0.0;MinusNode;NoInput;NoOutput;2;Residenza;Franchigia_res;1;residenza_netta;pscala;1.0;1.0;1.0;NoCurve;xresi_netta;xresi_netta;2548408158">
+<param name="Coefficiente" value="1;node.ico;331;166;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;corrispondente;tscala;NoCurve;xCoefficiente;xCoefficiente;2092597490">
+<param name="corrispondente" value="0;node.ico;434;203;0;-;0.0;TimesNode;NoInput;NoOutput;2;Coefficiente;ISP;2;patrimonio;ISP_;pscala;1.0;1.0;1.0;NoCurve;xcorrispondente;xcorrispondente;2369232799">
+<param name="ISR" value="2;node.ico;41;244;0;-;0.0;MinusNode;NoInput;NoOutput;2;redd;affitto;2;ISE;reddito;rscala;1.0;1.0;1.0;NoCurve;xISR;xISR;3364897407">
+<param name="ISE" value="2;node.ico;263;243;0;-;0.0;PlusNode;NoInput;NoOutput;2;ISR;ISP_;1;indicatore;pscala;1.0;1.0;1.0;NoCurve;xISE;xISE;4092795707">
+<param name="ISP_" value="0;node.ico;434;227;0;-;0.0;PlusNode;NoInput;NoOutput;1;corrispondente;1;ISE;pscala;1.0;NoCurve;xISP_;xISP_;109442003">
+<param name="Componenti" value="1;node.ico;211;149;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;VSE;fscala;NoCurve;xComponenti;xComponenti;3813855154">
+<param name="VSE" value="2;node.ico;299;193;0;-;0.0;PlusNode;NoInput;NoOutput;4;Componenti;Monogenitore;Invalido;Lavoratori;2;indicatore;famiglia;fscala;1.0;1.0;1.0;1.0;1.1;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xVSE;xVSE;3331461271">
+<param name="Monogenitore" value="1;node.ico;192;175;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;VSE;fscala;NoCurve;xMonogenitore;xMonogenitore;296378887">
+<param name="Invalido" value="1;node.ico;205;198;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;VSE;fscala;NoCurve;xInvalido;xInvalido;1827929713">
+<param name="Lavoratori" value="1;node.ico;250;218;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;VSE;fscala;NoCurve;xLavoratori;xLavoratori;1223842580">
+<param name="indicatore" value="2;node.ico;301;277;0;-;0.0;DivideNode;NoInput;ResultOutput;2;ISE;VSE;1;ISEE;pscala;1.0;1.0;1.0;NoCurve;xindicatore;xindicatore;1927145427">
+<param name="X" value="1;node.ico;136;43;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;rendita;tscala;NoCurve;xX;xX;1211827044">
+<param name="famiglia" value="text;node.ico;264;136;0;-;0.0;ProbNode;NoInput;NoOutput;1;VSE;0;0.0;1.0;LinearCurve;famigliaCurve;xfamiglia;xfamiglia;3681408622">
+<param name="Franchigia_res" value="1;node.ico;439;20;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;resi_netta;maxm;pscala;NoCurve;xFranchigia_res;xFranchigia_res;2907858874">
+<param name="residenza_netta" value="0;node.ico;500;142;0;-;0.0;NumMinNode;NoInput;NoOutput;2;resi;resi_netta;1;ISP;pscala;1.0;1.0;1.0;NoCurve;xresidenza_netta;xresidenza_netta;3004175278">
+<param name="ISEE" value="text;node.ico;303;313;0;-;0.0;PlusNode;NoInput;NoOutput;1;indicatore;0;rscala;1.0;NoCurve;xISEE;xISEE;2410960680">
+<param name="ISP" value="2;node.ico;434;170;0;-;0.0;PlusNode;NoInput;NoOutput;3;mob_netto;residenza_netta;oltre_netto;1;corrispondente;pscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xISP;xISP;1846879738">
+<param name="patrimonio" value="text;node.ico;345;125;0;-;0.0;PlusNode;NoInput;NoOutput;1;corrispondente;0;pscala;1.0;NoCurve;xpatrimonio;xpatrimonio;221142522">
+<param name="Affitto" value="1;node.ico;232;59;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;affitto;rscala;NoCurve;xAffitto;xAffitto;1842311695">
+<param name="affitto" value="0;node.ico;177;73;0;-;0.0;NumMinNode;NoInput;NoOutput;2;Affitto;10M;1;ISR;mscala;1.0;1.0;1.0;NoCurve;xaffitto;xaffitto;184120141">
+<param name="10M" value="0;node.ico;239;83;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;affitto;affittomax;NoCurve;x10M;x10M;227165194">
+<param name="Imm_oltre" value="1;node.ico;597;150;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;oltre_netto;immobiliare;pscala;NoCurve;xImm_oltre;xImm_oltre;2792748478">
+<param name="oltre_netto" value="0;node.ico;537;170;0;-;0.0;MinusNode;NoInput;NoOutput;2;Imm_oltre;Mutui;1;ISP;pscala;1.0;1.0;1.0;NoCurve;xoltre_netto;xoltre_netto;1390322281">
+<param name="Mutui" value="1;node.ico;564;121;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;oltre_netto;deimm;pscala;NoCurve;xMutui;xMutui;1114664111">
+<param name="immobiliare" value="2;node.ico;595;24;0;-;0.0;PlusNode;NoInput;NoOutput;2;Residenza;Imm_oltre;0;pscala;1.0;1.0;1.0;NoCurve;ximmobilare;ximmobiliare;3268413830">
+<param name="maxm" value="0;node.ico;442;59;0;-;0.0;NumMaxNode;NoInput;NoOutput;2;Franchigia_res;Mutuo;1;deres;pscala;1.0;1.0;1.0;NoCurve;xmaxm;xmaxm;1384153301">
+<param name="deres" value="0;node.ico;503;60;0;-;0.0;NumMinNode;NoInput;NoOutput;2;Residenza;maxm;1;deimm;pscala;1.0;1.0;1.0;NoCurve;xderes;xderes;2970694927">
+<param name="demob" value="2;node.ico;297;67;0;-;0.0;NumMinNode;NoInput;NoOutput;2;Mobiliare;Franchigia_mob;0;pscala;1.0;1.0;1.0;NoCurve;xdemob;xdemob;1355429894">
+<param name="deimm" value="2;node.ico;562;62;0;-;0.0;PlusNode;NoInput;NoOutput;2;Mutui;deres;0;pscala;1.0;1.0;1.0;NoCurve;xdeimm;xdeimm;1866400862">
+<param name="reddito" value="text;node.ico;100;125;0;-;0.0;PlusNode;NoInput;NoOutput;1;ISR;0;rscala;1.0;NoCurve;xreddito;xreddito;2835853805">
+
+<param name="famigliaCurve" value="LinearCurve;0.0;0.0;1.0;0.1;2.0;0.157;3.0;0.204;4.0;0.246;5.0;0.285;15.0;0.635">
+
+
+<param name="xCoefficiente" value="Coefficiente;COEFFICIENTE DI VALUTAZIONE;coefficiente=0 (ERRORE);Coefficiente=;Coefficiente=max;=; ; ; ; ;T.2; ">
+<param name="xFranchigia_mob" value="Franchigia_mob;FRANCHIGIA SUL PATRIMONIO MOBILIARE;franchigia=0 (ERRORE);Franchigia_mob=;Franchigia_mob=max;=; ; ; ; ;$.2; ">
+<param name="xComponenti" value="Componenti;Valore derivato dalla composizione del nucleo familiare; -;Componenti=;Componenti=max;=; ; ; ; ;$.2; ">
+<param name="xMutui" value="Mutui;DETRAZIONE PER MUTUI CONTRATTI; nessun mutuo contratto;DETRAZIONE PER MUTUI CONTRATTI;DETRAZIONE PER MUTUI CONTRATTI; ; ; ; ; ;$.2; ">
+<param name="xResidenza" value="Residenza;VALORE AI FINI ICI DELL'ABITAZIONE DI RESIDENZA; nessun'abitazione di residenza;VALORE AI FINI ICI DELL'ABITAZIONE DI RESIDENZA;VALORE AI FINI ICI DELL'ABITAZIONE DI RESIDENZA; ; ; ; ; ;$.2; ">
+<param name="xEntrate" value="Entrate;REDDITO COMPLESSIVO DEL NUCLEO FAMILIARE; nessun reddito indicato;REDDITO COMPLESSIVO DEL NUCLEO FAMILIARE;REDDITO COMPLESSIVO DEL NUCLEO FAMILIARE; ; ; ; ; ;$.2; ">
+<param name="xMobiliare" value="Mobiliare;CONSISTENZA DEL PATRIMONIO MOBILIARE; nessun patrimonio mobiliare;CONSISTENZA DEL PATRIMONIO MOBILIARE;CONSISTENZA DEL PATRIMONIO MOBILIARE; ; ; ; ; ;$.2; ">
+<param name="xMutuo" value="Mutuo;DETRAZIONE PER MUTUO CONTRATTO; nessun mutuo per la residenza;DETRAZIONE PER MUTUO CONTRATTO;DETRAZIONE PER MUTUO CONTRATTO; ; ; ; ; ;$.2; ">
+<param name="xX" value="x;x;X=0;X=;X=max;=; ; ; ; ;P.5; ">
+
+<param name="xAffitto" value="Affitto;IMPORTO DELL'AFFITTO (fino a $10M$ detraibile); nessun affitto indicato;IMPORTO DELL'AFFITTO;IMPORTO DELL'AFFITTO; ; ; ; ; ;$.2; ">
+<param name="xFranchigia_res" value="Franchigia_res;FRANCHIGIA SULL'ABITAZIONE DI RESIDENZA; abitazione non di proprietà;Franchigia_res=;Franchigia_res=max;=; ; ; ; ;$.2; ">
+<param name="xMonogenitore" value="Monogenitore; - per assenza di un genitore e presenza di figli minori; -;Monogenitore=;Monogenitore=max;=; ; ; ; ;$.2; ">
+<param name="xImm_oltre" value="Imm_oltre;CONSISTENZA AI FINI ICI DEGLI IMMOBILI OLTRE LA RESIDENZA;nessun patrimonio immobiliare oltre la residenza;CONSISTENZA AI FINI ICI DEGLI IMMOBILI OLTRE LA RESIDENZA;CONSISTENZA AI FINI ICI DEGLI IMMOBILI OLTRE LA RESIDENZA; ; ; ; ; ;$.2; ">
+<param name="xLavoratori" value="Lavoratori; - per i nuclei familiari con figli minori in cui entrambi i genitori svolgono attività di lavoro o di impresa; -;Lavoratori=;Lavoratori=max;=; ; ; ; ;$.2; ">
+<param name="xInvalido" value="Invalido; - per componente/i con handicap o invalidità superiore al 66%; -;Invalido=;Invalido=max;=; ; ; ; ;$.2; ">
+
+
+
+
+
+
+
+
+
+
+
+
+<param name="xModello" value="MODELLO ISEE130;x;Versione 17.4.2002; ; ; ; ; ; ; ; ; ">
+
+
+
+<param name="xpatrimonio" value="patrimonio;la valutazione del patrimonio ai fini ISEE;la famiglia è senza patrimonio;la valutazione del patrimonio ai fini ISEE è nella media;la valutazione del patrimonio ai fini ISEE è definitivamente alto;è;modesto;alto; ;corrispondente a ;$.2; ">
+<param name="xreddito" value="reddito;TOTALE DEL REDDITO DA CONSIDERARE AI FINI ISEE; nessun reddito da considerare;TOTALE DEL REDDITO DA CONSIDERARE AI FINI ISEE;TOTALE DEL REDDITO DA CONSIDERARE AI FINI ISEE; ; ; ; ;<b>;$.2;</b>">
+<param name="xISP_" value="ISP_;PATRIMONIO DA CONSIDERARE AI FINI ISEE; nessun patrimonio da considerare;ISP_=;ISP_=max;=; ; ; ; ;$.2; ">
+<param name="xfamiglia" value="famiglia;la famiglia;la famiglia è nulla;la famiglia media;la famiglia veramente numerosa;è;piccola;numerosa; ;corrispondente a ;T.2; componenti  ">
+<param name="xISEE" value="ISEE;l'ISEE familiare ;l'ISEE familiare è zero;l'ISEE familiare è nella media;l'ISEE familiare è ;è; ; ; ; del valore di ;T.2; ">
+
+<param name="xderes" value="deres;la detrazione dal valore della residenza;nessuna detrazione dal valore della residenza;la detrazione dal valore della residenza;la detrazione dal valore della residenza;è; ; ; ;  ;$.2;  ">
+
+<param name="xdeimm" value="deimm;la detrazione dal patrimonio immobiliare;nessuna detrazione dal patrimonio immobiliare;la detrazione dal patrimonio immobiliare;la detrazione dal patrimonio immobiliare;è; ; ; ;  ;$.2;  ">
+<param name="xoltre_netto" value="oltre_netto;PATRIMONIO IMMOBILIARE NETTO OLTRE LA RESIDENZA; nessun patrimonio immobiliare oltre la residenza;PATRIMONIO IMMOBILIARE NETTO OLTRE LA RESIDENZA;PATRIMONIO IMMOBILIARE NETTO OLTRE LA RESIDENZA; ; ; ; ; ;$.2; ">
+
+<param name="ximmobiliare" value="immobiliare;il patrimonio immobiliare;nessun patrimonio immobiliare;il patrimonio immobiliare;il patrimonio immobiliare;è; ; ; ;  ;$.2;  ">
+
+<param name="xmob_netto" value="mob_netto;PATRIMONIO MOBILIARE AL NETTO DELLA FRANCHIGIA; nessun patrimonio mobiliare;PATRIMONIO MOBILIARE AL NETTO DELLA FRANCHIGIA;PATRIMONIO MOBILIARE AL NETTO DELLA FRANCHIGIA; ; ; ; ; ;$.2; ">
+<param name="xresi_netta" value="resi_netta;PATRIMONIO IMMOBILIARE AL NETTO DELLA FRANCHIGIA; nessun patrimonio immobiliare;PATRIMONIO IMMOBILIARE AL NETTO DELLA FRANCHIGIA;PATRIMONIO IMMOBILIARE AL NETTO DELLA FRANCHIGIA; ; ; ; ; ;$.2; ">
+<param name="xcorrispondente" value="corrispondente;QUOTA ISP DA CONSIDERARE AI FINI ISEE (=^Coefficiente^*ISP); nessun patrimonio indicato;QUOTA ISP DA CONSIDERARE AI FINI ISEE (=^Coefficiente^*ISP);QUOTA ISP DA CONSIDERARE AI FINI ISEE (=^Coefficiente^*ISP); ; ; ; ; ;$.2; ">
+<param name="xredd" value="redd;TOTALE DEL REDDITO ; nessun reddito da considerare;TOTALE DEL REDDITO ;TOTALE DEL REDDITO ; ; ; ; ;<b>;$.2;</b>">
+<param name="xrendita" value="rendita;REDDITO FIGURATIVO DEL PATRIMONIO MOBILIARE ($Mobiliare$ * ^X^); nessun patrimonio mobiliare indicato;rendita=;rendita=max;=; ; ; ; ;$.2; ">
+<param name="xresi" value="resi;RESIDENZA AL NETTO DEL MUTUO; nessun valore di residenza indicatoRESIDENZA AL NETTO DEL MUTUO;RESIDENZA AL NETTO DEL MUTUO; ; ; ; ; ;$.2; ;  ">
+<param name="xresidenza_netta" value="residenza_netta;VALORE DELL'ABITAZIONE DI RESIDENZA DA VALUTARE; nessun'abitazione di residenza da valutare;residenza_netta PATRIMONIO IMMOBILIARE DA VALUTARE;residenza_netta=max;=; ; ; ; ;$.2; ">
+<param name="xindicatore" value="indicatore;<b>INDICATORE ISEE</b> (= ISE / VSE );<b>INDICATORE ISEE</b> (= ISE / VSE );<b>INDICATORE ISEE</b> (= ISE / VSE );<b>INDICATORE ISEE</b> (= ISE / VSE ); ; ; ; ;<b>;$.2;</b> ">
+<param name="xISR" value="ISR;INDICATORE SITUAZIONE REDDITUALE (<b>ISR</b>); nessun reddito da considerare;ISR=;ISR=max;=; ; ; ; ;$.2; ">
+<param name="xISE" value="ISE;INDICATORE SITUAZIONE ECONOMICA (<b>ISE</b> = ISR + ^Coefficiente^*ISP);INDICATORE SITUAZIONE ECONOMICA (<b>ISE</b> = ISR + ^Coefficiente^*ISP);INDICATORE SITUAZIONE ECONOMICA (<b>ISE</b> = ISR + ^Coefficiente^*ISP);INDICATORE SITUAZIONE ECONOMICA (<b>ISE</b>); ; ; ; ;<b>;$.2;</b>">
+<param name="xISP" value="ISP;INDICATORE SITUAZIONE PATRIMONIALE (<b>ISP</b>); nessun patrimonio da valutare;INDICATORE SITUAZIONE PATRIMONIALE (<b>ISP</b>);INDICATORE SITUAZIONE PATRIMONIALE (<b>ISP</b>); ; ; ; ; ;$.2; ">
+<param name="xVSE" value="VSE;IL VALORE DELLA <b>SCALA DI EQUIVALENZA (VSE)</b>; totale parametri=0 (ERRORE);IL VALORE DELLA SCALA DI EQUIVALENZA (VSE);IL VALORE DELLA SCALA DI EQUIVALENZA (VSE); ; ; ; ;<b>;$.2;</b>">
+
+
+
+<param name="xpltree" value="asHtml;applicant;E2000;F_bis2000;G2000;graph;summary;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="asHtml" value="(Html==1);">
+<param name="applicant" value="Calcolo dell'ISEE - D.L.130/00 Euro DI ;">
+<param name="E2000" value="<hr><b>SITUAZIONE REDDITUALE DEL NUCLEO FAMILIARE</b>;Entrate=-1;rendita=-1;Affitto=-1;reddito=-1">
+<param name="F_bis2000" value="<hr><b>SITUAZIONE PATRIMONIALE DEL NUCLEO FAMILIARE</b>;Mobiliare=-1;Franchigia_mob=-1;mob_netto=-1;Residenza=-1;Mutuo=-1;Franchigia_res=-1;residenza_netta=-1;Imm_oltre=-1;Mutui=-1;oltre_netto=-1;Coefficiente=-1">
+<param name="G2000" value="<hr><b>DETERMINAZIONE DELL'ISEE - DL. 130/00 Euro</b>;ISR=-1;ISP=-1;corrispondente=-1;ISE=-1;Componenti=-1;Monogenitore=-1!0;Invalido=-1!0;Lavoratori=-1!0;VSE=-1;indicatore=-1">
+<param name="graph" value="(Grafici==1)Clesius - Graph;">
+<param name="summary" value="<hr>Riassunto dati: <small> ;</small>">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3374999682">
+<param name="CRC" value="2007704754">
+<param name="CRCdata" value="17-apr-02 19.03.46">
+</APPLET>
+<BR>

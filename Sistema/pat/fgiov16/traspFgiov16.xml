@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>Calcolo dell'indicatore ICEF per l'accesso al fondo<BR>
+        	per la valorizzazione e professionalizzazione dei giovani - Anno 2016</H2>
+		(art.59 Legge provinciale 29 dicembre 2005, n.20)
+        <BR> <BR>Il presente documento e' una simulazione del calcolo dell'indicatore ICEF e NON sostituisce l'attestazione ufficiale rilasciata dagli enti abilitati</CENTER><P>]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<!--[CDATA[<H2><CENTER>]]>
+            		<sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '' end from Doc where id=${id_domanda}]]></sql>
+			<![CDATA[</H2></CENTER>]]-->
+		</ente>
+		<servizio>
+		</servizio>
+		<richiedente><!--[CDATA[<B>Richiedente: </B>]]-->
+			<!--class>c_elab.pat.ts.Richiedente</class><![CDATA[</H2>]]-->
+		</richiedente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<!--class>clesprojects.clesius.icef.InfoDomanda</class-->
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

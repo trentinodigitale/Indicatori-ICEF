@@ -1,0 +1,113 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=830 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.5 $">
+<param name="Taratura" value="Cond.Econ; 16.12.2005">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parass;casoce;1gen;2gen+2f">
+
+<param name="parass" value="current;FAR=999999;LSR=999999;ALV=0.5">"
+
+<param name="1gen" value="parass;Icef=0.2;Lordo=20000.0;Componenti=3;N_figli=2">
+<param name="2gen+2f" value="parass;N_figli=2;Disabili=1;1genitor=1;Componenti=4;Finanziario=90000.0;Icef=0.3;Immobiliare=0.0;Lordo=20000.0;Residenza=50000.0;Res=100000">
+<param name="casoce" value="parass;Lordo=22000.0;Assegno_precedente=1000;Detrazione=2000;Residenza=5000;Res=30000;Immobiliare=10000;Finanziario=80000;1genitor=1;Disabili=1;Componenti=5;N_figli=2">
+
+
+<param name="variables" value="ascala;cscala;escala;valpat;cinquemila;ventimila">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+ <param name="valpat" value="0.25">
+ <param name="cinquemila" value="5000">
+ <param name="ventimila" value="20000">
+
+
+
+<param name="edges" value="P.A.T.  AssegnoCE;Icef;Assegno_precedente;
+Reddito-condizione_familiare;pat_valutato-condizione_familiare;pat-pat_valutato;Immobiliare-pat;Finanziario-fin_valutato;fin_valutato-pat;fran_finanziario-fin_valutato;Residenza-pat;Lordo-Reddito;Detrazione-Reddito;5xcomp-fran_finanziario;fran20-fran_finanziario;20xcomp-fran20;Res-fran20;Componenti-5xcomp;Componenti-20xcomp">
+
+
+
+<param name="P.A.T.  AssegnoCE" value="text;node.ico;60;317;0;P.A.T.  AssegnoCE 2005/2006 - (16.12.2005);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_AssegnoCE;xModello_AssegnoCE;3558655715">
+<param name="Icef" value="1;node.ico;254;288;0;ICEF Indicatore della Situazione Economica Familiare;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xIcef;yIcef;2528829874">
+<param name="Assegno_precedente" value="1;node.ico;229;312;0;L'assegno precedente è zero;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xAssegno_precedente;yAssegno_precedente;3693178227">
+<param name="Reddito" value="0;node.ico;127;372;0;-;0.0;MinusNode;NoInput;NoOutput;2;Lordo;Detrazione;1;condizione_familiare;escala;1.0;1.0;1.0;NoCurve;xReddito;yReddito;4257221331">
+<param name="condizione_familiare" value="0;node.ico;237;374;0;-;0.0;PlusNode;NoInput;ResultOutput;2;Reddito;pat_valutato;0;ascala;1.0;1.0;1.0;NoCurve;xcondizione_familiare;ycondizione_familiare;3141860170">
+<param name="pat_valutato" value="0;node.ico;418;374;0;-;0.0;PlusNode;NoInput;NoOutput;1;pat;1;condizione_familiare;escala;valpat;NoCurve;xpat_valutato;ypat_valutato;2257802505">
+<param name="pat" value="0;node.ico;417;351;0;-;0.0;PlusNode;NoInput;NoOutput;3;Immobiliare;fin_valutato;Residenza;1;pat_valutato;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpat;ypat;946996515">
+<param name="Immobiliare" value="1;node.ico;418;324;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pat;escala;NoCurve;xImmobiliare;yImmobiliare;1796701745">
+<param name="Finanziario" value="1;node.ico;503;324;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;fin_valutato;escala;NoCurve;xFinanziario;yFinanziario;1268545413">
+<param name="fin_valutato" value="0;node.ico;504;351;0;-;0.0;MinusNode;NoInput;NoOutput;2;Finanziario;fran_finanziario;1;pat;escala;1.0;1.0;1.0;NoCurve;xfin_valutato;yfin_valutato;1769493791">
+<param name="fran_finanziario" value="0;node.ico;627;353;0;-;0.0;NumMaxNode;NoInput;NoOutput;2;5xcomp;fran20;1;fin_valutato;escala;1.0;1.0;1.0;NoCurve;xfran_finanziario;yfran_finanziario;2089838990">
+<param name="Residenza" value="1;node.ico;303;279;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pat;escala;NoCurve;xResidenza;yResidenza;2637867724">
+<param name="Lordo" value="1;node.ico;95;345;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;Reddito;escala;NoCurve;xLordo;yLordo;672275599">
+<param name="Detrazione" value="1;node.ico;157;345;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;Reddito;escala;NoCurve;xDetrazione;yDetrazione;2867575602">
+<param name="5xcomp" value="0;node.ico;581;331;0;-;0.0;PlusNode;NoInput;NoOutput;1;Componenti;1;fran_finanziario;escala;cinquemila;NoCurve;x5xcomp;y5xcomp;3077493458">
+<param name="fran20" value="0;node.ico;654;331;0;-;0.0;MinusNode;NoInput;NoOutput;2;20xcomp;Res;1;fran_finanziario;escala;1.0;1.0;1.0;NoCurve;xfran20;yfran20;4109433465">
+<param name="20xcomp" value="0;node.ico;604;301;0;-;0.0;PlusNode;NoInput;NoOutput;1;Componenti;1;fran20;escala;ventimila;NoCurve;x20xcomp;y20xcomp;2640657429">
+<param name="Res" value="1;node.ico;654;269;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;fran20;escala;NoCurve;xRes;yRes;3100881761">
+<param name="Componenti" value="1;node.ico;548;277;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;5xcomp;20xcomp;cscala;NoCurve;xComponenti;yComponenti;369332408">
+
+
+
+<param name="xLordo" value="Lordo;Lordo;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xDetrazione" value="Detrazione;Detrazione;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xImmobiliare" value="Immobiliare;Patrimono immobiliare;Patrimono immobiliare zero;Patrimono immobiliare;Patrimono immobiliare; ; ; ; ; ;$.2; ">
+
+<param name="xResidenza" value="Residenza;Valutazione della residenza;La residenza non incide come patrimonio;Valutazione della residenza;Valutazione della residenza; ; ; ; ; ;$.2; ">
+
+<param name="xFinanziario" value="Finanziario;Patrimonio finanziario;Patrimonio finanziario zero;Patrimonio finanziario;Patrimonio finanziario; ; ; ; ; ;$.2; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare; ; ; ; ;<b>;T.4;</b>">
+
+<param name="xModello_AssegnoCE" value="P.A.T.  AssegnoCE;x;P.A.T.  AssegnoCE 2005/2006 - (16.12.2005);--;--; ; ; ; ; ; ; ">
+<param name="xAssegno_precedente" value="Assegno_precedente;Assegno precedente;L'assegno precedente è zero;Assegno precedente;Assegno precedente; ; ;=; ; -;$.2; ">
+
+<param name="xRes" value="Res;Importo ICI della residenza (valutata con $Residenza$);Importo ICI della residenza zero;Importo ICI della residenza (valutata con $Residenza$);Importo ICI della residenza (valutata con $Residenza$); ; ; ; ; ;$.2; ">
+
+<param name="xComponenti" value="Componenti;Componenti;Componenti0;Componenti;Componenti; ; ; ; ; ;T; ">
+
+<param name="x5xcomp" value="5xcomp;5xcomp;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xpat_valutato" value="pat_valutato;Valutazione del patrimonio (al %valpat%);La valutazione del patrimonio risulta zero;Valutazione del patrimonio (al %valpat%);Valutazione del patrimonio (al %valpat%); ; ; ; ; <b>;$.2;</b>">
+
+<param name="x20xcomp" value="20xcomp;20xcomp;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xfran20" value="fran20;fran20;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xReddito" value="Reddito;<b>Reddito</b> come risultante dalla dichiarazione ICEF;<b>Reddito</b> come risultante dalla dichiarazione ICEF;<b>Reddito</b> come risultante dalla dichiarazione ICEF;<b>Reddito</b> come risultante dalla dichiarazione ICEF; ; ; ; ;<b>;$.2;</b>">
+
+<param name="xcondizione_familiare" value="condizione_familiare;Valutazione della condizione familiare ( = §Reddito§ + §pat_valutato§);La valutazione della condizione familiare risulta zero;Valutazione della condizione familiare ( = §Reddito§ + §pat_valutato§);Valutazione della condizione familiare ( = §Reddito§ + §pat_valutato§); ; ; ; ; <b>;$.2;</b>">
+
+<param name="xfran_finanziario" value="fran_finanziario;Franchigia finanziaria ( max[§5xcomp§, §20xcomp§ - §Res§] );Franchigia finanziaria=0(?);Franchigia finanziaria ( max[§5xcomp§, §20xcomp§ - §Res§] );Franchigia finanziaria ( max[§5xcomp§, §20xcomp§ - §Res§] ); ; ; ; ; -;$.2; ">
+
+<param name="xfin_valutato" value="fin_valutato;Patrimonio finanziario oltre la franchigia;Patrimonio finanziario inferiore alla franchigia;Patrimonio finanziario oltre la franchigia;Patrimonio finanziario oltre la franchigia; ; ; ; ; ;$.2; ">
+
+<param name="xpat" value="pat;Patrimonio complessivo;senza patrimonio;Patrimonio complessivo;Patrimonio complessivo; ; ; ; ; ;$.2; ">
+
+
+
+
+<param name="xpltree" value="dati;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="dati" value="<P><BR><P><B>Dati per il calcolo dell'assegno:</B>;(Dettagli==1)Icef=-1;Reddito=-1;Assegno precedente=-1!0;Componenti=-1;Finanziario=-1!0;(Finanziario!=0)fran_finanziario=-1;fin_valutato=-1;Immobiliare=-1;(Res!=0)Residenza=-1;pat=-1!0;pat_valutato=-1;condizione_familiare=-1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2797481631">
+<param name="CRC" value="1475148838">
+<param name="CRCdata" value="16-dic-2005 18.36.00">
+</APPLET>
+<BR>

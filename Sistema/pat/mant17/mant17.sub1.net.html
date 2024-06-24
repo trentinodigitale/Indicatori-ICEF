@@ -1,0 +1,393 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=900 HEIGHT=800 MAYSCRIPT>
+	<param name="revision" value="$Revision: 34423 $">
+
+	<param name="Taratura" value="PAT - Assegno di mantenimento figli per mese; 23.1.2018">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+
+	<param name="trendStarts" value="casofigli;casocheck">
+
+	<param name="casofigli" value="current;V_n_figli=1444333222111;Ass01=100;Ass02=100;Ass03=100;Ass04=100;Ass05=80;Ass06=80;Ass07=80;Ass08=50;Ass09=50;Ass10=50;Ass11=50;Ass12=50">
+	<param name="casocheck" value="current;V_check=1000333000000">
+	
+	<param name="variables"	value="vscala">
+	<param name="vscala" value="0.0000000000001">
+
+
+
+<param name="edges" value="P.A.T. Check Figli;d_s;n_f;
+v01-checksum;v02-checksum;v03-checksum;v04-checksum;v05-checksum;v06-checksum;v07-checksum;v08-checksum;v09-checksum;v10-checksum;v11-checksum;v12-checksum;V_check-c01;V_check-c02;V_check-c03;V_check-c04;V_check-c05;V_check-c06;V_check-c07;V_check-c08;V_check-c09;
+V_check-c10;V_check-c11;V_check-c12;V_n_figli-n01;V_n_figli-n02;V_n_figli-n03;V_n_figli-n04;V_n_figli-n05;V_n_figli-n06;V_n_figli-n07;V_n_figli-n08;V_n_figli-n09;V_n_figli-n10;V_n_figli-n11;V_n_figli-n12;Ass01-a01;Ass02-a02;Ass03-a03;Ass04-a04;Ass05-a05;
+Ass06-a06;Ass07-a07;Ass08-a08;Ass09-a09;Ass10-a10;Ass11-a11;Ass12-a12;a01_calc-a01;a02_calc-a02;a03_calc-a03;a04_calc-a04;a05_calc-a05;a06_calc-a06;a07_calc-a07;a08_calc-a08;a09_calc-a09;a10_calc-a10;a11_calc-a11;a12_calc-a12;a01-a_totale;
+a02-a_totale;a03-a_totale;a04-a_totale;a05-a_totale;a06-a_totale;a07-a_totale;a08-a_totale;a09-a_totale;a10-a_totale;a11-a_totale;a12-a_totale;sentenza-quota;n01-quota;n02-s02;quota-s02;n03-s03;n04-s04;n05-s05;n07-s07;n08-s08;
+n09-s09;n10-s10;n11-s11;n12-s12;quota-s03;quota-s04;quota-s05;n06-s06;quota-s06;quota-s07;quota-s08;quota-s09;quota-s10;quota-s11;quota-s12;sentenza-s01;c00-v00;n00-v00;c00-v00;CHECK_base-checkout;
+checksum-checkout">
+
+
+
+<param name="P.A.T. Check Figli" value="text;node.ico;763;352;0;Versione 23.1.2018;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloCheckFigli;yModelloCheckFigli;3868094894">
+<param name="d_s" value="0;node.ico;807;380;0;d_s = ;0.0;TimesNode;NoInput;NoOutput;0;0;1.0;NoCurve;xd_s;xd_s;3908491471">
+<param name="n_f" value="0;node.ico;838;403;0;n_f = ;0.0;TimesNode;NoInput;NoOutput;0;0;1.0;NoCurve;xn_f;xn_f;1699065464">
+<param name="v01" value="0;node.ico;436;316;0;v01 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv01;xv01;3911968601">
+<param name="checksum" value="0;node.ico;458;353;0;checksum =  100000000000.000*v01 + 10000000000.000*v02 + 1000000000.000*v03 + 100000000.000*v04 + 10000000.000*v05 + 1000000.000*v06 + 100000.000*v07 + 10000.000*v08 + 1000.000*v09 + 100.000*v10 + 10.000*v11 + v12;0.0;PlusNode;NoInput;NoOutput;12;v01;v02;v03;v04;v05;v06;v07;v08;v09;v10;v11;v12;1;checkout;vscala;1.0E11;1.0E10;1.0E9;1.0E8;1.0E7;1000000.0;100000.0;10000.0;1000.0;100.0;10.0;1.0;1.0E12;0.0;0.0;NoCurve;xchecksum;xchecksum;461820305">
+<param name="v02" value="0;node.ico;409;323;0;v02 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv02;xv02;1778033708">
+<param name="v03" value="0;node.ico;393;342;0;v03 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv03;xv03;2312251928">
+<param name="v04" value="0;node.ico;393;365;0;v04 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv04;xv04;1612852612">
+<param name="v05" value="0;node.ico;411;379;0;v05 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv05;xv05;3305305522">
+<param name="v06" value="0;node.ico;439;390;0;v06 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv06;xv06;1661428986">
+<param name="v07" value="0;node.ico;468;390;0;v07 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv07;xv07;831990599">
+<param name="v08" value="0;node.ico;493;382;0;v08 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv08;xv08;1772943509">
+<param name="v09" value="0;node.ico;517;375;0;v09 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv09;xv09;2926805255">
+<param name="v10" value="0;node.ico;521;356;0;v10 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv10;xv10;3126400460">
+<param name="v11" value="0;node.ico;509;334;0;v11 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv11;xv11;1990517864">
+<param name="v12" value="0;node.ico;484;323;0;v12 = ;0.0;TimesNode;NoInput;NoOutput;0;1;checksum;1.0;NoCurve;xv12;xv12;779638680">
+<param name="V_check" value="1;node.ico;609;283;0;V_check = ;0.0;PlusNode;ValueInput;NoOutput;0;12;c01;c02;c03;c04;c05;c06;c07;c08;c09;c10;c11;c12;vscala;NoCurve;xV_check;xV_check;2442629601">
+<param name="c01" value="0;node.ico;573;257;0;c01 =  - 2.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-2.0;NoCurve;xc01;xc01;2791216571">
+<param name="c02" value="0;node.ico;551;276;0;c02 =  - 3.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-3.0;NoCurve;xc02;xc02;471508797">
+<param name="c03" value="0;node.ico;554;297;0;c03 =  - 4.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-4.0;NoCurve;xc03;xc03;3023830137">
+<param name="c04" value="0;node.ico;551;319;0;c04 =  - 5.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-5.0;NoCurve;xc04;xc04;331361189">
+<param name="c05" value="0;node.ico;583;319;0;c05 =  - 6.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-6.0;NoCurve;xc05;xc05;2135656170">
+<param name="c06" value="0;node.ico;591;339;0;c06 =  - 7.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-7.0;NoCurve;xc06;xc06;1551509038">
+<param name="c07" value="0;node.ico;625;340;0;c07 =  - 8.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-8.0;NoCurve;xc07;xc07;3503444670">
+<param name="c08" value="0;node.ico;639;319;0;c08 =  - 9.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-9.0;NoCurve;xc08;xc08;4116658643">
+<param name="c09" value="0;node.ico;661;299;0;c09 =  - 10.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-10.0;NoCurve;xc09;xc09;352007770">
+<param name="c10" value="0;node.ico;658;278;0;c10 =  - 11.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-11.0;NoCurve;xc10;xc10;1128415344">
+<param name="c11" value="0;node.ico;643;258;0;c11 =  - 12.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-12.0;NoCurve;xc11;xc11;4095396490">
+<param name="c12" value="0;node.ico;610;257;0;c12 =  - 13.000*V_check;0.0;CrossSumNode;TokenInput;NoOutput;1;V_check;0;0.1;-13.0;NoCurve;xc12;xc12;1494500190">
+<param name="V_n_figli" value="1;node.ico;725;483;0;V_n_figli = ;0.0;PlusNode;ValueInput;NoOutput;0;12;n01;n02;n03;n04;n05;n06;n07;n08;n09;n10;n11;n12;1.0;NoCurve;xV_n_figli;xV_n_figli;713464358">
+<param name="n01" value="0;node.ico;656;427;0;n01 =  - 2.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;quota;0.1;-2.0;NoCurve;xn01;xn01;595332185">
+<param name="n02" value="0;node.ico;671;467;0;n02 =  - 3.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s02;0.1;-3.0;NoCurve;xn02;xn02;599831062">
+<param name="n03" value="0;node.ico;648;487;0;n03 =  - 4.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s03;0.1;-4.0;NoCurve;xn03;xn03;3486055533">
+<param name="n04" value="0;node.ico;650;508;0;n04 =  - 5.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s04;0.1;-5.0;NoCurve;xn04;xn04;37171889">
+<param name="n05" value="0;node.ico;683;522;0;n05 =  - 6.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s05;0.1;-6.0;NoCurve;xn05;xn05;2610856324">
+<param name="n06" value="0;node.ico;706;542;0;n06 =  - 7.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s06;0.1;-7.0;NoCurve;xn06;xn06;2638063503">
+<param name="n07" value="0;node.ico;740;543;0;n07 =  - 8.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s07;0.1;-8.0;NoCurve;xn07;xn07;2417985401">
+<param name="n08" value="0;node.ico;754;522;0;n08 =  - 9.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s08;0.1;-9.0;NoCurve;xn08;xn08;2284856428">
+<param name="n09" value="0;node.ico;788;512;0;n09 =  - 10.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s09;0.1;-10.0;NoCurve;xn09;xn09;1144902923">
+<param name="n10" value="0;node.ico;790;491;0;n10 =  - 11.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s10;0.1;-11.0;NoCurve;xn10;xn10;3761382839">
+<param name="n11" value="0;node.ico;783;471;0;n11 =  - 12.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s11;0.1;-12.0;NoCurve;xn11;xn11;2183720329">
+<param name="n12" value="0;node.ico;752;456;0;n12 =  - 13.000*V_n_figli;0.0;CrossSumNode;NoInput;NoOutput;1;V_n_figli;1;s12;0.1;-13.0;NoCurve;xn12;xn12;3660931380">
+<param name="Ass01" value="1;node.ico;742;36;0;Ass01 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a01;1.0;NoCurve;xAss01;xAss01;955814967">
+<param name="a01" value="2;node.ico;788;38;0;a01 =  a01_calc - Ass01;0.0;MinusNode;NoInput;IntermediateOutput;2;a01_calc;Ass01;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa01;xa01;3868097657">
+<param name="Ass02" value="1;node.ico;743;57;0;Ass02 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a02;1.0;NoCurve;xAss02;xAss02;2890387307">
+<param name="a02" value="2;node.ico;786;59;0;a02 =  a02_calc - Ass02;0.0;MinusNode;NoInput;IntermediateOutput;2;a02_calc;Ass02;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa02;xa02;1469849087">
+<param name="Ass03" value="1;node.ico;744;78;0;Ass03 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a03;1.0;NoCurve;xAss03;xAss03;1890575423">
+<param name="a03" value="2;node.ico;785;81;0;a03 =  a03_calc - Ass03;0.0;MinusNode;NoInput;IntermediateOutput;2;a03_calc;Ass03;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa03;xa03;3713501515">
+<param name="Ass04" value="1;node.ico;747;98;0;Ass04 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a04;1.0;NoCurve;xAss04;xAss04;3335372159">
+<param name="a04" value="2;node.ico;785;102;0;a04 =  a04_calc - Ass04;0.0;MinusNode;NoInput;IntermediateOutput;2;a04_calc;Ass04;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa04;xa04;4123494738">
+<param name="Ass05" value="1;node.ico;742;120;0;Ass05 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a05;1.0;NoCurve;xAss05;xAss05;3392408419">
+<param name="a05" value="2;node.ico;784;124;0;a05 =  a05_calc - Ass05;0.0;MinusNode;NoInput;IntermediateOutput;2;a05_calc;Ass05;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa05;xa05;2651576977">
+<param name="Ass06" value="1;node.ico;741;142;0;Ass06 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a06;1.0;NoCurve;xAss06;xAss06;2459487663">
+<param name="a06" value="2;node.ico;783;147;0;a06 =  a06_calc - Ass06;0.0;MinusNode;NoInput;IntermediateOutput;2;a06_calc;Ass06;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa06;xa06;2267291067">
+<param name="Ass07" value="1;node.ico;740;169;0;Ass07 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a07;1.0;NoCurve;xAss07;xAss07;2006059162">
+<param name="a07" value="2;node.ico;780;172;0;a07 =  a07_calc - Ass07;0.0;MinusNode;NoInput;IntermediateOutput;2;a07_calc;Ass07;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa07;xa07;93102068">
+<param name="Ass08" value="1;node.ico;737;190;0;Ass08 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a08;1.0;NoCurve;xAss08;xAss08;989301538">
+<param name="a08" value="2;node.ico;776;193;0;a08 =  a08_calc - Ass08;0.0;MinusNode;NoInput;IntermediateOutput;2;a08_calc;Ass08;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa08;xa08;1980366013">
+<param name="Ass09" value="1;node.ico;730;211;0;Ass09 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a09;1.0;NoCurve;xAss09;xAss09;2185940484">
+<param name="a09" value="2;node.ico;776;215;0;a09 =  a09_calc - Ass09;0.0;MinusNode;NoInput;IntermediateOutput;2;a09_calc;Ass09;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa09;xa09;1756807128">
+<param name="Ass10" value="1;node.ico;734;232;0;Ass10 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a10;1.0;NoCurve;xAss10;xAss10;459810199">
+<param name="a10" value="2;node.ico;779;236;0;a10 =  a10_calc - Ass10;0.0;MinusNode;NoInput;IntermediateOutput;2;a10_calc;Ass10;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa10;xa10;2543302080">
+<param name="Ass11" value="1;node.ico;733;261;0;Ass11 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a11;1.0;NoCurve;xAss11;xAss11;3256003313">
+<param name="a11" value="2;node.ico;776;264;0;a11 =  a11_calc - Ass11;0.0;MinusNode;NoInput;IntermediateOutput;2;a11_calc;Ass11;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa11;xa11;2620848492">
+<param name="Ass12" value="1;node.ico;728;286;0;Ass12 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;a12;1.0;NoCurve;xAss12;xAss12;2565100380">
+<param name="a12" value="2;node.ico;770;284;0;a12 =  a12_calc - Ass12;0.0;MinusNode;NoInput;IntermediateOutput;2;a12_calc;Ass12;1;a_totale;1.0;1.0;1.0;1.0;NoCurve;xa12;xa12;2345903987">
+<param name="a01_calc" value="2;node.ico;842;39;0;a01_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a01;1.0;NoCurve;xa01_calc;xa01_calc;1908620959">
+<param name="a02_calc" value="2;node.ico;843;61;0;a02_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a02;1.0;NoCurve;xa02_calc;xa02_calc;3800261605">
+<param name="a03_calc" value="2;node.ico;841;82;0;a03_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a03;1.0;NoCurve;xa03_calc;xa03_calc;1597147856">
+<param name="a04_calc" value="2;node.ico;838;104;0;a04_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a04;1.0;NoCurve;xa04_calc;xa04_calc;4060671656">
+<param name="a05_calc" value="2;node.ico;838;127;0;a05_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a05;1.0;NoCurve;xa05_calc;xa05_calc;1198808933">
+<param name="a06_calc" value="2;node.ico;836;149;0;a06_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a06;1.0;NoCurve;xa06_calc;xa06_calc;1739288642">
+<param name="a07_calc" value="2;node.ico;830;171;0;a07_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a07;1.0;NoCurve;xa07_calc;xa07_calc;1662261357">
+<param name="a08_calc" value="2;node.ico;828;195;0;a08_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a08;1.0;NoCurve;xa08_calc;xa08_calc;809987401">
+<param name="a09_calc" value="2;node.ico;831;218;0;a09_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a09;1.0;NoCurve;xa09_calc;xa09_calc;3005223107">
+<param name="a10_calc" value="2;node.ico;829;240;0;a10_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a10;1.0;NoCurve;xa10_calc;xa10_calc;55231518">
+<param name="a11_calc" value="2;node.ico;826;264;0;a11_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a11;1.0;NoCurve;xa11_calc;xa11_calc;4152782385">
+<param name="a12_calc" value="2;node.ico;823;287;0;a12_calc = ;0.0;TimesNode;NoInput;ResultOutput;0;1;a12;1.0;NoCurve;xa12_calc;xa12_calc;3145519469">
+<param name="a_totale" value="0;node.ico;842;326;0;a_totale =  a01 + a02 + a03 + a04 + a05 + a06 + a07 + a08 + a09 + a10 + a11 + a12;0.0;PlusNode;NoInput;NoOutput;12;a01;a02;a03;a04;a05;a06;a07;a08;a09;a10;a11;a12;0;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xa_totale;xa_totale;2615441202">
+<param name="sentenza" value="0;node.ico;668;366;0;sentenza = ;0.0;TimesNode;NoInput;NoOutput;0;2;quota;s01;1.0;NoCurve;xsentenza;xsentenza;1084689458">
+<param name="quota" value="0;node.ico;721;396;0;quota =  sentenza / n01;0.0;DivideNode;NoInput;NoOutput;2;sentenza;n01;11;s02;s03;s04;s05;s06;s07;s08;s09;s10;s11;s12;1.0;1.0;1.0;1.0;NoCurve;xquota;xquota;2940258864">
+<param name="s02" value="0;node.ico;628;454;0;s02 =  n02 * quota;0.0;TimesNode;NoInput;NoOutput;2;n02;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs02;xs02;2201802643">
+<param name="s03" value="0;node.ico;614;488;0;s03 =  n03 * quota;0.0;TimesNode;NoInput;NoOutput;2;n03;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs03;xs03;566471904">
+<param name="s04" value="0;node.ico;614;510;0;s04 =  n04 * quota;0.0;TimesNode;NoInput;NoOutput;2;n04;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs04;xs04;521181730">
+<param name="s05" value="0;node.ico;647;540;0;s05 =  n05 * quota;0.0;TimesNode;NoInput;NoOutput;2;n05;quota;0;0.0;1.0;1.0;1.0;NoCurve;xs05;xs05;713575244">
+<param name="s07" value="0;node.ico;751;567;0;s07 =  n07 * quota;0.0;TimesNode;NoInput;NoOutput;2;n07;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs07;xs07;2376306198">
+<param name="s08" value="0;node.ico;786;543;0;s08 =  n08 * quota;0.0;TimesNode;NoInput;NoOutput;2;n08;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs08;xs08;435272001">
+<param name="s09" value="0;node.ico;830;515;0;s09 =  n09 * quota;0.0;TimesNode;NoInput;NoOutput;2;n09;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs09;xs09;3382122951">
+<param name="s10" value="0;node.ico;832;492;0;s10 =  n10 * quota;0.0;TimesNode;NoInput;NoOutput;2;n10;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs10;xs10;2857594290">
+<param name="s11" value="0;node.ico;811;449;0;s11 =  n11 * quota;0.0;TimesNode;NoInput;NoOutput;2;n11;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs11;xs11;1139900012">
+<param name="s12" value="0;node.ico;796;421;0;s12 =  n12 * quota;0.0;TimesNode;NoInput;NoOutput;2;n12;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs12;xs12;3675865199">
+<param name="s06" value="0;node.ico;693;566;0;s06 =  n06 * quota;0.0;TimesNode;NoInput;NoOutput;2;n06;quota;0;1.0;1.0;1.0;1.0;NoCurve;xs06;xs06;2891561178">
+<param name="s01" value="0;node.ico;660;397;0;s01 =  sentenza;0.0;PlusNode;NoInput;NoOutput;1;sentenza;0;1.0;1.0;NoCurve;xs01;xs01;1792300725">
+<param name="c00" value="0;node.ico;513;285;0;c00 = ;0.0;TimesNode;NoInput;NoOutput;0;2;v00;v00;1.0;NoCurve;xc00;xc00;1034787188">
+<param name="v00" value="0;node.ico;453;283;0;v00 = SE( c00=0.0 , 2.0 * n00 , 1.0 * c00 );0.0;NumIfNode;NoInput;NoOutput;3;c00;n00;c00;0;1.0;0.0;2.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xv00;xv00;2746179841">
+<param name="n00" value="0;node.ico;307;283;0;n00 = ;0.0;PlusNode;NoInput;NoOutput;0;1;v00;1.0;NoCurve;xn00;xn00;3329978709">
+<param name="CHECK_base" value="text;node.ico;345;318;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;checkout;1.0;NoCurve;xCHECK_base;xCHECK_base;3512403760">
+<param name="checkout" value="2;node.ico;346;353;0;checkout =  1000000000000.000*CHECK_base + checksum;0.0;PlusNode;NoInput;ResultOutput;2;CHECK_base;checksum;0;vscala;1.0E12;1.0;1.0;NoCurve;xcheckout;ycheckout;807368957">
+
+
+
+<param name="xAss09" value="Ass09;Ass09;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss08" value="Ass08;Ass08;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss07" value="Ass07;Ass07;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss10" value="Ass10;Ass10;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa01_calc" value="a01_calc;a01_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss12" value="Ass12;Ass12;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss11" value="Ass11;Ass11;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss02" value="Ass02;Ass02;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss01" value="Ass01;Ass01;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xV_n_figli" value="V_n_figli;V_n_figli;V_n_figli0;V_n_figli;V_n_figli; ; ; ; ; ;T13; ">
+<param name="xAss03" value="Ass03;Ass03;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss06" value="Ass06;Ass06;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss05" value="Ass05;Ass05;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xAss04" value="Ass04;Ass04;non;-;ok; ; ; ; ; ; ; ">
+<param name="xa02_calc" value="a02_calc;a02_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa12_calc" value="a12_calc;a12_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa11_calc" value="a11_calc;a11_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa10_calc" value="a10_calc;a10_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xsentenza" value="sentenza;sentenza;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xCHECK_base" value="CHECK_base;CHECK_base;CHECK_base;CHECK_base (5.5.2017);CHECK_base; ; ; ; ; ; ; ">
+<param name="xn00" value="n00;n00;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc00" value="c00;c00;non;-;ok; ; ; ; ; ; ; ">
+<param name="xa05_calc" value="a05_calc;a05_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa04_calc" value="a04_calc;a04_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa03_calc" value="a03_calc;a03_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa06_calc" value="a06_calc;a06_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa09_calc" value="a09_calc;a09_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa08_calc" value="a08_calc;a08_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa07_calc" value="a07_calc;a07_calc;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xv11" value="v11;v11;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv12" value="v12;v12;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv09" value="v09;v09;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv10" value="v10;v10;non;-;ok; ; ; ; ; ;T; ">
+<param name="xd_s" value="d_s;d_s;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xn_f" value="n_f;Numero iniziale di figli;Numero di figli=0;Numero iniziale di figli;Numero iniziale di figli; ; ; ; ; ;T; ">
+<param name="xV_check" value="V_check;V_check;V_check0;V_check;V_check; ; ; ; ; ;T12; ">
+<param name="xModelloCheckFigli" value="P.A.T. Check Figli;x;Versione 23.1.2018; ; ; ; ; ; ; ; ; ">
+
+<param name="xv01" value="v01;v01;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv04" value="v04;v04;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv02" value="v02;v02;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv03" value="v03;v03;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv07" value="v07;v07;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv08" value="v08;v08;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv06" value="v06;v06;non;-;ok; ; ; ; ; ;T; ">
+<param name="xv05" value="v05;v05;non;-;ok; ; ; ; ; ;T; ">
+<param name="xc06" value="c06;c06;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc05" value="c05;c05;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc02" value="c02;c02;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc01" value="c01;c01;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc04" value="c04;c04;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc03" value="c03;c03;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs01" value="s01;s01;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xn08" value="n08;n08;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn07" value="n07;n07;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn06" value="n06;n06;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn11" value="n11;n11;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn10" value="n10;n10;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn09" value="n09;n09;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn02" value="n02;n02;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn01" value="n01;n01;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc12" value="c12;c12;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn05" value="n05;n05;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn04" value="n04;n04;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn03" value="n03;n03;non;-;ok; ; ; ; ; ; ; ">
+<param name="xn12" value="n12;n12;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc08" value="c08;c08;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc10" value="c10;c10;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc11" value="c11;c11;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc09" value="c09;c09;non;-;ok; ; ; ; ; ; ; ">
+<param name="xc07" value="c07;c07;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs06" value="s06;s06;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs03" value="s03;s03;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs04" value="s04;s04;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs05" value="s05;s05;non;-;ok; ; ; ; ; ; ; ">
+<param name="xs12" value="s12;s12;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs09" value="s09;s09;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs08" value="s08;s08;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs07" value="s07;s07;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs11" value="s11;s11;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xs10" value="s10;s10;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xcheckout" value="checkout;checkout;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xs02" value="s02;s02;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa05" value="a05;a05;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa06" value="a06;a06;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa07" value="a07;a07;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa04" value="a04;a04;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa01" value="a01;a01;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa02" value="a02;a02;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa03" value="a03;a03;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa08" value="a08;a08;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa12" value="a12;a12;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xquota" value="quota;quota;non;-;ok; ; ; ; ; ; ; ">
+<param name="xa11" value="a11;a11;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa09" value="a09;a09;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xa10" value="a10;a10;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xv00" value="v00;v00;non;-;ok; ; ; ; ; ; ; ">
+<param name="xa_totale" value="a_totale;a_totale;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xchecksum" value="checksum;checksum;non;-;ok; ; ; ; ; ;T; ">
+
+
+
+<param name="xpltree" value="propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;propagation7;propagation8;propagation9;propagation10;propagation11;propagation12;propagation13;propagation14;tabellamesi;ilcheck;riga;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;v01=c01;v02=c02;v03=c03;v04=c04;v05=c05;v06=c06;v07=c07;v08=c08;v09=c09;v10=c10;v11=c11;v12=c12;CHECK_base=1">
+<param name="propagation2" value=" ;a01_calc=assegno;v01=v00;c00=c01;Figli=n01;sentenza=Da_sentenza;d_s=Da_sentenza;n_f=n01;Check=c01">
+<param name="propagation3" value=" ;a02_calc=assegno;v02=v00;c00=c02;Figli=n02;Da_sentenza=s02;Check=c02">
+<param name="propagation4" value=" ;a03_calc=assegno;v03=v00;c00=c03;Figli=n03;Da_sentenza=s03;Check=c03">
+<param name="propagation5" value=" ;a04_calc=assegno;v04=v00;c00=c04;Figli=n04;Da_sentenza=s04;Check=c04">
+<param name="propagation6" value=" ;a05_calc=assegno;v05=v00;c00=c05;Figli=n05;Da_sentenza=s05;Check=c05">
+<param name="propagation7" value=" ;a06_calc=assegno;v06=v00;c00=c06;Figli=n06;Da_sentenza=s06;Check=c06">
+<param name="propagation8" value=" ;a07_calc=assegno;v07=v00;c00=c07;Figli=n07;Da_sentenza=s07;Check=c07">
+<param name="propagation9" value=" ;a08_calc=assegno;v08=v00;c00=c08;Figli=n08;Da_sentenza=s08;Check=c08">
+<param name="propagation10" value=" ;a09_calc=assegno;v09=v00;c00=c09;Figli=n09;Da_sentenza=s09;Check=c09">
+<param name="propagation11" value=" ;a10_calc=assegno;v10=v00;c00=c10;Figli=n10;Da_sentenza=s10;Check=c10">
+<param name="propagation12" value=" ;a11_calc=assegno;v11=v00;c00=c11;Figli=n11;Da_sentenza=s11;Check=c11">
+<param name="propagation13" value=" ;a12_calc=assegno;v12=v00;c00=c12;Figli=n12;Da_sentenza=s12;Check=c12">
+<param name="propagation14" value=" ;Da_sentenza=d_s">
+<param name="tabellamesi" value="<p/><center><b>RISULTATO SUDDIVISO PER I MESI A PARTIRE DALLA DOMANDA:</b></center>
+<table border='1' align='center' id='idTabellamensili'>
+  <tr>
+    <td align='center'>mese</td>
+    <td align='center'>controllo</td>
+    <td align='center'>n figli</td>
+    <td align='center'>Assegno<br />da sentenza</td>
+    <td align='center'>Assegno<br />versato</td>
+    <td align='center'>assegno</td>
+  </tr>
+  <tr>
+     <td align='center'>1o mese</td>
+    <td align='center'>§v01§</td>
+    <td align='center'>§n01§</td>
+    <td align='center'>§s01§</td>
+    <td align='center'>§Ass01§</td>
+    <td align='center'>$a01$</td>
+  </tr>
+  <tr>
+    <td align='center'>2o mese</td>
+    <td align='center'>§v02§</td>
+    <td align='center'>§n02§</td>
+    <td align='center'>§s02§</td>
+    <td align='center'>§Ass02§</td>
+    <td align='center'>$a02$</td>
+  </tr>
+  <tr>
+    <td align='center'>3o mese</td>
+    <td align='center'>§v03§</td>
+    <td align='center'>§n03§</td>
+    <td align='center'>§s03§</td>
+    <td align='center'>§Ass03§</td>
+    <td align='center'>$a03$</td>
+  </tr>
+  <tr>
+    <td align='center'>4o mese</td>
+    <td align='center'>§v04§</td>
+    <td align='center'>§n04§</td>
+    <td align='center'>§s04§</td>
+    <td align='center'>§Ass04§</td>
+    <td align='center'>$a04$</td>
+  </tr>
+  <tr>
+    <td align='center'>5o mese</td>
+    <td align='center'>§v05§</td>
+    <td align='center'>§n05§</td>
+    <td align='center'>§s05§</td>
+    <td align='center'>§Ass05§</td>
+    <td align='center'>$a05$</td>
+  </tr>
+  <tr>
+    <td align='center'>6o mese</td>
+    <td align='center'>§v06§</td>
+    <td align='center'>§n06§</td>
+    <td align='center'>§s06§</td>
+    <td align='center'>§Ass06§</td>
+    <td align='center'>$a06$</td>
+ </tr>
+  <tr>
+    <td align='center'>7o mese</td>
+    <td align='center'>§v07§</td>
+    <td align='center'>§n07§</td>
+    <td align='center'>§s07§</td>
+    <td align='center'>§Ass07§</td>
+    <td align='center'>$a07$</td>
+  </tr>
+  <tr>
+    <td align='center'>8o mese</td>
+    <td align='center'>§v08§</td>
+    <td align='center'>§n08§</td>
+    <td align='center'>§s08§</td>
+    <td align='center'>§Ass08§</td>
+    <td align='center'>$a08$</td>
+ </tr>
+  <tr>
+    <td align='center'>9o mese</td>
+    <td align='center'>§v09§</td>
+    <td align='center'>§n09§</td>
+    <td align='center'>§s09§</td>
+    <td align='center'>§Ass09§</td>
+    <td align='center'>$a09$</td>
+  </tr>
+  <tr>
+    <td align='center'>10o mese</td>
+    <td align='center'>§v10§</td>
+    <td align='center'>§n10§</td>
+    <td align='center'>§s10§</td>
+    <td align='center'>§Ass10§</td>
+    <td align='center'>$a10$</td>
+  </tr>
+  <tr>
+    <td align='center'>11o mese</td>
+    <td align='center'>§v11§</td>
+    <td align='center'>§n11§</td>
+    <td align='center'>§s11§</td>
+    <td align='center'>§Ass11§</td>
+    <td align='center'>$a11$</td>
+  </tr>
+  <tr>
+    <td align='center'>12o mese</td>
+    <td align='center'>§v12§</td>
+    <td align='center'>§n12§</td>
+    <td align='center'>§s12§</td>
+    <td align='center'>§Ass12§</td>
+    <td align='center'>$a12$</td>
+  </tr>
+<tr>
+    <td align='center'>---</td>
+</tr>
+  <tr>
+    <td align='center'>totale</td>
+    <td align='center'>^checkout^</td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'></td>
+    <td align='center'><b>$a_totale$</b></td>
+  </tr>
+</table><p/><br/>;">
+<param name="ilcheck" value="(checksum!=0) <p/>
+<i>Spiegazione dei codici di controllo:<br/>
+(0) OK<br/>
+(1) Icef oltre il limite di ^Limite_sup^<br/>
+(2) numero di figli non corrispondente al regolamento<br/>
+(3) mancato requisito residenza<br/>
+(4) mancata presentazione surroga<br/>
+(5) esclusione d'ufficio<br/>;">
+<param name="riga" value="<hr>;">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="496740400">
+<param name="CRC" value="2538715856">
+<param name="CRCdata" value="23-gen-2018 10.02.31">
+</APPLET>
+</CENTER>
+<BR>

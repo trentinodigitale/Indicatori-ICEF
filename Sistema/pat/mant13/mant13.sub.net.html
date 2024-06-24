@@ -1,0 +1,107 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=800 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.1 $">
+<param name="Taratura" value="Assegno di mantenimento; 21.6.2013">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriAM">
+
+<param name="parametriAM" value="current;Check=0;Deroga=0;Assegno_max=290;Limite_sup=0.19;Rif=50000;Icef=0.4">
+
+
+<param name="variables" value="uno;dodicesimo;ascala;cscala;escala;divisotre">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+<param name="divisotre" value="0.490196078431373">
+
+ <param name="uno" value="1">
+ <param name="dodicesimo" value="uno / 12">
+
+<param name="componentiCurve" value="LinearCurve;0.0;0.0;1.0;C1;2.0;C2;3.0;C3;4.0;C4;5.0;C5;ntot;ctot">
+
+
+<param name="edges" value="P.A.T. Assegno di Mantenimento;Rif;Precedente;
+Check-ok;Figli-vse_figli;vse_figli-teorico;Assegno_max-teorico;teorico-possibile;mensile-possibile;Da_sentenza-mensile;ok-idoneo;Icef-icefOK;Limite_sup-icefOK;icefOK-idoneo;idoneo-assegno;possibile-assegno;Deroga-idoneo">
+
+
+
+<param name="P.A.T. Assegno di Mantenimento" value="text;node.ico;141;396;0;Assegno di Mantenimento - (13.6.2012);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_AM;xModello_AM;334700535">
+<param name="Rif" value="1;node.ico;243;424;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xRif;xRif;722748455">
+<param name="Precedente" value="1;node.ico;134;434;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;0;escala;NoCurve;xPrecedente;yPrecedente;2680576412">
+<param name="Check" value="1;node.ico;659;426;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ok;1.0;NoCurve;xCheck;xCheck;1804256228">
+<param name="ok" value="0;node.ico;599;461;0;ok = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;idoneo;1.0;0.0;NoCurve;xok;xok;3187669986">
+<param name="Figli" value="1;node.ico;124;465;0;Figli = ;0.0;PlusNode;ValueInput;NoOutput;0;1;vse_figli;cscala;NoCurve;xFigli;yFigli;3858791086">
+<param name="vse_figli" value="0;node.ico;124;509;0;vse_figli =  Figli);0.0;NumTransNode;NoInput;NoOutput;1;Figli;1;teorico;cscala;1.0;LinearCurve;componentiCurve;xvse_figli;yvse_figli;2909680479">
+<param name="teorico" value="0;node.ico;218;511;0;teorico =  vse_figli * Assegno_max;0.0;TimesNode;NoInput;NoOutput;2;vse_figli;Assegno_max;1;possibile;ascala;1.0;1.0;1.0;NoCurve;xteorico;yteorico;2721145687">
+<param name="Assegno_max" value="1;node.ico;218;478;0;Assegno_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;teorico;ascala;NoCurve;xAssegno_max;yAssegno_max;3941529591">
+<param name="possibile" value="0;node.ico;412;511;0;possibile =  Min(  teorico,  mensile );0.0;NumMinNode;NoInput;NoOutput;2;teorico;mensile;1;assegno;ascala;1.0;1.0;1.0;NoCurve;xpossibile;ypossibile;2459647995">
+<param name="mensile" value="0;node.ico;325;494;0;mensile =  Da_sentenza;0.0;PlusNode;NoInput;NoOutput;1;Da_sentenza;1;possibile;ascala;1.0;NoCurve;xmensile;ymensile;4134120085">
+<param name="Da_sentenza" value="1;node.ico;325;457;0;Da_sentenza = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mensile;ascala;NoCurve;xDa_sentenza;yDa_sentenza;1764945370">
+<param name="idoneo" value="2;node.ico;477;461;0;idoneo =   1  ok * icefOK + Deroga - ok * icefOK * Deroga;0.0;ProbNode;NoInput;IntermediateOutput;3;ok;icefOK;Deroga;1;assegno;0.0;0.0;0.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xidoneo;xidoneo;1867201053">
+<param name="Icef" value="1;node.ico;323;423;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;1;icefOK;0.5;NoCurve;xIcef;xIcef;1783326419">
+<param name="icefOK" value="0;node.ico;477;423;0;icefOK = Icef <= Limite_sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;Limite_sup;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xicefOK;yicefOK;2809395203">
+<param name="Limite_sup" value="1;node.ico;561;423;0;Limite_sup = ;0.0;PlusNode;ValueInput;NoOutput;0;1;icefOK;1.0;NoCurve;xLimite_sup;yLimite_sup;3390915871">
+<param name="assegno" value="2;node.ico;566;511;0;assegno =  idoneo * possibile;0.0;TimesNode;NoInput;ResultOutput;2;idoneo;possibile;0;ascala;1.0;1.0;1.0;NoCurve;xassegno;yassegno;1817015886">
+<param name="Deroga" value="1;node.ico;407;461;0;Deroga = ;0.0;ProbNode;ValueInput;NoOutput;0;1;idoneo;0.5;NoCurve;xDeroga;yDeroga;3888443609">
+
+<param name="componentiCurve" value="LinearCurve;0.0;0.0;1.0;C1;2.0;C2;3.0;C3;4.0;C4;5.0;C5;ntot;ctot">
+
+
+<param name="xDa_sentenza" value="Da_sentenza;Da_sentenza;Da_sentenza=0;Da_sentenza;Da_sentenza; ; ; ; ; ;$.2; ">
+
+<param name="xAssegno_max" value="Assegno_max;Assegno_max;Assegno_max0;Assegno_max-;Assegno_max; ; ; ; ; ;$.2; ">
+
+<param name="xIcef" value="Icef; <b>(ICEF)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> zero ; <b>(ICEF)</B> Indicatore della Condizione Economica Familiare <br>;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> oltre misura; ; ; ; ;<b>;T.9;</b>">
+<param name="xDeroga" value="Deroga;Deroga;No Deroga;Deroga-;Deroga; ; ; ; ; ;T; ">
+
+<param name="xLimite_sup" value="Limite_sup;Limite_sup;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xFigli" value="Figli;Numero di figli;Numero di figli0;Numero di figli;Numero di figli; ; ; ; ; ;T; ">
+
+<param name="xPrecedente" value="Precedente;Assegno precedente;Assegno precedente0;Assegno precedente;Assegno precedente; ; ; ; ; ;$.2; ">
+
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ; ; ; ; ;T; ">
+<param name="xModello_AM" value="P.A.T. Assegno di Mantenimento;x;Assegno di Mantenimento - (13.6.2012);--;--; ; ; ; ; ; ; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xok" value="ok;ok;0;-;1;non ok;-;ok; ; ; ; ">
+<param name="xvse_figli" value="vse_figli;vse_figli;vse_figli0;vse_figli;vse_figli; ; ; ; ; ;T.2; ">
+
+<param name="xmensile" value="mensile;mensile;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xteorico" value="teorico;teorico;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xassegno" value="assegno;Assegno concesso;nessun assegno concesso;Assegno concesso;Assegno concesso; ; ; ; ; ;$.2; ">
+
+<param name="xpossibile" value="possibile;possibile;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xicefOK" value="icefOK;icefOK?;icef NON ok;icefOK-;icefOK; ; ; ; ; ;T; ">
+
+<param name="xidoneo" value="idoneo;idoneo;La domanda è <b>non è idonea</b> per l'assegno di mantenimento;idoneità?;La domanda è <b>IDONEA</b> per l'assegno di mantenimento; ; ; ; ; ;T; ">
+
+
+
+<param name="xpltree" value="titolo;dati;idoneità;riga;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="titolo" value="<H3>Assegno di Mantenimento</H3>;">
+<param name="dati" value="<b>Dati:</b> ;Icef=-1;Figli=-1;Da_sentenza=-1;Precedente=-1!0;Deroga=-1!0;Check=-1!0">
+<param name="idoneità" value=" ;idoneo=-1;assegno=-1!0">
+<param name="riga" value="<hr>;">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2723168940">
+<param name="CRC" value="3752654151">
+<param name="CRCdata" value="21-giu-2013 14.32.49">
+</APPLET>
+</CENTER>
+<BR>

@@ -1,0 +1,115 @@
+??versionCRCisOK()??
+
+
+ClesiusFrame: 	2.5 - $Revision: 1.9 $ - $Date: 2009/01/20 10:16:27 $
+ClesiusDoc: 	2.5 - $Revision: 1.6 $ - $Date: 2007/07/11 16:49:53 $
+ClesiusXML: 	2.5 - $Revision: 1.6 $ - $Date: 2007/07/11 16:49:53 $
+Curve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+LinearCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+MultiCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+MultiLinearCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+MultiStepCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+NoCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+ParentCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+SigmoidCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+StairsCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+StepCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+TrendCurve: 	3. - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+BigNode: 	3. BIGDOUBLE=1E98, di nuovo - $Revision: 1.12 $ - $Date: 2009/01/28 15:51:08 $
+Clesius: 	2007.1 - $Revision: 1.13 $ - $Date: 2008/04/09 15:30:01 $
+ClesiusPanel: 	3 - 07/2005 - $Revision: 1.5 $ - $Date: 2007/07/11 16:49:53 $
+GraphNode: 	2.5 - $Revision: 1.4 $ - $Date: 2007/07/11 16:49:53 $
+Net: 	3. - 08/2007 - $Revision: 1.21 $ - $Date: 2009/01/28 15:51:08 $
+Node: 	3. BIGDOUBLE=1E98, di nuovo - $Revision: 1.12 $ - $Date: 2009/01/28 15:51:08 $
+NodeManager: 	3.0 - $Revision: 1.9 $ - $Date: 2008/04/09 15:30:01 $
+NodeValue: 	2005.0 - $Revision: 1.9 $ - $Date: 2007/07/11 16:49:53 $
+Sample: 	2.6 - $Revision: 1.10 $ - $Date: 2008/06/30 17:18:55 $
+NetManager: 	3.0 - $Revision: 1.3 $ - $Date: 2007/07/11 16:49:53 $
+CombineNode: 	3. - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:28 $
+FuncNode: 	3. - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:28 $
+LogicNode: 	3. - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:28 $
+MathNode: 	3. - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:28 $
+NumericNode: 	3. - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:28 $
+PetriNode: 	3. - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:28 $
+TNormNode: 	4. con toString() - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:28 $
+Weight: 	3. ProbNode+Decimals - $Revision: 1.10 $ - $Date: 2009/01/20 10:16:59 $
+BigAndNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:40 $
+BigOrNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:40 $
+LogNormNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:40 $
+RatioAndNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:40 $
+ScalarProductNode: 	 - $Revision: 1.8 $ - $Date: 2009/06/11 15:36:40 $
+CutoffNode: 	 - $Revision: 1.7 $ - $Date: 2009/06/11 15:36:54 $
+IfNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:54 $
+SwitchNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:54 $
+TakeNumNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:54 $
+TransformMatrixNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:54 $
+TransformNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:36:54 $
+Cutoff2Node: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:02 $
+EqNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:15 $
+GeNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:15 $
+GtNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:15 $
+LeNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:15 $
+LtNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:15 $
+FuzzyNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:27 $
+LukaszNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:27 $
+NegCorrNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:27 $
+PosCorrNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:27 $
+ProbNode: 	3. Decimals 10/2000 - max(0,u) 09/2000 - $Revision: 1.5 $
+TensorNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:27 $
+AndProbNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:40 $
+HadTokenNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:40 $
+OrProbNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:40 $
+Prob2Node: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:40 $
+Prob3Node: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:40 $
+ProbMaxNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:37:40 $
+ProbOrNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:40 $
+ProbSumNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:40 $
+AddNode: 	 - $Revision: 1.7 $ - $Date: 2009/06/11 15:37:54 $
+BenefitNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:54 $
+DiffNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:54 $
+DivNode: 	 - $Revision: 1.4 $
+MaxNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:54 $
+MinNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:54 $
+SubtractNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:54 $
+SumBelNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:37:54 $
+SumNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:37:54 $
+Div2Node: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:01 $
+CountNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:06 $
+NoNode: 	3. - $Revision: 1.6 $ - $Date: 2009/06/11 15:38:12 $
+CrossSumNode: 	3. decompilato - $Revision: 1.3 $ - $Date: 2007/07/10 14:49:47 $
+CurveNode: 	 - $Revision: 1.7 $ - $Date: 2009/06/11 15:38:36 $
+DivideNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:36 $
+FranchigiaNode: 	 - $Revision: 1.10 $ - $Date: 2009/06/22 17:07:40 $ x3 ALIQUOTE 
+LookupNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:38:36 $
+MinusNode: 	apriori=m00 - $Revision: 1.6 $ - $Date: 2009/06/22 17:07:08 $
+NumCutoffNode: 	 - $Revision: 1.7 $ - $Date: 2009/06/11 15:38:36 $
+NumEqNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:36 $
+NumGeNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:36 $
+NumGtNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:36 $
+NumIfNode: 	 - $Revision: 1.8 $ - $Date: 2009/06/11 15:38:36 $
+NumLeNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:36 $
+NumLtNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:36 $
+NumMaxNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:38:36 $
+NumMinNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:38:36 $
+NumTransNode: 	 - $Revision: 1.7 $ - $Date: 2009/06/11 15:38:36 $
+PlusNode: 	 - $Revision: 1.6 $ - $Date: 2009/06/11 15:38:36 $
+Times2Node: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:36 $
+TimesNode: 	apriori=0 - $Revision: 1.7 $ - $Date: 2009/06/23 07:22:48 $
+PlaceNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:49 $
+TransitionNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:49 $
+KlementNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:56 $
+SchweizerSklarNode: 	 - $Revision: 1.5 $ - $Date: 2009/06/11 15:38:56 $
+Trend: 	3. - $Revision: 1.7 $ - $Date: 2009/01/20 10:19:14 $
+TrendManager: 	3. - $Revision: 1.7 $ - $Date: 2009/01/20 10:19:14 $
+TrendStart: 	3. - $Revision: 1.7 $ - $Date: 2009/01/20 10:19:14 $
+TestManager: 	1. - $Revision: 1.2 $ - $Date: 2009/01/20 10:19:06 $
+TestStart: 	1. - $Revision: 1.2 $ - $Date: 2009/01/20 10:19:06 $
+VarManager: 	3.without xml - $Revision: 1.7 $ - $Date: 2007/07/11 16:49:53 $
+NetExplanation: 	4. Go non static - $Revision: 1.10 $ - $Date: 2009/01/22 09:49:12 $
+NodeExplanation: 	3. - $Revision: 1.8 $ - $Date: 2007/07/11 16:49:53 $
+XplBlock: 	3. - $Revision: 1.10 $ - $Date: 2009/01/20 10:19:48 $
+Sys: 	2007.11-20 + CON logging  - $Revision: 1.11 $ - $Date: 2007/11/20 17:08:15 $
+
+VERSIONCRC: 	103565975
+==
+versioncrc: 	103565975

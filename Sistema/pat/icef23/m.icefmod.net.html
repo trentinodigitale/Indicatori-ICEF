@@ -1,0 +1,68 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=700 HEIGHT=600 MAYSCRIPT>
+	<param name="revision" value="$Revision: 36233 $">
+	<param name="Taratura" value="TRilingue; 28.5.2019">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="false">
+	<param name="language" value="0">
+
+	<param name="trendStarts" value="casoprec">
+
+	<param name="casoprec" value="current;Precedente=1500;Assegno_imposto=2500;Icef=0.4">
+
+<param name="nets" value="m.icef23.net.html">
+<param name="connections"	value="_icef_-Icef;preced-detra;arl-RL">
+
+<param name="variables"	value="escala">
+<param name="escala" value="0.000001">
+
+<param name="entrate"	value="<p /><b>Dati per la determinazione dell'ICEF</b>;N_componenti=-1;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C2_agr=-1!0;C3_imp=-1!0;C4_part=-1!0;C5_altri=-1!0;Assegno_imposto=-1!0;RL=-1!0">
+<param name="xRL"	value="RL;RL: la somma dei redditi lordi (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^);RL: la somma dei redditi lordi è zero;RL: la somma dei redditi lordi  (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^);RL: la somma dei redditi lordi è massimale (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^); ammonta a; ; ; ; <i>;$.2;</i>">
+
+
+<param name="detrazioni"	value="(DF!=0)<b>Detrazioni</b>;Canone=-1!0;Mutuo=-1!0;Imposte=-1!0;Mediche=-1!0;Assegni=-1!0;P_complementare=-1!0;Previdenza=-1!0;Spese_redditi=-1!0;lav_f=-1!0;Monogenitore=-1!0;Lavoratori=-1!0;Figli_fam_numerose=-1!0;Invalidi=-1!0;preced=-1!0;DF=-1!0">
+
+
+<param name="edges" value="P.A.T. ICEFmod;Icef;
+Assegno_imposto-arl;Precedente-preced">
+
+
+
+<param name="P.A.T. ICEFmod" value="text;node.ico;90;328;0;ICEFmod (con Precedente e Assegno_imposto) - 28.5.2019;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_mod;yModello_mod;2872813656">
+<param name="Icef" value="1;node.ico;288;330;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xIcef;xIcef;2308238562">
+<param name="Assegno_imposto" value="1;node.ico;438;264;0;Assegno_imposto = ;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;pscala;NoCurve;xAssegno_imposto;xAssegno_imposto;2431217007">
+<param name="arl" value="0;node.ico;363;264;0;arl =  Assegno_imposto;0.0;PlusNode;NoInput;NoOutput;1;Assegno_imposto;0;rscala;1.0;NoCurve;xarl;xarl;160908210">
+<param name="Precedente" value="1;node.ico;214;333;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;preced;0.5;NoCurve;xPrecedente;xPrecedente;2075355615">
+<param name="preced" value="0;node.ico;214;291;0;preced =  Precedente;0.0;PlusNode;NoInput;NoOutput;1;Precedente;0;0.5;1.0;NoCurve;xpreced;xpreced;1028232765">
+
+
+
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+<param name="xPrecedente" value="Precedente;Assegno precedente;Assegno precedente0;Assegno precedente;Assegno precedente; ; ; ; ; ;$.2; ">
+<param name="xModello_mod" value="P.A.T. ICEFmod;x;ICEFmod (con Precedente e Assegno_imposto) - 28.5.2019;--;--; ; ; ; ; ; ; ">
+
+<param name="xIcef" value="Icef; <b>(ICEF)</B> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> zero ; <b>(ICEF)</B> Indicatore della Condizione Economica Familiare <br>;Indicatore della Condizione Economica Familiare <b>(ICEF)</B> oltre misura; ; ; ; ;<b>;T.10;</b>">
+<param name="xpreced" value="preced;L'assegno dell'anno precedente;Nessun assegno precedente;L'assegno dell'anno precedente;L'ammontare dell'assegno dell'anno precedente;è di; ; ; ; -;$.0; ">
+<param name="xarl" value="arl;arl;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="titolo;dati;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="titolo" value="<H3>ICEF modificato</H3>;">
+<param name="dati" value="<b>Dati:</b> ;Icef=-1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3561023438">
+<param name="CRC" value="1695916195">
+<param name="CRCdata" value="28-mag-2019 15.29.20">
+</APPLET>
+<BR>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>Domanda per la concessione del contributo a rimborso delle spese relative all'adattamento di veicoli a motore </H2>
+		</CENTER></head> ]]>
+		<sql><![CDATA[SELECT  CASE WHEN ID_tp_intervento = 0 THEN '' 
+						WHEN ID_tp_intervento = 1 THEN '<CENTER><H2>per la guida da parte dei portatori di minorazione</H2></CENTER>' 
+						WHEN ID_tp_intervento = 2 THEN '<CENTER><H2>il trasporto dei portatori di minorazione con impossibilità permanente alla guida</H2></CENTER>' 
+						END   
+						FROM Veicoli_Dati 
+						WHERE Veicoli_Dati.id_domanda = ${id_domanda}]]></sql>
+		<![CDATA[<CENTER><H3><i>legge provinciale 7 gennaio 1991, n. 1 - articolo 19; deliberazione della Giunta Provinciale n. 672 di data 12 aprile 2013 e n. 391 di data 21 marzo 2014 </i></H3></CENTER> ]]>
+		</main>		
+		<richiedente>
+			<![CDATA[<B>Beneficiario: </B>]]>
+			<class>c_elab.pat.autoinv15.Beneficiario</class>
+			<![CDATA[<BR>]]>
+		</richiedente>			
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+	<sql><![CDATA[]]></sql>
+
+	<sql><![CDATA[]]></sql>
+	<sql><![CDATA[]]></sql>
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

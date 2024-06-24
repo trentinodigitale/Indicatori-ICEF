@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[
+			<html>
+				<head><title>Clesius ICEF</title></head>
+				<body>
+				<CENTER><H2>Attestazione dell'indicatore ICEF </H2></CENTER>
+				]]>
+		</main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<![CDATA[<H2><CENTER>]]>
+				<sql><![CDATA[select case when id_tp_stato<3000 then '<HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione provvisoria, attestazione NON valida!<HR>' else '<BR>' end from Doc where id=${id_domanda}]]></sql>
+			<![CDATA[</H2></CENTER>]]>
+		</ente>
+		<servizio>
+			<![CDATA[<H1><CENTER>ASILO NIDO DI CIVEZZANO</H1></CENTER>]]>
+			 
+		</servizio>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <![CDATA[
+					<H4><u>Ulteriori detrazioni:</u>
+		<br>1.	La retta mensile e' ridotta del 15% qualora piu' bambini appartenenti allo stesso nucleo familiare, frequentino l'asilo nido di Civezzano. <br>
+          2.	L'utilizzo del solo orario ridotto, comporta la corresponsione del 60% della quota fissa intera, se usufruito al mattino e del 40% della quota fissa intera se usufruito al pomeriggio.<br>
+        </H4>			]]>
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<center>${footer.netVersion}</center>]]></netVersion>
+		<main><![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]></main>
+		
+	</footer>
+</Doc>

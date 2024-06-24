@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head><body>
+			<CENTER>
+			<H2>Attestazione dell'indicatore ICEF per l'accesso ai benefici delle borse di studio per residenti in Provincia di Trento iscritti alla Facoltà di Medicina e Chirurgia a.a. 2011/2012</H2>
+			<br>
+			BORSA DI STUDIO PER STUDENTI RESIDENTI IN PROVINCIA DI TRENTO ISCRITTI A CORSI DI LAUREA TRIENNALE, LAUREA BIENNALE MAGISTRALE DELLE PROFESSIONI SANITARIE E CORSO DI LAUREA A CICLO UNICO IN MEDICINA E CHIRURGIA  - ANNO 2011/2012 
+			<br>
+			(In attuazione dell'art. 43 della legge provinciale 9 settembre 1996, n. 8 e s.m. e in conformità al provvedimento della Giunta Provinciale n. 2758 di data 14 dicembre 2011)
+			<BR><BR>
+			Il presente documento di valutazione è valido per le domande di borsa di studio presentate entro le scadenze previste dal Bando a.a. 2011/2012.
+			</CENTER><BR><BR>]]>
+	</header>
+	<richiedente>
+		<![CDATA[<B>Nucleo familiare: </B>]]>
+		<class>c_elab.pat.san12.Richiedente</class>
+		<![CDATA[<BR>]]>
+	</richiedente>	
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+    		</sql>
+	</ente>
+	<values>
+		<sql><![CDATA[
+			select 
+			'<table border=''0'' cellpadding=''0'' cellspacing=''5''
+			width=''100%'' height=''66''> <tr> <td width=''75%''
+			height=''23''><b>(ICEF)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare</td> <td width=''13%''
+			height=''23''></td> <td width=''13%'' height=''23''>
+			<table border=''1'' width=''100%''> <tr> <td
+			width=''100%'' align=''right''> <b>' + REPLACE(str
+			(icef.numeric_value,12,10),'.',',') + '</b></td> </tr>
+			</table> </td> </tr>
+
+			<tr> <td width=''75%'' height=''23''>ICEF limite per borsa di studio
+			(Bando a.a. 2011/2012)</td> <td
+			width=''13%'' height=''23''></td> <td width=''13%''
+			height=''23''> <table border=''1'' width=''100%''>
+			<tr> <td width=''100%'' align=''right''> <b>' + REPLACE(str
+			(CAST(redd3sup.default_value as float) / CAST(rif.default_value as float) / 2.04,9,9),'.',',') + '</b></td> </tr>
+			</table> </td> </tr> </table>'
+			from Doc 
+			inner join Domande on Domande.id_domanda = doc.id 
+			inner join c_elaout icef on icef.id_domanda = doc.id 
+			inner join c_defaultin redd3sup on redd3sup.id_servizio = domande.id_servizio
+			inner join c_defaultin rif on rif.id_servizio = domande.id_servizio
+			
+			where id=${id_domanda}
+			and icef.node='ICEF10'
+			and redd3sup.node = 'Redd3sup' and rif.node = 'Rif'
+		]]></sql>
+	</values>
+	<newPage>	
+		<![CDATA[<br clear=all style='page-break-after:always'/>]]>
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>	
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomanda</class>
+	</infoDoc>	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+
+</Doc>

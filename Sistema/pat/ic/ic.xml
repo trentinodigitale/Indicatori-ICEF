@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H1>INVALIDITA' CIVILE</H1>
+		<H2>Dichiarazione sostitutiva di certificazione e di atto di notorietà</H2>
+		<H3>artt. 46 e 47 del D.P.R. 445/2000</H3>
+		</CENTER></head> ]]></main>
+		<richiedente>
+			<![CDATA[<BR /><B>Beneficiario: </B>]]>
+				<class>c_elab.pat.ic.Richiedente</class>
+				<![CDATA[<BR />]]>	
+		</richiedente>
+		<servizio>
+			<sql><![CDATA[select case when id_tp_stato < 3000 then
+				'<CENTER><B><font size="5">ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+				provvisoria, attestazione NON valida!</font></B></CENTER>' else
+				'<BR />' end from Doc where id=${id_domanda}]]>
+	    	</sql>
+		</servizio>
+		<ente>
+			<sql><![CDATA[select '<B>Ente:</B> '+ente+'<BR />' from r_enti where id_ente=${id_ente}]]></sql>
+		</ente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			<![CDATA[<P><B>ELABORAZIONE ESITI:</B><BR />
+			<B>Attenzione! Le provvidenze elaborate dal sistema sono puramente indicative in quanto devono essere validate da parte dell'Agenzia Provinciale per l'assistenza e la previdenza integrativa.</B></P>
+			<P><B>TERMINI DEL PROCEDIMENTO:</B><BR />
+			Responsabile del presente procedimento è il dirigente dell'Agenzia provinciale per l'assistenza e la previdenza integrativa. L'Agenzia deve provvedere alla definizione della pratica entro 120 giorni dalla data di ricevimento dei documenti necessari. Se gli stessi sono incompleti o mancanti,  il termine è sospeso fino alla data del loro ricevimento (comma 4 dell'articolo 3 della legge provinciale 23/92).</P>
+			<P><B>PAGAMENTI:</B><BR />
+			I pagamenti saranno bimestrali ed effettuati sempre alla fine dei mesi dispari.<BR />
+			Ai titolari di pensioni, assegno e maggiorazioni, nel bimestre novembre-dicembre di ogni anno sarà erogata anche la quota spettante di tredicesima.<BR />
+			Tali prestazioni sono <U>ESENTI</U> dall'imposta sul reddito delle persone fisiche (articolo 34 del D.P.R. 29 settembre 1973, n. 601).</P>
+			<P><U>Ogni variazione rispetto a quanto dichiarato oppure qualsiasi fatto che incida sul diritto alle prestazioni dovrà essere</U> <B>comunicato tempestivamente</B> agli uffici dell'Agenzia oppure agli sportelli di informazione ed assistenza al pubblico della Provincia dislocati sul territorio oppure ai Patronati. L'omessa comunicazione comporterà, oltre alle responsabilità prevista dalla legge, il recupero delle somme percepite indebitamente.<BR /></P>]]>
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+	</footer>
+</Doc>

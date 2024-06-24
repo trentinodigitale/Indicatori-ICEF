@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head><body>
+			<CENTER>]]>
+            
+		<sql><![CDATA[select  
+                case when r_servizi.id_servizio = 13307 then 
+                '<H2>Attestazione dell''indicatore ICEF per l''accesso alla politica Edilizia Pubblica PROVVISORIA</H2>'
+                when r_servizi.id_servizio = 13306 then
+                '<H2>Attestazione dell''indicatore ICEF per la verifica per la politica Edilizia Pubblica PROVVISORIA</H2>'
+                else '<h2>Errore di configurazione</h2>' end 
+                FROM domande, r_servizi  
+                where domande.id_servizio = r_servizi.id_servizio and domande.id_domanda=${id_domanda}]]>
+    		</sql>
+    		
+		<![CDATA[<h2>Valutazione della condizione economica provvisoria relativa all'anno ]]>
+		<sql><![CDATA[select case when (data_presentazione > '2012-07-01') and (data_presentazione < '2012-12-31') then 2012 
+		else ( case when (data_presentazione > '2013-01-01') and (data_presentazione < '2013-06-30') then 2013 else 0 end ) 
+		end as anno
+                FROM doc
+                where doc.id=${id_domanda}]]>
+		</sql>
+		<![CDATA[</h2><br>Dichiarazioni ICEF basate su redditi e patrimoni ]]>
+		
+		<sql><![CDATA[SELECT     Dich_icef.anno_produzione_redditi
+FROM         Familiari INNER JOIN
+                      Dich_icef ON Familiari.ID_dichiarazione = Dich_icef.ID_dichiarazione INNER JOIN
+                      R_Relazioni_parentela ON Familiari.ID_relazione_parentela = R_Relazioni_parentela.ID_relazione_parentela
+WHERE    (R_Relazioni_parentela.ruolo = 1)  AND  (Familiari.ID_domanda = ${id_domanda})]]>
+		</sql>
+            
+		<![CDATA[<br><br>(Legge provinciale n.15 novembre 2005)<br><br>]]>
+            
+		<sql><![CDATA[select  
+                case when r_servizi.id_servizio = 13306 then 
+                'Calcolo dell''ICEF eseguito ai sensi del punto 4 dell''allegato 1 alla deliberazione della Giunta provinciale n. 1677 dd. 03/07/2009'
+                when r_servizi.id_servizio = 13307 then
+                'Calcolo dell''ICEF eseguito ai sensi del punto 3 dell''allegato 1 alla deliberazione della Giunta provinciale n. 1677 dd. 03/07/2009'
+                else '<h2>Errore di configurazione</h2>' end 
+                FROM domande, r_servizi  
+                where domande.id_servizio = r_servizi.id_servizio and domande.id_domanda=${id_domanda}]]>
+		</sql>
+		
+		<![CDATA[</CENTER><BR><BR>]]>
+	</header>
+    
+	<richiedente>
+		<![CDATA[<B>Nucleo familiare: </B>]]>
+		<class>c_elab.pat.ITEA12.Richiedente</class>
+		<![CDATA[<BR>]]>        
+	</richiedente>	
+	<ente>
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+        </sql>
+	</ente>
+	<values>
+		<sql><![CDATA[
+			select  
+			'<table border=''0'' cellpadding=''0'' cellspacing=''5''
+			width=''100%'' height=''23''> <tr> <td width=''75%''
+			height=''23''>Indicatore ICEF provvisorio
+			</td> <td width=''13%''
+			height=''23''></td> <td width=''13%'' height=''23''>
+			<table border=''1'' width=''100%''> <tr> <td
+			width=''100%'' align=''right''> <b>' + str(c_elaout.numeric_value , 6 , 4) + '</b></td> </tr>
+			</table> </td> </tr> </table>'
+			FROM c_elaout
+            WHERE  c_elaout.node = 'IPROV' AND c_elaout.id_domanda = ${id_domanda}
+		]]></sql>
+	</values>
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomandaEpu</class>
+	</infoDoc>
+    <avviso>
+        <![CDATA[<P><CENTER><B>- Pagina da consegnare all'ente gestore al momento della presentazione della domanda -</B></CENTER></P>]]>
+    </avviso>
+	<newPage>	
+		<![CDATA[<br clear=all style='page-break-after:always'/>]]>
+	</newPage>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>
+	
+	<integrazione>
+		<!--class>c_elab.pat.ts.Footer</class-->
+	</integrazione>
+	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+
+</Doc>

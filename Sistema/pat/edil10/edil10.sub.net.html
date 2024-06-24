@@ -1,0 +1,93 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius" WIDTH=700 HEIGHT=600 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.1 $">
+
+<param name="Taratura" value="edilizia agevolata; 22.3.2010">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trendStarts" value="casoEdil08">
+
+<param name="casoEdil08" value="current;Prefinanziamento=10000;ICI_fabbricati=12000;ICI_particelle=100000;Mq_franchigia=500;Mq_particelle=600;FAR=1000000">
+
+<param name="variables" value="tscala">
+
+ <param name="tscala" value="0.00001">
+
+
+
+<param name="edges" value="P.A.T. Edilizia Agevolata;ICEF4;pat;Anno_reddito;
+Prefinanziamento-pref;ICI_particelle-al_mq;Mq_particelle-al_mq;Mq_franchigia-mq_fr;al_mq-mq_fr;ICI_particelle-mq_franchigia;mq_fr-mq_franchigia;ICI_fabbricati-tot_non;mq_franchigia-tot_non;tot_non-non_I">
+
+
+
+<param name="P.A.T. Edilizia Agevolata" value="text;node.ico;137;310;0;P.A.T. Edilizia Agevolata 2010 - (22.3.2010);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Agevolata;xModello_Agevolata;1248103479">
+<param name="ICEF4" value="1;node.ico;237;310;0;ICEF Indicatore della Situazione Economica Familiare arrotondato;0.0;PlusNode;ValueInput;ResultOutput;0;0;1.0;NoCurve;xICEF4;yICEF4;215096443">
+<param name="pat" value="0;node.ico;256;349;0;-  0,00 ;0.0;PlusNode;NoInput;NoOutput;0;0;tscala;NoCurve;xpat;ypat;3179698458">
+<param name="Anno_reddito" value="1;node.ico;115;358;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xAnno_reddito;yAnno_reddito;3044346821">
+<param name="Prefinanziamento" value="1;node.ico;340;310;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;pref;tscala;NoCurve;xPrefinanziamento;yPrefinanziamento;64549225">
+<param name="pref" value="0;node.ico;340;281;0;-;0.0;NumTransNode;NoInput;NoOutput;1;Prefinanziamento;0;tscala;1.0;LinearCurve;negCurve;xpref;ypref;1619064591">
+<param name="ICI_particelle" value="1;node.ico;488;251;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;al_mq;mq_franchigia;tscala;NoCurve;xICI_particelle;yICI_particelle;789297026">
+<param name="al_mq" value="0;node.ico;488;297;0;-;0.0;DivideNode;NoInput;NoOutput;2;ICI_particelle;Mq_particelle;1;mq_fr;tscala;1.0;1.0;1.0;NoCurve;xal_mq;yal_mq;1485369999">
+<param name="Mq_particelle" value="1;node.ico;486;341;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;al_mq;tscala;NoCurve;xMq_particelle;yMq_particelle;1060034888">
+<param name="Mq_franchigia" value="1;node.ico;591;342;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mq_fr;tscala;NoCurve;xMq_franchigia;yMq_franchigia;456440463">
+<param name="mq_fr" value="0;node.ico;589;295;0;-;0.0;TimesNode;NoInput;NoOutput;2;Mq_franchigia;al_mq;1;mq_franchigia;tscala;1.0;1.0;1.0;NoCurve;xmq_fr;ymq_fr;1041404006">
+<param name="mq_franchigia" value="0;node.ico;589;252;0;-;0.0;NumMinNode;NoInput;NoOutput;2;ICI_particelle;mq_fr;1;tot_non;tscala;1.0;1.0;1.0;NoCurve;xmq_franchigia;ymq_franchigia;1809545832">
+<param name="ICI_fabbricati" value="1;node.ico;328;389;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tot_non;tscala;NoCurve;xICI_fabbricati;yICI_fabbricati;3855723596">
+<param name="tot_non" value="0;node.ico;411;287;0;-;0.0;PlusNode;NoInput;NoOutput;2;ICI_fabbricati;mq_franchigia;1;non_I;0.0;1.0;1.0;1.0;NoCurve;xtot_non;ytot_non;3418614473">
+<param name="non_I" value="0;node.ico;411;260;0;-;0.0;NumTransNode;NoInput;NoOutput;1;tot_non;0;tscala;1.0;LinearCurve;negCurve;xnon_I;ynon_I;4107142904">
+
+<param name="negCurve" value="LinearCurve;0.0;0.0;1.0E7;-1.0E7">
+
+
+<param name="xICI_particelle" value="ICI_particelle;Valore ICI complessivo del terreno oggetto dell'intervento;ICI_particelle=0;Valore ICI complessivo del terreno oggetto dell'intervento;Valore ICI complessivo del terreno oggetto dell'intervento; ; ; ; ; ;$.2; ">
+
+<param name="xICI_fabbricati" value="ICI_fabbricati;Valore ICI complessivo dei fabbricati oggetto dell'intervento;Valore ICI complessivo dei fabbricati oggetto dell'intervento=0;Valore ICI complessivo dei fabbricati oggetto dell'intervento;Valore ICI complessivo dei fabbricati oggetto dell'intervento; ; ; ; ; ;$.2; ">
+
+<param name="xMq_particelle" value="Mq_particelle;Superficie complessiva del terreno oggetto dell'intervento;Mq_particelle=0;Superficie complessiva del terreno oggetto dell'intervento;Superficie complessiva del terreno oggetto dell'intervento; ; ; ; ; ;T;mq">
+
+<param name="xMq_franchigia" value="Mq_franchigia;Mq_franchigia;Mq_franchigia=0;Mq_franchigia;Mq_franchigia; ; ; ; ; ;T;mq">
+
+<param name="xPrefinanziamento" value="Prefinanziamento;Finanziamento bancario per la realizzazione dell'intervento;Finanziamento bancario per la realizzazione dell'intervento=0;Finanziamento bancario per la realizzazione dell'intervento;Finanziamento bancario per la realizzazione dell'intervento; ; ; ; ; ;$.2; ">
+
+<param name="xICEF4" value="ICEF4;<B>ICEF</B> Indicatore della Situazione Economica Familiare arrotondato;<B>ICEF</B> Indicatore della Situazione Economica Familiare arrotondato;<B>ICEF</B> Indicatore della Situazione Economica Familiare arrotondato;<B>ICEF</B> Indicatore della Situazione Economica Familiare arrotondato; ; ; ; ;<b>;T.4;</b>">
+
+<param name="xModello_Agevolata" value="P.A.T. Edilizia Agevolata;P.A.T. Edilizia Agevolata;P.A.T. Edilizia Agevolata 2010 - (22.3.2010);--;--; ; ; ; ; ; ; ">
+<param name="xAnno_reddito" value="Anno_reddito;Anno_reddito;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xpat" value="pat;pat;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xpref" value="pref;Prefinanziamento;Prefinanziamento=0;Prefinanziamento;Prefinanziamento; ; ; ; ; ;$.2; ">
+
+<param name="xnon_I" value="non_I;non_I;0;-;1; ; ; ; ; ;$.2; ">
+
+<param name="xtot_non" value="tot_non;tot_non;0;-;1; ; ; ; ; ;$.2; ">
+
+<param name="xal_mq" value="al_mq;al_mq;al_mq=0;al_mq;al_mq; ; ; ; ; ;$.2; ">
+
+<param name="xmq_fr" value="mq_fr;mq_fr;0;-;1; ;-;+; ; ;T.10; ">
+
+<param name="xmq_franchigia" value="mq_franchigia;mq_franchigia;mq_franchigia=0;mq_franchigia;mq_franchigia; ; ; ; ; ;$.2; ">
+
+
+
+
+<param name="xpltree" value="applicant0;prefin;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="prefin" value=" ;ICI_fabbricati=-1!0;ICI_particelle=-1!0;Mq_particelle=-1!0;Prefinanziamento=-1!0;ICEF4=-1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1973850110">
+<param name="CRC" value="2989357208">
+<param name="CRCdata" value="22-apr-2010 17.16.20">
+</APPLET>
+<BR>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>ATTESTAZIONE DELL'INDICATORE ICEF <BR>PER L'EDILIZIA AGEVOLATA</H2>
+		<H3>ACCESSO</H3>
+		</CENTER></head> ]]></main>
+		<ente>
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<!--![CDATA[<H3><CENTER>id_domanda=${id_domanda}]]>
+			<sql>select ente from r_enti where id_ente=${id_ente}</sql>
+			<![CDATA[</H3></CENTER>]]-->
+		</ente>
+		<servizio>
+			<!--![CDATA[<H3><CENTER>]]>
+			<sql>select servizio from r_servizi where id_servizio=${id_servizio}</sql>
+			<![CDATA[</H3></CENTER>]]-->
+		</servizio>
+		<richiedente><![CDATA[<H3>Richiedente</H3>]]>
+			<class>c_elab.pat.ts.Richiedente</class><![CDATA[</H2>]]>
+		</richiedente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+			 <!--class>c_elab.pat.ts.Footer</class-->
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

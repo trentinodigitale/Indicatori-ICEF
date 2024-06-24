@@ -1,0 +1,239 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=400 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.5 $">
+
+<param name="Uni" value="Trento 2005 -8.2.2005">
+<param name="applet" value="CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=800">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+
+<param name="trendStarts" value="caso;regolar;corso1;corso2;corso3;matricola1;0.1;0.5;0.6;insede;fsede;pend;altri">
+<param name="caso" value="regolar,corso1,insede,altri,0.1;Anni=1">
+
+<param name="regolar" value="current;Regolare=1;Residenza=1">
+
+<param name="corso1" value="current;Tipo_corso=1;Anni=2;Durata=3;Aggiuntivo=0.5">
+ <param name="corso2" value="current;Tipo_corso=0;Anni=3;Durata=4;Aggiuntivo=0.5">
+ <param name="corso3" value="current;Tipo_corso=1;Anni=4;Durata=3;Aggiuntivo=1">
+
+ <param name="insede" value="current;Comune_in_sede=1;Prende_alloggio=0">
+ <param name="fsede" value="current;Comune_in_sede=0;Prende_alloggio=1">
+ <param name="pend" value="current;Comune_in_sede=0;Prende_alloggio=0">
+
+ <param name="altri" value="current;Borse_percepite=1000;Altri_universitari=1">
+ 
+ <param name="matricola1" value="corso1;Anni=1">
+
+ <param name="0.1" value="current;Icef=0.1">
+  <param name="0.5" value="current;Icef=0.5">
+ <param name="0.6" value="current;Icef=0.6">
+ 
+<param name="variables" value="uno;borsa0;borsa1;borsa_ins_min;borsa_fuor_min;borsa_pendol_min;cinquecento;scaglione;borsa_ins;uborsa_ins;borsa_fuor;uborsa_fuor;borsa_pendol;uborsa_pendol;peraltri;tscala;cscala;fattore;limiteborsa">
+
+ <param name="uno" value="1.0">
+
+ <param name="borsa0" value="0.509803823;0.304999">
+ <param name="borsa1" value="0.9;0.627">
+
+
+ <param name="scaglione" value="1;editable">
+
+ <param name="borsa_fuor" value="3500.00;editable">
+ <param name="uborsa_fuor" value="uno / (borsa_fuor + cinquecento)">
+ <param name="borsa_fuor_min" value="500;editable">
+
+ <param name="cinquecento" value="500;editable">
+
+ <param name="borsa_ins" value="2350;editable">
+ <param name="uborsa_ins" value="uno / (borsa_ins + cinquecento)">
+ <param name="borsa_ins_min" value="500;editable">
+
+ <param name="borsa_pendol" value="2650;editable">
+ <param name="uborsa_pendol" value="uno / (borsa_pendol + cinquecento)">
+ <param name="borsa_pendol_min" value="500;editable">
+
+<param name="peraltri" value="0.3">
+
+ <param name="tscala" value="0.0001;editable">
+
+<param name="cscala" value="0.005;editable">
+
+<param name="fattore" value="1.0">
+<param name="limiteborsa" value="uno - fattore * borsa0">
+
+
+
+
+<param name="edges" value="SAN2005;Borse_percepite;
+idoneo-livello_borsa;durataOK-idoneo;borsa_in-borsa_in_sede;borsa_fuori-borsa_fuori_sede;Icef-privo_di_mezzi?;privo_di_mezzi?-idoneo;borsa_pend-borsa_pendolare;Durata-dura;Aggiuntivo-dura;dura-entro_dura;Anni-entro_dura;entro_dura-durataOK;borsa_in_sede-importo_borsa;borsa_fuori_sede-importo_borsa;borsa_pendolare-importo_borsa;borsa_in_sede-t1;borsa_fuori_sede-t2;borsa_pendolare-t3;t1-tipo_borsa;t2-tipo_borsa;t3-tipo_borsa;
+Comune_in_sede-b_in;Comune_in_sede-b_fuor;Prende_alloggio-b_fuor;Comune_in_sede-b_pend;Prende_alloggio-b_pend;b_in-borsa_in_sede;b_fuor-borsa_fuori_sede;b_pend-borsa_pendolare;Durata-entro_regolare;Anni-entro_regolare;livello_borsa-borsa;b0-borsa;borsa-percborsa;percborsa-borsa_in;percborsa-borsa_fuori;percborsa-borsa_pend;b1-borsa;dura-ultimo;Anni-ultimo;ultimo-perc_ultimo;
+Altri_universitari-per_altri;perc_b-borsa_in_sede;perc_b-borsa_fuori_sede;perc_b-borsa_pendolare;borsa_fuori-borsa_alt;perc_b-borsa_alt;Aggiuntivo-perc_ultimo;perc_ultimo-p_u;p_u-perc_b;Regolare-ok;matricola-ok;ok-percborsa;Tipo_corso-increment;fuori_max-max_fuori;increment-max_fuori;in_max-max_in;increment-max_in;pendol_max-max_pendol;increment-max_pendol;500-increment;
+Anni-matricola;Residenza-ok;Tipo_corso-tp;borsa-tp">
+
+
+
+<param name="SAN2005" value="text;node.ico;37;258;0;Università di Trento - Opera Universitaria - Infermieri 2005 -  (8.2.2005);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xSAN2005;xSAN2005;2214580992">
+<param name="Borse_percepite" value="1;node.ico;50;281;0;Nessuna Borsa universitaria percepita;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xBorse_percepite;xBorse_percepite;484381793">
+<param name="idoneo" value="0;node.ico;496;419;0;-;0.0;ProbNode;NoInput;NoOutput;2;durataOK;privo_di_mezzi?;1;livello_borsa;0.0;0.0;0.0;1.0;NoCurve;xidoneo;NoCurve;yidoneo;yidoneo;1454525344">
+<param name="livello_borsa" value="0;node.ico;557;442;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo;1;borsa;0.0;1.0;NoCurve;xlivello_borsa;xlivello_borsa;1345478653">
+<param name="durataOK" value="0;node.ico;414;416;0;-;0.0;ProbNode;NoInput;NoOutput;1;entro_dura;1;idoneo;0.0;1.0;NoCurve;xdurataOK;ydurataOK;2157398229">
+<param name="borsa_in" value="0;node.ico;456;522;0;-;0.0;ProbNode;NoInput;NoOutput;1;percborsa;1;borsa_in_sede;0.0;1.0;StairsCurve;borsainCurve;xborsa_in;xborsa_in;1893127744">
+<param name="borsa_in_sede" value="2;node.ico;458;547;0;-;0.0;TimesNode;NoInput;ResultOutput;3;borsa_in;b_in;perc_b;2;importo_borsa;t1;uborsa_ins;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xborsa_in_sede;xborsa_in_sede;2361104902">
+<param name="borsa_fuori" value="0;node.ico;543;514;0;-;0.0;ProbNode;NoInput;NoOutput;1;percborsa;2;borsa_fuori_sede;borsa_alt;0.0;1.0;StairsCurve;borsafuoriCurve;xborsa_fuori;xborsa_fuori;2235389548">
+<param name="borsa_fuori_sede" value="2;node.ico;568;542;0;-;0.0;TimesNode;NoInput;ResultOutput;3;borsa_fuori;b_fuor;perc_b;2;importo_borsa;t2;uborsa_fuor;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xborsa_fuori_sede;xborsa_fuori_sede;1405594283">
+<param name="Icef" value="1;node.ico;204;276;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;privo_di_mezzi?;0.5;NoCurve;xIcef;xIcef;2700493324">
+<param name="privo_di_mezzi?" value="0;node.ico;205;317;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;Icef;1;idoneo;1.0;0.0;NoCurve;xprivo_di_mezzi?;yprivo_di_mezzi?;73699689">
+<param name="borsa_pend" value="0;node.ico;711;502;0;-;0.0;ProbNode;NoInput;NoOutput;1;percborsa;1;borsa_pendolare;0.0;1.0;StairsCurve;borsapendCurve;xborsa_pend;xborsa_pend;2602711539">
+<param name="borsa_pendolare" value="2;node.ico;729;533;0;-;0.0;TimesNode;NoInput;ResultOutput;3;borsa_pend;b_pend;perc_b;2;importo_borsa;t3;uborsa_pendol;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xborsa_pendolare;xborsa_pendolare;3015667696">
+<param name="Durata" value="1;node.ico;439;267;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;dura;entro_regolare;0.1;NoCurve;xDurata;xDurata;1124418928">
+<param name="dura" value="0;node.ico;348;326;0;-;0.0;PlusNode;NoInput;NoOutput;2;Durata;Aggiuntivo;2;entro_dura;ultimo;0.1;1.0001;1.0;1.0;NoCurve;xdura;xdura;1880303666">
+<param name="Aggiuntivo" value="1;node.ico;263;291;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;dura;perc_ultimo;0.1;NoCurve;xAggiuntivo;xAggiuntivo;1890690304">
+<param name="entro_dura" value="0;node.ico;325;400;0;-;0.0;NumGeNode;NoInput;NoOutput;2;dura;Anni;1;durataOK;1.0;1.0;1.0;1.0;NoCurve;xentro_dura;xdiff1;3846697390">
+<param name="Anni" value="1;node.ico;288;264;0;-;0.0;PlusNode;ValueInput;NoOutput;0;4;entro_dura;entro_regolare;ultimo;matricola;0.1;NoCurve;xAnni;xAnni;1541192257">
+<param name="importo_borsa" value="2;node.ico;800;509;0;-;0.0;NumMaxNode;NoInput;ResultOutput;3;borsa_in_sede;borsa_fuori_sede;borsa_pendolare;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;ximporto_borsa;ximporto_borsa;1810940998">
+<param name="t1" value="0;node.ico;522;564;0;-;0.0;NumGtNode;NoInput;NoOutput;1;borsa_in_sede;1;tipo_borsa;1.0;0.0;NoCurve;xt1;xt1;3046025106">
+<param name="t2" value="0;node.ico;650;558;0;-;0.0;NumGtNode;NoInput;NoOutput;1;borsa_fuori_sede;1;tipo_borsa;1.0;0.0;NoCurve;xt2;xt2;1030447971">
+<param name="t3" value="0;node.ico;786;556;0;-;0.0;NumGtNode;NoInput;NoOutput;1;borsa_pendolare;1;tipo_borsa;1.0;0.0;NoCurve;xt3;xt3;2726683546">
+<param name="tipo_borsa" value="0;node.ico;786;577;0;-;0.0;ProbNode;NoInput;ResultOutput;3;t1;t2;t3;0;0.0;0.25;0.5;0.25;1.0;0.25;1.0;0.25;LinearCurve;tipoCurve;xtipo_borsa;xtipo_borsa;2926571389">
+<param name="Comune_in_sede" value="1;node.ico;515;598;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;b_fuor;b_in;b_pend;0.5;NoCurve;xComune_in_sede;xComune_in_sede;2784305930">
+<param name="b_in" value="0;node.ico;460;573;0;-;0.0;ProbNode;NoInput;NoOutput;1;Comune_in_sede;1;borsa_in_sede;0.0;1.0;NoCurve;xb_in;xb_in;1109991773">
+<param name="b_fuor" value="0;node.ico;580;575;0;-;0.0;ProbNode;NoInput;NoOutput;2;Comune_in_sede;Prende_alloggio;1;borsa_fuori_sede;0.0;0.0;1.0;0.0;NoCurve;xb_fuor;xb_fuor;3368219754">
+<param name="Prende_alloggio" value="1;node.ico;638;600;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;b_fuor;b_pend;0.5;NoCurve;xPrende_alloggio;xPrende_alloggio;795313154">
+<param name="b_pend" value="0;node.ico;699;578;0;-;0.0;ProbNode;NoInput;NoOutput;2;Comune_in_sede;Prende_alloggio;1;borsa_pendolare;1.0;0.0;0.0;0.0;NoCurve;xb_pend;xb_pend;1915057126">
+<param name="entro_regolare" value="0;node.ico;363;249;0;-;0.0;NumGeNode;NoInput;NoOutput;2;Durata;Anni;0;1.0;1.0;1.0;1.0;NoCurve;xentro_regolare;xentro_regolare;270814341">
+<param name="borsa" value="0;node.ico;568;466;0;-;0.0;CutoffNode;NoInput;NoOutput;3;livello_borsa;b0;b1;2;percborsa;tp;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xborsa;xborsa;2792772080">
+<param name="b0" value="0;node.ico;498;441;0;-;0.0;ProbNode;NoInput;NoOutput;0;1;borsa;borsa0;NoCurve;xb0;xb0;13049954">
+<param name="percborsa" value="0;node.ico;623;486;0;-;0.0;ProbNode;NoInput;NoOutput;2;borsa;ok;3;borsa_in;borsa_fuori;borsa_pend;0.0;0.0;0.0;1.0;NoCurve;xpercborsa;xpercborsa;438370306">
+<param name="b1" value="0;node.ico;614;431;0;-;0.0;ProbNode;NoInput;NoOutput;0;1;borsa;borsa1;NoCurve;xb1;xb1;2794701918">
+<param name="ultimo" value="0;node.ico;288;371;0;-;0.0;NumEqNode;NoInput;NoOutput;2;dura;Anni;1;perc_ultimo;1.0;1.0;1.0;1.0;NoCurve;xultimo;xultimo;1183385927">
+<param name="perc_ultimo" value="0;node.ico;245;401;0;-;0.0;Times2Node;NoInput;NoOutput;2;ultimo;Aggiuntivo;1;p_u;1.0;1.0;-99.0;1.0;NoCurve;xperc_ultimo;xperc_ultimo;295139557">
+<param name="Altri_universitari" value="1;node.ico;63;309;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;per_altri;0.1;NoCurve;xAltri_universitari;xAltri_universitari;1382901994">
+<param name="per_altri" value="0;node.ico;136;282;0;-;0.0;PlusNode;NoInput;NoOutput;1;Altri_universitari;0;1.0;peraltri;NoCurve;xper_altri;yper_altri;149130809">
+<param name="perc_b" value="0;node.ico;538;489;0;-;0.0;NumTransNode;NoInput;NoOutput;1;p_u;4;borsa_in_sede;borsa_fuori_sede;borsa_pendolare;borsa_alt;1.0;1.0;LinearCurve;percbCurve;xperc_b;yperc_b;434084048">
+<param name="borsa_alt" value="2;node.ico;620;514;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;borsa_fuori;perc_b;0;uborsa_fuor;1.0;1.0;0.0;NoCurve;xborsa_alt;yborsa_alt;291540446">
+<param name="p_u" value="0;node.ico;495;464;0;-;0.0;PlusNode;NoInput;NoOutput;1;perc_ultimo;1;perc_b;1.0;1.0;NoCurve;xp_u;yp_u;4036700478">
+<param name="Regolare" value="1;node.ico;799;372;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;ok;1.0;NoCurve;xRegolare;yRegolare;3093141160">
+<param name="ok" value="0;node.ico;704;392;0;-;0.0;ProbNode;NoInput;NoOutput;3;Regolare;matricola;Residenza;1;percborsa;0.0;0.0;0.0;0.0;0.0;1.0;1.0;1.0;NoCurve;xok;yok;3479169229">
+<param name="matricola" value="0;node.ico;630;369;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Anni;1;ok;1.0;1.0;NoCurve;xmatricola;ymatricola;3245460757">
+<param name="Tipo_corso" value="1;node.ico;339;450;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;increment;tp;1.0;NoCurve;xTipo_corso;yTipo_corso;3265202000">
+<param name="increment" value="0;node.ico;339;489;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tipo_corso;500;3;max_fuori;max_in;max_pendol;1.0E-4;1.0;1.0;1.0;NoCurve;xincrement;yincrement;3945610352">
+<param name="fuori_max" value="0;node.ico;173;473;0;-;0.0;ProbNode;NoInput;NoOutput;0;1;max_fuori;borsa_fuor;NoCurve;xfuori_max;yfuori_max;2254470024">
+<param name="max_fuori" value="0;node.ico;258;475;0;-;0.0;PlusNode;NoInput;NoOutput;2;fuori_max;increment;0;0.0;1.0;1.0;1.0;NoCurve;xmax_fuori;ymax_fuori;4224018441">
+<param name="in_max" value="0;node.ico;180;499;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;max_in;borsa_ins;NoCurve;xin_max;yin_max;1431344660">
+<param name="max_in" value="0;node.ico;250;499;0;-;0.0;PlusNode;NoInput;NoOutput;2;in_max;increment;0;0.0;1.0;1.0;1.0;NoCurve;xmax_in;ymax_in;3638727496">
+<param name="pendol_max" value="0;node.ico;166;526;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;max_pendol;borsa_pendol;NoCurve;xpendol_max;ypendol_max;2573794003">
+<param name="max_pendol" value="0;node.ico;265;524;0;-;0.0;PlusNode;NoInput;NoOutput;2;pendol_max;increment;0;0.0;1.0;1.0;1.0;NoCurve;xmax_pendol;ymax_pendol;104235857">
+<param name="500" value="0;node.ico;405;490;0;-;0.0;PlusNode;NoInput;NoOutput;0;1;increment;cinquecento;NoCurve;x500;y500;2129135041">
+<param name="Residenza" value="1;node.ico;703;351;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;ok;0.5;NoCurve;xResidenza;yResidenza;2260377868">
+<param name="tp" value="0;node.ico;453;482;0;-;0.0;ProbNode;NoInput;NoOutput;2;Tipo_corso;borsa;0;0.0;0.0;0.0;1.0;NoCurve;xtp;ytp;3940298810">
+
+<param name="borsafuoriCurve" value="StairsCurve;0.0;0.0;borsa_fuor_min;0.0010;scaglione;0.1;max_fuori;1.0">
+<param name="borsainCurve" value="StairsCurve;0.0;0.0;borsa_ins_min;0.0010;scaglione;0.1;max_in;1.0">
+<param name="borsapendCurve" value="StairsCurve;0.0;0.0;borsa_pendol_min;0.0010;scaglione;0.1;max_pendol;1.0">
+<param name="percbCurve" value="LinearCurve;0.0;1.0;0.5;0.5;1.0;1.0">
+<param name="tipoCurve" value="LinearCurve;0.0;0.0;1.0;0.25;2.0;0.5;3.0;1.0">
+
+
+
+
+<param name="xAltri_universitari" value="Altri_universitari;Altri universitari;Nessuna Altro universitario;Altri_universitari;Presenza di altri universitari; ; ; ; ; ;T;  ">
+<param name="xPrende_alloggio" value="Prende_alloggio;non prende alloggio;-;-;Prende alloggio a Trento; ; ; ; ; ;T;  ">
+<param name="xAggiuntivo" value="Aggiuntivo;Aggiuntivo;Aggiuntivo=0;Aggiuntivo;Aggiuntivo; i; ; ; ; ;T.1; ">
+<param name="xAnni" value="Anni;Anno/i di iscrizione nel ciclo di studio;Anni=0?;Anni di iscrizione nel ciclo di studio;Anni di iscrizione nel ciclo di studio; ; ; ; ; ;T;   ">
+<param name="xComune_in_sede" value="Comune_in_sede;Comune_in_sede;Provenienza da un comune fuori sede;-;Provenienza da un comune fuori sede; ; ; ; ; ;T;  ">
+
+
+
+
+<param name="xResidenza" value="Residenza;NON residente in Trentino;NON residente in Trentino;-;residente in Trentino; ; ; ; ; ;T;  ">
+
+
+
+<param name="xRegolare" value="Regolare;NON in regola con il merito;NON in regola con il merito;-;in regola con il merito; ; ; ; ; ;T;  ">
+
+
+
+
+
+<param name="xBorse_percepite" value="Borse_percepite;Borse universitarie percepite;Nessuna Borsa universitaria percepita;Borse universitarie percepite;Borse universitarie percepite; ; ; ; ;- ;$.2;  ">
+<param name="xIcef" value="Icef;Icef - Indicatore della Condizione Economica Familiare ( limite per una borsa: ^limiteborsa^ );Icef - Indicatore della Condizione Economica Familiare;Icef - Indicatore della Condizione Economica Familiare ( limite per una borsa: ^limiteborsa^ );Icef - Indicatore della Condizione Economica Familiare ( limite per una borsa: ^limiteborsa^ ); =  ; ; ; ; <b>;T.10;</b> ">
+<param name="xSAN2005" value="SAN2005;SAN2005;Università di Trento - Opera Universitaria - Infermieri 2005 -  (8.2.2005);--;--; ; ; ; ; ; ; ">
+
+
+
+
+
+
+<param name="xborsa_in" value="borsa_in;importo della borsa in sede;importo della borsa in sede;l'importo della borsa in sede è medio;l'importo della borsa in sede è intero;è di; ; ; ; ;$.2; ">
+<param name="xdurataOK" value="durataOK;NON in regola con la durata del corso;NON in regola con la durata del corso;-;in regola con la durata del corso; ; ; ; ; ;T;  ">
+
+
+
+
+
+<param name="xper_altri" value="per_altri;addizionale alla scala di equivalenza per la presenza di altri universitari;Nessuna altro universitario;altri universitari;addizionale alla scala di equivalenza per la presenza di altri universitari; ; ; ; ; ;T.1;  ">
+
+<param name="xperc_b" value="perc_b;percentuale di borsa ;nessuna borsa ; - al massimo verrebbe concessa metà borsa; - intera borsa; ; ; ; ; ;T.1;  ">
+
+
+<param name="xborsa_pend" value="borsa_pend;Importo della borsa pendolare;Importo della borsa pendolare;Importo della borsa pendolare ;l'importo della borsa pendolare è intera;è di; ; ; ; ;$.2; ">
+<param name="xborsa_fuori" value="borsa_fuori;importo della borsa fuori sede;importo della borsa fuori sede;la borsa fuori sede è medio;l'importo della borsa fuori sede è intero;è di; ; ; ; ;$.2; ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<param name="xborsa_alt" value="borsa_alt;Importo della borsa alternativa ^perc_b^*(%percborsa% tra §borsa_fuor_min§ e §borsa_fuor§ );Nessuna borsa alternativa ;Importo della borsa alternativa   ^perc_b^*(%percborsa%  tra §borsa_fuor_min§ e §borsa_fuor§ );Borsa alternativa intera;è di; ; ; ;<b>Euro ;$.2;</b> ">
+
+
+<param name="xentro_regolare" value="entro_regolare;durante;oltre la durata dello studio: anni=§Anni§ > durata regolare=§Durata§;-;entro la durata; ; ; ; ; ;T;  ">
+
+<param name="xdura" value="dura;durata;durata=0;durata;durata=1; i; ; ; ; ;T; ">
+<param name="xentro_dura" value="entro_dura;durante;oltre la durata ammessa del ciclo di studio: anni=§Anni§ > durata=(§Durata§ + ^Aggiuntivo^);-;entro la durata ammessa; ; ; ; ; ;T;  ">
+
+
+<param name="xultimo" value="ultimo;durante;non ultimo anno di ciclo (anni §Anni§ != §Durata§);-;ultimo anno di ciclo; ; ; ; ; ;T;  ">
+
+<param name="ximporto_borsa" value="importo_borsa;importo della borsa;niente borsa;importo della borsa;importo della borsa intera;è di; ; ; ; ;$.2; ">
+<param name="xborsa_pendolare" value="borsa_pendolare;Importo della borsa pendolare ^perc_b^*(%percborsa% tra §borsa_pendol_min§ e §max_pendol§ );Nessuna borsa pendolare;Importo della borsa pendolare  ^perc_b^*(%percborsa% tra §borsa_pendol_min§ e §max_pendol§ );Borsa pendolare intera;è di; ; ; ;<b>Euro ;$.2;</b> ">
+<param name="xborsa_in_sede" value="borsa_in_sede;Importo della borsa in sede ^perc_b^*(%percborsa% tra §borsa_ins_min§ e §max_in§ ) ;Nessuna borsa in sede;Importo della borsa in sede ^perc_b^*(%percborsa% tra §borsa_ins_min§ e §max_in§ ) ;Borsa in sede intera ;è di; ; ; ;<b>Euro ;$.2;</b> ">
+<param name="xborsa_fuori_sede" value="borsa_fuori_sede;Importo della borsa fuori sede ^perc_b^*(%percborsa% tra §borsa_fuor_min§ e §max_fuori§ );Nessuna borsa fuori sede ;Importo della borsa fuori sede   ^perc_b^*(%percborsa%  tra §max_fuori§ e §borsa_fuor§ );Borsa fuori sede intera;è di; ; ; ;<b>Euro ;$.2;</b> ">
+
+<param name="xtipo_borsa" value="tipo_borsa;spetta una BORSA IN SEDE;Nessuna borsa possibile;spetta una BORSA FUORI SEDE;spetta una BORSA PENDOLARE;è di; ; ; ; ;T; ">
+
+
+
+
+
+<param name="xpltree" value="propagation0;datisenzamerito;val_ultimo;titBorsa;noBorsa;increm;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=".;Icef=Icef;Anni=Anni">
+<param name="datisenzamerito" value="<P><B>Dati dello Studente:</B>;Icef=-1;Borse_percepite=-1!0;per_altri=-1!0;Anni=-1">
+<param name="val_ultimo" value="(ultimo==1) - ultimo anno ammesso ;ultimo=3!0">
+<param name="titBorsa" value="<P><B>Esito della domanda di borsa:</B>;tipo_borsa=-1;In_sede=-1!0;Fuori_sede=-1!0;(tipo_borsa!=0)Comune_in_sede=-1!1;Prende_alloggio=-1!0;borsa_in_sede=-1!0;borsa_fuori_sede=-1!0;borsa_pendolare=-1!0;(borsa_pendolare!=0)borsa_alt=-1">
+<param name="noBorsa" value="(tipo_borsa==0)<P><B>perché</B>;(borsa==0)Icef=3;Regolare=3!1;Residenza=3!1;durataOK=3!1">
+<param name="increm" value="(tp!=0)<P> - La borsa massima è incrementata di Euro 500.-</P><P/>;">
+<param name="version" value=" Versione san04: <small> ;</small>">
+<param name="versionData" value=" in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="954747642">
+<param name="CRC" value="3900565423">
+<param name="CRCdata" value="8-feb-2005 12.54.57">
+</APPLET>
+<BR>

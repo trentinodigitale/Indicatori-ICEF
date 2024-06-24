@@ -1,0 +1,106 @@
+<APPLET CODE='it.clesius.engine.elab.Clesius.class' CODEBASE='/clesius'
+	ARCHIVE='clesius.jar' WIDTH=900 HEIGHT=350 MAYSCRIPT>
+	<param name="revision" value="$Revision: 33894 $">
+
+	<param name="Taratura"
+		value="Assegno Unico Provinciale 2017; 23.11.2017">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="false">
+	<param name="language" value="0">
+
+<param name="trendStarts" value="trendstart;parametri;perc0.5;perc1.2;incr;decr">
+<param name="trendstart" value="current">
+<param name="parametri" value="current;Inf=0;Sup=0.16;Min=100;Max=200;Scaglione=1;Icef=0.08;Percentuale=1.0">
+<param name="perc0.5" value="parametri;Percentuale=0.5">
+<param name="perc1.2" value="parametri;Percentuale=1.2">
+<param name="incr" value="parametri;Incremento=100;Decremento=0">
+<param name="decr" value="parametri;Decremento=50;Incremento=0">
+
+<param name="trends" value="trend1">
+<param name="trend1" value="trendstart;Icef=0:0.1:1.0;assegno/ EUR">
+
+<param name="curve1" value="<HR>Andamento (dipendente dall'Icef)</HR>;trend1">
+
+
+<param name="edges" value="P.A.T. Assegno Unico;Scaglione;
+Icef-giudizio_a;sup-giudizio_a;teorico_a-decrementato_a;decrementato_a-assegno;Incremento-assegno;giudizio_a-calcolato_a;calcolato_a-teorico_a;Decremento-decrementato_a;Sup-sup;Icef-giudizio_t;inf-giudizio_t;giudizio_t-calcolato_t;calcolato_t-teorico_t;teorico_t-decrementato_t;decrementato_t-tariffa;Decremento-decrementato_t;Incremento-tariffa;Inf-inf;inf-giudizio_a;Min-min;
+Percentuale-min;Max-max;Percentuale-max;Sup-giudizio_t">
+
+
+
+<param name="P.A.T. Assegno Unico" value="text;node.ico;305;30;0;Versione 23.11.2017;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_aup;yModello_aup;1406813904">
+<param name="Scaglione" value="1;node.ico;444;91;0;Scaglione = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xScaglione;xScaglione;2631225676">
+<param name="Icef" value="1;node.ico;163;94;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio_a;giudizio_t;0.5;NoCurve;xIcef;xIcef;3202153589">
+<param name="giudizio_a" value="2;node.ico;160;64;0;giudizio_a =  MAX( 0, MIN( 1, (Icef - sup) / (inf - sup) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;sup;inf;1;calcolato_a;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio_a;xgiudizio_a;638728890">
+<param name="sup" value="0;node.ico;204;93;0;sup =  1.001*Sup;0.0;PlusNode;NoInput;NoOutput;1;Sup;1;giudizio_a;1.0;1.001;NoCurve;xsup;xsup;1849575818">
+<param name="teorico_a" value="2;node.ico;441;64;0;teorico_a =  calcolato_a;0.0;ProbNode;NoInput;ResultOutput;1;calcolato_a;1;decrementato_a;0.0;1.0;StairsCurve;assCurve;xteorico_a;xteorico_a;2637033421">
+<param name="decrementato_a" value="0;node.ico;620;64;0;decrementato_a =  teorico_a - Decremento;0.0;MinusNode;NoInput;NoOutput;2;teorico_a;Decremento;1;assegno;1.0;1.0;1.0;1.0;NoCurve;xdecrementato_a;xdecrementato_a;1533775843">
+<param name="assegno" value="2;node.ico;717;62;0;assegno =  decrementato_a + Incremento;0.0;PlusNode;NoInput;ResultOutput;2;decrementato_a;Incremento;0;1.0;1.0;1.0;1.0;NoCurve;xassegno;xassegno;3853226125">
+<param name="Incremento" value="1;node.ico;721;95;0;Incremento = ;0.0;PlusNode;ValueInput;NoOutput;0;2;assegno;tariffa;1.0;NoCurve;xIncremento;xIncremento;2587013165">
+<param name="calcolato_a" value="0;node.ico;310;62;0;calcolato_a =  giudizio_a;0.0;TimesNode;NoInput;NoOutput;1;giudizio_a;1;teorico_a;1.0;1.0;NoCurve;xcalcolato_a;xcalcolato_a;1852873676">
+<param name="Decremento" value="1;node.ico;619;92;0;Decremento = ;0.0;PlusNode;ValueInput;NoOutput;0;2;decrementato_a;decrementato_t;1.0;NoCurve;xDecremento;xDecremento;3306399364">
+<param name="Sup" value="1;node.ico;252;93;0;Sup = ;0.0;ProbNode;ValueInput;NoOutput;0;2;sup;giudizio_t;0.5;NoCurve;xSup;xSup;7149786">
+<param name="giudizio_t" value="2;node.ico;159;124;0;giudizio_t =  MAX( 0, MIN( 1, (Icef - inf) / (Sup - inf) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;Sup;1;calcolato_t;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio_t;xgiudizio_t;2852427270">
+<param name="inf" value="0;node.ico;123;93;0;inf =  Inf;0.0;PlusNode;NoInput;NoOutput;1;Inf;2;giudizio_t;giudizio_a;1.0;1.0;NoCurve;xinf;xinf;169633005">
+<param name="calcolato_t" value="0;node.ico;314;124;0;calcolato_t =  giudizio_t;0.0;TimesNode;NoInput;NoOutput;1;giudizio_t;1;teorico_t;1.0;1.0;NoCurve;xcalcolato_t;xcalcolato_t;2884514724">
+<param name="teorico_t" value="2;node.ico;441;124;0;teorico_t =  calcolato_t;0.0;ProbNode;NoInput;IntermediateOutput;1;calcolato_t;1;decrementato_t;0.0;1.0;StairsCurve;tarCurve;xteorico_t;xteorico_t;2867971018">
+<param name="decrementato_t" value="0;node.ico;619;124;0;decrementato_t =  teorico_t - Decremento;0.0;MinusNode;NoInput;NoOutput;2;teorico_t;Decremento;1;tariffa;1.0;1.0;1.0;1.0;NoCurve;xdecrementato_t;xdecrementato_t;2693300967">
+<param name="tariffa" value="2;node.ico;723;124;0;tariffa =  decrementato_t + Incremento;0.0;PlusNode;NoInput;ResultOutput;2;decrementato_t;Incremento;0;1.0;1.0;1.0;1.0;NoCurve;xtariffa;xtariffa;878336990">
+<param name="Inf" value="1;node.ico;75;93;0;Inf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;inf;0.5;NoCurve;xInf;xInf;4265492392">
+<param name="Min" value="1;node.ico;317;91;0;Min = ;0.0;PlusNode;ValueInput;NoOutput;0;1;min;1.0;NoCurve;xMin;xMin;1693339577">
+<param name="min" value="0;node.ico;369;91;0;min =  Min * Percentuale;0.0;TimesNode;NoInput;NoOutput;2;Min;Percentuale;0;1.0;1.0;1.0;1.0;NoCurve;xmin;ymin;2073964375">
+<param name="Percentuale" value="1;node.ico;441;25;0;Percentuale = ;0.0;PlusNode;ValueInput;NoOutput;0;2;min;max;1.0;NoCurve;xPercentuale;xPercentuale;1654597597">
+<param name="Max" value="1;node.ico;551;91;0;Max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;max;1.0;NoCurve;xMax;xMax;4129634606">
+<param name="max" value="0;node.ico;504;92;0;max =  Max * Percentuale;0.0;TimesNode;NoInput;NoOutput;2;Max;Percentuale;0;1.0;1.0;1.0;1.0;NoCurve;xmax;ymax;1296673057">
+
+<param name="assCurve" value="StairsCurve;0.0;0.0;min;0.001;Scaglione;0.1;max;1.0">
+<param name="tarCurve" value="StairsCurve;0.0;0.0;min;0.0;Scaglione;0.1;max;1.0">
+
+
+<param name="xSup" value="Sup;Sup;non;-;ok; ; ; ; ; ; ; ">
+<param name="xDecremento" value="Decremento;Decremento;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xIncremento" value="Incremento;Incremento;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xInf" value="Inf;Inf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xMax" value="Max;Max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPercentuale" value="Percentuale;Percentuale;non;-;ok; ; ; ; ; ;P.4; ">
+<param name="xMin" value="Min;Min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xIcef" value="Icef;Icef;non;-;ok; ; ; ; ; ; ; ">
+<param name="xScaglione" value="Scaglione;Scaglione;non;-;ok; ; ; ; ; ; ; ">
+<param name="xModello_aup" value="P.A.T. Assegno Unico;x;Versione 23.11.2017; ; ; ; ; ; ; ; ; ">
+
+<param name="xinf" value="inf;inf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcalcolato_t" value="calcolato_t;calcolato_t;non;-;ok; ; ; ; ; ; ; ">
+<param name="xteorico_t" value="teorico_t;teorico_t (%calcolato_a% tra ^min^ e ^max^);non teorico_t;teorico_t (%calcolato_a% tra ^min^ e ^max^);teorico_t (%calcolato_a% tra ^min^ e ^max^); ; ; ; ; ;$.2; ">
+<param name="xteorico_a" value="teorico_a;teorico_a (%calcolato_a% tra ^min^ e ^max^);non teorico_a;teorico_a (%calcolato_a% tra ^min^ e ^max^);teorico_a (%calcolato_a% tra ^min^ e ^max^); ; ; ; ; ;$.2; ">
+<param name="xcalcolato_a" value="calcolato_a;calcolato_a;non;-;ok; ; ; ; ; ;P.4; ">
+<param name="xsup" value="sup;sup;non;-;ok; ; ; ; ; ; ; ">
+<param name="xdecrementato_a" value="decrementato_a;decrementato_a;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmin" value="min;min;non;-;ok; ; ; ; ; ; ; ">
+<param name="xassegno" value="assegno;assegno (^teorico_a^ - ^Decremento^ + ^Incremento^);non assegno;assegno (^teorico_a^ - ^Decremento^ + ^Incremento^);assegno (^teorico_a^ - ^Decremento^ + ^Incremento^); ; ; ; ; ;$.2; ">
+<param name="xmax" value="max;max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xdecrementato_t" value="decrementato_t;decrementato_t;non;-;ok; ; ; ; ; ; ; ">
+<param name="xtariffa" value="tariffa;tariffa (^teorico_t^ - ^Decremento^ + ^Incremento^);tariffa zero;tariffa (^teorico_t^ - ^Decremento^ + ^Incremento^);tariffa (^teorico_t^ - ^Decremento^ + ^Incremento^); ; ; ; ; ;$.2; ">
+<param name="xgiudizio_t" value="giudizio_t;giudizio_t;non;-;ok; ; ; ; ; ; ; ">
+<param name="xgiudizio_a" value="giudizio_a;giudizio_a;giudizio_a zero;giudizio_a;giudizio_a=1; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation0;ris;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;Icef=Icef;Percentuale=Percentuale">
+<param name="ris" value=" ;(Decremento!=0)teorico_a=-1;(Incremento!=0)teorico_a=-1;assegno=-1;(Decremento!=0)teorico_t=-1;(Incremento!=0)teorico_t=-1;tariffa=-1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="CRC" value="1836675221">
+<param name="CRCdata" value="23-nov-2017 16.10.33">
+</APPLET>
+</CENTER>
+<BR>

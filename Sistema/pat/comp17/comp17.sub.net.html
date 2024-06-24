@@ -1,0 +1,324 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"
+	WIDTH=800 HEIGHT=950 MAYSCRIPT>
+<param name="revision" value="$Revision: 30680 $">
+
+<param name="Taratura" value="COMPARTECIPAZIONE; 11.3.2019 con Min/Max14">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+<param name="trendStarts"	value="paramcomp;casoIcef">
+
+<param name="paramcomp"	value="current;Con_max=1;Inf=0.13;Sup=0.4;Scaglione=0.1;Quota_eccedenza_poveri=0.2;Quota_eccedenza_ricchi=0.6;Quota_invalidi_ast=0.6;Tetto_max_poveri=32.91;Min1=2;Max1=18;Min2=2;Max2=3;Min3=4;Max3=10;Min4=0.5;Max4=3;Min5=0.1;Max5=1;Min6=1;Max6=4;Min7=1;Max7=9;Min8=8;Max8=24;Min9=6.4;Max9=19.2;Min11=4.5;Max11=13;Min12=4;Max12=10;Min14=2;Max14=10;Quota_base=4;;rif=50000;vf=2.07">
+<param name="casoIcef" value="paramcomp;Icef=0.2;Invalidi_ast=5000;LDC=99999">
+
+
+<param name="variables"	value="uno;dodicesimo;lscala;rscala;pscala;tscala;vscala">
+
+<param name="uno" value="1">
+
+<param name="dodicesimo" value="0.0833333333">
+
+<param name="lscala" value="0.0001">
+<param name="tscala" value="0.00001">
+<param name="rscala" value="0.00002">
+<param name="pscala" value="0.000005">
+<param name="vscala" value="0.000000001">
+
+
+
+
+<param name="edges" value="PAT COMPARTECIPAZIONE;Min;Max;Min1;Max1;Min2;Max2;Max3;Min4;Max4;Min5;Max5;Min6;Max6;Min7;Max7;Min8;Max8;Min9;Max9;Min11;Max11;Scaglione;PI5_grat;Con_max;RettaRSAnores;Min12;Max12;Min14;Max14;quota14;
+C1_aut_ast-r_ast;C1_dip_ast-r_ast;C2_agr_ast-r_ast;C3_imp_ast-r_ast;C4_part_ast-r_ast;PI5_oner-mpi5;mpi5-pi5;Assegno_imposto-arl;icef-perc;Inf-perc;Sup-perc;perc-quota;icef-oltreInf;Inf-oltreInf;oltreInf-eccedente;Quota_eccedenza_ricchi-qdif;Quota_eccedenza_poveri-qdif;perc-inc;qdif-inc;Quota_eccedenza_poveri-aliquota;inc-aliquota;
+aliquota-importo;eccedente-importo;importo-tetto_max;Tetto_max_poveri-tetto_max;rif-eccedente;vf-eccedente;icef-equ_icef;rif-equ_icef;vf-equ_icef;equ_icef-resto;tetto_max-tetto_annuo;tetto_annuo-resto;tetto_max-o1;quota1-o1;tetto_max-o2;quota2-o2;tetto_max-p1;quota3-p1;tetto_max-gg;quota5-gg;
+quota3-qp;quota4-qp;tetto_max-p2;qp-p2;Min3-oltreMin;quota3-oltreMin;Check-big;Icef-icef;big-icef;o1-ore1;o2-ore2;p1-pasti1;p2-pasti2;gg-giorni;max_ore1-ore1;max_ore2-ore2;max_pasti1-pasti1;max_giorni-giorni;Quota_invalidi_ast-qu_ast;qu_ast-inv_ast;
+Invalidi_ast-inv_ast;Min3-6pasti;inval-invalidi;inv_ast-invalidi;tetto_max-p3;p3-pasti3;quota11-p3;tetto_max-f1;quota7-f1;f1-feriale1;max_feriale-feriale1;f2-feriale2;f3-feriale3;f4-feriale4;o1-f2;max_feriale-feriale2;tetto_max-f3;max_feriale-feriale3;tetto_max-f4;max_feriale-feriale4;
+quota8-f3;quota9-f4;max_pasti1-pasti2;max_pasti2-pasti3;p4-pasti4;tetto_max-p4;max_pasti2-pasti4;f5-feriale5;tetto_max-f5;max_feriale-feriale5;quota6-f5;quota1-quota13;quota12-p4;qu11-quota11;Quota_base-quota11;qu12-quota12;Quota_base-quota12;Quota_base-quota10">
+
+
+
+<param name="PAT COMPARTECIPAZIONE" value="text;node.ico;514;354;0;PAT  COMPARTECIPAZIONE 2017 - (11.3.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_COMP;yModello_COMP;2428203002">
+<param name="Min" value="0;node.ico;29;457;0;Min  0,50 ;0.0;TimesNode;NoInput;NoOutput;0;0;1.0E-5;NoCurve;xMin;xMin;2143719076">
+<param name="Max" value="0;node.ico;76;458;0;Max  0,50 ;0.0;TimesNode;NoInput;NoOutput;0;0;1.0E-5;NoCurve;xMax;xMax;3555891344">
+<param name="Min1" value="1;node.ico;30;481;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin1;xMin;230570358">
+<param name="Max1" value="1;node.ico;74;480;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax1;xMax;3607119240">
+<param name="Min2" value="1;node.ico;32;504;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin2;xMin;2624049203">
+<param name="Max2" value="1;node.ico;75;504;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax2;xMax;1131560131">
+<param name="Max3" value="1;node.ico;77;527;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax3;xMax;4103436828">
+<param name="Min4" value="1;node.ico;33;551;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin4;xMin;2086706265">
+<param name="Max4" value="1;node.ico;76;550;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax4;xMax;1518348090">
+<param name="Min5" value="1;node.ico;36;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin5;xMin;58288442">
+<param name="Max5" value="1;node.ico;79;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax5;xMax;1398710310">
+<param name="Min6" value="1;node.ico;36;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xMin6;xMin6;614872246">
+<param name="Max6" value="1;node.ico;84;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xMax6;xMax6;2756128953">
+<param name="Min7" value="1;node.ico;37;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin7;xMin;1756938126">
+<param name="Max7" value="1;node.ico;80;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax7;xMax;61985840">
+<param name="Min8" value="1;node.ico;39;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin8;xMin;1972859142">
+<param name="Max8" value="1;node.ico;81;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax8;xMax;161964868">
+<param name="Min9" value="1;node.ico;37;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin9;xMin;948421843">
+<param name="Max9" value="1;node.ico;81;600;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax9;xMax;2949671152">
+<param name="Min11" value="1;node.ico;34;573;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin11;xMin;1043141258">
+<param name="Max11" value="1;node.ico;82;572;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax11;xMax;4248990850">
+<param name="Scaglione" value="1;node.ico;134;456;0;Scaglione;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xScaglione;xScaglione;3695027954">
+<param name="PI5_grat" value="1;node.ico;397;318;0;non PI5_grat;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPI5_grat;xPI5_grat;3445407347">
+<param name="Con_max" value="1;node.ico;746;529;0;non;0.0;ProbNode;ValueInput;NoOutput;0;0;0.5;NoCurve;xCon_max;xCon_max;2903644481">
+<param name="RettaRSAnores" value="1;node.ico;139;257;0;non Retta RS per il coniuge;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xRettaRSAnores;xRettaRSAnores;2663217317">
+<param name="Min12" value="1;node.ico;35;596;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xMin12;xMin12;3275362560">
+<param name="Max12" value="1;node.ico;85;595;0;non;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xMax12;xMax12;2479425272">
+<param name="Min14" value="1;node.ico;664;456;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMin14;xMin14;88060404">
+<param name="Max14" value="1;node.ico;718;456;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xMax14;xMax14;677665261">
+<param name="quota14" value="2;node.ico;80;600;0;Assistenza domiciliare - Assenza 80%   [,50] / ora;0.0;TimesNode;NoInput;NoOutput;0;0;1.0;NoCurve;xquota14;xquota14;1835617879">
+<param name="C1_aut_ast" value="1;node.ico;80;345;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC1_aut_ast;xC1_aut_ast;2529906699">
+<param name="r_ast" value="0;node.ico;157;362;0;-;0.0;PlusNode;NoInput;NoOutput;5;C1_aut_ast;C1_dip_ast;C2_agr_ast;C3_imp_ast;C4_part_ast;0;rscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xr_ast;xr_ast;259363289">
+<param name="C1_dip_ast" value="1;node.ico;39;367;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC1_dip_ast;xC1_dip_ast;3504685836">
+<param name="C2_agr_ast" value="1;node.ico;62;389;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC2_agr_ast;xC2_agr_ast;2085147455">
+<param name="C3_imp_ast" value="1;node.ico;39;412;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC3_imp_ast;xC3_imp_ast;986744391">
+<param name="C4_part_ast" value="1;node.ico;77;433;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;r_ast;pscala;NoCurve;xC4_part_ast;xC4_part_ast;2167741565">
+<param name="PI5_oner" value="1;node.ico;468;319;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;mpi5;pscala;NoCurve;xPI5_oner;xPI5_oner;2318337677">
+<param name="mpi5" value="0;node.ico;531;316;0;-;0.0;NumMaxNode;NoInput;NoOutput;1;PI5_oner;1;pi5;pscala;1.0;NoCurve;xmpi5;xmpi5;2618701183">
+<param name="pi5" value="0;node.ico;473;297;0;-;0.0;MinusNode;NoInput;NoOutput;1;mpi5;0;pscala;1.0;NoCurve;xpi5;xpi5;682610896">
+<param name="Assegno_imposto" value="1;node.ico;263;316;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;pscala;NoCurve;xAssegno_imposto;xAssegno_imposto;2153925518">
+<param name="arl" value="0;node.ico;178;317;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno_imposto;0;rscala;1.0;NoCurve;xarl;xarl;2049590236">
+<param name="icef" value="0;node.ico;225;370;0;-;0.0;NumMaxNode;NoInput;NoOutput;2;Icef;big;3;perc;oltreInf;equ_icef;1.0;1.0;1.0;1.0;NoCurve;xicef;xicef;1129896663">
+<param name="perc" value="0;node.ico;226;404;0;-;0.0;CutoffNode;NoInput;NoOutput;3;icef;Inf;Sup;2;quota;inc;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xperc;xperc;1732553180">
+<param name="Inf" value="1;node.ico;187;403;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;perc;oltreInf;0.5;NoCurve;xInf;xInf;3096445498">
+<param name="Sup" value="1;node.ico;285;406;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;perc;0.5;NoCurve;xSup;xSup;496688797">
+<param name="quota" value="2;node.ico;226;463;0;-;0.0;ProbNode;NoInput;ResultOutput;1;perc;0;0.0;1.0;StairsCurve;liv1Curve;xquota;xquota;2571537310">
+<param name="oltreInf" value="0;node.ico;142;402;0;-;0.0;MinusNode;NoInput;NoOutput;2;icef;Inf;1;eccedente;1.0;1.0;1.0;1.0;NoCurve;xoltreInf;xoltreInf;165738249">
+<param name="eccedente" value="0;node.ico;391;466;0;-;0.0;TimesNode;NoInput;NoOutput;3;oltreInf;rif;vf;1;importo;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xeccedente;xeccedente;3059884493">
+<param name="Quota_eccedenza_ricchi" value="1;node.ico;556;384;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;qdif;0.5;NoCurve;xQuota_eccedenza_ricchi;xQuota_eccedenza_ricchi;3570757380">
+<param name="qdif" value="0;node.ico;458;411;0;-;0.0;DiffNode;NoInput;NoOutput;2;Quota_eccedenza_ricchi;Quota_eccedenza_poveri;1;inc;0.0;1.0;1.0;1.0;NoCurve;xqdif;xqdif;2158913067">
+<param name="Quota_eccedenza_poveri" value="1;node.ico;386;382;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;qdif;aliquota;0.5;NoCurve;xQuota_eccedenza_poveri;xQuota_eccedenza_poveri;1029805290">
+<param name="inc" value="0;node.ico;454;439;0;-;0.0;ProbNode;NoInput;NoOutput;2;perc;qdif;1;aliquota;0.0;0.0;0.0;1.0;NoCurve;xinc;xinc;190439100">
+<param name="aliquota" value="0;node.ico;456;466;0;-;0.0;PlusNode;NoInput;NoOutput;2;Quota_eccedenza_poveri;inc;1;importo;1.0;1.0;1.0;1.0;NoCurve;xaliquota;xaliquota;1509381196">
+<param name="importo" value="0;node.ico;456;567;0;-;0.0;TimesNode;NoInput;NoOutput;2;aliquota;eccedente;1;tetto_max;dodicesimo;dodicesimo;1.0;1.0;NoCurve;ximporto;ximporto;2995858732">
+<param name="tetto_max" value="2;node.ico;325;600;0;-;0.0;NumMaxNode;NoInput;ResultOutput;2;importo;Tetto_max_poveri;12;tetto_annuo;o1;o2;p1;gg;p2;p3;p4;f1;f3;f4;f5;1.0E-4;1.0;1.0;1.0;NoCurve;xtetto_max;xtetto_max;474598693">
+<param name="Tetto_max_poveri" value="1;node.ico;209;600;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tetto_max;0.1;NoCurve;xTetto_max_poveri;xTetto_max_poveri;3191519861">
+<param name="rif" value="1;node.ico;246;284;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;eccedente;equ_icef;1.0;NoCurve;xrif;xrif;2376228535">
+<param name="vf" value="1;node.ico;283;284;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;eccedente;equ_icef;1.0;NoCurve;xvf;xvf;4188881914">
+<param name="equ_icef" value="0;node.ico;309;464;0;-;0.0;TimesNode;NoInput;NoOutput;3;icef;rif;vf;1;resto;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xequ_icef;xequ_icef;3028002999">
+<param name="resto" value="2;node.ico;310;498;0;-;0.0;MinusNode;NoInput;NoOutput;2;equ_icef;tetto_annuo;0;1.0;1.0;1.0;1.0;NoCurve;xresto;xresto;3934733569">
+<param name="tetto_annuo" value="0;node.ico;431;600;0;-;0.0;PlusNode;NoInput;NoOutput;1;tetto_max;1;resto;1.0;12.0;NoCurve;xtetto_annuo;xtetto_annuo;380069730">
+<param name="o1" value="0;node.ico;502;478;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota1;2;ore1;f2;1.0;0.25;1.0;1.0;NoCurve;xo1;xo1;1936663800">
+<param name="quota1" value="2;node.ico;125;480;0;-;0.0;TimesNode;NoInput;ResultOutput;0;2;o1;quota13;1.0;NoCurve;xquota1;xquota;3771725671">
+<param name="o2" value="0;node.ico;512;503;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota2;1;ore2;1.0;0.25;1.0;1.0;NoCurve;xo2;xo2;527128636">
+<param name="quota2" value="2;node.ico;127;504;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;o2;1.0;NoCurve;xquota2;xquota;1881351243">
+<param name="p1" value="0;node.ico;521;524;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota3;1;pasti1;1.0;0.25;1.0;1.0;NoCurve;xp1;xp1;571120792">
+<param name="quota3" value="2;node.ico;126;527;0;-;0.0;TimesNode;NoInput;ResultOutput;0;3;p1;qp;oltreMin;1.0;NoCurve;xquota3;xquota;334659418">
+<param name="gg" value="0;node.ico;518;600;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota5;1;giorni;1.0;0.25;1.0;1.0;NoCurve;xgg;xgg;256433493">
+<param name="quota5" value="2;node.ico;136;600;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;gg;1.0;NoCurve;xquota5;xquota;1629701497">
+<param name="qp" value="0;node.ico;192;560;0;-;0.0;PlusNode;NoInput;NoOutput;2;quota3;quota4;1;p2;1.0;1.0;1.0;1.0;NoCurve;xqp;xqp;1531713550">
+<param name="quota4" value="2;node.ico;125;552;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;qp;1.0;NoCurve;xquota4;xquota;1529066311">
+<param name="p2" value="0;node.ico;528;551;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;qp;1;pasti2;1.0;0.25;1.0;1.0;NoCurve;xp2;xp2;1087625025">
+<param name="Min3" value="1;node.ico;32;528;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;oltreMin;6pasti;tscala;NoCurve;xMin3;xMin;379034681">
+<param name="oltreMin" value="2;node.ico;208;515;0;-;0.0;MinusNode;NoInput;IntermediateOutput;2;Min3;quota3;0;1.0;1.0;1.0;1.0;NoCurve;xoltreMin;xoltreMin;4008348477">
+<param name="Check" value="1;node.ico;458;266;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;big;1.0;NoCurve;xCheck;xCheck;2661666078">
+<param name="big" value="0;node.ico;361;296;0;-;0.0;TimesNode;NoInput;NoOutput;1;Check;1;icef;vscala;1.0;NoCurve;xbig;xbig;4259031267">
+<param name="Icef" value="1;node.ico;226;344;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;icef;0.5;NoCurve;xIcef;xIcef;3760332885">
+<param name="ore1" value="2;node.ico;602;478;0;-;0.0;NumMinNode;NoInput;NoOutput;2;o1;max_ore1;0;1.0;1.0;1.0;1.0;NoCurve;xore1;xore1;1295610809">
+<param name="ore2" value="2;node.ico;601;502;0;-;0.0;NumMinNode;NoInput;NoOutput;2;o2;max_ore2;0;1.0;1.0;1.0;1.0;NoCurve;xore2;xore2;1886763644">
+<param name="pasti1" value="2;node.ico;600;524;0;-;0.0;NumMinNode;NoInput;NoOutput;2;p1;max_pasti1;0;0.1;1.0;1.0;1.0;NoCurve;xpasti1;xpasti1;3657346271">
+<param name="pasti2" value="2;node.ico;602;549;0;-;0.0;NumMinNode;NoInput;NoOutput;2;p2;max_pasti1;0;0.1;1.0;1.0;1.0;NoCurve;xpasti2;xpasti2;694944559">
+<param name="giorni" value="2;node.ico;600;600;0;-;0.0;NumMinNode;NoInput;NoOutput;2;gg;max_giorni;0;1.0;1.0;1.0;1.0;NoCurve;xgiorni;xgiorni;2459910747">
+<param name="max_ore1" value="0;node.ico;675;486;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;ore1;1.0;NoCurve;xmax_ore1;xmax_ore1;2381319864">
+<param name="max_ore2" value="0;node.ico;671;505;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;ore2;1.0;NoCurve;xmax_ore2;xmax_ore2;3695960375">
+<param name="max_pasti1" value="0;node.ico;668;527;0;-;0.0;TimesNode;NoInput;NoOutput;0;2;pasti1;pasti2;1.0;NoCurve;xmax_pasti1;xmax_pasti1;3524664294">
+<param name="max_giorni" value="0;node.ico;689;600;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;giorni;1.0;NoCurve;xmax_giorni;xmax_giorni;925164076">
+<param name="Quota_invalidi_ast" value="1;node.ico;66;274;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;qu_ast;0.5;NoCurve;xQuota_invalidi_ast;xQuota_invalidi_ast;161718791">
+<param name="qu_ast" value="0;node.ico;30;299;0;-;0.0;ProbNode;NoInput;NoOutput;1;Quota_invalidi_ast;1;inv_ast;1.0;0.0;NoCurve;xqu_ast;xqu_ast;1062325386">
+<param name="inv_ast" value="0;node.ico;88;299;0;-;0.0;TimesNode;NoInput;NoOutput;2;qu_ast;Invalidi_ast;1;invalidi;rscala;1.0;1.0;1.0;NoCurve;xinv_ast;xinv_ast;1406452611">
+<param name="Invalidi_ast" value="1;node.ico;40;324;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inv_ast;rscala;NoCurve;xInvalidi_ast;xInvalidi_ast;3744179774">
+<param name="6pasti" value="0;node.ico;236;545;0;-;0.0;PlusNode;NoInput;NoOutput;1;Min3;0;1.0;6.0;NoCurve;x6pasti;x6pasti;757937720">
+<param name="inval" value="0;node.ico;140;301;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;invalidi;0.5;NoCurve;xinval;xinval;1205749842">
+<param name="invalidi" value="0;node.ico;106;322;0;-;0.0;MinusNode;NoInput;NoOutput;2;inval;inv_ast;0;0.0;1.0;1.0;1.0;NoCurve;xinvalidi;xinvalidi;2505843932">
+<param name="p3" value="0;node.ico;531;571;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota11;1;pasti3;0.0;0.25;1.0;1.0;NoCurve;xp3;xp3;798887944">
+<param name="pasti3" value="2;node.ico;601;571;0;-;0.0;NumMinNode;NoInput;NoOutput;2;p3;max_pasti2;0;1.0;1.0;1.0;1.0;NoCurve;xpasti3;xpasti3;4026341506">
+<param name="quota11" value="2;node.ico;303;571;0;-;0.0;MinusNode;NoInput;ResultOutput;2;qu11;Quota_base;1;p3;1.0;1.0;1.0;1.0;NoCurve;xquota11;xquota11;4195004952">
+<param name="f1" value="0;node.ico;513;600;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota7;1;feriale1;0.0;0.25;1.0;1.0;NoCurve;xf1;xf1;3988691131">
+<param name="quota7" value="2;node.ico;137;600;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;f1;1.0;NoCurve;xquota7;xquota;1498716909">
+<param name="feriale1" value="2;node.ico;603;600;0;-;0.0;NumMinNode;NoInput;NoOutput;2;f1;max_feriale;0;1.0;1.0;1.0;1.0;NoCurve;xferiale1;xferiale1;3012631710">
+<param name="max_feriale" value="0;node.ico;694;600;0;-;0.0;TimesNode;NoInput;NoOutput;0;5;feriale1;feriale2;feriale3;feriale4;feriale5;1.0;NoCurve;xmax_feriale;xmax_feriale;312455187">
+<param name="f2" value="0;node.ico;310;600;0;-;0.0;ProbNode;NoInput;NoOutput;1;o1;1;feriale2;0.0;1.0;NoCurve;xf2;xf2;2395324141">
+<param name="feriale2" value="2;node.ico;602;600;0;-;0.0;NumMinNode;NoInput;NoOutput;2;f2;max_feriale;0;1.0;1.0;1.0;1.0;NoCurve;xferiale2;xferiale2;3046123640">
+<param name="f3" value="0;node.ico;498;600;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota8;1;feriale3;1.0;0.25;1.0;1.0;NoCurve;xf3;xf3;2191627345">
+<param name="feriale3" value="2;node.ico;603;600;0;-;0.0;NumMinNode;NoInput;NoOutput;2;f3;max_feriale;0;1.0;1.0;1.0;1.0;NoCurve;xferiale3;xferiale3;592116700">
+<param name="f4" value="0;node.ico;491;600;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota9;1;feriale4;0.0;0.25;1.0;1.0;NoCurve;xf4;xf4;120351645">
+<param name="feriale4" value="2;node.ico;602;600;0;-;0.0;NumMinNode;NoInput;NoOutput;2;f4;max_feriale;0;1.0;1.0;1.0;1.0;NoCurve;xferiale4;xferiale4;3750561791">
+<param name="quota8" value="2;node.ico;136;600;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;f3;1.0;NoCurve;xquota8;xquota;186355749">
+<param name="quota9" value="2;node.ico;135;600;0;-;0.0;TimesNode;NoInput;ResultOutput;0;1;f4;1.0;NoCurve;xquota9;xquota;839717928">
+<param name="max_pasti2" value="0;node.ico;681;575;0;-;0.0;TimesNode;NoInput;NoOutput;0;2;pasti3;pasti4;1.0;NoCurve;xmax_pasti2;xmax_pasti2;2347962941">
+<param name="p4" value="0;node.ico;535;594;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota12;1;pasti4;1.0;0.25;1.0;1.0;NoCurve;xp4;xp4;1096246011">
+<param name="pasti4" value="2;node.ico;600;591;0;-;0.0;NumMinNode;NoInput;NoOutput;2;p4;max_pasti2;0;1.0;1.0;1.0;1.0;NoCurve;xpasti4;xpasti4;611759868">
+<param name="f5" value="0;node.ico;485;600;0;-;0.0;DivideNode;NoInput;NoOutput;2;tetto_max;quota6;1;feriale5;1.0;0.25;1.0;1.0;NoCurve;xf5;xf5;2083444185">
+<param name="feriale5" value="2;node.ico;602;600;0;-;0.0;NumMinNode;NoInput;NoOutput;2;f5;max_feriale;0;1.0;1.0;1.0;1.0;NoCurve;xferiale5;xferiale5;2548102238">
+<param name="quota6" value="0;node.ico;134;600;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;f5;1.0;NoCurve;xquota6;xquota6;2811732050">
+<param name="quota13" value="2;node.ico;247;600;0;-;0.0;PlusNode;NoInput;NoOutput;1;quota1;0;1.0;1.0;NoCurve;xquota13;xquota13;2249882280">
+<param name="quota12" value="2;node.ico;304;595;0;-;0.0;MinusNode;NoInput;ResultOutput;2;qu12;Quota_base;1;p4;1.0;1.0;1.0;1.0;NoCurve;xquota12;xquota12;2739814243">
+<param name="qu11" value="0;node.ico;141;573;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;quota11;1.0;NoCurve;xqu11;xqu11;1627485276">
+<param name="Quota_base" value="1;node.ico;216;584;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;quota11;quota12;quota10;1.0;NoCurve;xQuota_base;xQuota_base;1109774615">
+<param name="qu12" value="0;node.ico;140;595;0;-;0.0;Times2Node;NoInput;NoOutput;0;1;quota12;1.0;NoCurve;xqu12;xqu12;33559593">
+<param name="quota10" value="2;node.ico;247;600;0;-;0.0;PlusNode;NoInput;IntermediateOutput;1;Quota_base;0;1.0;1.0;NoCurve;xquota10;xquota10;1447117817">
+
+<param name="liv1Curve" value="StairsCurve;0.0;0.0;Min;0.0;Scaglione;0.1;Max;1.0">
+
+
+<param name="xmax_giorni" value="max_giorni;max_giorni;non;-;ok; ; ; ; ; ; ; ">
+<param name="xQuota_eccedenza_ricchi" value="Quota_eccedenza_ricchi;Quota_eccedenza_ricchi;non;-;ok; ; ; ; ; ; ; ">
+<param name="xQuota_invalidi_ast" value="Quota_invalidi_ast;Quota_invalidi_ast;non;-;Quota_invalidi_ast; ; ; ; ; ;P.2; ">
+<param name="xqu11" value="qu11;Pasto a domicilio (di cui ^Quota_base^ non soggetti a tetto massimo |pasti3|;nonpastoDomicilio;Pasto a domicilio (di cui ^Quota_base^ non soggetti a tetto massimo |pasti3|;Pasto a domicilio (di cui ^Quota_base^ non soggetti a tetto massimo |pasti3|; ; ; ; ; ;$.2; / pasto">
+<param name="xquota6" value="quota6;Trasporto per accesso a strutture |feriale5|;nonTrasporto;Trasporto per accesso a strutture |feriale5|;Trasporto per accesso a strutture |feriale5|; ; ; ; ; ;$.2; / viaggio">
+<param name="xmax_ore2" value="max_ore2;max_ore2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmax_pasti1" value="max_pasti1;max_pasti1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xQuota_eccedenza_poveri" value="Quota_eccedenza_poveri;Quota_eccedenza_poveri;non;-;ok; ; ; ; ; ; ; ">
+<param name="xSup" value="Sup;Sup;Sup;Sup;Sup; ; ; ; ; ;T.3; ">
+<param name="xPI5_oner" value="PI5_oner;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso;non PI5_oner;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso;PI5_oner: Immobili ceduti negli ultimi 5 anno a titolo oneroso; ; ; ; ; ;$.2; ">
+<param name="xInvalidi_ast" value="Invalidi_ast;Invalidi_ast;non;-;ok; ; ; ; ; ; ; ">
+<param name="xC3_imp_ast" value="C3_imp_ast;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo zero;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito;C3: Redditi da impresa individuale o lavoro autonomo dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xC4_part_ast" value="C4_part_ast;C4: Redditi da partecipazioni in società dell'assistito ;C4: Reddito da partecipazioni in società zero;C4: Redditi da partecipazioni in società dell'assistito ;C4: Redditi da partecipazioni in società dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xQuota_base" value="Quota_base;Quota base;Quota base=0?;Quota base;Quota base; ; ; ; ; ;$.2; ">
+<param name="xInf" value="Inf;Inf;Inf;Inf;Inf; ; ; ; ; ;T.3; ">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+<param name="xqu12" value="qu12;Pasto presso struttura (di cui ^Quota_base^ non soggetti a tetto massimo |pasti3|;nonpastoStruttura;Pasto presso struttura (di cui ^Quota_base^ non soggetti a tetto massimo |pasti3|;Pasto presso struttura (di cui ^Quota_base^ non soggetti a tetto massimo |pasti3|; ; ; ; ; ;$.2; / pasto">
+<param name="xIcef" value="Icef; <b>(Icef)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare considerato (determinante tra ^Inf^ e ^Sup^);Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b> zero ;Indicatore della Condizione Economica Familiare ;Indicatore della Condizione Economica Familiare ; ; ; ; ;<b>;T.10;</b>">
+<param name="xquota3" value="quota3;Servizio pasti |pasti1|;nonServizio pasti;Servizio pasti |pasti1|;Servizio pasti |pasti1|; ; ; ; ; ;$.2; / pasto">
+<param name="xquota" value="quota;Importo della quota ( %perc% tra ^Min1^ e ^Max1^ );nessuna quota ;Importo della quota  ( %perc% tra ^Min1^ e ^Max1^ );Importo della quota  ( %perc% tra ^Min1^ e ^Max1^ ); ; ; ; ; ;$.2; ">
+<param name="xquota8" value="quota8;Presenza centro diurno per anziani |feriale3|;nonPresenza;Presenza centro diurno per anziani |feriale3|;Presenza centro diurno per anziani |feriale3|; ; ; ; ; ;$.2; / giorno">
+<param name="xquota2" value="quota2;Assistenza domiciliare integrata (cure palliative) |ore2| ;non quota2;Assistenza domiciliare integrata (cure palliative) |ore2| ;Assistenza domiciliare integrata (cure palliative) |ore2| ; ; ; ; ; ;$.2; / ora">
+<param name="xquota4" value="quota4;Consegna pasti |pasti2|;nonConsegna pasti;Consegna pasti |pasti2|;Consegna pasti |pasti2|; ; ; ; ; ;$.2; / pasto">
+<param name="xMin3" value="Min3;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMin" value="Min;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xquota5" value="quota5;Telesoccorso/telecontrollo |giorni|;nonTelesoccorso/telecontrollo;Telesoccorso/telecontrollo |giorni|;Telesoccorso/telecontrollo |giorni|; ; ; ; ; ;$.2; / giorno">
+<param name="xCheck" value="Check;Check;idoneo;Check;Domanda NON idonea; ; ; ; ;causa: ;T; ">
+<param name="xquota1" value="quota1;Aiuto domiciliare (SAD) / Assistenza domiciliare integrata (SAD in ADI) |ore1| ;nonAiuto domiciliare;Aiuto domiciliare (SAD) / Assistenza domiciliare integrata (SAD in ADI) |ore1| ;Aiuto domiciliare (SAD) / Assistenza domiciliare integrata (SAD in ADI) |ore1| ; ; ; ; ; ;$.2; / ora">
+<param name="xTetto_max_poveri" value="Tetto_max_poveri;Tetto_max_poveri;non;-;ok; ; ; ; ; ; ; ">
+<param name="xrif" value="rif;rif;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmax_ore1" value="max_ore1;max_ore1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xquota7" value="quota7;Doccia assistita c/o centro servizi |feriale1|;nonDoccia;Doccia assistita c/o centro servizi |feriale1|;Doccia assistita c/o centro servizi |feriale1|; ; ; ; ; ;$.2; / prestazione">
+<param name="xmax_pasti2" value="max_pasti2;max_pasti2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xquota9" value="quota9;Assenza centro diurno per anziani |feriale4|;nonAssenza;Assenza centro diurno per anziani |feriale4|;Assenza centro diurno per anziani |feriale4|; ; ; ; ; ;$.2; / giorno">
+<param name="xvf" value="vf;vf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmax_feriale" value="max_feriale;max_feriale;non;-;ok; ; ; ; ; ; ; ">
+<param name="xC2_agr_ast" value="C2_agr_ast;C2: Redditi da impresa agricola dell'assistito ;C2: Redditi da impresa agricola zero;C2: Redditi da impresa agricola dell'assistito;C2: Redditi da impresa agricola dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xMax5" value="Max5;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMax" value="Max;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMin6" value="Min6;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMax4" value="Max4;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMin5" value="Min5;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMax6" value="Max6;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMin8" value="Min8;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMax8" value="Max8;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMin7" value="Min7;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMax7" value="Max7;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMin1" value="Min1;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xModello_COMP" value="PAT COMPARTECIPAZIONE;PAT COMPARTECIPAZIONE;PAT  COMPARTECIPAZIONE 2017 - (11.3.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xMax1" value="Max1;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMax3" value="Max3;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMin4" value="Min4;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMin2" value="Min2;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMax2" value="Max2;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xMin14" value="Min14;Min14;0;-;1; ;-;+; ; ; ; ">
+<param name="xMax14" value="Max14;Max14;0;-;1; ;-;+; ; ; ; ">
+<param name="xMin12" value="Min12;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMax12" value="Max12;Max;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xinval" value="inval;inval;non;-;ok; ; ; ; ; ; ; ">
+<param name="xC1_dip_ast" value="C1_dip_ast;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati zero;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito ;C1(DIP): Redditi da lavoro dipendente e assimilati dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xquota14" value="quota14;Assistenza domiciliare - Assenza 80% ;non quota14;Assistenza domiciliare - Assenza 80% ;Assistenza domiciliare - Assenza 80%  ; ; ; ; ; ;$.2; / ora">
+<param name="xC1_aut_ast" value="C1_aut_ast;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito ;C1(ANP/DIV): Redditi da lavoro autonomo occasionale zero;C1(ANP/DIV): Redditi da lavoro autonomo occasionale e redditi diversi dell'assistito;C1(ANP/DIV): Redditi da lavoro autonomo occasionale dell'assistito massimali; ; ; ; ; -;$.2; ">
+<param name="xMax11" value="Max11;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xScaglione" value="Scaglione;Scaglione;Scaglione;Scaglione;Scaglione; ; ; ; ; ;$.2; ">
+<param name="xMin11" value="Min11;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMin9" value="Min9;Min;non;Min;Min; ; ; ; ; ;$.2; ">
+<param name="xMax9" value="Max9;Max;non;Max;Max; ; ; ; ; ;$.2; ">
+<param name="xRettaRSAnores" value="RettaRSAnores;Retta RS per il coniuge;non Retta RS per il coniuge;Retta RS per il coniuge;Retta RS per il coniuge; ; ; ; ; -;$.2; ">
+<param name="xCon_max" value="Con_max;Con_max;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPI5_grat" value="PI5_grat;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito;non PI5_grat;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito;PI5_grat: Immobili ceduti negli ultimi 5 anno a titolo gratuito; ; ; ; ; ;$.2; ">
+<param name="xf2" value="f2;f2;non;-;ok; ; ; ; ; ; ; ">
+<param name="xqu_ast" value="qu_ast;qu_ast;non;-;ok; ; ; ; ; ; ; ">
+<param name="xbig" value="big;big;non;-;ok; ; ; ; ; ; ; ">
+<param name="x6pasti" value="6pasti;6pasti;non;-;ok; ; ; ; ; ; ; ">
+<param name="xarl" value="arl;arl;arl;arl;arl; ; ; ; ; ; ; ">
+<param name="xtetto_annuo" value="tetto_annuo;Tetto massimo annuo;Tetto=0 ?;Tetto massimo annuo;Tetto massimo annuo; ; ; ; ;<b> ;$.2;</b>">
+<param name="xquota13" value="quota13;Bagno assistito c/o centro servizi |feriale2|;nonBagno;Bagno assistito c/o centro servizi |feriale2|;Bagno assistito c/o centro servizi |feriale2|; ; ; ; ; ;$.2; / prestazione">
+<param name="xmpi5" value="mpi5;mpi5;non mpi5;mpi5;mpi5; ; ; ; ; ;$.2; ">
+<param name="xquota10" value="quota10;Quota base;Quota base=0?;Quota base;Quota base; ; ; ; ; ;$.2; ">
+<param name="xpi5" value="pi5;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione;non pi5;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione;Valore degli immobili ceduti negli ultimi 5 anni preso in considerazione; ; ; ; ; ;$.2; ">
+<param name="xpasti3" value="pasti3;che copre ; ;che copre ;che copre ; ; ; ; ; ;T; pasti/settimana)">
+<param name="xferiale5" value="feriale5;feriale5; ; ;(il tetto massimo copre ; ; ; ; ; ;T; giorni/settimana)">
+<param name="xquota11" value="quota11;Pasto a domicilio (al netto di ^Quota_base^ non soggetti a tetto massimo);nonpastoDomicilio;Pasto a domicilio (al netto di ^Quota_base^ non soggetti a tetto massimo);Pasto a domicilio (al netto di ^Quota_base^ non soggetti a tetto massimo); ; ; ; ; ;$.2; / pasto">
+<param name="xquota12" value="quota12;Pasto presso struttura (al netto di ^Quota_base^ non soggetti a tetto massimo);nonpastoStruttura;Pasto presso struttura (al netto di ^Quota_base^ non soggetti a tetto massimo);Pasto presso struttura (al netto di ^Quota_base^ non soggetti a tetto massimo); ; ; ; ; ;$.2; / pasto">
+<param name="xf4" value="f4;f4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xferiale4" value="feriale4;feriale4; ; ;(il tetto massimo copre ; ; ; ; ; ;T; giorni/settimana)">
+<param name="xferiale3" value="feriale3;feriale3; ; ;(il tetto massimo copre ; ; ; ; ; ;T; giorni/settimana)">
+<param name="xf3" value="f3;f3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xferiale2" value="feriale2;feriale2; ; ;(il tetto massimo copre ; ; ; ; ; ;T; giorni/settimana)">
+<param name="xf1" value="f1;f1;non;-;ok; ; ; ; ; ; ; ">
+<param name="xf5" value="f5;f5;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpasti4" value="pasti4;che copre ; ;che copre ;che copre ; ; ; ; ; ;T; pasti/settimana)">
+<param name="xp4" value="p4;p4;non;-;ok; ; ; ; ; ; ; ">
+<param name="xferiale1" value="feriale1;feriale1; ; ;(il tetto massimo copre ; ; ; ; ; ;T; giorni/settimana)">
+<param name="xp3" value="p3;p3;non;-;ok; ; ; ; ; ; ; ">
+<param name="xresto" value="resto;resto;non;-;ok; ; ; ; ; ; ; ">
+<param name="xtetto_max" value="tetto_max;Tetto massimo mensile;Tetto=0 ?;Tetto massimo mensile;Tetto massimo mensile; ; ; ; ;<b> ;$.2;</b>">
+<param name="xo1" value="o1;o1;non;-;per un massimo di; ; ; ; ; ;T;ore/settimana">
+<param name="xp1" value="p1;p1;non;-;per un massimo di; ; ; ; ; ;T;pasti/settimana">
+<param name="xo2" value="o2;o2;non;-;per un massimo di; ; ; ; ; ;T;ore/settimana">
+<param name="ximporto" value="importo;importo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xoltreInf" value="oltreInf;oltreInf;non;-;ok; ; ; ; ; ; ; ">
+<param name="xicef" value="icef; <b>(Icef)</b> - <b>I</b>ndicatore della <b>C</b>ondizione <b>E</b>conomica <b>F</b>amiliare considerato (determinante tra ^Inf^ e ^Sup^);Indicatore della Condizione Economica Familiare <b>(Icef considerato)</b> zero ;Indicatore della Condizione Economica Familiare ;Indicatore della Condizione Economica Familiare ; ; ; ; ;<b>;T.10;</b>">
+<param name="xqdif" value="qdif;qdif;non;-;ok; ; ; ; ; ; ; ">
+<param name="xaliquota" value="aliquota;aliquota;non;-;ok; ; ; ; ; ; ; ">
+<param name="xinc" value="inc;inc;non;-;ok; ; ; ; ; ; ; ">
+<param name="xpasti2" value="pasti2;(il tetto massimo copre ; ;(il tetto massimo copre ;(il tetto massimo copre ; ; ; ; ; ;T; pasti/settimana)">
+<param name="xpasti1" value="pasti1;(il tetto massimo copre ; ;(il tetto massimo copre ;(il tetto massimo copre ; ; ; ; ; ;T; pasti/settimana)">
+<param name="xore2" value="ore2;ore2; ; ;(il tetto massimo copre ; ; ; ; ; ;T; ore/settimana)">
+<param name="xinvalidi" value="invalidi;invalidi;non;-;ok; ; ; ; ; ; ; ">
+<param name="xinv_ast" value="inv_ast;inv_ast;non;-;ok; ; ; ; ; ; ; ">
+<param name="xgiorni" value="giorni;giorni; ; ;(il tetto massimo copre ; ; ; ; ; ;T; giorni/settimana)">
+<param name="xp2" value="p2;p2;non;-;per un massimo di; ; ; ; ; ;T;pasti a domicilio/settimana">
+<param name="xqp" value="qp;Servizio pasti a domicilio |pasti2|;nonServizio pasti;Servizio pasti  a domicilio |pasti2|;Servizio pasti a domicilio |pasti2|; ; ; ; ; ;$.2; / pasto">
+<param name="xoltreMin" value="oltreMin;oltreMin;non;-;ok; ; ; ; ; ; ; ">
+<param name="xore1" value="ore1;ore1; ; ;(il tetto massimo copre ; ; ; ; ; ;T; ore/settimana)">
+<param name="xgg" value="gg;gg;non;-;per un massimo di; ; ; ; ; ;T;giorni/settimana">
+<param name="xperc" value="perc;perc;perc;perc;perc; ; ; ; ; ; ; ">
+<param name="xequ_icef" value="equ_icef;equ_icef;non;-;ok; ; ; ; ; ; ; ">
+<param name="xeccedente" value="eccedente;eccedente;non;-;ok; ; ; ; ; ; ; ">
+<param name="xr_ast" value="r_ast;Redditi dell'assistito (al 50%);nessun Reddito dell'assistito;Redditi dell'assistito (al 50%);Redditi dell'assistito (al 50%); ; ; ; ; ;$.2; ">
+
+
+
+<param name="xpltree" value="propagation0;propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;propagation7;propagation8;propagation9;propagation10;propagation11;propagation12;propagation13;propagation14;applicant0;dati;risultato;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;Check=Check">
+<param name="propagation1" value="(Con_max==1) ;max_ore1=40;max_ore2=40;max_pasti1=6;max_pasti2=6;max_giorni=7;max_feriale=5">
+<param name="propagation2" value="(Invalidi!=0) ;Invalidi=invalidi;inval=Invalidi">
+<param name="propagation3" value=" ;quota1=quota;Inf=Inf;Min=Min1;Max=Max1">
+<param name="propagation4" value=" ;quota2=quota;Inf=Inf;Min=Min2;Max=Max2">
+<param name="propagation5" value=" ;quota3=quota;Inf=Inf;Min=Min3;Max=Max3">
+<param name="propagation6" value=" ;quota4=quota;Inf=Inf;Min=Min4;Max=Max4">
+<param name="propagation7" value=" ;quota5=quota;Inf=Inf;Min=Min5;Max=Max5">
+<param name="propagation8" value=" ;quota6=quota;Inf=Inf;Min=Min6;Max=Max6">
+<param name="propagation9" value=" ;quota7=quota;Inf=Inf;Min=Min7;Max=Max7">
+<param name="propagation10" value=" ;quota8=quota;Inf=Inf;Min=Min8;Max=Max8">
+<param name="propagation11" value=" ;quota9=quota;Inf=Inf;Min=Min9;Max=Max9">
+<param name="propagation12" value=" ;qu11=quota;Inf=Inf;Min=Min11;Max=Max11">
+<param name="propagation13" value=" ;qu12=quota;Inf=Inf;Min=Min12;Max=Max12">
+<param name="propagation14" value=" ;quota14=quota;Inf=Inf;Min=Min14;Max=Max14">
+<param name="applicant0" value=" ;">
+<param name="dati" value="<b> Dati per la compartecipazione ai costi degli interventi a sostegno della domiciliarità: </b>;Check=-1!0;Icef=-1">
+<param name="risultato" value="<b> Risultato: </b>;tetto_max=-1;quota1=-1;quota2=-1;qu11=-1;qu12=-1;quota5=-1;quota7=-1;quota13=-1;quota8=-1;quota9=-1;quota6=-1;quota14=-1">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3462411593">
+<param name="CRC" value="1656559618">
+<param name="CRCdata" value="11-mar-2019 15.28.42">
+</APPLET>
+<BR>

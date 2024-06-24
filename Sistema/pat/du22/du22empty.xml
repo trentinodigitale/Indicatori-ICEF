@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head><body>]]>
+	</header>
+	<values>
+	</values>
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>
+	<netVersion><![CDATA[]]></netVersion>
+	<footer>
+		<![CDATA[</body></html>]]>		
+	</footer>
+
+</Doc>

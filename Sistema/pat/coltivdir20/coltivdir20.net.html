@@ -1,0 +1,100 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=700 HEIGHT=500 MAYSCRIPT>
+	<param name="revision" value="$Revision: 35905 $;   28.5.2019">
+	<param name="Taratura" value="APAPI Coltivatori diretti">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";"> 
+	<param name="mode" value="Author">
+	<param name="debug" value="false">
+	<param name="language" value="0">
+
+	<param name="trendStarts" value="caso">
+	<param name="caso"
+		value="zero;Percentuale=0.5;Contributo_calcolato_apapi=100;Contributo_calcolato_arretrato=300;Contributo_calcolato_corrente=400;Contributo_versato=695;Tolleranza=10">
+
+
+	<param name="variables" value="cscala">
+
+	<param name="cscala" value="0.0001">
+
+
+
+
+
+
+
+
+<param name="edges" value="COLTIVATORI;
+Contributo_calcolato_corrente-somma;Contributo_calcolato_arretrato-somma;somma-difp;Contributo_versato-difp;dif-idoneo;somma-contr;idoneo-contr;Contributo_versato-difn;somma-difn;difp-dif;difn-dif;Tolleranza-idoneo;idoneo-nonidoneo;nonidoneo-contributo_apapi;Valutato_apapi-contributo_apapi;Check-checkOK;checkOK-idon;idoneo-idon;Contributo_calcolato_apapi-contributo_apapi;Valutato_apapi-contrib;contributo_apapi-contrib;
+contr-contrib;checkOK-contributo;contrib-contributo;nonidoneo-ni_nv;Valutato_apapi-ni_nv;checkOK-ni_nv;Percentuale-contr">
+
+
+
+<param name="COLTIVATORI" value="text;node.ico;322;41;0;COLTIVATORI (28.5.2019);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello;yModello;2578926100">
+<param name="Contributo_calcolato_corrente" value="1;node.ico;142;77;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;somma;cscala;NoCurve;xContributo_calcolato_corrente;xContributo_calcolato_corrente;1536524587">
+<param name="somma" value="0;node.ico;310;120;0;-;0.0;PlusNode;NoInput;NoOutput;2;Contributo_calcolato_corrente;Contributo_calcolato_arretrato;3;difp;contr;difn;cscala;1.0;1.0;1.0;NoCurve;xsomma;xsomma;3608122746">
+<param name="Contributo_calcolato_arretrato" value="1;node.ico;140;177;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;somma;cscala;NoCurve;xContributo_calcolato_arretrato;xContributo_calcolato_arretrato;1735897353">
+<param name="difp" value="0;node.ico;285;235;0;-;0.0;MinusNode;NoInput;NoOutput;2;somma;Contributo_versato;1;dif;cscala;1.0;1.0;1.0;NoCurve;xdifp;xdifp;3613376559">
+<param name="Contributo_versato" value="1;node.ico;119;225;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;difp;difn;cscala;NoCurve;xContributo_versato;xContributo_versato;1435345133">
+<param name="dif" value="0;node.ico;412;223;0;-;0.0;PlusNode;NoInput;NoOutput;2;difp;difn;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xdif;xdif;2294608342">
+<param name="idoneo" value="2;node.ico;502;223;0;-;0.0;NumLeNode;NoInput;ResultOutput;2;dif;Tolleranza;3;contr;nonidoneo;idon;1.0;1.0;1.0;1.0;NoCurve;xidoneo;xidoneo;29425438">
+<param name="contr" value="0;node.ico;502;120;0;-;0.0;TimesNode;NoInput;ResultOutput;3;somma;idoneo;Percentuale;1;contrib;cscala;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xcontr;xcontr;1348166837">
+<param name="difn" value="0;node.ico;319;213;0;-;0.0;MinusNode;NoInput;NoOutput;2;Contributo_versato;somma;1;dif;1.0;1.0;1.0;1.0;NoCurve;xdifn;xdifn;456090104">
+<param name="Tolleranza" value="1;node.ico;639;223;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;idoneo;cscala;NoCurve;xTolleranza;xTolleranza;3133271054">
+<param name="nonidoneo" value="0;node.ico;606;166;0;-;0.0;ProbNode;NoInput;NoOutput;1;idoneo;2;contributo_apapi;ni_nv;1.0;0.0;NoCurve;xnonidoneo;xnonidoneo;2699206555">
+<param name="contributo_apapi" value="0;node.ico;606;84;0;-;0.0;TimesNode;NoInput;NoOutput;3;nonidoneo;Valutato_apapi;Contributo_calcolato_apapi;1;contrib;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcontributo_apapi;xcontributo_apapi;2608431686">
+<param name="Valutato_apapi" value="1;node.ico;468;45;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;contributo_apapi;contrib;ni_nv;0.5;NoCurve;xValutato_apapi;xValutato_apapi;3985461050">
+<param name="Check" value="1;node.ico;343;81;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;checkOK;1.0;NoCurve;xCheck;xCheck;2533560722">
+<param name="checkOK" value="0;node.ico;422;165;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;3;idon;contributo;ni_nv;1.0;0.0;NoCurve;xcheckOK;xcheckOK;3391511246">
+<param name="idon" value="0;node.ico;424;198;0;-;0.0;ProbNode;NoInput;NoOutput;2;checkOK;idoneo;0;0.0;0.0;0.0;1.0;NoCurve;xidon;xidon;2396928906">
+<param name="Contributo_calcolato_apapi" value="1;node.ico;606;46;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;contributo_apapi;1.0;NoCurve;xContributo_calcolato_apapi;xContributo_calcolato_apapi;2449742933">
+<param name="contrib" value="0;node.ico;503;83;0;-;0.0;NumIfNode;NoInput;NoOutput;3;Valutato_apapi;contributo_apapi;contr;1;contributo;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xcontrib;xcontrib;162760407">
+<param name="contributo" value="2;node.ico;421;83;0;-;0.0;TimesNode;NoInput;NoOutput;2;checkOK;contrib;0;1.0;1.0;1.0;1.0;NoCurve;xcontributo;xcontributo;1990418908">
+<param name="ni_nv" value="0;node.ico;585;110;0;-;0.0;ProbNode;NoInput;NoOutput;3;nonidoneo;Valutato_apapi;checkOK;0;0.0;0.0;0.0;0.0;0.0;1.0;0.0;0.0;NoCurve;xni_nv;xni_nv;3264816884">
+<param name="Percentuale" value="1;node.ico;206;28;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;contr;1.0;NoCurve;xPercentuale;xPercentuale;3202810720">
+
+
+
+<param name="xValutato_apapi" value="Valutato_apapi;Valutato_apapi;Valutato_apapi;Valutato_apapi;Valutato_apapi; ; ; ; ; ; ; ">
+<param name="xTolleranza" value="Tolleranza;Tolleranza;Tolleranza;Tolleranza;Tolleranza; ; ; ; ; ;$.2; ">
+<param name="xCheck" value="Check;Check;ok;Check;escluso per mancanza di requisiti; ; ; ; ; ; ; ">
+<param name="xPercentuale" value="Percentuale;Percentuale di contribuzione previdenziale;Percentuale di contribuzione previdenziale;Percentuale di contribuzione previdenziale;Percentuale di contribuzione previdenziale; ; ; ; ; ;$.2; ">
+<param name="xContributo_calcolato_apapi" value="Contributo_calcolato_apapi;Contributo calcolato APAPI;Contributo APAPI zero;Contributo calcolato APAPI;Contributo calcolato APAPI; ; ; ; ; ;$.2; ">
+<param name="xContributo_versato" value="Contributo_versato;Contributo versato;Nessun contributo versato;Contributo versato;Contributo versato; ; ; ; ; ;$.2; ">
+<param name="xContributo_calcolato_arretrato" value="Contributo_calcolato_arretrato;Contributo calcolato arretrato;Nessun contributo calcolato arretrato;Contributo calcolato arretrato;Contributo calcolato arretrato; ; ; ; ; ;$.2; ">
+<param name="xContributo_calcolato_corrente" value="Contributo_calcolato_corrente;Contributo calcolato corrente;Nessun contributo calcolato corrente;Contributo calcolato corrente;Contributo calcolato corrente; ; ; ; ; ;$.2; ">
+<param name="xModello" value="COLTIVATORI;COLTIVATORI;COLTIVATORI (28.5.2019);--;--; ; ; ; ; ; ; ">
+
+<param name="xnonidoneo" value="nonidoneo;nonidoneo;nonidoneo;nonidoneo;nonidoneo; ; ; ; ; ; ; ">
+<param name="xcheckOK" value="checkOK;checkOK;checkOK;checkOK;checkOK; ; ; ; ; ; ; ">
+<param name="xidoneo" value="idoneo;x;Il contributo versato si scosta di più di ^Tolleranza^ Euro dai contributi dovuti!;idoneo;idonea; ; ; ; ; ;T; ">
+<param name="xidon" value="idon;x;domanda non idonea;idon;domanda idonea; ; ; ; ; ;T; ">
+<param name="xdif" value="dif;scostamento tra contributi versati e dovuti;versato ok;scostamento tra contributi versati e dovuti;scostamento tra contributi versati e dovuti; ; ; ; ; ;$.2; ">
+<param name="xcontributo" value="contributo;contr;Nessun contributo;Contributo;Contributo; ; ; ; ;<b> ;$.2;</b>">
+<param name="xdifn" value="difn;differenza tra contributi versati e dovuti;versato ok;differenza tra contributi versati e dovuti;differenza tra contributi versati e dovuti; ; ; ; ; ;$.2; ">
+<param name="xdifp" value="difp;differenza tra contributi dovuti e versati;versato ok;differenza tra contributi dovuti e versati;differenza tra contributi dovuti e versati; ; ; ; ; ;$.2; ">
+<param name="xsomma" value="somma;somma;somma=0;somma;somma; ; ; ; ; ;$.2; ">
+<param name="xni_nv" value="ni_nv;ni_nv;ni_nv;ni_nv;ni_nv; ; ; ; ; ; ; ">
+<param name="xcontributo_apapi" value="contributo_apapi;Il Contributo APAPI;nessun Contributo APAPI;Il Contributo APAPI;Il Contributo APAPI; ; ; ; ; ;$.2; ">
+<param name="xcontr" value="contr;contr;nessun contributo;contributo;contributo; ; ; ; ;<b> ;$.2;</b>">
+<param name="xcontrib" value="contrib;contr;nessun contributo;contributo;contributo; ; ; ; ;<b> ;$.2;</b>">
+
+
+
+<param name="xpltree" value="dati;risultato0;risultato1;risultato2;risultato3">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="dati" value="(ni_nv==0) ;Percentuale=-1;Contributo_calcolato_corrente=-1;Contributo_calcolato_arretrato=-1;Contributo_versato=-1">
+<param name="risultato0" value="(checkOK==0)Domanda <b>ESCLUSA</b> d'ufficio per mancanza dei requisiti necessari ;">
+<param name="risultato1" value="(ni_nv==1)Domanda <b>DA VERIFICARE DA PARTE DELL'AGENZIA</b> ;idoneo=2">
+<param name="risultato2" value="(Valutato_apapi==1)Domanda valutata dall'Agenzia Provinciale per l'assistenza e la previdenza integrativa ;contributo=-1">
+<param name="risultato3" value="(idon==1)Domanda <b>IDONEA</b> ;contributo=-1">
+
+<param name="varCRC" value="1473008499">
+<param name="CRC" value="2830415478">
+<param name="CRCdata" value="28-mag-2019 17.54.44">
+</APPLET>
+<BR>

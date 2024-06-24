@@ -1,0 +1,84 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=700 HEIGHT=600 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.10 $">
+
+<param name="Taratura" value="ITEA accesso; 27.7.2007">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriITEA;unpoditutto1;casoITEA">
+
+ <param name="parametriITEA" value="current;RIF=50000;FAR=0;FP=9999999;FPM=0;FPI=0;LS=9999999;LSR=0;LSM=0;LSI=0;AL1=1.0;AL2=1.0;LDC=3615.2">
+ <param name="unpoditutto1" value="parametriITEA;N_componenti=5;Monogenitore=1;Lavoratori=1;N_invalidi_66=1;Assegni=500;C1_aut=1000;C1_dip=2000;C1_pens=1000;C2_agr=1000;C3_imp=3000;C4_part=2000;C5_altri=1000;Canone=4000;Imposte=3000;Mediche=500;Previdenza=1000;PI=7000;PI_50=12000;PM=27000">
+ <param name="casoITEA" value="parametriITEA,parametriICEFa,parametriICEFv,parametriICEFc,unpoditutto1,unpoditutto0;Dettagli=1">
+
+<param name="nets" value="ITEAvc07.sub0.net.html;../icef/m.icef07.net.html;ITEAa07.sub.net.html;ITEAvc07.sub.net.html">
+
+<param name="connections" value="ICEF-Icef;AL1-cpi_50;LSI-cpi_50;AL2-cpi_50;p_i_50-p_i">
+
+<param name="xCanone" value="Canone;D(CNL): Canone di locazione annuo (non deducibile per verifica e canone) ;D(CNL): Canone di locazione annuo zero;D(CNL): Canone di locazione annuo;D(CNL): Canone di locazione annuo massimale; ; ; ; ;- ;$.2; ">
+<param name="xMutuo" value="Mutuo;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale (non deducibile per verifica e canone);D(IMR): nessun mutuo per l'abitazione principale;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale;Il mutuo per la casa di residenza;è di; ; ; ;- ;$.2; ">
+<param name="xPI" value="PI;Valore ICI degli immobili con quote oltre 50%;non esistono rilevanti beni immobiliari di proprietà;Valore ICI degli immobili con quote oltre 50%;Valore ICI degli immobili con quote oltre 50% massimale;è di; ; ; ; ;$.2; ">
+<param name="entrate" value="<p><b>Dati per la determinazione dell'ICEF per l'anno corrente</b>;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C2_agr=-1!0;C3_imp=-1!0;C4_part=-1!0;C5_altri=-1!0">
+<param name="patrimoni" value="(patrimonio!=0);p_r=-1!0;PI_50=-1!0;p_i_50=-1!0;PI=-1!0;p_i=-1!0;p_m=-1!0">
+<param name="xp_i" value="p_i;Valore totale degli immobili;non esistono rilevanti beni immobiliari di proprietà;Valore totale degli immobili;Valore totale degli immobili massimale;è di; ; ; ; ;$.2; ">
+<param name="ris1" value="<P><B>Il risultato del calcolo:</B>;RF=-1;patrimonio=-1!0;PF=-1;ICEF=-1;C_RIF_ICEF=-1">
+
+<param name="footer" value=" ;">
+
+
+<param name="edges" value="P.A.T. MODELLO ITEA accesso;p_i_0;pi0_50;
+pi_50-cpi_50;fpi_50-cpi_50;cpi_50-p_i_50">
+
+
+
+<param name="P.A.T. MODELLO ITEA accesso" value="text;node.ico;90;261;0;Versione 27.7.2007;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloAccesso;xModelloAccesso;828436759">
+<param name="pi0_50" value="0;node.ico;349;307;0;Valutazione oltre la franchigia degli immobili con quote fino a 50% - anno precedente  0,50 ;0.0;TimesNode;TokenInput;NoOutput;0;0;rscala;NoCurve;xpi0_50;ypi0_50;1773540107">
+<param name="pi_50" value="0;node.ico;658;213;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;cpi_50;rscala;NoCurve;xpi_50;ypi_50;1328778946">
+<param name="cpi_50" value="0;node.ico;646;272;0;-;0.0;FranchigiaNode;NoInput;NoOutput;2;pi_50;fpi_50;1;p_i_50;pscala;1.0;1.0;1.0;NoCurve;xcpi_50;ycpi_50;161219825">
+<param name="fpi_50" value="0;node.ico;625;241;0;-;0.0;TimesNode;NoInput;NoOutput;0;1;cpi_50;rscala;NoCurve;xfpi_50;yfpi_50;1871035715">
+<param name="p_i_50" value="0;node.ico;349;287;0;-;0.0;TimesNode;NoInput;NoOutput;1;cpi_50;0;rscala;1.0;NoCurve;xp_i_50;yp_i_50;900774564">
+
+<param name="p_i_0" value="0;node.ico;349;327;0;Valore totale degli immobili - anno precedente  0,50 ;0.0;TimesNode;NoInput;NoOutput;0;0;rscala;NoCurve;xp_i_0;yp_i_0;47023707">
+
+
+<param name="xpi_50" value="pi_50;pi_50;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xfpi_50" value="fpi_50;fpi_50;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xModelloAccesso" value="P.A.T. MODELLO ITEA accesso;x;Versione 27.7.2007; ; ; ; ; ; ; ; ; ">
+
+<param name="xpi0_50" value="pi0_50;Valutazione oltre la franchigia degli immobili con quote fino a 50% - anno precedente;Valutazione oltre la franchigia degli immobili con quote fino a 50%  - anno precedente - zero;Valutazione oltre la franchigia degli immobili con quote fino a 50% - anno precedente;Valutazione oltre la franchigia degli immobili con quote fino a 50%  - anno precedente - massimale;è di; ; ; ; ;$.2; ">
+
+<param name="xp_i_0" value="p_i_0;Valore totale degli immobili - anno precedente;non esistono rilevanti beni immobiliari di proprietà;Valore totale degli immobili - anno precedente;Valore totale degli immobili - anno precedente;è di; ; ; ; ;$.2; ">
+
+<param name="xp_i_50" value="p_i_50;Valutazione oltre la franchigia degli immobili con quote fino a 50%;Valutazione oltre la franchigia degli immobili con quote fino a 50% zero;Valutazione oltre la franchigia degli immobili con quote fino a 50%;Valutazione oltre la franchigia degli immobili con quote fino a 50% massimale;è di; ; ; ; ;$.2; ">
+
+<param name="xcpi_50" value="cpi_50;cpi_50;0;-;1; ;-;+; ; ; ; ">
+
+
+<param name="xpltree" value="propagation0;propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;asXml;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;Assegni=Assegni0;C1_aut=C1_aut0;C1_dip=C1_dip0;C1_pens=C1_pens0;C2_agr=C2_agr0;C3_imp=C3_imp0;C4_part=C4_part0;C5_altri=C5_altri0;Canone=Canone0;Imposte=Imposte0;Lavoratori=Lavoratori0;Mediche=Mediche0;Monogenitore=Monogenitore0;Mutuo=Mutuo0;N_componenti=N_componenti0;N_invalidi_66=N_invalidi_660;N_invalidi_75=N_invalidi_750;P_complementare=P_complementare0;Previdenza=Previdenza0;PI=PI0;PM=PM0;fpi_50=FPIa;pi_50=PI0_50">
+<param name="propagation1" value=" ;icef0=Icef;pi0_50=p_i_50;p_i_0=p_i;ICEF0=ICEF;CPM0=CPM;CPI0=CPI;RF0=RF;PF0=PF">
+<param name="propagation2" value=" ;Assegni;C1_aut;C1_dip;C1_pens;C2_agr;C3_imp;C4_part;C5_altri;Canone;Imposte;Lavoratori;Mediche;Monogenitore;Mutuo;N_componenti;N_invalidi_66;N_invalidi_75;P_complementare;Previdenza;PI;PM;pi_50=PI_50">
+<param name="propagation3" value=" ;verifica=Icef;vpfv=vpf;CPMv=CPM;CPIv=CPI;LDC=LDCv;FPM=FPMv;fpi_50=FPIv">
+<param name="propagation4" value=" ;LDC;FPM">
+<param name="propagation5" value=" ;contributo=Icef;vpfc=vpf;CPMc=CPM;CPIc=CPI;LDC=LDCc;FPM=FPMc;fpi_50=FPIc">
+<param name="propagation6" value=" ;LDC;FPM;fpi_50=FPIa">
+<param name="asXml" value="(Xml==1);">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3228728579">
+<param name="CRC" value="2604965364">
+<param name="CRCdata" value="27-lug-2007 17.43.33">
+</APPLET>
+<BR>

@@ -1,0 +1,131 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius"	WIDTH="600" HEIGHT="500" MAYSCRIPT>
+	<param name="revision" value="$Revision: 33313 $">
+	<param name="Taratura" value="Assegno Maternità 2015-; 17.10.2017">
+	<param name="Font" value="Dialog">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="false">
+
+	<param name="nets" value="../../ISEE159/usa_isee.sub.net.html">
+
+<param name="trendStarts" value="parametriAssegno;casoAssegno">
+<param name="parametriAssegno" value="zero;Chiede_maternita=1;Mensile_maternita=334.53;Soglia=16737">
+<param name="casoAssegno" value="parametriAssegno;ISEE=3000;ISE=7980;Precedente=1800;VSE=2.66;Figli=1;Mesi=6;Altra_pensione_INPS=1000">
+
+	<param name="trends" value="">
+
+	<param name="variables" value="ascala;bscala;cscala;big">
+
+	<param name="ascala" value="0.000001">
+	<param name="bscala" value="0.0001">
+	<param name="cscala" value="0.00000099994">
+	<param name="big" value="99999999">
+
+
+
+<param name="edges" value="AssegnoMat;Iban_crc;
+Check-checkOK;isee-matOK;Chiede_maternita-mensile;Mensile_maternita-mensile;mensile-totale;matOK-mensile;checkOK-mensile;Figli-mensile;Mesi-totale;Soglia-matOK;totale-complessivo;Altra_pensione_INPS-complessivo;ISEE-isee;Precedente-prec;VSE-prec;ISEE-ise_;VSE-ise_;prec-isee;ISE-ISEeqise_;ise_-ISEeqise_;Check-C_base;
+checkOK-C_base;matOK-matNo;matNo-checkcalc;totale-gt0;complessivo-eq0;gt0-compNo;eq0-compNo;compNo-checkcalc;C_base-checkout;checkcalc-checkout;checkOK-ch;checkcalc-ch;checkout-non0;Sospesa_in-sospesa;non0-sospesa">
+
+
+
+<param name="AssegnoMat" value="text;node.ico;349;22;0;Modello Assegno Maternità (17.10.2017);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloAssegno;yAssegno;830882257">
+<param name="Iban_crc" value="1;node.ico;54;200;0;Iban_crc = ;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xIban_crc;xIban_crc;1516526076">
+<param name="Check" value="1;node.ico;112;135;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;2;checkOK;C_base;1.0;NoCurve;xCheck;xCheck;2203372381">
+<param name="checkOK" value="0;node.ico;199;137;0;checkOK = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;3;mensile;C_base;ch;1.0;0.0;NoCurve;xcheckOK;xcheckOK;485696791">
+<param name="isee" value="0;node.ico;324;78;0;isee =  ISEE - prec;0.0;MinusNode;NoInput;NoOutput;2;ISEE;prec;1;matOK;0.0;1.0;1.0;1.0;NoCurve;xisee;xisee;1824964456">
+<param name="matOK" value="0;node.ico;343;109;0;matOK = isee <= Soglia;0.0;NumLeNode;NoInput;NoOutput;2;isee;Soglia;2;mensile;matNo;1.0;1.0;1.0;1.0;NoCurve;xmatOK;xmatOK;3778007000">
+<param name="Chiede_maternita" value="1;node.ico;513;123;0;Chiede_maternita = ;0.0;ProbNode;ValueInput;NoOutput;0;1;mensile;0.5;NoCurve;xChiede_maternita;xChiede_maternita;1559851534">
+<param name="mensile" value="2;node.ico;345;160;0;mensile =  Chiede_maternita * Mensile_maternita * matOK * checkOK * Figli;0.0;TimesNode;NoInput;NoOutput;5;Chiede_maternita;Mensile_maternita;matOK;checkOK;Figli;1;totale;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xmensile;xmensile;1565790151">
+<param name="Mensile_maternita" value="1;node.ico;517;153;0;Mensile_maternita = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mensile;ascala;NoCurve;xMensile_maternita;xMensile_maternita;2864533362">
+<param name="totale" value="0;node.ico;347;189;0;totale =  mensile * Mesi;0.0;TimesNode;NoInput;IntermediateOutput;2;mensile;Mesi;2;complessivo;gt0;ascala;1.0;1.0;1.0;NoCurve;xtotale;xtotale;1027544997">
+<param name="Figli" value="1;node.ico;426;122;0;Figli = ;0.0;PlusNode;ValueInput;NoOutput;0;1;mensile;1.0;NoCurve;xFigli;xFigli;3779469476">
+<param name="Mesi" value="1;node.ico;447;189;0;Mesi = ;0.0;PlusNode;ValueInput;NoOutput;0;1;totale;1.0;NoCurve;xMesi;xMesi;834800571">
+<param name="Soglia" value="1;node.ico;417;48;0;Soglia = ;0.0;PlusNode;ValueInput;NoOutput;0;1;matOK;ascala;NoCurve;xSoglia;xSoglia;2989073736">
+<param name="complessivo" value="2;node.ico;347;220;0;complessivo =  totale - Altra_pensione_INPS;0.0;MinusNode;NoInput;NoOutput;2;totale;Altra_pensione_INPS;1;eq0;ascala;1.0;1.0;1.0;NoCurve;xcomplessivo;xcomplessivo;2566653132">
+<param name="Altra_pensione_INPS" value="1;node.ico;481;220;0;Altra_pensione_INPS = ;0.0;PlusNode;ValueInput;NoOutput;0;1;complessivo;ascala;NoCurve;xAltra_pensione_INPS;xAltra_pensione_INPS;3837366358">
+<param name="ISEE" value="1;node.ico;315;44;0;ISEE = ;0.0;PlusNode;ValueInput;NoOutput;0;2;isee;ise_;ascala;NoCurve;xISEE;xISEE;2455762061">
+<param name="Precedente" value="1;node.ico;256;44;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;1;prec;bscala;NoCurve;xPrecedente;xPrecedente;2618806264">
+<param name="prec" value="0;node.ico;253;76;0;prec =  Precedente / VSE;0.0;DivideNode;NoInput;NoOutput;2;Precedente;VSE;1;isee;bscala;1.0;1.0;1.0;NoCurve;xprec;xprec;3323233508">
+<param name="VSE" value="1;node.ico;360;45;0;VSE = ;0.0;PlusNode;ValueInput;NoOutput;0;2;prec;ise_;0.0;NoCurve;xVSE;xVSE;144980243">
+<param name="ise_" value="0;node.ico;262;109;0;ise_ =  ISEE * VSE;0.0;TimesNode;NoInput;NoOutput;2;ISEE;VSE;1;ISEeqise_;ascala;1.0;1.0;1.0;NoCurve;xise_;xise_;3287570273">
+<param name="ISE" value="1;node.ico;102;83;0;ISE = ;0.0;PlusNode;ValueInput;NoOutput;0;1;ISEeqise_;ascala;NoCurve;xISE;xISE;457361302">
+<param name="ISEeqise_" value="0;node.ico;102;109;0;ISEeqise_ = ISE == ise_;0.0;NumEqNode;NoInput;NoOutput;2;ISE;ise_;0;1.0;1.0;1.0;1.0;NoCurve;xISEeqise_;xISEeqise_;3056671032">
+<param name="C_base" value="0;node.ico;113;171;0;C_base = SE( checkOK=0.0 , 1.0 * Check , 1000000.0 );0.0;NumIfNode;NoInput;NoOutput;2;checkOK;Check;1;checkout;1.0;0.0;1.0;1000000.0;NoCurve;xC_base;xC_base;728266040">
+<param name="matNo" value="0;node.ico;241;158;0;matNo =  - matOK;0.0;ProbNode;NoInput;NoOutput;1;matOK;1;checkcalc;1.0;0.0;NoCurve;xmatNo;xmatNo;2765671886">
+<param name="checkcalc" value="0;node.ico;158;201;0;checkcalc =  100000.000*matNo + 20000.000*compNo;0.0;PlusNode;NoInput;ResultOutput;2;matNo;compNo;2;checkout;ch;1.0;100000.0;20000.0;1.0;NoCurve;xcheckcalc;xcheckcalc;1290487419">
+<param name="gt0" value="0;node.ico;283;189;0;gt0 = totale > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;totale;1;compNo;1.0;0.0;NoCurve;xgt0;xgt0;2587664819">
+<param name="eq0" value="0;node.ico;283;218;0;eq0 = complessivo == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;complessivo;1;compNo;1.0;0.0;NoCurve;xeq0;xeq0;1602538492">
+<param name="compNo" value="0;node.ico;232;200;0;compNo =  gt0 * eq0;0.0;ProbNode;NoInput;NoOutput;2;gt0;eq0;1;checkcalc;0.0;0.0;0.0;1.0;NoCurve;xcompNo;xcompNo;1399344398">
+<param name="checkout" value="2;node.ico;56;255;0;checkout =  C_base + checkcalc;0.0;PlusNode;NoInput;NoOutput;2;C_base;checkcalc;1;non0;1.0;1.0;1.0;1.0;NoCurve;xcheckout;xcheckout;2729797303">
+<param name="ch" value="0;node.ico;174;168;0;ch =  - checkOK checkOK * checkcalc;0.0;ProbNode;NoInput;NoOutput;2;checkOK;checkcalc;0;1.0;0.0;1.0;1.0;NoCurve;xch;xch;3840369886">
+<param name="non0" value="0;node.ico;127;257;0;non0 = checkout > 1000000.0;0.0;NumGtNode;NoInput;NoOutput;1;checkout;1;sospesa;1.0;1000000.0;NoCurve;xnon0;xnon0;1983074935">
+<param name="Sospesa_in" value="1;node.ico;155;230;0;Sospesa_in = ;0.0;ProbNode;ValueInput;NoOutput;0;1;sospesa;0.5;NoCurve;xSospesa_in;xSospesa_in;2085275536">
+<param name="sospesa" value="2;node.ico;195;259;0;sospesa =  Sospesa_in - Sospesa_in * non0;0.0;ProbNode;NoInput;IntermediateOutput;2;Sospesa_in;non0;0;0.0;1.0;0.0;0.0;NoCurve;xsospesa;xsospesa;2939215476">
+
+
+
+<param name="xSoglia" value="Soglia;Soglia;Soglia;Soglia;Soglia; ; ; ; ; ;$.2; ">
+<param name="xAltra_pensione_INPS" value="Altra_pensione_INPS;Altra prestazione analoga;nessun altra prestazione;Altra prestazione analoga;Altra prestazione analoga; ; ; ; ; ;$.2; ">
+<param name="xFigli" value="Figli;Figli;nessun figlio ?;Figli;Figli; ; ; ; ; ;T; ">
+<param name="xMesi" value="Mesi;Mesi richiesti;mesi=0?;Mesi richiesti;Mesi richiesti; ; ; ; ; ;T; ">
+<param name="xISEE" value="ISEE;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE = 0;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE;ISEE - INDICATORE della SITUAZIONE ECONOMICA EQUIVALENTE; ; ; ; ; ;$.2; ">
+<param name="xISE" value="ISE;ISE - INDICATORE della SITUAZIONE ECONOMICA;ISE - INDICATORE della SITUAZIONE ECONOMICA = 0;ISE - INDICATORE della SITUAZIONE ECONOMICA;ISE - INDICATORE della SITUAZIONE ECONOMICA=max; = ; ; ; ; ;$.2; ">
+<param name="xSospesa_in" value="Sospesa_in;Sospesa_in;non;-;ok; ; ; ; ; ; ; ">
+<param name="xPrecedente" value="Precedente;Assegno precedente;non Assegno precedente;Assegno precedente;Assegno precedente; ; ; ; ; -;$.2; ">
+<param name="xVSE" value="VSE;VSE - Valore della Scala di Equivalenza;VSE=0 ?;VSE - Valore della Scala di Equivalenza;VSE - Valore della Scala di Equivalenza; ; ; ; ; ;T.2; ">
+<param name="xCheck" value="Check;Check;ok;-;non ok; ; ; ; ; ; ; ">
+<param name="xIban_crc" value="Iban_crc;Iban_crc;non;-;ok; ; ; ; ; ;T; ">
+<param name="xModelloAssegno" value="AssegnoMat;x;Modello Assegno Maternità (17.10.2017); ;  ; ; ; ; ; ; ; ">
+
+<param name="xChiede_maternita" value="Chiede_maternita;Chiede_maternita;assegno di maternità non chiesto;Chiede_maternita;Chiede_maternita; ; ; ; ; ; ; ">
+<param name="xMensile_maternita" value="Mensile_maternita;Assegno mensile di maternità;Mensile_maternita=0 ?;Assegno mensile di maternità;Assegno mensile di maternità; ; ; ; ; ;$.2; ">
+<param name="xcheckOK" value="checkOK;checkOK;domanda oltre termini;-;ok; ; ; ; ; ; ; ">
+<param name="xeq0" value="eq0;eq0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xmatNo" value="matNo;matNo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xgt0" value="gt0;gt0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xnon0" value="non0;non0;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcompNo" value="compNo;compNo;non;-;ok; ; ; ; ; ; ; ">
+<param name="xtotale" value="totale;Assegno calcolato (per i ^Mesi^ mesi richiesti);nessun assegno;Assegno calcolato (per i ^Mesi^ mesi richiesti);Assegno calcolato (per i ^Mesi^ mesi richiesti); ; ; ; ; ;$.2; ">
+<param name="xsospesa" value="sospesa;sospesa;non sospesa;-;<b>Domanda sospesa</b>; ; ; ; ; ;T; ">
+<param name="xcheckout" value="checkout;checkout;non;-;ok; ; ; ; ; ; ; ">
+<param name="xch" value="ch;ch;non;-;ok; ; ; ; ; ; ; ">
+<param name="xcheckcalc" value="checkcalc;checkcalc;non;-;ok; ; ; ; ; ; ; ">
+<param name="xprec" value="prec;prec;non;-;ok; ; ; ; ; ; ; ">
+<param name="xisee" value="isee;ISEE - precedente;ISEE - precedente = 0;ISEE - precedente;ISEE - precedente=max; = ; ; ; ; ;$.2; ">
+<param name="xmatOK" value="matOK;matOK;condizione economica oltre il limite;matOK;matOK; ; ; ; ; ;T; ">
+<param name="xcomplessivo" value="complessivo;Assegno di maternità complessivo (= ^totale^ - ^Altra_pensione_INPS^);nessun assegno  (= ^totale^ - ^Altra_pensione_INPS^);Assegno di maternità complessivo (= ^totale^ - ^Altra_pensione_INPS^);Assegno di maternità complessivo (= ^totale^ - ^Altra_pensione_INPS^); ; ; ; ; ;$.2; ">
+<param name="xC_base" value="C_base;C_base;non;-;ok; ; ; ; ; ; ; ">
+<param name="xISEeqise_" value="ISEeqise_;ISE!=ise_;<b>ISE fornito (^ISE^) diverso da ISE calcolato (^ise_^)</b>;ISE!=ise_;ISE!=ise_; ; ; ; ; ; ; ">
+<param name="xise_" value="ise_;ISE  - precedente;ISE - precedente;ISE - precedente;ISE - precedente=max; = ; ; ; ; ;$.2; ">
+<param name="xmensile" value="mensile;Assegno mensile (per ^Figli^ figlio/i);mensile maternità=0 ?;Assegno mensile (per ^Figli^ figlio/i);Assegno mensile (per ^Figli^ figlio/i); ; ; ; ; ;$.2; ">
+
+
+
+<param name="xpltree" value="dati;rismaternita;noassegno;spiegacheck;summary;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="dati" value="<b>Dati per il calcolo di assegno</>;(mostra_isee!=0)ISEE=-1;(mostra_isee!=0)Precedente=-1!0;Figli=-1;Altra_pensione_INPS=-1!0">
+<param name="rismaternita" value="(complessivo!=0)<hr><b>Assegno di Maternità</b>;mensile=-1;totale=-1;(Altra_pensione_INPS!=0)complessivo=-1;sospesa=-1!0">
+<param name="noassegno" value="(complessivo==0)<b>Assegno non concesso</b><br> ;Chiede_maternita=3!1;(mostra_isee!=0)matOK=3!1;Mesi=3!1">
+<param name="spiegacheck" value="(ch==1) Codici di esclusione:<br>
+<b>§checkout§</b> <br />
+<b>_.1__.___</b>:<small> ISEE maggiore della soglia di ^Soglia^</small><br />
+<b>_._2_.___</b>:<small> una prestazione analoga è maggiore dell'assegno calcolato</small><br />
+<b>_.__3.___</b>:<small> mancanza requisito di residenza al momento della presentazione della domanda</small><br />
+<b>_.___.4__</b>:<small> presentazione domanda oltre i termini</small><br />
+<b>_.___._5_</b>:<small> titolo di soggiorno non valido</small><br />
+<b>_.___.__6</b>:<small> esclusione domanda d'ufficio</small><br />;">
+<param name="summary" value="<hr>Riassunto dati: <small> ;</small>">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2926242433">
+<param name="CRC" value="3856819212">
+<param name="CRCdata" value="17-ott-2017 15.37.23">
+</APPLET>
+</CENTER>
+<BR>

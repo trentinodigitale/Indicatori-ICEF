@@ -1,0 +1,376 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE=/clesius ARCHIVE="clesius.jar,jdom.jar,crimson.jar,xerces.jar,xalan.jar,jaxp.jar" WIDTH=700 HEIGHT=800 MAYSCRIPT>
+<param name="PATScuola" value="PAT muoverSI 2013 con ICEF10 - 11.12.2012">
+<param name="revision" value="$Revision: 1.2 $">
+
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="casosenza;casocon;casotariffa;parametriMuov">
+
+<param name="casosenza" value="parametriMuov;Prestazione=0;Km=600;Icef=9">
+<param name="casocon" value="parametriMuov;Prestazione=1;Km=3000;Icef=0.3">
+<param name="casotariffa" value="parametriMuov;Prestazione=2;Tariffa0=200;Tariffa1=50;Icef=9">
+<param name="parametriMuov" value="current;Redd3inf=15000;Redd3sup=36000;Costo_km=2;Km_inf=200;Km_lim=100000;Km_mid=500;Km_sup=24000;Km_med=5000;Km_max=13000;Tariffa_ingresso=80;Tariffa_max0=1000;Tariffa_max1=1500;Tariffa_max2=1600;Tariffa_max3=2400;Rif=50000">
+
+
+<param name="variables" value="kscala;rscala;divisotre">
+
+
+<param name="kscala" value="0.00001">
+
+<param name="rscala" value="0.000001">
+<param name="divisotre" value="0.490196078">
+
+
+
+<param name="edges" value="PAT muoverSI;Precedente;t1;k1;t2;k2;t3;k3;t4;k4;t5;k5;t6;k6;t7;k7;km1;
+_Icef_-giudizio;sup-giudizio;inf-giudizio;_Icef_-condOK;Redd3inf-inf;Redd3sup-sup;Rif-inf;Rif-sup;sup-condOK;Costo_km-costo_totale;Km-costo_totale;perc-tarif;costo_totale-tarif;Tariffa_max0-tariffa_mid;Tariffa_max1-t_mid;perc_sup-perc_dif;perc_inf-perc_dif;Km_lim-dlm;Km_mid-dlm;Km_sup-dsi;Km_inf-dsi;
+perc_dif-inc_min;dlm-inc_min;perc_dif-inc_max;dsi-inc_max;Km-dki;Km_inf-dki;t_mid-tariffa_mid;Tariffa_ingresso-tariff;tarif-tariff;tariff-tariffa;dki-dkim;inc_max-dkim;perc_min-perc_max;dkim-perc_max;dki-gtinf;Km-dkm;Km_mid-dkm;dkm-gtmid;dkm-pm_km;inc_min-pm_km;
+perc_inf-pmi;pm_km-pmi;gtmid-pmin;pmi-pmin;perc_inf-pmin;gtinf-perc_min;pmin-perc_min;perc_max-dpm;perc_min-dpm;dpm-pmax;perc_min-perc;pmax-perc;Km-km300;300-km300;100-km100;km-km100;Prestazione-frase;Tariffa0-pagata;Tariffa0-nuova;Tariffa1-nuova;
+Km-altri;k0-altri;giudizio-econp;econp-econ;econt-t_mid;econ-econt;econp-pmax;Icef-_icef;Cura-_icef;_icef-_Icef_;Tariffa_max2-tariffa_mass;econt-t_mid3;Tariffa_max3-t_mid3;t_mid3-tariffa_mass;Km-v_km;Km_med-v_km;Km_max-v_km;tariffa_mass-d_m;tariffa_mid-d_m;v_km-t_max;
+d_m-t_max;tariffa_mid-tariffa_max;t_max-tariffa_max;tariffa_max-tariffa">
+
+
+
+<param name="PAT muoverSI" value="text;node.ico;627;519;0;PAT muoverSI (11.12.2012);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT muoverSI;xPAT muoverSI;2234820430">
+<param name="Precedente" value="1;node.ico;214;333;0;Precedente = ;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xPrecedente;yPrecedente;3179576060">
+<param name="t1" value="0;node.ico;344;565;0;t1 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xt1;yt1;2938813328">
+<param name="k1" value="0;node.ico;344;541;0;k1 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xk1;yk1;817064656">
+<param name="t2" value="0;node.ico;372;565;0;t2 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xt2;yt2;1656365616">
+<param name="k2" value="0;node.ico;372;539;0;k2 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xk2;yk2;614744405">
+<param name="t3" value="0;node.ico;401;564;0;t3 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xt3;yt3;3751146108">
+<param name="k3" value="0;node.ico;402;540;0;k3 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xk3;yk3;1767952833">
+<param name="t4" value="0;node.ico;428;564;0;t4 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xt4;yt4;257369336">
+<param name="k4" value="0;node.ico;432;539;0;k4 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xk4;yk4;752004543">
+<param name="t5" value="0;node.ico;454;563;0;t5 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xt5;yt5;1646737266">
+<param name="k5" value="0;node.ico;458;541;0;k5 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xk5;yk5;3723590475">
+<param name="t6" value="0;node.ico;481;562;0;t6 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xt6;yt6;1836777374">
+<param name="k6" value="0;node.ico;489;537;0;k6 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xk6;yk6;2707047980">
+<param name="t7" value="0;node.ico;507;562;0;t7 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xt7;yt7;2310965875">
+<param name="k7" value="0;node.ico;522;538;0;k7 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xk7;yk7;83891905">
+<param name="km1" value="0;node.ico;308;517;0;km1 = ;0.0;TimesNode;NoInput;NoOutput;0;0;kscala;NoCurve;xkm1;ykm1;2985118806">
+<param name="_Icef_" value="0;node.ico;117;337;0;_Icef_ =  _icef);0.0;NumTransNode;NoInput;NoOutput;1;_icef;2;giudizio;condOK;1.0;1.0;LinearCurve;icefCurve;x_Icef_;y_Icef_;1924290303">
+<param name="giudizio" value="0;0;118;368;0;giudizio =  MAX( 0, MIN( 1, (_Icef_ - inf) / (sup - inf) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;_Icef_;inf;sup;1;econp;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;ygiudizio;348990502">
+<param name="sup" value="0;node.ico;172;278;0;sup =  0.490*Redd3sup / Rif;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;2;giudizio;condOK;1.0;divisotre;1.0;1.0;NoCurve;xsup;ysup;3303448789">
+<param name="inf" value="0;node.ico;55;322;0;inf =  0.490*Redd3inf / Rif;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;1;giudizio;1.0;divisotre;1.0;1.0;NoCurve;xinf;yinf;2430185787">
+<param name="condOK" value="0;node.ico;258;279;0;condOK = _Icef_ <= sup;0.0;NumLeNode;NoInput;IntermediateOutput;2;_Icef_;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;3358729961">
+<param name="Redd3inf" value="1;node.ico;56;359;0;Redd3inf = ;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;rscala;NoCurve;xRedd3inf;yRedd3inf;1455614275">
+<param name="Redd3sup" value="1;node.ico;172;304;0;Redd3sup = ;0.0;PlusNode;ValueInput;NoOutput;0;1;sup;rscala;NoCurve;xRedd3sup;yRedd3sup;1969824809">
+<param name="Rif" value="1;node.ico;129;277;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;2;inf;sup;rscala;NoCurve;xRif;yRif;2699384994">
+<param name="Costo_km" value="1;node.ico;546;392;0;Costo_km = ;0.0;PlusNode;ValueInput;NoOutput;0;1;costo_totale;0.1;NoCurve;xCosto_km;yCosto_km;1317002698">
+<param name="costo_totale" value="0;node.ico;547;362;0;costo_totale =  Costo_km * Km;0.0;TimesNode;NoInput;IntermediateOutput;2;Costo_km;Km;1;tarif;kscala;1.0;1.0;1.0;NoCurve;xcosto_totale;ycosto_totale;701012533">
+<param name="Km" value="1;node.ico;297;436;0;Km = ;0.0;PlusNode;ValueInput;NoOutput;0;6;costo_totale;dki;dkm;km300;altri;v_km;kscala;NoCurve;xKm;yKm;3645419843">
+<param name="perc" value="0;node.ico;506;321;0;perc =  perc_min + pmax;0.0;PlusNode;NoInput;IntermediateOutput;2;perc_min;pmax;1;tarif;1.0;1.0;1.0;1.0;NoCurve;xperc;yperc;4030543943">
+<param name="tarif" value="0;node.ico;547;322;0;tarif =  perc * costo_totale;0.0;TimesNode;NoInput;NoOutput;2;perc;costo_totale;1;tariff;kscala;1.0;1.0;1.0;NoCurve;xtarif;ytarif;3201313689">
+<param name="Tariffa_max0" value="1;node.ico;648;257;0;Tariffa_max0 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;tariffa_mid;kscala;NoCurve;xTariffa_max0;yTariffa_max0;1258365584">
+<param name="tariffa_mid" value="0;node.ico;644;299;0;tariffa_mid =  Tariffa_max0 + t_mid;0.0;PlusNode;NoInput;NoOutput;2;Tariffa_max0;t_mid;2;d_m;tariffa_max;kscala;1.0;1.0;1.0;NoCurve;xtariffa_mid;ytariffa_mid;1232313910">
+<param name="Tariffa_max1" value="1;node.ico;564;255;0;Tariffa_max1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;t_mid;kscala;NoCurve;xTariffa_max1;yTariffa_max1;3984550383">
+<param name="t_mid" value="0;node.ico;570;300;0;t_mid =  Tariffa_max1 * econt;0.0;TimesNode;NoInput;NoOutput;2;Tariffa_max1;econt;1;tariffa_mid;kscala;1.0;1.0;1.0;NoCurve;xt_mid;yt_mid;2587377947">
+<param name="perc_sup" value="0;node.ico;459;364;0;perc_sup = ;0.0;PlusNode;NoInput;NoOutput;0;1;perc_dif;1.0;NoCurve;xperc_sup;yperc_sup;1363617472">
+<param name="perc_dif" value="0;node.ico;373;363;0;perc_dif =  perc_sup - perc_inf;0.0;MinusNode;NoInput;NoOutput;2;perc_sup;perc_inf;2;inc_min;inc_max;1.0;1.0;1.0;1.0;NoCurve;xperc_dif;yperc_dif;922459519">
+<param name="perc_inf" value="0;node.ico;284;343;0;perc_inf = ;0.0;PlusNode;NoInput;NoOutput;0;3;perc_dif;pmi;pmin;0.01;NoCurve;xperc_inf;yperc_inf;4005779980">
+<param name="Km_lim" value="1;node.ico;90;419;0;Km_lim = ;0.0;PlusNode;ValueInput;NoOutput;0;1;dlm;kscala;NoCurve;xKm_lim;yKm_lim;1990254445">
+<param name="dlm" value="0;node.ico;116;392;0;dlm =  Km_lim - Km_mid;0.0;MinusNode;NoInput;NoOutput;2;Km_lim;Km_mid;1;inc_min;kscala;1.0;1.0;1.0;NoCurve;xdlm;ydlm;3065281383">
+<param name="Km_mid" value="1;node.ico;150;420;0;Km_mid = ;0.0;PlusNode;ValueInput;NoOutput;0;2;dlm;dkm;kscala;NoCurve;xKm_mid;yKm_mid;3603348797">
+<param name="Km_sup" value="1;node.ico;484;429;0;Km_sup = ;0.0;PlusNode;ValueInput;NoOutput;0;1;dsi;kscala;NoCurve;xKm_sup;yKm_sup;1698265253">
+<param name="dsi" value="0;node.ico;498;404;0;dsi =  Km_sup - Km_inf;0.0;MinusNode;NoInput;NoOutput;2;Km_sup;Km_inf;1;inc_max;kscala;1.0;1.0;1.0;NoCurve;xdsi;ydsi;2525736978">
+<param name="Km_inf" value="1;node.ico;424;426;0;Km_inf = ;0.0;PlusNode;ValueInput;NoOutput;0;2;dsi;dki;kscala;NoCurve;xKm_inf;yKm_inf;2708842667">
+<param name="inc_min" value="0;node.ico;174;392;0;inc_min =  perc_dif / dlm;0.0;DivideNode;NoInput;NoOutput;2;perc_dif;dlm;1;pm_km;1.0;1.0;1.0;1.0;NoCurve;xinc_min;yinc_min;15932210">
+<param name="inc_max" value="0;node.ico;444;403;0;inc_max =  perc_dif / dsi;0.0;DivideNode;NoInput;NoOutput;2;perc_dif;dsi;1;dkim;1.0;1.0;1.0;1.0;NoCurve;xinc_max;yinc_max;3482284440">
+<param name="dki" value="0;node.ico;333;406;0;dki =  Km - Km_inf;0.0;MinusNode;NoInput;NoOutput;2;Km;Km_inf;2;dkim;gtinf;kscala;1.0;1.0;1.0;NoCurve;xdki;ydki;134901044">
+<param name="Tariffa_ingresso" value="1;node.ico;601;278;0;Tariffa_ingresso = ;0.0;PlusNode;ValueInput;NoOutput;0;1;tariff;kscala;NoCurve;xTariffa_ingresso;yTariffa_ingresso;250067082">
+<param name="tariff" value="0;node.ico;600;324;0;tariff =  Tariffa_ingresso + tarif;0.0;PlusNode;NoInput;NoOutput;2;Tariffa_ingresso;tarif;1;tariffa;kscala;1.0;1.0;1.0;NoCurve;xtariff;ytariff;3146962281">
+<param name="tariffa" value="2;node.ico;619;371;0;tariffa =  Min(  tariff,  tariffa_max );0.0;NumMinNode;NoInput;ResultOutput;2;tariff;tariffa_max;0;kscala;1.0;1.0;1.0;NoCurve;xtariffa;ytariffa;2844994545">
+<param name="dkim" value="0;node.ico;379;405;0;dkim =  dki * inc_max;0.0;TimesNode;NoInput;NoOutput;2;dki;inc_max;1;perc_max;kscala;1.0;1.0;1.0;NoCurve;xdkim;ydkim;1066910197">
+<param name="perc_min" value="0;node.ico;336;323;0;perc_min = SE( gtinf=1.0 , 1.0 * pmin , 0.0 );0.0;NumIfNode;NoInput;NoOutput;2;gtinf;pmin;3;perc_max;dpm;perc;1.0;1.0;1.0;0.0;NoCurve;xperc_min;yperc_min;3962990549">
+<param name="perc_max" value="0;node.ico;420;337;0;perc_max =  perc_min + dkim;0.0;PlusNode;NoInput;NoOutput;2;perc_min;dkim;1;dpm;1.0;1.0;1.0;1.0;NoCurve;xperc_max;yperc_max;1156407798">
+<param name="gtinf" value="0;node.ico;335;383;0;gtinf = dki > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;dki;1;perc_min;1.0;0.0;NoCurve;xgtinf;ygtinf;349373115">
+<param name="dkm" value="0;node.ico;233;427;0;dkm =  Km - Km_mid;0.0;MinusNode;NoInput;NoOutput;2;Km;Km_mid;2;gtmid;pm_km;0.0;1.0;1.0;1.0;NoCurve;ydkm;ydkm;1965797317">
+<param name="gtmid" value="0;node.ico;233;394;0;gtmid = dkm > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;dkm;1;pmin;1.0;0.0;NoCurve;xgtmid;ygtmid;198423538">
+<param name="pm_km" value="0;node.ico;282;405;0;pm_km =  dkm * inc_min;0.0;TimesNode;NoInput;NoOutput;2;dkm;inc_min;1;pmi;1.0;1.0;1.0;1.0;NoCurve;xpm_km;ypm_km;33556309">
+<param name="pmi" value="0;node.ico;284;377;0;pmi =  perc_inf + pm_km;0.0;PlusNode;NoInput;NoOutput;2;perc_inf;pm_km;1;pmin;1.0;1.0;1.0;1.0;NoCurve;xpmi;ypmi;3523403174">
+<param name="pmin" value="0;node.ico;233;362;0;pmin = SE( gtmid=1.0 , 1.0 * pmi , 1.0 * perc_inf );0.0;NumIfNode;NoInput;NoOutput;3;gtmid;pmi;perc_inf;1;perc_min;1.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpmin;ypmin;1905634966">
+<param name="dpm" value="0;node.ico;398;279;0;dpm =  perc_max - perc_min;0.0;MinusNode;NoInput;NoOutput;2;perc_max;perc_min;1;pmax;1.0;1.0;1.0;1.0;NoCurve;xdpm;ydpm;2887742064">
+<param name="pmax" value="0;node.ico;506;278;0;pmax =  dpm * econp;0.0;TimesNode;NoInput;NoOutput;2;dpm;econp;1;perc;kscala;1.0;1.0;1.0;NoCurve;xpmax;ypmax;1655733305">
+<param name="km300" value="0;node.ico;44;453;0;km300 =  Km - 300;0.0;MinusNode;NoInput;NoOutput;2;Km;300;0;0.0;1.0;1.0;1.0;NoCurve;xkm300;ykm300;1157634931">
+<param name="300" value="0;node.ico;40;431;0;300 = ;0.0;PlusNode;NoInput;NoOutput;0;1;km300;300.0;NoCurve;x500;y500;1603825265">
+<param name="100" value="0;node.ico;197;465;0;100 = ;0.0;PlusNode;NoInput;NoOutput;0;1;km100;100.0;NoCurve;x100;y100;1596202429">
+<param name="km100" value="0;node.ico;213;493;0;km100 =  100 + km;0.0;PlusNode;NoInput;NoOutput;2;100;km;0;0.0;1.0;1.0;1.0;NoCurve;xkm100;ykm100;3613125342">
+<param name="km" value="0;node.ico;240;465;0;km = ;0.0;TimesNode;NoInput;NoOutput;0;1;km100;0.0;NoCurve;xkm;ykm;2733652885">
+<param name="Prestazione" value="1;node.ico;40;382;0;Prestazione = ;0.0;PlusNode;ValueInput;NoOutput;0;1;frase;0.5;NoCurve;xPrestazione;yPrestazione;1685892263">
+<param name="frase" value="0;node.ico;39;410;0;frase = Prestazione == 1.0;0.0;NumEqNode;NoInput;NoOutput;1;Prestazione;0;1.0;1.0;NoCurve;xfrase;yfrase;497317753">
+<param name="Tariffa0" value="1;node.ico;91;465;0;Tariffa0 = ;0.0;PlusNode;ValueInput;NoOutput;0;2;pagata;nuova;kscala;NoCurve;xTariffa0;yTariffa0;476968545">
+<param name="pagata" value="0;node.ico;81;490;0;pagata = Tariffa0 > 1.0;0.0;NumGtNode;NoInput;NoOutput;1;Tariffa0;0;1.0;1.0;NoCurve;xpagata;ypagata;2034738185">
+<param name="nuova" value="0;node.ico;138;492;0;nuova =  Tariffa0 + Tariffa1;0.0;PlusNode;NoInput;NoOutput;2;Tariffa0;Tariffa1;0;kscala;1.0;1.0;1.0;NoCurve;xnuova;ynuova;2946696000">
+<param name="Tariffa1" value="1;node.ico;145;466;0;Tariffa1 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;nuova;kscala;NoCurve;xTariffa1;yTariffa1;2083054685">
+<param name="altri" value="0;node.ico;297;494;0;altri =  Km - k0;0.0;MinusNode;NoInput;NoOutput;2;Km;k0;0;kscala;1.0;1.0;1.0;NoCurve;xaltri;yaltri;657338498">
+<param name="k0" value="0;node.ico;271;455;0;k0 = ;0.0;TimesNode;NoInput;NoOutput;0;1;altri;kscala;NoCurve;xk0;yk0;2102219905">
+<param name="econp" value="0;node.ico;250;300;0;econp =  giudizio;0.0;ProbNode;NoInput;NoOutput;1;giudizio;2;econ;pmax;0.0;1.0;NoCurve;xeconp;yeconp;316810010">
+<param name="econ" value="0;node.ico;324;300;0;econ =   F( econp );0.0;TransformNode;NoInput;NoOutput;1;econp;1;econt;0.0;1.0;LinearCurve;econCurve;xecon;yecon;3519243455">
+<param name="econt" value="0;node.ico;468;300;0;econt =  econ;0.0;ProbNode;NoInput;NoOutput;1;econ;2;t_mid;t_mid3;0.0;1.0;NoCurve;xecont;yecont;1653378889">
+<param name="Icef" value="1;node.ico;72;265;0;Icef = ;0.0;PlusNode;ValueInput;NoOutput;0;1;_icef;0.5;NoCurve;xIcef;yIcef;2035844535">
+<param name="_icef" value="0;node.ico;71;293;0;_icef =  Icef + Cura;0.0;PlusNode;NoInput;NoOutput;2;Icef;Cura;1;_Icef_;1.0;1.0;1.0;1.0;NoCurve;x_icef;y_icef;2927706829">
+<param name="Cura" value="1;node.ico;22;291;0;Cura = ;0.0;PlusNode;ValueInput;NoOutput;0;1;_icef;1.0;NoCurve;xCura;yCura;1877231462">
+<param name="Tariffa_max2" value="1;node.ico;625;492;0;Tariffa_max2 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;tariffa_mass;kscala;NoCurve;xTariffa_max2;yTariffa_max2;2820642911">
+<param name="tariffa_mass" value="0;node.ico;626;465;0;tariffa_mass =  Tariffa_max2 + t_mid3;0.0;PlusNode;NoInput;NoOutput;2;Tariffa_max2;t_mid3;1;d_m;kscala;1.0;1.0;1.0;NoCurve;xtariffa_mass;ytariffa_mass;3461684957">
+<param name="t_mid3" value="0;node.ico;534;464;0;t_mid3 =  econt * Tariffa_max3;0.0;TimesNode;NoInput;NoOutput;2;econt;Tariffa_max3;1;tariffa_mass;kscala;1.0;1.0;1.0;NoCurve;xt_mid3;yt_mid3;11450755">
+<param name="Tariffa_max3" value="1;node.ico;533;491;0;Tariffa_max3 = ;0.0;PlusNode;ValueInput;NoOutput;0;1;t_mid3;kscala;NoCurve;xTariffa_max3;yTariffa_max3;2907680717">
+<param name="v_km" value="0;node.ico;378;469;0;v_km =  MAX( 0, MIN( 1, (Km - Km_med) / (Km_max - Km_med) )) ;0.0;CutoffNode;NoInput;NoOutput;3;Km;Km_med;Km_max;1;t_max;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xv_km;yv_km;3709122042">
+<param name="Km_med" value="1;node.ico;369;493;0;Km_med = ;0.0;PlusNode;ValueInput;NoOutput;0;1;v_km;kscala;NoCurve;xKm_med;yKm_med;1229316956">
+<param name="Km_max" value="1;node.ico;366;444;0;Km_max = ;0.0;PlusNode;ValueInput;NoOutput;0;1;v_km;kscala;NoCurve;xKm_max;yKm_max;2767500150">
+<param name="d_m" value="0;node.ico;663;440;0;d_m =  tariffa_mass - tariffa_mid;0.0;MinusNode;NoInput;NoOutput;2;tariffa_mass;tariffa_mid;1;t_max;0.0;1.0;1.0;1.0;NoCurve;xd_m;yd_m;513405802">
+<param name="t_max" value="0;node.ico;587;440;0;t_max =  v_km * d_m;0.0;TimesNode;NoInput;NoOutput;2;v_km;d_m;1;tariffa_max;0.0;1.0;1.0;1.0;NoCurve;xt_max;yt_max;3267719236">
+<param name="tariffa_max" value="0;node.ico;644;408;0;tariffa_max =  tariffa_mid + t_max;0.0;PlusNode;NoInput;IntermediateOutput;2;tariffa_mid;t_max;1;tariffa;0.0;1.0;1.0;1.0;NoCurve;ytariffa_max;ytariffa_max;357052242">
+
+<param name="econCurve" value="LinearCurve;0.0;0.0;1.0;1.0">
+<param name="icefCurve" value="LinearCurve;0.0;0.0;1.0;1.0">
+
+
+<param name="xperc_sup" value="perc_sup;perc_sup;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xTariffa_max2" value="Tariffa_max2;Tariffa_max2;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xTariffa_max1" value="Tariffa_max1;Tariffa_max1;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xKm_lim" value="Km_lim;Km_lim;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xperc_inf" value="perc_inf;perc_inf;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xCura" value="Cura;Cura;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xKm_med" value="Km_med;Km_med;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCosto_km" value="Costo_km;Costo_km;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ; ; ; ; ;$.2; ">
+
+<param name="xTariffa_max0" value="Tariffa_max0;Tariffa_max0;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xTariffa_max3" value="Tariffa_max3;Tariffa_max3;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xKm" value="Km;Km |pagata|;Km  |pagata| = 0 ?;Km |pagata|;Km |pagata|; ; ; ; ; ;T; ">
+
+<param name="xPrestazione" value="Prestazione;Prestazione;0; ;1; ; ; ; ; ; ; ">
+
+<param name="xTariffa0" value="Tariffa0;Tariffa pagata;Tariffa pagata=0;Tariffa pagata;Tariffa pagata; ; ; ; ; ;T; ">
+
+<param name="xTariffa1" value="Tariffa1;Rata aggiuntiva pagata;Rata aggiuntiva pagata=0;Rata aggiuntiva pagata;Rata aggiuntiva pagata; ; ; ; ; ;T; ">
+
+<param name="x500" value="300;300;0; ;1; ; ; ; ; ; ; ">
+
+<param name="x100" value="100;100;0; ;1; ; ; ; ; ; ; ">
+
+<param name="xkm" value="km;km;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xIcef" value="Icef;(con richiesta di riduzione);(con richiesta di riduzione);(con richiesta di riduzione);(<b>senza</b> richiesta di riduzione); ; ; ; ; ;T.8; ">
+
+<param name="xKm_sup" value="Km_sup;Km_sup;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xKm_mid" value="Km_mid;Km_mid;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xk0" value="k0;km |pagata|;km  |pagata| = 0 ?;km |pagata|;km |pagata|; ; ; ; ; ;T; ">
+
+<param name="xTariffa_ingresso" value="Tariffa_ingresso;Tariffa_ingresso;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xKm_inf" value="Km_inf;Km_inf;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xk4" value="k4;k4;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xt4" value="t4;t4;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xk3" value="k3;k3;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xt6" value="t6;t6;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xk5" value="k5;k5;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xt5" value="t5;t5;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xt3" value="t3;t3;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xt1" value="t1;t1;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xPrecedente" value="Precedente;L'assegno dell'anno precedente;Nessun assegno precedente;L'assegno dell'anno precedente;L'ammontare dell'assegno dell'anno precedente;è di; ; ; ; <b>;$.0; </b>">
+
+<param name="xPAT muoverSI" value="PAT muoverSI;PAT muoverSI;PAT muoverSI (11.12.2012);--;--; ; ; ; ; ; ; ">
+<param name="xk2" value="k2;k2;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xt2" value="t2;t2;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xk1" value="k1;k1;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xkm1" value="km1;km ammessi;km ammessi=0;km ammessi;km ammessi; ;-;+; ; ;T; ">
+
+<param name="xKm_max" value="Km_max;Km_max;0;-;1; ;-;+; ; ;T; ">
+
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xk7" value="k7;k7;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xk6" value="k6;k6;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xt7" value="t7;t7;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xfrase" value="frase;frase;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xgtmid" value="gtmid;gtmid;0; ;1; ; ; ; ; ; ; ">
+
+<param name="xgtinf" value="gtinf;gtinf;0; ;1; ; ; ; ; ; ; ">
+
+<param name="xpagata" value="pagata;  ;richiesti; ;corrispondenti; ; ; ; ; ; ; ">
+
+<param name="xecon" value="econ;Punteggio per ICEF;Punteggio zero per ICEF;Punteggio per ICEF intermedio;Punteggio massimo derivante dal ICEF; ; ; ; ; ( ;%; )">
+
+<param name="xecont" value="econt;econt;0;-;1; ;-;+; ; ; ; ">
+
+<param name="x_Icef_" value="_Icef_;<B>ICEF</B> Indicatore della Situazione Economica Familiare (ammisibile tra ^inf^ e ^sup^);<B>ICEF</B> Indicatore della Situazione Economica Familiare zero;<B>ICEF</B> Indicatore della Situazione Economica Familiare;<B>ICEF</B> Indicatore della Situazione Economica Familiare |Icef|; ; ; ; ;<b>;T.8;</b>">
+
+<param name="xeconp" value="econp;econp;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xkm100" value="km100;km100;0; ;1; ; ; ; ; ; ; ">
+
+<param name="xd_m" value="d_m;d_m;0;-;1; ;-;+; ; ; ; ">
+
+
+<param name="xtariffa_mass" value="tariffa_mass;tariffa_mass;0;-;1; ;-;+; ; ; ; ">
+
+<param name="x_icef" value="_icef;_icef;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xaltri" value="altri;altri chilometri ammessi;altri chilometri ammessi=0;altri chilometri ammessi;altri chilometri ammessi; ; ; ; ; ;T; ">
+
+<param name="xt_max" value="t_max;t_max;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xnuova" value="nuova;nuova;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xt_mid3" value="t_mid3;t_mid3;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xdlm" value="dlm;dlm;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xperc_dif" value="perc_dif;perc_dif;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xt_mid" value="t_mid;t_mid;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xinc_max" value="inc_max;inc_max;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xinc_min" value="inc_min;inc_min;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xdsi" value="dsi;dsi;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xtariffa_mid" value="tariffa_mid;tariffa_mid;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (il reddito equivalente di $EQV_ICEF$ è maggiore di  $Redd3sup$) ;--;idoneo; ; ; ; ; ;!; ">
+
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xtarif" value="tarif;tarif;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xperc" value="perc;perc;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xcosto_totale" value="costo_totale;costo_totale;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xpmi" value="pmi;pmi;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xpm_km" value="pm_km;pm_km;0; ;1; ; ; ; ; ;%; ">
+
+
+<param name="xkm300" value="km300;km300;0; ;1; ; ; ; ; ; ; ">
+
+<param name="xpmax" value="pmax;pmax;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xdpm" value="dpm;dpm;0; ;1; ; ; ; ; ;T.8; ">
+
+<param name="xtariff" value="tariff;tariff;0; ;1; ; ; ; ; ;$.2; ">
+
+<param name="xdki" value="dki;dki;0; ;1; ; ; ; ; ;T; ">
+
+<param name="xtariffa" value="tariffa;la tariffa per §Km§km ( MIN[ §tariffa_mid§ + %v_km% * (§tariffa_mass§ - §tariffa_mid§), §Tariffa_ingresso§ + %perc% * §costo_totale§ ] );la tariffa=0;la tariffa ;la tariffa massima; ; ; ; ;<b>;$.0;</b>">
+
+<param name="xperc_max" value="perc_max;perc_max;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xperc_min" value="perc_min;perc_min;0; ;1; ; ; ; ; ;%; ">
+
+<param name="xdkim" value="dkim;dkim;0; ;1; ; ; ; ; ;T.8; ">
+
+<param name="xgiudizio" value="giudizio;il giudizio _Icef_ ;il giudizio _Icef_=0 ;il giudizio _Icef_ ;il giudizio _Icef_ =1;è; ; ; ; ;%; ">
+
+<param name="xv_km" value="v_km;v_km;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xpmin" value="pmin;pmin;0; ;1; ; ; ; ; ;%; ">
+
+
+
+
+<param name="xpltree" value="propagation0;propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;propagation7;propagation8;propagation9;propagation10;titolo;conAcura;senza;con;applicant;dati;tabellaKm;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value="(Prestazione==1).;k0=Km;Km=300-3000:tariffa=Tariffa0-tariffa_mid">
+<param name="propagation1" value="(Tariffa1!=0)-;Km=300-3000:tariffa=nuova-tariffa_mid">
+<param name="propagation2" value=" ;km1=Km;km=km300">
+<param name="propagation3" value=" ;t1=tariffa;Km=k1;k1=km">
+<param name="propagation4" value=" ;t2=tariffa;Km=k2;k2=km;km=km100">
+<param name="propagation5" value=" ;t3=tariffa;Km=k3;k3=km;km=km100">
+<param name="propagation6" value=" ;t4=tariffa;Km=k4;k4=km;km=km100">
+<param name="propagation7" value=" ;t5=tariffa;Km=k5;k5=km;km=km100">
+<param name="propagation8" value=" ;t6=tariffa;Km=k6;k6=km;km=km100">
+<param name="propagation9" value=" ;t7=tariffa;Km=k7;k7=km;km=km100">
+<param name="propagation10" value=" ;Km=km1">
+<param name="titolo" value="<center><h2>Calcolo Tariffa MuoverSI</h2></center>;">
+<param name="conAcura" value="(Cura==1)<center><h3>- incompatibile con l'Assegno di Cura! -</h3></center>;">
+<param name="senza" value="(_icef==1)<center><h3>- senza riduzione -</h3></center><hr>;">
+<param name="con" value="(_icef!=1)<center><h3>- con richiesta di riduzione -</h3></center><hr>;">
+<param name="applicant" value="<P>Beneficiario: ;">
+<param name="dati" value="<b>Dati</b>;(_icef!=1)_Icef_=-1;(Icef!=1)Precedente=-1!0;(Prestazione==1)Tariffa0=-1!0;(Prestazione==1)k0=-1!0;(Prestazione==1)Tariffa1=-1!0;(Prestazione==1)altri=-1!0;Km=-1!0;tariffa=-1">
+<param name="tabellaKm" value="(frase==0)<p><center><b>Tabella con altri chilometri</b></center>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>km</td>
+    <td align='center'>tariffa</td>
+  </tr>
+  <tr>
+    <td align='center'>§k1§</td>
+    <td align='center'>$t1$</td>
+  </tr>
+  <tr>
+    <td align='center'>§k2§</td>
+    <td align='center'>$t2$</td>
+  </tr>
+  <tr>
+    <td align='center'>§k3§</td>
+    <td align='center'>$t3$</td>
+  </tr>
+  <tr>
+    <td align='center'><b>§k4§</b></td>
+    <td align='center'><b>$t4$</b></td>
+  </tr>
+  <tr>
+    <td align='center'>§k5§</td>
+    <td align='center'>$t5$</td>
+  </tr>
+  <tr>
+    <td align='center'>§k6§</td>
+    <td align='center'>$t6$</td>
+  </tr>
+  <tr>
+    <td align='center'>§k7§</td>
+    <td align='center'>$t7$</td>
+  </tr>
+</table><p><br>;">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2833988460">
+<param name="CRC" value="1329073283">
+<param name="CRCdata" value="11-dic-2012 11.45.38">
+</APPLET>
+</CENTER>
+<BR>

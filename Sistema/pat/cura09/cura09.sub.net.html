@@ -1,0 +1,166 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PAT Assegno di Cura" value="PAT Cura 2009; 30.6.2009">
+<param name="revision" value="$Revision: 1.2 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="variables" value="uno;bis;giorni;giornaliero;ascala">
+
+<param name="uno" value="1">
+<param name="bis" value="9">
+<param name="giorni" value="365">"
+<param name="giornaliero" value="uno / giorni">
+
+<param name="ascala" value="0.00001">
+
+
+
+<param name="trendStarts" value="trendStart1;casotest">
+<param name="trendStart1" value="current">
+<param name="casotest" value="current;Redd3inf=8500;Icef=0.2;Rif=50000;Bisogno=9;Giornaliero_min=5.16;Assegno_molto_elevato=13195.47;Assegno_elevato=7540.27;amax=3615.20;Affitto_assistito=4000;Accompagnamento=3000">
+<param name="trends" value="">
+
+
+
+<param name="edges" value="Assegno di Cura;Accompagnamento;Giornaliero_min;
+Icef-giudizio;cond_sup-giudizio;importo-sup;sup-cond_sup;inf-cond_inf;cond_inf-cond_sup;giudizio-Assegno_di_Cura;Assegno_di_Cura-Assegno1_giornaliero;Assegno_di_Cura-Assegno2_giornaliero;cond_inf-giudizio;Rif-sup;Assegno_molto_elevato-importo;Redd3inf-inf;Rif-inf;Bisogno-eq1;eq1-sussidio_giornaliero;Affitto_assistito-affitto_ammesso;Assegno1_giornaliero-sussidio_giornaliero;Assegno2_giornaliero-sussidio_giornaliero;Bisogno-Assegno_di_Cura;amax-affitto_ammesso;
+Icef-icefOK;cond_sup-icefOK;idoneità-Assegno_di_Cura;icefOK-idoneo;idoneità-idoneo;Check-idoneità;Bisogno-eq9;Assegno2_giornaliero-Assegno1;sussidio_giornaliero-sussidio;Assegno1_giornaliero-Assegno2;Assegno_molto_elevato-giornaliero2;Assegno_elevato-giornaliero1">
+
+
+
+<param name="Assegno di Cura" value="text;node.ico;58;449;0;Assegno di Cura (30.6.2009);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xAssegno di Cura;yAssegno di Cura;327699935">
+<param name="Accompagnamento" value="1;node.ico;115;320;0;nessun Assegno di Accompagnamento;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xAccompagnamento;yAccompagnamento;596907984">
+<param name="Giornaliero_min" value="1;node.ico;321;484;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xGiornaliero_min;yGiornaliero_min;3029620575">
+<param name="Icef" value="1;node.ico;143;342;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;giudizio;icefOK;1.0;NoCurve;xIcef;yIcef;81578520">
+<param name="giudizio" value="0;0;143;425;0;-;0.0;CutoffNode;NoInput;NoOutput;3;Icef;cond_sup;cond_inf;1;Assegno_di_Cura;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;ygiudizio;160369084">
+<param name="cond_sup" value="0;node.ico;208;367;0;-;0.0;PlusNode;NoInput;IntermediateOutput;2;sup;cond_inf;2;giudizio;icefOK;1.0;1.0;1.0;1.0;NoCurve;xcond_sup;ycond_sup;3661147643">
+<param name="importo" value="0;node.ico;345;369;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno_molto_elevato;1;sup;ascala;1.0;NoCurve;ximporto;yimporto;2804435301">
+<param name="sup" value="0;node.ico;295;369;0;-;0.0;DivideNode;NoInput;NoOutput;2;importo;Rif;1;cond_sup;1.0;1.0;1.0;1.0;NoCurve;xsup;ysup;2212791017">
+<param name="inf" value="0;node.ico;31;364;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;1;cond_inf;1.0;1.0;1.0;1.0;NoCurve;xinf;yinf;3864516396">
+<param name="cond_inf" value="0;node.ico;87;365;0;-;0.0;PlusNode;NoInput;IntermediateOutput;1;inf;2;cond_sup;giudizio;1.0;1.0;NoCurve;xcond_inf;ycond_inf;160211176">
+<param name="Assegno_di_Cura" value="2;node.ico;254;425;0;-;0.0;ProbNode;NoInput;ResultOutput;3;giudizio;Bisogno;idoneità;2;Assegno1_giornaliero;Assegno2_giornaliero;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;NoCurve;xAssegno_di_Cura;yAssegno_di_Cura;301746365">
+<param name="Assegno1_giornaliero" value="0;node.ico;455;464;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;Assegno_di_Cura;2;sussidio_giornaliero;Assegno2;0.0;1.0;StairsCurve;giorno1Curve;xAssegno1_giornaliero;yAssegno1_giornaliero;973467260">
+<param name="Assegno2_giornaliero" value="0;node.ico;451;397;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;Assegno_di_Cura;2;sussidio_giornaliero;Assegno1;0.0;1.0;StairsCurve;giorno2Curve;xAssegno2_giornaliero;yAssegno2_giornaliero;3695769365">
+<param name="Rif" value="1;node.ico;347;342;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;sup;inf;ascala;NoCurve;xRif;yRif;3110732125">
+<param name="Assegno_molto_elevato" value="1;node.ico;458;370;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;importo;giornaliero2;ascala;NoCurve;xAssegno_molto_elevato;yAssegno_molto_elevato;3894895441">
+<param name="Redd3inf" value="1;node.ico;31;425;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;ascala;NoCurve;xRedd3inf;yRedd3inf;2746000469">
+<param name="Bisogno" value="1;node.ico;370;425;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;eq1;Assegno_di_Cura;eq9;1.0;NoCurve;xBisogno;yBisogno;1690104423">
+<param name="eq1" value="0;node.ico;434;427;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Bisogno;1;sussidio_giornaliero;1.0;1.0;NoCurve;xeq1;yeq1;3545698993">
+<param name="sussidio_giornaliero" value="0;node.ico;521;427;0;-;0.0;NumIfNode;NoInput;NoOutput;3;eq1;Assegno1_giornaliero;Assegno2_giornaliero;1;sussidio;ascala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xsussidio_giornaliero;ysussidio_giornaliero;4228535289">
+<param name="Affitto_assistito" value="1;node.ico;52;298;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;affitto_ammesso;ascala;NoCurve;xAffitto_assistito;yAffitto_assistito;3516953030">
+<param name="affitto_ammesso" value="0;node.ico;104;271;0;-;0.0;NumMinNode;NoInput;NoOutput;2;Affitto_assistito;amax;0;ascala;1.0;1.0;1.0;NoCurve;xaffitto_ammesso;yaffitto_ammesso;1058422567">
+<param name="amax" value="1;node.ico;21;271;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;affitto_ammesso;ascala;NoCurve;xamax;yamax;2796208102">
+<param name="icefOK" value="0;node.ico;195;342;0;-;0.0;NumLtNode;NoInput;NoOutput;2;Icef;cond_sup;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xicefOK;yicefOK;358664927">
+<param name="idoneità" value="0;node.ico;252;395;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Check;2;Assegno_di_Cura;idoneo;1.0;0.0;NoCurve;xidoneità;yidoneità;2897894251">
+<param name="idoneo" value="2;node.ico;251;342;0;-;0.0;ProbNode;NoInput;IntermediateOutput;2;icefOK;idoneità;0;0.0;0.0;0.0;1.0;NoCurve;xidoneo;yidoneo;3894015308">
+<param name="Check" value="1;node.ico;324;395;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;idoneità;1.0;NoCurve;xCheck;yCheck;466291236">
+<param name="eq9" value="0;node.ico;369;463;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Bisogno;0;1.0;9.0;NoCurve;xeq9;yeq9;755544858">
+<param name="Assegno1" value="0;node.ico;638;397;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno2_giornaliero;0;ascala;giorni;NoCurve;xAssegno1;yAssegno1;2360197615">
+<param name="sussidio" value="0;node.ico;634;424;0;-;0.0;ProbNode;NoInput;NoOutput;1;sussidio_giornaliero;0;0.0;1.0;NoCurve;xsussidio;ysussidio;3488510126">
+<param name="Assegno2" value="0;node.ico;639;464;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno1_giornaliero;0;ascala;giorni;NoCurve;xAssegno2;yAssegno2;1719307069">
+<param name="giornaliero2" value="0;node.ico;580;369;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno_molto_elevato;0;ascala;giornaliero;NoCurve;xgiornaliero2;ygiornaliero2;2311220711">
+<param name="Assegno_elevato" value="1;node.ico;456;487;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;giornaliero1;ascala;NoCurve;xAssegno_elevato;yAssegno_elevato;3429069737">
+<param name="giornaliero1" value="0;node.ico;585;487;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno_elevato;0;ascala;giornaliero;NoCurve;xgiornaliero1;ygiornaliero1;550116022">
+
+<param name="giorno1Curve" value="StairsCurve;0.0;0.0;Giornaliero_min;1.0E-4;0.01;0.1;giornaliero1;1.0">
+<param name="giorno2Curve" value="StairsCurve;0.0;0.0;Giornaliero_min;1.0E-4;0.01;0.1;giornaliero2;1.0">
+
+
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xBisogno" value="Bisogno;Bisogno di assistenza;nessun Bisogno di assistenza;--;Bisogno di assistenza; ; ; ; ; ;T; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xAssegno_molto_elevato" value="Assegno_molto_elevato;Assegno_molto_elevato;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xCheck" value="Check;NON-idoneità per mancanza dei requisiti (*);ok;NON idoneo;NON idoneo per mancanza dei requisiti (*);=; ; ; ; ;T; ">
+
+<param name="xAssegno_elevato" value="Assegno_elevato;Assegno_elevato;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xAffitto_assistito" value="Affitto_assistito;Affitto dell'assistito (deducibile fino a $amax$);Affitto dell'assistito zero;Affitto dell'assistito (deducibile fino a $amax$);Affitto dell'assistito (deducibile fino a $amax$);è di; ; ; ; ;$.2; ">
+
+<param name="xamax" value="amax;amax;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xGiornaliero_min" value="Giornaliero_min;Giornaliero_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (ammisibile tra ^cond_inf^ e ^cond_sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare (ammisibile solo tra ^cond_inf^ e ^cond_sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare (ammisibile solo tra ^cond_inf^ e ^cond_sup^); ; ; ; ;<b>;T.8;</b>">
+
+<param name="xAssegno di Cura" value="Assegno di Cura;Assegno di Cura;Assegno di Cura (30.6.2009);--;--; ; ; ; ; ; ; ">
+
+<param name="xAccompagnamento" value="Accompagnamento;Assegno di Accompagnamento da non considerare (incluso nelle detrazioni DF);nessun Assegno di Accompagnamento;Assegno di Accompagnamento da non considerare (incluso nelle detrazioni DF);Assegno di Accompagnamento da non considerare (incluso nelle detrazioni DF); ; ; ; ; ;$.2; ">
+
+<param name="xAssegno1" value="Assegno1;Assegno1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xeq1" value="eq1;eq1;bisogno di assistenza MOLTO ELEVATO;-;bisogno di assistenza ELEVATO; ;-;+; ; ; ; ">
+
+<param name="xeq9" value="eq9;eq9;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xidoneità" value="idoneità;idoneità;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xsussidio" value="sussidio;sussidio;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xAssegno1_giornaliero" value="Assegno1_giornaliero;<P>L'importo giornaliero del sussidio economico nel caso sia accertato un bisogno di assistenza ELEVATO;nessun sussidio;<P>L'importo giornaliero del sussidio economico nel caso sia accertato un bisogno di assistenza ELEVATO;<P>L'importo giornaliero del sussidio economico nel caso sia accertato un bisogno di assistenza ELEVATO;è di; ; ; ;<b> ;$.2; </b>">
+
+<param name="xcond_inf" value="cond_inf;il valore della condizione economica garantita per un sussidio massimo <b>(Cinf)</b>;??;--;--;è; ; ; ; ;P.8; ">
+
+<param name="xgiornaliero1" value="giornaliero1;giornaliero1;nessun giornaliero1;giornaliero1;giornaliero1;è di; ; ; ; ;$.2; ">
+
+<param name="xAssegno2_giornaliero" value="Assegno2_giornaliero;<P>L'importo giornaliero del sussidio economico nel caso sia accertato un bisogno di assistenza MOLTO ELEVATO;nessun sussidio;<P>L'importo giornaliero del sussidio economico nel caso sia accertato un bisogno di assistenza MOLTO ELEVATO;<P>L'importo giornaliero del sussidio economico nel caso sia accertato un bisogno di assistenza MOLTO ELEVATO;è di; ; ; ;<b> ;$.2;</b>">
+
+<param name="xAssegno2" value="Assegno2;Assegno2;0;-;1; ;-;+; ; ; ; ">
+
+<param name="ximporto" value="importo;l'importo del nucleo ;--;--;sposta il limite garantito per; ; ; ; ;$.2; Euro; ">
+
+<param name="xgiornaliero2" value="giornaliero2;giornaliero2;nessun giornaliero2;giornaliero2;giornaliero2;è di; ; ; ; ;$.2; ">
+
+<param name="xidoneo" value="idoneo;idoneità;la domanda NON è idonea;idoneo;idoneo;=; ; ; ; ;T; ">
+
+<param name="xcond_sup" value="cond_sup;il limite della condizione economica per un sussidio parziale <b>(Csup)</b>;--;il limite per un sussidio parziale;--;è; ; ; ; ;P.8; ">
+
+<param name="xsup" value="sup;l'assegno di riferimento ed il peso della famiglia;--;--;--;aggiungono al limite garantito Cinf un valore di; ; ; ; ;P.8; ">
+
+<param name="xinf" value="inf;il limite garantito;--;--;--;è; ; ; ; ;P.8; ">
+
+<param name="xicefOK" value="icefOK;limiti icef;l'ICEF è oltre il limite per un sussidio di assistenza;--;icef OK;=; ; ; ; ;T; ">
+
+<param name="xaffitto_ammesso" value="affitto_ammesso;affitto_ammesso;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xAssegno_di_Cura" value="Assegno_di_Cura;Assegno_di_Cura;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xsussidio_giornaliero" value="sussidio_giornaliero;<P>L'importo giornaliero del sussidio;nessun sussidio;<P>L'importo giornaliero del sussidio economico;<P>L'importo giornaliero del sussidio economico;è di; ; ; ;<b> ;$.2;</b>">
+
+<param name="xgiudizio" value="giudizio;il giudizio;la valutazione dei dati dichiarati determina il beneficio massimo <b>[C entro il limite garantito]</b>;la valutazione dei dati dichiarati determina un assegno parziale <b>[C è tra l limite garantito e l'esclusione]</b>;la valutazione dei dati dichiarati non permette alcun assegno <b>[C maggiore del limite di esclusione]</b>; ; ; ; ; ( ;!; )">
+
+
+
+
+<param name="xpltree" value="propagation0;header;applicant;nonidoneo;res1;res4;res5;res6;res7;xpl1;xpl2;footer;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=".;Redd3inf=Redd3inf">
+<param name="header" value="<center><h3>Sussidio economico per l'assistenza di familiari non autosufficienti</h3></center>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="nonidoneo" value="(idoneo==0)<b>Problemi con i requisiti</b>:;idoneo=2;icefOK=3!1;Check=3!0">
+<param name="res1" value="(idoneo==1)<P>Sulla base dei dati inseriti e del regolamento, risulta una percentuale di %Assegno_di_Cura% del sussidio economico. Per percentuali superiori a zero, l'importo annuale è calcolato applicando tale percentuale alla differenza tra il sussidio massimo e il sussidio minimo e sommando l'importo ottenuto al sussidio minimo.;">
+<param name="res4" value="(eq9==1)<P><b>BISOGNO DI ASSISTENZA ELEVATO</b>;Assegno1_giornaliero=-1">
+<param name="res5" value="(eq9==1)<P><b>BISOGNO DI ASSISTENZA MOLTO ELEVATO</b>;Assegno2_giornaliero=-1">
+<param name="res6" value="(eq9==0)<P><b>Ammontare del Sussidio:</b>;sussidio_giornaliero=-1">
+<param name="res7" value="(Assegno_di_Cura==0) <p>NON spetta nessun sussidio;">
+<param name="xpl1" value="<P><BR><P><B>Questi risultati derivano dalle seguenti valutazioni:</B>;(eq9==0)Bisogno=-1;Icef=-1;(loc!=0)Affitto_assistito=-1;locazione=-1!0;Accompagnamento=-1!0">
+<param name="xpl2" value="(Check!=0)<b>*</b><br> 1: requisiti generici mancanti;">
+<param name="footer" value="<HR>;">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3940894342">
+<param name="CRC" value="776233755">
+<param name="CRCdata" value="30-giu-2009 17.42.00">
+</APPLET>
+<BR>

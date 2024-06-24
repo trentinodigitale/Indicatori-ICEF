@@ -1,0 +1,66 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=600 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.4 $">
+
+<param name="Taratura" value="ITEA accesso; 26.8.2008">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trendStarts" value="parametriITEAa;unpodituttoa;casoITEAa">
+
+ <param name="parametriITEAa" value="current;RIF=50000;FAR=0;FP=9999999;FPM=20000;FPI=20000;LS=9999999;LSR=0;LSM=20000;LSI=20000;LDC=3615.2;AL1a=0.2;AL2a=0.2;ALinva=0.1">
+ <param name="unpodituttoa" value="current;N_componenti=5;Monogenitore=1;Lavoratori=1;N_invalidi_66=1;Assegni=500;C1_aut=1000;C1_dip=2000;C1_pens=1000;C2_agr=1000;C3_imp=3000;C4_part=2000;C5_altri=1000;Canone=4000;Imposte=3000;Mediche=500;Previdenza=1000;PI=7000;PM=27000">
+ <param name="casoITEAa" value="parametriITEAa,parametriICEFv,parametriICEFc,unpodituttoa;Dettagli=1">
+
+<param name="nets" value="ITEAvc08.sub0.net.html;../icef/m.icef08.net.html;ITEAa08.sub.net.html;ITEAvc08.sub.net.html">
+
+<param name="connections" value="ICEF-Icef;al1-AL1;al2-AL2">
+
+<param name="xCanone" value="Canone;D(CNL): Canone di locazione annuo (non deducibile per verifica e canone) ;D(CNL): Canone di locazione annuo zero;D(CNL): Canone di locazione annuo;D(CNL): Canone di locazione annuo massimale; ; ; ; ;- ;$.2; ">
+<param name="xMutuo" value="Mutuo;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale (non deducibile per verifica e canone);D(IMR): nessun mutuo per l'abitazione principale;D(IMR): Interessi sul mutuo ipotecario per l'abitazione principale;Il mutuo per la casa di residenza;è di; ; ; ;- ;$.2; ">
+<param name="entrate" value="<p><b>Dati per la determinazione dell'ICEF per l'anno corrente</b>;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C2_agr=-1!0;C3_imp=-1!0;C4_part=-1!0;C5_altri=-1!0">
+<param name="patrimoni" value="(patrimonio!=0);p_r=-1!0;p_i=-1!0;p_m=-1!0">
+<param name="xp_i" value="p_i;Valore totale degli immobili;non esistono rilevanti beni immobiliari di proprietà;Valore totale degli immobili;Valore totale degli immobili massimale;è di; ; ; ; ;$.2; ">
+<param name="ris1" value="<P><B>Il risultato del calcolo:</B>;RF=-1;patrimonio=-1!0;PF=-1;ICEF=-1;C_RIF_ICEF=-1">
+
+<param name="footer" value=" ;">
+
+
+<param name="edges" value="P.A.T. MODELLO ITEA accesso;
+">
+
+
+
+<param name="P.A.T. MODELLO ITEA accesso" value="text;node.ico;90;261;0;Versione 26.8.2008;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloAccesso;xModelloAccesso;1205614127">
+
+
+
+<param name="xModelloAccesso" value="P.A.T. MODELLO ITEA accesso;x;Versione 26.8.2008; ; ; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation0;propagation1;propagation2;propagation3;propagation4;propagation5;propagation6;asXml;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=" ;Assegni=Assegni0;C1_aut=C1_aut0;C1_dip=C1_dip0;C1_pens=C1_pens0;C2_agr=C2_agr0;C3_imp=C3_imp0;C4_part=C4_part0;C5_altri=C5_altri0;Canone=Canone0;Imposte=Imposte0;Lavoratori=Lavoratori0;Mediche=Mediche0;Monogenitore=Monogenitore0;Mutuo=Mutuo0;N_componenti=N_componenti0;N_invalidi_66=N_invalidi_660;N_invalidi_75=N_invalidi_750;n75=N_invalidi_750;P_complementare=P_complementare0;Previdenza=Previdenza0;PI=PI0;PM=PM0">
+<param name="propagation1" value=" ;icef0=Icef;ICEF0=ICEF;CPM0=CPM;CPI0=CPI;RF0=RF;PF0=PF">
+<param name="propagation2" value=" ;Assegni;C1_aut;C1_dip;C1_pens;C2_agr;C3_imp;C4_part;C5_altri;Canone;Imposte;Lavoratori;Mediche;Monogenitore;Mutuo;N_componenti;n75=N_invalidi_75;N_invalidi_66;N_invalidi_75;P_complementare;Previdenza;PI;PM">
+<param name="propagation3" value=" ;verifica=Icef;vpfv=vpf;CPMv=CPM;CPIv=CPI;LDC=LDCv;AL1a=AL1vc;AL2a=AL2vc;ALinva=ALinvvc;LSI=LSIv;FPI=FPIv;LSM=LSMv;FPM=FPMv">
+<param name="propagation4" value=" ;LDC;FPM;FPI;LSI;LSM">
+<param name="propagation5" value=" ;contributo=Icef;vpfc=vpf;CPMc=CPM;CPIc=CPI;LDC=LDCc;LSI=LSIc;FPI=FPIc;LSM=LSMc;FPM=FPMc">
+<param name="propagation6" value=" ;LDC;FPM;FPI;LSI;LSM;AL1a;AL2a;ALinva">
+<param name="asXml" value="(Xml==1);">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3228728579">
+<param name="CRC" value="1038962728">
+<param name="CRCdata" value="26-ago-2008 18.15.34">
+</APPLET>
+<BR>

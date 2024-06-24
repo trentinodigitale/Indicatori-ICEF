@@ -1,0 +1,122 @@
+<APPLET CODE="it.clesius.engine.elab.Clesius.class" CODEBASE="/clesius" WIDTH=700 HEIGHT=600 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.3 $">
+
+<param name="Taratura" value="edilizia agevolata RE; 5.4.2012">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trendStarts" value="paramRE;casoEdil">
+
+<param name="paramRE" value="current;Icef_inf=0.15;Icef_sup=0.36">
+
+<param name="casoEdil" value="paramRE;PM_RE=50000;C1_pens=10000;FAR=1000000">
+
+
+
+<param name="variables" value="tscala">
+
+ <param name="tscala" value="0.00001">
+
+
+
+<param name="edges" value="P.A.T. Edilizia RE;pat;PM_RE;Icef;
+ICI_fabbricati-tot_non;tot_non-non_I;ICEF_2010-10infOK;Icef_inf-10infOK;ICEF_2012-12infOK;Icef_inf-12infOK;ICEF_2010-10supOK;Icef_sup-10supOK;ICEF_2012-12supOK;Icef_sup-12supOK;ICEF_2010-10lt12;ICEF_2012-10lt12;10infOK-10OK;10supOK-10OK;12infOK-12OK;12supOK-12OK;ICEF_2010-min;ICEF_2012-min;ICEF_2010-max;ICEF_2012-max;10OK-ismin;
+10OK-ismax;12OK-ismax;10lt12-ismax;12OK-ismin;10lt12-ismin;10OK-idoneo;12OK-idoneo;ismin-ICEF_RE;min-ICEF_RE;max-ICEF_RE">
+
+
+
+<param name="P.A.T. Edilizia RE" value="text;node.ico;559;327;0;P.A.T. Edilizia RE 2012 - (5.4.2012);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_RE;xModello_RE;2988810195">
+<param name="pat" value="0;node.ico;467;350;0;pat =  0.000 ;0.0;PlusNode;NoInput;NoOutput;0;0;tscala;NoCurve;xpat;ypat;2167909528">
+<param name="PM_RE" value="1;node.ico;537;380;0;PM_RE = ;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xPM_RE;xPM_RE;1179973348">
+<param name="Icef" value="1;node.ico;197;263;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xIcef;yIcef;1255176762">
+<param name="ICI_fabbricati" value="1;node.ico;442;394;0;ICI_fabbricati = ;0.0;PlusNode;ValueInput;NoOutput;0;1;tot_non;tscala;NoCurve;xICI_fabbricati;xICI_fabbricati;1815302199">
+<param name="tot_non" value="0;node.ico;442;288;0;tot_non =  ICI_fabbricati;0.0;PlusNode;NoInput;NoOutput;1;ICI_fabbricati;1;non_I;0.0;1.0;NoCurve;xtot_non;ytot_non;132080508">
+<param name="non_I" value="0;node.ico;437;262;0;non_I =  tot_non);0.0;NumTransNode;NoInput;NoOutput;1;tot_non;0;tscala;1.0;LinearCurve;negCurve;xnon_I;ynon_I;3244859767">
+<param name="ICEF_2010" value="2;node.ico;92;289;0;ICEF_2010 =  0.500 ;0.0;TimesNode;NoInput;NoOutput;0;5;10infOK;10supOK;10lt12;min;max;1.0;NoCurve;xICEF_2010;xICEF_2010;149718704">
+<param name="10infOK" value="0;node.ico;36;325;0;10infOK = ICEF_2010 >= Icef_inf;0.0;NumGeNode;NoInput;NoOutput;2;ICEF_2010;Icef_inf;1;10OK;1.0;1.0;1.0;1.0;NoCurve;x10infOK;y10infOK;220562091">
+<param name="Icef_inf" value="1;node.ico;125;325;0;Icef_inf = ;0.0;ProbNode;ValueInput;NoOutput;0;2;10infOK;12infOK;0.5;NoCurve;xIcef_inf;xIcef_inf;3266422929">
+<param name="ICEF_2012" value="2;node.ico;302;287;0;ICEF_2012 =  0.500 ;0.0;TimesNode;NoInput;NoOutput;0;5;12infOK;12supOK;10lt12;min;max;1.0;NoCurve;xICEF_2012;xICEF_2012;1542074536">
+<param name="12infOK" value="0;node.ico;270;325;0;12infOK = ICEF_2012 >= Icef_inf;0.0;NumGeNode;NoInput;NoOutput;2;ICEF_2012;Icef_inf;1;12OK;1.0;1.0;1.0;1.0;NoCurve;x12infOK;y12infOK;1950196820">
+<param name="10supOK" value="0;node.ico;92;345;0;10supOK = ICEF_2010 < Icef_sup;0.0;NumLtNode;NoInput;NoOutput;2;ICEF_2010;Icef_sup;1;10OK;1.0;1.0;1.0;1.0;NoCurve;x10supOK;y10supOK;3374789819">
+<param name="Icef_sup" value="1;node.ico;243;344;0;Icef_sup = ;0.0;ProbNode;ValueInput;NoOutput;0;2;10supOK;12supOK;0.5;NoCurve;xIcef_sup;xIcef_sup;3364140200">
+<param name="12supOK" value="0;node.ico;332;345;0;12supOK = ICEF_2012 < Icef_sup;0.0;NumLtNode;NoInput;NoOutput;2;ICEF_2012;Icef_sup;1;12OK;1.0;1.0;1.0;1.0;NoCurve;x12supOK;y12supOK;527686783">
+<param name="10lt12" value="0;node.ico;197;289;0;10lt12 = ICEF_2010 < ICEF_2012;0.0;NumLtNode;NoInput;NoOutput;2;ICEF_2010;ICEF_2012;2;ismax;ismin;1.0;1.0;1.0;1.0;NoCurve;x10lt12;y10lt12;3214860204">
+<param name="10OK" value="0;node.ico;36;370;0;10OK =  10infOK * 10supOK;0.0;ProbNode;NoInput;NoOutput;2;10infOK;10supOK;3;ismin;ismax;idoneo;0.0;0.0;0.0;1.0;NoCurve;x10OK;y10OK;2931478764">
+<param name="12OK" value="0;node.ico;270;370;0;12OK =  12infOK * 12supOK;0.0;ProbNode;NoInput;NoOutput;2;12infOK;12supOK;3;ismax;ismin;idoneo;0.0;0.0;0.0;1.0;NoCurve;x12OK;y12OK;4029908944">
+<param name="min" value="0;node.ico;165;308;0;min =  Min(  ICEF_2010,  ICEF_2012 );0.0;NumMinNode;NoInput;NoOutput;2;ICEF_2010;ICEF_2012;1;ICEF_RE;1.0;1.0;1.0;1.0;NoCurve;xmin;ymin;221343284">
+<param name="max" value="0;node.ico;216;308;0;max =  MAX(  ICEF_2010,  ICEF_2012 );0.0;NumMaxNode;NoInput;NoOutput;2;ICEF_2010;ICEF_2012;1;ICEF_RE;1.0;1.0;1.0;1.0;NoCurve;xmax;ymax;1509426906">
+<param name="ismin" value="0;node.ico;133;370;0;ismin =   1  - 10OK 10OK * 12OK + 10OK * 10lt12 - 12OK * 10lt12;0.0;ProbNode;NoInput;NoOutput;3;10OK;12OK;10lt12;1;ICEF_RE;1.0;0.0;1.0;1.0;1.0;1.0;0.0;1.0;NoCurve;xismin;yismin;1394187366">
+<param name="ismax" value="0;node.ico;155;393;0;ismax =  10OK - 10OK * 12OK - 10OK * 10lt12 + 12OK * 10lt12;0.0;ProbNode;NoInput;NoOutput;3;10OK;12OK;10lt12;0;0.0;1.0;0.0;0.0;0.0;0.0;1.0;0.0;NoCurve;xismax;yismax;1215489371">
+<param name="idoneo" value="2;node.ico;335;387;0;idoneo =  10OK + 12OK - 10OK * 12OK;0.0;ProbNode;NoInput;ResultOutput;2;10OK;12OK;0;0.0;1.0;1.0;1.0;NoCurve;xidoneo;xidoneo;2750554858">
+<param name="ICEF_RE" value="2;node.ico;227;393;0;ICEF_RE = SE( ismin=1.0 , 1.0 * min , 1.0 * max );0.0;NumIfNode;NoInput;ResultOutput;3;ismin;min;max;0;1.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xICEF_RE;yICEF_RE;2564265386">
+
+<param name="negCurve" value="LinearCurve;0.0;0.0;1.0E7;-1.0E7">
+
+
+<param name="xIcef_inf" value="Icef_inf;Icef_inf;non;-;ok; ; ; ; ; ;T.4; ">
+<param name="xICEF_2010" value="ICEF_2010;ICEF calcolato sulla base della dichiarazione 2010;ICEF calcolato sulla base della dichiarazione 2010;ICEF calcolato sulla base della dichiarazione 2010;ICEF calcolato sulla base della dichiarazione 2010; ; ; ; ; ;T.4; ">
+<param name="xIcef_sup" value="Icef_sup;Icef_sup;non;-;ok; ; ; ; ; ;T.4; ">
+<param name="xICEF_2012" value="ICEF_2012;ICEF |PM_RE|;ICEF |PM_RE|;ICEF |PM_RE|;ICEF |PM_RE|; ; ; ; ; ;T.4; ">
+<param name="xICI_fabbricati" value="ICI_fabbricati;Valore ICI complessivo dei fabbricati oggetto dell'intervento;Valore ICI complessivo dei fabbricati oggetto dell'intervento=0;Valore ICI complessivo dei fabbricati oggetto dell'intervento;Valore ICI complessivo dei fabbricati oggetto dell'intervento; ; ; ; ; ;$.2; ">
+<param name="xPM_RE" value="PM_RE; calcolato con depositi bancari ( PM=^PM_RE^ ); calcolato con depositi bancari ( PM=^PM_RE^ ); calcolato con depositi bancari ( PM=^PM_RE^ ); calcolato con depositi bancari ( PM=^PM_RE^ ); ; ; ; ; ;$.2; ">
+<param name="xpat" value="pat;pat;0;-;1; ;-;+; ; ;$.2; ">
+
+<param name="xModello_RE" value="P.A.T. Edilizia RE;P.A.T. Edilizia RE;P.A.T. Edilizia RE 2012 - (5.4.2012);--;--; ; ; ; ; ; ; ">
+<param name="xIcef" value="Icef;Icef;non;-;ok; ; ; ; ; ;T.10; ">
+
+<param name="xtot_non" value="tot_non;tot_non;0;-;1; ; ; ; ; ;$.2; ">
+
+<param name="xnon_I" value="non_I;non_I;0;-;1; ; ; ; ; ;$.2; ">
+
+<param name="x10OK" value="10OK;10OK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="x12OK" value="12OK;12OK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xidoneo" value="idoneo;idoneo;<b>NON Idoneo</b>;-;<b>Idoneo</b>; ; ; ; ; ;T; ">
+<param name="xmax" value="max;max;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xmin" value="min;min;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="x12infOK" value="12infOK;12infOK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="x10infOK" value="10infOK;10infOK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="x10supOK" value="10supOK;10supOK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="x10lt12" value="10lt12;10lt12;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="x12supOK" value="12supOK;12supOK;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xICEF_RE" value="ICEF_RE;<b>ICEF<b/>;ICEF=0;<b>ICEF<b/>;<b>ICEF<b/>; ; ; ; ; <b>;T.4;<b/>">
+
+<param name="xismin" value="ismin;ismin;non;-;ok; ; ; ; ; ; ; ">
+
+<param name="xismax" value="ismax;ismax;non;-;ok; ; ; ; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="propagation1;propagation2;propagation3;applicant0;re;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation1" value=" ;ICEF_2010=Icef">
+<param name="propagation2" value=" ;ICEF_2012=Icef;PM=PM_RE">
+<param name="propagation3" value=" ;PM">
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="re" value=" ;idoneo=-1;ICEF_2010=-1;ICEF_RE=-1;ICEF_2012=-1;ICI_fabbricati=-1!0">
+<param name="version" value="<p><p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1973850110">
+<param name="CRC" value="4161571361">
+<param name="CRCdata" value="5-apr-2012 14.54.57">
+</APPLET>
+</CENTER>
+<BR>

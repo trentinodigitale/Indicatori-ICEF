@@ -1,0 +1,193 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+	<param name="Taratura" value="Modello 2019 Generale; 28.5.2019">
+	<param name="revision" value="$Revision: 35923 $">
+	<param name="Font" value="Dialog">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+
+
+	<param name="trendStarts" value="parametri;bene;tari">
+
+	<param name="parametri"
+		value="current;Assegno_imposto=2500;A1=1;A2=1;A3=1;Bmax=500;Bmin=50;Bsca=5;Redd3inf=5000;Redd3sup=36000;Tmax1=100;Tmax2=200;Tmax3=300;Tmin1=10;Tmin2=20;Tmin3=30;Tsca1=0.5;Tsca2=1;Tsca3=2">
+	<param name="bene" value="parametri;Prestazione=1">
+	<param name="tari" value="parametri;Prestazione=0">
+
+
+	<param name="trends" value="">
+
+	<param name="variables"
+		value="uno;divisotre;rscala;pscala;mscala;fscala;bscala;tariffamax">
+
+	<param name="uno" value="1">
+	<param name="divisotre" value="0.49019608; uno / C3; ">
+
+	<param name="rscala" value="0.00001">
+	<param name="pscala" value="0.000001">
+	<param name="mscala" value="uno / tariffamax">
+	<param name="fscala" value="0.1">
+	<param name="bscala" value="0.01">
+	<param name="tariffamax" value="5000">
+
+
+
+
+
+<param name="edges" value="MODELLO G;Prestazione;Tsca1;Tsca2;Tsca3;Bmin;Bsca;Grafici;
+Assegno_imposto-arl;Bmax-rb;tariffa-t1;tariffa-t2;tariffa-t3;b-rb;Tmax1-tx1;A1-tx1;Tmax2-tx2;Tmax3-tx3;complessivo-tariffa;t1-tar1;t2-tar2;t3-tar3;b-beneficio;complessivo-b;A2-tx2;A3-tx3;Tmin1-tn1;A1-tn1;Tmin2-tn2;
+A2-tn2;Tmin3-tn3;A3-tn3;tar1-tari1;tar2-tari2;tar3-tari3;tari1-tarif1;tari2-tariffa2;tari3-tariffa3;tarif1-tariffa1;Icef-giudizio;giudizio-complessivo;Redd3inf-inf;inf-giudizio;sup-giudizio;Redd3sup-sup;Rif-inf;Rif-sup;Icef-condOK;sup-condOK;
+tari1-r1;Tmax1-r1;tari2-r2;Tmax2-r2;tari3-r3;Tmax3-r3">
+
+
+
+<param name="MODELLO G" value="text;node.ico;156;439;0;Versione 28.5.2019;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello;yModello;1355716683">
+<param name="Prestazione" value="1;node.ico;44;473;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;1.0;NoCurve;xPrestazione;xPrestazione;3875863562">
+<param name="Tsca1" value="1;node.ico;556;333;0;scaglione zero=ERRORE;0.0;PlusNode;ValueInput;NoOutput;0;0;mscala;NoCurve;xTsca1;xTsca1;1878790922">
+<param name="Tsca2" value="1;node.ico;565;388;0;scaglione zero=ERRORE;0.0;PlusNode;ValueInput;NoOutput;0;0;mscala;NoCurve;xTsca2;xTsca2;4172712899">
+<param name="Tsca3" value="1;node.ico;560;448;0;scaglione zero=ERRORE;0.0;PlusNode;ValueInput;NoOutput;0;0;mscala;NoCurve;xTsca3;xTsca3;2069142240">
+<param name="Bmin" value="1;node.ico;30;326;0;il beneficio minimo=0;0.0;PlusNode;ValueInput;NoOutput;0;0;mscala;NoCurve;xBmin;xBmin;3623376865">
+<param name="Bsca" value="1;node.ico;77;328;0;scaglione zero=ERRORE;0.0;PlusNode;ValueInput;NoOutput;0;0;mscala;NoCurve;xBsca;xBsca;1941559293">
+<param name="Grafici" value="1;node.ico;127;468;0;nessun grafico;0.0;ProbNode;ValueInput;NoOutput;0;0;1.0E-5;NoCurve;xGrafici;xGrafici;919815300">
+<param name="Assegno_imposto" value="1;node.ico;503;274;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;arl;pscala;NoCurve;xAssegno_imposto;xAssegno_imposto;1328973914">
+<param name="arl" value="0;node.ico;402;275;0;-;0.0;PlusNode;NoInput;NoOutput;1;Assegno_imposto;0;rscala;1.0;NoCurve;xarl;xarl;3316620104">
+<param name="Bmax" value="1;node.ico;128;328;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;rb;mscala;NoCurve;xBmax;xBmax;1529669655">
+<param name="rb" value="0;node.ico;129;359;0;-;0.0;DivideNode;NoInput;NoOutput;2;b;Bmax;0;1.0;1.0;1.0;1.0;NoCurve;xrb;xrb;370325681">
+<param name="tariffa" value="0;node.ico;200;398;0;-;0.0;NumTransNode;NoInput;NoOutput;1;complessivo;3;t1;t2;t3;1.0;1.0;LinearCurve;midCurve;xtariffa;xtariffa;2983736783">
+<param name="t1" value="0;node.ico;291;357;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;tariffa;1;tar1;0.0;1.0;StairsCurve;t1Curve;xt1;xt1;1073566414">
+<param name="t2" value="0;node.ico;292;417;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;tariffa;1;tar2;0.0;1.0;StairsCurve;t2Curve;xt2;xt2;3290507242">
+<param name="t3" value="0;node.ico;296;472;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;tariffa;1;tar3;0.0;1.0;StairsCurve;t3Curve;xt3;xt3;1901604719">
+<param name="b" value="0;node.ico;79;359;0;-;0.0;ProbNode;NoInput;IntermediateOutput;1;complessivo;2;rb;beneficio;1.0;0.0;StairsCurve;bCurve;xb;xb;819313358">
+<param name="Tmax1" value="1;node.ico;510;331;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;tx1;r1;mscala;NoCurve;xTmax1;xTmax1;1438262115">
+<param name="tx1" value="0;node.ico;432;331;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tmax1;A1;0;0.0;1.0;1.0;1.0;NoCurve;xtx1;xtx1;3634066024">
+<param name="A1" value="1;node.ico;391;332;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;tx1;tn1;0.5;NoCurve;xA1;xA1;1958300174">
+<param name="Tmax2" value="1;node.ico;508;386;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;tx2;r2;mscala;NoCurve;xTmax2;xTmax2;3179457298">
+<param name="tx2" value="0;node.ico;428;386;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tmax2;A2;0;0.0;1.0;1.0;1.0;NoCurve;xtx2;xtx2;1762123493">
+<param name="Tmax3" value="1;node.ico;506;447;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;tx3;r3;mscala;NoCurve;xTmax3;xTmax3;3205952438">
+<param name="tx3" value="0;node.ico;429;447;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tmax3;A3;0;0.0;1.0;1.0;1.0;NoCurve;xtx3;xtx3;3218433053">
+<param name="complessivo" value="0;node.ico;198;325;0;-;0.0;OrProbNode;NoInput;NoOutput;1;giudizio;2;tariffa;b;0.0;1.0;NoCurve;xcomplessivo;xcomplessivo;113166119">
+<param name="tar1" value="0;node.ico;367;360;0;-;0.0;TimesNode;NoInput;NoOutput;1;t1;1;tari1;mscala;1.0;NoCurve;xtar1;xtar1;248971232">
+<param name="tar2" value="0;node.ico;354;418;0;-;0.0;TimesNode;NoInput;NoOutput;1;t2;1;tari2;mscala;1.0;NoCurve;xtar2;xtar2;2736786931">
+<param name="tar3" value="0;node.ico;359;475;0;-;0.0;TimesNode;NoInput;NoOutput;1;t3;1;tari3;mscala;1.0;NoCurve;xtar3;xtar3;3530613834">
+<param name="beneficio" value="2;node.ico;80;397;0;-;0.0;TimesNode;NoInput;ResultOutput;1;b;0;1.0;1.0;NoCurve;xbeneficio;xbeneficio;2817565945">
+<param name="A2" value="1;node.ico;386;386;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;tx2;tn2;0.5;NoCurve;xA2;xA2;2197998669">
+<param name="A3" value="1;node.ico;391;444;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;tx3;tn3;0.5;NoCurve;xA3;xA3;3615420252">
+<param name="Tmin1" value="1;node.ico;299;331;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tn1;mscala;NoCurve;xTmin1;xTmin1;1152032690">
+<param name="tn1" value="0;node.ico;342;332;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tmin1;A1;0;0.0;1.0;1.0;1.0;NoCurve;xtn1;xtn1;2179939971">
+<param name="Tmin2" value="1;node.ico;292;388;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tn2;mscala;NoCurve;xTmin2;xTmin2;2273873122">
+<param name="tn2" value="0;node.ico;343;386;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tmin2;A2;0;0.0;1.0;1.0;1.0;NoCurve;xtn2;xtn2;2445118711">
+<param name="Tmin3" value="1;node.ico;294;447;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;tn3;mscala;NoCurve;xTmin3;xTmin3;4004014406">
+<param name="tn3" value="0;node.ico;349;444;0;-;0.0;TimesNode;NoInput;NoOutput;2;Tmin3;A3;0;0.0;1.0;1.0;1.0;NoCurve;xtn3;xtn3;2191345022">
+<param name="tari1" value="0;node.ico;433;361;0;-;0.0;NumMaxNode;NoInput;NoOutput;1;tar1;2;tarif1;r1;mscala;0.0;NoCurve;xtari1;xtari1;1988210109">
+<param name="tari2" value="0;node.ico;431;417;0;-;0.0;NumMaxNode;NoInput;NoOutput;1;tar2;2;tariffa2;r2;mscala;0.0;NoCurve;xtari2;xtari2;1944472571">
+<param name="tari3" value="0;node.ico;432;474;0;-;0.0;NumMaxNode;NoInput;NoOutput;1;tar3;2;tariffa3;r3;mscala;0.0;NoCurve;xtari3;xtari3;88671363">
+<param name="tarif1" value="0;node.ico;509;359;0;-;0.0;TimesNode;NoInput;NoOutput;1;tari1;1;tariffa1;mscala;1.0;NoCurve;xtarif1;xtarif1;2902843188">
+<param name="tariffa2" value="2;node.ico;585;417;0;-;0.0;TimesNode;NoInput;ResultOutput;1;tari2;0;mscala;1.0;NoCurve;xtariffa2;xtariffa2;2062874522">
+<param name="tariffa3" value="2;node.ico;582;474;0;-;0.0;TimesNode;NoInput;ResultOutput;1;tari3;0;mscala;1.0;NoCurve;xtariffa3;xtariffa3;1253271127">
+<param name="tariffa1" value="2;node.ico;583;361;0;-;0.0;PlusNode;NoInput;ResultOutput;1;tarif1;0;mscala;1.0;NoCurve;xtariffa1;xtariffa1;2553896911">
+<param name="Icef" value="1;node.ico;292;273;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;condOK;0.5;NoCurve;xIcef;xIcef;2279524225">
+<param name="giudizio" value="0;0;250;298;0;-;0.0;CutoffNode;NoInput;NoOutput;3;Icef;inf;sup;1;complessivo;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;xgiudizio;1032217653">
+<param name="Redd3inf" value="1;node.ico;136;297;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;pscala;NoCurve;xRedd3inf;xRedd3inf;4273891791">
+<param name="inf" value="0;node.ico;196;298;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;1;giudizio;1.0;divisotre;1.0;1.0;NoCurve;xinf;xinf;1154542153">
+<param name="sup" value="0;node.ico;306;298;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;2;giudizio;condOK;1.0;divisotre;1.0;1.0;NoCurve;xsup;xsup;794544090">
+<param name="Redd3sup" value="1;node.ico;376;298;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;sup;pscala;NoCurve;xRedd3sup;xRedd3sup;2093254298">
+<param name="Rif" value="1;node.ico;242;272;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;inf;sup;pscala;NoCurve;xRif;xRif;2265074648">
+<param name="condOK" value="0;node.ico;350;274;0;-;0.0;NumLtNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;xcondOK;817503999">
+<param name="r1" value="0;node.ico;473;346;0;-;0.0;DivideNode;NoInput;NoOutput;2;tari1;Tmax1;0;1.0;1.0;1.0;1.0;NoCurve;xr1;xr1;1180836600">
+<param name="r2" value="0;node.ico;471;403;0;-;0.0;DivideNode;NoInput;NoOutput;2;tari2;Tmax2;0;1.0;1.0;1.0;1.0;NoCurve;xr2;xr2;2445569979">
+<param name="r3" value="0;node.ico;467;462;0;-;0.0;DivideNode;NoInput;NoOutput;2;tari3;Tmax3;0;1.0;1.0;1.0;1.0;NoCurve;xr3;xr3;1347074223">
+
+<param name="bCurve" value="StairsCurve;0.0;0.0;Bmin;0.0;Bsca;0.1;Bmax;1.0">
+<param name="midCurve" value="LinearCurve;0.0;0.0;1.0;1.0">
+<param name="t1Curve" value="StairsCurve;0.0;0.0;tn1;0.0;Tsca1;0.1;tx1;1.0;1.0;1.0;tx1;1.0">
+<param name="t2Curve" value="StairsCurve;0.0;0.0;tn2;0.0;Tsca2;0.1;tx2;1.0;1.0;1.0;tx2;1.0">
+<param name="t3Curve" value="StairsCurve;0.0;0.0;tn3;0.0;Tsca3;0.1;tx3;1.0;1.0;1.0;tx3;1.0">
+
+
+<param name="xA3" value="A3;in base al regolamento l'importo della tariffa3 ;esente in base al regolamento;in base al regolamento l'importo della tariffa3 è stato ridotto al ;tariffa3 regolare;è stato ridotto al; ; ; ; ;%; della tariffa normale">
+<param name="xTmin1" value="Tmin1;tarif1 minima;tarif1 minima=0;tarif1 minima=;tarif1 minima=max; ; ;= ; ; ;$.2; ">
+<param name="xA2" value="A2;in base al regolamento l'importo della tariffa2 ;esent in base al regolamentoe;in base al regolamento l'importo della tariffa2 è stato ridotto al ;tariffa2 regolare;è stato ridotto al; ; ; ; ;%; della tariffa normale">
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef" value="Icef;Icef;0;-;1; ;-;+; ; ; ; ">
+<param name="xTmax1" value="Tmax1;la tariffa {tarif1} massima;--;tarif1 massima=;tarif1 massima=max;è; ; ; ; ;$.2; ">
+<param name="xTmin3" value="Tmin3;tariffa3 minima;tariffa3 minima=0;tariffa3 minima=;tariffa3 minima=max; ; ;= ; ; ;$.2; ">
+<param name="xTmax3" value="Tmax3;la tariffa {TARIFFA3} massima;tariffa3 massima=0;tariffa3 massima=;tariffa3 massima=max;è; ; ; ; ;$.2; ">
+<param name="xTmax2" value="Tmax2;la tariffa {TARIFFA2} massima;tariffa2 massima=0;tariffa2 massima=;tariffa2 massima=max;è; ; ; ; ;$.2; ">
+<param name="xTmin2" value="Tmin2;tariffa2 minima;tariffa2 minima=0;tariffa2 minima=;tariffa2 minima=max; ; ;= ; ; ;$.2; ">
+<param name="xA1" value="A1;in base al regolamento l'importo della tariffa1 ;esente in base al regolamento;in base al regolamento l'importo della tariffa1 è stato ridotto al ;tariffa1 regolare;è stato ridotto al; ; ; ; ;%; della tariffa normale">
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0;-;1; ;-;+; ; ; ; ">
+<param name="xTsca2" value="Tsca2;lo scaglione per tariffa2;scaglione zero=ERRORE;scaglione della tariffa2=;scaglione della tariffa2=max;=; ; ; ; ;$.2; ">
+<param name="xTsca3" value="Tsca3;lo scaglione per tariffa3;scaglione zero=ERRORE;scaglione della tariffa3=;scaglione della tariffa3=max;=; ; ; ; ;$.2; ">
+<param name="xTsca1" value="Tsca1;lo scaglione per tarif1;scaglione zero=ERRORE;scaglione della tarif1=;scaglione della tarif1=max;=; ; ; ; ;$.2; ">
+<param name="xModello" value="MODELLO G;x;Versione 28.5.2019; ; ; ; ; ; ; ; ; ">
+
+<param name="xPrestazione" value="Prestazione;Prestazione;0;-;1; ;-;+; ; ; ; ">
+<param name="xBmin" value="Bmin;beneficio minimo;il beneficio minimo=0;il beneficio minimo=;il beneficio minimo=max;=; ; ; ; ;$.2; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xBmax" value="Bmax;{beneficio} massimo;il beneficio massimo=0;il beneficio massimo=;il beneficio massimo=max;è; ; ; ; ;T; ">
+<param name="xAssegno_imposto" value="Assegno_imposto;Assegno imposto;non Assegno imposto;Assegno imposto;Assegno imposto; ; ; ; ; ;$.2; ">
+<param name="xBsca" value="Bsca;lo scaglione per beneficio;scaglione zero=ERRORE;scaglione del beneficio=;scaglione del beneficio=max;=; ; ; ; ;$.2; ">
+<param name="xGrafici" value="Grafici;x;nessun grafico;-;aggiungi grafici; ; ; ; ; ; ; ">
+<param name="xtari1" value="tari1;tari1;0;-;1; ;-;+; ; ; ; ">
+<param name="xtariffa2" value="tariffa2;La tariffa per il servizio {TARIFFA2} è il %r2% della tariffa2 intera $Tmax2$;La tariffa per il servizio {TARIFFA2};La tariffa per il servizio {TARIFFA2};La tariffa per il servizio {TARIFFA2} è il %r2% della tariffa2 intera $Tmax2$; ; ; ; ; <b>;$.2;</b>">
+<param name="xtariffa3" value="tariffa3;La tariffa per il servizio {TARIFFA3} è il %r3% della tariffa3 intera $Tmax3$;La tariffa per il servizio {TARIFFA3};La tariffa per il servizio {TARIFFA3};La tariffa per il servizio {TARIFFA3} è il %r3% della tariffa3 intera $Tmax3$; ; ; ; ; <b>;$.2;</b>">
+<param name="xtariffa1" value="tariffa1;La tariffa per il servizio {TARIFFA1} è il %r1% della tariffa intera di $Tmax1$;Esenzione tariffaria per il servizio {TARIFFA1};La tariffa per il servizio {TARIFFA1} è il %r1% della tariffa intera di $Tmax1$;La tariffa per il servizio {TARIFFA1} è il %r1% della tariffa intera di $Tmax1$; ; ; ; ; <b>;$.2;</b>">
+<param name="xtari2" value="tari2;tari2;0;-;1; ;-;+; ; ; ; ">
+<param name="xtari3" value="tari3;tari3;0;-;1; ;-;+; ; ; ; ">
+<param name="xtarif1" value="tarif1;tarif1;0;-;1; ;-;+; ; ; ; ">
+<param name="xt3" value="t3;La tariffa per il servizio {TARIFFA3} è il %r3% della tariffa intera di $Tmax3$;Tariffa minima per il servizio {TARIFFA3};La tariffa per il servizio {TARIFFA3} è il %r3% della tariffa intera di $Tmax3$;Tariffa intera per il servizio {TARIFFA3}; ; ;  ; ;  ;$.2; ">
+<param name="xb" value="x; {BENEFICIO}  è il %rb% di $Bmax$;{BENEFICIO} ( l'ICEF è oltre il limite superiore, quindi spetta solo il contributo minimo ) ; {BENEFICIO}   è il %rb% di $Bmax$;{BENEFICIO} (l'ICEF è minore del limite inferiore, quindi spetta il contributo massimo) ; ; ; ; ; ; ; ">
+<param name="xcomplessivo" value="complessivo;complessivo;0;-;1; ;-;+; ; ; ; ">
+<param name="xt2" value="t2;La tariffa per il servizio {TARIFFA2} è il %r2% della tariffa intera di $Tmax2$;Tariffa minima per il servizio {TARIFFA2};La tariffa per il servizio {TARIFFA2} è il %r2% della tariffa intera di $Tmax2$;Tariffa intera per il servizio {TARIFFA2}; ; ;  ; ;  ;$.2; ">
+<param name="xarl" value="arl;arl;non;-;ok; ; ; ; ; ; ; ">
+<param name="xtariffa" value="tariffa;la tariffa;è stata determinata la tariffa minima;è stata determinata una tariffa intermedia;è stata determinata la tariffa massima;è;bassa;alta; ; (;%; della differenza tra massima e minima oltre la minima)">
+<param name="xt1" value="t1;La tariffa per il servizio {TARIFFA1} è il %r1% della tariffa intera di $Tmax1$;Tariffa minima per il servizio {TARIFFA1};La tariffa per il servizio {TARIFFA1} è il %r1% della tariffa intera di $Tmax1$;Tariffa intera per il servizio {TARIFFA1}; ; ;  ; ;  ;$.2; ">
+<param name="xtar1" value="tar1;tar1;0;-;1; ;-;+; ; ; ; ">
+<param name="xtar2" value="tar2;tar2;0;-;1; ;-;+; ; ; ; ">
+<param name="xtar3" value="tar3;tar3;0;-;1; ;-;+; ; ; ; ">
+<param name="xbeneficio" value="beneficio; {BENEFICIO}   è il %rb% di $Bmax$;nessun {BENEFICIO}; {BENEFICIO}   è il %rb% di $Bmax$;|b| ; ; ;  ; ; ;$.2; ">
+<param name="xsup" value="sup;sup;0;-;1; ;-;+; ; ; ; ">
+<param name="xinf" value="inf;inf;0;-;1; ;-;+; ; ; ; ">
+<param name="xr2" value="r2;r2;0;-;1; ;-;+; ; ; ; ">
+<param name="xcondOK" value="condOK;condOK;0;-;1; ;-;+; ; ; ; ">
+<param name="xrb" value="rb;il beneficio;non spetta nessun beneficio;il beneficio del servizio {BENEFICIO} è il;il beneficio spetta interamente; ; ; ;è il ; ;%; del beneficio intero">
+<param name="xr1" value="r1;r1;0;-;1; ;-;+; ; ; ; ">
+<param name="xtx2" value="tx2;tx2;0;-;1; ;-;+; ; ; ; ">
+<param name="xtx3" value="tx3;tx3;0;-;1; ;-;+; ; ; ; ">
+<param name="xtn3" value="tn3;tn3;0;-;1; ;-;+; ; ; ; ">
+<param name="xtx1" value="tx1;tx1;0;-;1; ;-;+; ; ; ; ">
+<param name="xr3" value="r3;r3;0;-;1; ;-;+; ; ; ; ">
+<param name="xtn1" value="tn1;tn1;0;-;1; ;-;+; ; ; ; ">
+<param name="xtn2" value="tn2;tn2;0;-;1; ;-;+; ; ; ; ">
+<param name="xgiudizio" value="giudizio;giudizio;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="applicant0;propagation0;resT;result1;res12;result2;res22;result3;res32;result5;xpl0;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="applicant0" value="<P> Richiedente: ;">
+<param name="propagation0" value=".;Redd3inf=Redd3inf;Redd3sup=Redd3sup">
+<param name="resT" value="(Prestazione!=1)<P><CENTER><H1></H1></CENTER>;">
+<param name="result1" value="(Prestazione!=1) <b>{TARIFFA1}</b>;tariffa1=-1">
+<param name="res12" value="(A1!=1);A1=2">
+<param name="result2" value="(Prestazione!=1) <b>{TARIFFA2}</b>;tariffa2=-1">
+<param name="res22" value="(A2!=1);A2=2">
+<param name="result3" value="(Prestazione!=1) <b>{TARIFFA3}</b>;tariffa3=-1">
+<param name="res32" value="(A3!=1);A3=2">
+<param name="result5" value="(Prestazione!=0) <b>{BENEFICIO}</b>;beneficio=-1">
+<param name="xpl0" value="<BR><b>Questo risultato deriva dalle seguenti valutazioni:</b>;">
+<param name="version" value="<p> Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1160419690">
+<param name="CRC" value="1500281500">
+<param name="CRCdata" value="29-mag-2019 9.39.33">
+</APPLET>
+<BR>
+
+

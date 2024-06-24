@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	
+	<header>
+		<![CDATA[<html><head>
+			<title>Clesius ICEF</title></head>
+			]]>
+		<![CDATA[<H2><CENTER>]]>
+		<sql><![CDATA[SELECT CASE WHEN id_servizio = 32014 THEN 
+			'Attestazione dell''indicatore ICEF per la determinazione delle quote di compartecipazione degli utenti dei servizi socio-assistenziali<BR>- Anno riferimento redditi 2013 -'
+			ELSE '' 	 
+			END from Domande where id_domanda=${id_domanda}]]>
+      	</sql>
+      	<![CDATA[</H2></CENTER><BR><BR>]]>
+	</header>
+	<ente>
+		<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+		<sql><![CDATA[select case when id_tp_stato < 3000 then
+			'<H2><CENTER><HR>ATTENZIONE: domanda non trasmessa<BR>Elaborazione
+			provvisoria, attestazione NON valida! <HR></H2></CENTER>' else
+			'<BR>' end from Doc where id=${id_domanda}]]>
+      </sql>
+	</ente>
+	
+
+	<outputRete>
+		<![CDATA[${outputRete}]]>
+	</outputRete>
+	
+	<infoDoc>
+		<class>clesprojects.clesius.icef.InfoDomanda</class>
+	</infoDoc>
+	
+	<netVersion><![CDATA[<center>${netVersion}</center>]]></netVersion>
+	<footer>
+		<![CDATA[<hr><center>Clesius S.r.l.</center></hr>]]>		
+	</footer>
+
+</Doc>

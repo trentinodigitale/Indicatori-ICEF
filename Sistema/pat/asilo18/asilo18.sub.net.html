@@ -1,0 +1,133 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class
+	CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+	<param name="PATtrasporto"
+		value="PAT prolungamento asilo/scuola materna 2018; 8.6.2017">
+	<param name="revision" value="$Revision: 31126 $">
+
+	<param name="mode" value="Author">
+	<param name="Font" value="SansSerif">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="debug" value="true">
+
+	<param name="trendStarts" value="trendstart;caso;parasilo">
+	<param name="trendstart" value="current">
+	<param name="caso" value="parasilo;Icef=0.3">
+
+	<param name="parasilo"
+		value="current;Icefinf=0.2256;Icefsup=0.3530;Iceflim=0.54;Tmin=9;Tsca=0.1;Tmax=24;Tmaxx=24;Rif=50000">
+
+	<param name="trends" value="">
+
+
+
+
+	<param name="variables"
+		value="uno;divisotre;ascala;rscala;duemin;tremin;duemax;tremax">
+
+	<param name="uno" value="1">
+	<param name="divisotre" value="0.49019608; uno / C3; ">
+
+	<param name="ascala" value="0.001">
+
+	<param name="rscala" value="0.000001">
+
+	<param name="duemin" value="2.0555555556">
+	<param name="tremin" value="3.1111111111">
+
+	<param name="duemax" value="2.0416666667">
+	<param name="tremax" value="3.0833333333">
+
+
+
+<param name="edges" value="PAT prolungamento asilo;Tsca;Rif;
+Tmax-tmax2;Tmax-tmax3;Tmaxx-tmaxx2;Tmaxx-tmaxx3;Icef-giudizio;sup-giudizio;inf-giudizio;Icef-condOK;Icefinf-inf;Icefsup-sup;sup-condOK;giudizio-percentuale;giudizio-fascia;percentuale-tariffa_oraria;Iceflim-lim;Icef-ulteriore_riduzione;lim-ulteriore_riduzione;Tmin-tmin2;Tmin-tmin3;tariffa_oraria-per_2;tariffa_oraria-per_3;
+per_2-per_due_ore;per_3-per_tre_ore;tmin3-per_tre_ore;tmin2-per_due_ore">
+
+
+
+<param name="PAT prolungamento asilo" value="text;node.ico;110;446;0;PAT prolungamento asilo (8.6.2017);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT prolungamento asilo;yPAT prolungamento asilo;3500537932">
+<param name="Tsca" value="1;node.ico;534;390;0;Tsca = ;0.0;PlusNode;ValueInput;NoOutput;0;0;ascala;NoCurve;xTsca;xTsca;1207887263">
+<param name="Rif" value="1;node.ico;139;281;0;Rif = ;0.0;PlusNode;ValueInput;NoOutput;0;0;rscala;NoCurve;xRif;xRif;2782748120">
+<param name="Tmax" value="1;node.ico;391;391;0;Tmax = ;0.0;PlusNode;ValueInput;NoOutput;0;2;tmax2;tmax3;ascala;NoCurve;xTmax;xTmax;1726410268">
+<param name="tmax2" value="0;node.ico;389;423;0;tmax2 =  2.042*Tmax;0.0;TimesNode;NoInput;NoOutput;1;Tmax;0;ascala;duemax;NoCurve;xtmax2;xtmax2;2880208104">
+<param name="tmax3" value="0;node.ico;406;453;0;tmax3 =  3.083*Tmax;0.0;TimesNode;NoInput;NoOutput;1;Tmax;0;ascala;tremax;NoCurve;xtmax3;xtmax3;88649588">
+<param name="Tmaxx" value="1;node.ico;457;392;0;Tmaxx = ;0.0;PlusNode;ValueInput;NoOutput;0;2;tmaxx2;tmaxx3;ascala;NoCurve;xTmaxx;xTmaxx;2270938552">
+<param name="tmaxx2" value="0;node.ico;467;424;0;tmaxx2 =  2.042*Tmaxx;0.0;TimesNode;NoInput;NoOutput;1;Tmaxx;0;ascala;duemax;NoCurve;xtmaxx2;xtmaxx2;282086140">
+<param name="tmaxx3" value="0;node.ico;499;456;0;tmaxx3 =  3.083*Tmaxx;0.0;TimesNode;NoInput;NoOutput;1;Tmaxx;0;ascala;tremax;NoCurve;xtmaxx3;xtmaxx3;3499707775">
+<param name="Icef" value="1;node.ico;138;310;0;Icef = ;0.0;ProbNode;ValueInput;NoOutput;0;3;giudizio;condOK;ulteriore_riduzione;0.5;NoCurve;xIcef;xIcef;3774443545">
+<param name="giudizio" value="0;0;137;352;0;giudizio =  MAX( 0, MIN( 1, (Icef - inf) / (sup - inf) )) ;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;sup;2;percentuale;fascia;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;xgiudizio;2988949658">
+<param name="sup" value="0;node.ico;177;325;0;sup =  Icefsup;0.0;ProbNode;NoInput;NoOutput;1;Icefsup;2;giudizio;condOK;0.0;1.0;NoCurve;xsup;xsup;2465074653">
+<param name="inf" value="0;node.ico;95;326;0;inf =  Icefinf;0.0;ProbNode;NoInput;NoOutput;1;Icefinf;1;giudizio;0.0;1.0;NoCurve;xinf;xinf;2666763765">
+<param name="condOK" value="0;node.ico;249;324;0;condOK = Icef <= sup;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;xcondOK;3790389215">
+<param name="Icefinf" value="1;node.ico;52;299;0;Icefinf = ;0.0;ProbNode;ValueInput;NoOutput;0;1;inf;0.5;NoCurve;xIcefinf;xIcefinf;2523518271">
+<param name="Icefsup" value="1;node.ico;221;297;0;Icefsup = ;0.0;ProbNode;ValueInput;NoOutput;0;1;sup;0.5;NoCurve;xIcefsup;xIcefsup;1372265006">
+<param name="percentuale" value="0;node.ico;244;354;0;percentuale =  giudizio;0.0;ProbNode;NoInput;NoOutput;1;giudizio;1;tariffa_oraria;0.0;1.0;NoCurve;xpercentuale;xpercentuale;3633089383">
+<param name="fascia" value="2;node.ico;51;352;0;fascia =  giudizio);0.0;NumTransNode;NoInput;IntermediateOutput;1;giudizio;0;1.0;1.0;LinearCurve;fasciaCurve;xfascia;xfascia;4043380284">
+<param name="tariffa_oraria" value="2;node.ico;358;354;0;tariffa_oraria =  percentuale;0.0;ProbNode;NoInput;IntermediateOutput;1;percentuale;2;per_2;per_3;0.0;1.0;StairsCurve;tariffaCurve;xtariffa_oraria;xtariffa_oraria;3085036110">
+<param name="Iceflim" value="1;node.ico;371;281;0;Iceflim = ;0.0;ProbNode;ValueInput;NoOutput;0;1;lim;0.5;NoCurve;xIceflim;xIceflim;3343447799">
+<param name="lim" value="0;node.ico;286;281;0;lim =  Iceflim;0.0;ProbNode;NoInput;NoOutput;1;Iceflim;1;ulteriore_riduzione;0.0;1.0;NoCurve;xlim;xlim;4174998162">
+<param name="ulteriore_riduzione" value="2;node.ico;373;310;0;ulteriore_riduzione = Icef < lim;0.0;NumLtNode;NoInput;IntermediateOutput;2;Icef;lim;0;1.0;1.0;1.0;1.0;NoCurve;xulteriore_riduzione;xulteriore_riduzione;3461193164">
+<param name="Tmin" value="1;node.ico;596;387;0;Tmin = ;0.0;PlusNode;ValueInput;NoOutput;0;2;tmin2;tmin3;ascala;NoCurve;xTmin;xTmin;2471053893">
+<param name="tmin2" value="0;node.ico;566;420;0;tmin2 =  2.056*Tmin;0.0;TimesNode;NoInput;NoOutput;1;Tmin;1;per_due_ore;ascala;duemin;NoCurve;xtmin2;xtmin2;101735970">
+<param name="tmin3" value="0;node.ico;627;419;0;tmin3 =  3.111*Tmin;0.0;TimesNode;NoInput;NoOutput;1;Tmin;1;per_tre_ore;ascala;tremin;NoCurve;xtmin3;xtmin3;7388412">
+<param name="per_2" value="0;node.ico;454;334;0;per_2 =  2.042*tariffa_oraria;0.0;TimesNode;NoInput;NoOutput;1;tariffa_oraria;1;per_due_ore;ascala;duemax;NoCurve;xper_2;xper_2;1552207053">
+<param name="per_3" value="0;node.ico;501;360;0;per_3 =  3.083*tariffa_oraria;0.0;TimesNode;NoInput;NoOutput;1;tariffa_oraria;1;per_tre_ore;ascala;tremax;NoCurve;xper_3;xper_3;1055540339">
+<param name="per_due_ore" value="2;node.ico;566;335;0;per_due_ore =  MAX(  per_2,  tmin2 );0.0;NumMaxNode;NoInput;IntermediateOutput;2;per_2;tmin2;0;ascala;1.0;1.0;1.0;NoCurve;xper_due_ore;xper_due_ore;563741229">
+<param name="per_tre_ore" value="2;node.ico;626;360;0;per_tre_ore =  MAX(  per_3,  tmin3 );0.0;NumMaxNode;NoInput;IntermediateOutput;2;per_3;tmin3;0;ascala;1.0;1.0;1.0;NoCurve;xper_tre_ore;xper_tre_ore;962363880">
+
+<param name="fasciaCurve" value="LinearCurve;0.0;1.0;1.0E-8;2.0;0.99999999;2.0;1.0;3.0">
+<param name="tariffaCurve" value="StairsCurve;0.0;0.0;Tmin;0.0;Tsca;0.1;Tmax;1.0;1.0;1.0;Tmaxx;1.0">
+
+
+<param name="xIcefinf" value="Icefinf;Icefinf;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia tra ^inf^ a ^sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.8;</b>">
+<param name="xTmaxx" value="Tmaxx;Tmaxx;0;-;1; ;-;+; ; ; ; ">
+<param name="xTmin" value="Tmin;Tmin;0;-;1; ;-;+; ; ; ; ">
+<param name="xIceflim" value="Iceflim;Iceflim;0;-;1; ;-;+; ; ; ; ">
+<param name="xIcefsup" value="Icefsup;Icefsup;0;-;1; ;-;+; ; ; ; ">
+<param name="xPAT prolungamento asilo" value="PAT prolungamento asilo;PAT prolungamento asilo;PAT prolungamento asilo (8.6.2017);--;--; ; ; ; ; ; ; ">
+
+<param name="xTsca" value="Tsca;Tsca;0;-;1; ;-;+; ; ; ; ">
+<param name="xTmax" value="Tmax;Tmax;0;-;1; ;-;+; ; ; ; ">
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+<param name="xfascia" value="fascia;Fascia di tariffa;Fascia di tariffa;Fascia di tariffa;Fascia di tariffa;= ; ; ; ; ;T; ">
+<param name="xtariffa_oraria" value="tariffa_oraria;La <b>tariffa oraria</b> mensile (%percentuale% tra $Tmin$ e $Tmax$);La <b>tariffa oraria</b> mensile (tariffa minima di $Tmin$);La <b>tariffa oraria</b> mensile (%percentuale% tra $Tmin$ e $Tmax$);La <b>tariffa oraria</b> mensile (tariffa massima di $Tmaxx$);è il; ; ; ; <b>;$.2;</b>">
+<param name="xper_2" value="per_2;per_2;non;-;ok; ; ; ; ; ;$.1; ">
+<param name="xper_3" value="per_3;per_3;non;-;ok; ; ; ; ; ;$.1; ">
+<param name="xtmin3" value="tmin3;tmin3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xlim" value="lim;lim;0;-;1; ;-;+; ; ; ; ">
+<param name="xtmin2" value="tmin2;tmin2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xtmaxx2" value="tmaxx2;tmaxx2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xtmax3" value="tmax3;tmax3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xtmaxx3" value="tmaxx3;tmaxx3;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xtmax2" value="tmax2;tmax2;non;-;ok; ; ; ; ; ;$.2; ">
+<param name="xpercentuale" value="percentuale;La percentuale;Percentuale da tariffa minima;La percentuale;Percentuale da tariffa massima;è il; ; ; ; ;P.4; ">
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.9; ">
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.9; ">
+<param name="xper_due_ore" value="per_due_ore;La <b>tariffa per due ore</b> mensile (%percentuale% tra $tmin2$ e $tmax2$);La <b>tariffa per due ore</b> mensile (%percentuale% tra $tmin2$ e $tmax2$);La <b>tariffa per due ore</b> mensile (%percentuale% tra $tmin2$ e $tmax2$);La <b>tariffa per due ore</b> mensile (tariffa massima di $tmaxx3$);è il; ; ; ; <b>;$.2;</b>">
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite di ^sup^ ;--;idoneo; ; ; ; ; ;!; ">
+<param name="xulteriore_riduzione" value="ulteriore_riduzione;ulteriore_riduzione;NON ha diritto all'ulteriore riduzione;-;Ha diritto all'ulteriore riduzione in caso di iscrizione di più di un figlio; ; ; ; ; ;T; ">
+<param name="xper_tre_ore" value="per_tre_ore;La <b>tariffa per tre ore</b> mensile (%percentuale% tra $tmin3$ e $tmax3$);La <b>tariffa per tre ore</b> mensile (%percentuale% tra $tmin3$ e $tmax3$);La <b>tariffa per tre ore</b> mensile (%percentuale% tra $tmin3$ e $tmax3$);La <b>tariffa per tre ore</b> mensile (tariffa massima di $tmaxx3$);è il; ; ; ; <b>;$.2;</b>">
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+
+
+
+<param name="xpltree" value="ris;applicant;dati;notar;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="ris" value="<center><h2>Calcolo Tariffa Prolungamento Orario Scuola dell'Infanzia</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati</b>;Icef=-1;fascia=-1;tariffa_oraria=-1;per_due_ore=-1;per_tre_ore=-1;ulteriore_riduzione=-1!0">
+<param name="notar" value="(giudizio==1)<p>Vale la tariffa massima perché;condOK=3!1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2804278558">
+<param name="CRC" value="1381516256">
+<param name="CRCdata" value="8-giu-2017 8.44.06">
+</APPLET>
+</CENTER>
+<BR>

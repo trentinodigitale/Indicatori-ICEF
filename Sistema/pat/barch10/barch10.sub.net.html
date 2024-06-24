@@ -1,0 +1,91 @@
+<APPLET CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE='/clesius' ARCHIVE=clesius.jar WIDTH=700 HEIGHT=700 MAYSCRIPT>
+<param name="PATtrasporto" value="PAT barriere architettoniche 2010; 20.7.2010">
+<param name="revision" value="$Revision: 1.1 $">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="true">
+
+<param name="trendStarts" value="trendstart;caso;paratrasp">
+<param name="trendstart" value="current">
+<param name="caso" value="paratrasp;Icef=0.2">
+
+<param name="paratrasp" value="current;Reddinf=5000;Reddsup=45000;Rif=50000">
+
+<param name="trends" value="">
+
+
+
+
+<param name="variables" value="ascala;rscala">
+
+<param name="ascala" value="0.001">
+
+<param name="rscala" value="0.000001">
+
+
+
+
+<param name="edges" value="PAT barriere architettoniche;
+Icef-giudizio;sup-giudizio;inf-giudizio;Icef-condOK;Reddinf-inf;Reddsup-sup;Rif-inf;Rif-sup;sup-condOK;giudizio-percentuale;giudizio-fascia">
+
+
+
+<param name="PAT barriere architettoniche" value="text;node.ico;225;448;0;PAT barriere architettoniche (20.7.2010);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xPAT barriere architettoniche;xPAT barriere architettoniche;1897148831">
+<param name="Icef" value="1;node.ico;138;310;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;giudizio;condOK;0.5;NoCurve;xIcef;yIcef;1975096107">
+<param name="giudizio" value="0;0;137;352;0;-;0.0;CutoffNode;NoInput;IntermediateOutput;3;Icef;inf;sup;2;percentuale;fascia;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xgiudizio;ygiudizio;2559249341">
+<param name="sup" value="0;node.ico;177;325;0;-;0.0;DivideNode;NoInput;NoOutput;2;Reddsup;Rif;2;giudizio;condOK;1.0;1.0;1.0;1.0;NoCurve;xsup;ysup;932840077">
+<param name="inf" value="0;node.ico;95;326;0;-;0.0;DivideNode;NoInput;NoOutput;2;Reddinf;Rif;1;giudizio;1.0;1.0;1.0;1.0;NoCurve;xinf;yinf;1744824074">
+<param name="condOK" value="0;node.ico;249;324;0;-;0.0;NumLeNode;NoInput;NoOutput;2;Icef;sup;0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;3606031189">
+<param name="Reddinf" value="1;node.ico;52;299;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;inf;rscala;NoCurve;xReddinf;yReddinf;581751642">
+<param name="Reddsup" value="1;node.ico;221;302;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;sup;rscala;NoCurve;xReddsup;yReddsup;3917292667">
+<param name="Rif" value="1;node.ico;139;281;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;inf;sup;rscala;NoCurve;xRif;yRif;1842471463">
+<param name="percentuale" value="0;node.ico;244;354;0;-;0.0;ProbNode;NoInput;NoOutput;1;giudizio;0;1.0;0.0;NoCurve;xpercentuale;ypercentuale;354734729">
+<param name="fascia" value="2;node.ico;51;352;0;-;0.0;NumTransNode;NoInput;IntermediateOutput;1;giudizio;0;1.0;1.0;LinearCurve;fasciaCurve;xfascia;yfascia;1714713369">
+
+<param name="fasciaCurve" value="LinearCurve;0.0;1.0;1.0E-4;2.0;0.9999;2.0;1.0;3.0">
+
+
+<param name="xReddsup" value="Reddsup;Reddsup;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xReddinf" value="Reddinf;Reddinf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPAT barriere architettoniche" value="PAT barriere architettoniche;PAT barriere architettoniche;PAT barriere architettoniche (20.7.2010);--;--; ; ; ; ; ; ; ">
+<param name="xIcef" value="Icef;<B>ICEF</B> Indicatore della Condizione Economica Familiare (differenzia da ^inf^ a ^sup^);<B>ICEF</B> Indicatore della Condizione Economica Familiare zero;<B>ICEF</B>  Indicatore della Condizione Economica Familiare;<B>ICEF</B> Indicatore della Condizione Economica Familiare; ; ; ; ;<b>;T.8;</b>">
+
+<param name="xfascia" value="fascia;Fascia di tariffa;Fascia di tariffa;Fascia di tariffa;Fascia di tariffa;= ; ; ; ; ;T; ">
+
+<param name="xpercentuale" value="percentuale;La percentuale;La percentuale=0;La percentuale;La percentuale;è il; ; ; ; ;P.2; ">
+
+<param name="xsup" value="sup;il limite superiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xinf" value="inf;il limite inferiore;--;--;--;è; ; ; ; ;T.8; ">
+
+<param name="xcondOK" value="condOK;x;ICEF è oltre il limite (la condizione di riferimento $C_RIF_ICEF$ è maggiore di $Reddsup$) ;--;idoneo; ; ; ; ; ;!; ">
+
+<param name="xgiudizio" value="giudizio;La percentuale ICEF;La percentuale ICEF=0;La percentuale ICEF;La percentuale ICEF;è il; ; ; ; ;P.8; ">
+
+
+
+
+<param name="xpltree" value="ris;applicant;dati;notar;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="ris" value="<center><h2>Calcolo barriere architettoniche</h2></center><hr>;">
+<param name="applicant" value="<P>Richiedente: ;">
+<param name="dati" value="<b>Dati</b>;Icef=-1;fascia=-1;percentuale=-1">
+<param name="notar" value="(giudizio==0)Risulta percentuale zero perché;condOK=3!1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="1882490182">
+<param name="CRC" value="4195100403">
+<param name="CRCdata" value="20-lug-2010 16.31.06">
+</APPLET>
+<BR>

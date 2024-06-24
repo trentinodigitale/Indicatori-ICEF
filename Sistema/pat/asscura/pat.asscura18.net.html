@@ -1,0 +1,367 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius'
+	WIDTH=1250 HEIGHT=820 MAYSCRIPT>
+	<param name="revision" value="$Revision: 19094 $">
+
+	<param name="Taratura"
+		value="ASSEGNO DI CURA DI CUI ALLA LEGGE PROVINCIALE N. 15/2012 ; 1.7.2015">
+
+	<param name="Font" value="Times Roman">
+	<param name="Fontsize" value="12">
+	<param name="separator" value=";">
+	<param name="mode" value="Author">
+	<param name="debug" value="true">
+	<param name="language" value="0">
+
+
+	<param name="xpltree0"
+		value="asXml;tab1_6ini;tab1_6;tab1_6semestre;tab1_6fin;tab7_12ini;tab7_12;tab7_12semestre;tab7_12fin;tab13_18ini;tab13_18;tab13_18semestre;tab13_18fin;tab19_24ini;tab19_24;tab19_24semestre;tab19_24fin;tab25_30ini;tab25_30;tab25_30semestre;tab25_30fin;tabtot;version;versionData;check">
+
+	<param name="tab1_6ini"
+		value="(v1_6==1)<p /><center><b>Risultato suddiviso per i mesi del ^Anno^:</b></center>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>mese</td>
+    <td align='center'>giorni presenza</td>
+    <td align='center'>profilo NA</td>
+    <td align='center'>mensile</td>
+    </tr>;">
+	<param name="tab1_6"
+		value="(v1_6==1)
+  <tr>
+    <td align='center'>|Gg01|</td>
+    <td align='center'>^Gg01^ / 31</td>
+    <td align='center'>^g01^</td>
+    <td align='center'>^ac01^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg02|</td>
+    <td align='center'>^Gg02^ / 31</td>
+    <td align='center'>^g02^</td>
+    <td align='center'>^ac02^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg03|</td>
+    <td align='center'>^Gg03^ / 30</td>
+    <td align='center'>^g03^</td>
+    <td align='center'>^ac03^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg04|</td>
+    <td align='center'>^Gg04^ / 31</td>
+    <td align='center'>^g04^</td>
+    <td align='center'>^ac04^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg05|</td>
+    <td align='center'>^Gg05^ / 30</td>
+    <td align='center'>^g05^</td>
+    <td align='center'>^ac05^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg06|</td>
+    <td align='center'>^Gg06^ / 31</td>
+    <td align='center'>^g06^</td>
+    <td align='center'>^ac06^</td>
+  </tr>;">
+	<param name="tab1_6semestre"
+		value="(v1_6==1)<tr>
+    <td align='center'>totale</td>
+    <td align='center'>^giorni^ / ^semestre^</td>
+    <td align='center'>-</td>
+    <td align='center'>^ac^</td>
+  </tr>;">
+	<param name="tab1_6fin" value="(v1_6==1)</table>;">
+
+
+
+	<param name="tab7_12ini"
+		value="(ac0!=0)<center><b>Anno ^anno1^:</b></center>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>mese</td>
+    <td align='center'>giorni presenza</td>
+    <td align='center'>profilo NA</td>
+    <td align='center'>mensile</td>
+    </tr>;">
+	<param name="tab7_12"
+		value="(ac0!=0)
+   <tr>
+    <td align='center'>|Gg07|</td>
+    <td align='center'>^Gg07^ / 31</td>
+    <td align='center'>^g07^</td>
+    <td align='center'>^ac07^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg08|</td>
+    <td align='center'>^Gg08^ / ^feb1^</td>
+    <td align='center'>^g08^</td>
+    <td align='center'>^ac08^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg09|</td>
+    <td align='center'>^Gg09^ / 31</td>
+    <td align='center'>^g09^</td>
+    <td align='center'>^ac09^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg10|</td>
+    <td align='center'>^Gg10^ / 30</td>
+    <td align='center'>^g10^</td>
+    <td align='center'>^ac10^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg11|</td>
+    <td align='center'>^Gg11^ / 31</td>
+    <td align='center'>^g11^</td>
+    <td align='center'>^ac11^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg12|</td>
+    <td align='center'>^Gg12^ / 30</td>
+    <td align='center'>^g12^</td>
+    <td align='center'>^ac12^</td>
+   </tr>;">
+	<param name="tab7_12semestre"
+		value="(ac0!=0)<tr>
+    <td align='center'>totale</td>
+    <td align='center'>^giorni0^ / ^semestre0^</td>
+    <td align='center'>-</td>
+    <td align='center'>^ac0^</td>
+  </tr>;">
+	<param name="tab7_12fin" value="(ac0!=0)</table>;">
+	<param name="tab13_18ini"
+		value="(ac1!=0)<center><b>Anno ^anno1^:</b></center>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>mese</td>
+    <td align='center'>giorni presenza</td>
+    <td align='center'>profilo NA</td>
+    <td align='center'>mensile</td>
+    </tr>;">
+	<param name="tab13_18"
+		value="(ac1!=0)
+   <tr>
+    <td align='center'>|Gg13|</td>
+    <td align='center'>^Gg13^ / 31</td>
+    <td align='center'>^g13^</td>
+    <td align='center'>^ac13^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg14|</td>
+    <td align='center'>^Gg14^ / 31</td>
+    <td align='center'>^g14^</td>
+    <td align='center'>^ac14^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg15|</td>
+    <td align='center'>^Gg15^ / 30</td>
+    <td align='center'>^g15^</td>
+    <td align='center'>^ac15^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg16|</td>
+    <td align='center'>^Gg16^ / 31</td>
+    <td align='center'>^g16^</td>
+    <td align='center'>^ac16^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg17|</td>
+    <td align='center'>^Gg17^ / 30</td>
+    <td align='center'>^g17^</td>
+    <td align='center'>^ac17^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg18|</td>
+    <td align='center'>^Gg18^ / 31</td>
+    <td align='center'>^g18^</td>
+    <td align='center'>^ac18^</td>
+  </tr>;">
+	<param name="tab13_18semestre"
+		value="(ac1!=0)<tr>
+    <td align='center'>totale</td>
+    <td align='center'>^giorni1^ / ^semestre1^</td>
+    <td align='center'>-</td>
+    <td align='center'>^ac1^</td>
+  </tr>;">
+	<param name="tab13_18fin" value="(ac1!=0)</table>;">
+
+
+
+	<param name="tab19_24ini"
+		value="(ac2!=0)<center><b>Anno ^anno2^:</b></center>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>mese</td>
+    <td align='center'>giorni presenza</td>
+    <td align='center'>profilo NA</td>
+    <td align='center'>mensile</td>
+    </tr>;">
+	<param name="tab19_24"
+		value="(ac0!=0)
+   <tr>
+    <td align='center'>|Gg19|</td>
+    <td align='center'>^Gg19^ / 31</td>
+    <td align='center'>^g19^</td>
+    <td align='center'>^ac19^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg20|</td>
+    <td align='center'>^Gg20^ / ^feb3^</td>
+    <td align='center'>^g20^</td>
+    <td align='center'>^ac20^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg21|</td>
+    <td align='center'>^Gg21^ / 31</td>
+    <td align='center'>^g21^</td>
+    <td align='center'>^ac21^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg22|</td>
+    <td align='center'>^Gg22^ / 30</td>
+    <td align='center'>^g22^</td>
+    <td align='center'>^ac22^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg23|</td>
+    <td align='center'>^Gg23^ / 31</td>
+    <td align='center'>^g23^</td>
+    <td align='center'>^ac23^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg24|</td>
+    <td align='center'>^Gg24^ / 30</td>
+    <td align='center'>^g24^</td>
+    <td align='center'>^ac24^</td>
+   </tr>;">
+	<param name="tab19_24semestre"
+		value="(ac2!=0)<tr>
+    <td align='center'>totale</td>
+    <td align='center'>^giorni2^ / ^semestre0^</td>
+    <td align='center'>-</td>
+    <td align='center'>^ac2^</td>
+  </tr>;">
+	<param name="tab19_24fin" value="(ac2!=0)</table>;">
+	<param name="tab25_30ini"
+		value="(ac2!=0)<center><b>Anno ^anno2^:</b></center>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>mese</td>
+    <td align='center'>giorni presenza</td>
+    <td align='center'>profilo NA</td>
+    <td align='center'>mensile</td>
+    </tr>;">
+	<param name="tab25_30"
+		value="(ac1!=0)
+   <tr>
+    <td align='center'>|Gg25|</td>
+    <td align='center'>^Gg25^ / 31</td>
+    <td align='center'>^g25^</td>
+    <td align='center'>^ac25^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg26|</td>
+    <td align='center'>^Gg26^ / 31</td>
+    <td align='center'>^g26^</td>
+    <td align='center'>^ac26^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg27|</td>
+    <td align='center'>^Gg27^ / 30</td>
+    <td align='center'>^g27^</td>
+    <td align='center'>^ac27^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg28|</td>
+    <td align='center'>^Gg28^ / 31</td>
+    <td align='center'>^g28^</td>
+    <td align='center'>^ac28^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg29|</td>
+    <td align='center'>^Gg29^ / 30</td>
+    <td align='center'>^g29^</td>
+    <td align='center'>^ac29^</td>
+  </tr>
+  <tr>
+    <td align='center'>|Gg30|</td>
+    <td align='center'>^Gg30^ / 31</td>
+    <td align='center'>^g30^</td>
+    <td align='center'>^ac30^</td>
+  </tr>;">
+	<param name="tab25_30semestre"
+		value="(ac3!=0)<tr>
+    <td align='center'>totale</td>
+    <td align='center'>^giorni3^ / ^semestre1^</td>
+    <td align='center'>-</td>
+    <td align='center'>^ac3^</td>
+  </tr>;">
+	<param name="tab25_30fin" value="(ac3!=0)</table>;">
+	<param name="tabtot"
+		value="(assegno!=0)<tr>
+<table border='1' align='center'>
+  <tr>
+    <td align='center'>^Anno^ - ^anno2^</td>
+    <td align='center'>giorni presenza</td>
+    <td align='center'><b>ASSEGNO DI CURA</b></td>
+    </tr>
+</tr>
+  <tr>
+  <td align='center'><b>TOTALE</b></td>
+    <td align='center'>^giornitot^ / ^semestri^</td>
+    <td align='center'><b>^assegno^</b></td>
+  </tr>
+</table><p><br>;">
+
+
+
+	<param name="entrate"
+		value="<p /><b>Dati per la determinazione dell'ICEF</b>;N_componenti=-1;C1_dip=-1!0;C1_pens=-1!0;C1_aut=-1!0;C2_agr=-1!0;C3_imp=-1!0;C4_part=-1!0;C5_altri=-1!0;maxIA=-1!0;Assegno_imposto=-1!0;RL=-1!0">
+	<param name="detrazioni"
+		value="(DF!=0)<b>Detrazioni</b>;Canone=-1!0;Mutuo=-1!0;Imposte=-1!0;Mediche=-1!0;Assegni=-1!0;P_complementare=-1!0;Previdenza=-1!0;Spese_redditi=-1!0;lav_f=-1!0;Monogenitore=-1!0;Lavoratori=-1!0;Figli_fam_numerose=-1!0;Invalidi=-1!0;Precedente=-1!0;m_ast=-1!0;det_ast=-1!0;DF=-1!0">
+	<param name="patrimoni"
+		value="(patrimonio!=0)<b>Patrimonio</b>;p_r=-1!0;p_i=-1!0;PI5_grat2=-1!0;PI5_oner=-1!0;p_m=-1!0;Imm_strumentali=-1!0;patrimonio=-1!0;P=-1!0">
+	<param name="xC5_altri"
+		value="C5_altri;C5: Altre fonti di entrata in deroga al criterio fiscale al netto dell'Indennità di Accompagnamento (^IA_ast^) dichiarata;C5: Altre fonti di entrata in deroga al criterio fiscale zero;C5: Altre fonti di entrata in deroga al criterio fiscale al netto dell'Indennità di Accompagnamento (^IA_ast^) dichiarata;C5: Altre fonti di entrata in deroga al criterio fiscale massimali al netto dell'Indennità di Accompagnamento (^IA_ast^) dichiarata; ; ; ; ; ;$.2; ">
+	<param name="xRL"
+		value="RL;RL: la somma dei redditi lordi (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^+^maxIA^);RL: la somma dei redditi lordi è zero;RL: la somma dei redditi lordi  (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^+^maxIA^);RL: la somma dei redditi lordi è massimale (^rd^+^rp^+^C5_altri^+^ra^+^Assegno_imposto^+^maxIA^); ammonta a; ; ; ; <i>;$.2;</i>">
+	<param name="ris1"
+		value="<p /><b>Il risultato del calcolo:</b>;(sostituisci==1)rf=-1;RF=-1;PF=-1;ICEF10=-1">
+
+
+	<param name="nets"
+		value="../icef18/m.icef182.net.html;asscura12.sub.net.html;asscura12.sub2.net.html">
+
+	<param name="connections"
+		value="ICEF10-Icef;C5_altri-c5_ori;arl-RL;r_ast-detra;det_ast-detrazione;PI5_grat-P;PM-mpi5;PM-pi5;pi5-p_m;giorni2-giornitot;giorni3-giornitot;ac2-assegno;ac3-assegno;Anno-anno2;semestre2-semestri;semestre3-semestri">
+
+
+<param name="edges" value="P.A.T. MODELLO ASSEGNO DI CURA;
+">
+
+
+
+<param name="P.A.T. MODELLO ASSEGNO DI CURA" value="text;node.ico;133;266;0;Versione 1.7.2015;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloAssCura;xModelloAssCura;3155077906">
+
+
+
+<param name="xModelloAssCura" value="P.A.T. MODELLO ASSEGNO DI CURA;x;Versione 1.7.2015; ; ; ; ; ; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation3;asXml;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation3" value=" ;UltimoProfilo=UltimoProfilo">
+<param name="asXml" value="(Xml==1);">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3425952278">
+<param name="CRC" value="4057937815">
+<param name="CRCdata" value="1-lug-2015 16.56.38">
+</APPLET>
+</CENTER>
+<BR>

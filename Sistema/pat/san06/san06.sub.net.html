@@ -1,0 +1,395 @@
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=950 HEIGHT=850 MAYSCRIPT>>
+<param name="revision" value="$Revision: 1.3 $">
+
+<param name="Uni" value="Trento 2005 - 14.3.2006; per simulazioni">
+<param name="applet" value="CODE=it.clesius.clesius.engine.elab.Clesius.class CODEBASE=/clesius WIDTH=950 HEIGHT=850">
+
+<param name="mode" value="Author">
+<param name="Font" value="SansSerif">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="debug" value="false">
+
+
+<param name="trendStarts" value="borse;4234;3422;corso1;corso2;corso3;matricola1;somaro1;medio1;bravo1;somaro2;medio2;bravo2;somaro3;medio3;bravo3;0.1;0.5;0.6;insede;fsede;pend;altri">
+ <param name="borse" value="current;Chiede_borsa=1;Borsa_fuori=4320;Borsa_fuori_min=2160;Borsa_insede=2230;Borsa_insede_min=1115;Borsa_pend=2380;Borsa_pend_min=1190">
+
+ 
+<param name="4234" value="borse;Aggiuntivo=1;Al_minimo=0;Anni=5;Bonus=0;Chiede_borsa=1;Comune_in_sede=0;Con_merito=1;Crediti=0;Deroghe=0;Durata=4;Fuori_sede=0;Icef=0.172626419;In_sede=0;Max=22;Min=14;Min_deroga=11;Prende_alloggio=0">
+ <param name="3422" value="borse;Aggiuntivo=1;Al_minimo=0;Anni=5;Bonus=0;Chiede_borsa=1;Comune_in_sede=1;Con_merito=1;Crediti=0;Deroghe=1;Durata=4;Fuori_sede=0;Icef=0.428837837;In_sede=0;Max=22;Min=14;Min_deroga=11;Prende_alloggio=0">
+
+<param name="corso1" value="borse;Con_merito=1;Durata=3;Aggiuntivo=0.5;Max=80;Min=25;Min_deroga=15">
+ <param name="corso2" value="borse;Con_merito=1;Durata=4;Aggiuntivo=0.5;Max=22;Min=14.5;Min_deroga=12">
+ <param name="corso3" value="borse;Con_merito=1;Durata=3;Aggiuntivo=1;Max=80;Min=25;Min_deroga=15">
+
+ <param name="insede" value="borse;Comune_in_sede=1;Prende_alloggio=0;Preso_alloggio=0;Rif=50000;Redd3inf=20000;Redd3sup=50000">
+ <param name="fsede" value="borse;Comune_in_sede=0;Prende_alloggio=1;Preso_alloggio=1;Rif=50000;Redd3inf=20000;Redd3sup=50000">
+ <param name="pend" value="borse;Comune_in_sede=0;Prende_alloggio=0;Preso_alloggio=0;Rif=50000;Redd3inf=20000;Redd3sup=50000">
+
+ <param name="altri" value="current;Borse_percepite=1000;Altri_universitari=1">
+ 
+ <param name="matricola1" value="corso1;Chiede_borsa=1;Anni=1">
+
+ <param name="somaro1" value="corso1;Chiede_borsa=1;Anni=2;Crediti=25">
+ <param name="medio1" value="corso1;Chiede_borsa=1;Anni=2;Crediti=53">
+ <param name="bravo1" value="corso1;Chiede_borsa=1;Anni=2;Crediti=80">
+
+ <param name="somaro2" value="corso2;Chiede_borsa=1;Anni=2;Crediti=25">
+ <param name="medio2" value="corso2;Chiede_borsa=1;Anni=2;Crediti=53">
+ <param name="bravo2" value="corso2;Chiede_borsa=1;Anni=2;Crediti=80">
+
+ <param name="somaro3" value="corso3;Chiede_borsa=1;Anni=2;Crediti=25">
+ <param name="medio3" value="corso3;Chiede_borsa=1;Anni=2;Crediti=52">
+ <param name="bravo3" value="corso3;Chiede_borsa=1;Anni=2;Crediti=80">
+
+
+ <param name="0.1" value="current;Icef=0.1">
+  <param name="0.5" value="current;Icef=0.5">
+ <param name="0.6" value="current;Icef=0.6">
+ 
+<param name="variables" value="uno;pertre;tre;borsa0;borsa1;t_iscr;tds_;tasse0;tasse1;borsa_ins_min;borsa_fuor_min;borsa_pendol_min;scaglione;borsa_ins;uborsa_ins;borsa_fuor;uborsa_fuor;borsa_pendol;uborsa_pendol;peraltri;i55;i66;tscala;cscala;fattore;maxcrediti;maxcrediti1;umaxcrediti;merito0;merito05;merito1;meritomatricola;premioins;premiofuor;premiopendol">
+
+ <param name="uno" value="1.0">
+ <param name="pertre" value="2.04">
+ <param name="tre" value="uno / pertre">
+
+ <param name="tasse0" value="0.803919264705882; 0.4000047;editable">
+ <param name="tasse1" value="0.705882353; 0.5;editable">
+ <param name="borsa0" value="0.619018; 0.304999;0.305581525">
+ <param name="borsa1" value="0.77; 0.82; 0.627;0.631;0.625;0.6;0.5978;0.6">
+
+
+<param name="tds_" value="116;editable">
+<param name="t_iscr" value="170;editable"> 
+<param name="scaglione" value="1;editable">
+
+<param name="premiofuor" value="450">
+ <param name="borsa_fuor" value="6000.00;editable">
+ <param name="uborsa_fuor" value="uno / (borsa_fuor+premiofuor)">
+ <param name="borsa_fuor_min" value="2160;editable">
+
+
+<param name="premioins" value="200">
+ <param name="borsa_ins" value="3000;editable">
+ <param name="uborsa_ins" value="uno / (borsa_ins+premioins)">
+ <param name="borsa_ins_min" value="1115;editable">
+
+<param name="premiopendol" value="250">
+ <param name="borsa_pendol" value="3500;editable">
+ <param name="uborsa_pendol" value="uno / (borsa_pendol+premiopendol)">
+ <param name="borsa_pendol_min" value="1190;editable">
+
+<param name="peraltri" value="0.3">
+<param name="i55" value="55.0">
+<param name="i66" value="66.0">
+
+ <param name="tscala" value="0.0001;editable">
+
+<param name="cscala" value="0.005;editable">
+
+<param name="fattore" value="1.0">
+
+<param name="maxcrediti" value="310.0">
+<param name="maxcrediti1" value="maxcrediti - uno">
+<param name="umaxcrediti" value="uno / maxcrediti">
+
+<param name="merito0" value="1.0">fino 0.1
+<param name="merito05" value="1.0; 0.5;0.47;0.46;0.45;0.4;0.42;0.5">
+<param name="merito1" value="1.0; 0.6;0.54;0.52;0.5;0.4;0.5;0.6">
+<param name="meritomatricola" value="0.01;0.5;0.8">
+
+
+
+<param name="edges" value="SANI2006;Borse_percepite;Borsa_fuori;Borsa_fuori_min;Borsa_insede;Borsa_insede_min;Borsa_pend;Borsa_pend_min;Premio_fuori;Premio_insede;Premio_pend;RES_estero;PI_estero;
+merito-requisiti;matricola-requisiti;requisiti-merita?;merita?-meritevole?;borsa_in-b_i_s;borsa_fuori-b_f_s;Icef-privo_di_mezzi?;Crediti-propri;Deroghe-minim;Min-minim;minim-esclusione;unità-esclusione;usati-merito;Max-merito;Con_merito-requisiti;Anni-matricola;borsa_pend-b_p;Bonus-propri;Min_deroga-minim;propri-maxi;Min-maxi;
+Al_minimo-usati;maxi-usati;propri-usati;esclusione-merito;Durata-dura;Aggiuntivo-dura;dura-entro_dura;Anni-entro_dura;Chiede_borsa-percborsa;b_i_s-t1;b_f_s-t2;b_p-t3;t1-tipo_borsa;t2-tipo_borsa;t3-tipo_borsa;Comune_in_sede-b_in;Comune_in_sede-b_fuor;p_a-b_fuor;In_sede-b_in;Comune_in_sede-b_pend;
+p_a-b_pend;In_sede-eccezione;f_s-eccezione;eccezione-b_pend;b_in-b_i_s;b_fuor-b_f_s;b_pend-b_p;Durata-entro_regolare;Anni-entro_regolare;livello_borsa-borsa;b1-borsa;borsa-percborsa;percborsa-borsa_in;percborsa-borsa_fuori;percborsa-borsa_pend;b0-borsa;dura-ultimo;Anni-ultimo;Aggiuntivo-perc_ultimo;Altri_universitari-per_altri;
+borsa-idoneo_borsa?;entro_dura-durataOK;durataOK-idoneo;perc_b-b_i_s;perc_b-b_f_s;perc_b-b_p;borsa_fuori-b_a;perc_b-b_a;ultimo-perc_ultimo;Anni-dif_i;perc_ultimo-p_u;p_u-perc_b;In_sede-fs;f_s-fs;fs-b_fuor;Crediti-premio;mp-premio;prem-premio_in;prem-premio_fuor;prem-premio_pend;
+idoneo_borsa?-premio_in;idoneo_borsa?-premio_fuor;idoneo_borsa?-premio_pend;b_i_s-borsa_in_sede;premio_in-borsa_in_sede;b_f_s-borsa_fuori_sede;premio_fuor-borsa_fuori_sede;b_p-borsa_pendolare;premio_pend-borsa_pendolare;borsa_in_sede-importo_borsa;borsa_fuori_sede-importo_borsa;borsa_pendolare-importo_borsa;Prende_alloggio-p_a;Preso_alloggio-p_a;Preso_alloggio-c;c-p_a;Fuori_sede-f_s;Straniero-f_s;prem-premio_alt;idoneo_borsa?-premio_alt;
+b_a-borsa_alt;premio_alt-borsa_alt;b_fuor-premio_fuor;b_in-premio_in;b_pend-premio_pend;premio-prem;fs-b_in;p_u-prem;Max-mp;Max-premio;Min_premio-m_p;m_p-mp;Chiede_borsa-c_b_con_m;Con_merito-c_b_con_m;c_b_con_m-prem;Redd3sup-b1;Redd3inf-b0;Rif-b0;Rif-b1;b1-mb1;
+meritevole?-livello_borsa;privo_di_mezzi?-ge1mb1;ge1mb1-idoneo;mb1-ge1mb1;Icef-livello_borsa;durataOK-livello_borsa">
+
+
+
+<param name="SANI2006" value="text;node.ico;37;258;0;Opera Universitaria - professioni sanitarie 2005/2006 -  (14.3.2006);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xSANI2006;xSANI2006;2471453477">
+<param name="Borse_percepite" value="1;node.ico;50;281;0;Nessuna Borsa universitaria percepita;0.0;PlusNode;ValueInput;NoOutput;0;0;tscala;NoCurve;xBorse_percepite;xBorse_percepite;484381793">
+<param name="Borsa_fuori" value="1;node.ico;774;29;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;uborsa_fuor;NoCurve;xBorsa_fuori;yBorsa_fuori;1714422353">
+<param name="Borsa_fuori_min" value="1;node.ico;787;52;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;uborsa_fuor;NoCurve;xBorsa_fuori_min;yBorsa_fuori_min;2602516748">
+<param name="Borsa_insede" value="1;node.ico;772;83;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;uborsa_fuor;NoCurve;xBorsa_insede;yBorsa_insede;874952877">
+<param name="Borsa_insede_min" value="1;node.ico;787;107;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;uborsa_fuor;NoCurve;xBorsa_insede_min;yBorsa_insede_min;915564645">
+<param name="Borsa_pend" value="1;node.ico;779;138;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;uborsa_fuor;NoCurve;xBorsa_pend;yBorsa_pend;1108939502">
+<param name="Borsa_pend_min" value="1;node.ico;794;162;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;uborsa_fuor;NoCurve;xBorsa_pend_min;yBorsa_pend_min;3253735620">
+<param name="Premio_fuori" value="1;node.ico;706;40;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xPremio_fuori;yPremio_fuori;2806773824">
+<param name="Premio_insede" value="1;node.ico;702;95;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xPremio_insede;yPremio_insede;71869654">
+<param name="Premio_pend" value="1;node.ico;714;150;0;0;0.0;PlusNode;ValueInput;NoOutput;0;0;0.0;NoCurve;xPremio_pend;yPremio_pend;1069685184">
+<param name="RES_estero" value="1;node.ico;531;264;0;nessuna residenza all'estero;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xRES_estero;yRES_estero;3949487204">
+<param name="PI_estero" value="1;node.ico;638;264;0;non esistono rilevanti beni immobiliari di proprietà all'estero;0.0;PlusNode;ValueInput;NoOutput;0;0;pscala;NoCurve;xPI_estero;yPI_estero;3051057624">
+<param name="merito" value="0;node.ico;753;339;0;-;0.0;CutoffNode;NoInput;NoOutput;3;usati;esclusione;Max;1;requisiti;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xmerito;xmerito;90038053">
+<param name="requisiti" value="0;node.ico;719;396;0;-;0.0;ProbNode;NoInput;IntermediateOutput;3;merito;matricola;Con_merito;1;merita?;1.0;1.0;meritomatricola;meritomatricola;0.0;1.0;meritomatricola;meritomatricola;NoCurve;xrequisiti;xrequisiti;4230091289">
+<param name="matricola" value="0;node.ico;629;367;0;-;0.0;NumEqNode;NoInput;NoOutput;1;Anni;1;requisiti;1.0;1.0;NoCurve;xmatricola;xmatricola;3503061007">
+<param name="merita?" value="0;node.ico;640;396;0;-;0.0;TransformNode;NoInput;NoOutput;1;requisiti;1;meritevole?;0.0;1.0;LinearCurve;meritaCurve;xmerita?;xmerita?;3766078131">
+<param name="meritevole?" value="0;node.ico;554;418;0;-;0.0;TransformNode;NoInput;IntermediateOutput;1;merita?;1;livello_borsa;0.0;1.0;NoCurve;xmeritevole?;xmeritevole?;3515177954">
+<param name="borsa_in" value="0;node.ico;434;491;0;-;0.0;ProbNode;NoInput;NoOutput;1;percborsa;1;b_i_s;0.0;1.0;StairsCurve;borsainCurve;xborsa_in;xborsa_in;4242490854">
+<param name="b_i_s" value="0;node.ico;444;521;0;-;0.0;TimesNode;NoInput;NoOutput;3;borsa_in;b_in;perc_b;2;t1;borsa_in_sede;uborsa_ins;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xb_i_s;xb_i_s;2174193278">
+<param name="borsa_fuori" value="0;node.ico;522;496;0;-;0.0;ProbNode;NoInput;NoOutput;1;percborsa;2;b_f_s;b_a;0.0;1.0;StairsCurve;borsafuoriCurve;xborsa_fuori;xborsa_fuori;2618124558">
+<param name="b_f_s" value="0;node.ico;497;521;0;-;0.0;TimesNode;NoInput;NoOutput;3;borsa_fuori;b_fuor;perc_b;2;t2;borsa_fuori_sede;uborsa_fuor;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xb_f_s;xb_f_s;860222565">
+<param name="Icef" value="1;node.ico;204;276;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;privo_di_mezzi?;livello_borsa;0.5;NoCurve;xIcef;xIcef;630437049">
+<param name="privo_di_mezzi?" value="0;node.ico;205;317;0;-;0.0;NumTransNode;NoInput;IntermediateOutput;1;Icef;1;ge1mb1;1.0;1.0;LinearCurve;privoCurve;xprivo_di_mezzi?;xprivo_di_mezzi?;1814136445">
+<param name="Crediti" value="1;node.ico;735;247;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;propri;premio;umaxcrediti;NoCurve;xCrediti;xCrediti;3088302489">
+<param name="propri" value="0;node.ico;770;293;0;-;0.0;PlusNode;NoInput;NoOutput;2;Crediti;Bonus;2;maxi;usati;umaxcrediti;1.0;1.0;1.0;NoCurve;xpropri;xpropri;2486733750">
+<param name="Deroghe" value="1;node.ico;635;289;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;minim;1.0E-5;NoCurve;xDeroghe;xDeroghe;3362809385">
+<param name="minim" value="0;node.ico;679;335;0;-;0.0;NumIfNode;NoInput;NoOutput;3;Deroghe;Min_deroga;Min;1;esclusione;umaxcrediti;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xminim;xminim;1532879178">
+<param name="Min" value="1;node.ico;677;294;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;minim;maxi;umaxcrediti;NoCurve;xMin;xMin;52546437">
+<param name="esclusione" value="0;node.ico;704;363;0;-;0.0;MinusNode;NoInput;NoOutput;2;minim;unità;1;merito;umaxcrediti;1.0;1.0;1.0;NoCurve;xesclusione;xesclusione;1569111475">
+<param name="unità" value="0;node.ico;718;313;0;-;0.0;ProbNode;NoInput;NoOutput;0;1;esclusione;0.5;NoCurve;xunità;xunità;3435139300">
+<param name="usati" value="0;node.ico;763;316;0;-;0.0;NumIfNode;NoInput;NoOutput;3;Al_minimo;maxi;propri;1;merito;umaxcrediti;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xusati;xusati;1717972161">
+<param name="Max" value="1;node.ico;800;324;0;-;0.0;PlusNode;ValueInput;NoOutput;0;3;merito;premio;mp;umaxcrediti;NoCurve;xMax;xMax;3047342245">
+<param name="Con_merito" value="1;node.ico;792;381;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;requisiti;c_b_con_m;0.5;NoCurve;xCon_merito;xCon_merito;1350655558">
+<param name="Anni" value="1;node.ico;288;264;0;-;0.0;PlusNode;ValueInput;NoOutput;0;5;matricola;entro_dura;entro_regolare;ultimo;dif_i;0.1;NoCurve;xAnni;xAnni;1216354968">
+<param name="borsa_pend" value="0;node.ico;698;497;0;-;0.0;ProbNode;NoInput;NoOutput;1;percborsa;1;b_p;0.0;1.0;StairsCurve;borsapendCurve;xborsa_pend;xborsa_pend;3741876348">
+<param name="b_p" value="0;node.ico;671;518;0;-;0.0;TimesNode;NoInput;NoOutput;3;borsa_pend;b_pend;perc_b;2;t3;borsa_pendolare;uborsa_pendol;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xb_p;xb_p;1100479210">
+<param name="Bonus" value="1;node.ico;784;250;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;propri;cscala;NoCurve;xBonus;xBonus;2722774035">
+<param name="Min_deroga" value="1;node.ico;633;312;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;minim;umaxcrediti;NoCurve;xMin_deroga;xMin_deroga;697024062">
+<param name="maxi" value="0;node.ico;716;293;0;-;0.0;NumMaxNode;NoInput;NoOutput;2;propri;Min;1;usati;umaxcrediti;1.0;1.0;1.0;NoCurve;xmaxi;xmaxi;2088510489">
+<param name="Al_minimo" value="1;node.ico;727;270;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;usati;1.0;NoCurve;xAl_minimo;xAl_minimo;3192370825">
+<param name="Durata" value="1;node.ico;439;267;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;dura;entro_regolare;0.1;NoCurve;xDurata;xDurata;1124418928">
+<param name="dura" value="0;node.ico;348;326;0;-;0.0;PlusNode;NoInput;NoOutput;2;Durata;Aggiuntivo;2;entro_dura;ultimo;0.1;1.0001;1.0;1.0;NoCurve;xdura;xdura;1880303666">
+<param name="Aggiuntivo" value="1;node.ico;263;291;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;dura;perc_ultimo;0.5;NoCurve;xAggiuntivo;xAggiuntivo;4157198282">
+<param name="entro_dura" value="0;node.ico;321;398;0;-;0.0;NumGeNode;NoInput;NoOutput;2;dura;Anni;1;durataOK;1.0;1.0;1.0;1.0;NoCurve;xentro_dura;xdiff1;2102549506">
+<param name="Chiede_borsa" value="1;node.ico;788;486;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;percborsa;c_b_con_m;0.5;NoCurve;xChiede_borsa;xChiede_borsa;2657798337">
+<param name="percborsa" value="0;node.ico;599;484;0;-;0.0;TransformNode;NoInput;NoOutput;2;borsa;Chiede_borsa;3;borsa_in;borsa_fuori;borsa_pend;0.0;0.0;0.0;1.0;LinearCurve;nonlinCurve;xpercborsa;xpercborsa;4025387980">
+<param name="t1" value="0;node.ico;447;564;0;-;0.0;NumGtNode;NoInput;NoOutput;1;b_i_s;1;tipo_borsa;1.0;0.0;NoCurve;xt1;xt1;1458315091">
+<param name="t2" value="0;node.ico;595;555;0;-;0.0;NumGtNode;NoInput;NoOutput;1;b_f_s;1;tipo_borsa;1.0;0.0;NoCurve;xt2;xt2;1103223389">
+<param name="t3" value="0;node.ico;748;559;0;-;0.0;NumGtNode;NoInput;NoOutput;1;b_p;1;tipo_borsa;1.0;0.0;NoCurve;xt3;xt3;3593058396">
+<param name="tipo_borsa" value="0;node.ico;800;562;0;-;0.0;ProbNode;NoInput;ResultOutput;3;t1;t2;t3;0;0.0;0.25;0.5;0.25;1.0;0.25;1.0;0.25;LinearCurve;tipoCurve;xtipo_borsa;xtipo_borsa;3226856356">
+<param name="Comune_in_sede" value="1;node.ico;545;583;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;b_fuor;b_in;b_pend;0.5;NoCurve;xComune_in_sede;xComune_in_sede;3769001198">
+<param name="b_in" value="0;node.ico;398;522;0;-;0.0;ProbNode;NoInput;NoOutput;3;Comune_in_sede;In_sede;fs;2;b_i_s;premio_in;0.0;1.0;1.0;1.0;0.0;0.0;0.0;0.0;NoCurve;xb_in;xb_in;2126862579">
+<param name="b_fuor" value="0;node.ico;552;521;0;-;0.0;ProbNode;NoInput;NoOutput;3;Comune_in_sede;p_a;fs;2;b_f_s;premio_fuor;0.0;0.0;1.0;0.0;1.0;1.0;1.0;1.0;NoCurve;xb_fuor;xb_fuor;4266614701">
+<param name="p_a" value="0;node.ico;714;574;0;-;0.0;ProbNode;NoInput;NoOutput;3;Prende_alloggio;Preso_alloggio;c;2;b_fuor;b_pend;0.0;1.0;0.0;1.0;0.0;0.0;1.0;1.0;NoCurve;xPrende_alloggio;xPrende_alloggio;71597326">
+<param name="In_sede" value="1;node.ico;284;597;0;-;0.0;ProbNode;ValueInput;NoOutput;0;3;b_in;eccezione;fs;0.5;NoCurve;xIn_sede;xIn_sede;36213374">
+<param name="b_pend" value="0;node.ico;716;517;0;-;0.0;ProbNode;NoInput;NoOutput;3;Comune_in_sede;p_a;eccezione;2;b_p;premio_pend;1.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;NoCurve;xb_pend;xb_pend;1971664506">
+<param name="eccezione" value="0;node.ico;387;575;0;-;0.0;ProbNode;NoInput;NoOutput;2;In_sede;f_s;1;b_pend;0.0;1.0;1.0;1.0;NoCurve;xeccezione;xeccezione;674374483">
+<param name="f_s" value="0;node.ico;443;597;0;-;0.0;ProbNode;NoInput;NoOutput;2;Fuori_sede;Straniero;2;eccezione;fs;0.0;1.0;1.0;1.0;NoCurve;xFuori_sede;xFuori_sede;2645098099">
+<param name="entro_regolare" value="0;node.ico;363;249;0;-;0.0;NumGeNode;NoInput;NoOutput;2;Durata;Anni;0;1.0;1.0;1.0;1.0;NoCurve;xentro_regolare;xentro_regolare;270814341">
+<param name="livello_borsa" value="0;node.ico;557;442;0;-;0.0;ProbNode;NoInput;NoOutput;3;meritevole?;Icef;durataOK;1;borsa;1.0;1.0;1.0;1.0;1.0;0.0;1.0;1.0;NoCurve;xlivello_borsa;xlivello_borsa;3958272849">
+<param name="borsa" value="0;node.ico;576;465;0;-;0.0;CutoffNode;NoInput;NoOutput;3;livello_borsa;b1;b0;2;percborsa;idoneo_borsa?;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xborsa;xborsa;257664636">
+<param name="b1" value="0;node.ico;619;427;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3sup;Rif;2;borsa;mb1;1.0;tre;1.0;1.0;NoCurve;xb1;xb1;741072303">
+<param name="b0" value="0;node.ico;474;428;0;-;0.0;DivideNode;NoInput;NoOutput;2;Redd3inf;Rif;1;borsa;1.0;tre;1.0;1.0;NoCurve;xb0;xb0;1705667954">
+<param name="ultimo" value="0;node.ico;288;373;0;-;0.0;NumEqNode;NoInput;NoOutput;2;dura;Anni;1;perc_ultimo;1.0;1.0;1.0;1.0;NoCurve;xultimo;xultimo;1463722705">
+<param name="perc_ultimo" value="0;node.ico;242;400;0;-;0.0;ProbNode;NoInput;NoOutput;2;ultimo;Aggiuntivo;1;p_u;1.0;0.0;1.0;1.0;NoCurve;xperc_ultimo;xperc_ultimo;307097937">
+<param name="Altri_universitari" value="1;node.ico;63;309;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;per_altri;0.1;NoCurve;xAltri_universitari;xAltri_universitari;1382901994">
+<param name="per_altri" value="0;node.ico;136;282;0;-;0.0;PlusNode;NoInput;NoOutput;1;Altri_universitari;0;1.0;peraltri;NoCurve;xper_altri;yper_altri;149130809">
+<param name="idoneo_borsa?" value="0;node.ico;292;500;0;-;0.0;TransformNode;NoInput;NoOutput;1;borsa;4;premio_in;premio_fuor;premio_pend;premio_alt;0.0;1.0;LinearCurve;bCurve;xidoneo_borsa?;xidoneo_borsa?;916323957">
+<param name="durataOK" value="0;node.ico;395;397;0;-;0.0;ProbNode;NoInput;NoOutput;1;entro_dura;2;idoneo;livello_borsa;0.0;1.0;NoCurve;xdurataOK;ydurataOK;690592570">
+<param name="idoneo" value="0;node.ico;459;397;0;-;0.0;ProbNode;NoInput;NoOutput;2;durataOK;ge1mb1;0;0.0;0.0;0.0;1.0;NoCurve;xidoneo;xidoneo;1638787173">
+<param name="perc_b" value="0;node.ico;519;464;0;-;0.0;NumTransNode;NoInput;NoOutput;1;p_u;4;b_i_s;b_f_s;b_p;b_a;1.0;1.0;LinearCurve;percbCurve;xperc_b;yperc_b;2275168315">
+<param name="b_a" value="0;node.ico;609;507;0;-;0.0;TimesNode;NoInput;IntermediateOutput;2;borsa_fuori;perc_b;1;borsa_alt;uborsa_fuor;1.0;1.0;0.0;NoCurve;xb_a;yb_a;940221174">
+<param name="dif_i" value="0;node.ico;418;332;0;-;0.0;MinusNode;NoInput;NoOutput;1;Anni;0;1.0;1.0;NoCurve;xdif_i;xdif_i;3988588157">
+<param name="p_u" value="0;node.ico;424;442;0;-;0.0;PlusNode;NoInput;NoOutput;1;perc_ultimo;2;perc_b;prem;1.0;1.0;NoCurve;xp_u;yp_u;526675935">
+<param name="fs" value="0;node.ico;479;582;0;-;0.0;ProbNode;NoInput;NoOutput;2;In_sede;f_s;2;b_fuor;b_in;0.0;0.0;1.0;0.0;NoCurve;xfs;yfs;1301394736">
+<param name="premio" value="0;node.ico;617;345;0;-;0.0;CutoffNode;NoInput;NoOutput;3;Crediti;mp;Max;1;prem;0.0;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xpremio;ypremio;147810583">
+<param name="mp" value="0;node.ico;587;327;0;-;0.0;MinNode;NoInput;NoOutput;2;Max;m_p;1;premio;0.0;1.0;1.0;1.0;NoCurve;ymp;ymp;452492357">
+<param name="prem" value="0;node.ico;461;462;0;-;0.0;TransformNode;NoInput;NoOutput;3;p_u;premio;c_b_con_m;4;premio_fuor;premio_alt;premio_in;premio_pend;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;LinearCurve;percbCurve;xprem;yprem;458743715">
+<param name="premio_in" value="0;node.ico;335;523;0;-;0.0;ProbNode;NoInput;IntermediateOutput;3;prem;b_in;idoneo_borsa?;1;borsa_in_sede;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;StairsCurve;premioinCurve;xpremio_in;ypremio_in;2998799199">
+<param name="premio_fuor" value="0;node.ico;292;573;0;-;0.0;ProbNode;NoInput;IntermediateOutput;3;prem;b_fuor;idoneo_borsa?;1;borsa_fuori_sede;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;StairsCurve;premiofuoriCurve;xpremio_fuor;ypremio_fuor;406188760">
+<param name="premio_pend" value="0;node.ico;800;536;0;-;0.0;ProbNode;NoInput;IntermediateOutput;3;prem;b_pend;idoneo_borsa?;1;borsa_pendolare;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1.0;StairsCurve;premiopendCurve;xpremio_pend;ypremio_pend;3398794318">
+<param name="borsa_in_sede" value="2;node.ico;385;548;0;-;0.0;PlusNode;NoInput;ResultOutput;2;b_i_s;premio_in;1;importo_borsa;uborsa_ins;1.0;1.0;1.0;NoCurve;xborsa_in_sede;yborsa_in_sede;4051089041">
+<param name="borsa_fuori_sede" value="2;node.ico;518;550;0;-;0.0;PlusNode;NoInput;ResultOutput;2;b_f_s;premio_fuor;1;importo_borsa;uborsa_fuor;1.0;1.0;1.0;NoCurve;xborsa_fuori_sede;yborsa_fuori_sede;2162101626">
+<param name="borsa_pendolare" value="2;node.ico;676;551;0;-;0.0;PlusNode;NoInput;ResultOutput;2;b_p;premio_pend;1;importo_borsa;uborsa_pendol;1.0;1.0;1.0;NoCurve;xborsa_pendolare;yborsa_pendolare;776557236">
+<param name="importo_borsa" value="2;node.ico;795;509;0;-;0.0;NumMaxNode;NoInput;ResultOutput;3;borsa_in_sede;borsa_fuori_sede;borsa_pendolare;0;tscala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;ximporto_borsa;ximporto_borsa;2637642650">
+<param name="Prende_alloggio" value="1;node.ico;642;575;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;p_a;0.5;NoCurve;xPrende_alloggio;yPrende_alloggio;3622667247">
+<param name="Preso_alloggio" value="1;node.ico;797;582;0;-;0.0;ProbNode;ValueInput;NoOutput;0;2;p_a;c;0.5;LinearCurve;pCurve;xPreso_alloggio;yPreso_alloggio;417039726">
+<param name="c" value="0;node.ico;739;589;0;-;0.0;TransformNode;NoInput;NoOutput;1;Preso_alloggio;1;p_a;0.0;1.0;LinearCurve;bCurve;xc;yc;2598362934">
+<param name="Fuori_sede" value="1;node.ico;379;597;0;-;0.0;ProbNode;ValueInput;NoOutput;0;1;f_s;0.5;NoCurve;xFuori_sede;yFuori_sede;3842448277">
+<param name="Straniero" value="1;node.ico;800;448;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;f_s;1.0;NoCurve;xStraniero;yStraniero;3005774159">
+<param name="premio_alt" value="0;node.ico;289;475;0;-;0.0;ProbNode;NoInput;NoOutput;2;prem;idoneo_borsa?;1;borsa_alt;0.0;0.0;0.0;1.0;StairsCurve;premiofuoriCurve;xpremio_alt;ypremio_alt;2027535401">
+<param name="borsa_alt" value="2;node.ico;623;528;0;-;0.0;PlusNode;NoInput;ResultOutput;2;b_a;premio_alt;0;uborsa_fuor;1.0;1.0;1.0;NoCurve;xborsa_alt;yborsa_alt;846559216">
+<param name="Min_premio" value="1;node.ico;571;301;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;m_p;umaxcrediti;NoCurve;xMin_premio;yMin_premio;3070198753">
+<param name="m_p" value="0;node.ico;552;326;0;-;0.0;NumTransNode;NoInput;NoOutput;1;Min_premio;1;mp;umaxcrediti;1.0;LinearCurve;min1Curve;xm_p;ym_p;2722775421">
+<param name="c_b_con_m" value="0;node.ico;530;381;0;-;0.0;ProbNode;NoInput;NoOutput;2;Chiede_borsa;Con_merito;1;prem;0.0;0.0;0.0;1.0;NoCurve;xc_b_con_m;yc_b_con_m;3229876201">
+<param name="Redd3sup" value="1;node.ico;688;426;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;b1;2.0E-5;NoCurve;xRedd3sup;yRedd3sup;3399377888">
+<param name="Redd3inf" value="1;node.ico;414;420;0;-;0.0;PlusNode;ValueInput;NoOutput;0;1;b0;2.0E-5;NoCurve;xRedd3inf;yRedd3inf;2886425762">
+<param name="Rif" value="1;node.ico;498;288;0;-;0.0;PlusNode;ValueInput;NoOutput;0;2;b0;b1;2.0E-5;NoCurve;xRif;yRif;3707968971">
+<param name="mb1" value="0;node.ico;545;358;0;-;0.0;ProbNode;NoInput;NoOutput;1;b1;1;ge1mb1;1.0;0.0;NoCurve;xmb1;ymb1;3877383677">
+<param name="ge1mb1" value="0;node.ico;458;358;0;-;0.0;NumGeNode;NoInput;NoOutput;2;privo_di_mezzi?;mb1;1;idoneo;1.0;1.0;1.0;1.0;NoCurve;xge1mb1;yge1mb1;2508126933">
+
+<param name="bCurve" value="LinearCurve;0.0;0.0;1.0E-10;1.0">
+<param name="borsafuoriCurve" value="StairsCurve;0.0;0.0;Borsa_fuori_min;0.0010;scaglione;0.1;Borsa_fuori;1.0">
+<param name="borsainCurve" value="StairsCurve;0.0;0.0;Borsa_insede_min;0.0010;scaglione;0.1;Borsa_insede;1.0">
+<param name="borsapendCurve" value="StairsCurve;0.0;0.0;Borsa_pend_min;0.0010;scaglione;0.1;Borsa_pend;1.0">
+<param name="meritaCurve" value="LinearCurve;0.0;0.0;1.0E-4;merito0;0.1;merito0;0.5;merito05;1.0;merito1">
+<param name="min1Curve" value="LinearCurve;0.0;0.0;310.0;310.0">
+<param name="nonlinCurve" value="LinearCurve;0.0;0.0;1.0;1.0">
+<param name="pCurve" value="LinearCurve;0.0;0.0;0.5;1.0">
+<param name="percbCurve" value="LinearCurve;0.0;1.0;0.5;0.5;1.0;1.0">
+<param name="premiofuoriCurve" value="StairsCurve;0.0;0.0;0.0;0.0010;scaglione;0.1;Premio_fuori;1.0">
+<param name="premioinCurve" value="StairsCurve;0.0;0.0;0.0;0.0010;scaglione;0.1;Premio_insede;1.0">
+<param name="premiopendCurve" value="StairsCurve;0.0;0.0;0.0;0.0010;scaglione;0.1;Premio_pend;1.0">
+<param name="privoCurve" value="LinearCurve;0.0;1.0;fattore;0.0">
+<param name="tipoCurve" value="LinearCurve;0.0;0.0;1.0;0.25;2.0;0.5;3.0;1.0">
+
+
+<param name="xAnni" value="Anni;Anno/i di iscrizione nel ciclo di studio;Anni=0?;Anni di iscrizione nel ciclo di studio;Anni di iscrizione nel ciclo di studio; ; ; ; ; ;T; ">
+<param name="xCon_merito" value="Con_merito;con merito;<b>senza</b> valutazione del merito;-;con valutazione del merito; ; ; ; ; ;T; ">
+<param name="xBonus" value="Bonus;Bonus di crediti usato;Bonus=0;Bonus di crediti usato;Bonus di crediti usato; ; ; ; ; ;T; ">
+<param name="xAl_minimo" value="Al_minimo;Al_minimo;non al minimo ;-;Viene concesso un eventuale deroga del merito al minimo ammissibile; ; ; ; ; ;T; ">
+<param name="xMin_deroga" value="Min_deroga;Min_deroga;0;-;1; ;-;+; ; ; ; ">
+<param name="xMax" value="Max;Max;0;-;1; ;-;+; ; ; ; ">
+<param name="xDeroghe" value="Deroghe;la deroga al merito;lo studente non rientra nelle situazioni valutate con il merito ridotto;la deroga al merito è intermedia;Studente rientrante nelle situazioni valutate con il merito ridotto ( con soli §Min_deroga§ anziché §Min§ );è;nulla;totale; ; ;T; ">
+<param name="xCrediti" value="Crediti;Numero di crediti ottenuti ( accettabili a partire da §minim§ );Numero di crediti  troppo basso;Numero di crediti intermedio ( accettabili a partire da §minim§ );Numero di crediti  ( accettabili a partire da §minim§ ) ; ; ; ; ; ;#.#; ">
+<param name="xRedd3sup" value="Redd3sup;Redd3sup;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xunità" value="unità;unità;0;-;1; ;-;+; ; ; ; ">
+<param name="xMin" value="Min;Min;0;-;1; ;-;+; ; ; ; ">
+<param name="xFuori_sede" value="Fuori_sede;Fuori sede;non per fuori sede ;-;viene concesso l'importo della borsa fuori sede; ; ; ; ; ;T; ">
+
+<param name="xIn_sede" value="In_sede;In sede;non per in sede ;-;viene concesso l'importo della borsa in sede; ; ; ; ; ;T; ">
+<param name="xPreso_alloggio" value="Preso_alloggio;non prende alloggio;non prende alloggio;-;Ha già preso alloggio a Trento; ; ; ; ; ;T; ">
+
+<param name="xPrende_alloggio" value="Prende_alloggio;non prende alloggio;non prende alloggio;-;Prende alloggio a Trento; ; ; ; ; ;T; ">
+
+<param name="xAltri_universitari" value="Altri_universitari;Altri universitari;Nessuna Altro universitario;Altri_universitari;Presenza di altri universitari; ; ; ; ; ;T; ">
+<param name="xStraniero" value="Straniero;Straniero;trattato come italiano;-;trattato come straniero; ; ; ; ; ;T; ">
+
+<param name="xAggiuntivo" value="Aggiuntivo;Aggiuntivo;Aggiuntivo=0;Aggiuntivo;Aggiuntivo; i; ; ; ; ;T.1; ">
+<param name="xDurata" value="Durata;Durata;0;-;1; ;-;+; ; ; ; ">
+<param name="xChiede_borsa" value="Chiede_borsa;Chiede;non chiede una borsa;-;Chiede la valutazione per una <b>Borsa di Studio</b> (ammissibile fino al §dura§° anno di ciclo); ; ; ; ; ;T ; ">
+<param name="xComune_in_sede" value="Comune_in_sede;Comune_in_sede;Provenienza da un comune fuori sede;-;Provenienza da un comune fuori sede; ; ; ; ; ;T; ">
+<param name="xMin_premio" value="Min_premio;Min_premio;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xIcef" value="Icef;Icef - Indicatore della Condizione Economica Familiare ( limite per una borsa: °b1° );Icef - Indicatore della Condizione Economica Familiare;Icef - Indicatore della Condizione Economica Familiare ( limite per una borsa: °b1° );Icef - Indicatore della Condizione Economica Familiare ( oltre il limite di °b1° ); ; ; ; ; <b>;T.10;</b>">
+<param name="xPremio_pend" value="Premio_pend;Premio_pend;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPremio_insede" value="Premio_insede;Premio_insede;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPremio_fuori" value="Premio_fuori;Premio_fuori;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xPI_estero" value="PI_estero;PI_estero: Valore ICI degli immobili all'estero oltre l'abitazione di residenza;non esistono rilevanti beni immobiliari di proprietà all'estero;Valore ICI degli immobili oltre l'abitazione di residenza all'estero;Valore ICI degli immobili all'estero oltre l'abitazione di residenza massimale;è di; ; ; ; ;$.2; ">
+
+<param name="xSANI2006" value="SANI2006;SANI2006;Opera Universitaria - professioni sanitarie 2005/2006 -  (14.3.2006);--;--; ; ; ; ; ; ; ">
+<param name="xRES_estero" value="RES_estero;RES_estero: Valore ICI dell'abitazione di residenza familiare all'estero;nessuna residenza all'estero;Valore ICI dell'abitazione di residenza familiare all'estero;RES; ; ; ; ; ;$.2; ">
+
+<param name="xBorsa_pend_min" value="Borsa_pend_min;Borsa_pend_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xBorsa_fuori_min" value="Borsa_fuori_min;Borsa_fuori_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xBorsa_fuori" value="Borsa_fuori;Borsa_fuori;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xBorse_percepite" value="Borse_percepite;Borse universitarie percepite;Nessuna Borsa universitaria percepita;Borse universitarie percepite;Borse universitarie percepite; ; ; ; ;- ;$.2; ">
+<param name="xBorsa_pend" value="Borsa_pend;Borsa_pend;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xBorsa_insede_min" value="Borsa_insede_min;Borsa_insede_min;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xBorsa_insede" value="Borsa_insede;Borsa_insede;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRif" value="Rif;Rif;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xRedd3inf" value="Redd3inf;Redd3inf;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xborsa_in" value="borsa_in;importo della borsa in sede;importo della borsa in sede;l'importo della borsa in sede è medio;l'importo della borsa in sede è intero;è di; ; ; ; ;$.2; ">
+<param name="xt1" value="t1;t1;0;-;1; ;-;+; ; ; ; ">
+<param name="xt2" value="t2;t2;0;-;1; ;-;+; ; ; ; ">
+<param name="xt3" value="t3;t3;0;-;1; ;-;+; ; ; ; ">
+<param name="xidoneo_borsa?" value="idoneo_borsa?;idoneo_borsa?;0;-;1; ;-;+; ; ; ; ">
+<param name="xdurataOK" value="durataOK;durataOK;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xborsa_fuori" value="borsa_fuori;importo della borsa fuori sede;importo della borsa fuori sede;la borsa fuori sede è medio;l'importo della borsa fuori sede è intero;è di; ; ; ; ;$.2; ">
+<param name="xc" value="x;x;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xperc_b" value="perc_b;percentuale di borsa ;nessuna borsa ; - al massimo verrebbe concessa metà borsa; - intera borsa; ; ; ; ; ;T.1; ">
+
+<param name="xmatricola" value="matricola;matricola;anni successivi;-;matricola; ; ; ; ; ;T; ">
+<param name="xmerita?" value="merita?;merita?;0;-;1; ;-;+; ; ; ; ">
+<param name="xmb1" value="mb1;mb1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xm_p" value="m_p;m_p;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xborsa_pend" value="borsa_pend;Importo della borsa pendolare;Importo della borsa pendolare;Importo della borsa pendolare ;l'importo della borsa pendolare è intera;è di; ; ; ; ;$.2; ">
+<param name="xmeritevole?" value="meritevole?;meritevole?;0;-;1; ;-;+; ; ; ; ">
+<param name="xdif_i" value="dif_i;dif_i;0;-;1; ;-;+; ; ; ; ">
+<param name="xp_u" value="p_u;p_u;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xprivo_di_mezzi?" value="privo_di_mezzi?;privo_di_mezzi?;0;-;1; ;-;+; ; ; ; ">
+<param name="xper_altri" value="per_altri;addizionale alla scala di equivalenza per la presenza di altri universitari;Nessuna altro universitario;altri universitari;addizionale alla scala di equvalenza per la presenza di altri universitari; ; ; ; ; ;T.1; ">
+
+<param name="xperc_ultimo" value="perc_ultimo;perc_ultimo;0;-;1; ;-;+; ; ; ; ">
+<param name="xborsa_pendolare" value="borsa_pendolare;Importo della borsa pendolare ^perc_b^*(%percborsa% tra §Borsa_pend_min§ e §Borsa_pend§ );Nessuna borsa pendolare;Importo della borsa pendolare  ^perc_b^*(%percborsa% tra §Borsa_pend_min§ e §Borsa_pend§ );Borsa pendolare intera ( §Borsa_pend§ );è di; ; ; ;<b>Euro ;$.0;</b>">
+
+<param name="xfs" value="fs;fs;0;-;1; ;-;+; ; ; ; ">
+
+
+<param name="xborsa_fuori_sede" value="borsa_fuori_sede;Importo della borsa fuori sede ^perc_b^*(%percborsa% tra §Borsa_fuori_min§ e §Borsa_fuori§ );Nessuna borsa fuori sede ;Importo della borsa fuori sede   ^perc_b^*(%percborsa%  tra §Borsa_fuori_min§ e §Borsa_fuori§ );Borsa fuori sede intera ( §Borsa_fuori§ );è di; ; ; ;<b>Euro ;$.0;</b>">
+
+<param name="xidoneo" value="idoneo;idoneo;0;-;1; ;-;+; ; ; ; ">
+<param name="xborsa_in_sede" value="borsa_in_sede;Importo della borsa in sede ^perc_b^*(%percborsa% tra §Borsa_insede_min§ e §Borsa_insede§ );Nessuna borsa in sede;Importo della borsa in sede ^perc_b^*(%percborsa% tra §Borsa_insede_min§ e §Borsa_insede§ );Borsa in sede intera ( §Borsa_insede§ );è di; ; ; ;<b>Euro ;$.0;</b>">
+
+<param name="xb_a" value="b_a;b_a;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xdura" value="dura;durata;durata=0;durata;durata=1; i; ; ; ; ;T; ">
+<param name="xmaxi" value="maxi;maxi;0;-;1; ;-;+; ; ; ; ">
+<param name="xpercborsa" value="percborsa;percborsa;0;-;1; ;-;+; ; ; ; ">
+<param name="xentro_dura" value="entro_dura;durante;oltre la durata ammessa del ciclo di studio: anni=§Anni§ > durata=(§Durata§ + ^Aggiuntivo^);-;entro la durata ammessa; ; ; ; ; ;T; ">
+<param name="xdiff1" value="entro_dura;entro_dura;0;-;1; ;-;+; ; ; ; ">
+<param name="xesclusione" value="esclusione;esclusione;0;-;1; ;-;+; ; ; ; ">
+<param name="xpropri" value="propri;propri;0;-;1; ;-;+; ; ; ; ">
+<param name="xge1mb1" value="ge1mb1;ge1mb1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xc_b_con_m" value="c_b_con_m;c_b_con_m;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xb1" value="b1;b1;0;-;1; ;-;+; ; ; ; ">
+<param name="xentro_regolare" value="entro_regolare;durante;oltre la durata dello studio: anni=§Anni§ > durata regolare=§Durata§;-;entro la durata; ; ; ; ; ;T; ">
+<param name="xultimo" value="ultimo;durante;non ultimo anno di ciclo (anni §Anni§ != §Durata§);-;ultimo anno di ciclo; ; ; ; ; ;T; ">
+<param name="xb0" value="b0;b0;0;-;1; ;-;+; ; ; ; ">
+<param name="xpremio_alt" value="premio_alt;<i>Premio parziale ( %prem% di §Premio_fuori§ ) incluso nella borsa</i>;<i>Nessun premio</i>;<i>Premio ( %prem% di §Premio_fuori§ ) incluso nella borsa</i>;<i>Premio intero incluso nella borsa</i>;è di; ; ; ;<i>;$.0;</i>">
+
+<param name="xborsa_alt" value="borsa_alt;<i>Importo della borsa alternativa ^perc_b^*(%percborsa% tra §borsa_fuor_min§ e §borsa_fuor§ )</i>;<i>Nessuna borsa alternativa</i>;<i>Importo della borsa alternativa   ^perc_b^*(%percborsa%  tra §borsa_fuor_min§ e §borsa_fuor§ )</i>;<i>Borsa alternativa intera (§borsa_fuor§ )</i>;è di; ; ; ;<i>Euro ;$.0;</i>">
+
+<param name="xeccezione" value="eccezione;eccezione;0;-;1; ;-;+; ; ; ; ">
+<param name="ximporto_borsa" value="importo_borsa;importo della borsa;niente borsa;importo della borsa;importo della borsa intera;è di; ; ; ; ;$.2; ">
+<param name="xb_p" value="b_p;b_p;0;-;1; ;-;+; ; ; ; ">
+<param name="xusati" value="usati;usati;0;-;1; ;-;+; ; ; ; ">
+<param name="xb_in" value="b_in;b_in;0;-;1; ;-;+; ; ; ; ">
+<param name="xtipo_borsa" value="tipo_borsa;spetta una BORSA IN SEDE;Nessuna borsa possibile;spetta una BORSA FUORI SEDE;spetta una BORSA PENDOLARE;è di; ; ; ; ;T; ">
+<param name="xminim" value="minim;minim;0;-;1; ;-;+; ; ; ; ">
+<param name="xrequisiti" value="requisiti;i <B>requisiti di merito</B>;i <B>requisiti di merito</B> sono del tutto insufficienti;i <B>requisiti di merito</B> sono ritenuti medi;i <B>requisiti di merito</B> sono ritenuti elevati;sono ritenuti;modesti;elevati; ;(;%;)">
+<param name="xmerito" value="merito;il merito  (§propri§ inclusivo bonus di §Bonus§ = §Min§ | §Min_deroga§);il merito è del tutto insufficiente (§propri§ inclusivo bonus di §Bonus§ < §Min§ : §Min_deroga§);il merito è nella media;il merito è  ottimo;è;modesto;elevato; ;(;%;)">
+<param name="xb_f_s" value="b_f_s;b_f_s;0;-;1; ;-;+; ; ; ; ">
+<param name="xb_i_s" value="b_i_s;b_i_s;0;-;1; ;-;+; ; ; ; ">
+<param name="xb_fuor" value="b_fuor;b_fuor;0;-;1; ;-;+; ; ; ; ">
+<param name="xpremio_in" value="premio_in;Premio parziale ( %prem% di §Premio_insede§ ) incluso nella borsa;Nessun premio;Premio ( %prem% di §Premio_insede§ ) incluso nella borsa;Premio intero incluso nella borsa;è di; ; ; ;<i>;$.0;</i>">
+
+<param name="xprem" value="prem;prem;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xpremio_pend" value="premio_pend;Premio parziale ( %prem% di §Premio_pend§ ) incluso nella borsa;Nessun premio;Premio ( %prem% di §Premio_pend§ ) incluso nella borsa;Premio intero incluso nella borsa;è di; ; ; ;<i>;$.0;</i>">
+
+<param name="xpremio_fuor" value="premio_fuor;Premio parziale ( %prem% di §Premio_fuori§ ) incluso nella borsa;Nessun premio;Premio ( %prem% di §Premio_fuori§ ) incluso nella borsa;Premio intero incluso nella borsa;è di; ; ; ;<i>;$.0;</i>">
+
+<param name="xpremio" value="premio;premio;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xb_pend" value="b_pend;b_pend;0;-;1; ;-;+; ; ; ; ">
+<param name="xborsa" value="borsa;borsa;0;-;1; ;-;+; ; ; ; ">
+<param name="xlivello_borsa" value="livello_borsa;livello_borsa;0;-;1; ;-;+; ; ; ; ">
+
+
+
+<param name="xpltree" value="propagation0;chiesto;datisenzamerito;daticonmerito;val_regolare;val_oltre;val_ultimo;titBorsa;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="propagation0" value=".;Icef=Icef;Anni=Anni;Crediti=Crediti">
+<param name="chiesto" value="<P><B>Benefici chiesti:</B>;Chiede_borsa=-1;Straniero=-1!0;Al_minimo=-1!0;Deroghe=-1!0">
+<param name="datisenzamerito" value="(Con_merito==0)<P><B>Dati dello Studente:</B>;Icef=-1;Borse_percepite=-1!0;per_altri=-1!0;RES_estero=-1!0;PI_estero=-1!0;Anni=-1;Con_merito=-1">
+<param name="daticonmerito" value="(Con_merito==1)<P><B>Dati dello Studente:</B>;Icef=-1;Borse_percepite=-1!0;per_altri=-1!0;RES_estero=-1!0;PI_estero=-1!0;Anni=-1;Crediti=-1!0;Bonus=-1!0">
+<param name="val_regolare" value="(entro_regolare==1) - entro la durata normale ;matricola=3!0;(requisiti==0)merito=3;(inv67==0)entro_dura=3!1">
+<param name="val_oltre" value="(entro_dura==0) - oltre la durata normale ;(requisiti==0)merito=3;(inv67==0)entro_dura=3!1">
+<param name="val_ultimo" value="(ultimo==1) - ultimo anno ammesso ;(requisiti==0)merito=3;ultimo=3!0">
+<param name="titBorsa" value="(Chiede_borsa==1)<P><B>Esito della domanda di borsa:</B>;tipo_borsa=-1;In_sede=-1!0;Fuori_sede=-1!0;(tipo_borsa!=0)Comune_in_sede=-1!1;(tipo_borsa!=0)Prende_alloggio=-1!0;(tipo_borsa!=0)Preso_alloggio=-1!0;borsa_in_sede=-1!0;(Min_premio!=0)premio_in=-1!0;borsa_fuori_sede=-1!0;(Min_premio!=0)premio_fuor=-1!0;borsa_pendolare=-1!0;(Min_premio!=0)premio_pend=-1!0;(b_p!=0)borsa_alt=-1">
+<param name="version" value="Versione uni04: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="2746858047">
+<param name="CRC" value="3320461709">
+<param name="CRCdata" value="14-mar-2006 12.59.45">
+</APPLET>
+<BR>

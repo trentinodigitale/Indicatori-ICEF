@@ -1,0 +1,67 @@
+<a href="http://www.icef.provincia.tn.it/clesius/icefTrasp/pu_descrizioneServizio.jsp?id_servizio=30003" target="_blank" title="Documento esterno" >	Reddito di Garanzia (Incentivo al Lavoro) - ANNO 2011 </a>
+<APPLET CODE=it.clesius.engine.elab.Clesius.class CODEBASE='/clesius' WIDTH=700 HEIGHT=500 MAYSCRIPT>
+<param name="revision" value="$Revision: 1.3 $">
+
+<param name="Taratura" value="PAT - ReddGar Incentivo al Lavoro Incentivo al lavoro; 14.3.2011">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";">
+<param name="mode" value="Author">
+<param name="debug" value="true">
+<param name="language" value="0">
+
+
+<param name="trendStarts" value="caso;casoNo">
+
+<param name="caso" value="zero;Mensile=123;Check=0">
+<param name="casoNo" value="zero;Mensile=123;Check=2">
+
+<param name="variables" value="mscala">
+
+ <param name="mscala" value="0.001">
+
+
+
+<param name="edges" value="P.A.T. ReddGar Incentivo al Lavoro;
+Mensile-due_mensili;idoneo-due_mensili;Check-idoneo">
+
+
+
+<param name="P.A.T. ReddGar Incentivo al Lavoro" value="text;node.ico;237;47;0;P.A.T. ReddGar Incentivo al Lavoro = ;0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModelloIncentivo;xModelloIncentivo;1979168676">
+<param name="Mensile" value="1;node.ico;166;123;0;Mensile = ;0.0;PlusNode;ValueInput;NoOutput;0;1;due_mensili;mscala;NoCurve;xMensile;yMensile;2954934107">
+<param name="due_mensili" value="2;node.ico;308;143;0;due_mensili =  Mensile * 2.000*idoneo;0.0;TimesNode;NoInput;ResultOutput;2;Mensile;idoneo;0;mscala;1.0;2.0;1.0;NoCurve;xdue_mensili;ydue_mensili;889620586">
+<param name="idoneo" value="0;node.ico;168;164;0;idoneo = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;1;due_mensili;1.0;0.0;NoCurve;xidoneo;yidoneo;1237915059">
+<param name="Check" value="1;node.ico;99;164;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;1;idoneo;0.5;NoCurve;xCheck;yCheck;1842287743">
+
+
+
+<param name="xCheck" value="Check;idoneo;<b>idoneo</b> per l'incentivo al lavoro;<b>NON</b> idoneo per l'incentivo al lavoro;<b>NON</b> idoneo: nella domanda del reddito di garanzia collegata qualcuno stava lavorando; ; ; ; ; ;T; ">
+
+<param name="xMensile" value="Mensile;Mensilità del beneficio in godimento al momento in cui l'attività prende avvio;Mensilità=0?;Mensilità del beneficio in godimento al momento in cui l'attività prende avvio;Mensilità del beneficio in godimento al momento in cui l'attività prende avvio; ; ; ; ; ;$.2; ">
+
+<param name="xModelloIncentivo" value="P.A.T. ReddGar Incentivo al Lavoro;x;Versione 14.3.2011; ; ; ; ; ; ; ; ; ">
+<param name="xidoneo" value="idoneo;idoneità;<b>NON</b> idoneo per l'incentivo al lavoro;-;<b>idoneo</b> per l'incentivo al lavoro; ; ; ; ; ;T; ">
+
+<param name="xdue_mensili" value="due_mensili;Importo dell'incentivo concesso;Nessun incentivo;Importo dell'incentivo concesso;Importo dell'incentivo concesso; ; ; ; ; ;$.2; ">
+
+
+
+
+<param name="xpltree" value="header;dati;risultato;version;versionData;check">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="header" value="<center><h1>Incentivo al lavoro (DGP nr.1524 del 25/06/2010</h1></center>;">
+<param name="dati" value="<b>Dati</b>;Check=-1!0;(idoneo==1)Mensile=-1">
+<param name="risultato" value="(idoneo==1)<b>Risultato</b>;due_mensili=-1">
+<param name="version" value="Versione: <small> ;</small>">
+<param name="versionData" value="in data <small> ;</small>">
+<param name="check" value="Controllo: <small>;</small>">
+
+<param name="varCRC" value="3383474523">
+<param name="CRC" value="3135885056">
+<param name="CRCdata" value="14-mar-2011 17.17.57">
+</APPLET>
+</CENTER>
+<BR>

@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>ASSEGNO DI CURA</H2>
+		<H3>art. 10 Legge Provinciale 15/2012</H3>
+		</CENTER></head> ]]></main>
+		<ente>
+			<sql><![CDATA[SELECT CASE WHEN domande.id_servizio = 30500 
+									THEN (SELECT CASE WHEN ac_dati.cf_requisito = -1 and ac_dati.cf_certificatore = 0 THEN 'ATTENZIONE: La verifica della correttezza del codice fiscale sar&agrave; effettuata al momento della trasmissione.<BR />' ELSE
+													CASE WHEN ac_dati.cf_requisito = 0 and ac_dati.cf_certificatore = 1 THEN '<B>ATTENZIONE: Il codice fiscale dell''assistito non risulta negli archivi dell''APSS (sistema ANAWEB). Si prega di verificare la correttezza del codice fiscale inserito nel sistema ICEF confrontandolo con quello presente sulla tessera sanitaria dell''assistito. La presente domanda &egrave; SOSPESA fino alla correzione del codice fiscale.</B><BR />' ELSE
+														CASE WHEN ac_dati.cf_requisito = -1 and ac_dati.cf_certificatore = -1 THEN '<B>ATTENZIONE: La verifica della correttezza del codice fiscale non &egrave; stata possibile (sistema ANAWEB non raggiungibile). Si prega di verificare la correttezza del codice fiscale inserito nel sistema ICEF confrontandolo con quello presente sulla tessera sanitaria dell''assistito. La domanda &egrave; SOSPESA in attesa di ripristinare il collegamento.</B><BR />' ELSE '&nbsp;'
+														END
+													END
+												END
+											FROM ac_dati 
+											WHERE ac_dati.id_domanda = ${id_domanda}) ELSE '&nbsp;'  END
+							FROM domande 
+							WHERE domande.id_domanda = ${id_domanda}]]></sql>
+				
+			<!--<class>it.clesius.apps2core.format.HeaderEnte</class>-->
+			<!--![CDATA[<H3><CENTER>id_domanda=${id_domanda}]]>
+			<sql>select ente from r_enti where id_ente=${id_ente}</sql>
+			<![CDATA[</H3></CENTER>]]-->
+		</ente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>
+	<sql><![CDATA[SELECT CASE WHEN domande.id_servizio = 30500 
+							THEN (SELECT CASE WHEN ac_dati.residenza_requisito = -1 and ac_dati.residenza_certificatore = 0 THEN 'ATTENZIONE: La verifica del requisito della residenza biennale sar&agrave; effettuata al momento della trasmissione<BR />' ELSE
+											CASE WHEN ac_dati.residenza_requisito = 0 and ac_dati.residenza_certificatore = 1 THEN 'ATTENZIONE: Il requisito della residenza biennale non &egrave; stato confermato dall''APSS. Se la domanda soddisfa gli altri requisiti &egrave; SOSPESA in attesa di ulteriori accertamenti da parte di APAPI<BR />' ELSE
+												CASE WHEN ac_dati.residenza_requisito = -1 and ac_dati.residenza_certificatore = 1 THEN 'ATTENZIONE: Non &egrave; stato possibile verificare il requisito della residenza biennale presso l''APSS (codice fiscale non trovato). Se la domanda soddisfa gli altri requisiti &egrave; SOSPESA in attesa di ulteriori accertamenti da parte di APAPI<BR />' ELSE
+													CASE WHEN ac_dati.residenza_requisito = -1 and ac_dati.residenza_certificatore = -1 THEN 'ATTENZIONE: Non &egrave; stato possibile verificare il requisito della residenza biennale presso l''APSS (sistema ANAWEB non raggiungibile). La domanda &egrave; SOSPESA in attesa di ripristinare il collegamento<BR />' ELSE '&nbsp;'
+													END
+												END
+											END
+										END
+									FROM ac_dati 
+									WHERE ac_dati.id_domanda = ${id_domanda}) ELSE '&nbsp;'  END
+							FROM domande 
+							WHERE domande.id_domanda = ${id_domanda}]]></sql>
+
+	<sql><![CDATA[SELECT CASE WHEN domande.id_servizio = 30500 
+							THEN (SELECT CASE WHEN var.ID_domanda IS NOT NULL THEN '&nbsp;' ELSE
+											CASE WHEN ac_dati.indennita_requisito = -1 and ac_dati.indennita_certificatore = 0 THEN 'ATTENZIONE: La verifica del requisito della titolarit&agrave; dell''indennit&agrave; di accompagnamento sar&agrave; effettuata al momento della trasmissione e successivamente in sede di UVM<BR />' ELSE
+												CASE WHEN ac_dati.indennita_requisito = 1 and ac_dati.indennita_certificatore = 2 THEN 'ATTENZIONE: L''assistito/a risulta percepire l''indennit&agrave; di accompagnamento da parte di APAPI. Se la domanda soddisfa gli altri requisiti prosegue il suo iter e la certificazione del requisito sar&agrave; effettuata dall''APSS in sede di UVM<BR />' ELSE
+													CASE WHEN ac_dati.indennita_requisito = 0 and ac_dati.indennita_certificatore = 2 THEN 'ATTENZIONE: L''assistito/a NON risulta percepire l''indennit&agrave; di accompagnamento da parte di APAPI. Se la domanda soddisfa gli altri requisiti prosegue il suo iter e la certificazione del requisito sar&agrave; effettuata dall''APSS in sede di UVM<BR />' ELSE '&nbsp;'
+													END
+												END
+											END
+										END
+									FROM ac_dati 
+									LEFT OUTER JOIN (SELECT DISTINCT AC_variazioni.id_domanda 
+														FROM AC_variazioni 
+														WHERE AC_variazioni.ID_tp_variazione = 100 AND AC_variazioni.ID_domanda = ${id_domanda}
+													) var ON var.id_domanda = ac_dati.id_domanda
+									WHERE ac_dati.id_domanda = ${id_domanda}) ELSE '&nbsp;'  END
+							FROM domande 
+							WHERE domande.id_domanda = ${id_domanda}]]></sql>
+	<sql><![CDATA[SELECT CASE WHEN domande.id_servizio = 30500 
+							THEN (SELECT CASE WHEN var.ID_domanda IS NOT NULL THEN '&nbsp;' ELSE
+											CASE WHEN ac_dati.compatibilita_requisito = -1 and ac_dati.compatibilita_certificatore = 0 THEN 'ATTENZIONE: La verifica del requisito dell''assenza di incompatibilit&agrave; con altre provvidenze analoghe sar&agrave; effettuata al momento della trasmissione e successivamente in sede di UVM' ELSE
+												CASE WHEN ac_dati.compatibilita_requisito = 1 and ac_dati.compatibilita_certificatore = 0 THEN 'ATTENZIONE: L''assistito/a non dichiara situazioni di incompatibilit&agrave; E non risulta percepire gli interventi previsti dalla LP 6/98 e LP 11/90. Se la domanda soddisfa gli altri requisiti prosegue il suo iter e la certificazione di assenza di incompatibilit&agrave; sar&agrave; effettuata dall''APSS in sede di UVM' ELSE
+													CASE WHEN ac_dati.compatibilita_requisito = 0 and ac_dati.compatibilita_certificatore = 0 THEN 'ATTENZIONE: L''assistito/a dichiara di beneficiare di interventi incompatibili OPPURE potrebbe beneficiare di interventi previsti dalla LP 6/98 o LP 11/90. Se la domanda soddisfa gli altri requisiti prosegue il suo iter ed in sede di UVM il richiedente dovr&agrave; scegliere se beneficiare dell''assegno di cura o mantenere le provvidenze incompatibili' ELSE '&nbsp;'
+													END
+												END
+											END
+										END
+									FROM ac_dati 
+									LEFT OUTER JOIN (SELECT DISTINCT AC_variazioni.id_domanda 
+														FROM AC_variazioni 
+														WHERE AC_variazioni.ID_tp_variazione = 100 AND AC_variazioni.ID_domanda =  ${id_domanda}
+													) var ON var.id_domanda = ac_dati.id_domanda
+									WHERE ac_dati.id_domanda =  ${id_domanda}) ELSE '&nbsp;'  END
+							FROM domande 
+							WHERE domande.id_domanda = ${id_domanda}]]></sql>
+<sql><![CDATA[SELECT CASE WHEN xF.id_domanda IS NOT NULL THEN '</br>Variazioni:</br>' ELSE 
+								CASE WHEN xS.id_soggetto is not null THEN '</br>Variazioni:</br>' ELSE  ''
+								END 
+							END
+					FROM domande 
+					LEFT OUTER JOIN (SELECT ac_fascicoli.id_domanda
+										FROM ac_variazioni
+										INNER JOIN ac_fascicoli ON ac_fascicoli.id_fascicolo = ac_variazioni.id_domanda
+										WHERE ac_fascicoli.id_domanda = ${id_domanda}) xF on xF.id_domanda = domande.id_domanda
+					LEFT OUTER JOIN (SELECT AC_variazioni_soggetti.ID_soggetto, ac_fascicoli.id_domanda
+										FROM AC_variazioni_soggetti
+										INNER JOIN ac_fascicoli ON ac_fascicoli.id_soggetto = ac_variazioni_soggetti.id_soggetto
+										WHERE ac_fascicoli.id_domanda = ${id_domanda}) xS on xS.id_domanda = domande.id_domanda	
+					WHERE domande.id_domanda = ${id_domanda}]]></sql>
+<sql><![CDATA[EXECUTE sp_ac_variazioni_domanda ${id_domanda}]]></sql>		
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

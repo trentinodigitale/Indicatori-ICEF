@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE Doc >
+<Doc>
+	<header>
+		<main><![CDATA[<html><head>
+		<title>Clesius ICEF</title></head><body>
+		<CENTER>
+		<H2>ASSEGNO INTEGRATIVO</H2>
+		<H3>Legge provinciale 30 dicembre 2014, n. 14</H3>
+		<BR/>
+		<b>AVVERTENZA: nel caso in cui il codice di invalidità sia 03 (invalidi civili parziali) o 07 (invalidi minorenni) non spetta l'assegno integrativo</b>
+		</CENTER></head> ]]>
+		</main>
+		<ente>
+			<sql><![CDATA[
+			select case when id_tp_stato = 0 then '<center><h3><b>ATTENZIONE: Domanda non trasmessa</b><h3></center>' else '' end 
+			from doc 
+			where id=${id_domanda}]]></sql>
+			<sql><![CDATA[
+			select case when doc.data_presentazione > CONVERT(datetime, '2017-12-31', 102)
+then '<center><h2><b>ATTENZIONE: IL CALCOLO DEGLI IMPORTI DELL''ASSEGNO INTEGRATIVO CHE SONO INDICATI DI SEGUITO HANNO VALORE SOLAMENTE NEI CASI DI ASSEGNAZIONE RETROATTIVA DI TALE BENEFICIO E IN OGNI CASO FINO E NON OLTRE IL 31/12/2017.</b></h2></center>' 
+else case when (id_periodo >= 30517 or id_servizio >= 61017) then '<center><h2><b>ATTENZIONE: IL CALCOLO DEGLI IMPORTI DELL''ASSEGNO INTEGRATIVO CHE SONO INDICATI DI SEGUITO HANNO VALORE AL MASSIMO FINO AL 31/12/2017.</b></h2></center>' 
+			else '' 
+			end 
+			end
+			from domande
+			inner join doc on doc.id = domande.id_domanda 
+			where id_domanda =${id_domanda}]]></sql>
+		</ente>
+	</header>
+	<outputRete>
+		<main><![CDATA[${outputRete.main}]]></main>
+	</outputRete>
+	<footer>
+		<integrazione>	
+		</integrazione>
+		<infoDoc>
+			<class>clesprojects.clesius.icef.InfoDomanda</class>
+		</infoDoc>
+		<netVersion><![CDATA[<CENTER>${footer.netVersion}</CENTER>]]></netVersion>
+		<main><![CDATA[<HR><CENTER>Clesius S.r.l.</CENTER></HR></BODY></HTML>]]></main>
+		
+	</footer>
+</Doc>

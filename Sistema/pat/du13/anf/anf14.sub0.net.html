@@ -1,0 +1,165 @@
+<APPLET CODE='it.clesius.engine.elab.Clesius.class' CODEBASE='/clesius' WIDTH='700' HEIGHT='830' MAYSCRIPT>
+<param name="revision" value="$Revision: 1.2 $">
+<param name="Taratura" value="Pacchetto famiglia - Assegno per figli; 10.7.2013">
+
+<param name="Font" value="Times Roman">
+<param name="Fontsize" value="12">
+<param name="separator" value=";"> 
+<param name="mode" value="Author">
+<param name="debug" value="false">
+<param name="language" value="0">
+
+<param name="trendStarts" value="">
+
+
+<param name="variables" value="ascala;cscala;escala">
+
+ <param name="ascala" value="0.001">
+ <param name="cscala" value="0.1">
+ <param name="escala" value="0.000001">
+
+
+
+<param name="edges" value="P.A.T.  Assegno0;
+ass_1genitor-ass_genitor;Un_genitor-ass_genitor;Disabili-assegno;ass_handicap-assegno;ass_2genitori-ass_genitor;ass_genitor-assegno;riga-ass_1genitor;riga-ass_2genitori;riga-ass_handicap;colonna-ass_1genitor;colonna-ass_2genitori;colonna-ass_handicap;Un_genitor-tab;2g-tab;Disabili-tabella;3d-tabella;tab-tabella;Check-idonea;Condizione_familiare-rig;rig-riga;N_figli-col;
+col-colonna;idonea-colonna;tabella-tab3;tab3-disOK;f1-disOK;f2-figliOK;disOK-figliOK;figliOK-condOK;idonea-condOK;assegno-assOK;assOK-condOK;N_figli-f2;N_figli-f1;condOK-cOK;p1-cOK">
+
+
+
+<param name="P.A.T.  Assegno0" value="text;node.ico;58;469;0;P.A.T.  Assegno0 2014 - (10.7.2013);0.0;ProbNode;NoInput;NoOutput;0;0;0.0;NoCurve;xModello_Assegno0;xModello_Assegno0;2191438113">
+<param name="ass_1genitor" value="0;node.ico;225;431;0;ass_1genitor LookupNode;0.0;LookupNode;NoInput;NoOutput;2;riga;colonna;1;ass_genitor;ascala;1.0;1.0;1.0;MultiStepCurve;ass1Curve;xass_1genitor;yass_1genitor;3214428676">
+<param name="ass_genitor" value="0;node.ico;224;459;0;ass_genitor = SE( Un_genitor=1.0 , 1.0 * ass_1genitor , 1.0 * ass_2genitori );0.0;NumIfNode;NoInput;NoOutput;3;Un_genitor;ass_1genitor;ass_2genitori;1;assegno;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xass_genitor;yass_genitor;90488870">
+<param name="Un_genitor" value="1;node.ico;39;344;0;Un_genitor = ;0.0;PlusNode;ValueInput;NoOutput;0;2;ass_genitor;tab;1.0;NoCurve;xUn_genitor;yUn_genitor;160660696">
+<param name="Disabili" value="1;node.ico;332;359;0;Disabili = ;0.0;PlusNode;ValueInput;NoOutput;0;2;assegno;tabella;1.0;NoCurve;xDisabili;yDisabili;1250303476">
+<param name="assegno" value="2;node.ico;383;457;0;assegno = SE( Disabili=1.0 , 1.0 * ass_handicap , 1.0 * ass_genitor );0.0;NumIfNode;NoInput;ResultOutput;3;Disabili;ass_handicap;ass_genitor;1;assOK;escala;1.0;1.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xassegno;yassegno;1165993901">
+<param name="ass_handicap" value="0;node.ico;622;424;0;ass_handicap LookupNode;0.0;LookupNode;NoInput;NoOutput;2;riga;colonna;1;assegno;ascala;1.0;1.0;1.0;MultiStepCurve;ass3Curve;xass_handicap;yass_handicap;2131598461">
+<param name="ass_2genitori" value="0;node.ico;328;435;0;ass_2genitori LookupNode;0.0;LookupNode;NoInput;NoOutput;2;riga;colonna;1;ass_genitor;ascala;1.0;1.0;1.0;MultiStepCurve;ass2Curve;xass_2genitori;yass_2genitori;698478420">
+<param name="riga" value="2;node.ico;276;410;0;riga =  rig;0.0;TimesNode;TokenInput;NoOutput;1;rig;3;ass_1genitor;ass_2genitori;ass_handicap;cscala;1.0;NoCurve;xriga;yriga;4143811217">
+<param name="colonna" value="2;node.ico;528;399;0;colonna =  col * idonea;0.0;TimesNode;TokenInput;NoOutput;2;col;idonea;3;ass_1genitor;ass_2genitori;ass_handicap;cscala;1.0;1.0;0.0;NoCurve;xcolonna;ycolonna;1280125861">
+<param name="tab" value="0;node.ico;39;399;0;tab = SE( Un_genitor=1.0 , 1.0 * 2g , 2.0 );0.0;NumIfNode;NoInput;NoOutput;2;Un_genitor;2g;1;tabella;1.0;1.0;1.0;2.0;NoCurve;xtab;ytab;2126591510">
+<param name="2g" value="0;node.ico;60;368;0;2g = ;0.0;PlusNode;NoInput;NoOutput;0;1;tab;1.0;NoCurve;x2g;y2g;3415751032">
+<param name="tabella" value="2;node.ico;39;432;0;tabella = SE( Disabili=1.0 , 3.0 * 3d , 1.0 * tab );0.0;NumIfNode;TokenInput;NoOutput;3;Disabili;3d;tab;1;tab3;0.1;1.0;3.0;1.0;1.0;1.0;1.0;1.0;NoCurve;xtabella;ytabella;1772114395">
+<param name="3d" value="0;node.ico;89;443;0;3d = ;0.0;PlusNode;NoInput;NoOutput;0;1;tabella;1.0;NoCurve;x3d;y3d;1150775539">
+<param name="Check" value="1;node.ico;654;376;0;Check = ;0.0;PlusNode;ValueInput;NoOutput;0;1;idonea;1.0;NoCurve;xCheck;yCheck;3078124944">
+<param name="idonea" value="0;node.ico;602;400;0;idonea = Check == 0.0;0.0;NumEqNode;NoInput;NoOutput;1;Check;2;colonna;condOK;1.0;0.0;NoCurve;xidonea;yidonea;1150916585">
+<param name="Condizione_familiare" value="1;node.ico;230;361;0;Condizione_familiare = ;0.0;PlusNode;ValueInput;NoOutput;0;1;rig;escala;NoCurve;xCondizione_familiare;yCondizione_familiare;3325838666">
+<param name="rig" value="0;node.ico;230;391;0;rig =  Condizione_familiare);0.0;NumTransNode;NoInput;NoOutput;1;Condizione_familiare;1;riga;0.0;1.0;StepCurve;rigaCurve;xrig;yrig;1972731887">
+<param name="N_figli" value="1;node.ico;591;371;0;N_figli = ;0.0;PlusNode;ValueInput;NoOutput;0;3;col;f2;f1;cscala;NoCurve;xN_figli;yN_figli;4276002794">
+<param name="col" value="0;node.ico;527;359;0;col =  N_figli);0.0;NumTransNode;NoInput;NoOutput;1;N_figli;1;colonna;0.0;1.0;LinearCurve;figliCurve;xcol;ycol;4107105365">
+<param name="tab3" value="0;node.ico;92;390;0;tab3 = tabella == 3.0;0.0;NumEqNode;NoInput;NoOutput;1;tabella;1;disOK;1.0;3.0;NoCurve;xtab3;ytab3;1669865467">
+<param name="disOK" value="0;node.ico;311;389;0;disOK =  tab3 * f1;0.0;ProbNode;NoInput;NoOutput;2;tab3;f1;1;figliOK;0.0;0.0;0.0;1.0;NoCurve;xdisOK;ydisOK;2400675162">
+<param name="f1" value="0;node.ico;387;371;0;f1 = N_figli >= 1.0;0.0;NumGeNode;NoInput;NoOutput;1;N_figli;1;disOK;1.0;1.0;NoCurve;xf1;yf1;690742841">
+<param name="f2" value="0;node.ico;448;394;0;f2 = N_figli >= 2.0;0.0;NumGeNode;NoInput;NoOutput;1;N_figli;1;figliOK;1.0;2.0;NoCurve;xf2;yf2;3697422665">
+<param name="figliOK" value="0;node.ico;402;394;0;figliOK =  f2 + disOK - f2 * disOK;0.0;ProbNode;NoInput;NoOutput;2;f2;disOK;1;condOK;0.0;1.0;1.0;1.0;NoCurve;xfigliOK;yfigliOK;258984995">
+<param name="condOK" value="2;node.ico;506;431;0;condOK =   1  - figliOK * idonea + figliOK * idonea * assOK;0.0;ProbNode;NoInput;IntermediateOutput;3;figliOK;idonea;assOK;1;cOK;1.0;1.0;1.0;0.0;1.0;1.0;1.0;1.0;NoCurve;xcondOK;ycondOK;1902263080">
+<param name="assOK" value="0;node.ico;416;431;0;assOK = assegno > 0.0;0.0;NumGtNode;NoInput;NoOutput;1;assegno;1;condOK;1.0;0.0;NoCurve;xassOK;yassOK;1238632537">
+<param name="cOK" value="0;node.ico;561;454;0;cOK =   1  - p1 + condOK * p1;0.0;ProbNode;NoInput;NoOutput;2;condOK;p1;0;1.0;1.0;0.0;1.0;NoCurve;xcOK;ycOK;219886529">
+<param name="p1" value="0;node.ico;501;455;0;p1 = ;0.0;ProbNode;NoInput;NoOutput;0;1;cOK;0.0;NoCurve;xp1;yp1;1848730389">
+
+<param name="ass1Curve" value="MultiStepCurve;1.0;2.0;3.0;4.0;5.0;6.0;7.0;8.0;9.0;10.0;11.0;12.0;13.0;14.0;15.0;16.0;17.0;18.0;19.0;20.0;21.0;22.0;23.0;24.0;25.0|
+;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;76.16;65.28;54.4;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;117.17;102.95;97.82;92.71;87.58;82.47;77.35;72.23;67.11;61.99;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;216.13;202.85;189.58;176.31;163.04;149.77;136.5;123.23;109.96;96.69;83.42;70.15;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;500.5;468.81;437.14;405.44;373.75;342.06;310.38;278.69;247.0;215.32;183.63;151.94;120.25;88.56;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;671.13;632.74;594.34;555.96;517.56;479.18;440.78;402.4;364.0;325.61;287.22;248.83;210.44;172.05;133.66;95.27;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;841.75;798.16;754.54;710.94;667.34;623.73;580.13;536.53;492.92;449.31;405.72;362.1;318.5;274.9;231.29;187.69;144.08;100.48;56.88;0.0;0.0;0.0;0.0;0.0;0.0|
+;949.81;905.17;860.52;815.87;771.23;726.58;681.94;637.29;592.64;547.99;503.34;458.7;414.05;369.41;324.76;280.11;235.46;190.81;146.17;101.52;56.88;0.0;0.0;0.0;0.0|
+;949.81;905.17;860.52;815.87;771.23;726.58;681.94;637.29;592.64;547.99;503.34;458.7;414.05;369.41;324.76;280.11;235.46;190.81;146.17;101.52;56.88;0.0;0.0;0.0;0.0">
+<param name="ass2Curve" value="MultiStepCurve;1.0;2.0;3.0;4.0;5.0;6.0;7.0;8.0;9.0;10.0;11.0;12.0;13.0;14.0;15.0;16.0;17.0;18.0;19.0;20.0;21.0;22.0;23.0;24.0;25.0|
+;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;76.16;70.72;65.28;59.84;54.4;54.4;54.4;54.4;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;108.06;103.8;99.53;95.27;91.0;86.74;82.47;78.21;73.94;69.68;65.41;61.15;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;216.13;204.75;193.38;182.0;170.63;159.25;147.88;136.5;125.13;113.75;102.38;91.0;79.63;68.25;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;324.19;307.48;290.78;274.07;257.36;240.65;223.95;207.24;190.53;173.82;157.12;140.42;123.71;106.99;90.29;73.58;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;432.25;411.41;390.54;369.69;348.83;327.98;307.13;286.27;265.42;244.56;223.71;202.85;182.0;161.15;140.29;119.44;98.58;77.73;56.88;0.0;0.0;0.0;0.0;0.0;0.0|
+;540.31;516.15;491.97;467.8;443.63;419.46;395.28;371.11;346.94;322.77;298.59;274.43;250.25;226.08;201.91;177.74;153.56;129.4;105.22;81.05;56.88;0.0;0.0;0.0;0.0|
+;648.38;621.49;594.6;567.72;540.82;513.95;487.05;460.18;433.29;406.4;379.52;352.63;325.74;298.85;271.97;245.07;218.2;191.3;164.43;137.53;110.65;83.77;56.88;0.0;0.0|
+;648.38;621.49;594.6;567.72;540.82;513.95;487.05;460.18;433.29;406.4;379.52;352.63;325.74;298.85;271.97;245.07;218.2;191.3;164.43;137.53;110.65;83.77;56.88;0.0;0.0">
+<param name="ass3Curve" value="MultiStepCurve;1.0;2.0;3.0;4.0;5.0;6.0;7.0;8.0;9.0;10.0;11.0;12.0;13.0;14.0;15.0;16.0;17.0;18.0;19.0;20.0;21.0;22.0;23.0;24.0;25.0|
+;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;341.25;312.81;284.38;255.94;227.5;199.06;170.63;142.19;113.75;85.31;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;449.31;416.61;383.91;351.21;318.5;285.8;253.09;220.4;187.69;154.99;122.28;89.58;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;557.38;521.62;485.87;450.12;414.39;378.63;342.88;307.13;271.37;235.62;199.87;164.14;128.38;92.63;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;665.44;627.41;589.37;551.33;513.3;475.26;437.23;399.2;361.16;323.11;285.09;247.05;209.02;170.98;132.95;94.92;56.88;0.0;0.0;0.0;0.0;0.0;0.0;0.0;0.0|
+;949.81;900.21;850.6;801.0;751.39;701.77;652.17;602.56;552.95;503.34;453.74;404.14;354.52;304.92;255.3;205.7;156.08;106.48;56.88;0.0;0.0;0.0;0.0;0.0;0.0|
+;1057.88;1007.83;957.78;907.73;857.68;807.63;757.57;707.53;657.48;607.43;557.38;507.32;457.28;407.23;357.18;307.13;257.07;207.02;156.98;106.93;56.88;0.0;0.0;0.0;0.0|
+;1165.94;1115.53;1065.11;1014.71;964.29;913.89;863.47;813.05;762.64;712.24;661.82;611.41;560.99;510.58;460.18;409.76;359.34;308.94;258.52;208.1;157.71;107.29;56.88;0.0;0.0|
+;1165.94;1115.53;1065.11;1014.71;964.29;913.89;863.47;813.05;762.64;712.24;661.82;611.41;560.99;510.58;460.18;409.76;359.34;308.94;258.52;208.1;157.71;107.29;56.88;0.0;0.0">
+<param name="figliCurve" value="LinearCurve;0.0;1.0;8.0;9.0">
+<param name="rigaCurve" value="StepCurve;0.0;2.0;13479.01;3.0;16342.01;4.0;19206.01;5.0;22128.01;6.0;24991.01;7.0;27853.01;8.0;30820.01;9.0;33638.01;10.0;36502.01;11.0;39424.01;12.0;42287.01;13.0;45149.01;14.0;48073.01;15.0;50936.01;16.0;53798.01;17.0;56661.01;18.0;59523.01;19.0;62385.01;20.0;65248.01;21.0;68110.01;22.0;70972.01;23.0;73835.01;24.0;76697.01;25.0">
+
+
+<param name="xCheck" value="Check;Codice di controllo;Domanda formalmente in regola;-;Codice di controllo; ;-;+; ; ;T; ">
+
+<param name="x3d" value="3d;3d;0;-;1; ;-;+; ; ; ; ">
+
+<param name="x2g" value="2g;2g;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xp1" value="p1;p1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xN_figli" value="N_figli;il numero dei figli;il numero dei figli è zero(?);il numero dei figli;il numero dei figli; ; ; ; ; ;T; ">
+
+<param name="xCondizione_familiare" value="Condizione_familiare;Valutazione della condizione familiare;Condizione_familiare=0;Valutazione della condizione familiare;Valutazione della condizione familiare; ; ; ; ; <b>;$.2;</b>">
+
+<param name="xDisabili" value="Disabili;  ;Nessun disabile presente;-;Un disabile presente; ; ; ; ; ; ; ">
+
+<param name="xUn_genitor" value="Un_genitor;  ;Famiglia con due genitori;-;Famiglia con un solo genitore; ; ; ; ; ; ; ">
+
+<param name="xModello_Assegno0" value="P.A.T.  Assegno0;x;P.A.T.  Assegno0 2014 - (10.7.2013);--;--; ; ; ; ; ; ; ">
+<param name="xcol" value="col;col;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xrig" value="rig;rig;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xf2" value="f2;f2;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xassOK" value="assOK;assOK;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xtab3" value="tab3;tab3;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xf1" value="f1;f1;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xidonea" value="idonea;--;domanda <b>non</b> idonea;-;domanda idonea; ; ;=; ; ; ; ">
+
+<param name="xriga" value="riga;riga;riga;riga;riga; ; ; ; ; ;T; ">
+
+<param name="xfigliOK" value="figliOK;figliOK;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xcolonna" value="colonna;colonna;ERRORE: colonna;colonna;colonna; ; ; ; ; ;T; ">
+
+<param name="xass_handicap" value="ass_handicap;ass_handicap;ass_handicap0;ass_handicap;ass_handicap; ; ; ; ;<b>;$.2;</b>">
+
+<param name="xcOK" value="cOK;cOK;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xass_2genitori" value="ass_2genitori;ass_2genitori;ass_2genitori0;ass_2genitori;ass_2genitori; ; ; ; ; ;$.2; ">
+
+<param name="xass_1genitor" value="ass_1genitor;ass_1genitor;ass_1genitor0;ass_1genitor;ass_1genitor; ; ; ; ; ;$.2; ">
+
+<param name="xtab" value="tab;tab;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xdisOK" value="disOK;disOK;0;-;1; ;-;+; ; ; ; ">
+
+<param name="xtabella" value="tabella;tabella;ERRORE: tabella;tabella;tabella; ; ; ; ; ;T; ">
+
+<param name="xass_genitor" value="ass_genitor;ass_genitor;ass_genitor0;ass_genitor;ass_genitor; ; ; ; ; ;$.2; ">
+
+<param name="xassegno" value="assegno;Assegno mensile;L'assegno è zero;Assegno mensile;Assegno mensile;  ;  ; ; ; <b>;$.2;</b>">
+
+<param name="xcondOK" value="condOK;condOK;0;-;1; ;-;+; ; ; ; ">
+
+
+
+
+<param name="xpltree" value="datifam;risultato0">
+<param name="xpltree1" value="">
+<param name="xpltree2" value="">
+
+<param name="datifam" value="<b>Dati familiari:</b>;Condizione_familiare=-1;Un_genitor=-1;N_figli=-1;Disabili=-1!0;Check=-1!0">
+<param name="risultato0" value="(Dettagli==1) ;assegno=-1;tabella=-1;colonna=-1!0;riga=-1">
+
+<param name="varCRC" value="1914647514">
+<param name="CRC" value="2752831214">
+<param name="CRCdata" value="10-lug-2013 16.23.10">
+</APPLET>
+</CENTER>
+<BR>
